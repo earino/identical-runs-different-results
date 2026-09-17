@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	306a681	0.7141	ok	11	baseline
+2	951f274	0.7155	ok	7	params+early stopping
+3	9deffab	0.0000	crash	1	FE: time+route+TE+counts
+4	cd94633	0.0000	crash	2	FE: time+route+TE+counts
+5	659380a	0.7080	ok	49	FE: time+route+TE+counts
+6	b53a46b	0.7199	ok	13	lean FE
+7	9c725c6	0.7237	ok	18	params: depth10 mcw10 lr.05
+8	c19b040	0.7241	ok	20	params: depth12 mcw20 lr.04
+9	24d1c49	0.7320	ok	30	more TE interactions + slot30
+10	0475e6f	0.7256	ok	35	more TEs: month_bucket, x_dow, dom
+11	179166f	0.7314	ok	27	TE month_bucket + dom
+12	37b796a	0.7340	ok	113	ensemble 3 diverse xgb
+13	bae8662	0.0000	timeout	124	ensemble 4 models capped
+14	5f3639d	0.7340	ok	110	ensemble 3 capped rounds
+15	74c9419	0.7344	ok	75	faster specs ensemble
+16	0b6ee5a	0.7343	ok	72	TE smooth=100
+17	19179f5	0.7340	ok	84	ensemble 4 fast members
+18	101a226	0.0000	crash	1	deptime TE + products + doy
+19	7e00781	0.7285	ok	93	deptime TE + products + doy
+20	6a3efcc	0.7326	ok	81	products + doy only
+21	309f5df	0.7309	ok	66	bagged ensemble 75pct
+22	801c537	0.7345	ok	78	OOF TE
+23	5937bab	0.0000	crash	2	feature-view diverse ensemble
+24	268bc01	0.7350	ok	63	feature-view diverse ensemble
+25	49f9255	0.7346	ok	74	4 members, 4 views
+26	67d7deb	0.7357	ok	85	ensemble + lossguide member
+27	6506477	0.7365	ok	100	ensemble 5 members
+28	379e770	0.7365	ok	93	logit-average ensemble
+29	dc1b566	0.0000	crash	1	slot15 + hour_dow TEs
+30	1dd87e2	0.7362	ok	98	slot15 + hour_dow TEs
+31	1507cc2	0.0000	crash	2	carrier x slot15 TE
+32	44f2ecf	0.7373	ok	112	carrier x slot15 TE
+33	5cd1c40	0.0000	timeout	123	airport x month TEs
+34	4f2dfb6	0.7316	ok	117	airport-month TE + headroom
+35	289df8f	0.7379	ok	98	headroom only
+36	48a31db	0.7375	ok	101	ensemble 6 members
+37	8fa3d4b	0.7361	ok	110	carrier x dom TE
+38	0071205	0.7379	ok	85	rank-average ensemble
+39	60b1136	0.7378	ok	100	gamma=1.0 members
+40	5637dca	0.0000	timeout	120	ensemble + DART member

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9586343	0.7141	ok	5	baseline
+2	5ac1a86	0.7146	ok	3	numeric date feats, hour/min, ES(depth8)
+3	cb06812	0.7131	ok	2	min_since_5am monotone time feature
+4	5b61897	0.7094	ok	3	target encoding origin/dest/route/carrier
+5	3e93d37	0.7143	ok	3	min_of_day + sin/cos time
+6	f9131af	0.7146	ok	3	min_of_day, ES=50
+7	4b1abec	0.7155	ok	9	lr.05 depth6 subsample.8 ES100
+8	17b1957	0.7188	ok	14	refit full train at n_best
+9	e864d21	0.7214	ok	16	depth8 lr.05 two-stage
+10	a477a4e	0.7249	ok	16	depth10 lr.05 two-stage
+11	e4ffeaf	0.7295	ok	15	depth12 lr.05 two-stage
+12	a5d01dc	0.7335	ok	17	depth14 lr.05 two-stage
+13	cbfa791	0.7374	ok	18	depth16 lr.05 two-stage
+14	d8b6306	0.7390	ok	21	depth20 lr.05 two-stage
+15	31e3f64	0.7395	ok	25	depth24 lr.05 two-stage
+16	2a2af0e	0.7393	ok	25	depth30 lr.05 two-stage
+17	ad08a32	0.7399	ok	32	route dist-vs-typical + traffic features
+18	db3433c	0.7414	ok	54	lr.03 depth24 ES150
+19	600a750	0.7414	ok	61	lr.03 depth24 ES300
+20	5fbf81e	0.7434	ok	70	lr.02 depth24 ES200
+21	8bf345a	0.7435	ok	94	lr.015 depth24 ES250
+22	ff42256	0.7336	ok	53	minchild5 gamma.5 lambda2 lr.02
+23	9fab996	0.0000	timeout	120	3-seed ensemble lr.015 depth24
+24	18bf58c	0.7442	ok	105	2-seed ensemble lr.02 depth24
+25	517b1ee	0.7433	ok	103	3-seed ensemble lr.03
+26	13abe9a	0.7458	ok	102	drop Month ablation
+27	41d62b7	0.7449	ok	102	drop Month+DayOfWeek
+28	717a280	0.7465	ok	97	min_of_day replaces DepTime+logDist
+29	145c03d	0.7471	ok	115	max_bin 512
+30	4a6ccf9	0.7488	ok	102	subsample.7 colsample.7
+31	faf6a40	0.7481	ok	111	subsample.6 colsample.6
+32	b6a96f1	0.0000	timeout	121	3 seeds, stage1 on 60pct
+33	c4d2ee6	0.7484	ok	110	3-member ensemble incl m0
+34	4254216	0.7488	ok	106	since_5am replaces min_of_day
+35	8ab8292	0.7490	ok	107	depth28 lr.02 sub.7
+36	416c54d	0.7487	ok	108	depth32 lr.02 sub.7
+37	03bdffe	0.7477	ok	104	3-seed lr.03 depth28
+38	b80f37c	0.7482	ok	117	refits at 1.2x n_best
+39	346c5d7	0.0000	timeout	120	3-seed lr.02 depth28
+40	977b04e	0.7462	ok	118	te hour x carrier (last experiment)

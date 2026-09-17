@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6ba2630	0.7141	ok	4	baseline
+2	834d7b1	0.7133	ok	2	feats: deptime cyc/hour, dist log
+3	954058d	0.7173	ok	7	capacity: depth8 lr.05 early stop + refit
+4	209915a	0.7131	ok	12	target encoding oof + freq features
+5	22d00a2	0.7084	ok	7	te full-map no oof
+6	45f2fd6	0.7055	ok	7	route cat + doy/holiday + te time buckets
+7	46823df	0.7184	ok	17	deeper slower model, auc-based es
+8	a30e15d	0.7188	ok	67	ensemble 3 depths
+9	48570f0	0.0000	timeout	120	congestion counts + 15min slots, single d10
+10	583296a	0.7214	ok	53	congestion+slot15 single d10
+11	a936f7f	0.7156	ok	44	expanded congestion counts
+12	7949b04	0.7236	ok	81	2-member ensemble on winning features
+13	ddeee57	0.7231	ok	90	3 members hardcoded n
+14	4f88845	0.0000	crash	2	regularization probe on 2-ens
+15	901512f	0.7249	ok	94	regularization probe on 2-ens (fixed)
+16	4303755	0.7245	ok	90	3-member lr05 regularized ensemble
+17	eea21c8	0.7259	ok	97	geography probe
+18	bdb1986	0.7242	ok	73	drop hour_cat ablation
+19	eb805b1	0.7252	ok	115	peak share + carrier slot counts
+20	6080dde	0.7243	ok	94	bagged members 90pct
+21	882718c	0.7254	ok	119	connectivity probe
+22	184a822	0.0000	crash	92	rank pairwise blend
+23	f00d25f	0.7259	ok	117	rank pairwise blend (fixed)
+24	21c5e1b	0.7261	ok	92	d10+d12 pair
+25	2ac68e4	0.7281	ok	67	gamma 2 pruning
+26	0f3d0eb	0.7279	ok	50	gamma 4 pruning
+27	fbd30b3	0.7277	ok	109	3 members d10 d12 d8 gamma2
+28	f57babd	0.7263	ok	70	mcw 35
+29	e2bab9f	0.7263	ok	65	lr 0.04 pair
+30	8c0fd2d	0.0000	timeout	121	dart probe
+31	988d7a8	0.7279	ok	78	max_bin 1024
+32	7974edd	0.7282	ok	85	colsample 0.6
+33	4f7b65e	0.7267	ok	55	lr decay schedule
+34	b83f6e6	0.7334	ok	70	minute features
+35	d8e27bb	0.7316	ok	81	minute cyclic + slot5
+36	8f73e5f	0.7321	ok	68	gamma 3 with minute features
+37	6f3b48b	0.7304	ok	87	colsample 0.7 with minute features
+38	78dba8b	0.7276	ok	73	minute categorical
+39	b83f6e6	0.7334	ok	71	restore best (uses one exp)
+40	30d7f78	0.7335	ok	72	weighted blend

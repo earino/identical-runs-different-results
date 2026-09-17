@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	2310e2e	1789508031	baseline
+01	89b8aa9	1789508101	features: decode c-<n> ordinals, DepHour + cyclical time
+02	05c6d2e	1789508114	1500 trees lr0.05 depth8 subsample, early stop on last-20% split + refit
+03	1582916	1789508411	congestion/count features (origin/dest/carrier x hour/month, route)
+04	4aee816	1789508487	add hourly share features (joint/marginal ratios) to congestion set
+05	aeb6737	1789508594	3-seed XGBoost ensemble, averaged probabilities
+06	58ad0d0	1789508781	5-fold bagging ensemble
+07	82b5938	1789508882	bagging with per-member depth/colsample diversity
+08	d51eeb0	1789509214	colsample_bynode=0.8 on bag members
+09	3b1b95b	1789509439	dep_min numeric feature
+10	bb749f0	1789509535	DepTime quirk flags (hour>=24, minute==0)
+11	b3db16f	1789509876	per-member subsample diversity
+12	a376b33	1789509976	lr 0.04, cap 2000
+13	9e718be	1789510212	max_bin 512
+14	a0b9141	1789510734	cap 1200 trees (time safety)
+15	74a005f	1789510819	cap 1000 trees

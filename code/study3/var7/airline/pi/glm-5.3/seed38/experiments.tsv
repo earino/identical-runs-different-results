@@ -1,0 +1,26 @@
+n	commit	eval_auc	status	seconds	description
+1	a75cc54	0.7141	ok	4	baseline
+2	fc56fa0	0.7092	ok	8	FE bundle + ES model
+3	b1a5ec4	0.7516	ok	74	FE rev2 + deep reg ens5
+4	67ea25b	0.7549	ok	80	qh+ch cats, ens3 n300 lr.04
+5	a1a0654	0.7547	ok	94	ens4 d12 n500 lr.025
+6	c450593	0.7554	ok	86	ens3 d16 n300 lr.04 alpha0.5
+7	a968915	0.7552	ok	85	mixed ens3 alpha0.5
+8	5a449f8	0.7547	ok	89	ens3 sub1.0
+9	0522adb	0.7554	ok	98	ens4 d16 n260 lr.045
+10	3abc76e	0.7555	ok	99	ens3 n350 lr.035
+11	cdc3aa2	0.7552	ok	108	ens3 n350 + O/D TE
+12	79be7e2	0.7555	ok	99	rank-mean blend
+13	033e2f3	0.7555	ok	100	col 0.65
+14	ee06aeb	0.7553	ok	102	seeds 10-12 stability
+15	705a4e1	0.7550	ok	105	carrier TE too
+16	6e00562	0.7556	ok	100	d18 ens3
+17	059f8cf	0.7556	ok	103	alpha 0.4
+18	65d570f	0.7557	ok	100	sub 0.75
+19	6ea5519	0.7554	ok	97	sub 0.7
+20	24d06b5	0.7557	ok	98	col 0.68
+21	edd1d7e	0.7549	ok	93	95% row members
+22	e1cc9b2	0.7556	ok	99	alpha 0.45
+23	f300e55	0.7552	ok	100	ens4 d18 n230
+24	75537bc	0.7552	ok	103	d19 ens3
+25	65d570f	0.0000	crash	21	final budget check

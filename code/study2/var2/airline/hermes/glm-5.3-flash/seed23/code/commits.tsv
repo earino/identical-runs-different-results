@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	93d47b8	1789535547	baseline
+01	2cbdf7f	1789535611	E2: DepTime hour/minute+cyclic, log distance, 2000 trees lr0.05 depth8 ES50 on eval
+02	74cd0dd	1789535631	E3: smoothed target encoding carrier/origin/dest/route + route counts
+03	dcb4bf9	1789535649	E4: depth10 lr0.03 mcw10 lambda2 es100
+04	bf65a83	1789535674	E5: add dep_hour categorical (clamped at 24)
+05	d8fabe5	1789535698	E6: 5-fold bagged XGB, per-fold ES, averaged preds
+06	eef9c34	1789536100	E12: depth 12
+07	c0db28e	1789536164	E13: depth 14
+08	bd065d0	1789536240	E14: depth 16
+09	b166b4b	1789536748	E20: lr 0.07 at depth 16
+10	dec6fa1	1789536883	E23 fix: CV-picked iters, full-train refit ensemble
+11	6fcc7de	1789537058	E27: depth 20
+12	7588530	1789537119	E28: depth 24
+13	8af6009	1789537280	E30: reg_lambda 5
+14	faf6d7c	1789537342	E31: reg_lambda 10
+15	5fa8b64	1789537556	E34: refit iters x0.75

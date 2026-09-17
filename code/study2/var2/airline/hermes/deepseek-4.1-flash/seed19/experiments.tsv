@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	0687d57	0.7141	ok	4	baseline
+2	6615024	0.7061	ok	2	feature v1: time-of-day + route
+3	7ac6bc2	0.7062	ok	5	capacity: 400x8 lr0.05
+4	fb6f191	0.7142	ok	3	shallow regularized 600x4 mcw20
+5	4c1b75c	0.7140	ok	4	features: tod decomposition
+6	0b069ad	0.7065	ok	5	target encodings + counts
+7	4f14ec1	0.7166	ok	3	traffic count features
+8	ebd4bf0	0.7186	ok	5	OOF target rates + counts
+9	a8876a5	0.0000	crash	1	extra group keys
+10	b80619e	0.7266	ok	7	extra group keys (fix Month col)
+11	fa70c90	0.7266	ok	8	time+season group keys
+12	47aaf0f	0.7260	ok	7	smooth=100
+13	e9163f1	0.7211	ok	8	depth6 mcw30
+14	a855732	0.7267	ok	10	lr0.02 x1500
+15	340808a	0.7271	ok	10	traffic share ratios
+16	a295e02	0.7275	ok	35	5-seed ensemble
+17	bde7321	0.7275	ok	37	route-carrier key
+18	426d64f	0.0000	crash	3	ablation: no raw Origin/Dest
+19	769e003	0.7314	ok	81	ablation: no raw Origin/Dest (fix)
+20	7785a67	0.7322	ok	31	ablation: no raw carrier
+21	344f6af	0.7297	ok	23	raw cats -> rate keys
+22	09ed162	0.7330	ok	26	ablation: no DayofMonth
+23	3b756a7	0.7331	ok	26	diverse ensemble
+24	3854df3	0.7400	ok	28	30-min time bins
+25	266d29b	0.7422	ok	29	dest+carrier tod bins
+26	41fc5b6	0.7441	ok	33	15-min bins
+27	9c928b5	0.7373	ok	32	smoothed tod curves
+28	d5944f0	0.7446	ok	35	finer global bins
+29	159d62c	0.7448	ok	37	fine-bin shares
+30	95d9ba2	0.7466	ok	36	ordinal calendar
+31	0da5181	0.7468	ok	37	season x tod keys
+32	16580ad	0.7469	ok	38	distance bands
+33	987088c	0.7472	ok	37	arrival-time proxy
+34	d52d5ba	0.7473	ok	51	7-member ensemble
+35	49663c1	0.7468	ok	42	10-fold OOF
+36	14bf834	0.7366	ok	33	ablation: no hourly keys
+37	9437dd4	0.7476	ok	36	smooth=60
+38	98f19df	0.7476	ok	37	smooth=100
+39	685a7c8	0.7475	ok	40	max_bin=512
+40	c0af5f7	0.7479	ok	63	9-member ensemble

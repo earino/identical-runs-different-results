@@ -1,0 +1,26 @@
+n	commit	eval_auc	status	seconds	description
+1	eb5b5a3	0.7141	ok	3	baseline
+2	eb5b5a3+dirty	0.7101	ok	4	FE v1: hour/tod/route + ES(lr.05,d8)
+3	2b8131c	0.7376	ok	11	TE core+interactions, d8 mcw10 ss.8 cs.8 lr.03
+4	f706b90	0.7450	ok	16	add 9 count/congestion features
+5	1dd3e51	0.7476	ok	74	5-seed ensemble, per-seed OOF TE folds
+6	e00f19a	0.7539	ok	56	30-min bucket TEs route/car/org/dow + 5-seed ensemble
+7	f904a8e	0.7554	ok	62	30-min congestion counts + ensemble
+8	c7b43f7	0.7565	ok	68	tod deviation features for route/carrier/origin/dest
+9	b65b494	0.7607	ok	74	6-member ensemble: 3 feature variants x 2 seeds
+10	e0d3ba0	0.7610	ok	111	6-member ensemble: base/fine/nohm variants x 2 seeds
+11	c909427	0.7628	ok	76	fix OOF dict per variant (base/fine/nohm x 2)
+12	bf7be96	0.7630	ok	79	mcw5 for all 6 members
+13	58ace7c	0.7630	ok	77	multiscale ensemble [multi8,multi9,nohm] x 2 seeds, mcw5
+14	a39b497	0.7629	ok	103	lr 0.025 + ES 250 for all members
+15	43cbce2	0.7628	ok	79	ss 0.85 / cs 0.7 across members
+16	42c3853	0.7632	ok	86	4-fold OOF folds for TEs
+17	604ef5f	0.7629	ok	77	3-fold OOF folds for TEs
+18	e5e4f4a	0.7631	ok	81	L2 regularization 2.0
+19	85f71d2	0.0000	crash	5	d9 for base+fine members
+20	43a5210	0.7633	ok	87	d9 for base+fine members (fixed typo)
+21	af96a55	0.7634	ok	87	d9 for all members incl nohm
+22	075f8a2	0.7635	ok	91	d10 for all members
+23	4432261	0.7635	ok	109	d11 for all members
+24	54fe222	0.7638	ok	112	mcw3 + d10
+25	7c7b254	0.7638	ok	108	ES 120 with mcw3+d10

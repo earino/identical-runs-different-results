@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	341aa9f	1789513892	baseline
+01	1cb53a9	1789513936	feat: time features, cyclical encodings, early-stopped depth-8 model
+02	19d510b	1789513970	feat: OOF target encoding for carrier/origin/dest/route + freq encoding
+03	eee11d8	1789514034	tune: depth 10, subsample 0.7, colsample 0.7
+04	209d94c	1789514056	tune: depth 12, colsample 0.6
+05	d8741e0	1789514076	tune: depth 14
+06	049bb33	1789514098	tune: depth 16
+07	bacb565	1789514124	tune: depth 20
+08	c501122	1789514152	tune: lr 0.03, depth 16
+09	dbb64e6	1789514508	feat: 2-seed bag of best config
+10	f40c38b	1789514589	feat: 3-seed bag with shared early-stopped n_estimators
+11	7693fb1	1789514965	refactor: drop TE/freq features (ablation)
+12	25bc892	1789515368	tune: subsample 0.8 colsample 0.7 at depth 16
+13	b97b191	1789515506	feat: mixed-lr bag (0.02/0.03/0.03)
+14	eb543c5	1789515580	tune: depth 18 mixed-lr bag
+15	f6dda4f	1789515662	tune: depth 20 mixed-lr bag
+16	0865a67	1789515964	tune: colsample_bynode 0.9
+17	8c615ad	1789516071	tune: member3 lr 0.04
+18	fbce848	1789516478	feat: dep_hour categorical
+19	fb0abe9	1789516602	tune: 2-member bag with hour categorical (runtime safety)
+20	04bf1bc	1789516814	perf: predict via shared DMatrix + booster.predict (verified equivalent)

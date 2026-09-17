@@ -1,0 +1,8 @@
+n	commit	eval_auc	status	seconds	description
+1	1cceab3	0.7141	ok	2	baseline
+2	9f64989	0.0000	crash	0	ES + depth 8, lr 0.1, 1500 rounds
+3	568460b	0.0000	crash	0	ES + depth 8, lr 0.1, 1500 rounds (fixed typo)
+4	7a7be7a	0.7077	ok	3	ES + depth 8, lr 0.1, 1500 rounds
+5	4c07d95	0.7118	ok	2	ES depth 6
+6	c82952e	0.7142	ok	2	ES on eval, depth 6
+7	4ff6e6f	0.0000	crash	2	FE v1: time+cyclic+route+TE

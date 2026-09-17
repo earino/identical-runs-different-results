@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9828a38	0.7141	ok	4	baseline
+2	d51a8a4	0.0000	crash	2	FE time-of-day+route+cyclical, 400 trees
+3	ade76eb	0.0000	crash	2	FE time-of-day+route+cyclical, 400 trees
+4	22bc697	0.0000	crash	1	FE time-of-day+route+cyclical, 400 trees
+5	735a02e	0.7081	ok	3	FE time-of-day only, 200 trees d8
+6	707d716	0.7127	ok	2	ablation: time FE @ 30 trees d6
+7	09107c0	0.7126	ok	4	early stop on evald + reg 0.8/0.8
+8	376e354	0.7153	ok	2	depth 6, early stop, reg 0.8/0.8
+9	c5ed617	0.7155	ok	3	depth 5, early stop, reg 0.8/0.8
+10	373f01c	0.7059	ok	5	target encoding carrier/origin/dest/route
+11	18e2851	0.7162	ok	4	freq features + log distance
+12	537129e	0.7160	ok	4	min_child_weight=10
+13	1a47768	0.7174	ok	6	lr 0.05 patience 60
+14	9d1d6bc	0.7179	ok	7	lr 0.03
+15	f547c10	0.7179	ok	10	lr 0.02 patience 100
+16	5b5be50	0.7183	ok	27	5-seed ensemble lr0.03 d5
+17	5eafa91	0.7186	ok	33	diversity ensemble 6 models
+18	0e2ffdd	0.0000	crash	1	no native Origin/Dest, freq only
+19	fc5f21c	0.7156	ok	45	no native Origin/Dest, freq only
+20	94c5b83	0.7193	ok	52	cyclical calendar+time features
+21	263ba07	0.7107	ok	23	route native cat (ES ensemble)
+22	58d3f92	0.7199	ok	78	9-model ensemble depths 3-6
+23	a9c6c9e	0.7199	ok	80	rank fusion
+24	26a9310	0.0000	crash	8	mixed lr/subsample ensemble
+25	ce67901	0.7197	ok	62	mixed lr/subsample ensemble
+26	58e94a5	0.7186	ok	77	monotone tod constraint
+27	b555ced	0.7198	ok	76	max_bin 512
+28	2f532f2	0.7198	ok	104	12-model seed-bagged ensemble
+29	ff9e9db	0.7211	ok	81	RARE bucket for rare airports
+30	7fa0d05	0.7221	ok	89	RARE threshold 100
+31	33c3afd	0.7234	ok	100	RARE threshold 200
+32	8c80aae	0.7243	ok	106	RARE threshold 300
+33	e290995	0.7246	ok	103	RARE threshold 400
+34	cad0073	0.7240	ok	96	doy cyclical features
+35	6f4c79b	0.7239	ok	108	RARE threshold 500
+36	5264bc9	0.0000	timeout	120	carrier_hour interaction
+37	ec191d7	0.7326	ok	100	carrier_hour 6-model retry
+38	c23754a	0.0000	crash	2	mixed lr to unlock capacity
+39	846d38c+dirty	0.7326	ok	85	mixed lr to unlock capacity
+40	9ca75df	0.7335	ok	101	origin_hour interaction (last slot)

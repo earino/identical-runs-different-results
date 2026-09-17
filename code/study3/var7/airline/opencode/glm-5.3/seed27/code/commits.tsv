@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	84477fe	1789583298	baseline
+01	1ab9f5a	1789583383	numeric parsing, hour/min features, route cat, early stopping
+02	09de3f8	1789583402	full-data fit, 400 trees, no early stop
+03	679940f	1789583645	tuned: cs0.5 mcw10 d6 lr.06 n50 maxbin512, clean features
+04	224b1a0	1789583704	add OOF target encodings for origin and hourxdow
+05	467e425	1789584153	deep trees (d14 mcw20) + te_route/te_oh features, lr.02 n150
+06	dddf3be	1789584854	10-model deep ensemble (d16/18, mcw15/20) + count encodings
+07	907e396	1789585947	congestion-curve TEs: t15, origin/dest/carrier x 15min buckets
+08	dc8ce8b	1789586556	add te_r15 (route x 15-min congestion)
+09	9328031	1789587643	retune ensemble: colsample 0.30, mcw 10/15
+10	2ab682f	1789588126	add te_r20 (route x 20-min congestion)
+11	17c8bd9	1789588591	drop redundant te_oh (covered by te_oh15)
+12	18812e9	1789588658	mcw 8/12
+13	79df497	1789589293	mcw 6/10
+14	b196bb2	1789589356	mcw 4/8
+15	98abedb	1789589445	mcw 3/6
+16	59d2765	1789589533	mcw 2/4

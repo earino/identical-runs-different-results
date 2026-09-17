@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	f1e348c	1789589285	baseline
+01	9fe71d1	1789589380	capacity + internal early stopping
+02	6c426b7	1789589636	numMD features (numeric Month/Day/Dow), d4 lr0.1 n100
+03	7cb7a18	1789590211	2-view blend: native-cats d4 lr.05 n200 + onehot d16 lr.05 n300, logit avg
+04	9922ef2	1789591830	bagged deep one-hot ensemble (5x d20 sub.8 col.8) + native view, logit avg
+05	9396a03	1789592422	deep one-hot bag 5x(85/50)+2x(90/50) + native bag5, logit avg
+06	cb6d0ae	1789592875	11-member deep one-hot bag (n200 lr.075, xgb.train w/ shared DMatrix) + native bag5
+07	da4f2f2	1789593300	swap 2 deep members for recency-weighted (alpha .5)
+08	f0f7822	1789593749	native bag d6, add col.35 diversity member
+09	f0c1ccb	1789593876	revert to exp 8 config (best 0.7391)
+10	d13fd62	1789594352	add 9th 85/50 deep member (12 deep total)
+11	00475a4	1789594555	recency members a.5 x2 + a1.0, drop 90/50
+12	45cb886	1789594920	8 plain + 4 recency members (2x a.5, 2x a1.0)
+13	280aab1	1789595373	reduce native bag to 2 members
+14	b68c8cb	1789595686	recency members at logit weight 1.25
+15	4aa12f2	1789595929	add third a1.0 recency member (13 deep total)
+16	9b326d4	1789596110	finalize: revert to 12-member config (96s, same AUC) for holdout predict safety
+17	c4adde0	1789596316	add MinOfHour (DepTime%100) numeric feature to both views

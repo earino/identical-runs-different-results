@@ -1,0 +1,200 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 46,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:29:31+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s46-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T23:10:29+00:00",
+  "wall_seconds": 2458.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6543.8,
+  "endpoint_at_end": "ok",
+  "head": "0405513",
+  "n_commits": 25,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7265,
+  "final_eval_auc": 0.7265,
+  "holdout_auc": 0.7271542467200001,
+  "holdout_ap": 0.7200083031316665,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.012383494984000043,
+  "generalization_gap": -0.000654246720000029,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": "head -1\"},\"partialresult\":{\"content\":[{\"type\":\"text\",\"text\":\"4297b6b ensemble 10 -> 13 members (lr0.03, lg-pat150, colsample_bytree combo)\\n\"}],\"details\":{}}} {",
+  "usage": {
+    "tokens_in": 7727273,
+    "tokens_in_uncached": 40873,
+    "tokens_in_cached": 7686400,
+    "tokens_out": 77221,
+    "turns": null,
+    "api_calls": 143,
+    "method": "sum-of-143-events",
+    "cost_usd": 0.2753,
+    "cached_share": 0.995
+  },
+  "cpu_seconds_python": 6569.3,
+  "cpu_seconds_counted": 6236.0,
+  "cpu_seconds_uncounted": 4.7,
+  "cpu_seconds_exempt": 328.6,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 238,
+  "fits_counted": 229,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "37f4495",
+      "message": "baseline"
+    },
+    {
+      "commit": "4085e3d",
+      "message": "es+refit: lr0.05 d8 mcw5 sub0.85 col0.85, early stop on 10pct val"
+    },
+    {
+      "commit": "d64d993",
+      "message": "early stopping on eval.csv (2006) for tree count"
+    },
+    {
+      "commit": "4f1131b",
+      "message": "FE: hour + cyclical time-of-day, late_sched flag, log_dist, dist_bin"
+    },
+    {
+      "commit": "55243c1",
+      "message": "d6, mcw20: stronger regularization for year transfer"
+    },
+    {
+      "commit": "9f8ab18",
+      "message": "smoothed TE + freq for carrier/origin/dest/route/car_orig/car_dest/month/dow/dom"
+    },
+    {
+      "commit": "aee1ac1",
+      "message": "TE ablation: only carrier/origin/dest m=100, drop interaction TE"
+    },
+    {
+      "commit": "bb9e598",
+      "message": "multi-probe on clean base (TE m=100, d6 mcw20): lr0.1/gamma3/csbn0.7/sub0.7"
+    },
+    {
+      "commit": "0741dee",
+      "message": "probe csbn 0.5/0.3, +mcw40, d5, lambda5 on csbn0.7 base"
+    },
+    {
+      "commit": "7a1706b",
+      "message": "probe around csbn0.3: 0.2/0.4, d5/d7, lr0.1, mcw10, sub0.7"
+    },
+    {
+      "commit": "680010b",
+      "message": "ensemble of 4 diverse configs around csbn optimum"
+    },
+    {
+      "commit": "1d69522",
+      "message": "ensemble 4 -> 7 members (add mcw40, d5+mcw10+seed7, seed7)"
+    },
+    {
+      "commit": "8c3534f",
+      "message": "7-member ensemble on simplified features (drop freq, dist transforms)"
+    },
+    {
+      "commit": "ef72228",
+      "message": "ensemble 7 -> 10 members"
+    },
+    {
+      "commit": "2db0709",
+      "message": "probe: ES patience 150, lossguide, no-TE view"
+    },
+    {
+      "commit": "f92f30a",
+      "message": "probe lossguide max_leaves 32/64/128/256"
+    },
+    {
+      "commit": "7356aee",
+      "message": "mixed ensemble: 5 hist + 5 lossguide members"
+    },
+    {
+      "commit": "4297b6b",
+      "message": "ensemble 10 -> 13 members (lr0.03, lg-pat150, colsample_bytree combo)"
+    },
+    {
+      "commit": "b2e3acf",
+      "message": "add h2 shifted-hour feature to ensemble; prune csbn0.5 member"
+    },
+    {
+      "commit": "9002e16",
+      "message": "blend schemes: uniform vs auc-weighted vs top8"
+    },
+    {
+      "commit": "40216ac",
+      "message": "14 members: +boot/gamma5/bin512; rank-vs-mean blend check"
+    },
+    {
+      "commit": "406ab6d",
+      "message": "16-member seed-replicated ensemble of strongest families"
+    },
+    {
+      "commit": "c7c9790",
+      "message": "probe max_delta_step / colsample_bylevel / subsample1.0"
+    },
+    {
+      "commit": "9ee4f44",
+      "message": "probe colsample_bylevel 0.5/0.6/0.7/0.8 with subsample 1.0"
+    },
+    {
+      "commit": "f0bdbff",
+      "message": "9-member ensemble on new recipe, patience 30"
+    },
+    {
+      "commit": "0405513",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6240.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -25.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f0bdbff",
+  "best_commit_eval_auc": 0.7265,
+  "best_commit_holdout_auc": 0.7271542467200001,
+  "best_commit_holdout_ap": 0.7200083031316665,
+  "best_commit_error": null,
+  "finalized_best": true
+}

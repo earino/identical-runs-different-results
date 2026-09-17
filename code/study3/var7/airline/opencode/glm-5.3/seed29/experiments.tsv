@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c01a325	0.7141	ok	3	baseline
+2	f74ed2f	0.0000	crash	1	FE v1 + early stopping
+3	2a4be11	0.7130	ok	3	FE v1 + early stopping (fixed callbacks kwarg)
+4	94c0980	0.7138	ok	4	slower lr + stronger leaf reg, trajectory
+5	73ab175	0.7154	ok	5	target encoding te_m=20
+6	c5c8e04	0.7199	ok	9	interaction TEs with hour
+7	0d3fe87	0.7132	ok	9	calendar TEs
+8	aba1b21	0.0000	crash	1	volume count features
+9	055d6a1	0.7139	ok	7	volume count features (fixed te_key)
+10	c43d34a	0.7205	ok	21	depth 8
+11	3b42f91	0.7253	ok	14	reg bump: mcw20 lambda5 ss0.7 cs0.7
+12	8d12644	0.7291	ok	16	reg harder: mcw40 lambda10 ss0.6 cs0.6
+13	6c904bc	0.7293	ok	10	reg extreme: mcw80 lambda20 ss0.5 cs0.5
+14	ab4bf9e	0.7291	ok	15	depth 12
+15	bdb84d7	0.7292	ok	13	TE smoothing m=50
+16	bf4c288	0.7297	ok	19	dow_hour TE
+17	f15148c	0.7305	ok	19	carrier_dow + route_dow TEs
+18	014abff	0.7307	ok	21	origin_dow + dest_dow TEs
+19	003f93f	0.0000	crash	19	4-seed ensemble
+20	a2f87e1	0.7323	ok	50	4-seed ensemble (fixed callback)
+21	3c09e89	0.7325	ok	76	6-seed ensemble
+22	e9cece6	0.7319	ok	69	depth-diverse ensemble
+23	bb95df9	0.7329	ok	64	10-fold OOF TE
+24	f87ca44	0.7328	ok	69	route_2h + origin_2h TEs
+25	c17e391	0.7280	ok	42	simplification: drop redundant raw features
+26	28f6c1a	0.7331	ok	75	alpha 1.0
+27	9c2e297	0.7338	ok	86	slot15 + carrier_origin TEs
+28	48d0c00	0.7370	ok	76	carrier_dest + carrier_slot15 TEs
+29	01ee22a	0.7413	ok	68	origin_slot15 + dow_slot15 TEs
+30	894ab44	0.7424	ok	66	dest_slot15 + slot10 TEs
+31	e28d08f	0.7436	ok	75	reg re-probe mcw40 lambda10
+32	514041b	0.7442	ok	73	reg probe mcw20 lambda5
+33	290d763	0.7443	ok	68	reg probe mcw10 lambda2
+34	4d9562f	0.7443	ok	77	TE m=10
+35	6f18d50	0.7444	ok	80	slot5 + carrier_slot10 TEs
+36	d629019	0.7446	ok	87	lr 0.04
+37	9741e96	0.7429	ok	104	ss/cs 0.6/0.6
+38	9a5b42f	0.7443	ok	75	colsample_bynode 0.8
+39	e7af86f	0.7446	ok	106	7-seed ensemble
+40	af900ec	0.0000	timeout	120	origin_slot10 TE

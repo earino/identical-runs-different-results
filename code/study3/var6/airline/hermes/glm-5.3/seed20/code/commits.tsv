@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	34a52cb	1789652367	baseline
+01	dc9753b	1789652471	route interactions hour_route, hour_origin
+02	cba61ff	1789652608	deeper trees depth10, lr 0.03, longer early stopping
+03	b203f46	1789652690	minute_of_day encoding, hour_dest, carrier_hour, hour_dow interactions
+04	df2ea69	1789652746	bagged ensemble of 5 xgb models (seed averaging)
+05	7339f3e	1789653349	route distance stats: dist vs route mean/ratio
+06	f9f7461	1789653452	route departure-time z-score
+07	a7fb3f2	1789653559	within-(origin,date) departure order + time since first dep
+08	d43e359	1789653668	normalized dep order pct, group size, frac of day
+09	cbbe4c1	1789654000	order x time-of-day interaction numerics
+10	4397954	1789654571	stronger regularization + colsample_bylevel
+11	6060fbe	1789654669	even stronger regularization
+12	f6399bb	1789655371	span position + interaction
+13	ea208c0	1789656071	estimated-arrival rank features at dest-date
+14	3e47b09	1789656462	colsample_bynode 0.8 for extra decorrelation

@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	5ef5436	1789492358	baseline
+01	7180a50	1789492429	feat-v1: parsed calendar, hour/cyclic time, route cat, log dist, 500 trees d8
+02	145c859	1789492476	ablation: baseline features, 500 trees d8 lr.06
+03	f869807	1789492546	d4 200t +timefeats (hour/min/cyclic/logdist)
+04	3010db1	1789492888	carrier x 30min-bin interaction, d4 2000t lr.03 alpha1 sub.9 cbn.9
+05	b86e5c9	1789493450	6-model ensemble d4(0,1,2)+d5(0,1)+d6(0), equal-weight average
+06	09f7baf	1789494003	ensemble d3(0,1)+d4(0,1)+d5(0,1)
+07	472c4c6	1789494834	ensemble colsample_bynode 0.5 (feature-subset diversity)
+08	b6c4f4e	1789496020	add hm15 time-slot categorical, drop cyclic sin/cos
+09	a3946de	1789496917	8-model ensemble: add d6(0,1) members
+10	c712e52	1789496997	10-model ensemble: add d7(0,1) members

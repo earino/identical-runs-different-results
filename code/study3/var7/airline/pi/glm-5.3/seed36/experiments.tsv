@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f3a9a56	0.7141	ok	3	baseline
+2	bc54c87	0.0000	crash	2	FE v1: hour extraction, cyclical, ES depth8
+3	70b06a0	0.0000	crash	4	FE v1: hour extraction, cyclical, ES depth8
+4	b6e6594	0.7183	ok	7	FE v1: hour extraction, cyclical, ES depth8
+5	b1f7bac	0.7171	ok	12	target encoding of carrier/origin/dest/route
+6	e4af000	0.7243	ok	13	bigger model: lr0.05 d10 mcw2
+7	9299782	0.7285	ok	26	lr0.03 depth12
+8	0432688	0.7351	ok	25	count-freq congestion features
+9	6678524	0.7387	ok	31	more congestion features
+10	52a5702	0.7455	ok	65	retune lr0.02 colsample0.75
+11	36469a3	0.0000	timeout	120	lr 0.015 cap3000
+12	d936e77	0.7453	ok	91	TE retry: composite cells m=100
+13	2e3476c	0.7473	ok	70	seasonal counts + route dist deviation
+14	e998294	0.7478	ok	81	3-fold bagged ensemble
+15	693ccf4	0.7476	ok	82	rolling window congestion features
+16	b76868a	0.7473	ok	73	ablation: no cyclical features
+17	f420c79	0.0000	timeout	120	5-fold bagged ensemble
+18	6f86507	0.0000	timeout	122	4-fold bagged ensemble
+19	279c43d	0.7446	ok	72	depth 10
+20	466f223	0.7501	ok	91	depth 14
+21	9e4dfc6	0.7515	ok	96	depth 16
+22	5d8ed9f	0.7521	ok	109	depth 18
+23	351b67d	0.7505	ok	89	mcw 3
+24	ad8cc28	0.7551	ok	109	colsample 0.6
+25	60252e6	0.7546	ok	80	lr 0.03
+26	4b364a6	0.7556	ok	115	lr0.03 4-fold
+27	86f2c9d	0.0000	timeout	124	calendar holiday features
+28	e0784d3	0.7508	ok	112	calendar features, depth 16
+29	c30e737	0.7556	ok	107	reg_lambda 1
+30	18b229e	0.7567	ok	110	carrier footprint features
+31	322f69f	0.7571	ok	109	route-level carrier presence features
+32	b0eb1e7	0.7552	ok	119	more share ratios
+33	8248c9a	0.7572	ok	109	subsample 0.75
+34	f983012	0.7575	ok	107	depth 20
+35	19cdc80	0.7577	ok	114	depth 24
+36	90b96d9	0.0000	timeout	122	depth 28
+37	317e571	0.7572	ok	119	per-fold seeds
+38	a6559df	0.7575	ok	113	colsample_bylevel 0.8
+39	1db43eb	0.7588	ok	117	colsample 0.55
+40	506d3bf	0.7585	ok	81	colsample 0.5, 3-fold

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	76579fd	0.7141	ok	4	baseline: 30 trees depth6 lr0.1, categorical native
+2	d788312	0.7164	ok	3	time features: hour/min cyclical, month/dow numeric+cyclical, tod bin, log distance
+3	afc62f1	0.7207	ok	8	800 rounds lr0.05 depth8, early stopping on 15% val split, subsample/colsample 0.9
+4	78b63f8	0.0000	crash	2	interaction categoricals: Route, CarrierTOD, OriginHour, DestTOD
+5	fa4c731	0.7143	ok	39	interaction categoricals: Route, CarrierTOD, OriginHour, DestTOD
+6	322953b	0.0000	crash	2	smoothed target encoding (OOF for train) carrier/origin/dest/route/originhour + route count
+7	8689365	0.7266	ok	7	smoothed target encoding (OOF for train) carrier/origin/dest/route/originhour + route count
+8	f385309	0.7289	ok	10	refit final model on full train with best_iter from early stopping
+9	cafbeec	0.7275	ok	11	TE smoothing Route 100 -> 20
+10	e3766a4	0.7311	ok	12	add DestTOD + CarrierHour TE features
+11	258eaa3	0.7294	ok	12	add OriginDOW, CarrierDOW, CarrierMonth TE features
+12	5fce6c8	0.7189	ok	14	add Dom, DowHour, MonthDom TE features
+13	f472439	0.7327	ok	15	add Hour and CarrierDist-bin TE features
+14	4d1a42f	0.0000	crash	2	add OriginDist-bin and OriginDom TE features
+15	25e1b56	0.0000	crash	1	add OriginDist-bin and OriginDom TE features
+16	d120310	0.7319	ok	13	add OriginDist-bin and OriginDom TE features
+17	98b57f3	0.7324	ok	14	hp tune: depth10 lr0.04 mcw5 lambda2 1200 rounds
+18	9f844d8	0.7341	ok	23	lower lr 0.03, 2000 rounds, es 100, lambda 1
+19	71b0a0a	0.7425	ok	25	add RouteHour + CarrierTOD TE features
+20	000c41a	0.7409	ok	25	add RouteTOD, OriginDOW(strong smooth), HourDOW TE features
+21	0a3ba68	0.7423	ok	25	add RouteTOD TE feature only
+22	5e4170c	0.7424	ok	25	RouteHour smoothing 150->50
+23	86f4ae1	0.7425	ok	26	RouteHour smoothing 150->300
+24	9657465	0.7441	ok	48	bag of 3 seeds, averaged
+25	5d64409	0.7440	ok	69	bag of 5 with subsample/colsample diversity
+26	19eca67	0.7447	ok	45	add DestHour TE feature
+27	dbabfc5	0.7451	ok	50	add OriginTOD TE feature
+28	3250f0a	0.7444	ok	51	add DestDist + RouteDist TE features
+29	35665cd	0.7452	ok	52	add DistBin TE feature
+30	79532a6	0.7435	ok	52	add HourMin TE feature (1440 keys, heavy smooth)
+31	a76fa20	0.7449	ok	60	add CarrierRoute TE feature
+32	29fe398	0.7455	ok	88	bag of 6 seeds
+33	1691e48	0.0000	timeout	120	bag of 10 seeds
+34	81a9992	0.7456	ok	113	bag of 8 seeds
+35	416deb4	0.7458	ok	107	lr 0.025 with 8-bag
+36	d603e41	0.0000	timeout	121	depth 9 with 8-bag lr0.025
+37	fa41baf	0.0000	timeout	120	add Route+TOD combined TE feature
+38	b1538e2	0.7458	ok	101	cache prepare() across bag members in predict_proba
+39	8895e95	0.0000	crash	1	add RouteDOW TE feature
+40	cc78307	0.0000	timeout	122	add RouteDOW TE feature

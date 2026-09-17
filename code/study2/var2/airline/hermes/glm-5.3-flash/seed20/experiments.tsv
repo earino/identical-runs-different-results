@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e81d6b2	0.7141	ok	3	baseline
+2	62d4f24	0.7184	ok	4	target encodings, freq, time feats, 600x8 trees
+3	306d600	0.0000	crash	1	more TE interactions + route stats + 800x8 lr.04
+4	0eff49e	0.7102	ok	6	more TE interactions + route stats + 800x8 lr.04
+5	d0c3b5a	0.7224	ok	5	exp2 feats + origin_hour_te, 800 trees lr.04
+6	5be648c	0.7232	ok	8	deeper slower: 1000x10 lr.03 mcw10
+7	ee06242	0.7240	ok	13	1200x12 lr.02
+8	669758c	0.7244	ok	21	1500x14 lr.015 subsample.85 colsample.7
+9	3f73be8	0.7114	ok	22	add origin|month dest|month dep_min TEs
+10	5a52093	0.7330	ok	20	F set: drop dom_te/month_te/origin_dow/dest_dow/origin|month/dest|month/dep_min_te
+11	340dce6	0.7331	ok	18	TE smoothing 20->60 for route/carrier|hour/origin|hour
+12	15de72b	0.7342	ok	18	drop dow_int/month_int/dom_int/weekend
+13	13e5bf2	0.7339	ok	18	stronger reg: lambda2 alpha.5 gamma.5 colsample_bylevel.8
+14	3dfb66b	0.0000	crash	1	3-model diverse xgb ensemble
+15	69b569a	0.0000	crash	2	3-model diverse xgb ensemble (fixed)
+16	d396a7b	0.7345	ok	40	3-model diverse xgb ensemble (fixed2)
+17	8637d67	0.7347	ok	43	early stopping on eval, ensemble
+18	9b24dee	0.7354	ok	57	add deptime_raw feature
+19	a758415	0.7248	ok	17	lossguided (max_leaves 64/128/256) ensemble
+20	0ee0e41	0.7350	ok	57	monotone increasing constraint on dep_hour/deptime_raw
+21	b6604e3	0.7367	ok	98	5-seed bagging of best config
+22	1916943	0.7366	ok	70	diverse 5-member ensemble (depths 10-14)
+23	6077817	0.7360	ok	115	8-seed bagging, 900 trees fixed (no ES)
+24	d4995ca	0.7379	ok	98	rank-average of 5-seed ensemble
+25	a8de6c8	0.7343	ok	109	add origin|carrier + dest|carrier TEs
+26	9117318	0.0000	crash	2	5-seed bag with per-member subsample/colsample
+27	3214f3d	0.7375	ok	97	5-seed bag, per-member subsample/colsample (fixed)
+28	b48feea	0.0000	timeout	123	ES patience 200, tree cap 2000
+29	61c50bb	0.0000	timeout	124	ES patience 150, cap 1700
+30	70cc2a1	0.7354	ok	99	add month|hour TE
+31	16e7f0d	0.7365	ok	115	add hour_te + distbucket_te
+32	d256881	0.7361	ok	116	swap broken seed123 (ES=23 trees) -> 2024
+33	5f7ae11	0.7397	ok	100	log1p support counts for route/carrier-hour/origin-hour TEs
+34	a94d175	0.7401	ok	108	TE_SMOOTH_HI 60->100 with support counts
+35	93ee75a	0.7412	ok	101	min_child_weight 10->5
+36	03fe72f	0.7412	ok	104	ES patience 150, cap 1500
+37	e3d2bef	0.0000	timeout	123	re-add month_te (smooth 100) + month_n support
+38	5f52197	0.7386	ok	106	4-member ensemble + month_te(smooth100)/month_n
+39	e20902f	0.0000	timeout	123	min_child_weight 5->3
+40	97907e3	0.7385	ok	70	TE_SMOOTH_HI 100->150

@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	4390b93	1789536773	baseline
+01	7e4dc22	1789536887	capacity: 500 trees lr0.05 subsample/colsample 0.8
+02	fcb35b3	1789536905	strong regularization: depth4 mchild20 150 trees
+03	bd7e3e4	1789536920	count/congestion features + dep hour
+04	1d36f58	1789536931	more count keys (dest_hour, carrier_origin) + share ratios
+05	0ab8e86	1789536939	capacity retest with richer features: depth6 400 trees lr0.05
+06	aca4d10	1789536971	lr0.025 900 trees mcw20 colsample0.7
+07	3855af3	1789537021	3-member diverse xgboost ensemble
+08	28a2529	1789537048	5-member ensemble
+09	f7716c9	1789537086	ordinal + cyclical time features (dep_frac, month/dow sin-cos, day_of_year)
+10	c56bea6	1789537161	structural route network features (ncar_route, route/carrier shares)
+11	2b671c1	1789537216	30-min congestion buckets + arrival-side congestion proxy
+12	9d56fd5	1789537294	rolling local-density congestion features at 15/30/60min + inbound turnaround pressure
+13	16cdacc	1789537347	carrier-bank, route, inbound rolling density windows
+14	bff782a	1789537522	5-minute resolution local density windows
+15	3375394	1789537922	asymmetric trailing/leading bank windows (head vs tail of departure bank)
+16	54beec2	1789537982	back/fwd windows at 15/60min + route and arrival-side asymmetric windows
+17	43e720b	1789538048	5-min asymmetric back/fwd windows at 15/30min
+18	18dece9	1789538128	schedule-gap (headway) features around the flight for origin/carrier/route/arrival
+19	f236ca2	1789538278	retune base: depth7 mcw30 lr0.02 1300 trees colsample0.6
+20	a825cba	1789538473	refresh ensemble members around new base params
+21	4d2594d	1789538573	2-hour asymmetric windows + route 60min windows
+22	7cb4593	1789538788	route and arrival-side 60/120min asymmetric windows
+23	56dd734	1789538912	whole-day back/fwd windows (ladder endpoint)

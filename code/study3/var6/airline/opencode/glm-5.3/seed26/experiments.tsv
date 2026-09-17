@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	bea5201	0.7141	ok	4	baseline
+2	b6757b7	0.0000	crash	2	time features, route cat, 400 trees
+3	577dfda	0.0000	crash	1	time features, route cat, 400 trees
+4	182dda8	0.7082	ok	9	time features, route cat, 400 trees
+5	4d88fd2	0.6990	ok	6	baseline features, 400t d8 lr.07
+6	8fc5c72	0.7142	ok	2	baseline feats, ES on eval, d6 lr.1
+7	f7bfc58	0.7098	ok	3	rich feats (time, route), ES on eval
+8	55c9d9e	0.7184	ok	3	time feats, no route/sin-cos, ES
+9	3013fee	0.7181	ok	3	freq feats (origin/dest/route/carrier counts)
+10	067b057	0.7182	ok	3	reg: mcw20, lambda2, lr.05, ES80
+11	85aa19d	0.7184	ok	6	5-seed XGB ensemble, ES each
+12	278f7d3	0.7089	ok	8	TE: origin/dest/carr/route/hour m=100
+13	92b3153	0.7212	ok	9	diverse ensemble d4-d8 configs
+14	1e177ec	0.0000	crash	8	10-model diverse ensemble
+15	95495d3	0.7221	ok	17	10-model diverse ensemble
+16	06f572d	0.7220	ok	21	holiday proximity feats (ny/j4/tg/xmas)
+17	3a5278e	0.7223	ok	19	max_bin 512, print member AUCs
+18	f28bb53	0.7231	ok	27	12 members, colsample-heavy
+19	425df18	0.7242	ok	34	16-model ensemble
+20	c6076fb	0.7262	ok	34	16 deep members d8-d11
+21	439394c	0.7286	ok	32	12 pure deep members
+22	8ed59d2	0.7302	ok	43	16 members, deeper family
+23	ea85b46	0.7307	ok	44	16 members pruned to leader region
+24	1b3dac5	0.7288	ok	54	add hour_of_week cat (168 lvls)
+25	a5f4179	0.7306	ok	63	24 members, seed pairs
+26	0be17e7	0.0000	crash	49	22 members: lossguide + monotone diversity
+27	33508fc	0.7298	ok	61	22 members: lossguide + monotone diversity
+28	4ba7ecc	0.7307	ok	41	rank-based member averaging
+29	3121c70	0.7299	ok	57	21 members: 16 base + 5 with route
+30	706198a	0.7315	ok	43	16 members cs 0.42-0.6 region
+31	4160fae	0.7318	ok	44	16 members mcw 18-40
+32	4619207	0.7319	ok	46	max_bin 1024
+33	2bb112b	0.7325	ok	46	AUC-weighted blending T=0.0015
+34	16011c1	0.7326	ok	46	blend T=0.001
+35	ea7fb1d	0.7340	ok	50	16 members centered d10-12 mcw20-30
+36	5ba8870	0.7346	ok	53	16 members clone leaders + d13
+37	0ab9a7b	0.7356	ok	57	16 members d11-14, clone d13 leader
+38	b2b9640	0.7358	ok	63	16 members d13-16 sub.88 cs.42-.48
+39	6604b5e	0.7359	ok	66	16 members d14-18 clone d16 leader
+40	9ba2b7a	0.7364	ok	63	16 members d14-17 sweet spot

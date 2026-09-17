@@ -1,0 +1,20 @@
+n	commit	eval_auc	status	seconds	description
+1	d673c53	0.7141	ok	4	baseline
+2	d95215a	0.7078	ok	3	capacity + early stopping
+3	88f04f0	0.7063	ok	2	FE: hour/route/date numerics
+4	c1c384e	0.7201	ok	2	FE + capacity tuned (d4, 100 rounds)
+5	25dbdec	0.7067	ok	2	route cat
+6	4c82a22	0.7222	ok	3	interactions + cyclical + route freq
+7	c7cd151	0.7331	ok	5	deep+colsample regularized model
+8	c7776df	0.7335	ok	17	feature-diverse seed ensemble
+9	7ad883e	0.7387	ok	24	8-model ensemble with full features restored
+10	1f3b642	0.7424	ok	33	d20 ensemble (full5+basic3)
+11	e097243	0.7450	ok	44	d20 ensemble gamma1/lam3/r100
+12	5de8164	0.7473	ok	64	13-member d30 ensemble
+13	6ee8275	0.7479	ok	58	cyctime variant ensemble
+14	bf64e7f	0.7483	ok	65	f6c6 ensemble
+15	5bb3e37	0.7513	ok	86	per-variant css pools + lam2
+16	af049a9	0.7536	ok	94	sizefreq pool
+17	99fcaac	0.7542	ok	99	SF+SFR pool split
+18	78d8172	0.7552	ok	93	fullfreq + sf2 pools
+19	10745b2	0.7576	ok	89	sf3r route-hour freqs

@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	d37a3da	1789502868	baseline
+01	4644da6	1789502920	200 trees
+02	8a9a013	1789503161	lossguide d7 regularized, early stop on eval
+03	3ac102f	1789503433	lossguide d9 leaves127 cs0.3
+04	3ad55f8	1789503748	lossguide d12 leaves255 mb128
+05	059f56f	1789504098	lossguide d15 leaves511 mb64
+06	8c7f11a	1789504408	lossguide d20 leaves511 mb96
+07	159da50	1789504521	add TODbin categorical
+08	a244575	1789504692	TOD 30-min bins
+09	00ddc78	1789505006	retune leaves1023 lr.02 mb128
+10	2b98203	1789505352	3-model seed ensemble
+11	a4248e8	1789505487	add train-frequency count features
+12	309c603	1789505731	2-model ensemble, faster
+13	49abe42	1789505808	pairwise count features
+14	b36ca46	1789505870	route-time counts + shares
+15	2433ecd	1789506241	retune d30 leaves1023 mb256
+16	bf6482c	1789506287	4-seed ensemble
+17	4f0a8db	1789506755	estimated arrival time features
+18	e1acebc	1789507392	3-seed ensemble (runtime margin)
+19	e59492d	1789507529	retune leaves2047 cs0.4 3seed

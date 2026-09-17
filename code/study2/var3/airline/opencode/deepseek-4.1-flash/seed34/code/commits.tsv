@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	a1d107c	1789525762	baseline
+01	dd97db7	1789525851	ordinal calendar features
+02	6a690f5	1789525855	time of day features on ordinal calendar
+03	8e8e7ef	1789525861	frequency encodings
+04	93c2219	1789525871	100 trees
+05	f10c6ac	1789525890	depth 5
+06	59fb464	1789525912	depth 4
+07	bb2edd8	1789525916	depth 3
+08	16303ec	1789525922	depth3 400 trees lr0.05
+09	07214f6	1789525946	ensemble of 5 shallow models
+10	7f057e1	1789525975	airport/carrier hour congestion freq
+11	7169372	1789526001	calendar cyclical
+12	822dfdc	1789526034	ensemble of 8
+13	5694173	1789526183	hour categorical
+14	6f31ce9	1789526351	ensemble 12
+15	c60ce18	1789526411	congestion ratios

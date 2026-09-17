@@ -1,0 +1,180 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 19,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:57:44+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s19-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T23:26:23+00:00",
+  "wall_seconds": 1718.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3708.5,
+  "endpoint_at_end": "ok",
+  "head": "7a10df8",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7479,
+  "final_eval_auc": 0.7479,
+  "holdout_auc": 0.7497131786340001,
+  "holdout_ap": 0.7407619301370145,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03494242689800009,
+  "generalization_gap": -0.001813178634000101,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9346669,
+    "tokens_in_uncached": 9346669,
+    "tokens_in_cached": 0,
+    "tokens_out": 63408,
+    "turns": null,
+    "api_calls": 132,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3483.5,
+  "cpu_seconds_counted": 3244.3,
+  "cpu_seconds_uncounted": 1.2,
+  "cpu_seconds_exempt": 238.0,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 149,
+  "fits_counted": 140,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "0687d57",
+      "message": "baseline"
+    },
+    {
+      "commit": "fb6f191",
+      "message": "model: shallow + regularized (600x4, mcw20, lambda5)"
+    },
+    {
+      "commit": "4f14ec1",
+      "message": "features: log traffic-volume counts for airport/route/hour group keys"
+    },
+    {
+      "commit": "ebd4bf0",
+      "message": "features: out-of-fold target-rate encodings on top of counts"
+    },
+    {
+      "commit": "b80619e",
+      "message": "features: add route-hour, origin-month, carrier-origin group keys"
+    },
+    {
+      "commit": "a855732",
+      "message": "model: lr 0.02 with 1500 trees"
+    },
+    {
+      "commit": "340808a",
+      "message": "features: share-of-parent-traffic congestion ratios"
+    },
+    {
+      "commit": "a295e02",
+      "message": "model: 5-seed XGBoost ensemble"
+    },
+    {
+      "commit": "769e003",
+      "message": "ablation: drop raw Origin/Dest categoricals"
+    },
+    {
+      "commit": "7785a67",
+      "message": "ablation: also drop raw UniqueCarrier"
+    },
+    {
+      "commit": "09ed162",
+      "message": "ablation: also drop DayofMonth"
+    },
+    {
+      "commit": "3b756a7",
+      "message": "ensemble: 5 diverse members (depth 3-5, varied reg)"
+    },
+    {
+      "commit": "3854df3",
+      "message": "features: 30-minute time-bin rate keys"
+    },
+    {
+      "commit": "266d29b",
+      "message": "features: dest/carrier x 30-min bin keys"
+    },
+    {
+      "commit": "41fc5b6",
+      "message": "features: 15-minute time-bin keys"
+    },
+    {
+      "commit": "d5944f0",
+      "message": "features: 10/5-minute global bins + carrier x 15min"
+    },
+    {
+      "commit": "95d9ba2",
+      "message": "features: ordinal month/dow/day-of-year"
+    },
+    {
+      "commit": "987088c",
+      "message": "features: duration + arrival-time proxy"
+    },
+    {
+      "commit": "9437dd4",
+      "message": "TE: smoothing 60"
+    },
+    {
+      "commit": "c0af5f7",
+      "message": "ensemble: 9 diverse members"
+    },
+    {
+      "commit": "7a10df8",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3245.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 225.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c0af5f7",
+  "best_commit_eval_auc": 0.7479,
+  "best_commit_holdout_auc": 0.7497131786340001,
+  "best_commit_holdout_ap": 0.7407619301370145,
+  "best_commit_error": null,
+  "finalized_best": true
+}

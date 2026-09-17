@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	1eb5e79	0.7141	ok	3	baseline
+2	6e448ee	0.7084	ok	4	early stopping, lr .05 depth 8, 2000 rounds
+3	d006ba2	0.0000	crash	1	FE: hour/minute/sin/cos + route; depth 6 lr .05 es100
+4	d97fd33	0.7043	ok	7	FE: hour/minute/sin/cos + route; depth 6 lr .05 es100
+5	7d1d96e	0.7183	ok	3	wrapped hour + mono dep_h + mb512, lr.02 n450 d4
+6	b14757d	0.7302	ok	11	alpha5 d10 cs0.6 n700 lr.02
+7	cd8b9a3	0.7368	ok	23	a3 d14 cs0.4 n700 lr.02
+8	f562ec5	0.7403	ok	27	a3 d30 cs0.3 n700 mono off
+9	2b8311e	0.7468	ok	69	carr/orig/dest x hour + carr x dist codes
+10	36d7512	0.7465	ok	114	2-seed ensemble (cs<1 diversity), n600
+11	cf79f97	0.7500	ok	74	max_cat_to_onehot=100
+12	738531e	0.7465	ok	56	alpha5 with onehot=100
+13	06f212d	0.7501	ok	60	mcw=3 with onehot=100
+14	5fe26f3	0.7498	ok	52	mcw=6 with onehot=100
+15	c8e49ba	0.7495	ok	75	n900 with onehot=100 mcw3
+16	76ae388	0.7509	ok	80	add orig/dest 2h-bin codes
+17	fe092af	0.7497	ok	80	add carr_hour2 code

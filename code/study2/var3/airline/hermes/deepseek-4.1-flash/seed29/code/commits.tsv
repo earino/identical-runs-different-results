@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	29b50a0	1789498953	baseline
+01	830bd26	1789499088	shallow trees: depth4 150 trees lr.1 subsample
+02	fca57c6	1789499093	depth4 400 trees lr.05
+03	adb3442	1789499170	5-seed bagged ensemble of depth4/400-tree models
+04	ec5a74c	1789499190	heterogeneous 8-member bag (depths 3-6)
+05	33a1a5d	1789499273	drop unstable DayofMonth from 8-member bag
+06	8c01c62	1789499290	also drop Month
+07	d0c8f82	1789499316	add dep_hour/dep_min to new best feature set
+08	65040c1	1789499334	add congestion/schedule count features
+09	f324e82	1789499508	fraction-of-day-departures-already-left per origin
+10	d1dc408	1789499671	add 4 lossguide members to the bag
+11	12b9851	1789499697	16 members: depthwise + 8 lossguide variants
+12	a25a179	1789499993	arrival-hour congestion on best bag
+13	40425aa	1789500097	destination turnaround congestion at arrival hour
+14	64685f4	1789500143	fraction-of-day arrivals already landed at destination

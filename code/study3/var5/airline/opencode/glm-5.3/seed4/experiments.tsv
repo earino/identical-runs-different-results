@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5327eb7	0.7141	ok	3	baseline
+2	4a3c059	0.7063	ok	5	FE overhaul + 400 trees
+3	e6dbce9	0.7088	ok	1	FE + 30 trees
+4	fb9f6b8	0.7171	ok	1	FE-lite + 30 trees
+5	8ae8cba	0.7063	ok	3	FE-lite + 300 trees
+6	85613a6	0.7177	ok	2	FE-lite + 60 trees
+7	452703f	0.7146	ok	2	FE-lite + 100 trees
+8	57cba34	0.0000	crash	1	OOF TE features
+9	b1db2eb	0.7176	ok	2	OOF TE features (fixed)
+10	df1bce5	0.7180	ok	3	bagged ensemble 5x60
+11	7e4e7cf	0.7186	ok	5	bagged ensemble 10x60
+12	bcf668a	0.7221	ok	4	10x60 bag + colsample 0.7
+13	d5800cc	0.7238	ok	4	10x60 bag + colsample 0.5
+14	184a026	0.7225	ok	4	10x60 bag + colsample 0.35
+15	7b7367a	0.7244	ok	7	10x100 bag + colsample 0.5
+16	3ae686b	0.7245	ok	9	15x100 bag + colsample 0.5
+17	478abaa	0.7243	ok	10	15x100 bag + colsample 0.5 + subsample 0.7
+18	3815b27	0.7245	ok	16	15x200 lr0.05 bag
+19	3d4abce	0.7279	ok	8	15x60 d8 bag
+20	367dbff	0.7328	ok	13	15x60 d10 bag
+21	6530a49	0.7376	ok	20	15x60 d12 bag
+22	342c830	0.7419	ok	31	15x60 d14 bag
+23	f3f0e91	0.7447	ok	45	15x60 d16 bag
+24	a61c57e	0.7465	ok	55	15x60 d18 bag
+25	4c59b4f	0.7475	ok	69	15x60 d20 bag
+26	51c2942	0.7480	ok	89	20x60 d20 bag
+27	721681b	0.7483	ok	47	20x30 d20 bag
+28	80ddaff	0.7486	ok	72	30x30 d20 bag
+29	34de72b	0.7455	ok	91	30x30 d20 bag + TE
+30	45dd572	0.7429	ok	78	30x30 d20 bag + Yday/weekend
+31	687dfd5	0.7488	ok	80	30x30 d22 bag
+32	a7fd5a8	0.7395	ok	25	30x30 d22 mcw10
+33	4d74c3e	0.7466	ok	62	30x30 d22 bag_frac 0.6
+34	a0e8a3c	0.7481	ok	66	30x30 d22 + colsample_bylevel 0.7
+35	a47e425	0.7510	ok	94	30x30 d22 + freq enc
+36	e6683d5	0.7511	ok	99	36x25 d22 + freq
+37	fa5efb0	0.7499	ok	88	50x15 d22 + freq
+38	2b99126	0.7514	ok	103	36x25 d24 + freq
+39	edb72ac	0.7512	ok	102	36x25 d26 + freq
+40	4ef17f7	0.7458	ok	100	44x25 d24 max_bin64

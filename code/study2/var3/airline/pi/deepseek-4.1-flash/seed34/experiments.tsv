@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	711bf0a	0.7141	ok	5	baseline
+2	1d1e145	0.6999	ok	7	stronger xgb: 600 trees depth8 lr0.05
+3	9b351cd	0.7125	ok	1	100 trees depth6 lr0.1
+4	c983efb	0.7150	ok	1	30 trees depth4
+5	9a132b2	0.7119	ok	1	30 trees depth3
+6	014204f	0.7160	ok	2	80 trees depth4
+7	2b8a7ee	0.7147	ok	2	200 trees depth4
+8	111bbbf	0.7035	ok	2	dep time feats + route cat
+9	7a8b19f	0.7155	ok	2	time features only
+10	3557518	0.7160	ok	1	OOF route TE + freq counts
+11	6e7a2bb	0.7165	ok	3	OOF TE set: route,carrier,origin,dest,carrier_hour,origin_hour
+12	abb6cdf	0.7159	ok	2	depth5 150 lr0.06 TE feats
+13	2d47324	0.7170	ok	3	250 trees depth4 lr0.04 sub0.8 TE
+14	cad2f79	0.7167	ok	5	600 trees depth4 lr0.02 TE
+15	e81e564	0.7141	ok	3	no native O/D/C cats, TE only
+16	e25fee6	0.7180	ok	3	colsample0.7 mcw10 TE
+17	582b8c1	0.7180	ok	2	colsample0.6 mcw10 TE
+18	926fa5f	0.7179	ok	3	colsample0.7 mcw20 TE
+19	8b4560b	0.7199	ok	3	add dest_hour TE
+20	6d25b8e	0.7268	ok	3	add route_hour TE
+21	1f5afbe	0.7271	ok	3	add route_month TE
+22	80079ce	0.7264	ok	4	SMOOTH 8
+23	b74dfe3	0.7270	ok	3	add route_dow TE
+24	fb3907d	0.7268	ok	4	depth5 full TE set
+25	4cabbc2	0.7263	ok	4	add month_hour + dow_hour TE
+26	a2b986d	0.7272	ok	4	add carrier_origin + carrier_dest TE
+27	e65d8c3	0.7275	ok	4	500 trees lr0.03 TE set
+28	3f51bb2	0.7272	ok	6	800 trees lr0.02 TE set
+29	755320d	0.7280	ok	5	colsample0.6 mcw20 500/0.03
+30	cdddd32	0.7284	ok	5	colsample0.5 mcw30 500/0.03
+31	b84271d	0.7285	ok	5	colsample0.4 mcw50
+32	1776526	0.7293	ok	5	add TE support counts
+33	a1984cc	0.7297	ok	9	3-seed XGB ensemble
+34	ba708c7	0.7296	ok	9	add hour-deviation TE features
+35	bf0f651	0.7281	ok	11	hierarchical hour TE smoothing
+36	254cdec	0.7293	ok	17	10-fold OOF TE
+37	1be0dc1	0.7296	ok	12	diverse 4-model ensemble
+38	c9f7d7c	0.7315	ok	10	count ratios + doy
+39	f2fe2ba	0.7313	ok	10	more count ratios
+40	6a41c4c	0.7316	ok	13	5-seed ensemble

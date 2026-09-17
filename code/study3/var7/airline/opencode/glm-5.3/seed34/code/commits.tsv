@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	86ab46d	1789616564	baseline
+01	7da848a	1789619784	tod/doy FE + d4/150t
+02	f311883	1789620433	L1 regime: alpha10 d8 300t + harm/hod/dist_hh FE
+03	d5ab09c	1789622002	6-model ensemble incl TE member (col7 L1 deep)
+04	2cbea55	1789623289	ens10: TE members + harm6 + clean OOF plumbing
+05	62c3dfb	1789624503	congestion counts (half-hour bins) for all members
+06	b5596a7	1789626934	single big model: TE harm6 d12 n2000 lr0.015 mcw1 + congestion
+07	4423f9d	1789627807	champion: harm9 + reg_alpha 5 at mcw1

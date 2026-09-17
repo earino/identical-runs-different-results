@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	19ccee4	1789517104	baseline
+01	8c079a5	1789517210	fe without route/freq: time+calendar numerics, carrier/origin/dest cats
+02	fb494d8	1789517219	200 trees lr0.05 d6 with regularization on best fe
+03	1e3934e	1789517237	depth 8 (re-apply)
+04	367241f	1789517245	depth 10
+05	5713010	1789517278	smoothed target encodings (carrier/origin/dest/hour) with OOF train values
+06	511267a	1789517350	lossguide 256 leaves
+07	e09219b	1789517365	lossguide 512 leaves
+08	f810902	1789517387	lossguide 1024 leaves
+09	ee4b446	1789517512	3-seed ensemble average
+10	1cb31eb	1789517576	heterogeneous 3-model ensemble (lossguide1024 / depth12 / lossguide512)
+11	e400794	1789517624	4-model heterogeneous ensemble (+lg2048)
+12	01f153f	1789517711	5-model ensemble with feature-subset diversity
+13	2d1123f	1789517782	7-model ensemble
+14	0e84601	1789517865	fe: traffic-volume counts (carrier/origin/dest/origin-hour)
+15	773c485	1789517968	fe: hour sin/cos + route volume
+16	817b69a	1789518192	fe: route share, origin-hour share of origin traffic
+17	344e8fe	1789518470	recency sample weights by month
+18	f72ec9b	1789518629	te: carrier-origin, carrier-dest
+19	a9887dc	1789518817	max_cat_threshold=128
+20	20cd329	1789518909	max_cat_threshold=256
+21	1c2207d	1789519003	strengthen weak member (lg1024x250 lr.045)

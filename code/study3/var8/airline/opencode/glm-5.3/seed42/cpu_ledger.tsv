@@ -1,0 +1,59 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789589348	162	4.478	counted	exit	3.2	1	train.py
+1789589362	210	1.481	uncounted	exit	0.8	0	-c
+1789589385	311	18.128	counted	exit	5.2	1	train.py
+1789589421	389	1.722	uncounted	exit	1.0	0	/cell/harness_state/tmp/opencode/sweep1.py
+1789589433	432	22.002	uncounted	exit	6.4	7	/cell/harness_state/tmp/opencode/sweep1.py
+1789589455	477	45.007	uncounted	exit	12.9	12	/cell/harness_state/tmp/opencode/sweep1.py
+1789589478	524	2.668	uncounted	exit	2.0	0	/cell/harness_state/tmp/opencode/diag1.py
+1789589514	566	60.530	uncounted	exit	16.4	24	/cell/harness_state/tmp/opencode/sweep2.py
+1789589539	616	22.653	uncounted	exit	6.8	14	/cell/harness_state/tmp/opencode/sweep3.py
+1789589573	662	54.412	uncounted	exit	19.4	24	/cell/harness_state/tmp/opencode/sweep4.py
+1789589606	711	26.466	uncounted	exit	9.0	16	/cell/harness_state/tmp/opencode/sweep5.py
+1789589637	777	3.007	counted	exit	1.4	1	train.py
+1789589653	834	18.515	uncounted	exit	7.7	5	/cell/harness_state/tmp/opencode/sweep6.py
+1789589741	879	182.725	uncounted	exit	75.7	24	/cell/harness_state/tmp/opencode/sweep7.py
+1789589808	931	130.608	uncounted	exit	49.6	9	/cell/harness_state/tmp/opencode/sweep8.py
+1789589863	980	106.782	uncounted	exit	43.0	8	/cell/harness_state/tmp/opencode/sweep9.py
+1789589920	1047	118.555	uncounted	exit	45.0	8	/cell/harness_state/tmp/opencode/sweep10.py
+1789589992	1095	181.792	uncounted	exit	61.0	7	/cell/harness_state/tmp/opencode/sweep11.py
+1789590122	1143	357.201	uncounted	exit	119.9	17	/cell/harness_state/tmp/opencode/sweep12.py
+1789590193	1195	184.682	uncounted	exit	57.9	8	/cell/harness_state/tmp/opencode/sweep13.py
+1789590224	1263	42.815	counted	exit	12.5	2	train.py
+1789590580	1321	1297.317	uncounted	exit	338.3	23	/cell/harness_state/tmp/opencode/sweep14.py
+1789590640	1376	131.907	uncounted	exit	36.8	3	/cell/harness_state/tmp/opencode/sweep15.py
+1789590787	1428	359.539	uncounted	exit	98.0	7	/cell/harness_state/tmp/opencode/sweep15.py
+1789590870	1484	0.036	uncounted	exit	0.0	0	/cell/harness_state/tmp/opencode/sweep16.py
+1789590987	1523	337.423	uncounted	exit	88.7	10	/cell/harness_state/tmp/opencode/sweep16.py
+1789591603	1573	2340.768	uncounted	term	600.1	58	/cell/harness_state/tmp/opencode/sweep17.py
+1789591776	1637	45.428	uncounted	exit	12.7	1	-c
+1789591894	1710	240.883	counted	exit	63.4	6	train.py
+1789592142	1772	848.824	uncounted	exit	219.3	23	/cell/harness_state/tmp/opencode/sweep18.py
+1789592397	1819	906.745	uncounted	exit	235.2	25	/cell/harness_state/tmp/opencode/sweep19.py
+1789592510	1886	335.960	counted	exit	87.9	12	train.py
+1789592754	1947	866.141	uncounted	exit	223.8	26	/cell/harness_state/tmp/opencode/sweep20.py
+1789592967	2037	350.160	counted	exit	91.4	16	train.py
+1789593126	2108	362.094	uncounted	exit	108.4	11	/cell/harness_state/tmp/opencode/sweep21.py
+1789593237	2151	380.479	uncounted	exit	101.8	12	/cell/harness_state/tmp/opencode/sweep22.py
+1789593391	2241	346.411	counted	exit	90.3	16	train.py
+1789593735	2314	500.093	uncounted	exit	129.6	46	/cell/harness_state/tmp/opencode/sweep23.py
+1789593840	2400	347.037	counted	exit	91.2	16	train.py
+1789594021	2488	513.774	uncounted	exit	133.4	22	/cell/harness_state/tmp/opencode/sweep24.py
+1789594054	2522	3.295	uncounted	exit	2.6	0	-c
+1789594244	2554	632.435	uncounted	exit	162.8	0	-c
+1789594343	2611	305.368	uncounted	exit	80.0	0	
+1789594451	2699	378.889	counted	exit	99.3	17	train.py
+1789594538	2742	235.571	uncounted	exit	62.6	8	
+1789594555	2885	0.033	uncounted	exit	0.0	0	-c
+1789594657	2902	383.389	counted	exit	102.0	17	train.py
+1789594911	2957	286.978	uncounted	exit	77.0	9	
+1789595020	3023	379.798	counted	exit	99.1	17	train.py
+1789595136	3068	372.672	uncounted	exit	97.7	46	
+1789595251	3099	391.233	uncounted	exit	103.4	17	
+1789595470	3175	367.637	counted	exit	96.3	14	train.py
+1789595686	3371	0.041	uncounted	exit	0.0	0	-c
+1789595781	3388	365.106	counted	exit	95.3	14	train.py
+1789596035	3477	404.965	counted	exit	106.2	15	train.py
+1789596419	3658	393.851	counted	exit	102.6	14	train.py
+1789596541	3738	401.309	counted	exit	104.8	14	train.py
+1789596677	3818	420.927	exempt	exit	111.4	14	validate.py

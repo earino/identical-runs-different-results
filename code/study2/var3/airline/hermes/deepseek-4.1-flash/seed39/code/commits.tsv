@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	76f6878	1789544352	baseline
+01	a18339f	1789544402	numeric time/calendar features + log dist
+02	0881ad7	1789544408	bigger model: 500 trees depth7 lr.05 subsample
+03	440173b	1789544521	hour categorical + is_weekend flag
+04	c300ff7	1789544543	30-min departure bucket categorical
+05	ef4ca08	1789544551	15-min departure bucket categorical
+06	ea0217d	1789544584	3-model bagged ensemble
+07	193f722	1789544603	5-model bag with depth diversity
+08	228afed	1789544634	7-model bag: depth/lr/lambda diversity
+09	97edf69	1789544665	max_cat_threshold 128
+10	66367a0	1789544751	lossguide growth, 255 leaves
+11	a5e7d82	1789544886	bag with two bounded leaf-wise members
+12	80a87b3	1789544916	3 leaf-wise members at 127 leaves depth10
+13	a37be2f	1789544951	one member at 255 leaves depth12
+14	334e96d	1789545189	max_bin 512
+15	ba0f633	1789545272	estimated arrival time features (tod + distance-derived duration)
+16	b39ba01	1789545377	simplify: drop arrival sin/cos
+17	9e66553	1789545419	grow bag to 8 members
+18	a966e0f	1789545542	add 30-min arrival bucket (multi-scale arrival)
+19	3600251	1789545606	min_child_weight 3

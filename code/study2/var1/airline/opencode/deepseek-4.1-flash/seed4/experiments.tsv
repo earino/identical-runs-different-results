@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	414fc3c	0.7141	ok	3	baseline
+2	465726b	0.7024	ok	6	time features + route + 400 trees
+3	b79cce8	0.7153	ok	3	time features, no route, 400 trees
+4	f8a69a2	0.7139	ok	4	freq encodings
+5	15691d7	0.7147	ok	5	early stopping lr0.03 d6
+6	5bb7249	0.7221	ok	4	drop Month+DayofMonth
+7	810da89	0.7203	ok	3	also drop DayOfWeek
+8	c876e8d	0.7209	ok	4	depth 4
+9	d6f87e5	0.7216	ok	5	reg mcw10 lambda5
+10	06e4e8f	0.7081	ok	3	ablate Origin+Dest
+11	70137b1	0.7209	ok	4	cyclic day-of-year
+12	7258f5c	0.7253	ok	17	6-model ensemble
+13	6cebd46	0.7270	ok	24	OOF target encodings
+14	d6eb27c	0.7271	ok	26	add dow_hour TE
+15	8537b7c	0.7280	ok	46	12-model ensemble
+16	07532f0	0.7279	ok	49	add univariate TEs
+17	703658b	0.7275	ok	46	TE smooth 5
+18	531938e	0.7287	ok	42	TE smooth 20
+19	392c347	0.7289	ok	46	TE smooth 40
+20	1a1a055	0.7341	ok	49	add route_hour TE
+21	2a7bb0b	0.7352	ok	59	add triple TEs
+22	d604db6	0.7379	ok	69	add carrier route TEs
+23	f6874aa	0.7383	ok	73	add more triples
+24	f8813b9	0.7400	ok	64	drop native Origin/Dest cats
+25	4d745c4	0.7404	ok	62	also drop native carrier
+26	6e20556	0.7417	ok	60	add main-effect TEs
+27	e15c1e7	0.7422	ok	68	add carrier-dow/dbin TEs
+28	62a1d4d	0.7424	ok	80	16-model ensemble
+29	c19e23a	0.7412	ok	87	add 4-way/minute TEs
+30	c762122	0.7421	ok	78	regularize ensemble
+31	da7a7f5	0.7459	ok	87	add count features
+32	80020b4	0.7463	ok	91	more count features
+33	7791bb0	0.7455	ok	93	counts for all TEs
+34	d55dd01	0.0000	timeout	120	10-fold OOF TE
+35	00880cc	0.7463	ok	91	logit-average ensemble
+36	71bcd6f	0.7470	ok	96	4 more support counts
+37	11b70b5	0.7467	ok	100	4 more counts
+38	73fc483	0.7468	ok	93	drop native DayOfWeek
+39	3ab8142	0.7466	ok	94	TE smooth 60
+40	9e99a43	0.7468	ok	101	18-model ensemble

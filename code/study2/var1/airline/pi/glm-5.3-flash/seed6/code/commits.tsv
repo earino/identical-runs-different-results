@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	53d4d88	1789513871	baseline
+01	844660e	1789513928	baseline feats + early stopping on internal 90/10 split
+02	f5eed92	1789513939	n_estimators sweep on baseline features
+03	e680d5c	1789513951	FE v1b: time-of-day + cyclical (no Route), n_est=40
+04	4dffc42	1789513956	add Route cat back at n_est=40
+05	4dbf988	1789513965	depth x n_est sweep
+06	2e64445	1789513982	regularizer grid at depth 4
+07	feeb9f5	1789513999	lr sweep at depth 4
+08	5e85892	1789514147	feature-shape ablation: hour_cat, calcats, nodom (fix return cols)
+09	2ea31e4	1789514164	regularization grid on hourcat features
+10	696358f	1789514204	extended reg grid
+11	b55384b	1789514247	n_est x lr re-check at rl10 mcw20 cols0.6
+12	f4cdefd	1789514269	8-model ensemble at strong-reg configs
+13	d63c74a	1789514472	lossguide and max_cat_threshold variants
+14	44d9fc8	1789514499	lossguide leaves x max_bin sweep
+15	9288f2b	1789514585	lossguide higher leaves + lr/cols recheck
+16	70aa489	1789514717	reg recheck at lossguide 192
+17	2a32c85	1789514813	5-member lossguide ensemble
+18	51cfe1c	1789514895	8-member lossguide ensemble + rank-avg compare
+19	01a41ac	1789515239	10-member lossguide ensemble n=450
+20	13af678	1789515361	mixed-family ensemble test (8 lg + 2 hist)
+21	9f92b02	1789515633	ensemble 8lg+2hist on hourcat+carrier_hour
+22	b875980	1789515752	feature-diverse ensemble: 4 lg@hc + 4 lg@ch + 2 hist@ch
+23	8140238	1789516221	fix predict_proba: per-member column sets (validation bug)

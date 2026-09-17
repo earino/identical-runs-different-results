@@ -1,0 +1,28 @@
+n	commit	unix_time	subject
+00	2bf5b3b	1789489570	baseline
+01	aa1b596	1789489647	exp3: time-of-day feats + fixed-round model (no ES), no high-card route cats
+02	cb60e7a	1789489754	exp8: depth 5 (less capacity)
+03	63d8d69	1789489762	exp9: depth 4
+04	ebf87de	1789489784	exp11: 4-model XGBoost ensemble (varied depth/lr/subsample)
+05	baa0b2b	1789489811	exp12: airport-hour traffic share features
+06	49a18aa	1789489834	exp13: global/route/carrier-hour share features
+07	abdbd3a	1789489858	exp14: origin/dest dow-hour share + carrier hub share feats
+08	5248c50	1789489919	exp16: cumulative daily traffic share feats (origin/dest/carrier)
+09	7af89e0	1789489954	exp17: route/carrier-route/dest-carrier share + route cumulative hour share
+10	f61c102	1789489985	exp18: half-hour resolution shares + carrier-at-origin rotation build-up
+11	177c855	1789490021	exp19: carrier 15-min shares, weekday-hour load, hour-busyness ranks
+12	64704e1	1789490048	exp20: 8-model diverse shallow ensemble
+13	eb223d5	1789490090	exp21: arrival-side congestion (est arrival hour from distance)
+14	d8de504	1789490159	exp22: calendar features (day-of-year, holiday travel windows)
+15	9dafdb6	1789490280	exp24: explicit interaction products
+16	7a51765	1789490338	exp25: 12-model ensemble with wider colsample/subsample diversity
+17	75d630f	1789490516	exp27: add leaf-wise members for structural diversity
+18	4dcacc7	1789490647	exp28: minute-bucket schedule shares + route hour rank
+19	ff146bd	1789490869	exp30: dest/carrier minute-bucket shares
+20	8cc878a	1789490985	exp31: trim ensemble rounds for runtime headroom
+21	7da954b	1789491092	exp32: minute-bucket shares at origin/dest/route/carrier-origin levels
+22	14eec65	1789491199	exp33: dow-level and carrier-route minute-bucket shares
+23	bd8c296	1789491307	exp34: explicit minute features (dep_min, minute mod 5/15)
+24	64850e8	1789491669	exp37: 5-minute slot shares at origin/carrier-hour
+25	38e83a3	1789491799	exp38: faster ensemble (13 members, fewer rounds) for timeout headroom
+26	19ce486	1789491921	exp39: system-level month/dow minute and month-hour schedule shares

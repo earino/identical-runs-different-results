@@ -1,0 +1,190 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 24,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T09:35:59+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s24-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T10:22:06+00:00",
+  "wall_seconds": 2766.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8091.2,
+  "endpoint_at_end": "ok",
+  "head": "db52792",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 2,
+  "n_timeout": 4,
+  "best_eval_auc": 0.7486,
+  "final_eval_auc": 0.7486,
+  "holdout_auc": 0.7490491730720001,
+  "holdout_ap": 0.7398373034222001,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03427842133600012,
+  "generalization_gap": -0.0004491730720000975,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6916057,
+    "tokens_in_uncached": 49177,
+    "tokens_in_cached": 6866880,
+    "tokens_out": 50010,
+    "turns": null,
+    "api_calls": 152,
+    "method": "cumulative-max",
+    "cost_usd": 2.0743,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 7984.8,
+  "cpu_seconds_counted": 7533.1,
+  "cpu_seconds_uncounted": 3.4,
+  "cpu_seconds_exempt": 448.3,
+  "python_processes": 51,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 159,
+  "fits_counted": 150,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "dc3a75b",
+      "message": "baseline"
+    },
+    {
+      "commit": "03ca165",
+      "message": "sin/cos hour + deeper forest with ES on eval"
+    },
+    {
+      "commit": "0f3ace1",
+      "message": "fix: parse c-n strings to ints, keep sin/cos hour"
+    },
+    {
+      "commit": "c2c1704",
+      "message": "lr 0.05, 3000 trees"
+    },
+    {
+      "commit": "b75a238",
+      "message": "smoothed target encoding for Origin/Dest/Carrier"
+    },
+    {
+      "commit": "72d92cc",
+      "message": "min_of_day + te_hour + fixed DepTime hour parsing (mod-24)"
+    },
+    {
+      "commit": "ed5613a",
+      "message": "depth 8, lr 0.03"
+    },
+    {
+      "commit": "54e1122",
+      "message": "interaction TEs: (Origin,Dest) x hour, route, carrier x hour"
+    },
+    {
+      "commit": "0eba285",
+      "message": "OOF target encoding for all TE features"
+    },
+    {
+      "commit": "30ca7e1",
+      "message": "OOF TEs, simple keys only (ablation)"
+    },
+    {
+      "commit": "9206134",
+      "message": "depth 10"
+    },
+    {
+      "commit": "c6efcee",
+      "message": "depth 12, lr 0.02"
+    },
+    {
+      "commit": "86f98ac",
+      "message": "depth 14"
+    },
+    {
+      "commit": "e9eeddb",
+      "message": "depth 16"
+    },
+    {
+      "commit": "8d3218e",
+      "message": "depth 20"
+    },
+    {
+      "commit": "b262c4c",
+      "message": "depth 24"
+    },
+    {
+      "commit": "1721f75",
+      "message": "bagged ensemble of 5 deep XGB models"
+    },
+    {
+      "commit": "0472b89",
+      "message": "less regularization: mcw 1, lambda 0.5"
+    },
+    {
+      "commit": "c050ddf",
+      "message": "lr 0.04 for runtime headroom (fixed ordering)"
+    },
+    {
+      "commit": "93952ce",
+      "message": "lr 0.04, 7 members"
+    },
+    {
+      "commit": "9edcb01",
+      "message": "9 members"
+    },
+    {
+      "commit": "689d29f",
+      "message": "colsample 0.6 for feature diversity"
+    },
+    {
+      "commit": "db52792",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7536.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 106.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "689d29f",
+  "best_commit_eval_auc": 0.7486,
+  "best_commit_holdout_auc": 0.7490491730720001,
+  "best_commit_holdout_ap": 0.7398373034222001,
+  "best_commit_error": null,
+  "finalized_best": true
+}

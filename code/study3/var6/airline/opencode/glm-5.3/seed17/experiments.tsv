@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	6b8ba39	0.7141	ok	3	baseline
+2	cb4b8c2	0.7089	ok	2	FE v1: hour/minute, numeric dates, route cat
+3	df9e9af	0.7050	ok	3	FE v1 + capacity: ES depth8 lr0.1
+4	0190ba6	0.7180	ok	4	capacity fix: shallow trees, low lr, col/sub sampling, ES
+5	7976254	0.7198	ok	8	hour_cat feature
+6	7e08456	0.7216	ok	25	seed-ensemble full retrain @ best_iter
+7	c8a0dee	0.7318	ok	29	carrier_hour joint cat
+8	e9b6204	0.7402	ok	42	depth 9 with carrier_hour
+9	31c2a57	0.7440	ok	49	slot30 cat
+10	13bd4fb	0.7455	ok	39	slot30+tod15 slots, d8
+11	5bc322f	0.7457	ok	60	5-seed average
+12	a8f3dfb	0.7468	ok	55	col_bylevel 0.7

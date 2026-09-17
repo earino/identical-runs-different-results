@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	982160c	0.7141	ok	4	baseline
+2	8b57048	0.7085	ok	4	FE v1: cyclical + route + ES on train split
+3	9565135	0.6904	ok	10	baseline cats + route + dep-time, 600 rounds no ES
+4	308d430	0.7145	ok	5	sweep rounds{20,30,40,60} x route{on,off}
+5	55913f5	0.7145	ok	6	TE numerics carrier/origin/dest/route/hour k=100
+6	229620c	0.7163	ok	11	config sweep + seed ensembles
+7	766c5b9	0.7186	ok	18	sweep bagged low-lr variants
+8	2acd0cc	0.7220	ok	25	deep+bagged sweep, ens5
+9	fa985d3	0.7247	ok	40	d10 anchor sweep: d12/sub40/mcw30/ens3
+10	9527d9a	0.7270	ok	35	sub.4col.4 d10 anchor: d12/r600/ens3
+11	68b17cb	0.7287	ok	52	d12 bagged anchor: r600/lossguide/ens3
+12	b8e3ddb	0.7287	ok	113	mixed diverse ensemble of 6 configs
+13	003d2bd	0.7316	ok	59	volume features (origin/dest/route/carrier/hour counts)
+14	5c12afe	0.7332	ok	72	extended vol features, lossguide 128/256/512
+15	03fcc26	0.7332	ok	99	lossguide leaves 512/1024/1536
+16	bd70d31	0.7341	ok	72	plain-vol vs ext-vol at lg512, r900
+17	f52abcc	0.7346	ok	118	plain-vol vs ext-vol, r900, sub5col5
+18	2c47a83	0.7356	ok	98	ens3 seeds, plain-vol lg512 r600
+19	93431e5	0.7346	ok	90	doy seasonality + carrier share features
+20	727d532	0.0000	crash	90	diverse ensemble members + subset pick
+21	21f5c91	0.0000	crash	90	diverse ensemble members + subset pick
+22	a1f7a20	0.7358	ok	100	diverse strong-member ensemble
+23	fde062b	0.7369	ok	112	members mcw5/r900/lambda5 + subsets
+24	08fb84f	0.7383	ok	107	members mcw3/mcw1/r900-mcw5
+25	9d7ad9d	0.7409	ok	110	members mcw0/mcw1-seed/lg1024-mcw1
+26	183a9e3	0.7436	ok	108	leaves 768/1536 at mcw1
+27	df727be	0.7450	ok	90	leaves 2048 at mcw1
+28	5f6b5eb	0.7452	ok	106	leaves 2560 at mcw1
+29	e78eb5b	0.7450	ok	119	lg2048 round curve diag
+30	1b3506f	0.7457	ok	92	subsample 0.5 at lg2048
+31	e49abf3	0.7398	ok	100	sub.6 col.5 at lg2048
+32	c94cce0	0.7453	ok	101	colsample_bynode 0.8 probe
+33	d725a11	0.7466	ok	111	leaves 2560 at sub.5
+34	d19b154	0.7471	ok	109	mcw 0.5 at sub.5 lg2560
+35	0bafe9c	0.7470	ok	106	mcw 0.25 at sub.5 lg2560
+36	7e355ff	0.7434	ok	111	dow-volume features
+37	545a655	0.7374	ok	108	prune dep_raw/sin/cos
+38	6bb49be	0.7485	ok	108	more time-of-day encodings
+39	dfd18bf	0.7514	ok	117	6h/4h cyclic time features
+40	41b73ca	0.7516	ok	109	8h cyclic time features

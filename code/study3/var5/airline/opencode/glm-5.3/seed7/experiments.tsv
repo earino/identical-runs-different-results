@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9048723	0.7141	ok	4	baseline
+2	5d02dc2	0.7118	ok	2	scale up trees + early stopping
+3	3501c16	0.7137	ok	1	time-of-day features (dep_min, sin/cos, calendar ints)
+4	6434fb9	0.7150	ok	4	regularized ensemble 400 trees
+5	8a92fa6	0.7066	ok	4	target encodings (hour/carrier/origin/dest/route)
+6	563f711	0.7162	ok	12	5-seed ensemble
+7	76699fc	0.7147	ok	14	depth 6 in ensemble
+8	b5f35dd	0.7156	ok	14	depth 4, 600 trees
+9	3edba6b	0.7153	ok	22	lr 0.03 x 800 trees
+10	8047adb	0.7164	ok	13	min_child_weight 50
+11	418152f	0.7164	ok	11	mcw 50 kept
+12	d8e7d22	0.7154	ok	12	te_hour only
+13	797485c	0.7163	ok	22	10-seed ensemble
+14	bcd5062	0.5000	ok	90	rank:pairwise objective
+15	8d7a9c4	0.7174	ok	11	drop DayofMonth
+16	bdaa7b8	0.7195	ok	11	drop Month categorical
+17	f4aff3e	0.7177	ok	11	drop DayOfWeek categorical
+18	1fe4541	0.7184	ok	10	drop raw DepTime
+19	985d501	0.7175	ok	10	drop dep sin/cos
+20	1a4f209	0.7030	ok	15	route categorical
+21	ddc2aeb	0.7188	ok	11	mcw 100
+22	9a580d0	0.7198	ok	12	reg_lambda 10
+23	6f0f5b9	0.7209	ok	11	density features
+24	fe7701a	0.7217	ok	12	extended density features
+25	642ca18	0.7224	ok	15	depth 6 retry with density
+26	f9888d1	0.7231	ok	17	depth 7
+27	fb88a80	0.7220	ok	17	depth 8 mcw 100
+28	9bfc0e1	0.7221	ok	25	600 trees
+29	b9140c6	0.7233	ok	17	reg_lambda 20
+30	7e90910	0.7225	ok	17	drop Distance
+31	5607ca4	0.7239	ok	24	diverse colsample ensemble
+32	c1382c0	0.7229	ok	21	max_bin 64
+33	84a3288	0.7235	ok	24	monotone dep_min constraint
+34	9a64caf	0.7239	ok	26	diverse 8-member ensemble
+35	75137e8	0.7237	ok	24	gamma 1.0
+36	a3f5760	0.7248	ok	23	colsample_bynode 0.6
+37	2a082aa	0.7264	ok	24	reg_alpha 1.0
+38	6b4b07d	0.7291	ok	24	reg_alpha 3.0
+39	f2c5eb2	0.7312	ok	23	reg_alpha 6.0
+40	6406a26	0.7308	ok	21	reg_alpha 12.0

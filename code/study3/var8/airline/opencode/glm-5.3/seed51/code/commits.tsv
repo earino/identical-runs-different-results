@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	6497aaa	1789638606	baseline
+01	0934b3e	1789638701	FE v2: time features only (no route), ES(AUC)
+02	67d0ed2	1789638762	lr 0.05, up to 4000 rounds, patience 150
+03	f315f83	1789638780	lr 0.02, up to 8000 rounds, patience 300
+04	ec34ec6	1789638844	depth 4 at lr 0.02
+05	3ae711b	1789638885	interaction TEs (origin/dest/carrier x 3h bin) + route_count + log_dist
+06	07c0b27	1789638978	3-model ensemble (depth/lr/seed diversity), mean of probas
+07	af6692e	1789639029	5-member ensemble: add d3/lr.02 and d4/lr.05+sampling
+08	be22376	1789639230	add hb_dow TE + day-of-year
+09	d307344	1789639583	10-fold OOF TE
+10	fc6467e	1789639671	max_bin=512
+11	3551fc4	1789640527	hourly origin/dest TEs m=50
+12	249edc9	1789640611	carrier_hr + hr_dow TEs m=50
+13	2d49b20	1789640968	hourly TE m=30

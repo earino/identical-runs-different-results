@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	59e2cd0	1789490358	baseline
+01	24db9e9	1789490443	fe: calendar ints + hour/minute, baseline model
+02	b9d44d3	1789490666	regularized deep: 300x8 lr.02 mcw50 lambda10 s/c.8
+03	8dbab2b	1789490869	600x8 lr.01 mcw30 col.45
+04	a94858f	1789491466	schedule-density (congestion) features + 600x16 lr.01 mcw20
+05	bfd3779	1789493213	carrier-airport/time counts + deep mcw1 model
+06	21172d6	1789493913	queue-position rank features (airport/route-hour)
+07	bb64a0f	1789494738	carrier-airport-hour density + rank features
+08	b31d79d	1789495175	sliding-window (60/120min) density features
+09	7447402	1789495674	colsample .35
+10	afe1f22	1789495764	more window scales + carrier-hour rank
+11	b7e2915	1789495991	colsample .3
+12	f5500ac	1789496063	colsample .25
+13	d859053	1789496204	subsample .8 at col.25
+14	58e86b1	1789496694	reg_lambda 2

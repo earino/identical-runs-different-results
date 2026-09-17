@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	f95a5b2	1789525866	baseline
+01	f28b247	1789525917	exp2: lr 0.05, 2000 trees, early stopping on eval
+02	51a34e8	1789525939	exp3: feature eng v1 (deptime cyclic, date cyclic, route, log dist)
+03	516dfe1	1789526335	exp4: OOF TE route+carrier-hour, d8 lr.03 sc.7 lam10
+04	63161b9	1789526776	exp5: 5-model seed/depth ensemble, mcw5
+05	dbd96b1	1789526948	exp6: ensemble colsample 0.4
+06	ee4b169	1789528062	exp7: log-frequency features for carrier/origin/dest/route
+07	05512a4	1789528215	exp8: DepTimeRaw + early stopping on AUC
+08	58ee846	1789528684	exp9: 2nd harmonic DepTime cyclic
+09	7023c0d	1789528856	exp10: 6-member depth-diverse ensemble
+10	9d69f17	1789528962	exp11: per-member OOF TE fold seeds
+11	525c776	1789529708	exp12: 5-view feature-group-diverse ensemble, ES 200
+12	8cc2728	1789530052	exp15: 2nd seed for noDateCat view
+13	9a151e4	1789530283	exp17: lr 0.02 for noFreq member
+14	d5c23a0	1789530393	exp18: subsample 0.9 for teOnly member
+15	e53576a	1789530507	exp19: month recency sample weights

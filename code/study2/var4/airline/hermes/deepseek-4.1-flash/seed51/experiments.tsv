@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4390b93	0.7141	ok	4	baseline
+2	4b4f07a	0.7130	ok	9	time feats + ordinal + route cat, 600 trees
+3	0b2ed2b	0.7076	ok	5	target+frequency encodings, dep hour/min
+4	7e4dc22	0.7098	ok	3	capacity 500 trees lr0.05, subsample/colsample
+5	fcb35b3	0.7148	ok	1	regularized depth4 mcw20 150 trees
+6	bd7e3e4	0.7172	ok	2	count features (route/origin/dest/hour) + dep hour
+7	1d36f58	0.7175	ok	3	extra count keys + share ratios
+8	0ab8e86	0.7199	ok	5	capacity retest depth6 400trees lr0.05
+9	6a5c278	0.7144	ok	8	cat interactions route/carrier_origin/origin_hour
+10	aca4d10	0.7223	ok	8	lr0.025 900 trees mcw20 colsample0.7
+11	211e42f	0.7222	ok	12	lr0.015 1600 trees
+12	889972e	0.7222	ok	9	depth7 mcw40 lr0.025 900 trees
+13	3855af3	0.7232	ok	20	3-member diverse ensemble
+14	28a2529	0.7249	ok	30	5-member diverse ensemble
+15	f7716c9	0.7269	ok	34	ordinal+cyclical time features
+16	c56bea6	0.7270	ok	33	structural route network features
+17	2b671c1	0.7379	ok	38	30min congestion buckets + arrival congestion
+18	9d56fd5	0.7395	ok	37	rolling density windows + inbound pressure
+19	16cdacc	0.7420	ok	36	carrier-bank/route/inbound rolling density
+20	06ca3ab	0.7406	ok	44	cumulative day-pressure features
+21	bff782a	0.7426	ok	41	5-min resolution density windows
+22	0f7cf96	0.7424	ok	47	max_bin 512
+23	57478d5	0.7420	ok	42	5-min arrival-side density windows
+24	2872511	0.7426	ok	75	9-member diverse ensemble
+25	0f2f571	0.7403	ok	43	burstiness/load ratios
+26	f25e32d	0.7404	ok	42	monotone constraints on time/congestion
+27	3375394	0.7477	ok	46	asymmetric back/fwd bank windows
+28	54beec2	0.7533	ok	51	back/fwd at 15/60min + route/arrival asym
+29	43e720b	0.7539	ok	56	5-min asymmetric back/fwd windows
+30	18dece9	0.7542	ok	57	schedule-gap headway features
+31	a0b8ea5	0.7521	ok	60	exact slot counts + decay pressure
+32	f236ca2	0.7548	ok	75	retune base depth7/lr0.02/colsample0.6
+33	c987d6c	0.7541	ok	80	airport/route monthly volume features
+34	a825cba	0.7550	ok	87	ensemble members refreshed for new base
+35	4d2594d	0.7588	ok	91	2-hour asymmetric windows
+36	c5b28d4	0.7588	ok	92	3-4 hour asymmetric windows
+37	7cb4593	0.7599	ok	93	route/arrival 60-120min windows
+38	56dd734	0.7600	ok	91	whole-day back/fwd windows
+39	3a6ca56	0.0000	timeout	120	7-member ensemble
+40	8b7162a	0.7600	ok	103	final lr0.0175/1500 trees

@@ -1,0 +1,208 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 26,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:45:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s26-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T12:22:20+00:00",
+  "wall_seconds": 2213.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5394.5,
+  "endpoint_at_end": "ok",
+  "head": "98aff47",
+  "n_commits": 27,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7364,
+  "final_eval_auc": 0.7364,
+  "holdout_auc": 0.73702892714,
+  "holdout_ap": 0.7285404848781887,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02225817540399999,
+  "generalization_gap": -0.0006289271399999574,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7783961,
+    "tokens_in_uncached": 121433,
+    "tokens_in_cached": 7662528,
+    "tokens_out": 41146,
+    "turns": null,
+    "api_calls": 143,
+    "method": "sum-of-143-events",
+    "cost_usd": 2.3433,
+    "cached_share": 0.984
+  },
+  "cpu_seconds_python": 5003.3,
+  "cpu_seconds_counted": 4726.7,
+  "cpu_seconds_uncounted": 12.1,
+  "cpu_seconds_exempt": 264.6,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 457,
+  "fits_counted": 441,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "bea5201",
+      "message": "baseline"
+    },
+    {
+      "commit": "182dda8",
+      "message": "time+route features, bigger model"
+    },
+    {
+      "commit": "4d88fd2",
+      "message": "baseline features + bigger model (isolate capacity)"
+    },
+    {
+      "commit": "8fc5c72",
+      "message": "baseline features + early stopping on eval"
+    },
+    {
+      "commit": "f7bfc58",
+      "message": "rich features + ES on eval"
+    },
+    {
+      "commit": "55c9d9e",
+      "message": "drop route + sin/cos, keep time feats"
+    },
+    {
+      "commit": "85aa19d",
+      "message": "5-seed ensemble average"
+    },
+    {
+      "commit": "92b3153",
+      "message": "param-diverse 5-model ensemble"
+    },
+    {
+      "commit": "95495d3",
+      "message": "10-config ensemble"
+    },
+    {
+      "commit": "3a5278e",
+      "message": "max_bin=512 + member diagnostics"
+    },
+    {
+      "commit": "f28bb53",
+      "message": "12 configs focused on colsample-strong region"
+    },
+    {
+      "commit": "425df18",
+      "message": "16 members: 12 strong-family + 4 keepers"
+    },
+    {
+      "commit": "c6076fb",
+      "message": "deep regularized family 12 + 4 keepers"
+    },
+    {
+      "commit": "439394c",
+      "message": "pure 12-member deep family"
+    },
+    {
+      "commit": "8ed59d2",
+      "message": "16 members d9-d12 region"
+    },
+    {
+      "commit": "ea85b46",
+      "message": "prune weak members, clone leaders"
+    },
+    {
+      "commit": "706198a",
+      "message": "tighten family to low-colsample leaders"
+    },
+    {
+      "commit": "4160fae",
+      "message": "family push: mcw 18-40"
+    },
+    {
+      "commit": "4619207",
+      "message": "max_bin 1024"
+    },
+    {
+      "commit": "2bb112b",
+      "message": "softmax AUC-weighted blend"
+    },
+    {
+      "commit": "16011c1",
+      "message": "sharper blend T=0.001"
+    },
+    {
+      "commit": "ea7fb1d",
+      "message": "family centered on best member region"
+    },
+    {
+      "commit": "5ba8870",
+      "message": "clone leaders, extend to d13"
+    },
+    {
+      "commit": "0ab9a7b",
+      "message": "extend family to d14"
+    },
+    {
+      "commit": "b2b9640",
+      "message": "family to d15-16, leader signature"
+    },
+    {
+      "commit": "6604b5e",
+      "message": "family to d17-18"
+    },
+    {
+      "commit": "9ba2b7a",
+      "message": "prune weak, fill d15-17 sweet spot"
+    },
+    {
+      "commit": "98aff47",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4738.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 391.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9ba2b7a",
+  "best_commit_eval_auc": 0.7364,
+  "best_commit_holdout_auc": 0.73702892714,
+  "best_commit_holdout_ap": 0.7285404848781887,
+  "best_commit_error": null,
+  "finalized_best": true
+}

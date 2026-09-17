@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	ea29ef7	1789626943	baseline
+01	dc210f2	1789627023	capacity + early stopping (3000 trees, lr .05, es=50)
+02	63cb03b	1789627071	feature engineering: time/date numerics, route, count+target encodings
+03	ce42e28	1789627105	ablation: drop target encodings
+04	e6c381b	1789627204	baseline features + time-of-day features only
+05	8b68d73	1789627350	baseline features + Route categorical
+06	973b5b1	1789627420	strong regularization: depth4, mcw50, lambda10
+07	685c66a	1789627486	time-based ES validation split (Nov-Dec 2005)
+08	81e24b3	1789627552	full-data retrain at ES round count
+09	2472e49	1789627588	5-fold CV ensemble with per-fold ES, averaged probs
+10	d1a3f48	1789627700	10-seed ensemble of ES recipe
+11	167a2cb	1789627934	drop DayOfMonth (calendar noise across years)
+12	2f2ab30	1789627948	also drop Month
+13	695ad86	1789628081	depth 8
+14	8df3bcf	1789628150	depth 10
+15	fcf68a0	1789628159	depth 12
+16	7045c1f	1789628224	depth 16
+17	0ddb4bb	1789628298	depth 20
+18	4393a1b	1789628316	depth 24
+19	acf0140	1789628360	lr 0.03, es 100
+20	07a4f4a	1789629438	max_bin 512
+21	df801aa	1789629468	max_bin 1024
+22	0c73301	1789630150	depth 32

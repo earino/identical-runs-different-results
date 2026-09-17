@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	0d2638c	1789634797	baseline
+01	a570982	1789634887	FE overhaul: time features, route cat, OOF target encodings, 400 rounds
+02	0b4d464	1789636773	bag5 lossguide512 mcw1 col.8 + dist; drop TEs/route/date feats
+03	c9643d7	1789637374	add reg_alpha=0.5 L1 to bag models
+04	62251b7	1789638178	subspace-diversified bag: drop UniqueCarrier/Dest/dist in 3 of 5 members
+05	98673a9	1789638255	bag of 6: 3 full + 3 feature-dropped members
+06	9db859a	1789638872	colsample_bytree 0.85
+07	90dd44d	1789639139	n_estimators 450
+08	71288f0	1789639534	drop members use colsample_bytree 1.0, fulls keep 0.85

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c20426e	0.7141	ok	2	baseline
+2	379b99e	0.0000	crash	2	stronger model: more trees/depth + early stopping + full refit
+3	5efa6a9	0.7139	ok	4	stronger model: more trees/depth + early stopping + full refit
+4	12998f1	0.7146	ok	6	feat: departure clock features + stronger model
+5	5ae2563	0.0000	crash	1	feat: calendar as ordered ints + day_of_year
+6	120d5bb	0.7186	ok	10	feat: calendar as ordered ints + day_of_year
+7	93d2aca	0.7092	ok	6	feat: route categorical
+8	9f54234	0.7184	ok	7	feat: frequency (hub-size) features
+9	ba99b01	0.6865	ok	12	feat: OOF target encoding
+10	c99ff8e	0.7325	ok	19	feat: carrier x hour, origin x hour
+11	c14c707	0.7272	ok	19	feat: + dest x hour
+12	8da16a4	0.0000	crash	1	feat: + carrier x dow, origin x dow
+13	e298cda	0.7225	ok	8	feat: + carrier x dow, origin x dow
+14	b03f6a7	0.7171	ok	6	ablation: 3h bins for hour interactions
+15	04dd18f	0.7325	ok	18	feat: + origin x carrier
+16	cd7b6c6	0.7357	ok	17	tune: max_depth=10
+17	3ed1421	0.7384	ok	22	tune: max_depth=13
+18	16afa37	0.7377	ok	24	tune: max_depth=16
+19	b334ed2	0.7367	ok	16	tune: min_child_weight=10
+20	5a88d22	0.7361	ok	27	tune: max_cat_threshold=256
+21	b43b4df	0.7395	ok	47	tune: learning_rate=0.02
+22	3127d39	0.7404	ok	43	ablation: fixed 700 rounds, no early stopping
+23	42232f1	0.7406	ok	103	ensemble: 3 seeds x 600 rounds
+24	700ab13	0.7406	ok	81	tune: lr=0.01, 1400 rounds
+25	6759618	0.7385	ok	39	feat: half-hour granularity interactions
+26	bfbc905	0.7335	ok	43	retry: + dest x hour (depth 13)
+27	62a660b	0.7408	ok	42	tune: max_bin=512
+28	c15522d	0.7401	ok	59	tune: grow_policy=lossguide max_leaves=1024
+29	f20ea82	0.7406	ok	67	tune: 1100 rounds
+30	6a403b0	0.7172	ok	45	feat: + origin x month
+31	48b5233	0.7380	ok	37	tune: subsample=0.7
+32	e2b8660	0.7368	ok	41	tune: colsample_bytree=1.0
+33	4323be5	0.7405	ok	42	feat: + hour categorical
+34	f1ca1f0	0.7369	ok	41	feat: + top-500 route categorical
+35	d67107d	0.7401	ok	48	ensemble: 2 seeds x 400 rounds
+36	ee703d7	0.7404	ok	40	ablation: drop day_of_year
+37	709fd74	0.7409	ok	44	tune: max_bin=1024
+38	1fce3f5	0.7337	ok	40	feat: + dest x carrier
+39	e0835e7	0.7239	ok	41	ablation: drop dep_minute + red_eye
+40	8543bce	0.7405	ok	59	tune: lr=0.015, 950 rounds

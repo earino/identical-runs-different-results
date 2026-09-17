@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	fb79117	1789500037	baseline
+01	97099b4	1789500150	baseline feats + time feats + route, modest params, ES on train val
+02	0050809	1789500169	drop route, keep time feats, baseline-ish params
+03	5792378	1789500178	ES on eval set (2006 proxy) instead of train val split
+04	a7a456c	1789500193	two-stage: ES on eval then refit on full train
+05	5a1e861	1789500222	lr.05 depth8 mcw10 sub.8 col.8 ES50
+06	b52c00a	1789500237	5-member diverse ensemble, each ES-on-eval + refit full
+07	8999cb8	1789500299	10 diverse full-data members
+08	44bc35b	1789500359	16 diverse members
+09	62e1806	1789500410	16 members + 8 OOF TE groups
+10	3762113	1789500472	12 TE groups
+11	cf9a1c7	1789500629	24 members, 12 TE groups
+12	cab8d2a	1789500731	feature-subset members: every 3rd on base-only cols
+13	309f414	1789501029	OOF 5-fold linear stacking (6 configs)
+14	74aeebb	1789501101	10-config NNLS stack around col0.5 winner
+15	d19c4bf	1789501228	8-config stack, 4-fold OOF
+16	6d6d912	1789501318	colsample grid of winner config, NNLS stack
+17	57bf306	1789501673	10 configs seed-replicated col 0.4-0.55, 3-fold OOF
+18	b43093a	1789502015	blend stack+mean 50/50
+19	7959075	1789502481	add d9/d10 configs to col grid

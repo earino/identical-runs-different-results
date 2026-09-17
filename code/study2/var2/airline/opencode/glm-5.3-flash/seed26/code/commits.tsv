@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	5cb3085	1789545034	baseline
+01	b5fa858	1789545089	exp3: numeric+cyclical time features, dep_time decompose, log distance, probe-then-refit-full
+02	e59d944	1789545229	exp6: depth9 lr0.05 mcw10 subsample0.8 colsample0.7
+03	ecb8718	1789545249	exp7: depth10 mcw20 subsample0.75 colsample0.6
+04	5d8e44b	1789545293	exp10: 5-seed bag of depth10 config (fixed random_state dup)
+05	c4eb68c	1789545413	exp12: carrier x dep_hour interaction categorical
+06	b8b4791	1789545567	exp16: 10-seed bag
+07	2259fca	1789545874	exp20: carrier x 15-min blocks + prepare-once
+08	1cab752	1789546704	exp27: drop probe, fixed 750 rounds x 10 members
+09	12554ae	1789546899	exp29: 650 rounds
+10	327fe1a	1789546981	exp30: 550 rounds
+11	256ce86	1789547049	exp31: 450 rounds
+12	8cfc38b	1789547150	exp33: 16 members x 450 rounds
+13	fa0e24a	1789547318	exp35: max_bin 512
+14	def9158	1789547594	exp38: colsample 0.65

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	4cf8fa4	1789534150	baseline
+01	58ce4f4	1789534204	FE v1: numeric c-cols, deptime cyclic, ES+refit lr0.05
+02	ef0ac7d	1789534241	ES on eval.csv (2006-matched validation), refit full train
+03	770524c	1789534288	subsample+colsample 0.8
+04	1946d2f	1789534313	lr 0.03
+05	c90997c	1789534332	depth 8
+06	c62d9b5	1789534357	depth 10
+07	58b71ef	1789534391	depth 12
+08	add24de	1789534406	depth 14
+09	fd7aa62	1789534427	depth 16
+10	2b77987	1789534455	depth 18
+11	e40df92	1789534490	depth 20
+12	7a7e80f	1789534539	drop redundant refit (ES model already uses full train)
+13	b538266	1789534663	3-seed ensemble, ES on eval
+14	b50aa58	1789534951	recency sample weights 1..2 by month
+15	829e99c	1789535622	subsample 0.9

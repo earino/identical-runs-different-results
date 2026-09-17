@@ -1,0 +1,38 @@
+n	commit	eval_auc	status	seconds	description
+1	8d76a40	0.7141	ok	4	baseline
+2	960f99a	0.7160	ok	3	3000 trees lr.05 d8 early stopping
+3	518f5d4	0.7062	ok	4	route + DepTime decomposition + circular enc
+4	d01e61e	0.7161	ok	4	DepMinutes + circular time enc, no route
+5	7538502	0.7063	ok	3	target encoding route+origin+dest+carrier
+6	3ca82ed	0.7191	ok	14	bagged 7-seed ensemble
+7	8f6bb24	0.7151	ok	13	TE stable interactions carrier/origin x hour
+8	434a5bd	0.7207	ok	57	3-fold CV grid for member params
+9	047aadc	0.7233	ok	115	refined CV grid: depth 10-14, mcw 3-5, colsample 1.0, lr .1
+10	408b1de	0.0000	timeout	121	CV grid: depth16-20, mcw10, lr.03
+11	c805c50	0.7244	ok	53	ensemble with exp10 CV winner params
+12	d73faa0	0.7249	ok	77	10 members colsample 0.6/0.7/0.8
+13	9d9c981	0.0000	timeout	120	DepHour cat + hr_rate prior
+14	371db0f	0.7254	ok	56	hour features 7 members cap 500
+15	8269673	0.7249	ok	73	depth-diverse d12/16/20 x colsample 10 members
+16	b08f1a3	0.7255	ok	54	rank-average instead of prob-average
+17	5d13bdc	0.7274	ok	96	DepHour + hr_rate prior + volume features
+18	7739e2d	0.0000	timeout	125	hd_rate prior (hour x dow)
+19	4b6ba15	0.7269	ok	65	hd_rate with 350-tree cap es40
+20	7259a45	0.0000	timeout	122	extended volume family
+21	6fe6ba7	0.7262	ok	118	ext volumes + 40k early-stop val
+22	8486844	0.0000	timeout	120	native API cs0.3 600 rounds 7 members
+23	da765c8	0.7367	ok	81	native API d12 lr.05 n400 cs.3
+24	6eda518	0.7372	ok	103	10 members d12 n400
+25	fd74a4d	0.7387	ok	98	heterogeneous ensemble 4+3
+26	0d6f8ad	0.7329	ok	99	month x hour prior + month volume
+27	91c2598	0.7410	ok	99	30-min-bin rate prior
+28	85f0024	0.7428	ok	93	15-min-bin rate prior
+29	7392207	0.7430	ok	106	mix shift: 3 shallow + 4 deep
+30	75e4d43	0.7430	ok	117	combo features: -DepTime +log_dist +bin10
+31	f4ee2c4	0.0000	timeout	124	all-deep d16 n250
+32	8f29ba3	0.7435	ok	102	5x d16 n300
+33	0d8d264	0.7428	ok	84	heterogeneous 3 deep + 2 shallow
+34	ed5b769	0.7424	ok	99	4x d16 n350
+35	091dc8b	0.7438	ok	103	reg_lambda 1.5
+36	9c734e2	0.7451	ok	117	min_child_weight 3
+37	b819e0a	0.0000	timeout	121	6 members d16 n270

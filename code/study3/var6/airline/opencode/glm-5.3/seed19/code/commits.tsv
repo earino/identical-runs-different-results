@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	268592d	1789605420	baseline
+01	6072722	1789606785	capacity: 3000 trees lr .03 early stopping
+02	03079d7	1789606976	FE: hour/minute + calendar numerics only
+03	c3d54fc	1789608953	patience 300 so slow lr .03 trajectory can develop
+04	fa36fca	1789609011	early-stop on AUC not logloss
+05	2e348e6	1789610051	bagged ensemble of 5 seeds, averaged probs
+06	ffe32d4	1789610153	volume/congestion count features per org/dest/carrier x block/dow
+07	982e0dd	1789610295	cyclic hour-of-day sin/cos
+08	e1c936b	1789610366	lossguide growth, 64 leaves, mcw 10
+09	2dd7a3f	1789610632	diversified member hyperparams, patience 200
+10	e136118	1789610785	interaction TE: origin/dest/carrier x hour-block, OOF
+11	9ba44f8	1789610965	member feature-subset diversity + smoke self-test
+12	0fe4036	1789611246	drop native calendar cats everywhere: 3-member ensemble
+13	0a82974	1789611481	drop numeric mon/dom too: calendar noise removal
+14	5cbd673	1789613350	hour categorical; cap 1300 pat 80 for time safety
+15	f4b2eff	1789613457	drop TE; 2 full + 1 short member to fit trajectories in time
+16	860695d	1789614018	hour categorical + 50k early-stop set + 3 full members cap1800
+17	768fc40	1789614105	add 4th member leaves96 seed99
+18	d84cff8	1789614322	hour-granularity vol features; ES set 40k
+19	7999f52	1789614575	drop weakest member (seed123); 3 strong members
+20	2c52b77	1789615939	rate-diverse trio: 2x L96 lr.02 + L64 lr.03; ES 30k
+21	59583bf	1789616609	add L128 lr.02 4th member (solo 0.7432)
+22	1f31a8c	1789617141	swap 777-L96 for second L128 (3141)

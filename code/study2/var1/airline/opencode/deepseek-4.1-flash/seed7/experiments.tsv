@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	47da0b2	0.7141	ok	4	baseline
+2	3b3f934	0.7078	ok	21	feat: time+route cat, early stop
+3	93e78c1	0.0000	crash	2	route cat + 400 trees
+4	cec45d2	0.7008	ok	5	route cat + 400 trees
+5	c58a56a	0.7061	ok	2	route + dep-time feats, 30 trees
+6	da27028	0.7134	ok	2	dep-time feats only, 30 trees
+7	baceab9	0.7060	ok	2	depth9 50 trees
+8	aece648	0.7161	ok	1	depth4 60 trees
+9	5e19767	0.7161	ok	1	depth3 150 trees
+10	aa2d391	0.7071	ok	2	route+time feats depth4
+11	02b9860	0.7159	ok	1	dep-time feats depth4
+12	9d829be	0.7157	ok	2	reg subsample colsample mcw lambda
+13	d0adbd5	0.7161	ok	1	freq encoding depth4
+14	4886b0a	0.7163	ok	2	OOF target encoding
+15	eb47956	0.7169	ok	5	8-model ensemble TE
+16	0c7e006	0.7176	ok	7	hour-cat ensemble
+17	40ecdb5	0.7186	ok	10	12-model diverse ensemble
+18	e89aee4	0.7188	ok	16	20-model seed ensemble
+19	8519894	0.7188	ok	11	ablate TE
+20	3afd438	0.7198	ok	13	congestion count features
+21	47aac91	0.7219	ok	15	more count features
+22	1bd3543	0.7221	ok	17	3-way count features
+23	456ff7b	0.7223	ok	17	more count variants
+24	04fe0b4	0.7220	ok	20	structural network feats
+25	e4dfa62	0.7250	ok	20	half-hour counts
+26	58a6817	0.7292	ok	22	quarter-hour + interaction counts
+27	e7021f4	0.7299	ok	29	10-min + exact counts
+28	33af8cd	0.7304	ok	30	rolling bank counts
+29	50b35ad	0.7316	ok	28	more bank windows
+30	1e7efeb	0.7320	ok	33	dow banks + more windows
+31	ab76667	0.7323	ok	33	arrival banks
+32	a54dad9	0.7337	ok	33	congestion ratios
+33	0b8f697	0.7333	ok	37	more ratios
+34	ea9ad83	0.7338	ok	34	mcw3
+35	51ae947	0.7341	ok	36	higher colsample
+36	8c0920c	0.0000	crash	5	OOF TE + counts
+37	1bf3ead	0.7474	ok	54	OOF TE + counts
+38	385a901	0.7520	ok	67	expanded TE keys
+39	942a92c	0.7518	ok	78	more TE keys
+40	9813e9a	0.7518	ok	67	TE smoothing 100

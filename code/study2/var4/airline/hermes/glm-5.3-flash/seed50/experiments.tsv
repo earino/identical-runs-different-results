@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	0442994	0.7141	ok	4	baseline
+2	beeaaa0	0.7208	ok	3	v2 interaction cats + regularized d5
+3	9648ba0	0.7242	ok	3	v3: +DOWxhour +Origxdistblock, l200 csbn0.8
+4	ee23af5	0.7262	ok	3	v4: +distblock x hour interaction
+5	911c671	0.7263	ok	4	v5: 8 interaction cats
+6	4c28621	0.7266	ok	6	v6: 2-model capacity ensemble
+7	b77c135	0.7286	ok	5	v7: drop Month cat, keep ensemble
+8	8b1fdcb	0.7353	ok	9	v8: 6-model diverse ensemble
+9	92c039f	0.7354	ok	11	v9: 8-member ensemble +Dest_dist +thematic
+10	3f1d0d7	0.0000	crash	12	v10: Orig x 20min time block
+11	f2cd683	0.7375	ok	13	v10-fixed: Orig x 20min block ensemble
+12	405d499	0.7389	ok	13	v11: +DB_t20 +Car_t30
+13	2848268	0.7397	ok	17	v13: subset members n-boosted
+14	fe5e407	0.7386	ok	24	v14: 5 more time-res interactions
+15	8bb0484	0.7405	ok	21	v15: subset members n300/n200
+16	c5f4fbd	0.7408	ok	25	v16: subset members n400/n250
+17	ce6f483	0.7408	ok	31	v17: 10-member ensemble
+18	a116eaf	0.7409	ok	30	v18: slow-lr full members
+19	4e9b6d2	0.7408	ok	29	v19: subset-weighted ensemble
+20	02b348e	0.7409	ok	28	v20: +DOW_t30
+21	a517f7f	0.7408	ok	38	v21: 10 members, extra capacity pair
+22	f7f63dd	0.7409	ok	30	v22: deep members maxbin256
+23	db19627	0.7408	ok	32	v23: +depth7 full member
+24	51d2369	0.7406	ok	29	v24: +route interactions
+25	6dc895d	0.7412	ok	29	v25: heavier lambda full members
+26	f51081d	0.7413	ok	28	v26: lambda 800/120
+27	2ef4cde	0.7413	ok	29	v27: lambda 1500/250
+28	ef1198d	0.7415	ok	34	v28: 10 members +slow-heavy subsets
+29	4c7754e	0.7416	ok	38	v29: +slow-heavy hour member
+30	197cd87	0.7413	ok	41	v30: 13 members
+31	b895752	0.7414	ok	53	v31: +lr0.03 full members
+32	268efa8	0.7406	ok	42	v32: +slow d8 subset members
+33	cffa5d3	0.7415	ok	45	v33: +colsample diversity
+34	a56f9b1	0.7410	ok	42	v34: +Orig_t30
+35	2c61e90	0.7416	ok	33	v35: fast heavy subset members
+36	04b24fe	0.7419	ok	37	v36: fast full members
+37	3b77a02	0.7419	ok	37	v37: fast full, lambda 400/60
+38	4488350	0.7417	ok	34	v38: simplify subset trio to plain d5
+39	2a72081	0.7428	ok	45	v39: subset members n600/n350
+40	f74d91e	0.7433	ok	52	v40: subset members n800/n450 (final)

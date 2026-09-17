@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	255c398	0.7141	ok	4	baseline
+2	4f3eed2	0.0000	crash	2	time features + route + stronger model
+3	8f05bcd	0.7066	ok	10	time features + route + stronger model
+4	7ba387a	0.7071	ok	3	time numerics only
+5	b87e8e1	0.7005	ok	3	isolate: more trees on baseline features
+6	45b6112	0.0000	crash	1	early stopping finds tree count
+7	04c3e97	0.7128	ok	3	early stopping finds tree count (fix)
+8	e3cd67d	0.7124	ok	2	OOF target encoding
+9	50f97f3	0.7133	ok	1	time numerics, small forest
+10	111e784	0.7156	ok	2	bagging small xgbs
+11	a84274e	0.7168	ok	4	diverse 15-member ensemble
+12	fdbab9d	0.7173	ok	6	25 members, wide config space
+13	bc0131e	0.0000	crash	1	50 members
+14	1db0d03	0.7176	ok	12	50 members (fix)
+15	f190b92	0.7182	ok	14	feature-diverse 50-member ensemble
+16	55f33c0	0.7180	ok	33	100 members 4 variants
+17	238a0fb	0.7170	ok	14	homogeneous bag vs config mix
+18	187602d	0.7179	ok	16	dow-rhythm TE variant
+19	aaa03b5	0.7180	ok	21	dart members
+20	e8c148c	0.7185	ok	58	greedy ensemble selection
+21	9715e5d	0.7177	ok	78	stacking meta-learner
+22	32b8da4	0.7184	ok	55	carrier x hour TE
+23	e4d0f70	0.7185	ok	54	wider config regimes
+24	08c5799	0.7204	ok	58	doy harmonics
+25	89de8ca	0.7199	ok	60	more calendar harmonics
+26	c74207d	0.7206	ok	57	holiday windows
+27	cb6d327	0.7209	ok	62	mix tilt + diagnostics
+28	eae7621	0.7209	ok	62	hard tilt to variant1
+29	b046b8e	0.7215	ok	53	bigger pool 3fold OOF
+30	99ab32b	0.7215	ok	81	RF members in pool
+31	a1492a7	0.7223	ok	57	seed-averaged selected members
+32	fe9726a	0.7188	ok	58	hub size features
+33	1301d65	0.7190	ok	63	5 seeds per member
+34	efb3a40	0.7223	ok	57	no TE members
+35	00f45eb	0.7212	ok	67	deeper greedy bigger pool
+36	e3fa891	0.7234	ok	55	variant1 without dayofmonth
+37	77c560c	0.7234	ok	53	no dayofmonth at all
+38	64b0b17	0.7244	ok	56	2nd harmonic retry
+39	ee85e79	0.7228	ok	59	extended holiday flags
+40	e9ce00d	0.7242	ok	63	union of two greedy paths

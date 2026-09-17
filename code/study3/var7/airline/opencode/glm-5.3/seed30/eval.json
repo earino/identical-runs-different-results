@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 30,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T21:54:53+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s30-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T23:30:54+00:00",
+  "wall_seconds": 5762.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8063.3,
+  "endpoint_at_end": "ok",
+  "head": "c928d2c",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 33,
+  "n_crash": 6,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7335,
+  "final_eval_auc": 0.7335,
+  "holdout_auc": 0.7331988176839999,
+  "holdout_ap": 0.723672328467112,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01842806594799984,
+  "generalization_gap": 0.0003011823160001814,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9669510,
+    "tokens_in_uncached": 744006,
+    "tokens_in_cached": 8925504,
+    "tokens_out": 28925,
+    "turns": null,
+    "api_calls": 181,
+    "method": "sum-of-181-events",
+    "cost_usd": 3.4895,
+    "cached_share": 0.923
+  },
+  "cpu_seconds_python": 7479.1,
+  "cpu_seconds_counted": 7007.1,
+  "cpu_seconds_uncounted": 59.1,
+  "cpu_seconds_exempt": 413.0,
+  "python_processes": 69,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 194,
+  "fits_counted": 187,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "9828a38",
+      "message": "baseline"
+    },
+    {
+      "commit": "735a02e",
+      "message": "FE: hour/minute/minutes_of_day only; 200 trees depth 8; no route"
+    },
+    {
+      "commit": "707d716",
+      "message": "ablation: time FE at baseline capacity 30 trees d6"
+    },
+    {
+      "commit": "09107c0",
+      "message": "early stopping on 2006 eval slice, subsample/colsample 0.8"
+    },
+    {
+      "commit": "376e354",
+      "message": "depth 6 with early stop + reg"
+    },
+    {
+      "commit": "c5ed617",
+      "message": "depth 5"
+    },
+    {
+      "commit": "18e2851",
+      "message": "frequency encoding origin/dest/route + log distance"
+    },
+    {
+      "commit": "1a47768",
+      "message": "lr 0.05, up to 2000 trees, patience 60"
+    },
+    {
+      "commit": "9d1d6bc",
+      "message": "lr 0.03"
+    },
+    {
+      "commit": "5b5be50",
+      "message": "5-seed ensemble, each early-stopped"
+    },
+    {
+      "commit": "5eafa91",
+      "message": "diversity ensemble: depths 4-6, colsample 0.7-0.9"
+    },
+    {
+      "commit": "94c5b83",
+      "message": "cyclical month/dow/day/time features"
+    },
+    {
+      "commit": "58d3f92",
+      "message": "9-model diverse ensemble"
+    },
+    {
+      "commit": "ff9e9db",
+      "message": "bucket rare/unseen airports into RARE level"
+    },
+    {
+      "commit": "7fa0d05",
+      "message": "rare threshold 100"
+    },
+    {
+      "commit": "33c3afd",
+      "message": "rare threshold 200"
+    },
+    {
+      "commit": "8c80aae",
+      "message": "rare threshold 300, cap 1000 trees"
+    },
+    {
+      "commit": "e290995",
+      "message": "rare threshold 400"
+    },
+    {
+      "commit": "5264bc9",
+      "message": "carrier x hour interaction cat (RARE-bucketed)"
+    },
+    {
+      "commit": "ec191d7",
+      "message": "carrier_hour with 6-model ensemble"
+    },
+    {
+      "commit": "846d38c",
+      "message": "per-model lr: unlock capped shallow models"
+    },
+    {
+      "commit": "576ad90",
+      "message": "fix: explicit per-model learning_rate (BASE no longer duplicates)"
+    },
+    {
+      "commit": "9ca75df",
+      "message": "origin x hour interaction cat"
+    },
+    {
+      "commit": "c928d2c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7066.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 584.2,
+  "best_commit_dirty_rows_excluded": 1,
+  "best_commit": "9ca75df",
+  "best_commit_eval_auc": 0.7335,
+  "best_commit_holdout_auc": 0.7331988176839999,
+  "best_commit_holdout_ap": 0.723672328467112,
+  "best_commit_error": null,
+  "finalized_best": true
+}

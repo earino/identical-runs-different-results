@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	eb192b0	0.7141	ok	4	baseline
+2	279a28a	0.7101	ok	8	fe time/calendar + early stop depth7 lr0.03
+3	de08b75	0.7131	ok	2	fe time/calendar, baseline hyperparams
+4	9e9bef4	0.7124	ok	3	hpo 300 trees lr0.05 sub/col 0.9
+5	1451fe0	0.7000	ok	1	ablation drop Origin/Dest
+6	6b5f5ad	0.7095	ok	1	hpo depth8 30trees
+7	aa5d088	0.7150	ok	2	hpo depth4 30trees
+8	6ed26ca	0.7119	ok	2	hpo depth3 30trees
+9	a099e81	0.7169	ok	2	depth4 200trees lr0.05 sub0.9
+10	ef8af17	0.7165	ok	3	depth5 200trees lr0.05 sub0.9
+11	8d0a732	0.7164	ok	2	fe hour/tod/cyclic + depth4 200trees
+12	a62773d	0.7134	ok	3	max_cat_threshold=16
+13	114a983	0.7170	ok	2	fe freq Origin/Dest/carrier/route
+14	79283fd	0.7204	ok	2	numeric calendar + freq
+15	a24adc8	0.7193	ok	2	cyclic calendar + numeric + freq
+16	d23e117	0.7196	ok	2	depth5 + numeric cal
+17	efdb09a	0.7202	ok	4	500trees lr0.03 depth4
+18	8278a58	0.7198	ok	3	hour/tod + logdist + numeric cal
+19	406dd93	0.7207	ok	5	seed-avg 5x depth4
+20	fcfc1aa	0.7204	ok	6	oof target encoding + seed avg
+21	eebac25	0.7204	ok	5	min_child_weight=20 seedavg
+22	96788f5	0.7231	ok	5	rare-level grouping min100
+23	e185987	0.7244	ok	5	rare min300
+24	862e406	0.7220	ok	5	rare min600
+25	d54e93b	0.7245	ok	5	rare min400
+26	50bbb7e	0.7256	ok	6	depth5 rare400
+27	73a371e	0.7267	ok	7	depth6 rare400
+28	b3ca12c	0.7277	ok	8	depth7 rare400
+29	cb09b8a	0.7294	ok	9	depth8 rare400
+30	453283d	0.7320	ok	15	depth10 rare400
+31	5166f81	0.7345	ok	25	depth12 rare400
+32	7575af5	0.7372	ok	61	depth16 rare400
+33	3f664eb	0.7381	ok	50	depth20 rare400 3seeds
+34	300c8de	0.7375	ok	52	depth24 rare400 3seeds
+35	265abac	0.7300	ok	21	depth20 mcv10
+36	079857b	0.7364	ok	49	depth20 rare250
+37	2fdaa70	0.7401	ok	46	depth20 rare500
+38	97b6f5b	0.7407	ok	48	depth20 rare800
+39	ac2cb95	0.7401	ok	41	depth20 rare1500
+40	b21f984	0.7411	ok	73	depth20 rare800 5seeds

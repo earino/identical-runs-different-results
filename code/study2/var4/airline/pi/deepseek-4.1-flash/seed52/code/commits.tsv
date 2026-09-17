@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	c8b53b3	1789538728	baseline
+01	3b54c86	1789538797	model: shallow regularized
+02	d56d39a	1789538881	ensemble: 5-seed bag of regularized xgb
+03	5637988	1789538914	ensemble cfg: depth5 mcw20
+04	1fd7df5	1789538987	ensemble: 10 diverse models
+05	9cebe55	1789539017	ensemble: 20 models (5 cfg x 4 seeds)
+06	d5a1916	1789539401	fe: day-of-year features
+07	ce1ce36	1789539489	fe: holiday flags
+08	8cb643f	1789539596	fe: schedule-share features
+09	57e0d33	1789539633	fe: extended schedule-share features
+10	5d77c98	1789539671	fe: reverse shares + route composition
+11	be0fcba	1789539931	ensemble: deeper configs (4-7)
+12	8860fbf	1789539972	ensemble: add depth8
+13	7bd6f5f	1789540198	fe: OOF airport/carrier-hour target encoding
+14	4166989	1789540328	ensemble: 6 seeds

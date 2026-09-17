@@ -1,0 +1,148 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 38,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:00:31+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s38-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:11:08+00:00",
+  "wall_seconds": 636.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 499.3,
+  "endpoint_at_end": "ok",
+  "head": "5bddaf5",
+  "n_commits": 12,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7248,
+  "final_eval_auc": 0.7248,
+  "holdout_auc": 0.725632047828,
+  "holdout_ap": 0.7156002551383829,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.010861296091999928,
+  "generalization_gap": -0.0008320478279999488,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2442182,
+    "tokens_in_uncached": 2442182,
+    "tokens_in_cached": 0,
+    "tokens_out": 49492,
+    "turns": null,
+    "api_calls": 73,
+    "method": "sum-of-73-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 470.7,
+  "cpu_seconds_counted": 439.4,
+  "cpu_seconds_uncounted": 16.4,
+  "cpu_seconds_exempt": 14.9,
+  "python_processes": 60,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 102,
+  "fits_counted": 96,
+  "fits_uncounted": 3,
+  "commits": [
+    {
+      "commit": "b2b581d",
+      "message": "baseline"
+    },
+    {
+      "commit": "8e7f84c",
+      "message": "capacity: depth 4"
+    },
+    {
+      "commit": "22bc6b7",
+      "message": "depth4 + 150 trees lr0.05"
+    },
+    {
+      "commit": "f63b34d",
+      "message": "ensemble depth 3,4,5 avg"
+    },
+    {
+      "commit": "444ab31",
+      "message": "ensemble + ordinal c-N parse, DepTime->hour/min"
+    },
+    {
+      "commit": "3ea399f",
+      "message": "ensemble + dep_minutes/day_of_year/weekend"
+    },
+    {
+      "commit": "70ca20d",
+      "message": "simplify: drop redundant Month/DayofMonth/DayOfWeek"
+    },
+    {
+      "commit": "581d703",
+      "message": "ensemble+fe + airport-hour congestion counts"
+    },
+    {
+      "commit": "8e5f029",
+      "message": "ensemble+fe + congestion hour fractions"
+    },
+    {
+      "commit": "1280a25",
+      "message": "ensemble 250 trees on enriched features"
+    },
+    {
+      "commit": "e8e0c8a",
+      "message": "ensemble+fe + smoothed +-1h congestion windows"
+    },
+    {
+      "commit": "cf733d4",
+      "message": "ensemble+fe + window congestion fractions"
+    },
+    {
+      "commit": "5bddaf5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 455.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 28.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "cf733d4",
+  "best_commit_eval_auc": 0.7248,
+  "best_commit_holdout_auc": 0.725632047828,
+  "best_commit_holdout_ap": 0.7156002551383829,
+  "best_commit_error": null,
+  "finalized_best": true
+}

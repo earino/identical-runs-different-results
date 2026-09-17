@@ -1,0 +1,148 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 47,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:00:09+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s47-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:09:44+00:00",
+  "wall_seconds": 574.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 469.2,
+  "endpoint_at_end": "ok",
+  "head": "66e8e43",
+  "n_commits": 12,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7213,
+  "final_eval_auc": 0.7213,
+  "holdout_auc": 0.7223570691360001,
+  "holdout_ap": 0.712296302015941,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.007586317400000042,
+  "generalization_gap": -0.0010570691360000106,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5331478,
+    "tokens_in_uncached": 36374,
+    "tokens_in_cached": 5295104,
+    "tokens_out": 52516,
+    "turns": null,
+    "api_calls": 126,
+    "method": "cumulative-max",
+    "cost_usd": 0.1906,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 323.3,
+  "cpu_seconds_counted": 305.1,
+  "cpu_seconds_uncounted": 1.8,
+  "cpu_seconds_exempt": 16.4,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 76,
+  "fits_counted": 71,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "ea8c410",
+      "message": "baseline"
+    },
+    {
+      "commit": "ff6b3e7",
+      "message": "100 trees"
+    },
+    {
+      "commit": "161bd4c",
+      "message": "200 trees"
+    },
+    {
+      "commit": "21d22fd",
+      "message": "depth 5, 200 trees"
+    },
+    {
+      "commit": "922d140",
+      "message": "depth 4, 200 trees"
+    },
+    {
+      "commit": "8eab1cb",
+      "message": "depth 3, 200 trees"
+    },
+    {
+      "commit": "4090b77",
+      "message": "hour x dow, train-fitted levels"
+    },
+    {
+      "commit": "3a5903e",
+      "message": "2-model blend cat+ordinal"
+    },
+    {
+      "commit": "45c2b96",
+      "message": "3-model blend with colsample diversity"
+    },
+    {
+      "commit": "c09a7b6",
+      "message": "restore 3-model blend"
+    },
+    {
+      "commit": "f5e04ed",
+      "message": "3-blend, ordinal model 300t"
+    },
+    {
+      "commit": "dc19c9b",
+      "message": "5-model blend"
+    },
+    {
+      "commit": "66e8e43",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 306.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 145.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "dc19c9b",
+  "best_commit_eval_auc": 0.7213,
+  "best_commit_holdout_auc": 0.7223570691360001,
+  "best_commit_holdout_ap": 0.712296302015941,
+  "best_commit_error": null,
+  "finalized_best": true
+}

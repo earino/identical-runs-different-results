@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	1815ce6	1789592170	baseline
+01	4d17a58	1789592221	time features + cyclic + early stopping
+02	58816b8	1789592231	lr 0.05 depth 8 more trees
+03	dab84df	1789592355	carrier/origin/dest target encoding, drop raw cats
+04	1aac39e	1789592446	carrier-hour TE + origin/dest/route flight counts
+05	5d7e5ca	1789592844	5-seed ensemble d10 lr.02 sub.8 col.8
+06	ea7ae09	1789593012	origin/dest x hour congestion counts
+07	854d1c2	1789594876	3-seed lossguide ensemble lr.015
+08	78a84da	1789597484	single lossguide lr.01 with AUC early stopping

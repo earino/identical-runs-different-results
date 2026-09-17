@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	2e8afa8	0.7141	ok	3	baseline
+2	74cb754	0.7112	ok	4	500 trees lr0.05 depth7
+3	0181ab9	0.7065	ok	2	FE route+time+weekend, 30 trees
+4	74b8697	0.7226	ok	20	regularized ensemble T1x5+T2x5
+5	e5fdaf8	0.7403	ok	23	categorical dep-time buckets, drop month
+6	e946830	0.0000	timeout	130	deep d12-14 ensemble, 4 models
+7	d27f834	0.7509	ok	78	deep d14 n400 ensemble (4 models)
+8	8c2b447	0.7541	ok	89	carhour + logdist features, deep ensemble
+9	5e6d6cb	0.7554	ok	91	routefreq feature added
+10	ee656ee	0.7558	ok	96	orghour/desthour frequency features
+11	cc778c5	0.7563	ok	100	5-model diverse ensemble
+12	486f537	0.7562	ok	102	6-model ensemble
+13	76dd6f8	0.7556	ok	103	subsample 0.8 in 5-model ensemble
+14	f634701	0.7563	ok	103	cyclic month sin/cos
+15	b5fe8de	0.7560	ok	110	5 models n360 lr0.04
+16	fdf9fea	0.7559	ok	109	max_cat_threshold 128

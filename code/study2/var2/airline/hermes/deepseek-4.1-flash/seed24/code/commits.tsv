@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	0c71246	1789541769	baseline
+01	bc69ed8	1789541872	ablation: max_depth 4 (capacity curve down)
+02	f6d1bab	1789541878	depth4 with 150 trees
+03	63d0b1f	1789541895	add coarse time-of-day features (Hour/TOD/IsWeekend) on top of depth4 150t best
+04	d1570c9	1789541917	add subsample .8 colsample .8
+05	997c2e1	1789541925	seed-averaged ensemble of 5 shallow boosters
+06	e68ca87	1789541938	traffic-volume features (origin/dest/route/origin-hour/carrier counts)
+07	062209f	1789541972	ensemble over depths 3-6 x2 seeds (8 models)
+08	aa9fd8a	1789541997	20-member ensemble varying depth/subsample/colsample/seed
+09	9eb9811	1789542036	cyclic sin/cos encodings for hour and month
+10	1ed3f2c	1789542073	drop DayofMonth (noise-level feature)
+11	575fa56	1789542103	traffic-structure share features (fixed dh_key)
+12	9cde944	1789542124	more load features: hour-vol, dest-hour share, carrier-at-origin share
+13	9772f9e	1789542170	40-member ensemble
+14	13cf67f	1789542246	60-member ensemble
+15	96c8c0b	1789542465	peak-shape ratios (origin-hour peak, system hour share)
+16	5f5b119	1789542519	reg_lambda 3.0
+17	c4d8df8	1789542574	reg_lambda 10.0

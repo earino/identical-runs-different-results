@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	5ea88a9	0.7141	ok	4	baseline
+2	c490d9c	0.7104	ok	5	feat v1: tod/cyclic/route + early stopping
+3	54cc427	0.7120	ok	5	regularized model + feat v1
+4	6c81ae0	0.7232	ok	7	good feats + tuned boosting w/ ES(auc)
+5	cb52ff5	0.7367	ok	13	depth10 + reg_alpha 8 (L1 sparsification)
+6	8093508	0.7429	ok	24	depth24 alpha1 single model
+7	7b7db0d	0.7440	ok	26	count features
+8	caebc7a	0.7548	ok	26	cs0.4 ss1.0 d24
+9	78f601d	0.7575	ok	76	4-member ensemble cs0.35-0.4 d20-24
+10	af67aa2	0.7623	ok	93	congestion features + 4-member ensemble
+11	e58c470	0.7630	ok	104	5-member ensemble cs0.30-0.40
+12	310187c	0.7631	ok	91	5 members with ss 0.9 jitter
+13	8cf255e	0.7633	ok	99	6-member diverse ensemble
+14	814f139	0.7634	ok	92	member 6 -> max_bin 128
+15	f417be6	0.7615	ok	82	fold-bagged ensemble (5 folds + full)
+16	b386a91	0.7627	ok	96	hybrid cat/no-cat 7-member ensemble
+17	342bc64	0.7634	ok	110	7-member ensemble (adds one-hot cat member)
+18	4be67fe	0.7632	ok	103	uniform lr 0.045
+19	dbb429c	0.7630	ok	76	5 strongest members only
+20	977d07f	0.7631	ok	112	8-member ensemble patience 20
+21	8fc495b	0.7628	ok	108	seed stability of kept 6-member config
+22	1be3f7a	0.7634	ok	96	reg_alpha 0.5 all members
+23	6c6f342	0.7633	ok	116	log-odds averaging of members

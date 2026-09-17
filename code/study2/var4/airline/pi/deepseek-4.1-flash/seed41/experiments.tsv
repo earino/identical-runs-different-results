@@ -1,0 +1,33 @@
+n	commit	eval_auc	status	seconds	description
+1	5f3f361	0.7141	ok	4	baseline
+2	62edbf7	0.7157	ok	3	time feats + 400 trees lr.05
+3	201f3d1	0.7320	ok	5	OOF target encoding of carrier/airport/hour/route interactions
+4	9eaf364	0.7372	ok	7	depth5 eta.02 colsample.5 lambda30 1200 trees
+5	2c561c2	0.7387	ok	32	5-seed ensemble, depth5 eta.02 colsample.5
+6	edd41c3	0.7406	ok	41	TE(10) + key-count features, 5-seed ensemble
+7	0c59d5f	0.7433	ok	41	12 TE keys incl route/carrier_route + counts
+8	98b79ad	0.7480	ok	56	depth7 colsample.2 eta.03 1300 trees, 5 seeds
+9	8daab2b	0.7583	ok	51	neighbour-hour route/carrier encodings, 4 seeds eta.05
+10	0f2f750	0.7626	ok	70	neighbour TE + neighbour counts, 4 seeds
+11	a1c50b4	0.7628	ok	85	5-model ensemble
+12	b5feaa0	0.7628	ok	88	add +-3h neighbour encodings
+13	703c023	0.7627	ok	84	diverse ensemble: varied depth/colsample/trees
+14	83f8b17	0.7629	ok	81	eta.04 4-model ensemble 1600 trees
+15	49103f4	0.7619	ok	84	10-fold OOF target encoding
+16	feb04a7	0.7628	ok	88	inbound-to-origin congestion features
+17	cbe43d1	0.7632	ok	95	5-model ensemble eta.04 1500 trees
+18	034d405	0.7622	ok	102	hierarchical parent-shrunk TE
+19	93482d4	0.7629	ok	102	global dow_hour & month_hour TE keys
+20	97aa6b7	0.7634	ok	93	airport/carrier graph-size + schedule-regularity
+21	d73ddde	0.7631	ok	97	carrier/route graph + hub-hour diversity features
+22	5ee933c	0.7627	ok	100	eta.03 4-model ensemble 2000 trees
+23	fe031a7	0.7633	ok	110	6-model ensemble
+24	949f955	0.7629	ok	97	reverse-route neighbouring-hour TE (inbound aircraft)
+25	45b8a88	0.0000	timeout	120	lossguide growth, 128 leaves
+26	1127f22	0.7628	ok	101	max_bin=512
+27	c823057	0.7637	ok	113	max_depth=8
+28	7ccbec3	0.7637	ok	94	depth8 + 1200 trees
+29	9a3fa7c	0.7648	ok	99	route/carrier-route minute-bucket TE
+30	cb41fce	0.7652	ok	108	origin/dest/carrier minute-bucket TE
+31	2075dde	0.7686	ok	111	route-hour/carrier-route-hour minute-bucket TE
+32	e8a1860	0.7702	ok	115	origin/dest-hour minute-bucket TE

@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	d673c53	1789590233	baseline
+01	88f04f0	1789590328	feature engineering: hour, minute_of_day, numeric date, dist_log
+02	c1c384e	1789590367	FE features + depth 4, 100 rounds
+03	4c82a22	1789590712	interactions (hour_x_dow/carrier/origin), cyclical month, route freq, gamma=1, 75 rounds
+04	c7cd151	1789591186	deep model: d12, colsample 0.3, gamma 2, lambda 5, eta 0.05 x150
+05	c7776df	1789591337	8-model ensemble: 5x full features + 3x basic features, d12 css0.3
+06	7ad883e	1789591388	restore inter+route features in full variant (8-model ensemble)
+07	1f3b642	1789591975	depth 20 ensemble members
+08	e097243	1789592355	d20 members: gamma 1, lambda 3, 100 rounds
+09	5de8164	1789592869	13-member ensemble (full6+basic4+hourcat3) at depth 30
+10	6ee8275	1789593597	13-member ensemble: full5+basic4+cyctime4 (dep sin/cos)
+11	bf64e7f	1789594878	12-member ensemble: full6+cyctime6 (drop basic)
+12	5bb3e37	1789596299	18 members: full6@css0.25 + cyctime6@0.35 + cyctime6@0.40, lam2
+13	af049a9	1789598199	20 members: add sizefreq pool (carrier/origin/dest frequency)
+14	99fcaac	1789598656	20 members: split sizefreq pool into sizefreq + sfr (with route freq)
+15	78d8172	1789599359	18 members: fullfreq pool + sf2 pool (airport-hour congestion freqs)
+16	10745b2	1789599729	18 members: sf3r pool with route-hour congestion freqs

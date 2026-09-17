@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	f3d0ce0	1789646966	baseline
+01	484e20a	1789647077	date ints, hour, route, smoothed TE, early stop
+02	0a8794e	1789647094	fix: pin category levels from train (crash fix)
+03	d0d610b	1789647100	fix: unique route levels
+04	fc9b923	1789647250	md4 ne100 lam10, dist*cos, date ints+cats
+05	887a02f	1789647344	seed ensemble x4 md6, alpha3
+06	98852f8	1789647578	ens12 mixed depths
+07	a4f926a	1789647665	rel dep-time features, hour, doy
+08	bd81245	1789648008	hour cyclic, sin*dist, log/sqrt dist, alpha5
+09	93138e2	1789648168	ori x hour, car x hour interaction cats
+10	d0bb31a	1789649120	drop month/day cats, a5, cs0.6
+11	06b59f1	1789650357	ne 400
+12	5d68635	1789650500	20m/30m bucket interactions
+13	a54e37f	1789651222	ne300
+14	490cc09	1789651300	alpha4
+15	74da923	1789651872	gamma 0.1
+16	c122fb5	1789652056	cs0.55
+17	a9c5d2d	1789652168	lam8

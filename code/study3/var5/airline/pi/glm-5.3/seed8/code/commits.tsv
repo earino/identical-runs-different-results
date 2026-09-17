@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	30ce436	1789613769	baseline
+01	f65f043	1789613890	early stopping, 3000 trees, depth 8, subsample/colsample
+02	4260591	1789613921	fix iloc for val split
+03	e7587bf	1789613943	300 trees depth 8, no early stopping
+04	6952b04	1789613960	feature engineering: parsed ints, hour/min, route categorical
+05	4c7b565	1789614004	drop route categorical
+06	6dc43f0	1789614033	add OOF smoothed target encodings (carrier/origin/dest/route/hour)
+07	9331a6b	1789614062	fix ndarray map
+08	a1def79	1789614079	capacity: 400 trees depth 7, subsample 0.8/0.8
+09	1dedd14	1789614090	bag of 5 xgb seeds
+10	8fe8781	1789614116	diversified bag: 8 models, depth cycle, colsample spread
+11	36a8c64	1789614148	interaction TEs: carrier/origin/dest/route x hour
+12	1ddf800	1789614199	congestion count features
+13	fd69fe7	1789614242	bag 14 models
+14	690579d	1789614313	carrier x origin/dest TEs
+15	bb92fcf	1789614381	drop plain TEs, keep interactions
+16	2039cbb	1789614511	lr 0.05, 800 trees, 10 models
+17	81f7a49	1789614600	calendar: doy + dow interaction TEs
+18	39a9b72	1789615418	TE smoothing 40
+19	73a4c9b	1789615985	blend: 1 dart + 7 gbtree models
+20	a476bf8	1789616140	dart rate_drop 0.25
+21	4930065	1789616511	dart 350 trees lr .09, 6 gbtree
+22	bbe5506	1789617698	two small darts (150@.18) + 5 gbtree
+23	7f0f4c8	1789618515	weighted blend: darts get weight 2
+24	f7cda31	1789618757	weighted dart blend (actually applied)
+25	655661a	1789620385	dart depth 8

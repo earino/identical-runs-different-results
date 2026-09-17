@@ -1,0 +1,26 @@
+n	commit	unix_time	subject
+00	d692c5c	1789588978	baseline
+01	53fc3f4	1789589374	probe 8 tree configs pick best
+02	66e4ec2	1789589394	probe shallow/low-lr region
+03	90017bf	1789589459	probe seed ensemble vs hour features
+04	4f21831	1789589506	probe feature variants doy/logdist/hourbin/inter
+05	e1d2ee9	1789589528	probe calendar refinements + TE with best config
+06	6c4e6c7	1789589550	capacity probe on cal features
+07	41c3678	1789589607	probe small models + hour ablation
+08	71d6d14	1789589631	probe alpha spectrum + bagging
+09	8153c81	1789589674	probe time-of-day feature variants
+10	9c9559e	1789589736	probe drop-combos + minofday
+11	3d53f47	1789589762	probe interactions route/carrier/origin x hour
+12	95852c3	1789589791	probe orighour neighborhood variants
+13	832eb65	1789589819	capacity probe on orighour features
+14	b4ef44f	1789589868	grid around alpha5/depth4 optimum
+15	53d65c9	1789589924	probe depth with strong alpha + volume feature
+16	f669331	1789589971	stochastic regularization grid
+17	7d301eb	1789590058	seed/config bagged ensembles
+18	3a24427	1789590127	bag with dest-hour/carr-hour features
+19	6e77806	1789590772	chronological early stopping bag
+20	1074313	1789590929	booster param probe then bag
+21	cc3c9f6	1789591024	7-member bag with deep/shallow diversity
+22	ef63969	1789591075	fix blend selection: deploy mean of 7-member bag
+23	fa43a38	1789591121	10-member bag, prefix selection
+24	a3472bd	1789591177	16-member mega bag config x feature diversity

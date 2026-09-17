@@ -1,0 +1,31 @@
+n	commit	unix_time	subject
+00	982160c	1789602038	baseline
+01	8b57048	1789602177	FE v1: cyclical date/time, dep minutes, route cat, early stopping
+02	9565135	1789602223	cat dates + route + time features, 600 rounds, learning-curve diag
+03	308d430	1789602319	sweep rounds x route, final model at best config
+04	55913f5	1789602561	smoothed target encodings (k=100), sweep airport/TE/rounds
+05	229620c	1789602822	config sweep: lr x rounds x depth x reg + 5-seed ensembles
+06	766c5b9	1789602929	sweep around bagged low-lr config: sub/col/depth/mcw/lambda + ens3
+07	2acd0cc	1789603058	sweep: d10/d12-ish, lambda, sub.4, ens5 of d8 bagged anchor
+08	fa985d3	1789603139	sweep d12, sub.4col.4, mcw30, ens3 at d10/lr.01/r400
+09	9527d9a	1789603304	sweep d12 + bagged anchor, r600, ens3
+10	68b17cb	1789603443	d12 anchor: r600, lossguide-256, ens3
+11	b8e3ddb	1789604057	diverse member ensemble, pick best subset by eval AUC
+12	003d2bd	1789605036	traffic-volume count features x {lossguide256, d12}
+13	5c12afe	1789605279	extended volume features + lossguide leaves sweep
+14	bd70d31	1789606393	plain vs ext volume features at lg512; r900 variant
+15	f52abcc	1789606716	plain vs ext volume features, r900, sub.5col.5 at lg512
+16	2c47a83	1789606965	3-seed ensemble of plain-vol lg512 r600
+17	a1f7a20	1789608735	config-diverse strong members (lambda3, bin512) + best subset
+18	fde062b	1789608993	member sweep: mcw5, r900, lambda5
+19	08fb84f	1789609371	members: mcw3, mcw1, r900@mcw5
+20	9d7ad9d	1789609644	members: mcw0, mcw1 seed, lg1024@mcw1
+21	183a9e3	1789609851	members: lg1536/lg768 at mcw1
+22	df727be	1789609976	member: lg2048 at mcw1
+23	5f6b5eb	1789610117	member: lg2560 at mcw1
+24	1b3506f	1789610641	member: subsample 0.5 at lg2048 mcw1
+25	d725a11	1789610981	member: lg2560 at sub.5 col.4 mcw1
+26	d19b154	1789611115	member: mcw 0.5 at sub.5 lg2560
+27	6bb49be	1789611623	add 12h-cyclic and fractional-hour time features
+28	dfd18bf	1789611771	add 6h and 4h cyclic time features
+29	41b73ca	1789611903	add 8h cyclic features; reuse member preds for eval print

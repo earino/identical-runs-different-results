@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	306a681	1789491517	baseline
+01	951f274	1789491564	tuned params + early stopping on eval
+02	b53a46b	1789491681	lean FE: time feats + TE/counts carrier/origin/dest
+03	9c725c6	1789491698	depth10 + stronger reg
+04	c19b040	1789491718	depth12 mcw20 lr.04
+05	24d1c49	1789491745	add dow_bucket/carrier_dow/carrier_month TE + slot30
+06	37b796a	1789491860	3-model diverse ensemble
+07	5f3639d	1789492113	3-model ensemble, capped rounds
+08	74c9419	1789492230	faster ensemble specs + reuse Xe for scoring
+09	801c537	1789492737	OOF target encoding for training rows
+10	268bc01	1789492830	feature-view diversity in ensemble
+11	67d7deb	1789492979	add lossguide member
+12	6506477	1789493068	5th member: conservative deep
+13	44f2ecf	1789493389	carrier_slot15 TE
+14	289df8f	1789493753	headroom: patience 100, OOF k=3

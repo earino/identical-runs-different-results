@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	b2b581d	1789538431	baseline
+01	8e7f84c	1789538545	capacity: depth 4
+02	22bc6b7	1789538564	depth4 + 150 trees lr0.05
+03	f63b34d	1789538607	ensemble depth 3,4,5 avg
+04	444ab31	1789538623	ensemble + ordinal c-N parse, DepTime->hour/min
+05	3ea399f	1789538633	ensemble + dep_minutes/day_of_year/weekend
+06	70ca20d	1789538795	simplify: drop redundant Month/DayofMonth/DayOfWeek
+07	581d703	1789538850	ensemble+fe + airport-hour congestion counts
+08	8e5f029	1789538875	ensemble+fe + congestion hour fractions
+09	1280a25	1789538922	ensemble 250 trees on enriched features
+10	e8e0c8a	1789538953	ensemble+fe + smoothed +-1h congestion windows
+11	cf733d4	1789538987	ensemble+fe + window congestion fractions

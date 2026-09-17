@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 20,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:26:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s20-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:01:52+00:00",
+  "wall_seconds": 2139.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6906.1,
+  "endpoint_at_end": "ok",
+  "head": "069e783",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 1,
+  "n_timeout": 4,
+  "best_eval_auc": 0.751,
+  "final_eval_auc": 0.7496,
+  "holdout_auc": 0.751384072108,
+  "holdout_ap": 0.7423157892665863,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.036613320371999936,
+  "generalization_gap": -0.0017840721079999122,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3831866,
+    "tokens_in_uncached": 82042,
+    "tokens_in_cached": 3749824,
+    "tokens_out": 16181,
+    "turns": null,
+    "api_calls": 105,
+    "method": "sum-of-105-events",
+    "cost_usd": 0.1329,
+    "cached_share": 0.979
+  },
+  "cpu_seconds_python": 5740.2,
+  "cpu_seconds_counted": 5354.4,
+  "cpu_seconds_uncounted": 3.5,
+  "cpu_seconds_exempt": 382.3,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 41,
+  "fits_counted": 40,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "d28affd",
+      "message": "baseline"
+    },
+    {
+      "commit": "c5e3fdb",
+      "message": "exp2: numeric time features + early stopping"
+    },
+    {
+      "commit": "7f081aa",
+      "message": "exp7: interaction categoricals hour x carrier, dow x hour"
+    },
+    {
+      "commit": "d464fd3",
+      "message": "exp13: lr 0.03 patience 200"
+    },
+    {
+      "commit": "24a75aa",
+      "message": "exp14: subsample 0.7 colsample 0.6"
+    },
+    {
+      "commit": "737782a",
+      "message": "exp15: subsample 0.6 colsample 0.5"
+    },
+    {
+      "commit": "1a50979",
+      "message": "exp16: subsample 0.5 colsample 0.4"
+    },
+    {
+      "commit": "3d3dfa1",
+      "message": "exp18: depth 10 with subsample 0.5"
+    },
+    {
+      "commit": "ef4e192",
+      "message": "exp19: depth 12"
+    },
+    {
+      "commit": "2662749",
+      "message": "exp20: depth 14"
+    },
+    {
+      "commit": "9677758",
+      "message": "exp21: depth 16"
+    },
+    {
+      "commit": "0fb9bd3",
+      "message": "exp22: depth 20"
+    },
+    {
+      "commit": "107d987",
+      "message": "exp23: depth 25"
+    },
+    {
+      "commit": "f71df50",
+      "message": "exp24: depth 30"
+    },
+    {
+      "commit": "cbe0d20",
+      "message": "exp25: lr 0.02 patience 300"
+    },
+    {
+      "commit": "e01a455",
+      "message": "exp27: congestion volume features"
+    },
+    {
+      "commit": "a754be1",
+      "message": "exp28: lr 0.015 patience 400"
+    },
+    {
+      "commit": "47198da",
+      "message": "exp29: lr 0.01 patience 500"
+    },
+    {
+      "commit": "d1b5a96",
+      "message": "exp32: max_bin 512"
+    },
+    {
+      "commit": "0aa76c7",
+      "message": "exp35 restored: seed 7 (best, eval AUC 0.7510)"
+    },
+    {
+      "commit": "069e783",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5357.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 1165.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8bed4d8",
+  "best_commit_eval_auc": 0.751,
+  "best_commit_holdout_auc": 0.751384072108,
+  "best_commit_holdout_ap": 0.7423157892665863,
+  "best_commit_error": null,
+  "finalized_best": true
+}

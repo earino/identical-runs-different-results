@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	5af0862	0.7141	ok	3	baseline
+2	c6b0597	0.7089	ok	1	feat: numeric month/day/dow, dep hour/min, route, log dist
+3	56282d4	0.7074	ok	4	model capacity: ES + 600 trees depth8 lr.05
+4	175f459	0.7103	ok	3	ablation: baseline feats + ES 600 trees
+5	c52a796	0.7187	ok	2	drop Month+DayofMonth, d5 30 trees
+6	bbf0947	0.7387	ok	3	rare bucket r500 + d12/100 trees
+7	d8b45e6	0.7509	ok	77	16-member rare-ladder x d14/d16 ensemble, cs.85
+8	8fbe6b0	0.7517	ok	70	maxbin 384 members
+9	8b28bb6	0.7519	ok	75	carrier share at origin feature
+10	2223d88	0.7520	ok	94	depth pair 14+18
+11	f8a0d6e	0.7523	ok	106	n_estimators=110 members
+12	b59fb91	0.7521	ok	99	mid-dense rare ladder
+13	c8e4bbd	0.7518	ok	113	low-shifted rare ladder
+14	762911b	0.7523	ok	109	weighted mean aggregation
+15	3aeb53b	0.7566	ok	84	one-hot categorical splits

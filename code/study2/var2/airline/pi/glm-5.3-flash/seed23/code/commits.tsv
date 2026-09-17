@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	6708b16	1789533947	baseline
+01	77c6b5a	1789534001	exp2: int parsing, hour/minute, native cats, 800 trees lr.05 d8 early stop
+02	8b3f579	1789534250	exp11: 5-seed bagged ensemble of best config
+03	9774150	1789534294	exp12: diversity ensemble d6/d8/d10 x 2 seeds
+04	35048a7	1789534352	exp13: 3 configs x 3 seeds
+05	0b57a83	1789534436	exp14: +lossguide(max_leaves=64) config, 2 seeds each
+06	546e556	1789534507	exp15: +d12/ss0.7 config (10 models)
+07	9f9b336	1789535309	exp23: E15 + dt5 appended
+08	698fe85	1789535952	exp27: d12 -> 600 rounds (runtime headroom)
+09	ea56a83	1789536183	exp29: +smoothed carrier-hour TE numeric
+10	3401069	1789536291	exp31: +te_dow_hour, te_carrier_dow
+11	520c60f	1789536406	exp32: +te_origin_hour (m=500)
+12	b07646d	1789537021	exp37: +cnt_route log-count

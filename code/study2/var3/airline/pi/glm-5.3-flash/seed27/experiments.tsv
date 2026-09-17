@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	81de627	0.7141	ok	4	baseline: 30 trees, depth 6, lr 0.1, native categoricals
+2	6445d65	0.7208	ok	12	feat overhaul + params + early stopping
+3	343df8f	0.7193	ok	14	TE + counts for carrier/origin/dest/route/hour
+4	5962bfa	0.7218	ok	14	ablation: low-card TE + counts
+5	e638f6e	0.7234	ok	25	full-train refit at ES-tuned iteration count
+6	3ade304	0.7213	ok	27	params: depth10 mcw10 colsample0.7
+7	526162c	0.7224	ok	57	lr0.03 3000 trees depth8
+8	3eeda5f	0.7203	ok	27	TE: hour, carrier_hour, carrier_month + route cnt
+9	5e969d1	0.7188	ok	29	OOF TE 5-fold all keys + counts
+10	1d37371	0.7224	ok	24	counts only: origin/dest/route
+11	0b14cf6	0.7251	ok	66	seed-bag 4 models average
+12	2666239	0.7271	ok	76	ensemble depths 6/8/9/10
+13	4798e91	0.7249	ok	117	ES cap 2500
+14	569d54c	0.7274	ok	93	ensemble 6 members depth+colsample diversity
+15	78a4eb5	0.7261	ok	108	month/dow/hour native categorical
+16	574aada	0.7284	ok	102	logit-mean pooling, max_bin 512
+17	7837d52	0.0000	timeout	120	route native categorical
+18	175292a	0.7285	ok	110	safe aggregates + weekend flag
+19	47e4eae	0.7285	ok	95	fixed tree counts, no ES pass
+20	96c11de	0.7285	ok	97	lr-diverse ensemble
+21	18928db	0.0000	timeout	121	native-cat interaction columns
+22	9de3fa5	0.7277	ok	98	block15 + feature trim
+23	b500b0d	0.7274	ok	120	max_bin 256, 8 members
+24	53a5993	0.7264	ok	81	gamma0.5 mcw5 members
+25	b239226	0.7268	ok	84	row-bagging members 85%
+26	e9820b2	0.7284	ok	91	raw-only diversity member
+27	1500acd	0.0000	timeout	121	prepare cache + 7 members
+28	dc4ee63	0.7282	ok	114	shared Xt + 7 members
+29	13ae7da	0.7238	ok	117	complete low-card TE family
+30	3664248	0.7273	ok	91	drop d10 member
+31	48d6330	0.7280	ok	119	rank-mean pooling
+32	3030d7b	0.7280	ok	113	trees x1.15
+33	35be36d	0.7284	ok	106	d6 lr0.03 member + shared prepare
+34	a2659fe	0.7284	ok	107	TE m=100
+35	1b4dcb8	0.7289	ok	110	7 members incl d7 cs0.6
+36	a1f9d2f	0.7289	ok	100	d9 cs0.6 instead of d10
+37	960c826	0.7289	ok	111	re-add dist_log
+38	037a0c0	0.7257	ok	112	subsample 0.75
+39	0e3c4dd	0.7286	ok	106	drop te_carrier
+40	b676b27	0.7288	ok	107	gamma 0.2 (last experiment)

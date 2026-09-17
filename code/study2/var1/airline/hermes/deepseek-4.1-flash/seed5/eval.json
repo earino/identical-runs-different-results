@@ -1,0 +1,192 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 5,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:46:33+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s5-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T23:14:27+00:00",
+  "wall_seconds": 1674.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3432.0,
+  "endpoint_at_end": "ok",
+  "head": "c619e9a",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7613,
+  "final_eval_auc": 0.7613,
+  "holdout_auc": 0.744190962034,
+  "holdout_ap": 0.7431478355948552,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.029420210298000016,
+  "generalization_gap": 0.01710903796599994,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10770874,
+    "tokens_in_uncached": 10770874,
+    "tokens_in_cached": 0,
+    "tokens_out": 74800,
+    "turns": null,
+    "api_calls": 135,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3183.6,
+  "cpu_seconds_counted": 2495.4,
+  "cpu_seconds_uncounted": 588.6,
+  "cpu_seconds_exempt": 99.6,
+  "python_processes": 58,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 148,
+  "fits_counted": 96,
+  "fits_uncounted": 48,
+  "commits": [
+    {
+      "commit": "40f3a0f",
+      "message": "baseline"
+    },
+    {
+      "commit": "ff6d03e",
+      "message": "capacity test: 1500 trees lr0.05 depth6 with early stopping"
+    },
+    {
+      "commit": "c506238",
+      "message": "regularized model: depth6 lr.03 mcw100 sub.7 col.6, 200 trees, full data"
+    },
+    {
+      "commit": "013e3cc",
+      "message": "fe v1 on regularized model: time/cyclical/distance/freq features"
+    },
+    {
+      "commit": "be92a2f",
+      "message": "add schedule congestion features (flights per origin-hour-day)"
+    },
+    {
+      "commit": "1b615be",
+      "message": "density-normalize congestion counts to training sampling density"
+    },
+    {
+      "commit": "d170e1c",
+      "message": "add destination-side congestion features"
+    },
+    {
+      "commit": "8a8d55e",
+      "message": "shallower trees: depth4 500 trees lr.03"
+    },
+    {
+      "commit": "b23f895",
+      "message": "add cumulative daily airport load + carrier-hour congestion"
+    },
+    {
+      "commit": "9fd8231",
+      "message": "add raw DepTime and minute-of-day features"
+    },
+    {
+      "commit": "bda0d24",
+      "message": "capacity revisit: depth8 n250"
+    },
+    {
+      "commit": "6faf406",
+      "message": "depth10 n300"
+    },
+    {
+      "commit": "ce5fa2b",
+      "message": "depth12 n300"
+    },
+    {
+      "commit": "bfa4037",
+      "message": "mcw 30 (more leaves)"
+    },
+    {
+      "commit": "f0ae75c",
+      "message": "mcw 10"
+    },
+    {
+      "commit": "d04f5e9",
+      "message": "mcw 3"
+    },
+    {
+      "commit": "41058a5",
+      "message": "3-seed ensemble of best config"
+    },
+    {
+      "commit": "21ba869",
+      "message": "4-model diverse ensemble (depth 10/12/14/12, varying colsample)"
+    },
+    {
+      "commit": "fdb997d",
+      "message": "reg_lambda 5 in ensemble"
+    },
+    {
+      "commit": "d3e745f",
+      "message": "lower subsample/colsample on 2 ensemble members"
+    },
+    {
+      "commit": "114e76d",
+      "message": "subsample .5 colsample .4 for all ensemble members"
+    },
+    {
+      "commit": "275088c",
+      "message": "ablation: drop Dest identity categorical"
+    },
+    {
+      "commit": "ffd20b3",
+      "message": "add OOF target encoding for dest and route"
+    },
+    {
+      "commit": "c619e9a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3084.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 248.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ffd20b3",
+  "best_commit_eval_auc": 0.7613,
+  "best_commit_holdout_auc": 0.744190962034,
+  "best_commit_holdout_ap": 0.7431478355948552,
+  "best_commit_error": null,
+  "finalized_best": true
+}

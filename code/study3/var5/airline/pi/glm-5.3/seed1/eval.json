@@ -1,0 +1,144 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 1,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:23:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s1-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:16:52+00:00",
+  "wall_seconds": 6821.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 20543.3,
+  "endpoint_at_end": "ok",
+  "head": "ae77c88",
+  "n_commits": 11,
+  "n_experiments": 24,
+  "n_ok": 23,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7457,
+  "final_eval_auc": 0.7457,
+  "holdout_auc": 0.7458055917440001,
+  "holdout_ap": 0.734920881253144,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.031034840008000053,
+  "generalization_gap": -0.00010559174400004423,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3511417,
+    "tokens_in_uncached": 803001,
+    "tokens_in_cached": 2708416,
+    "tokens_out": 66367,
+    "turns": null,
+    "api_calls": 81,
+    "method": "sum-of-81-events",
+    "cost_usd": 2.1204,
+    "cached_share": 0.771
+  },
+  "cpu_seconds_python": 17254.3,
+  "cpu_seconds_counted": 5045.7,
+  "cpu_seconds_uncounted": 11853.5,
+  "cpu_seconds_exempt": 355.1,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 313,
+  "fits_counted": 86,
+  "fits_uncounted": 222,
+  "commits": [
+    {
+      "commit": "8993a1d",
+      "message": "baseline"
+    },
+    {
+      "commit": "6a8e747",
+      "message": "FE v1 + capacity: ES on 80/20 split, lr .05 depth 8"
+    },
+    {
+      "commit": "2f0c30c",
+      "message": "FE v2 (no Route cat) + capacity ES"
+    },
+    {
+      "commit": "012a21f",
+      "message": "ES to find iters, refit on full train"
+    },
+    {
+      "commit": "a4aa4a8",
+      "message": "depth 12, lr 0.03"
+    },
+    {
+      "commit": "f626efe",
+      "message": "depth 20"
+    },
+    {
+      "commit": "2599191",
+      "message": "add route popularity count"
+    },
+    {
+      "commit": "eaa28be",
+      "message": "3-seed ensemble refit on full data"
+    },
+    {
+      "commit": "8d1f535",
+      "message": "ensemble colsample 0.7"
+    },
+    {
+      "commit": "6a868fa",
+      "message": "2-fold ES to stabilize tree count"
+    },
+    {
+      "commit": "666ae35",
+      "message": "colsample 0.6 + max_bin 1024"
+    },
+    {
+      "commit": "ae77c88",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16899.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 3289.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "666ae35",
+  "best_commit_eval_auc": 0.7457,
+  "best_commit_holdout_auc": 0.7458055917440001,
+  "best_commit_holdout_ap": 0.734920881253144,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	59bc2e2	0.7141	ok	4	baseline
+2	f74ee7c	0.7079	ok	3	fe-time-route + ES depth8
+3	4ad189b	0.7172	ok	2	d4 lr.05 n200, no route, hour+dep_min
+4	91ccdbe	0.7186	ok	2	doy seasonality
+5	e5581bd	0.7196	ok	5	mcw10 + ens5 col.7
+6	7bca714	0.7213	ok	5	stack n160+alpha1+evw2+ecdf
+7	76c10b9	0.7217	ok	6	+dst_time_ecdf
+8	1149a26	0.7222	ok	7	carrier+meta features, mcw20
+9	ffb8f87	0.7226	ok	6	d5 n120 mcw40
+10	df0c29d	0.7226	ok	10	hetero ensemble A+B
+11	9b53a75	0.7252	ok	6	drop Month cat + minute_of_hour
+12	dff5b29	0.7369	ok	23	schedule density family
+13	8c3127f	0.7389	ok	26	d7 mcw60
+14	d9947fe	0.7448	ok	55	before/after density family
+15	126c372	0.7452	ok	57	n160
+16	4651aac	0.7461	ok	56	simplify + w15
+17	1468f37	0.0000	timeout	120	route banks + arrival bank
+18	d937c16	0.7560	ok	96	route banks 30/60
+19	5f8c132	0.7565	ok	64	before-only densities
+20	20998c9	0.7579	ok	14	exp-decay queues + fast grouping

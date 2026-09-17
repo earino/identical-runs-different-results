@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	160b374	1789648508	baseline
+01	9a687a3	1789650071	deep-tree ensemble (d16-24, 150 rds) + hour-cat/freq features
+02	c196c40	1789650384	add origin/dest x hour schedule-density frequency features
+03	a0e802a	1789651142	add half-hour-of-day categorical feature
+04	1484480	1789651370	add quarter-hour categorical (hierarchical time cats)
+05	333571c	1789651575	carrier x half-hour density + deeper ensemble mix (18-28)
+06	fb24551	1789651677	subsample diversity (0.7/0.8) in member mix
+07	8cbc308	1789651792	wider ensemble: 8 members (d16-28) at 125 rounds
+08	3d77145	1789651896	add origin/dest x half-hour density features
+09	1531a5e	1789652133	colsample diversity (0.6/0.7/0.8) across members
+10	2e673b3	1789652606	bump member subsampling to 0.75/0.85
+11	a6a81ef	1789653507	depth frontier: swap d16/d18 members for d30/d32
+12	bd9b019	1789654118	depth-weighted member aggregation

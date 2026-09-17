@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	58a6122	0.7141	ok	3	baseline
+2	e02c88f	0.7093	ok	19	FE v1 + big model early stopping
+3	20f7c8a	0.7092	ok	4	FE v1 + d6 lr.1 400t ES30
+4	18a4836	0.7158	ok	2	ablation: FE v1 no-ES full-train 100t
+5	f3f854e	0.0000	crash	1	TE Origin/Dest/Route/Carrier (OOF)
+6	d0e6c76	0.7151	ok	3	TE Origin/Dest/Route/Carrier (OOF)
+7	b119bdf	0.7151	ok	4	500t lr.05 d6
+8	597e6c4	0.6987	ok	2	Route as categorical
+9	3243eb4	0.7123	ok	2	day-of-year features
+10	63b9ecb	0.7141	ok	4	d8 150t lr.1
+11	d163fae	0.7167	ok	3	sub/col .8 200t
+12	1e839b7	0.7192	ok	7	5-seed bag
+13	864298e	0.0000	crash	1	CV bag 5x2
+14	0cb0914	0.7188	ok	14	CV bag 5x2
+15	941c9f3	0.7197	ok	13	10-seed bag
+16	00582da	0.7201	ok	13	hetero bag 9 members
+17	c9d27ec	0.7215	ok	18	hetero bag 15
+18	5599250	0.7220	ok	29	hetero bag 25
+19	bc74fed	0.7225	ok	69	bag 25 lr.05 400t
+20	999280e	0.7221	ok	67	dep bins
+21	0f60580	0.7223	ok	47	bag lr-mix
+22	ebba109	0.7226	ok	67	month weights
+23	2adf2f5	0.7226	ok	66	max_bin 512
+24	fe45155	0.7242	ok	71	bag 28
+25	0efdb2d	0.7235	ok	95	bag 35
+26	a2ead59	0.7224	ok	72	mcw-mix bag 28
+27	e892681	0.7216	ok	71	ablation drop sincos
+28	0e16aec	0.7277	ok	86	interaction TE
+29	657292e	0.7262	ok	96	TE x6 interactions
+30	7a666c3	0.7349	ok	85	TE bin30
+31	dc883df	0.7362	ok	84	TE bin15
+32	e89cd8a	0.7375	ok	97	TE multi-scale
+33	ce1784d	0.7375	ok	108	TE 4 scales
+34	df1b575	0.7374	ok	112	bag 35 350t
+35	f71f05b	0.7376	ok	103	TE + carrier-origin
+36	7776cf7	0.7375	ok	99	OOF 10-fold
+37	bbe15c7	0.7375	ok	96	alpha 50
+38	209f5d5	0.7370	ok	100	colsample .9
+39	9cfd573	0.7288	ok	99	TE dom x month
+40	7707de9	0.7373	ok	99	TE month x bin60

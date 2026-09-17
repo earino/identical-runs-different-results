@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5cb3085	0.7141	ok	2	baseline: XGBClassifier 30 trees depth6 lr0.1
+2	8c05f2c	0.7081	ok	5	exp2: bigger model + early stopping on internal val split
+3	b5fa858	0.7159	ok	16	exp3: time FE + probe/refit
+4	b669322	0.7135	ok	17	exp4: TE + counts on high-card cols
+5	3fd10b9	0.7144	ok	56	exp5: OOF-TE 5-fold bag
+6	e59d944	0.7181	ok	17	exp6: deeper + stronger subsampling
+7	ecb8718	0.7205	ok	12	exp7: push depth+reg further
+8	fd6390b	0.7206	ok	11	exp8: extreme depth+reg
+9	9df9a17	0.0000	crash	6	exp9: seed bag x5
+10	5d8e44b	0.7236	ok	35	exp10: seed bag x5 fixed
+11	5df38bc	0.7153	ok	69	exp11: route categorical
+12	c4eb68c	0.7318	ok	35	exp12: carrier-hour interaction
+13	cc76d69	0.7144	ok	23	exp13: more carrier interactions
+14	1542f7e	0.7289	ok	26	exp14: origin-hourbin interaction
+15	15dcd78	0.7274	ok	51	exp15: depth8
+16	b8b4791	0.7322	ok	64	exp16: bag x10
+17	5e889cd	0.7312	ok	73	exp17: more refit trees
+18	d786797	0.7287	ok	35	exp18: dow-hour interaction
+19	a06a3cf	0.7379	ok	112	exp19: carrier half-hour
+20	2259fca	0.7419	ok	97	exp20: 15-min blocks
+21	9f513de	0.0000	timeout	123	exp21: 10-min blocks
+22	3a9c360	0.7369	ok	95	exp22: lr0.1 rebase
+23	820fc5c	0.0000	timeout	121	exp23: DMatrix refactor
+24	ba08222	0.7398	ok	91	exp23b: native refactor lr0.07
+25	7ff0586	0.0000	crash	2	exp25: carrier-distancebin
+26	6b68507	0.0000	timeout	120	exp26: carrier-distancebin fixed
+27	1cab752	0.7419	ok	86	exp27: fixed rounds
+28	c011599	0.7412	ok	105	exp28: R=850
+29	12554ae	0.7425	ok	79	exp29: R=650
+30	327fe1a	0.7431	ok	66	exp30: R=550
+31	256ce86	0.7433	ok	54	exp31: R=450
+32	09279f4	0.7428	ok	42	exp32: R=350
+33	8cfc38b	0.7434	ok	85	exp33: 16 seeds
+34	c03050e	0.7431	ok	71	exp34: mixed-depth bag
+35	fa0e24a	0.7439	ok	86	exp35: max_bin 512
+36	838381c	0.7437	ok	86	exp36: lean features
+37	b3458fd	0.7437	ok	92	exp37: subsample 0.8
+38	def9158	0.7440	ok	91	exp38: colsample 0.65
+39	c25df81	0.0000	timeout	121	exp39: mcw 15
+40	eb0893d	0.7440	ok	90	exp40: max_bin 1024

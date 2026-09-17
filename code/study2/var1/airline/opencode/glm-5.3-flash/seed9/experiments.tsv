@@ -1,0 +1,37 @@
+n	commit	eval_auc	status	seconds	description
+1	74830a8	0.7141	ok	4	baseline: 30 trees, depth 6, categorical support
+2	ad43b72	0.7118	ok	2	feat eng: numeric+cyclic time, route/carrier cats
+3	c6e529c	0.7116	ok	12	feat eng + big model early stopping
+4	9f796c7	0.7119	ok	3	raw features + big model early stopping
+5	a8b6f78	0.7122	ok	5	depth 6 lr .05 ES refit raw features
+6	2e45e42	0.7171	ok	2	tuned depth4 n150 lr05
+7	b5910e3	0.7188	ok	3	OOF target encoding high-card cats
+8	ea1ce4b	0.7197	ok	9	TE extended to time cats + DestHour
+9	a1c2aa9	0.7191	ok	3	interaction TEs
+10	f98f7a6	0.7126	ok	3	log_dist + counts + hhmm cat
+11	832b991	0.7199	ok	3	log_dist + flight counts
+12	a5f2061	0.7205	ok	6	3-model ensemble
+13	028589a	0.7206	ok	10	6-model diverse ensemble
+14	d04d568	0.7203	ok	7	K=10 OOF folds
+15	5d58167	0.7205	ok	20	DART member in ensemble
+16	ec6b3cb	0.7226	ok	5	colsample .5 bynode .7
+17	efefd2e	0.7275	ok	42	3x d12 n300 ensemble
+18	2efca12	0.7360	ok	103	3x d20 n300 bytree.2 bynode.8
+19	5536b99	0.7363	ok	103	interaction TEs + cyclic hour d20
+20	4357b34	0.0000	crash	2	distance-decile TEs
+21	50b7fc5	0.0000	crash	3	distance-decile TEs
+22	c72c7a8	0.7376	ok	110	distance-decile TEs
+23	3ffdd7d	0.7350	ok	112	Origin/Month x DistDecile TEs
+24	2b3474e	0.7363	ok	86	2xd20+1xd12 ensemble
+25	0b1c69c	0.7369	ok	113	bytree .25 bynode .8 d20
+26	67f8f17	0.0000	crash	1	prune low-card TEs
+27	a7ce938	0.0000	crash	1	prune low-card TEs
+28	18f929f	0.7417	ok	105	prune low-card TEs
+29	3b25a2d	0.7320	ok	105	hygiene prune log_dist/counts/cyclic
+30	00aeedd	0.7389	ok	114	duplicate strong TEs + log_dist
+31	eefca8e	0.7380	ok	106	prune counts only
+32	b74006c	0.7354	ok	107	prune cyclic only
+33	501d348	0.7413	ok	108	K=8 OOF folds
+34	8453385	0.7417	ok	106	bynode .75 d20
+35	2db6c1b	0.7421	ok	109	bynode .85 d20
+36	d5ca5d9	0.7421	ok	109	bynode .9 d20

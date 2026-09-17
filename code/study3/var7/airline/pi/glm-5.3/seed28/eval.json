@@ -1,0 +1,124 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 28,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:28:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s28-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T19:59:20+00:00",
+  "wall_seconds": 5469.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 15450.8,
+  "endpoint_at_end": "ok",
+  "head": "b37e0af",
+  "n_commits": 6,
+  "n_experiments": 13,
+  "n_ok": 12,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.765,
+  "final_eval_auc": 0.7649,
+  "holdout_auc": 0.7648202704659999,
+  "holdout_ap": 0.7548291957412928,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.05004951872999985,
+  "generalization_gap": 7.972953400015026e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3674406,
+    "tokens_in_uncached": 757094,
+    "tokens_in_cached": 2917312,
+    "tokens_out": 87764,
+    "turns": null,
+    "api_calls": 67,
+    "method": "sum-of-67-events",
+    "cost_usd": 2.2046,
+    "cached_share": 0.794
+  },
+  "cpu_seconds_python": 15419.5,
+  "cpu_seconds_counted": 2857.1,
+  "cpu_seconds_uncounted": 12176.6,
+  "cpu_seconds_exempt": 385.8,
+  "python_processes": 41,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 239,
+  "fits_counted": 31,
+  "fits_uncounted": 205,
+  "commits": [
+    {
+      "commit": "946c1e4",
+      "message": "baseline"
+    },
+    {
+      "commit": "a2b667b",
+      "message": "FE: numeric calendar, hour/cyclical time, log dist, route cat + early-stopped model"
+    },
+    {
+      "commit": "3124b45",
+      "message": "FE + deterministic 400-tree model (isolate FE effect)"
+    },
+    {
+      "commit": "39a0b79",
+      "message": "FE counts + deep d24 colsample0.3 lr0.02 model"
+    },
+    {
+      "commit": "9f578ac",
+      "message": "lean FE + time dups + minute, 3-seed ensemble d24 c.3 lr.02"
+    },
+    {
+      "commit": "137b926",
+      "message": "ensemble diversity via per-member max_bin 256/384/512"
+    },
+    {
+      "commit": "b37e0af",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 15033.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 31.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a4494aa",
+  "best_commit_eval_auc": 0.765,
+  "best_commit_holdout_auc": 0.764695182142,
+  "best_commit_holdout_ap": 0.7546917789825212,
+  "best_commit_error": null,
+  "finalized_best": false
+}

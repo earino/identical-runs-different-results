@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	5e2e512	1789490861	baseline
+01	1ec2711	1789491029	feateng v1 + many shallow slow trees
+02	bf73046	1789491088	depth 6 in slow regime
+03	c2e8550	1789491119	5-seed ensemble of depth-6 slow model
+04	58b4da3	1789491157	max_bin 512
+05	324810e	1789491205	stable flags: weekend, dom, dist_bin, midnight
+06	cf88a16	1789491333	count/busyness features
+07	0df3159	1789491635	subsample .65 colsample .5
+08	44aa3a7	1789491688	subsample .6 colsample .4
+09	759bf7f	1789492267	lossguide max_leaves 48
+10	7d54dd6	1789492331	lossguide max_leaves 64
+11	da8982b	1789492400	lossguide max_leaves 96
+12	97a02e8	1789492604	colsample_bynode 0.8

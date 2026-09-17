@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 42,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T19:05:42+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s42-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:00:42+00:00",
+  "wall_seconds": 3300.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10981.8,
+  "endpoint_at_end": "ok",
+  "head": "6c096f5",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 0,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7464,
+  "final_eval_auc": 0.7464,
+  "holdout_auc": 0.747557612254,
+  "holdout_ap": 0.7384543050578122,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03278686051799995,
+  "generalization_gap": -0.0011576122540000178,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5947333,
+    "tokens_in_uncached": 5947333,
+    "tokens_in_cached": 0,
+    "tokens_out": 24114,
+    "turns": null,
+    "api_calls": 127,
+    "method": "sum-of-127-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 10861.8,
+  "cpu_seconds_counted": 10398.9,
+  "cpu_seconds_uncounted": 0.8,
+  "cpu_seconds_exempt": 462.0,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 518,
+  "fits_counted": 499,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "059a1f3",
+      "message": "baseline"
+    },
+    {
+      "commit": "c2e273e",
+      "message": "time features, numeric calendar, more trees"
+    },
+    {
+      "commit": "975d03d",
+      "message": "4-model xgboost ensemble depths 5-8"
+    },
+    {
+      "commit": "5d08839",
+      "message": "7-model ensemble depths 4-9"
+    },
+    {
+      "commit": "688c09b",
+      "message": "congestion/frequency count features"
+    },
+    {
+      "commit": "fecea6c",
+      "message": "carrier-hour counts and congestion ratios"
+    },
+    {
+      "commit": "7a1dc7e",
+      "message": "add lossguide configs to ensemble"
+    },
+    {
+      "commit": "3d94221",
+      "message": "more lossguide configs"
+    },
+    {
+      "commit": "cb67495",
+      "message": "composite hour target encoding"
+    },
+    {
+      "commit": "7452af8",
+      "message": "more composite target encodings"
+    },
+    {
+      "commit": "32d6d70",
+      "message": "scale trees 0.6 for headroom"
+    },
+    {
+      "commit": "48d8346",
+      "message": "add 3 lossguide configs to ensemble"
+    },
+    {
+      "commit": "531265d",
+      "message": "absolute departure minutes + next-day flag"
+    },
+    {
+      "commit": "f34308d",
+      "message": "add reg_lambda/alpha regularization"
+    },
+    {
+      "commit": "967d7c9",
+      "message": "stronger regularization"
+    },
+    {
+      "commit": "2f96030",
+      "message": "even stronger regularization"
+    },
+    {
+      "commit": "30c0f31",
+      "message": "drop cyclic encodings ablation"
+    },
+    {
+      "commit": "af4b9d4",
+      "message": "reduce colsample 25%"
+    },
+    {
+      "commit": "276569f",
+      "message": "add two lossguide configs"
+    },
+    {
+      "commit": "5e2a5f1",
+      "message": "tree scale 0.7 with strong reg"
+    },
+    {
+      "commit": "6c096f5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10399.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 120.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "5e2a5f1",
+  "best_commit_eval_auc": 0.7464,
+  "best_commit_holdout_auc": 0.747557612254,
+  "best_commit_holdout_ap": 0.7384543050578122,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,184 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 37,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T08:27:27+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s37-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:51:14+00:00",
+  "wall_seconds": 5027.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 13581.2,
+  "endpoint_at_end": "ok",
+  "head": "fe1956c",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 4,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7432,
+  "final_eval_auc": 0.7432,
+  "holdout_auc": 0.744380326754,
+  "holdout_ap": 0.735711505777312,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02960957501799999,
+  "generalization_gap": -0.0011803267540000384,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7781268,
+    "tokens_in_uncached": 430932,
+    "tokens_in_cached": 7350336,
+    "tokens_out": 29745,
+    "turns": null,
+    "api_calls": 150,
+    "method": "sum-of-150-events",
+    "cost_usd": 2.6453,
+    "cached_share": 0.945
+  },
+  "cpu_seconds_python": 13094.8,
+  "cpu_seconds_counted": 9562.1,
+  "cpu_seconds_uncounted": 3182.5,
+  "cpu_seconds_exempt": 350.2,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 268,
+  "fits_counted": 205,
+  "fits_uncounted": 57,
+  "commits": [
+    {
+      "commit": "114731c",
+      "message": "baseline"
+    },
+    {
+      "commit": "775733f",
+      "message": "FE v1: time-of-day + route interaction, early stopping on eval"
+    },
+    {
+      "commit": "52cda4b",
+      "message": "FE v2: drop route cat, ES on AUC, lr 0.05 more trees"
+    },
+    {
+      "commit": "4b0a717",
+      "message": "HPO v1: lr .03 depth 8 mcw 5 subsample/colsample .8 ES 200"
+    },
+    {
+      "commit": "0f430a1",
+      "message": "FE v4: seasonal features day_of_year, weekend, hour_of_week"
+    },
+    {
+      "commit": "72dc4a7",
+      "message": "ensemble: average 5 seed models"
+    },
+    {
+      "commit": "e2eecfc",
+      "message": "ensemble: 8 diverse members"
+    },
+    {
+      "commit": "883e53a",
+      "message": "FE v5: estimated arrival time features"
+    },
+    {
+      "commit": "45692f9",
+      "message": "runtime safety: ES 150, cap 3000 trees"
+    },
+    {
+      "commit": "19b8ec9",
+      "message": "feature-bagged ensemble: per-member group drops"
+    },
+    {
+      "commit": "8a445cb",
+      "message": "clone calendar-drop member family x3"
+    },
+    {
+      "commit": "71334a7",
+      "message": "runtime: 7 members, ES 100"
+    },
+    {
+      "commit": "8cb70c2",
+      "message": "all-calendar-drop ensemble, varied entity drops"
+    },
+    {
+      "commit": "824cbda",
+      "message": "clone deep-slow winners: 2x d12 cal+dist, 2x d10 cal+carrier"
+    },
+    {
+      "commit": "f60bcac",
+      "message": "rebalance: 3x d12 deep (cal+dist family), trim d8 redundancy"
+    },
+    {
+      "commit": "3a4bb3b",
+      "message": "keep-DOW member variant + prepare once"
+    },
+    {
+      "commit": "0fe9130",
+      "message": "runtime margin: 6 members, ES 60"
+    },
+    {
+      "commit": "88e67e5",
+      "message": "dates-family ensemble: keep DOW views with varied drops"
+    },
+    {
+      "commit": "0ec6ed7",
+      "message": "prune dates+distance, add stripped clocks+distance dates member"
+    },
+    {
+      "commit": "b07dd59",
+      "message": "swap stripped member for deep dates view"
+    },
+    {
+      "commit": "db2363e",
+      "message": "reseed lottery draw C on best 6-view config"
+    },
+    {
+      "commit": "fe1956c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 12744.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 486.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "db2363e",
+  "best_commit_eval_auc": 0.7432,
+  "best_commit_holdout_auc": 0.744380326754,
+  "best_commit_holdout_ap": 0.735711505777312,
+  "best_commit_error": null,
+  "finalized_best": true
+}

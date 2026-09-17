@@ -1,0 +1,22 @@
+n	commit	eval_auc	status	seconds	description
+1	cc80138	0.7141	ok	4	baseline
+2	aae5505	0.6436	ok	11	FE v2: cyc time + TE + tuned xgb
+3	04d1ddd	0.7240	ok	23	OOF TE + cyc time + tuned xgb
+4	264359f	0.7302	ok	40	refit on all train rows
+5	3e0d56e	0.0000	crash	21	4-model ensemble at ES size
+6	17bf1f7	0.0000	timeout	126	4-model ensemble (typo fixed)
+7	a8fb929	0.7348	ok	51	3-model ensemble, lr 0.1
+8	f753b72	0.7367	ok	86	5-model ensemble
+9	7e6f042	0.7375	ok	114	add te_slot15 + cnt features
+10	99e8784	0.7372	ok	112	bagged members (row subsets)
+11	58f74b0	0.7392	ok	101	greedy 5-member ensemble @500 trees
+12	f18b27b	0.7434	ok	111	reg_alpha=2 ensemble
+13	a42dd8b	0.7434	ok	115	reg_alpha=5 ensemble
+14	bbdd1a0	0.7451	ok	108	per-member reg_alpha diversity
+15	448725d	0.7451	ok	97	remove unused ES run
+16	20c1d32	0.7454	ok	99	TE alpha doubled for high-card keys
+17	2cb671a	0.7452	ok	99	TE alpha x2 again
+18	5e7f77b	0.7459	ok	100	flight-day clock cyclics
+19	0a80fee	0.7451	ok	99	drop tod cyclics
+20	6fbfcad	0.7464	ok	101	origin/dest x ops_hour TEs
+21	9e3a6b4	0.0000	timeout	120	6th deep-sparse member

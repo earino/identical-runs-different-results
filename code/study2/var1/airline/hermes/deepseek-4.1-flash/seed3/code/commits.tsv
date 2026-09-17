@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	38dd8e6	1789500198	baseline
+01	674de5d	1789500838	features: carrier x hour interaction, route/carrier frequency, log distance, cyclical tod
+02	33dfc7d	1789500917	ensemble: 5-seed bag of depth-4 model
+03	bdb7275	1789501567	ensemble: 12 members across 4 configs incl node-subsampled
+04	2a66d69	1789501672	ensemble: 16 members with random 70% feature subspaces
+05	104fd5f	1789501809	ensemble: 24 members (3 seeds x 2 subspace draws per config)
+06	b54f819	1789502046	ensemble: alternate categorical encoding per member
+07	81a2601	1789502201	ensemble: random subspace size per member (8..all cols)
+08	1d9d126	1789502621	ensemble: 36 members (3 subspace draws per config/seed)
+09	f6a9b7f	1789503237	ensemble: per-member regularization jitter
+10	e16eae8	1789503338	ensemble: broad hyperparameter jitter per member
+11	f3aec0f	1789503453	ensemble: wider hyperparameter jitter (depth 2-8, alpha/lambda, lr)
+12	70d6ab7	1789503665	ensemble: wider jitter envelope + cat threshold jitter
+13	7605145	1789504584	aggregation: logit-space mean

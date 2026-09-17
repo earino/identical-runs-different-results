@@ -1,0 +1,160 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 45,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:35:40+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s45-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:07:34+00:00",
+  "wall_seconds": 1914.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5503.6,
+  "endpoint_at_end": "ok",
+  "head": "1620a84",
+  "n_commits": 15,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7244,
+  "final_eval_auc": 0.7244,
+  "holdout_auc": 0.7252400575760001,
+  "holdout_ap": 0.715573285328273,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.010469305840000054,
+  "generalization_gap": -0.0008400575760000306,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8436460,
+    "tokens_in_uncached": 35052,
+    "tokens_in_cached": 8401408,
+    "tokens_out": 36854,
+    "turns": null,
+    "api_calls": 156,
+    "method": "sum-of-156-events",
+    "cost_usd": 0.2757,
+    "cached_share": 0.996
+  },
+  "cpu_seconds_python": 5316.3,
+  "cpu_seconds_counted": 5104.9,
+  "cpu_seconds_uncounted": 1.4,
+  "cpu_seconds_exempt": 209.9,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 5753,
+  "fits_counted": 5531,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "255c398",
+      "message": "baseline"
+    },
+    {
+      "commit": "1ab4e82",
+      "message": "restore bagged ensemble 5x30 (best 0.7156)"
+    },
+    {
+      "commit": "a84274e",
+      "message": "diverse 15-member ensemble"
+    },
+    {
+      "commit": "1db0d03",
+      "message": "50-member random-config ensemble"
+    },
+    {
+      "commit": "f190b92",
+      "message": "feature-diverse ensemble: baseline/time/TE member variants"
+    },
+    {
+      "commit": "e8c148c",
+      "message": "greedy ensemble selection via 5-fold OOF preds"
+    },
+    {
+      "commit": "db6b703",
+      "message": "restore DOY harmonics variant1 (best 0.7204)"
+    },
+    {
+      "commit": "c74207d",
+      "message": "holiday window flags in variant 1"
+    },
+    {
+      "commit": "cb6d327",
+      "message": "tilt mix to variant1 + per-variant OOF diagnostics"
+    },
+    {
+      "commit": "b046b8e",
+      "message": "70 candidates, 3-fold selection OOF"
+    },
+    {
+      "commit": "a1492a7",
+      "message": "3-seed averaging of selected members, 60 greedy steps"
+    },
+    {
+      "commit": "efb3a40",
+      "message": "mix 15/85/0 (drop TE members)"
+    },
+    {
+      "commit": "e3fa891",
+      "message": "drop DayofMonth from variant 1"
+    },
+    {
+      "commit": "77c560c",
+      "message": "drop DayofMonth everywhere"
+    },
+    {
+      "commit": "64b0b17",
+      "message": "2nd doy harmonic retry (no DoM regime)"
+    },
+    {
+      "commit": "1620a84",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5106.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 187.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "64b0b17",
+  "best_commit_eval_auc": 0.7244,
+  "best_commit_holdout_auc": 0.7252400575760001,
+  "best_commit_holdout_ap": 0.715573285328273,
+  "best_commit_error": null,
+  "finalized_best": true
+}

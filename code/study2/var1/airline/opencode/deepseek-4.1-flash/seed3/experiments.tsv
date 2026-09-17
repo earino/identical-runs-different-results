@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1b016c5	0.7141	ok	3	baseline
+2	d638e40	0.7023	ok	3	time feats, route, ES depth7 lr.05
+3	751c74d	0.7125	ok	2	baseline + dep time features
+4	cdcf5cf	0.7131	ok	3	n200 lr0.05 depth6
+5	9d3233d	0.7056	ok	2	baseline + route cat
+6	1c8634e	0.7153	ok	3	depth10 n100 lr.05 reg
+7	f1c3927	0.7140	ok	3	depth14 n150 mcw50
+8	f4127b5	0.7145	ok	3	depth12 n100 mcw30
+9	7ce5e8b	0.7150	ok	6	n300 lr.03 depth10
+10	3f775ac	0.7172	ok	8	5-seed ensemble depth10
+11	1ab83d3	0.7172	ok	8	diverse 5-config ensemble
+12	e559cbf	0.7171	ok	15	10-seed ensemble depth10
+13	a14dee0	0.7169	ok	7	5-seed ensemble + hour feats
+14	64b873c	0.7174	ok	9	5-seed ensemble + target encoding
+15	3af7af2	0.7162	ok	10	target + count encoding
+16	7405a34	0.7231	ok	9	carrier_hour interaction cat
+17	f712ff4	0.7229	ok	15	carrier+origin+dest hour cats
+18	1a12144	0.7221	ok	10	TE for base+hour interactions
+19	91c36c3	0.7124	ok	10	carrier x hour/month/dow cats
+20	ffabcd3	0.7215	ok	7	carrier_hour ensemble depth8
+21	e1e93fb	0.7233	ok	10	carrier_hour ensemble depth11
+22	a118c1b	0.7165	ok	11	carrier_hour+carrier_dist depth11
+23	f547808	0.7321	ok	11	carrier 30min-bucket depth11
+24	e5b610d	0.7292	ok	11	carrier 15min-bucket depth11
+25	c2bcfc5	0.7305	ok	9	carrier 20min-bucket depth11
+26	9d6aaab	0.7329	ok	12	carrier 30min-bucket depth12
+27	8417903	0.7338	ok	13	carrier 30min-bucket depth13
+28	1cf73c5	0.7342	ok	14	carrier 30min-bucket depth14
+29	d8ee902	0.7348	ok	15	carrier 30min-bucket depth16
+30	082c0c9	0.7351	ok	18	carrier 30min-bucket depth20
+31	a8df1a4	0.7352	ok	18	carrier 30min-bucket depth24
+32	3724852	0.7372	ok	54	carrier 30min depth24 n250 lr.03
+33	6044d7c	0.7374	ok	87	carrier 30min depth24 n400 lr.02
+34	95cb943	0.7373	ok	84	add dep_minutes numeric
+35	0c28b0e	0.7374	ok	90	add global tb30 categorical
+36	35627f8	0.7370	ok	46	depth24 n400 mcw50
+37	1f6897c	0.7385	ok	64	depth24 n400 lambda20
+38	5ba8547	0.7365	ok	41	depth24 n400 lambda100
+39	9d49bb8	0.7380	ok	60	depth24 n400 lambda35
+40	62a6de1	0.7365	ok	69	depth24 n400 lambda20 alpha1

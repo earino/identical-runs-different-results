@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	3da6250	1789529861	baseline
+01	56e3dbe	1789530049	shallow trees (d=4), 200 rounds, lr 0.05
+02	54fc188	1789530145	add departure-hour clock features
+03	290b326	1789530802	deep regularized trees (d14 mcw10 lam20 cs0.2 lr0.02 n600)
+04	d970d89	1789531330	d16 cs0.3 mcw5
+05	12ee1cf	1789531984	carrier x hour interaction categorical
+06	cf46f99	1789532708	d20 mcw2 lam10
+07	950c63c	1789533055	d28 depth plateau
+08	d8c797c	1789533299	holiday + part-of-day flags
+09	1310637	1789533694	origin-hour traffic volume feature
+10	aa25707	1789533737	distance x hour interaction
+11	4be7291	1789534429	origin/dest mean stage length
+12	bf1a011	1789534479	2-seed bag
+13	02e7381	1789534938	distance x minute-of-day interaction

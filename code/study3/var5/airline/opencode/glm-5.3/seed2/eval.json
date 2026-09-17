@@ -1,0 +1,172 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 2,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T19:17:59+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s2-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:29:28+00:00",
+  "wall_seconds": 4289.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11802.7,
+  "endpoint_at_end": "ok",
+  "head": "459b4fd",
+  "n_commits": 18,
+  "n_experiments": 40,
+  "n_ok": 33,
+  "n_crash": 0,
+  "n_timeout": 7,
+  "best_eval_auc": 0.7353,
+  "final_eval_auc": 0.7353,
+  "holdout_auc": 0.736685753648,
+  "holdout_ap": 0.7237991778697667,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02191500191200002,
+  "generalization_gap": -0.0013857536480000876,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8914720,
+    "tokens_in_uncached": 654432,
+    "tokens_in_cached": 8260288,
+    "tokens_out": 32795,
+    "turns": null,
+    "api_calls": 156,
+    "method": "sum-of-156-events",
+    "cost_usd": 3.2082,
+    "cached_share": 0.927
+  },
+  "cpu_seconds_python": 11373.7,
+  "cpu_seconds_counted": 10940.6,
+  "cpu_seconds_uncounted": 7.3,
+  "cpu_seconds_exempt": 425.8,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 340,
+  "fits_counted": 334,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "7010e40",
+      "message": "baseline"
+    },
+    {
+      "commit": "f8d875f",
+      "message": "capacity+early stopping: 3000 trees lr .05 depth 6, es on eval"
+    },
+    {
+      "commit": "87f511d",
+      "message": "FE: hour/minute/minute_of_day from DepTime + route categorical"
+    },
+    {
+      "commit": "aba394d",
+      "message": "FE: hour/minute/minute_of_day only (drop route cat)"
+    },
+    {
+      "commit": "74c176b",
+      "message": "regularize: depth 4, mcw 10, subsample .7, colsample .7, lambda 5"
+    },
+    {
+      "commit": "e229227",
+      "message": "ensemble: average of 6 seed-varied early-stopped XGB models"
+    },
+    {
+      "commit": "f0bdd70",
+      "message": "ensemble depth6 mcw20 sub.8 col.8 lr.03"
+    },
+    {
+      "commit": "98bec8e",
+      "message": "diversified ensemble: 12 members, 3 configs x 2 feature sets x 2 seeds + hour24"
+    },
+    {
+      "commit": "dbacbf8",
+      "message": "features: sin/cos time-of-day + log distance"
+    },
+    {
+      "commit": "324872b",
+      "message": "hub-ness count features (origin/dest/route, log1p)"
+    },
+    {
+      "commit": "3046bd8",
+      "message": "count features + trimmed 12-member ensemble (timeout fix)"
+    },
+    {
+      "commit": "3d01837",
+      "message": "max_bin=512 for finer hist splits"
+    },
+    {
+      "commit": "4e9708a",
+      "message": "calendar features: doy cycle + holiday distance"
+    },
+    {
+      "commit": "33853a2",
+      "message": "scale to 16 members (extra seed reps)"
+    },
+    {
+      "commit": "1d3490a",
+      "message": "hour_cat ensemble: 8 members from 2 strong families"
+    },
+    {
+      "commit": "bc5395f",
+      "message": "hour_cat ensemble done right: 8 members, 2 families, clean file"
+    },
+    {
+      "commit": "ae09244",
+      "message": "time_slot cat, 4 members to fit runtime"
+    },
+    {
+      "commit": "e345a28",
+      "message": "time_slot 6 members, depth6-biased"
+    },
+    {
+      "commit": "459b4fd",
+      "message": "FINAL: methodology, results, failure analysis"
+    }
+  ],
+  "cpu_seconds_budgeted": 10947.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 429.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e345a28",
+  "best_commit_eval_auc": 0.7353,
+  "best_commit_holdout_auc": 0.736685753648,
+  "best_commit_holdout_ap": 0.7237991778697667,
+  "best_commit_error": null,
+  "finalized_best": true
+}

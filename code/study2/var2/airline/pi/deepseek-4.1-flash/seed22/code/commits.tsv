@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	4bd4b1e	1789527359	baseline
+01	bbc743a	1789529010	bagged deep-tree XGB ensemble (unlimited depth, 10 models)
+02	a343190	1789529472	add freq encodings + weekend + log distance to deep ensemble
+03	7df0435	1789530675	tune: colsample .45 subsample .95 n30
+04	d98bb10	1789531348	add origin/dest/route/carrier-hour freq features
+05	6cc132c	1789532801	add dep_minute + round-minute indicator features
+06	d72e4e5	1789532887	colsample .42 max_bin 512
+07	a2411b8	1789533145	16-model ensemble
+08	2e47a61	1789533249	add carrier-origin/dest freq features

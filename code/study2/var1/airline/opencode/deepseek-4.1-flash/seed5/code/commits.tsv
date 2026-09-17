@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	f3709ac	1789511673	baseline
+01	e88ea19	1789511701	feat: parse c-n, time-of-day, cyclic features
+02	1bd6409	1789511731	feat: frequency encodings
+03	f3a3c14	1789511777	model: depth5 200 trees regularized
+04	aa3d508	1789511788	model: depth6 reg
+05	6b0e44b	1789511798	model: depth7 reg
+06	893c48f	1789511809	model: depth8 reg
+07	46f800f	1789511822	model: depth10 reg
+08	321326c	1789511835	model: depth12 reg
+09	8f84d6f	1789511850	model: depth16 reg
+10	bcca6cd	1789511931	feat: hour and carrier-hour categoricals
+11	c82b67f	1789512032	feat: route freq
+12	c617c52	1789512055	feat: carrier-airport freq
+13	b91921c	1789512131	model: subsample0.7 colsample0.6
+14	705233b	1789512153	model: colsample0.5
+15	19d6a90	1789512241	model: 4-seed ensemble
+16	eb08332	1789512288	model: 8-seed ensemble
+17	2103a67	1789512558	feat: share ratio features
+18	f5a32f0	1789512760	model: reg_alpha1
+19	5ebac74	1789513013	model: 10-seed ensemble

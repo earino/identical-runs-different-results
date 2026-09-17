@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	42ec480	1789640916	baseline
+01	fa4c439	1789641059	400 trees
+02	2370965	1789641309	10-member colsample ensemble d5
+03	3abdbed	1789641536	numeric date cols + n50
+04	7895a02	1789641738	hour+min_of_day feats, bynode colsample, reg_alpha
+05	363861a	1789642422	deep d24, gamma=0
+06	6bf0277	1789643900	n30 a1 bynode.8
+07	f9fdcb4	1789644313	sincos + traffic counts
+08	d80c751	1789645577	drop date columns
+09	2893176	1789646225	colsample_bytree 0.6

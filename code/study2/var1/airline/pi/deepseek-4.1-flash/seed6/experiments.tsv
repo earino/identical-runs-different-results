@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e288b84	0.7141	ok	4	baseline
+2	da5e4f5	0.7077	ok	10	feat+600trees
+3	7cf826d	0.7083	ok	3	300 trees
+4	6846776	0.7124	ok	2	80 trees
+5	a136864	0.7156	ok	2	depth4 150trees
+6	5152a60	0.7155	ok	2	depth3 400trees
+7	3eafe25	0.7179	ok	2	dep-time feats
+8	e6ce77c	0.7171	ok	2	freq encodings
+9	bf3881b	0.7164	ok	2	OOF target encoding
+10	62ea194	0.7181	ok	2	depth5 150trees
+11	00eecd3	0.7174	ok	3	depth5 350trees
+12	6d1751a	0.7162	ok	3	regularized depth5
+13	f6b9ba9	0.6986	ok	2	route categorical
+14	aa94aeb	0.7200	ok	8	8-model ensemble
+15	2372e56	0.7200	ok	7	drop raw DepTime
+16	34f2e97	0.7311	ok	8	carrier/dow x hour
+17	f1c87ed	0.7270	ok	13	origin x hour
+18	f027e31	0.7215	ok	10	calendar interactions
+19	38ce5a8	0.7323	ok	12	ensemble depths 5-8
+20	4d77109	0.7314	ok	22	ensemble depths 7-10
+21	0a4516b	0.7327	ok	19	ensemble 12 members
+22	7873a11	0.7315	ok	23	30-min slot interactions
+23	65841d0	0.7165	ok	22	origin x dow
+24	72b2c49	0.7375	ok	22	top50 origin x hour
+25	93080ee	0.7229	ok	26	origin-top x month/dow
+26	7d99bfd	0.7338	ok	22	top100 origin x hour
+27	1e91623	0.7395	ok	20	top25 origin x hour
+28	3b8ceda	0.7362	ok	19	top10 origin x hour
+29	a9a0cc2	0.7416	ok	24	dest hour + origin carrier
+30	ac7f05e	0.7422	ok	38	250 trees/member
+31	7516c95	0.7420	ok	61	400 trees/member
+32	129f8d8	0.7436	ok	45	top route + carrier x dist
+33	863da06	0.7449	ok	50	dest carrier + dist hour
+34	4d867e2	0.7453	ok	53	top airports x distbin
+35	c4baaf9	0.7453	ok	69	ensemble 16 members
+36	a8cff46	0.7424	ok	57	airport-top x dow
+37	74d282c	0.7452	ok	55	top-100 routes
+38	64e9213	0.7457	ok	53	regularized members
+39	2a526b4	0.7448	ok	47	subsample regularized
+40	d4718ec	0.7456	ok	71	reg 350 trees

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	fe505ca	1789525817	baseline
+01	a5fc460	1789525917	regularized shallow 300x4 lr.05 mcw10 subsample
+02	40809fe	1789525986	add train-frequency encodings for carrier/origin/dest/route
+03	bd5ed20	1789526020	4-seed averaged ensemble
+04	ff33faf	1789526038	deep6 heavy-reg probe
+05	ea0a4aa	1789526109	add day-of-year seasonal features
+06	ccbc47f	1789526145	add connectivity degree + route/carrier share features
+07	5af88a3	1789526226	250 trees probe
+08	eed444c	1789526384	doy harmonic2, week-of-year, hour/minute, log distance
+09	f5d485e	1789526426	hour + time-block categoricals
+10	8974041	1789526451	categorical interactions dow x hour, carrier x hour
+11	e682e4a	1789526476	airport x hour interactions + freq for all interaction keys
+12	5cb28ea	1789526599	400 trees re-probe
+13	e183ec9	1789526625	600 trees re-probe
+14	6b84cbb	1789526865	distance band x hour interactions
+15	d379a1a	1789526905	finer 250-mile distance bands

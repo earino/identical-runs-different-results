@@ -1,0 +1,184 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 15,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T19:20:33+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s15-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:38:29+00:00",
+  "wall_seconds": 4676.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12807.3,
+  "endpoint_at_end": "ok",
+  "head": "a8ae56e",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 4,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7511,
+  "final_eval_auc": 0.7511,
+  "holdout_auc": 0.7515297982739999,
+  "holdout_ap": 0.7396567027835699,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.036759046537999884,
+  "generalization_gap": -0.0004297982739999151,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9266792,
+    "tokens_in_uncached": 730024,
+    "tokens_in_cached": 8536768,
+    "tokens_out": 33098,
+    "turns": null,
+    "api_calls": 162,
+    "method": "sum-of-162-events",
+    "cost_usd": 3.3872,
+    "cached_share": 0.921
+  },
+  "cpu_seconds_python": 12388.2,
+  "cpu_seconds_counted": 10316.8,
+  "cpu_seconds_uncounted": 1196.4,
+  "cpu_seconds_exempt": 875.0,
+  "python_processes": 59,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 261,
+  "fits_counted": 186,
+  "fits_uncounted": 63,
+  "commits": [
+    {
+      "commit": "63247d3",
+      "message": "baseline"
+    },
+    {
+      "commit": "ee6d1cc",
+      "message": "scale to 800 rounds with early stopping on eval"
+    },
+    {
+      "commit": "b21f30d",
+      "message": "hour/minute features + route interaction"
+    },
+    {
+      "commit": "b6dc2a8",
+      "message": "target encodings + d10 lr0.03 ss0.8 cs0.8, ES on eval"
+    },
+    {
+      "commit": "b0396ef",
+      "message": "restore raw origin/dest/carrier categoricals alongside TEs"
+    },
+    {
+      "commit": "fcdfd26",
+      "message": "average 6 seed-ensemble xgb models"
+    },
+    {
+      "commit": "2818455",
+      "message": "cross-fitted 5-fold TE + cached matrices"
+    },
+    {
+      "commit": "37c1c48",
+      "message": "depth 12"
+    },
+    {
+      "commit": "c0c6969",
+      "message": "depth 14"
+    },
+    {
+      "commit": "4a2d998",
+      "message": "depth 16"
+    },
+    {
+      "commit": "b6ace4f",
+      "message": "ss/cs 0.7 at d16"
+    },
+    {
+      "commit": "b560ba6",
+      "message": "volume count features"
+    },
+    {
+      "commit": "af0bef3",
+      "message": "max_bin 192"
+    },
+    {
+      "commit": "c0df443",
+      "message": "ES on 50k eval subsample"
+    },
+    {
+      "commit": "78a6ec9",
+      "message": "depth 18"
+    },
+    {
+      "commit": "781e812",
+      "message": "depth 20"
+    },
+    {
+      "commit": "c5819d0",
+      "message": "drop calendar features explicitly (NaN-bug behavior was better)"
+    },
+    {
+      "commit": "f800a41",
+      "message": "recency weights: upweight late-2005 training rows"
+    },
+    {
+      "commit": "ad5603b",
+      "message": "recency weights 0.2/mo"
+    },
+    {
+      "commit": "829ec8f",
+      "message": "patience 60 only (keep max_bin 192)"
+    },
+    {
+      "commit": "f3a7cb9",
+      "message": "congestion counts: route/origin/dest x hour"
+    },
+    {
+      "commit": "a8ae56e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 11513.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 419.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f3a7cb9",
+  "best_commit_eval_auc": 0.7511,
+  "best_commit_holdout_auc": 0.7515297982739999,
+  "best_commit_holdout_ap": 0.7396567027835699,
+  "best_commit_error": null,
+  "finalized_best": true
+}

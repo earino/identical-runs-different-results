@@ -1,0 +1,156 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 36,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:57:49+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s36-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:24:21+00:00",
+  "wall_seconds": 5192.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17276.2,
+  "endpoint_at_end": "ok",
+  "head": "3d8c037",
+  "n_commits": 14,
+  "n_experiments": 29,
+  "n_ok": 26,
+  "n_crash": 2,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7603,
+  "final_eval_auc": 0.7603,
+  "holdout_auc": 0.761273795958,
+  "holdout_ap": 0.7519160071687858,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04650304422200002,
+  "generalization_gap": -0.0009737959580000677,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4716848,
+    "tokens_in_uncached": 4716848,
+    "tokens_in_cached": 0,
+    "tokens_out": 70175,
+    "turns": null,
+    "api_calls": 100,
+    "method": "sum-of-100-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17241.6,
+  "cpu_seconds_counted": 6762.9,
+  "cpu_seconds_uncounted": 10064.3,
+  "cpu_seconds_exempt": 414.4,
+  "python_processes": 75,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1237,
+  "fits_counted": 529,
+  "fits_uncounted": 681,
+  "commits": [
+    {
+      "commit": "fa64524",
+      "message": "baseline"
+    },
+    {
+      "commit": "60e4fdb",
+      "message": "drop Month/DayofMonth, shallow depth3 400 trees"
+    },
+    {
+      "commit": "9123fdd",
+      "message": "depth-diverse ensemble depths 2-16"
+    },
+    {
+      "commit": "644ec4d",
+      "message": "add hour, origin/dest-hour density features"
+    },
+    {
+      "commit": "43ec063",
+      "message": "add carrier-hour density and cyclic time features"
+    },
+    {
+      "commit": "0aae815",
+      "message": "extend ensemble to depth 20 with time-bounded schedule"
+    },
+    {
+      "commit": "d6ab47f",
+      "message": "colsample 0.8 in ensemble"
+    },
+    {
+      "commit": "d32af86",
+      "message": "colsample 0.6"
+    },
+    {
+      "commit": "4740730",
+      "message": "colsample 0.4"
+    },
+    {
+      "commit": "66a8d10",
+      "message": "extend ensemble to depth 24"
+    },
+    {
+      "commit": "b359576",
+      "message": "extend ensemble to depth 28"
+    },
+    {
+      "commit": "c4e36e7",
+      "message": "add carrier-origin and carrier-dest density"
+    },
+    {
+      "commit": "f859ce2",
+      "message": "reduce tree counts for time headroom"
+    },
+    {
+      "commit": "0b1434e",
+      "message": "per-member random seeds for feature-sampling diversity"
+    },
+    {
+      "commit": "3d8c037",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16827.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 34.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0b1434e",
+  "best_commit_eval_auc": 0.7603,
+  "best_commit_holdout_auc": 0.761273795958,
+  "best_commit_holdout_ap": 0.7519160071687858,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	d657d03	1789538148	baseline
+01	72141be	1789538315	exp7: time features + numeric month/day/dow + logdist (cat levels fit on train)
+02	ba92f71	1789538325	exp9: early stopping chrono split 2000 trees lr.05 depth8
+03	433ddc6	1789538340	exp10: lr.02 4000 trees depth8
+04	3199a9d	1789538378	exp11: target encoding carrier/origin/dest/route, refit on full train
+05	04a1981	1789538623	exp18: 4-model seed bag on top of exp11
+06	4909ab4	1789539392	exp26: lr.03 + bag of 6
+07	aea197e	1789539494	exp28: distance-bucket x hour TE
+08	b792ef5	1789539578	exp29: carrier x hour TE
+09	2defeb8	1789539829	exp32: 1.15x trees on refit
+10	7be545c	1789539933	exp33: half-hour slot TE (replaces dow-hour block)
+11	71bd7a1	1789540053	exp35: diversified bag (colsample/subsample grid)

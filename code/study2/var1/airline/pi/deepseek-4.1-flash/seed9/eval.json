@@ -1,0 +1,188 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 9,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:44:41+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s9-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:19:09+00:00",
+  "wall_seconds": 2067.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6522.3,
+  "endpoint_at_end": "ok",
+  "head": "ffd74a7",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7233,
+  "final_eval_auc": 0.7233,
+  "holdout_auc": 0.7242558456879999,
+  "holdout_ap": 0.7157857615848122,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.009485093951999923,
+  "generalization_gap": -0.00095584568799989,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4682631,
+    "tokens_in_uncached": 4682631,
+    "tokens_in_cached": 0,
+    "tokens_out": 56717,
+    "turns": null,
+    "api_calls": 116,
+    "method": "sum-of-116-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 6552.5,
+  "cpu_seconds_counted": 6144.7,
+  "cpu_seconds_uncounted": 0.8,
+  "cpu_seconds_exempt": 407.0,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 414,
+  "fits_counted": 396,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "c7ae6cf",
+      "message": "baseline"
+    },
+    {
+      "commit": "ad243ab",
+      "message": "exp5: shallower regularized 200x depth4 lr0.08"
+    },
+    {
+      "commit": "55010a3",
+      "message": "exp8: 600 trees lr0.03 depth4"
+    },
+    {
+      "commit": "efd0564",
+      "message": "exp10: reg_lambda5 reg_alpha0.5"
+    },
+    {
+      "commit": "ff404b2",
+      "message": "exp11: 5-seed ensemble"
+    },
+    {
+      "commit": "63f0b07",
+      "message": "exp12: freq encoding origin/dest/carrier/route"
+    },
+    {
+      "commit": "39599e3",
+      "message": "exp13: pairwise freq features"
+    },
+    {
+      "commit": "35c47e5",
+      "message": "exp16: normalized congestion ratio features"
+    },
+    {
+      "commit": "2623094",
+      "message": "exp18: add carrier_hour ratio only"
+    },
+    {
+      "commit": "5323004",
+      "message": "exp19: diverse-depth ensemble (4x d4, 2x d3, 2x d5)"
+    },
+    {
+      "commit": "016a5ed",
+      "message": "exp20: route-share ratios"
+    },
+    {
+      "commit": "ba5a86b",
+      "message": "exp21: 12-model diverse ensemble"
+    },
+    {
+      "commit": "2400e69",
+      "message": "exp24: 18-model ensemble"
+    },
+    {
+      "commit": "2571c03",
+      "message": "exp27: mcw20 lambda10"
+    },
+    {
+      "commit": "9e7ff42",
+      "message": "exp28: mcw40 lambda20 alpha1"
+    },
+    {
+      "commit": "cd7220f",
+      "message": "exp29: mcw80 lambda40 alpha2 gamma1"
+    },
+    {
+      "commit": "e56a85f",
+      "message": "exp31: 900 trees lr0.02 with strong reg"
+    },
+    {
+      "commit": "3fbd938",
+      "message": "exp32: estimated arrival time features"
+    },
+    {
+      "commit": "14f0740",
+      "message": "exp33: arrival-hour congestion ratios"
+    },
+    {
+      "commit": "77b0724",
+      "message": "exp35: carrier arrival-hour only"
+    },
+    {
+      "commit": "27c6d4a",
+      "message": "exp36: colsample_bynode0.7"
+    },
+    {
+      "commit": "329002a",
+      "message": "exp40: 2-hour arrival congestion ratios"
+    },
+    {
+      "commit": "ffd74a7",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6145.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -30.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "329002a",
+  "best_commit_eval_auc": 0.7233,
+  "best_commit_holdout_auc": 0.7242558456879999,
+  "best_commit_holdout_ap": 0.7157857615848122,
+  "best_commit_error": null,
+  "finalized_best": true
+}

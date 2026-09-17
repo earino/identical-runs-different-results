@@ -1,0 +1,194 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789528273	107	0.070	uncounted	exit	0.0	0	-c
+1789528273	109	0.045	uncounted	exit	0.0	0	-c
+1789528273	111	0.041	uncounted	exit	0.0	0	-m --version
+1789528273	113	0.036	uncounted	exit	0.0	0	-c
+1789528284	201	4.847	counted	exit	3.5	1	train.py
+1789528301	270	0.034	uncounted	exit	0.0	0	-c
+1789528301	272	0.060	uncounted	exit	0.0	0	-c
+1789528301	274	0.045	uncounted	exit	0.0	0	-c
+1789528311	344	13.151	counted	exit	3.9	1	train.py
+1789528332	468	2.065	uncounted	exit	1.1	1	/tmp/explore.py /tmp/cfg1.json
+1789528405	545	265.587	uncounted	exit	68.7	6	/tmp/explore.py /tmp/cfg1.json
+1789528411	568	0.806	uncounted	exit	0.5	0	-c
+1789528469	667	191.197	uncounted	exit	49.2	6	/tmp/explore.py /tmp/cfg2.json
+1789528623	878	537.420	uncounted	exit	137.1	10	/tmp/explore.py /tmp/cfg3.json
+1789528640	1037	0.073	uncounted	exit	0.0	0	-
+1789528643	1049	0.069	uncounted	exit	0.0	0	-
+1789528643	1051	0.065	uncounted	exit	0.0	0	-c
+1789528763	1063	468.004	uncounted	exit	119.3	11	/tmp/explore.py /tmp/cfg4.json
+1789528770	1086	0.071	uncounted	exit	0.0	0	-
+1789528770	1088	0.034	uncounted	exit	0.0	0	-c
+1789528997	1100	887.528	uncounted	exit	225.3	11	/tmp/explore.py /tmp/cfg5.json
+1789529010	1135	0.044	uncounted	exit	0.0	0	-
+1789529016	1147	0.072	uncounted	exit	0.0	0	-
+1789529182	1159	646.311	uncounted	exit	164.4	7	/tmp/explore.py /tmp/cfg6.json
+1789529187	1182	0.042	uncounted	exit	0.0	0	-
+1789529189	1194	0.035	uncounted	exit	0.0	0	-
+1789529193	1207	0.076	uncounted	exit	0.0	0	-
+1789529403	1209	828.303	uncounted	exit	210.2	8	/tmp/explore.py /tmp/cfg7.json
+1789529416	1232	0.072	uncounted	exit	0.0	0	-
+1789529557	1234	551.324	uncounted	exit	140.8	9	/tmp/explore.py /tmp/cfg8.json
+1789529570	1257	0.068	uncounted	exit	0.0	0	-
+1789529758	1259	737.301	uncounted	exit	187.6	9	/tmp/explore.py /tmp/cfg9.json
+1789529764	1298	0.066	uncounted	exit	0.0	0	-c
+1789529764	1300	0.071	uncounted	exit	0.0	0	-c
+1789529764	1302	0.049	uncounted	exit	0.0	0	-c
+1789529772	1350	5.556	counted	exit	2.1	1	train.py
+1789529793	1556	32.014	counted	exit	8.9	1	train.py
+1789529803	1591	2.555	uncounted	exit	1.9	0	-
+1789529813	1609	1.875	uncounted	exit	1.2	0	-
+1789529828	1664	0.070	uncounted	exit	0.0	0	-
+1789529857	1693	103.610	counted	exit	27.5	3	train.py
+1789529865	1728	0.050	uncounted	exit	0.0	0	-
+1789529896	1730	119.638	uncounted	exit	31.2	2	/tmp/explore.py /tmp/cfg10.json
+1789529913	1753	0.053	uncounted	exit	0.0	0	-
+1789530015	1755	398.540	uncounted	exit	101.9	6	/tmp/explore.py /tmp/cfg10b.json
+1789530024	1781	1.594	uncounted	exit	1.1	0	/tmp/explore.py /tmp/cfg11.json
+1789530028	1800	0.069	uncounted	exit	0.0	0	-
+1789530161	1802	520.929	uncounted	exit	133.1	6	/tmp/explore.py /tmp/cfg11.json
+1789530187	1857	1.575	uncounted	exit	0.9	0	/tmp/mix.py A2 plain n2000 J ch+cb30 d4 e.05 n2500 C ch d3 e.05 n2500
+1789530188	1865	1.673	uncounted	exit	1.0	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 C ch d3 e.05 n2500 T colnode.6
+1789530189	1873	1.584	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 A2 plain n2000 C ch d3 e.05 n2500
+1789530190	1881	1.606	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T cdist e.05 d4 n2000 T colnode.6
+1789530191	1889	1.608	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T cdist e.05 d4 n2000 T colnode.6
+1789530192	1897	1.604	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T cdist e.05 d4 n2000 T colnode.6
+1789530193	1905	1.566	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T colnode.6 C ch d3 e.05 n2500
+1789530194	1913	1.599	uncounted	exit	0.9	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T cdist e.05 d4 n2000 T colnode.6
+1789530195	1921	1.662	uncounted	exit	1.0	0	/tmp/mix.py T cb30cdist e.05 d4 n2000 T cdist e.05 d4 n2000 T colnode.6
+1789530224	1940	0.076	uncounted	exit	0.0	0	-
+1789530390	1942	649.551	uncounted	exit	166.0	10	/tmp/explore.py /tmp/cfg12.json
+1789530395	1965	0.053	uncounted	exit	0.0	0	-
+1789530513	1967	459.891	uncounted	exit	117.4	6	/tmp/explore.py /tmp/cfg13.json
+1789530517	1990	1.649	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X3 s-cd d3 n2500 X4 s-cd d4 colnode.6 n2000
+1789530518	1998	1.593	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X3 s-cd d3 n2500 X4 s-cd d4 colnode.6 n2000
+1789530519	2006	1.558	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X2 s-cd2 d4 n2000 X3 s-cd d3 n2500
+1789530521	2014	1.596	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X2 s-cd2 d4 n2000 X3 s-cd d3 n2500
+1789530522	2022	1.591	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X4 s-cd d4 colnode.6 n2000 X6 s-cd d4 e.1 n1000
+1789530523	2030	1.544	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X2 s-cd2 d4 n2000 X4 s-cd d4 colnode.6 n2000
+1789530524	2038	1.548	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X3 s-cd d3 n2500 X4 s-cd d4 colnode.6 n2000
+1789530525	2046	1.602	uncounted	exit	0.9	0	/tmp/mix.py X1 s-cd d4 n2000 X3 s-cd d3 n2500 X4 s-cd d4 colnode.6 n2000
+1789530533	2064	0.035	uncounted	exit	0.0	0	-
+1789530611	2066	303.212	uncounted	exit	78.1	7	/tmp/explore.py /tmp/cfg14.json
+1789530640	2121	20.657	uncounted	exit	19.9	0	/tmp/greedy.py
+1789530682	2141	1.584	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789530683	2149	1.591	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 R2 alpha1 Y8 scd2 d4 e.1 n1000
+1789530684	2157	1.562	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 J ch+cb30 d4 e.05 n2500 C ch d3 e.05 n2500
+1789530685	2165	1.566	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 T cb30cdist e.05 d4 n2000 Y8 scd2 d4 e.1 n1000
+1789530686	2173	1.583	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789530688	2181	1.691	uncounted	exit	1.0	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789530689	2189	1.622	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 T cdist e.05 d4 n2000 Y8 scd2 d4 e.1 n1000
+1789530690	2197	1.638	uncounted	exit	1.0	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y4 chcdist d4 e.1 n1000
+1789530706	2229	0.032	uncounted	exit	0.0	0	-c
+1789530706	2231	0.040	uncounted	exit	0.0	0	-c
+1789530706	2233	0.045	uncounted	exit	0.0	0	-c
+1789530712	2265	0.064	uncounted	exit	0.0	0	-
+1789530747	2283	130.873	counted	exit	34.9	5	train.py
+1789530759	2318	0.065	uncounted	exit	0.0	0	-
+1789530854	2320	368.370	uncounted	exit	94.9	8	/tmp/explore.py /tmp/cfg15.json
+1789530862	2344	0.036	uncounted	exit	0.0	0	-
+1789531028	2346	651.307	uncounted	exit	165.7	5	/tmp/explore.py /tmp/cfg16.json
+1789531035	2369	0.066	uncounted	exit	0.0	0	-
+1789531254	2371	862.223	uncounted	exit	218.9	5	/tmp/explore.py /tmp/cfg17.json
+1789531261	2394	1.597	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531262	2402	1.613	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z3 scd2 byn.6 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531263	2410	1.568	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531264	2418	1.579	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531265	2426	1.612	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531267	2434	1.569	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531268	2442	1.623	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531269	2450	1.634	uncounted	exit	0.9	0	/tmp/mix.py Z1 scd byn.6 e.03 n4500 Z2 scd2 e.03 n4500 Z4 ch byn.6 e.03 n4500
+1789531276	2468	1.629	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789531277	2476	1.610	uncounted	exit	0.9	0	/tmp/mix.py W4 scd e.03 n3000 bynode.6 W2 scd2 e.03 n3000 Z4 ch byn.6 e.03 n4500
+1789531278	2484	1.585	uncounted	exit	0.9	0	/tmp/mix.py W4 scd e.03 n3000 bynode.6 W2 scd2 e.03 n3000 W3 ch e.03 n3000
+1789531279	2492	1.563	uncounted	exit	0.9	0	/tmp/mix.py W4 scd e.03 n3000 bynode.6 W2 scd2 e.03 n3000 Z4 ch byn.6 e.03 n4500
+1789531280	2500	1.577	uncounted	exit	0.9	0	/tmp/mix.py W4 scd e.03 n3000 bynode.6 W2 scd2 e.03 n3000 Z4 ch byn.6 e.03 n4500
+1789531281	2508	1.628	uncounted	exit	0.9	0	/tmp/mix.py W4 scd e.03 n3000 bynode.6 W2 scd2 e.03 n3000 Z4 ch byn.6 e.03 n4500
+1789531332	2527	1.584	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 X3 s-cd d3 n2500
+1789531334	2535	1.602	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789531335	2543	1.610	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789531336	2551	1.560	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000
+1789531337	2559	1.614	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 X3 s-cd d3 n2500 Y8 scd2 d4 e.1 n1000
+1789531338	2567	1.553	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 T cb30cdist e.05 d4 n2000 X3 s-cd d3 n2500
+1789531339	2575	1.556	uncounted	exit	0.9	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 Z4 ch byn.6 e.03 n4500 X3 s-cd d3 n2500
+1789531353	2593	0.071	uncounted	exit	0.0	0	-
+1789531420	2595	258.637	uncounted	exit	67.2	6	/tmp/explore.py /tmp/cfg18.json
+1789531432	2618	0.074	uncounted	exit	0.0	0	-
+1789531502	2620	269.700	uncounted	exit	69.9	6	/tmp/explore.py /tmp/cfg19.json
+1789531506	2643	0.066	uncounted	exit	0.0	0	-
+1789531656	2645	587.277	uncounted	exit	149.7	5	/tmp/explore.py /tmp/cfg20.json
+1789531664	2669	1.656	uncounted	exit	1.0	0	/tmp/mix.py X4 s-cd d4 colnode.6 n2000 A2 plain n2000 Y8 scd2 d4 e.1 n1000
+1789531665	2677	1.601	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R5 ch+hdist e.05 n2000
+1789531666	2685	1.575	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531667	2693	1.591	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531668	2701	1.602	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531669	2709	1.607	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531671	2717	1.560	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531677	2735	1.619	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531678	2743	1.582	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531679	2751	1.600	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531688	2769	0.073	uncounted	exit	0.0	0	-
+1789531741	2787	203.962	counted	exit	53.6	4	train.py
+1789531753	2822	0.054	uncounted	exit	0.0	0	-
+1789531754	2824	2.379	uncounted	exit	1.5	0	/tmp/explore.py /tmp/cfg21.json
+1789531757	2846	0.056	uncounted	exit	0.0	0	-
+1789531819	2848	236.341	uncounted	exit	62.3	7	/tmp/explore.py /tmp/cfg21.json
+1789531825	2872	0.050	uncounted	exit	0.0	0	-
+1789531910	2874	324.966	uncounted	exit	84.8	7	/tmp/explore.py /tmp/cfg22.json
+1789531916	2897	1.606	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531917	2905	1.574	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531918	2913	1.579	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531919	2921	1.679	uncounted	exit	1.0	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531920	2929	1.570	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531921	2937	1.574	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531922	2945	1.652	uncounted	exit	1.0	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531923	2953	1.570	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531924	2961	1.647	uncounted	exit	1.0	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531938	2979	0.079	uncounted	exit	0.0	0	-
+1789531939	2981	2.172	uncounted	exit	1.5	0	/tmp/explore.py /tmp/cfg23.json
+1789531940	2990	1.537	uncounted	exit	0.8	0	/tmp/mix.py G s1 bag80 n2000 G s2 bag80 n2000 G s3 bag80 n2000
+1789531941	2998	1.512	uncounted	exit	0.8	0	/tmp/mix.py G s4 bag90 n2000 G s5 bag90 n2000 G s6 bag90 n2000
+1789531942	3006	1.587	uncounted	exit	0.9	0	/tmp/mix.py R3 S+hdist e.03 n4000 R1 S+hdist e.05 n2000 R6 scd2+hdist e.03 n3000
+1789531949	3049	0.070	uncounted	exit	0.0	0	-
+1789532007	3051	219.690	uncounted	exit	58.3	7	/tmp/explore.py /tmp/cfg23.json
+1789532008	3063	1.593	uncounted	exit	0.9	0	/tmp/mix.py G s1 bag80 n2000 G s2 bag80 n2000 G s3 bag80 n2000
+1789532010	3071	1.585	uncounted	exit	0.9	0	/tmp/mix.py G s4 bag90 n2000 G s5 bag90 n2000 G s6 bag90 n2000
+1789532019	3090	0.077	uncounted	exit	0.0	0	-
+1789532066	3092	178.073	uncounted	exit	47.3	4	/tmp/explore.py /tmp/cfg24.json
+1789532075	3116	1.945	uncounted	exit	1.2	0	-
+1789532079	3134	0.039	uncounted	exit	0.0	0	-
+1789532139	3152	226.887	counted	exit	59.5	5	train.py
+1789532153	3187	0.076	uncounted	exit	0.0	0	-
+1789532223	3189	267.816	uncounted	exit	70.3	8	/tmp/explore.py /tmp/cfg25.json
+1789532240	3212	0.047	uncounted	exit	0.0	0	-
+1789532293	3231	199.647	counted	exit	52.5	5	train.py
+1789532315	3266	0.048	uncounted	exit	0.0	0	-
+1789532378	3284	238.338	counted	exit	62.4	5	train.py
+1789532393	3352	0.068	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789532461	3370	257.413	counted	exit	67.5	5	train.py
+1789532490	3406	0.043	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789532570	3424	309.079	counted	exit	80.1	5	train.py
+1789532597	3473	0.069	uncounted	exit	0.0	0	-
+1789533017	3475	1637.620	uncounted	term	420.1	0	/tmp/explore.py /tmp/cfg26.json
+1789533042	3522	0.066	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533118	3540	293.157	counted	exit	76.1	5	train.py
+1789533138	3577	0.043	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533185	3595	180.176	counted	exit	47.5	5	train.py
+1789533197	3632	0.066	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533254	3650	212.821	counted	exit	56.1	6	train.py
+1789533265	3687	0.042	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533336	3705	273.320	counted	exit	71.1	5	train.py
+1789533345	3742	0.038	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533414	3760	264.604	counted	exit	69.0	5	train.py
+1789533423	3797	0.037	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533490	3815	256.182	counted	exit	67.1	5	train.py
+1789533495	3852	0.066	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533566	3870	269.587	counted	exit	70.7	5	train.py
+1789533681	3920	286.790	exempt	exit	75.6	5	validate.py
+1789533694	3956	0.068	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533738	3974	167.177	counted	exit	44.3	5	train.py
+1789533743	4011	0.041	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533784	4029	156.367	counted	exit	41.5	5	train.py
+1789533789	4066	0.061	uncounted	exit	0.0	0	/tmp/setmembers.py /tmp/cur.json
+1789533832	4084	163.081	counted	exit	43.2	5	train.py
+1789533913	4123	295.417	exempt	exit	77.8	5	validate.py

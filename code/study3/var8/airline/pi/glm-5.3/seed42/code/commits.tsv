@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	8cc2a25	1789589278	baseline
+01	0d5fd0f	1789589696	numeric time features, route cat, early stopping
+02	c9789d8	1789589757	strong regularization for year transfer
+03	7bb8bfc	1789589780	diagnostic: feature sets A/B/C x tree counts
+04	d74a972	1789589813	feature set B + smoothed target encodings (OOF)
+05	b5d727c	1789589839	expanded TE family + volume features
+06	fa66cd8	1789589843	fix keys_for call
+07	793a933	1789589848	reorder TE_M after derived cols
+08	308c6df	1789589878	ablation of feature groups
+09	c1ca017	1789589916	combined ablation variants
+10	c329e6d	1789589968	hyperparameter grid on TE feature set
+11	11962c5	1789590003	lr/n/lambda refinement grid
+12	a097b41	1789590095	TE upgrades: hier shrinkage, dev features, hour counts
+13	e5ea866	1789590141	volume feature family expansion
+14	4a3ef9a	1789590173	fine-grained season/airport x time TEs
+15	ba7fe12	1789590246	ensemble: 5-seed bagging + config diversity + max_bin
+16	bf37bdf	1789590381	diverse ensemble scaling + colbag
+17	2ce063f	1789590509	ensemble scaling: 15 configs x colbag, 70pct variants
+18	9e7ebdc	1789590600	ensemble composition: fullTE + long-lr members
+19	6006cfb	1789590780	data-diversity scaling: fullTE twins for all configs
+20	4a91094	1789590916	feature round 2: dest-side, dep5, carrier_dep15, route variants
+21	3042bdc	1789590959	ensemble on slimmed W6 feature set
+22	8399cf8	1789591045	m-value sweep for TE smoothing
+23	b3e2494	1789591081	m combos: half/weakmd/dep/inter
+24	7161f0f	1789591131	ensemble on m_all features + aggregation test
+25	b247edf	1789591206	member types: lossguide, m_ref-view, dart

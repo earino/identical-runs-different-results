@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d537f52	0.7141	ok	4	baseline
+2	9f8a49b	0.7075	ok	5	FE v1 + early stopping
+3	5ab3367	0.7027	ok	2	FE v2 (baseline cats + tod features + Route)
+4	526ef8a	0.7141	ok	3	drop Route, keep tod features + ES
+5	7c20c94	0.0000	crash	1	TE for route/origin/dest/carrier
+6	c8bc826	0.0000	crash	1	TE for route/origin/dest/carrier (fixed order)
+7	2275aa5	0.0000	crash	2	TE for route/origin/dest/carrier (fixed oof)
+8	479777e	0.7080	ok	3	TE carrier/origin/dest/route (drop raw Route)
+9	61bb542	0.0000	crash	2	capacity: 150r depth6 mcw5 subsample0.8 lambda2
+10	deabbee	0.7129	ok	2	capacity: 150r depth6 mcw5 subsample0.8 lambda2 (fixed print)
+11	c29c823	0.7172	ok	4	seed bag of 5 x 100r
+12	a4e5a9c	0.7177	ok	9	seed bag of 10 x 100r
+13	db32058	0.7176	ok	10	diverse-depth bag of 10
+14	6510086	0.7171	ok	16	10-bag, 200r lr0.06
+15	3ab7109	0.7165	ok	8	ablation: bare features in 10-bag
+16	9915190	0.7194	ok	9	add doy seasonal + hour
+17	1a014ab	0.7187	ok	9	add cyclic dow/month
+18	6b4a482	0.7190	ok	9	smoother members mcw10 gamma0.2
+19	b1bff42	0.7195	ok	16	20-model bag
+20	17103eb	0.7193	ok	17	frequency encoding
+21	3e87d51	0.7199	ok	13	temporal ES rounds + 20-bag
+22	ef1c1e8	0.7198	ok	28	temporal grid + bag
+23	8df230b	0.7199	ok	13	recency weighting ramp
+24	981cbe7	0.7199	ok	12	interaction features
+25	9343ea2	0.7197	ok	11	holiday proximity features
+26	7c4d32d	0.7157	ok	9	max_cat_to_onehot=500
+27	1763dee	0.0000	crash	2	ablate carrier
+28	e5bf3a2	0.7160	ok	12	ablate carrier (fixed)
+29	0c9787b	0.7211	ok	11	finer bins + bynode colsampling
+30	014d883	0.7213	ok	12	max_bin=1024
+31	327ab30	0.7213	ok	16	30-model bag
+32	c69879c	0.7219	ok	11	colsample_bynode=0.4
+33	db1e3f8	0.7221	ok	12	colsample_bynode=0.3
+34	20dc063	0.7244	ok	19	depth8 bynode0.3
+35	944c964	0.7265	ok	26	depth10 bynode0.3
+36	085bf08	0.7280	ok	43	depth12 bynode0.3
+37	5129e39	0.7287	ok	70	depth14 bynode0.3
+38	97a92d1	0.7289	ok	60	depth14 bynode0.2
+39	2f074b8	0.7283	ok	45	depth-mix bag
+40	7805d9d	0.7285	ok	60	subsample 0.7 last exp

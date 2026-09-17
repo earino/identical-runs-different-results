@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	80b5647	1789504072	baseline
+01	e7325e6	1789504689	feat: dep hour/minute, hour as categorical, reg_alpha=5
+02	1e1f127	1789504839	feat: carrier-airport interactions and frequency counts; n=400
+03	5993d55	1789505655	feat: origin x hour and dest x hour interactions
+04	4a22807	1789505966	ens: average XGBoost over depths 5-8
+05	9834c4b	1789507347	ens: extend depth ensemble to 5-10, n=400
+06	2ffcdc6	1789507524	feat: carrier-origin volume + distance x hour
+07	4adb58b	1789507668	feat: continuous day-of-year
+08	00b6982	1789507737	feat: carrier network size + carrier-dest volume
+09	ab698d7	1789507931	ens: colsample_bynode 0.9
+10	7d0b63f	1789508059	feat: route frequency count
+11	691ada6	1789508164	feat: carrier-route volume + origin diversity
+12	bb77820	1789508493	ens: add depth 11
+13	9eacb60	1789508726	ens: add depth 12

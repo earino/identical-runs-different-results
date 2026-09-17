@@ -1,0 +1,12 @@
+n	commit	eval_auc	status	seconds	description
+1	221e832	0.7141	ok	4	baseline
+2	75fe376	0.0000	crash	1	fe v1: time features + route cat + freq enc
+3	2886f6f	0.7088	ok	2	fe v1: time features + route cat + freq enc
+4	c4c0d8e	0.6999	ok	7	capacity: 600 trees depth8 lr0.05
+5	dc17fe5	0.7615	ok	7	OOF target encodings + freq features
+6	12a9ec7	0.7769	ok	10	target stats + traffic shares over 33 keys
+7	2e628f4	0.7788	ok	21	3-seed ensemble
+8	36ecb83	0.7930	ok	24	marginal+conditional traffic shares
+9	15f00c9	0.7945	ok	24	3-fold OOF target stats
+10	38e3cf5	0.7960	ok	27	TE-fold-seed x model-seed ensemble
+11	28d8317	0.7965	ok	46	6-member fold-seed x model-seed ensemble

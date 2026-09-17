@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3616c09	0.7141	ok	3	baseline
+2	3ad7103	0.7134	ok	3	capacity: 2000 trees lr=0.05 + early stopping
+3	9351731	0.7114	ok	3	DepTime hour+cyclical features; 500 trees + ES
+4	7fbfe98	0.7143	ok	2	ablation: DepTime feats + baseline model
+5	30bbd08	0.7136	ok	1	hour categorical
+6	44a14e0	0.7150	ok	2	200 trees full fit no ES
+7	76ce52a	0.7130	ok	3	500 trees
+8	4605f61	0.7091	ok	3	target encodings
+9	5d1ba36	0.7142	ok	3	frequency encodings
+10	5e7007a	0.7061	ok	4	depth 8
+11	24193f4	0.7069	ok	2	depth 5
+12	dac754b	0.7048	ok	3	regularization bundle
+13	95ec1eb	0.7129	ok	3	depth 8 clean
+14	91bad90	0.7116	ok	2	subsample colsample 0.8
+15	1b4671a	0.7169	ok	7	ensemble of 4
+16	857d6f0	0.7158	ok	12	ensemble of 8
+17	001588b	0.7015	ok	11	route cat + dist bins
+18	0cf3a27	0.7193	ok	9	carrier interactions
+19	44e779b	0.7146	ok	9	dow/month x hour interactions
+20	8777e27	0.7181	ok	9	carrier x dow
+21	6c42da1	0.7201	ok	11	6 members
+22	4776564	0.7211	ok	16	8 members moderate
+23	c902477	0.7212	ok	23	12 members
+24	bb092a2	0.7220	ok	24	carrier x distbin
+25	da3f92e	0.7230	ok	26	hour x distbin
+26	7175192	0.7223	ok	27	month/dow x distbin
+27	f463ffc	0.0000	crash	2	airport tier x hour
+28	58d6b65	0.7231	ok	27	airport tier x hour (fixed)
+29	51be63f	0.7234	ok	29	RF-mode member
+30	ceaf433	0.0000	crash	29	log-odds blend
+31	f0502ff	0.0000	crash	28	log-odds blend fixed
+32	9619246	0.7235	ok	25	log-odds blend v3
+33	cc77c4c	0.7244	ok	27	decile dist bins
+34	44a0f32	0.7222	ok	29	20 dist bins
+35	9613e4e	0.7245	ok	29	RF member x2
+36	a40e2ea	0.7248	ok	63	day numeric
+37	50ad3e6	0.7249	ok	38	origin tier x distbin
+38	073dec7	0.7244	ok	43	dest tier x distbin
+39	5d21ec5	0.7251	ok	50	slow member
+40	3ed0577	0.7206	ok	51	month x hour alone

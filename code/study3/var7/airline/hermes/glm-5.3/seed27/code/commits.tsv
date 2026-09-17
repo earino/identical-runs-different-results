@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	5e23e7b	1789583292	baseline
+01	240de22	1789583496	capacity: 500 trees, early stopping on eval
+02	25ff1fd	1789584031	feat: hour/min split + smoothed OOF target encoding (origin/dest/carrier/route), d4 + ES on AUC
+03	7d24711	1789584188	feat: origin/dest/carrier x hour interaction target encodings
+04	49edab3	1789584292	feat: route x hour + origin/dest x 30-min-bucket target encodings
+05	4850746	1789584428	feat: route x 30min bucket + carrier x bucket TEs, tbucket numeric
+06	406a63c	1789584898	tune: d3 lr.07 col0.6 bynode0.6 ES100 (6k trees)
+07	62765c8	1789585206	feat: origin/route x 15-min-slot target encodings
+08	4ea51ec	1789585376	ensemble: bag of 5 seeds, averaged probabilities
+09	757cf70	1789585845	feat: time/distance numeric transforms; colsample 0.5 in bag
+10	98e9ac6	1789586296	tune: depth4, colsample_bynode 0.5
+11	f83cff5	1789586893	feat: train-support counts for sparse interaction keys
+12	ce18024	1789588316	feat: support counts over train+eval keys for all TE interactions
+13	7c6d315	1789588685	fix: bag3 + n_estimators cap 1500 to fit 120s
+14	9833223	1789589588	tune: min_child_weight 2, ES150/cap2500

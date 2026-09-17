@@ -1,0 +1,136 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 32,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T00:27:33+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s32-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T03:35:41+00:00",
+  "wall_seconds": 11288.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18874.3,
+  "endpoint_at_end": "ok",
+  "head": "c702690",
+  "n_commits": 9,
+  "n_experiments": 18,
+  "n_ok": 18,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7582,
+  "final_eval_auc": 0.7582,
+  "holdout_auc": 0.7587774378600001,
+  "holdout_ap": 0.7479025705757947,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04400668612400005,
+  "generalization_gap": -0.0005774378600000851,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5912085,
+    "tokens_in_uncached": 1192149,
+    "tokens_in_cached": 4719936,
+    "tokens_out": 33689,
+    "turns": null,
+    "api_calls": 104,
+    "method": "sum-of-104-events",
+    "cost_usd": 3.0444,
+    "cached_share": 0.798
+  },
+  "cpu_seconds_python": 18293.9,
+  "cpu_seconds_counted": 5119.2,
+  "cpu_seconds_uncounted": 12736.3,
+  "cpu_seconds_exempt": 438.5,
+  "python_processes": 41,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1210,
+  "fits_counted": 126,
+  "fits_uncounted": 1078,
+  "commits": [
+    {
+      "commit": "ef9ddfa",
+      "message": "baseline"
+    },
+    {
+      "commit": "f366c1c",
+      "message": "bagged deep XGB ensemble (d28 mcw.1 cs.5 ss.8 n25 x10, hour/minute FE)"
+    },
+    {
+      "commit": "ab01985",
+      "message": "drop Month/DayofMonth (calendar noise hurts under year shift)"
+    },
+    {
+      "commit": "96b38a3",
+      "message": "cyclic sin/cos of minute-of-day"
+    },
+    {
+      "commit": "9bc4d0d",
+      "message": "diverse-config 10-member ensemble (d24-32, mb256-1024, n25-40)"
+    },
+    {
+      "commit": "6cffce4",
+      "message": "cs0.6 + lower lr + more rounds (n40 lr.06 / n30 lr.08 mix, 8 members)"
+    },
+    {
+      "commit": "6e3a29e",
+      "message": "8x (n50 d20 lr.05 cs.6) members"
+    },
+    {
+      "commit": "dafb014",
+      "message": "TTA: average predictions over DepTime +-3min"
+    },
+    {
+      "commit": "fa95494",
+      "message": "6 members + wider TTA (-5,-3,0,3,5)"
+    },
+    {
+      "commit": "c702690",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17855.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 580.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "fa95494",
+  "best_commit_eval_auc": 0.7582,
+  "best_commit_holdout_auc": 0.7587774378600001,
+  "best_commit_holdout_ap": 0.7479025705757947,
+  "best_commit_error": null,
+  "finalized_best": true
+}

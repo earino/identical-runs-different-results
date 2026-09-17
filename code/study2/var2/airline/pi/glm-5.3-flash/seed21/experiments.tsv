@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	cedc5c1	0.7141	ok	4	baseline: 30 trees, depth 6, native categoricals
+2	4ca1f6a	0.7123	ok	4	exp2: scale-up with early stopping + refit
+3	33d91d6	0.7139	ok	5	exp3: time-of-day + cyclical features
+4	c2e520c	0.0000	crash	5	exp4: OOF target encoding + freq encoding
+5	cb3a2ef	0.7051	ok	6	exp4 retry: OOF TE + freq encoding, unified column order
+6	1e79095	0.7292	ok	34	exp5: cxh feature + ES-on-eval + 10-seed ensemble
+7	dc2cd99	0.7331	ok	56	exp6: tuned member params, 10-seed ensemble
+8	1bbb0c8	0.7387	ok	88	exp7: deeper members d16, ENS8
+9	01f9215	0.7405	ok	104	exp8: reg_alpha 0.25 ENS8
+10	6dd6fb7	0.0000	timeout	124	exp9: mixed objective ensemble 2log+6L2
+11	882ffd0	0.7418	ok	98	exp9 retry: ENS6 1log+5L2
+12	07ae1d9	0.0000	crash	22	exp10: ENS8 2log+6L2 lr0.05
+13	32ce572	0.0000	timeout	122	exp10 retry: ENS8 2log+6L2 lr0.05
+14	88e16b9	0.7419	ok	87	exp10 retry2: lr fix, ENS8 2log+6L2(lr.05)
+15	9a10c57	0.7421	ok	97	exp11: ENS9 2log+7L2
+16	172b575	0.7385	ok	112	exp12: seed-shift robustness probe
+17	c020cb0	0.7419	ok	108	exp13: ENS10 2log+8L2
+18	307ac1e	0.7417	ok	100	exp14: ENS9 3log+6L2
+19	f748df7	0.7427	ok	115	exp15: L2 members sub0.7
+20	d87a831	0.7423	ok	103	exp16: ENS8 2log+6L2 sub0.7

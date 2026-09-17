@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	3616c09	1789495275	baseline
+01	9351731	1789495313	DepTime->hour+cyclical features; 500 trees lr=0.1 + ES
+02	7fbfe98	1789495320	ablation: DepTime features with baseline model (30 trees, no ES)
+03	30bbd08	1789495331	hour-of-day as native categorical
+04	44a14e0	1789495336	200 trees full-fit, no ES
+05	91bad90	1789495400	subsample+colsample 0.8
+06	1b4671a	1789495410	ensemble of 4 diverse XGB models
+07	0cf3a27	1789495469	carrier x hour, carrier x month interactions
+08	6c42da1	1789495515	6-member ensemble on E18 features
+09	4776564	1789495529	8-member moderate ensemble
+10	c902477	1789495548	12-member ensemble
+11	bb092a2	1789495577	carrier x distance-bin interaction
+12	da3f92e	1789495605	hour x distance-bin interaction
+13	f463ffc	1789495675	airport-tier x hour interactions
+14	58d6b65	1789495687	fix: row-aligned tier categories
+15	51be63f	1789495726	add RF-mode ensemble member
+16	ceaf433	1789495761	log-odds blending
+17	f0502ff	1789495794	fix log-odds blend
+18	9619246	1789495830	log-odds blend, correct member-wise logit
+19	cc77c4c	1789495860	decile distance bins
+20	9613e4e	1789495923	second bigger RF member
+21	a40e2ea	1789495959	numeric day-of-month
+22	50ad3e6	1789496027	origin-tier x distbin
+23	5d21ec5	1789496122	slow deep member lr=0.02/800

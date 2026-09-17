@@ -1,0 +1,22 @@
+n	commit	eval_auc	status	seconds	description
+1	631c91b	0.7141	ok	4	baseline
+2	4ac2fa8	0.7027	ok	7	feat eng v1 + 400 trees depth7
+3	f681d1c	0.7262	ok	15	B feats 3000/6 lr.02 cs.3
+4	230ccbf	0.7400	ok	29	traffic features d8 cs.3
+5	1cb0100	0.7599	ok	45	deep d24 n400 cs.2 full feats
+6	56a6b0a	0.7588	ok	46	congestion aggregates v2
+7	bc9fde3	0.7597	ok	37	d28 n300
+8	f6430c2	0.7570	ok	53	route_top cat
+9	932e796	0.7542	ok	15	reg deep
+10	86ebf39	0.7585	ok	44	peak ratio feats
+11	e101c2c	0.7512	ok	47	date volume feats
+12	f5d5965	0.7586	ok	46	cumulative congestion
+13	4fbb5e2	0.7594	ok	73	ensemble 2 models
+14	549a43f	0.7599	ok	55	max_bin 512
+15	0003791	0.7590	ok	46	gradient sampling
+16	0e8a605	0.0000	timeout	120	dart d12
+17	8195c7a	0.7601	ok	77	d24 n700 lr.012
+18	dc88c7a	0.7602	ok	86	d24 n800 lr.011
+19	e8ea2a4	0.7586	ok	90	route-hour congestion
+20	8b8b106	0.7606	ok	58	d26 n500 lr.013
+21	34b8704	0.7604	ok	49	d30 n400 lr.015

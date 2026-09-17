@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d7713ee	0.7141	ok	4	baseline
+2	8935c36	0.7087	ok	3	engineered features: time-of-day cyclicals, ordinals, route categorical
+3	438bb7c	0.7141	ok	1	add time-of-day + log-distance + weekend features
+4	af64920	0.7141	ok	4	deep model: lr0.05 depth8 + early stopping on internal val
+5	9a90e6e	0.7389	ok	23	CarrierHour interaction + time features, d10 n800
+6	ef7c799	0.7423	ok	45	drop Month/DayofMonth + depth ensemble d8/10/12
+7	25addcd	0.7467	ok	83	ensemble of 5 depth-spread models 6/9/12/15/18 x300
+8	191e39e	0.7496	ok	88	add shallow depth-3 member to ensemble
+9	644af49	0.7517	ok	74	9-member ensemble depths 2..18 n250
+10	3a0723d	0.7493	ok	63	depth ladder 2..14 n200
+11	8dc2994	0.7507	ok	81	11-member ladder 2..9,12,15,18 n250
+12	61a4eae	0.7505	ok	82	more rounds for shallow members
+13	fb8547f	0.7464	ok	80	origin/dest/route hour volume features
+14	74ef4b6	0.0000	timeout	120	ladder + per-member subsample/colsample
+15	5c40220	0.7509	ok	89	per-member lr diversity
+16	4ec964a	0.7484	ok	35	depth-scaled min_child_weight
+17	5691b98	0.7506	ok	56	min_child_weight=3
+18	e5ec690	0.7542	ok	63	colsample_bytree=0.75
+19	42ebd6f	0.7538	ok	58	colsample_bytree=0.6
+20	be6d119	0.7534	ok	71	per-member seeds + colsample 0.75
+21	8403e59	0.7522	ok	61	11-member bagged ladder n200
+22	c00bc35	0.7541	ok	81	350 rounds bagged ladder
+23	6fa479e	0.7535	ok	71	colsample_bytree=0.85
+24	c7d6fd1	0.7542	ok	63	max_cat_to_onehot=1
+25	9430ebb	0.7536	ok	64	per-member colsample variation
+26	023a6b9	0.7524	ok	41	gamma=1.0
+27	e3a0b95	0.7538	ok	69	reg_lambda=3
+28	49e1022	0.7538	ok	61	add HourCat categorical
+29	1396d69	0.7531	ok	68	denser ladder to depth 22
+30	9ac051d	0.7537	ok	53	drop DayOfWeek
+31	1781ffb	0.7534	ok	50	reg_alpha=1
+32	a00acd2	0.7542	ok	59	learning_rate=0.06
+33	fbec8ad	0.7539	ok	59	colsample_bylevel=0.8
+34	9887a4e	0.7541	ok	64	max_bin=192
+35	984134d	0.7542	ok	105	alternate ladder spacing
+36	79f9243	0.7478	ok	60	drop dep_minute
+37	a93dcd0	0.7526	ok	67	minute-of-hour cyclicals
+38	21beae1	0.7542	ok	73	n_estimators=300
+39	9a2b95e	0.7538	ok	59	colsample_bytree=0.7
+40	0169e89	0.7536	ok	50	n_estimators=200 bagged ladder

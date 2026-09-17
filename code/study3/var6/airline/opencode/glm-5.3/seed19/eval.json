@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 19,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T00:37:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s19-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T04:00:22+00:00",
+  "wall_seconds": 12202.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18313.5,
+  "endpoint_at_end": "ok",
+  "head": "18861bf",
+  "n_commits": 23,
+  "n_experiments": 37,
+  "n_ok": 31,
+  "n_crash": 4,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7438,
+  "final_eval_auc": 0.7438,
+  "holdout_auc": 0.744666522746,
+  "holdout_ap": 0.7327261344585188,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02989577100999996,
+  "generalization_gap": -0.0008665227459999647,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6542183,
+    "tokens_in_uncached": 1446375,
+    "tokens_in_cached": 5095808,
+    "tokens_out": 41845,
+    "turns": null,
+    "api_calls": 133,
+    "method": "sum-of-133-events",
+    "cost_usd": 3.534,
+    "cached_share": 0.779
+  },
+  "cpu_seconds_python": 17465.3,
+  "cpu_seconds_counted": 8109.1,
+  "cpu_seconds_uncounted": 8945.5,
+  "cpu_seconds_exempt": 410.7,
+  "python_processes": 103,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 264,
+  "fits_counted": 97,
+  "fits_uncounted": 163,
+  "commits": [
+    {
+      "commit": "268592d",
+      "message": "baseline"
+    },
+    {
+      "commit": "6072722",
+      "message": "capacity: 3000 trees lr .03 early stopping"
+    },
+    {
+      "commit": "03079d7",
+      "message": "FE: hour/minute + calendar numerics only"
+    },
+    {
+      "commit": "c3d54fc",
+      "message": "patience 300 so slow lr .03 trajectory can develop"
+    },
+    {
+      "commit": "fa36fca",
+      "message": "early-stop on AUC not logloss"
+    },
+    {
+      "commit": "2e348e6",
+      "message": "bagged ensemble of 5 seeds, averaged probs"
+    },
+    {
+      "commit": "ffe32d4",
+      "message": "volume/congestion count features per org/dest/carrier x block/dow"
+    },
+    {
+      "commit": "982e0dd",
+      "message": "cyclic hour-of-day sin/cos"
+    },
+    {
+      "commit": "e1c936b",
+      "message": "lossguide growth, 64 leaves, mcw 10"
+    },
+    {
+      "commit": "2dd7a3f",
+      "message": "diversified member hyperparams, patience 200"
+    },
+    {
+      "commit": "e136118",
+      "message": "interaction TE: origin/dest/carrier x hour-block, OOF"
+    },
+    {
+      "commit": "9ba44f8",
+      "message": "member feature-subset diversity + smoke self-test"
+    },
+    {
+      "commit": "0fe4036",
+      "message": "drop native calendar cats everywhere: 3-member ensemble"
+    },
+    {
+      "commit": "0a82974",
+      "message": "drop numeric mon/dom too: calendar noise removal"
+    },
+    {
+      "commit": "5cbd673",
+      "message": "hour categorical; cap 1300 pat 80 for time safety"
+    },
+    {
+      "commit": "f4b2eff",
+      "message": "drop TE; 2 full + 1 short member to fit trajectories in time"
+    },
+    {
+      "commit": "860695d",
+      "message": "hour categorical + 50k early-stop set + 3 full members cap1800"
+    },
+    {
+      "commit": "768fc40",
+      "message": "add 4th member leaves96 seed99"
+    },
+    {
+      "commit": "d84cff8",
+      "message": "hour-granularity vol features; ES set 40k"
+    },
+    {
+      "commit": "7999f52",
+      "message": "drop weakest member (seed123); 3 strong members"
+    },
+    {
+      "commit": "2c52b77",
+      "message": "rate-diverse trio: 2x L96 lr.02 + L64 lr.03; ES 30k"
+    },
+    {
+      "commit": "59583bf",
+      "message": "add L128 lr.02 4th member (solo 0.7432)"
+    },
+    {
+      "commit": "1f31a8c",
+      "message": "swap 777-L96 for second L128 (3141)"
+    },
+    {
+      "commit": "18861bf",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17054.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 848.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1f31a8c",
+  "best_commit_eval_auc": 0.7438,
+  "best_commit_holdout_auc": 0.744666522746,
+  "best_commit_holdout_ap": 0.7327261344585188,
+  "best_commit_error": null,
+  "finalized_best": true
+}

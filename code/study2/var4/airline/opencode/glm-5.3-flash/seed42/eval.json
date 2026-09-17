@@ -1,0 +1,232 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 42,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:14:23+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s42-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:16:10+00:00",
+  "wall_seconds": 3707.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11886.1,
+  "endpoint_at_end": "ok",
+  "head": "327ff5c",
+  "n_commits": 33,
+  "n_experiments": 40,
+  "n_ok": 31,
+  "n_crash": 4,
+  "n_timeout": 5,
+  "best_eval_auc": 0.7558,
+  "final_eval_auc": 0.7558,
+  "holdout_auc": 0.7565166228219999,
+  "holdout_ap": 0.7471762908174951,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04174587108599992,
+  "generalization_gap": -0.0007166228219999127,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9441859,
+    "tokens_in_uncached": 154883,
+    "tokens_in_cached": 9286976,
+    "tokens_out": 39335,
+    "turns": null,
+    "api_calls": 169,
+    "method": "sum-of-169-events",
+    "cost_usd": 0.3215,
+    "cached_share": 0.984
+  },
+  "cpu_seconds_python": 11623.0,
+  "cpu_seconds_counted": 11234.2,
+  "cpu_seconds_uncounted": 3.2,
+  "cpu_seconds_exempt": 385.5,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 169,
+  "fits_counted": 167,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "288cf64",
+      "message": "baseline"
+    },
+    {
+      "commit": "7d5bfd5",
+      "message": "feat: time/cyclical features, route+carrier cats, 2000 trees + early stopping"
+    },
+    {
+      "commit": "f142794",
+      "message": "exp3: drop Route cat, print internal valid AUC"
+    },
+    {
+      "commit": "bd6f829",
+      "message": "exp4: n_estimators sweep at lr=0.1, no Route"
+    },
+    {
+      "commit": "12b459e",
+      "message": "exp5: depth x lr sweep"
+    },
+    {
+      "commit": "933aefe",
+      "message": "exp8: n_est sweep at depth8 lr0.05 (no TE)"
+    },
+    {
+      "commit": "d333144",
+      "message": "exp9: mcw x colsample sweep"
+    },
+    {
+      "commit": "2e9d816",
+      "message": "exp10: colsample x subsample x n_est sweep"
+    },
+    {
+      "commit": "ae7aee0",
+      "message": "exp11: lower colsample x depth"
+    },
+    {
+      "commit": "fd27827",
+      "message": "exp12: depth 12 probe"
+    },
+    {
+      "commit": "7970d6c",
+      "message": "exp13: depth 14/16 probe"
+    },
+    {
+      "commit": "09ddc50",
+      "message": "exp14: 6-member config ensemble"
+    },
+    {
+      "commit": "f4fc4e4",
+      "message": "exp15: strong-member ensemble + depth20 probe"
+    },
+    {
+      "commit": "58079bc",
+      "message": "exp18: depth20 lr/n/lambda tuning"
+    },
+    {
+      "commit": "a0b7927",
+      "message": "exp19: 5-member production ensemble"
+    },
+    {
+      "commit": "fcaf5a8",
+      "message": "exp20: subsample x max_bin at depth20"
+    },
+    {
+      "commit": "7fb2bcf",
+      "message": "exp21: 4x depth20 sub1 bin512 ensemble"
+    },
+    {
+      "commit": "5f1d340",
+      "message": "exp22: feature variants at depth20 (fixed distbucket dtype)"
+    },
+    {
+      "commit": "4f3b56d",
+      "message": "exp24: freq packs (hours/base/all)"
+    },
+    {
+      "commit": "99d2168",
+      "message": "exp25: ensemble on hours+base freq features"
+    },
+    {
+      "commit": "eb22805",
+      "message": "exp26: freq pack v1/v2/v3"
+    },
+    {
+      "commit": "5081743",
+      "message": "exp27: shape retune on freq features"
+    },
+    {
+      "commit": "d165e7b",
+      "message": "exp28: 5-member ensemble on freq features"
+    },
+    {
+      "commit": "6c816d4",
+      "message": "exp29: 4-member ensemble with lr0.03 anchor (fixed)"
+    },
+    {
+      "commit": "72da1ea",
+      "message": "exp31: share ratios + DowHour freq (fixed)"
+    },
+    {
+      "commit": "9d5ecca",
+      "message": "exp33: ensemble on ratios + agg comparison"
+    },
+    {
+      "commit": "b5ebe2a",
+      "message": "exp34: 3-member ratios ensemble + agg"
+    },
+    {
+      "commit": "659c32d",
+      "message": "exp35: alt member mix (2nd anchor, col 0.5)"
+    },
+    {
+      "commit": "d88db29",
+      "message": "exp36: lr0.02 anchor mix"
+    },
+    {
+      "commit": "5c61d55",
+      "message": "exp37: depth-diverse mix, anchor n450"
+    },
+    {
+      "commit": "0a59ea0",
+      "message": "exp38: carrier-market freqs + CarRoute share (anchor config)"
+    },
+    {
+      "commit": "4f06659",
+      "message": "exp39: final ensemble on full variant"
+    },
+    {
+      "commit": "80e7944",
+      "message": "exp40: 2-member ensemble on full (final)"
+    },
+    {
+      "commit": "327ff5c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 11237.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 263.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "80e7944",
+  "best_commit_eval_auc": 0.7558,
+  "best_commit_holdout_auc": 0.7565166228219999,
+  "best_commit_holdout_ap": 0.7471762908174951,
+  "best_commit_error": null,
+  "finalized_best": true
+}

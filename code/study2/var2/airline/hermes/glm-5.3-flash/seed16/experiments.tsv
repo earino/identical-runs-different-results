@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	97dbfce	0.7141	ok	3	baseline
+2	97a6dc1	0.0000	crash	1	proper params, ES on last-20k of 2005
+3	3e9c125	0.0000	crash	1	proper params, ES on last-20k of 2005
+4	4016062	0.7319	ok	14	proper params, ES on last-20k of 2005
+5	1ab548b	0.7318	ok	18	3000 trees, ES
+6	87bb975	0.0000	crash	1	dow string cat, 1500 trees
+7	41d68f6	0.7312	ok	24	dow string cat, 1500 trees
+8	51fe1cb	0.0000	crash	2	target encoding + LOO, m=50
+9	b93705f	0.6537	ok	14	target encoding + LOO, m=50
+10	5b4e5fa	0.0000	crash	1	OOF target encoding m=50, 5 folds
+11	43a5189	0.7286	ok	17	OOF target encoding m=50, 5 folds
+12	d82028c	0.7330	ok	28	seed ensemble x3, full-train refit
+13	3d2e66f	0.7342	ok	33	freq encodings + depth-diverse ensemble
+14	bca5d22	0.7330	ok	82	2000 trees
+15	5e82ac6	0.7200	ok	37	pair-freq carrier/origin/dest/route x hour
+16	a0feb86	0.7344	ok	51	5-model diverse ensemble
+17	9343239	0.7345	ok	54	rank-average ensemble
+18	f87552e	0.7342	ok	117	lr 0.03 patience 100
+19	b6e7894	0.7324	ok	50	row-bagged 5-model ensemble 80%
+20	21b15e3	0.7327	ok	48	min_child_weight 30, gamma 1
+21	5ee3d85	0.0000	crash	1	Route native categorical
+22	7b70e24	0.7330	ok	57	Route native categorical
+23	93a09c5	0.7349	ok	59	max_bin 512
+24	f155c1e	0.7323	ok	60	dom/month numeric + cyclic
+25	4a384ca	0.7344	ok	37	4-model ensemble parallel threads 3
+26	aaf2b71	0.7353	ok	67	6-model parallel diverse ensemble + max_bin512
+27	9738abd	0.7355	ok	96	9-model parallel ensemble
+28	3c85130	0.0000	crash	1	DOW x hour-block crossed cat
+29	102fa99	0.0000	crash	2	DOW x hour-block crossed cat
+30	706fe39	0.0000	timeout	120	DOW x hour-block crossed cat
+31	085b430	0.7352	ok	71	DOW x hour-block cat + 6-model ensemble
+32	48ea925	0.7355	ok	86	12-member ensemble lr .07
+33	d7eed80	0.7350	ok	95	lossguide max_leaves 64
+34	eadd75b	0.7355	ok	92	colsample 0.7 alpha 0
+35	937b54d	0.7355	ok	92	subsample 0.7
+36	c89180b	0.0000	crash	2	DistCat cat + hour 2nd harmonic
+37	986b3c4	0.0000	crash	2	DistCat cat + hour 2nd harmonic
+38	08e60e3	0.0000	crash	1	DistCat cat + hour 2nd harmonic
+39	fb4a9cb	0.7374	ok	96	DistCat cat + hour 2nd harmonic
+40	3aeae4f	0.7377	ok	100	DepHour as native categorical

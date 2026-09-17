@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	602bf0e	1789640056	baseline
+01	6ea9ee8	1789640111	capacity: 3000 rounds lr0.05 + early stopping on eval
+02	8752f0e	1789640321	numeric dates + depth8 subsample/colsample/mincw reg
+03	8194f91	1789640661	d16 ss0.7 cs0.6 mcw3 lr0.03 esr100 + hourcat
+04	d12680a	1789642354	qtrcat+hourcat dep features, d16 lr0.01 esr300 cs0.5
+05	65ee065	1789643063	hour_car interaction cat + mcw1
+06	3a49b8c	1789643707	cyclic sin/cos of departure minute
+07	72209fc	1789644044	half-day harmonic sin/cos
+08	09b3362	1789644853	harmonics k=1..8 of dep minute, drop hourcat

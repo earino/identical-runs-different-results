@@ -1,0 +1,31 @@
+n	commit	eval_auc	status	seconds	description
+1	59e2cd0	0.7141	ok	4	baseline
+2	0e4b766	0.7070	ok	6	fe: parse c-n ints, hour/minute, route cat, 400x7 lr.06
+3	dcffbdb	0.7045	ok	5	capacity only: 400x7 lr.06, baseline features
+4	951d30d	0.7117	ok	2	100 trees depth6 mcw10
+5	24db9e9	0.7175	ok	1	fe cal ints + hour/minute, baseline model
+6	6990442	0.7092	ok	2	add Route categorical (Origin_Dest)
+7	b03523e	0.7071	ok	2	add smoothed TE (origin/dest/carrier/route)
+8	b9d44d3	0.7248	ok	4	regularized deep: 300x8 lr.02 mcw50 lambda10
+9	8dbab2b	0.7287	ok	5	600x8 lr.01 mcw30 s.7 col.45
+10	9b52417	0.7286	ok	13	3-seed averaged ensemble of 600x8 lr.01
+11	a94858f	0.7421	ok	9	congestion counts + 600x16 lr.01 mcw20 lambda10 col.45
+12	bfd3779	0.7560	ok	45	carrier cnts + 600x20 lr.01 mcw1 lmd5 col.4
+13	21172d6	0.7590	ok	50	rank/queue-position features + deep mcw1
+14	bb64a0f	0.7595	ok	58	carrier-origin-hour cnt + rank
+15	b31d79d	0.7620	ok	67	sliding-window density features, col.4
+16	7447402	0.7629	ok	67	colsample_bytree 0.35
+17	afe1f22	0.7636	ok	72	extra window scales + carrier-hour rank
+18	20004a4	0.7636	ok	91	400t lr.015 + 2-seed average
+19	b7e2915	0.7644	ok	70	colsample_bytree 0.3
+20	f5500ac	0.7655	ok	66	colsample_bytree 0.25
+21	2e5f289	0.7651	ok	58	colsample_bytree 0.2
+22	d859053	0.7665	ok	62	subsample 0.8 with colsample 0.25
+23	52d2b75	0.7663	ok	72	subsample 0.9 with colsample 0.25
+24	73679c9	0.7640	ok	71	more dest/route window scales
+25	9106a79	0.7666	ok	111	min_child_weight 0
+26	d634d4c	0.7651	ok	39	300 trees lr.02 (cheaper fit)
+27	c2e6383	0.7642	ok	73	dominance ratio features
+28	58e86b1	0.7669	ok	75	reg_lambda 2
+29	581205a	0.7667	ok	70	reg_lambda 1
+30	b5a8a33	0.7667	ok	84	max_bin 512

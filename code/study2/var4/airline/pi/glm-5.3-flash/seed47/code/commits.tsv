@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	7fa221d	1789515278	baseline
+01	3ed3373	1789515308	hyperparams: 500 trees, depth 8, subsample/colsample
+02	30361ac	1789515317	depth6 400 trees stronger reg
+03	9863841	1789515406	depth4 100 trees
+04	320148e	1789515417	feateng v1: deptime decomposition, cyclical, buckets, numeric month/day/dow, log-dist
+05	10f73ff	1789515508	tod decomp features + d4/lr.05/n400/col.8/mcw10/monoH
+06	aa6396b	1789515517	5-seed ensemble averaged
+07	09237a5	1789515645	mix12 ensemble: 3 depths x 2 lrs x 2 seeds
+08	0b9319f	1789516029	ensemble d3-8 x lr x 2 seeds (24 members)
+09	b764610	1789516443	ensemble d3-10 x 2lr x 2seeds (32 members)
+10	deba738	1789518592	drop DayofMonth (overfits year shift, +0.0027)
+11	073893b	1789518846	drop Month as well (does not transfer across years)
+12	2bfb8b6	1789519657	rare>=500 grouping + drop Month/DoM + depths 8-14 + mcw5
+13	4ad0779	1789519724	mcw3
+14	870efc4	1789520402	restore best measured config: mcw2 (=94a74e4, eval 0.7505)

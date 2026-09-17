@@ -1,0 +1,38 @@
+n	commit	eval_auc	status	seconds	description
+1	17a6c20	0.7141	ok	4	baseline
+2	1319ef7	0.7063	ok	2	time-derived + route features
+3	3854861	0.7112	ok	3	400 trees lr0.05
+4	bb8f208	0.7167	ok	2	depth4 200 trees lr0.05
+5	2bf4fb8	0.7160	ok	2	depth3 600 trees lr0.05
+6	82cfe46	0.7150	ok	3	depth4 500 trees lr0.05
+7	749ee12	0.7176	ok	2	time features depth4
+8	c3c318c	0.7052	ok	3	add route categorical
+9	991ceb8	0.7167	ok	2	regularization bundle
+10	ac32615	0.7174	ok	5	5-model seed ensemble
+11	0319b4e	0.7167	ok	2	target encoding carrier/origin/dest
+12	66632ec	0.7239	ok	2	drop Month, keep DayOfWeek + cyclic time
+13	5d1c39c	0.7258	ok	10	ensemble of 5 XGBoost configs
+14	3b9e6d0	0.7265	ok	10	recency sample weighting
+15	e2cabbb	0.7299	ok	9	colsample_bylevel 0.3
+16	49bd8ab	0.7333	ok	34	4x trees with colsample_bylevel 0.3
+17	45d2f6e	0.7338	ok	32	carrier x hour target encoding
+18	6fa0e2c	0.7342	ok	32	max_bin 512
+19	61386bd	0.7348	ok	97	10-member ensemble (add 2x-tree members)
+20	e88e31e	0.7327	ok	110	add subsample 0.8
+21	ae22e22	0.7318	ok	98	multiple hour/carrier target encodings
+22	ee009b3	0.7348	ok	99	colsample_bylevel 0.25
+23	5b923ef	0.7340	ok	65	10 distinct ensemble configs
+24	ef899d4	0.7337	ok	80	gamma 0.1
+25	660d210	0.7346	ok	87	min_child_weight 2
+26	8dceea7	0.7348	ok	95	reg_lambda 2
+27	2611c1d	0.7375	ok	106	hour as categorical feature
+28	97e31e7	0.7409	ok	105	15-min time-of-day bin categorical
+29	13fdfc5	0.7341	ok	115	5-min time-of-day bin categorical
+30	24087c0	0.7415	ok	114	distance bin categorical
+31	40bfda6	0.0000	timeout	121	route categorical retest
+32	d8901b5	0.7370	ok	119	day-of-week x hour categorical
+33	421affa	0.7411	ok	113	30-min time-of-day bin
+34	9fb5d18	0.0000	timeout	122	add DayofMonth categorical
+35	a2edf9a	0.7416	ok	112	carrier x 30-min-bin target encoding
+36	9bdd4f1	0.7309	ok	115	origin/dest x 30-min-bin target encoding
+37	cd1e270	0.7410	ok	100	simplify time features

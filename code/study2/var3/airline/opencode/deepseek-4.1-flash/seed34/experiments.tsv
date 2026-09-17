@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a1d107c	0.7141	ok	4	baseline
+2	85063f2	0.7124	ok	4	300 trees lr0.05 subsample/colsample
+3	bc1855f	0.7134	ok	2	DepTime hour/tod/cyclical
+4	a587dea	0.7132	ok	1	freq enc + time feats
+5	169646e	0.7056	ok	1	route as categorical
+6	07a4d37	0.0000	crash	1	calendar as ordinal numeric
+7	dd97db7	0.7161	ok	2	calendar as ordinal numeric
+8	6a690f5	0.7167	ok	2	time of day on top of ordinal calendar
+9	8e8e7ef	0.7169	ok	2	freq enc on best
+10	93c2219	0.7173	ok	2	100 trees lr0.1
+11	6a7272d	0.7162	ok	3	300 trees lr0.05 on best feats
+12	406c14f	0.7139	ok	2	depth 8
+13	f10c6ac	0.7181	ok	2	depth 5
+14	59fb464	0.7191	ok	2	depth 4
+15	bb2edd8	0.7194	ok	2	depth 3
+16	16303ec	0.7195	ok	3	depth3 400 trees lr0.05
+17	b45b9ce	0.7192	ok	3	depth3 800 trees lr0.03
+18	07214f6	0.7207	ok	7	ensemble 5 shallow models
+19	7f057e1	0.7220	ok	8	congestion hour freq
+20	4d40e0f	0.7188	ok	8	route hour freq
+21	7169372	0.7224	ok	8	cyclical month/dow
+22	7f2b685	0.7222	ok	8	smoothed TE carrier/origin/dest
+23	822dfdc	0.7226	ok	11	ensemble 8 diverse
+24	5ee7abd	0.7226	ok	13	cat_smooth50 cat_l2 25
+25	737cfff	0.7222	ok	13	carrier-airport hub freq
+26	017cf01	0.7223	ok	24	ensemble 16 diverse
+27	b7e2991	0.7225	ok	11	drop raw DepTime
+28	1eefd8b	0.7226	ok	11	min_child_weight20 reg_lambda3
+29	d3ecdf6	0.7224	ok	13	network centrality
+30	5694173	0.7228	ok	11	dep_hour categorical
+31	e6af856	0.7208	ok	11	max_cat_threshold 16
+32	25607ab	0.7227	ok	12	max_cat_threshold 128
+33	6d6af16	0.7213	ok	110	dart ensemble 5
+34	6f31ce9	0.7231	ok	20	ensemble 12 no subsample
+35	1775170	0.7231	ok	23	ensemble 16 no subsample
+36	c60ce18	0.7242	ok	19	hour congestion ratios
+37	9774576	0.7187	ok	17	route hour ratio
+38	fecd975	0.7241	ok	20	origin inbound arrival congestion
+39	ee49cce	0.7242	ok	24	ensemble 16 with ratios
+40	6150564	0.7204	ok	17	monthly+inbound ratio features

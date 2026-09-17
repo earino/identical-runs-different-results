@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	946c1e4	0.7141	ok	3	baseline
+2	3eb981f	0.7129	ok	2	hyperparams: 2000 trees d8 early stop
+3	3a8deae	0.7104	ok	3	FE v1: dep minute/sincos, date nums, route cat
+4	34fd750	0.0000	crash	2	TE features v1 + lr0.05 early stop auc
+5	d7581f2	0.7205	ok	18	TE features v1 + lr0.05 early stop auc
+6	2a790d0	0.7225	ok	8	OOF target encodings (5-fold)
+7	dc92042	0.7245	ok	11	lossguide64 + te_min15
+8	2d1bcae	0.0000	crash	2	union of route/org/car/dest x time TEs
+9	fa2463c	0.7474	ok	11	union of route/org/car/dest x time TEs [fix order]
+10	e8ceb50	0.7519	ok	10	counts for all TE keys + hour_month
+11	386c8b6	0.7532	ok	13	origin x 15-min TE
+12	2623e56	0.7543	ok	40	ensemble of 5 jittered XGBs
+13	6dc3bd5	0.7552	ok	42	5-member ensemble, one dropped group each
+14	9cfc083	0.7562	ok	63	8 members, one dropped group each
+15	c4f6ed7	0.7617	ok	81	moh + car/dest/dist interactions
+16	02ae709	0.7619	ok	74	3-fold OOF
+17	6ec5fdc	0.7637	ok	90	2-fold OOF

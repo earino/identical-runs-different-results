@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	fe8098e	1789491753	baseline
+01	4c73a30	1789491857	fe v1: parsed dates, cyclical time, route cat, flags, stronger params
+02	3c762c2	1789491985	numeric dates + hour/minute, cat carriers/airports, 600t lr.05 d6 cs.7
+03	478b6dc	1789492246	entity x hour + dow x hour interaction cats, 3-model depth blend
+04	8efde55	1789493116	lr.02-.03 deep d8 3-model blend on interaction cats
+05	c145b71	1789494124	regularized d8 blend: plain + alpha3 + alpha2/lam5
+06	e0dc811	1789494287	alpha-spectrum blend: 0.3 / 3+gamma / 10
+07	11f3d03	1789494973	5-member alpha-spectrum blend (+seed variant, alpha15)
+08	73a2dd7	1789495366	4-member: 2 full-view (a10,a15) + 2 airport-view (a0.5,a1)
+09	fb36843	1789496098	6-member ensemble: 3 full-view + 3 airport-view, alpha spread
+10	1687240	1789497726	5-member: a20, ap03, apd10, dowview, a20-slow

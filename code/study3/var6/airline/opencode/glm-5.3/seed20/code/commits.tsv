@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	1c0bd2e	1789611017	baseline
+01	b0fd3dc	1789611293	exp5: lr0.05 depth6, early stopping calibrated on eval (2006 dist)
+02	2f568b6	1789611340	exp7: target encoding (carrier/origin/dest/route, 5-fold OOF + smoothing) + doy
+03	7d7ef8b	1789611348	exp7 fix: to_y ordering
+04	85a6327	1789611355	exp7 fix2: drop unused TE_SRC
+05	3282ec9	1789611449	exp13: 5-seed bagged ensemble (subsample/colsample 0.8)
+06	43c65dc	1789611468	exp14: 10-model ensemble
+07	87d08a0	1789611492	exp15: lr 0.03, ES patience 100
+08	2b1cc5e	1789611576	exp17: depth 5
+09	7f00c91	1789611727	exp20: colsample 0.7
+10	0d48eb8	1789611772	exp21: colsample 0.6
+11	60d46a2	1789611859	exp22: colsample 0.5
+12	4c946e5	1789611913	exp23: colsample 0.4
+13	8443e7b	1789612067	exp25: lossguide trees, max_leaves 32
+14	2c59745	1789612138	exp26: lossguide 64 leaves
+15	8e23e50	1789612213	exp27: lossguide 128 leaves
+16	6337b78	1789612296	exp28: lossguide 256 leaves
+17	bc039d2	1789613283	exp36: TE smoothing 25/50/50/50

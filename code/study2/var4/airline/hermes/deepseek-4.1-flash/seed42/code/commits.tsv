@@ -1,0 +1,28 @@
+n	commit	unix_time	subject
+00	4f6f5d0	1789499795	baseline
+01	8271153	1789499847	diag: tree-count sweep at baseline params
+02	e9ecc8d	1789499865	diag: depth/lr/regularization sweep
+03	7a40241	1789499898	depth4 lr0.03 300 trees (diag winner)
+04	2dcffc0	1789499997	diag: hyperparameter grid
+05	fbd3624	1789500060	feat: OOF target encoding origin/dest/carrier + diag
+06	9daf8e6	1789500140	diag: TE interaction blocks, 3-seed averaged
+07	df5e0e9	1789500173	feat: TE origin/dest/carrier + origin x hour (drop harmful blocks)
+08	55c1b3a	1789500238	diag: Origin_hour TE smoothing k sweep; adopt k=30
+09	bddbe4d	1789500258	diag: capacity retune + count features
+10	c3dc698	1789500298	ens: 8-member diverse ensemble
+11	43d1a71	1789500451	diag: structural variants (max_bin, reg_alpha, lossguide, dart, bynode, delta_step)
+12	d3e1a0c	1789500573	diag: reg_alpha sweep; ensemble with alpha members
+13	c920132	1789500653	diag: alpha 5..50 + depth/tree variants; model = alpha5 single
+14	f64f2e3	1789500701	diag: refine around alpha=10; adopt alpha=10
+15	0e9c410	1789500739	diag: tree count 1200-4000 under alpha=10; adopt n=1200
+16	d9c3b43	1789500878	diag: feature blocks under L1 regime
+17	3df637d	1789500928	diag: retune alpha/trees with time features; adopt time+alpha10
+18	c3c0d9c	1789501002	diag: retune around time+counts; adopt t+c
+19	951efd2	1789501061	diag: trees 2000-4000 at time+counts; adopt n=2000
+20	10140b6	1789501207	diag: n3000 combos; adopt t+c n=3000
+21	ea57248	1789501332	diag: encoding layer under L1 (smoothing, wk_hour, Carrier_origin, Hour, Route)
+22	f376053	1789501455	diag: dep_minute + time-block ablations
+23	52e8fc3	1789501830	feat: 5-min-origin target encoding + depth5/n1500; adopt combo
+24	e29f008	1789501910	diag: depth 6/7 variants + top3 blend; adopt d6 n1000
+25	711f1f3	1789502020	final form: clean pipeline + 4-member L1 ensemble
+26	b32fce4	1789502135	ens: 6 members incl. 2 bagged

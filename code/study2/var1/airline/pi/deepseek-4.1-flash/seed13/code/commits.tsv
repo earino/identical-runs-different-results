@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	4f6828d	1789543921	baseline
+01	2842182	1789543963	scale model 600 trees lr.05
+02	0f0c5a5	1789544161	time features + frequency encodings, 250 trees
+03	5762736	1789544219	add origin-hour congestion freq, cs.4
+04	882d3fb	1789544764	deep-tree 5-model ensemble
+05	e1d4c4b	1789545308	4-model deep ensemble lr.03 n400
+06	06e8707	1789545401	add UC-hour and Dest-hour congestion freqs
+07	7844a39	1789545625	add route-hour congestion freq
+08	8f31b2c	1789548515	3-model fast ensemble mcw1 onehot64 lr.05 n250
+09	7a7713d	1789549226	mixed mcw ensemble with mcw0 member
+10	a61935b	1789549315	add HourCat and RoundDep features
+11	ab14571	1789549404	4-model ensemble, two mcw0 members n200
+12	3bdc369	1789549517	add hour-share features
+13	4f0bf7c	1789549788	faster 3-model two-mcw0 ensemble with shares

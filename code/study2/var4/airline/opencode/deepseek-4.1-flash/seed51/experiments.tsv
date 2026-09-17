@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	8810328	0.7141	ok	4	baseline
+2	5af7e4a	0.7178	ok	5	time features + 400 trees lr0.05
+3	437efa6	0.6973	ok	6	route cat + freq encodings
+4	24280a0	0.7168	ok	5	freq encodings only
+5	aa82b83	0.7161	ok	9	deeper regularized model
+6	5efa3ae	0.7132	ok	5	OOF target encoding
+7	428a14f	0.7112	ok	3	ablation no time features
+8	49e6215	0.7205	ok	5	arrival time features
+9	21f6b6d	0.7205	ok	10	3-seed ensemble
+10	71af026	0.7176	ok	5	dow x hour interaction
+11	90db284	0.7206	ok	5	monotone time constraints
+12	8dcfdf4	0.7188	ok	5	network share features
+13	f5f912b	0.7195	ok	4	drop DepTime raw + minute
+14	743918f	0.7203	ok	7	800 trees lr0.03
+15	eb155d0	0.7160	ok	5	onehot low-card cats
+16	8897086	0.7207	ok	7	depth5 900 trees lr0.03
+17	73d63e6	0.7169	ok	7	cyclical calendar features
+18	f860bf9	0.7185	ok	13	early stopping internal val
+19	ecbf0d1	0.7202	ok	6	continuous time features
+20	daf99c3	0.7185	ok	6	regularized depth6
+21	e718835	0.7218	ok	14	depth 4/5/6 ensemble
+22	80ad200	0.7234	ok	22	5-model ensemble
+23	4311f09	0.7239	ok	41	7-model ensemble
+24	477a747	0.0000	crash	1	9-model ensemble
+25	50024df	0.7245	ok	59	9-model ensemble
+26	7a41ff3	0.7242	ok	86	11-model ensemble with lossguide
+27	920a236	0.7260	ok	72	2nd harmonics
+28	11ddee4	0.7274	ok	77	3rd harmonics
+29	c93155f	0.7282	ok	88	4th harmonics
+30	ce9e672	0.7295	ok	100	5th+6th harmonics
+31	43f6f1e	0.0000	timeout	120	7th+8th harmonics
+32	fb55a01	0.7302	ok	57	6-model lean + harms 7-8
+33	64fdbe7	0.7313	ok	77	harmonics k=9..12
+34	ca844a1	0.7317	ok	110	8-model ensemble deep added
+35	770f0ff	0.7283	ok	93	doy Fourier
+36	79b6677	0.7312	ok	101	8-model subsampled ensemble
+37	40f4904	0.7319	ok	77	hour categorical
+38	0fe3769	0.7417	ok	84	carrier x hour cat
+39	8969597	0.7345	ok	77	origin x hour cat
+40	79a6a4c	0.7389	ok	76	carrier x dow cat

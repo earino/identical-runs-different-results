@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	61fb370	1789542956	baseline
+01	8597261	1789543243	exp3: day-level feats + tuned depth6/lr.05/cs.5, no early stopping
+02	53f7a21	1789543527	exp4: depth8 subsample.8 d8/800/lr.05/cs.5
+03	a1a154c	1789543556	exp5: 5-seed bag
+04	1366b17	1789543940	exp6: add dephour categorical
+05	988f2e4	1789544157	exp7: slim features (drop DoM/route/counts), keep bag5
+06	ebc26dd	1789544354	exp8: subsample 0.9
+07	fe426ae	1789544674	exp9: d9 gamma3 alpha1 (sparsity regularized)
+08	c4f8bbd	1789544828	exp10: bag10 mixed configs d9g3a1 + d10g5a1
+09	d5bf435	1789544978	exp11: add 15-min dep bins (depbin96)
+10	970bed9	1789545153	exp12: drop Month entirely
+11	15dbeac	1789545515	exp13: bag15 d10g5 lr mix
+12	98b2f06	1789545843	exp14: bag20 d10g5 lr x cs mix (fixed)
+13	42e9c07	1789546024	exp16: collapse rare airports to OTHER
+14	49da0a1	1789547414	exp17: bag20 5fam + rare-airport collapse K240

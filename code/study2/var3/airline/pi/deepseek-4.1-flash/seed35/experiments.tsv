@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	dd83ccf	0.7141	ok	3	baseline
+2	919c73a	0.7092	ok	12	fe time+cyclical+route+count, 600 trees
+3	73e355c	0.0000	crash	2	base + OOF target/count encodings, 600t
+4	5989a4f	0.7229	ok	8	base + OOF target/count encodings, 600t
+5	a3b8054	0.7257	ok	10	add hour-interaction TEs + route_frac
+6	149b5b8	0.7262	ok	10	add origin_carrier/dest_carrier TEs
+7	84dbae5	0.7248	ok	9	TE smoothing 20->5
+8	4b9439c	0.7256	ok	9	structural count features (airport-carrier stats)
+9	76e70f8	0.7274	ok	20	lr 0.03, 1500 trees, patience 100
+10	f6fcab3	0.7276	ok	21	depth 8, min_child_weight 40, lambda 3
+11	718b7f4	0.7304	ok	32	hour traffic counts
+12	20b58c9	0.7195	ok	11	day-level traffic counts + hour fracs
+13	9ea35e7	0.7324	ok	25	hour-count fractions
+14	60892e3	0.7322	ok	31	carrier/route hour fractions
+15	84cd027	0.7322	ok	32	previous-hour traffic counts
+16	e0c9133	0.7331	ok	66	3-seed ensemble average
+17	d97a7fa	0.7334	ok	83	10-fold OOF target encoding
+18	3916582	0.7313	ok	88	add month/dow/hour TEs
+19	bbc6938	0.7378	ok	65	colsample 0.5 subsample 0.7
+20	1b7814a	0.7402	ok	76	colsample 0.3 subsample 0.6
+21	d24867a	0.7407	ok	95	colsample 0.2 subsample 0.5
+22	50001d2	0.7385	ok	71	min_child_weight 80 lambda 5
+23	ee29899	0.7393	ok	85	colsample 0.15 subsample 0.5
+24	caa6321	0.7395	ok	77	max_depth 7
+25	fc9cdac	0.7404	ok	73	net airport-hour congestion
+26	2f166ab	0.7358	ok	53	route native categorical
+27	2396bab	0.7397	ok	75	3x10-fold averaged OOF TE
+28	e1a1b22	0.7400	ok	96	5-seed ensemble max_bin 128
+29	04b8097	0.7408	ok	71	heterogeneous 3-model ensemble
+30	08e1d07	0.7406	ok	64	TE smoothing 40
+31	1468c59	0.7373	ok	68	origin/dest x month TEs
+32	3e3c843	0.7410	ok	68	L1 reg_alpha 1.0
+33	fac7e0b	0.7409	ok	89	4-model heterogeneous ensemble
+34	804ec83	0.7410	ok	64	per-key TE smoothing
+35	7b65942	0.7411	ok	75	drop dow/month cyclical features
+36	68452eb	0.7414	ok	70	airport cumulative daily traffic share
+37	608a49e	0.7446	ok	108	route cumulative + peak-relative load
+38	1b6adc7	0.7441	ok	82	absolute cumulative counts
+39	f02a53b	0.7442	ok	75	carrier cumulative daily share
+40	713785a	0.7427	ok	92	route hour peak/fraction

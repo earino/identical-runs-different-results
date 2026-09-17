@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	5af0862	1789638268	baseline
+01	c6b0597	1789638308	numeric time features, route categorical, log distance
+02	56282d4	1789638331	capacity: 600 trees lr .05 depth 8, ES on internal 20pct split
+03	175f459	1789638352	ablation: baseline features with ES capacity model
+04	c52a796	1789638536	drop Month/DayofMonth (year shift), depth 5
+05	bbf0947	1789638718	rare-airport bucketing (>=500), deep trees d12/100tr lr.05
+06	d8b45e6	1789639252	16-member ensemble: rare-ladder x depth, colsample .85
+07	8fbe6b0	1789640196	max_bin=384 for all ensemble members
+08	8b28bb6	1789641017	add carrier-share-at-origin structural feature
+09	2223d88	1789642569	depth diversity: swap d16 for d18
+10	f8a0d6e	1789642814	n_estimators 100 -> 110
+11	b59fb91	1789642978	densify mid rare-ladder (drop 150/200, add 600/800)
+12	ecfdaac	1789643084	Revert "densify mid rare-ladder (drop 150/200, add 600/800)"
+13	c8e4bbd	1789643084	shift rare ladder down (add 100, drop 1500)
+14	f716ca2	1789643202	Revert "shift rare ladder down (add 100, drop 1500)"
+15	762911b	1789643206	weighted aggregation: upweight mid-ladder members
+16	a4edf8c	1789643321	Revert "weighted aggregation: upweight mid-ladder members"
+17	3aeb53b	1789644034	max_cat_to_onehot=32 (one-hot splits for dow/carrier) + grouped predict prepares

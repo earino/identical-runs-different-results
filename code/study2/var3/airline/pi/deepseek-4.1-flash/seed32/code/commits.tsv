@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	287f3bd	1789512125	baseline
+01	64737e0	1789512180	300 trees depth6 subsample/colsample + time features
+02	030cdb0	1789512299	target encoding of route/carrier/airport/hour + regularized model
+03	f7d1f72	1789512562	verified TE pipeline (route/carrier/airport/hour) fixed 200 trees
+04	405273d	1789512848	add RouteHour + CarrierOrigin target encodings, depth7 lr0.02 600 trees
+05	86d5f07	1789513526	add CarrierRouteHour TE + frequency encodings, alpha200
+06	523ef7a	1789514258	colsample0.25 subsample0.8 1400 trees
+07	7387819	1789515553	fold3 alpha1000 + DestHour/CarrierOriginHour TE
+08	dfd9e1d	1789515912	5-model XGBoost ensemble with varied colsample
+09	a1dd50a	1789516278	add DowHour and CarrierDow TE features
+10	7f498e4	1789517183	alpha2000 mcw20
+11	0b006b1	1789519648	final: lossguide max_leaves=255 min_child_weight=10 ensemble
+12	f6f8556	1789519803	final: single lossguide model for runtime headroom

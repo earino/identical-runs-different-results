@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	46566bb	0.7141	ok	4	baseline
+2	985d768	0.7107	ok	3	bigger model, ES on train split, refit full
+3	985d768+dirty	0.7115	ok	10	FE: numeric parse, hour/min, cyc, route cat; depth8 lr.05
+4	985d768+dirty	0.7115	ok	10	FE: numeric parse, hour/min, cyc, route cat; depth8 lr.05
+5	5226fe9	0.7170	ok	13	ablate: baseline vs FE vs FE+route, curves
+6	0d43318	0.7201	ok	9	FE ablation: minute/cyclic/logdist features
+7	1047d4f	0.7201	ok	12	TE route/origin/dest/carrier ablation
+8	35e97d7	0.7202	ok	28	grid: depth x min_child_weight x subsample
+9	265d6b0	0.7202	ok	6	seed ensemble n=8
+10	bd92194	0.7240	ok	21	bagging ensembles 0.7/0.8, n=12/24
+11	ef024c8	0.7276	ok	70	bag composition tuning
+12	52fdaef	0.7339	ok	65	bag tuning v2: col0.5/0.6, d7/d8, k120/150
+13	cc273c2	0.7375	ok	96	bag tuning v3: col0.3-0.5, d8-d10
+14	9a4fbf3	0.7401	ok	109	bag tuning v4: n=20 low-col, d10/d12
+15	ecefa7d	0.0000	timeout	121	counts features: origin/dest/route/carrier/hour
+16	5614e40	0.0000	crash	1	counts features v2 (fixed harness)
+17	7219cd1	0.7496	ok	66	counts features v3 (bugfix)
+18	371c3c0	0.7530	ok	115	count features v2/v3 + dist_dev
+19	cc821f6	0.0000	crash	2	arrival-hour congestion counts
+20	8823554	0.7541	ok	48	arrival-hour congestion (fixed)
+21	d4c0116	0.7551	ok	74	sorted cols; k180 at col 0.25/0.2
+22	8bbadfa	0.7555	ok	100	5-bag union, DMatrix speedup
+23	8826520	0.0000	timeout	120	deep bags d14-d16 union, best subset
+24	e93b8ba	0.7581	ok	89	d14 big bag + d16, trimmed
+25	8f52b66	0.7598	ok	84	d16 n=6 vs d18 n=6
+26	b08bcc2	0.7608	ok	82	d20 vs d18-col0.2
+27	e052661	0.7606	ok	101	union d14/d16/d18/d18col02, n=4 each
+28	d706d32	0.0000	crash	104	share features screen
+29	c9ff96e	0.7610	ok	88	share features screen (fixed)
+30	1607e9b	0.7606	ok	102	3-view union ctrl/shares/no_arr
+31	d7f7a7c	0.7609	ok	102	2-view union n=8 each
+32	754a10a	0.7592	ok	68	mcw 1/10/30 at d18 col03
+33	e9d5058	0.7602	ok	85	dow-hour congestion counts view
+34	423e2bc	0.7598	ok	93	k180 + shares + lossguide union
+35	ee1d75c	0.7611	ok	111	consolidated 2-view union, deadline 100
+36	e195d8d	0.7607	ok	106	recency-weighted training view
+37	cd0ff53	0.7598	ok	105	stats view: mean dep/arr/dist + month-hour
+38	a8cc971	0.0000	crash	113	agg comparison on 2-view union n=7+6
+39	2013b95	0.7605	ok	118	merged view bags k120 + k-cycle
+40	db4681f	0.7611	ok	115	final confirmation of shipped model

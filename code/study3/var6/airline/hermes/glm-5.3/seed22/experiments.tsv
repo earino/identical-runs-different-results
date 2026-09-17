@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	dd85c35	0.7141	ok	3	baseline (as committed)
+2	da723e4	0.7160	ok	4	v2: 4000x lr0.05 depth8 es100 on eval
+3	f0269a3	0.7144	ok	5	v3: DepTime cyc + night flag + log1p dist
+4	6aa88bb	0.7066	ok	4	v4: doy + TE route/carrier/hour
+5	1fe2979	0.7225	ok	4	v5: numeric month/day/dow/dep_time + cyclic, fewer redundant cols
+6	1fe69a6	0.7103	ok	6	v6: + route cat interaction
+7	1d99b35	0.7205	ok	9	v7: depth6 mcw5
+8	067b9da	0.7252	ok	15	v8: depth10 mcw2 s0.7 c0.7 lam2
+9	8ef9d46	0.7278	ok	61	v9: 3-seed bag of depth10 models
+10	12b2f8b	0.7279	ok	20	v10: lr0.03 es150
+11	71997a6	0.7318	ok	22	v11: + hour, minute
+12	1a0ff4c	0.7322	ok	34	v12: 5-seed bag
+13	a3190cb	0.7319	ok	35	v13: + min_of_day
+14	b830e72	0.7351	ok	39	v14: + origin/dest hourly flight counts
+15	bb8f502	0.7342	ok	42	v15: + carrier_hour_cnt, origin/dest daily vol
+16	5d1c89d	0.7307	ok	39	v16: + day_of_year, doy_sin/cos
+17	6933ec9	0.7395	ok	47	v17: depth12
+18	81f28d2	0.7427	ok	57	v18: depth14
+19	0010875	0.7449	ok	79	v19: depth18
+20	45528bd	0.7420	ok	61	v20: d18 mcw5
+21	e76d302	0.7464	ok	91	v21: d24 c0.6
+22	227432f	0.7469	ok	101	v22: max_bin512
+23	7412226	0.7349	ok	93	v23: + route_cnt, route_rate (m=100)
+24	254cc03	0.0000	timeout	122	v24: lr0.02 es200
+25	5dcad42	0.7460	ok	75	v25: 4-seed bag d24
+26	639ac07	0.7464	ok	81	v26: es100
+27	6e08be5	0.7441	ok	79	v27: row bagging 85%
+28	576d9b4	0.7449	ok	91	v28: + carrier_hour_rate m=50
+29	184cf0e	0.7465	ok	93	v29: + route_cnt
+30	fed8f1a	0.7450	ok	87	v30: subsample 0.6
+31	bc1f7e4	0.7470	ok	92	v31: lambda 1.0
+32	e19c4a7	0.7498	ok	92	v32: + origin_slot_cnt
+33	406b203	0.7494	ok	93	v33: + dest_slot_cnt
+34	64865a0	0.0000	crash	1	v34: + origin_dow_hour_cnt
+35	52ff052	0.7487	ok	95	v34 fix: origin dow-hour congestion
+36	f36dd28	0.7521	ok	87	v36: drop month/dow sin/cos
+37	a678886	0.7514	ok	85	v37: drop dist_log
+38	04a347d	0.7525	ok	105	v38: 6 seeds
+39	a597da3	0.7510	ok	105	v39: colsample 0.65
+40	9c2c876	0.0000	timeout	120	v40: mcw1

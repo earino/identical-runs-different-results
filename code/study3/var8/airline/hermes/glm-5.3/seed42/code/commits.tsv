@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	8d76a40	1789589961	baseline
+01	960f99a	1789590082	capacity+early stopping
+02	d01e61e	1789590148	time-of-day features, no route
+03	3ca82ed	1789590234	bagged ensemble 7 seeds subsample 0.7
+04	434a5bd	1789590375	CV-on-train grid to pick member params
+05	047aadc	1789590502	refined CV grid depth10-14
+06	c805c50	1789590834	hardcode exp10 CV winner d16 mcw5 lr.03
+07	d73faa0	1789590912	10 members, colsample jitter
+08	371db0f	1789591156	hour features, 7 members, 500-tree cap
+09	b08f1a3	1789591303	rank-average ensemble
+10	5d13bdc	1789591516	hour structure + volume congestion features
+11	da765c8	1789594133	native API d12 lr.05 n400 cs.3 7 members
+12	6eda518	1789594254	10 members
+13	fd74a4d	1789594646	heterogeneous 4xd12n400 + 3xd16n300
+14	91c2598	1789595157	bin30_rate prior
+15	85f0024	1789596107	bin15_rate prior
+16	7392207	1789596381	3xd12n400 + 4xd16n300
+17	75e4d43	1789596911	combo: drop DepTime, log_dist, bin10_rate
+18	8f29ba3	1789597334	5x d16 n300
+19	0d8d264	1789597619	3xd16n300 + 2xd12n400
+20	091dc8b	1789598206	reg_lambda 1.5 on 5xd16n300
+21	9c734e2	1789598409	mcw3 on deep members

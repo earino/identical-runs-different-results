@@ -1,0 +1,28 @@
+n	commit	eval_auc	status	seconds	description
+1	f3d0ce0	0.7141	ok	4	baseline
+2	1dae573	0.7077	ok	2	2000 trees depth8 + early stopping
+3	edc1e2f	0.7073	ok	5	500 trees depth6
+4	f16b214	0.0000	crash	1	FE hour/msm + route
+5	d8a0d88	0.7063	ok	2	FE hour/msm + route, fixed cats
+6	74453da	0.7132	ok	1	additive hour+msm, keep DepTime
+7	11e0c74	0.6990	ok	3	rich FE + target encodings + reg capacity
+8	c356502	0.7158	ok	2	60x d4 lr.05 raw features
+9	95c1da7	0.7085	ok	2	FE hour/msm/route at 60x d4
+10	4b15d97	0.7172	ok	27	2-member cols-diversity ensemble
+11	5ba235c	0.7187	ok	9	x12 ens nest150 bin512
+12	9f4f5bb	0.7198	ok	10	x12 ens + minute
+13	459b070	0.7215	ok	14	x12 ens nest250
+14	beb3118	0.7227	ok	26	x12 ens nest500
+15	1e5f23e	0.7229	ok	35	x12 ens nest700
+16	846e581	0.7231	ok	68	x24 ens nest700
+17	9d47107	0.7234	ok	70	x24 ens + logdist + night
+18	6e708d0	0.7246	ok	74	x24 ens + cyclic time
+19	a5cea41	0.7266	ok	77	x24 ens + 2nd harmonic
+20	648f9cc	0.7269	ok	81	x24 ens + harm 3,4
+21	f839dd1	0.7288	ok	84	x24 ens + harm 5,6
+22	12c6e1b	0.7303	ok	90	x24 ens + harm 7,8
+23	1d2f28e	0.7296	ok	94	x24 ens + harm 9,10
+24	f41c5a7	0.7301	ok	95	x24 ens + msm linear
+25	fa468b0	0.7323	ok	68	x12 ens nest1100
+26	e7a5b07	0.7322	ok	95	x16 ens nest1100
+27	80d55cd	0.7345	ok	112	x12 deep ens nest1100

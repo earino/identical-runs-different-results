@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2f7fb8f	0.7141	ok	4	baseline
+2	1b9c753	0.0000	crash	1	exp2: early stopping 2000 trees refit
+3	fe052e1	0.0000	crash	1	exp2: early stopping 2000 trees refit
+4	d66e017	0.7071	ok	8	exp2: early stopping 2000 trees refit
+5	3d8274c	0.7053	ok	3	exp5: FE v1 + early stop
+6	fe1e036	0.7296	ok	6	exp5: 11 TE + cyc + 3-model blend
+7	1bb8e92	0.7325	ok	9	exp7: 5-model blend + holidays + gblinear
+8	1d59fd1	0.7337	ok	13	exp8: 6-model blend + doy feature (0.7335 exploration)
+9	2ce098d	0.7341	ok	11	exp9: 6-model blend, d3n numerics-only member
+10	f5acdda	0.7343	ok	12	exp10: per-feature TE smoothing m
+11	e4284c1	0.7344	ok	13	exp11: 7-model blend (+d4n)
+12	ad7f35c	0.7343	ok	12	exp12: OOF fold seed 7 robustness
+13	8b1dbc5	0.7344	ok	14	exp13: seed-averaged tree members
+14	18090c6	0.7344	ok	24	exp14: 3-seed averaging (te trees + raw)
+15	6d460ec	0.7344	ok	34	exp15: 5-seed averaging te members
+16	e5eeb7c	0.7486	ok	34	exp16: halfhour interaction TEs
+17	3742ef6	0.7514	ok	33	exp17: quarterhour interaction TEs m300
+18	a031a7f	0.7518	ok	35	exp18: fold-seed 7
+19	1763822	0.7516	ok	35	exp19: 7-fold OOF
+20	e605f02	0.7518	ok	13	exp20: single-seed te members
+21	a031a7f	0.7518	ok	34	exp21: determinism re-verification of final config (expect 0.7518)
+22	dca40ec	0.7536	ok	38	exp22: support-count features
+23	dca40ec	0.7536	ok	37	exp23: determinism re-verification of final 0.7536 config
+24	a7553f0	0.7535	ok	38	exp24: fold-seed 13
+25	2d3d98e	0.7532	ok	40	exp25: 7-fold OOF at final config
+26	8fd3079	0.7536	ok	39	exp26: seed-average d3n/d4n
+27	7454b70	0.7537	ok	39	exp27: combined TE m micro-retune
+28	6ad84e3	0.7537	ok	40	exp28: gbl capacity retune n600 lr0.05
+29	c5760d0	0.7537	ok	46	exp29: te_d2 slow boost
+30	f135453	0.7533	ok	40	exp30: subsample+colsample stochasticity
+31	78d393f	0.7536	ok	38	exp31: Month/Dow m10
+32	068142b	0.7536	ok	39	exp32: Route m60
+33	ab9d813	0.7540	ok	40	exp33: d3n n600
+34	25a6ce0	0.7543	ok	35	exp34: d4n n300
+35	40670be	0.7543	ok	42	exp35: te_d4 n300
+36	d17ef97	0.7544	ok	44	exp36: te_d3 n600
+37	9042528	0.7545	ok	47	exp37: te_d2 n900
+38	d7c801c	0.7546	ok	50	exp38: raw_d3 n500
+39	d7c801c	0.7546	ok	49	exp39: determinism re-verification of final 0.7546 config
+40	e5828f5	0.7546	ok	53	exp40: gbl n600 lr0.05

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c8b53b3	0.7141	ok	4	baseline
+2	8dd5509	0.7003	ok	7	fe v1 + 500 trees
+3	3d12fc3	0.7133	ok	2	time feats only
+4	24cb748	0.7091	ok	5	bigger model baseline feats
+5	3b54c86	0.7166	ok	3	depth4 250trees regularized
+6	325160d	0.7151	ok	2	depth3 400trees
+7	2ce2d54	0.7024	ok	2	route cat on regularized model
+8	576648d	0.7162	ok	2	time feats regularized
+9	2a944a0	0.7159	ok	2	freq encodings
+10	2877bd8	0.7153	ok	3	OOF target encoding
+11	a5ff1a3	0.7161	ok	4	lr.03 700trees mcw20 lambda2
+12	d56d39a	0.7171	ok	5	5-seed bag
+13	5637988	0.7172	ok	7	5-seed bag depth5 mcw20
+14	b77dc49	0.0000	crash	8	10-model diverse ensemble
+15	1fd7df5	0.7178	ok	14	10-model diverse ensemble
+16	9cebe55	0.7180	ok	28	20-model diverse ensemble
+17	f0f7173	0.0000	timeout	120	ensemble +lossguide +dart
+18	d03487a	0.7163	ok	28	interaction TE + ensemble
+19	aa55764	0.7155	ok	23	max_cat_threshold16
+20	25e4c49	0.7152	ok	34	stacked ensemble
+21	468e30e	0.0000	crash	2	drop Origin/Dest
+22	836d9b3	0.7012	ok	26	drop Origin/Dest
+23	200252f	0.7178	ok	32	max_cat_to_onehot=300
+24	d5a1916	0.7187	ok	41	day-of-year feats
+25	619d390	0.7187	ok	30	doy harmonics
+26	ce1ce36	0.7188	ok	40	holiday flags
+27	1ec813d	0.7188	ok	39	add lossguide config
+28	8cb643f	0.7218	ok	29	schedule-share feats
+29	57e0d33	0.7320	ok	32	extended schedule shares
+30	5d77c98	0.7332	ok	42	reverse shares + route comp
+31	cfe8a71	0.7333	ok	52	joint+3way+entropy
+32	d2b0a70	0.7331	ok	44	airport network feats
+33	2429f25	0.7327	ok	52	marginal size + lift
+34	be0fcba	0.7337	ok	38	deeper ensemble configs
+35	8860fbf	0.7339	ok	51	add depth8 config
+36	945cf9b	0.0000	crash	45	more diverse configs
+37	8597104	0.7337	ok	82	more diverse configs
+38	7bd6f5f	0.7349	ok	52	TE airport-hour
+39	86df9aa	0.7345	ok	57	more TE
+40	4166989	0.7350	ok	81	6-seed ensemble

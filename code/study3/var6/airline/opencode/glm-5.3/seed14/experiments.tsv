@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3cfed71	0.7141	ok	4	baseline
+2	3ee7316	0.7067	ok	2	capacity: 2000 trees lr0.1 d8, early stop on 10pct split
+3	76a87a7	0.7119	ok	4	fixed 500 trees lr0.05 d6, full train
+4	cb5bab4	0.7048	ok	4	FE: numeric+cyc time features, route cat, log dist, subsample 0.8
+5	9f356a4	0.7095	ok	2	ablation: exp4 features with baseline model config
+6	f070166	0.7181	ok	2	ablation: drop Route, keep numeric+cyc features, baseline config
+7	91bb5c5	0.7160	ok	2	100 trees on clean feature set
+8	9b2dfd9	0.7177	ok	2	30 trees + min_child_weight=50 smoothing
+9	86fd5b0	0.7045	ok	2	ablation: drop Origin/Dest cats, carrier only
+10	ad3ce4d	0.7070	ok	2	add smoothed TEs: Origin/Dest/Carrier m=100, Route m=500, Hour m=200
+11	56746ea	0.7168	ok	2	TE_Hour only (m=200)
+12	0cd654c	0.7161	ok	2	prune: drop cyc/sin/cos, DayofMonth, log-dist; 7 features
+13	ae6bcc7	0.7186	ok	3	bagged ensemble: 5 models, seeds 0-4, subsample 0.75, 40 trees
+14	28d942d	0.7207	ok	5	ensemble 12 members, colsample 0.8, subsample grid 0.60-0.85
+15	a16b604	0.7228	ok	10	ensemble members: 80 trees, depth 7
+16	a9d2359	0.7233	ok	20	ensemble members: 150 trees, depth 8
+17	37a7717	0.7207	ok	41	ensemble members: 300 trees, depth 8
+18	3379c33	0.7236	ok	40	24 members x 150 trees d8
+19	2d3d3d0	0.7241	ok	37	24 members, depth grid 6/7/8/9
+20	9845ccd	0.7095	ok	58	re-add Route categorical in ensemble context
+21	b9c81a8	0.7244	ok	40	add log-count features Origin/Dest/Route
+22	9a28309	0.7245	ok	58	members lr 0.07 x 220 trees
+23	bb98bd9	0.7246	ok	56	regularization diversity grid mcw/lam/colsample
+24	ca74b61	0.7270	ok	59	congestion counts: OriginHour/DestHour/CarrierHour
+25	468b32c	0.7274	ok	65	schedule-structure counts: OriginDow/DestDow/CarrierOrigin/CarrierDest/CarrierDow
+26	d94a83d	0.0000	crash	2	32 members
+27	d064cbd	0.7276	ok	87	32 members (fixed index)
+28	a6ec5d0	0.7266	ok	91	seasonal schedule counts Origin/Dest/Carrier x Month
+29	5940d1c	0.7207	ok	92	interaction TEs: OriginHour/DestHour m=100, CarrierHour m=150
+30	bcf6da5	0.7278	ok	84	noise probe: same config, seeds +100
+31	b7842ab	0.7335	ok	89	30-min bucket congestion counts OriginB30/DestB30
+32	5cc526b	0.7358	ok	88	15-min buckets Origin/Dest + CarrierB30
+33	a718e6f	0.7365	ok	98	CarrierB15 + Origin/Dest B10 buckets
+34	066feeb	0.7363	ok	103	24 members x 300 trees lr 0.05 (capacity re-tune)
+35	9844933	0.7359	ok	102	exposure sums Origin+Dest at B15/B30
+36	ccc6422	0.7354	ok	101	Tod linear + 5-min buckets Origin/Dest
+37	1a1bdde	0.7392	ok	79	feature-group policies across members
+38	2bda948	0.7398	ok	91	40 members, 5 policies incl time+congestion-only
+39	b69673a	0.7411	ok	95	42 members, 6 policies incl cyc-free view
+40	1ec7ab7	0.0000	crash	2	48 members, 6 policies x 8

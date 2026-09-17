@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	9d7f209	1789486928	baseline
+01	322a8f5	1789487012	smoothed OOF target encoding for origin/dest/carrier/route
+02	29a298c	1789487371	date+doy, OOF target enc, freq enc, 3-seed ensemble
+03	9db4420	1789487499	minute+hour features and dest_hour target encoding
+04	925d30d	1789487792	arrival-hour dest/carrier TE + regularization
+05	a219256	1789488224	two duration divisors + depth-diverse ensemble
+06	e75c4bf	1789492392	deep trees (depth24, 2500 trees, colsample0.25, mcw2) - best recon 0.7435

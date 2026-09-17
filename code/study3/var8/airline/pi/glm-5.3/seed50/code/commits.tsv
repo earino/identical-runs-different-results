@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	09d2966	1789633445	baseline
+01	bcb59c2	1789634310	5-seed bagged ensemble, d12, cs0.3, fixed 400 trees, lean FE
+02	825053d	1789634980	FE: counts (route/origin/dest/carrier), sin/cos tod, log_dist, red_eye
+03	0fc4a36	1789637477	RF-style: d24 mcw0 maxbin64 cs0.25, 200 trees lr0.09, 5 seeds
+04	aa955a1	1789637870	FE: tod_dev_route (deviation from route's typical departure time)
+05	55447d9	1789637998	FE: tod_dev_origin, arr_dev_dest (arrival bank deviation); 4 seeds for time margin
+06	c06ff53	1789638101	FE: arr_dev_route, tod_std_route (schedule tightness)
+07	4359504	1789638214	FE: carrier-level departure/arrival time deviations
+08	a345e4c	1789638933	5 seeds x 150 trees lr0.12 (same boost, one more bag)

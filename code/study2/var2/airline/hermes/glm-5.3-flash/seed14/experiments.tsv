@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	73eacf1	0.7141	ok	3	baseline: native categoricals, depth6, 30 trees
+2	f3b2390	0.7095	ok	81	scaled: lr0.05 depth8, ES on 80/20 split, cyclical+hour+route feats
+3	22ac5b1	0.7073	ok	2	scaled no-ES: 600 trees lr0.05 depth8, engineered feats
+4	43b7968	0.7138	ok	2	eng feats (hour, sin, logdist, cats), 150 trees depth6
+5	87cbdd7	0.0000	crash	2	OOF smoothed TE (carrier/origin/dest) + full feats, 150 trees
+6	3796dce	0.7123	ok	3	OOF smoothed TE (carrier/origin/dest) + full feats, 150 trees
+7	15d8d21	0.0000	crash	3	frequency encodings carrier/origin/dest/route + full feats, 150 trees
+8	b857cb6	0.0000	crash	1	frequency encodings carrier/origin/dest/route + full feats, 150 trees
+9	29f3b06	0.0000	crash	2	frequency encodings carrier/origin/dest/route + full feats, 150 trees
+10	a7f18d6	0.7131	ok	2	frequency encodings carrier/origin/dest/route + full feats, 150 trees
+11	768ccba	0.7174	ok	10	10-seed ensemble of exp4 config (150 trees depth6)
+12	691d509	0.7190	ok	27	30-seed ensemble, subsample/colsample 0.7
+13	07fe197	0.7191	ok	29	30-seed ensemble, depth diversity 5/6/7
+14	a015738	0.7188	ok	27	15 seeds x 300 trees lr0.05 (same budget as exp12)
+15	5376e42	0.7189	ok	55	60-seed ensemble, subsample/colsample 0.7
+16	078c8d1	0.7242	ok	25	ablation: no Month/Dom/Dow categorical features
+17	c832220	0.7021	ok	13	ablation: zero categorical features
+18	92ca491	0.7177	ok	30	add DepTime categorical (1186 levels)
+19	6f3901f	0.7164	ok	30	Month x Hour interaction categorical
+20	d50426c	0.7242	ok	36	Origin x Hour interaction categorical
+21	ab73e9a	0.0000	crash	0	depth 8, min_child_weight 20, gamma 2, 30 seeds
+22	f78012c	0.7254	ok	33	depth 8, min_child_weight 20, gamma 2, 30 seeds
+23	1914925	0.7254	ok	34	depth 10, min_child_weight 50, gamma 5, 30 seeds
+24	f8683cb	0.7256	ok	68	depth8 mcw20 gamma2, lr0.05 x 300 trees, 30 seeds
+25	f31035f	0.7253	ok	56	mixed depth 8/6 members, lr0.05 x 300 trees
+26	10a3cf4	0.7256	ok	65	gamma 0 ablation (rest as exp24)
+27	f5d9748	0.7265	ok	62	drop sin features (rest as exp24)
+28	e5cda14	0.7252	ok	59	only DepTime/Hour/Minute/Distance(+log) + carrier cats
+29	a59179c	0.7213	ok	64	drop Minute (rest as exp27)
+30	db05990	0.7267	ok	105	50 seeds (rest as exp27)
+31	076e02a	0.7279	ok	96	subsample/colsample 0.5 (rest as exp30)
+32	45d32af	0.7260	ok	78	subsample/colsample 0.3 (rest as exp30)
+33	5bb8879	0.7255	ok	89	subsample 0.3 colsample 0.5 (rest as exp30)
+34	f2b7d40	0.7276	ok	81	subsample 0.5 colsample 0.3 (rest as exp30)
+35	c8c3310	0.7275	ok	63	two-group ensemble: 20x(300t lr.05 s.5 c.5) + 20x(150t lr.1 s.7 c.7)
+36	22cafeb	0.7279	ok	100	exp31 config re-run (sanity after repair)
+37	465af7a	0.7269	ok	86	depth 7, 50 seeds, s/c 0.5, lr.05 x 300t
+38	77d7db0	0.7272	ok	87	member-level row bagging 0.8 (rest as exp36)
+39	8e0c23b	0.0000	timeout	120	65 seeds (rest as exp36)
+40	22cafeb	0.7279	ok	96	final: re-run exp36 best config

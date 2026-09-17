@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a86ced2	0.7141	ok	1	baseline (as committed)
+2	2807141	0.7037	ok	11	FE v1 + bigger model
+3	67f39e1	0.7010	ok	3	FE v1 smaller model
+4	0778568	0.7148	ok	2	FE v1 without route
+5	a7e0d72	0.7164	ok	5	early stopping + refit
+6	fe9a11c	0.7139	ok	8	ES metric = AUC
+7	e271c6b	0.7158	ok	6	depth 8
+8	dd48ecc	0.7140	ok	18	TE (oof) origin/dest/carrier/hour/route + counts
+9	42aab33	0.7179	ok	12	TE + cap 400 trees
+10	5767933	0.7185	ok	11	cap 250 trees
+11	ec5ce7e	0.7186	ok	12	cap 150 trees
+12	b6c6e4e	0.7171	ok	7	lr 0.1, cap 150
+13	5fa67f1	0.7202	ok	25	3-seed ensemble
+14	ed6a887	0.7207	ok	41	5-model ensemble mixed depths
+15	62fe6ab	0.7219	ok	42	traffic count features
+16	59ba404	0.7232	ok	69	te_dest_hour
+17	e0589db	0.7223	ok	40	carrier time TE
+18	6483cf5	0.7238	ok	47	sub/col 0.7
+19	f05ec11	0.7240	ok	64	7-model ensemble
+20	64b3e5e	0.7237	ok	67	mch 20
+21	aaf0d7e	0.7322	ok	62	30-min TE granularity
+22	903a2ca	0.0000	crash	0	15-min TE granularity
+23	220afc6	0.7326	ok	69	15-min TE granularity (fixed)
+24	56063fd	0.7320	ok	72	m=10 fine time TE
+25	e097b22	0.7326	ok	72	cap 300
+26	deec224	0.7323	ok	61	gamma 1
+27	0f3d9f9	0.7348	ok	77	feature-view diversity
+28	b65bfeb	0.7348	ok	78	50/50 view weight
+29	3ef3f06	0.7352	ok	80	te_deptime exact
+30	01de159	0.7352	ok	81	origin/dest x dow TE
+31	623a474	0.7352	ok	78	rank average
+32	572b0b5	0.7352	ok	67	val 25% + deptime norm
+33	6b70d13	0.7352	ok	75	max_bin 512
+34	5aa6624	0.7356	ok	86	lossguide diversity
+35	7b06f51	0.0000	crash	4	bagging
+36	630d407	0.7350	ok	61	bagging (fixed)
+37	6664ef2	0.0000	timeout	120	13-model lossguide mix
+38	80c942d	0.7357	ok	88	11-model lossguide-heavy
+39	78bff26	0.7336	ok	76	colsample bynode
+40	80c942d	0.7357	ok	89	re-run best config (variance check)

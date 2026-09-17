@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f9af331	0.7141	ok	2	baseline
+2	e98fd75	0.7147	ok	4	model upgrade: early stop + depth8 + reg
+3	5c169df	0.7218	ok	8	features: time parsing
+4	1d22aff	0.7097	ok	5	features: route + frequency encoding
+5	16a20d2	0.0000	crash	1	features: target encodings m=20
+6	97ec3cb	0.7166	ok	10	features: target encodings m=20 (fix to_y order)
+7	fc08605	0.7183	ok	10	OOF target encodings m=20
+8	84cd564	0.7256	ok	14	capacity: depth10 lr0.03
+9	dd96079	0.7303	ok	26	capacity: depth12 lr0.02 mcw3
+10	4f3d056	0.7337	ok	38	capacity: depth14 lr0.015
+11	92ad594	0.7366	ok	59	capacity: depth16 lr0.01
+12	1915b21	0.7385	ok	64	capacity: depth18 lr0.01
+13	b6c40c7	0.0000	crash	1	features: cat time + weekend + hour_cat
+14	8512d39	0.7350	ok	87	features: cat time + weekend + hour_cat (fix)
+15	4d05489	0.7318	ok	79	reg: mcw10 subs0.8 cols0.7 lambda5
+16	cfcd5f3	0.7347	ok	74	ensemble 2 configs
+17	29a9b31	0.7422	ok	69	bagging 2x depth18
+18	070220d	0.7420	ok	107	bagging 3x depth18
+19	c78398b	0.7429	ok	76	max_bin 512
+20	72ef033	0.7430	ok	81	bag depth20
+21	c1d1265	0.7429	ok	83	logit-mean ensemble
+22	72b9193	0.7227	ok	9	lossguide 256 leaves
+23	4757767	0.7429	ok	102	lr0.008 650 trees
+24	e808d07	0.7437	ok	89	max_bin 1024
+25	cf0d2dd	0.7443	ok	86	member2 more diverse
+26	d3445f6	0.7437	ok	78	member2 depth16
+27	4a3ddd6	0.7438	ok	67	gamma 1.0
+28	b81ae01	0.7421	ok	65	mcw 5
+29	ac03318	0.7436	ok	95	600 trees
+30	a0fabe2	0.7444	ok	85	max_bin 2048
+31	1298c71	0.7332	ok	118	colsample_bynode
+32	fb7bdb4	0.7437	ok	86	weighted 0.6/0.4
+33	0ceddf7	0.7411	ok	58	memberB lossguide 1024
+34	efa5bd0	0.7403	ok	84	drop dep_minute
+35	b2b01ba	0.7447	ok	90	memberA subs 1.0
+36	b7faab5	0.7443	ok	88	memberB subs 0.6
+37	e9f1cb8	0.7444	ok	90	lambda 0.5
+38	d459259	0.7447	ok	93	memberB depth22
+39	ffa456b	0.7447	ok	91	max_bin 4096
+40	0cee0e3	0.7448	ok	93	memberA depth22

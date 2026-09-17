@@ -1,0 +1,200 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 14,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:25:18+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s14-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T19:17:15+00:00",
+  "wall_seconds": 3116.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7382.2,
+  "endpoint_at_end": "ok",
+  "head": "ffce425",
+  "n_commits": 25,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7411,
+  "final_eval_auc": 0.7411,
+  "holdout_auc": 0.7415943882620001,
+  "holdout_ap": 0.734259853452591,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02682363652600006,
+  "generalization_gap": -0.0004943882620001006,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6038672,
+    "tokens_in_uncached": 248592,
+    "tokens_in_cached": 5790080,
+    "tokens_out": 22220,
+    "turns": null,
+    "api_calls": 143,
+    "method": "sum-of-143-events",
+    "cost_usd": 1.9512,
+    "cached_share": 0.959
+  },
+  "cpu_seconds_python": 7046.8,
+  "cpu_seconds_counted": 6635.3,
+  "cpu_seconds_uncounted": 0.1,
+  "cpu_seconds_exempt": 411.5,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 725,
+  "fits_counted": 683,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "3cfed71",
+      "message": "baseline"
+    },
+    {
+      "commit": "76a87a7",
+      "message": "fixed 500 trees lr0.05 d6, full train"
+    },
+    {
+      "commit": "cb5bab4",
+      "message": "FE: numeric+cyc time features, route cat, log dist, subsample 0.8"
+    },
+    {
+      "commit": "9f356a4",
+      "message": "ablation: exp4 features with baseline model config"
+    },
+    {
+      "commit": "f070166",
+      "message": "ablation: drop Route, keep numeric+cyc features, baseline config"
+    },
+    {
+      "commit": "ae6bcc7",
+      "message": "bagged ensemble: 5 models, seeds 0-4, subsample 0.75, 40 trees"
+    },
+    {
+      "commit": "28d942d",
+      "message": "ensemble 12 members, colsample 0.8, subsample grid 0.60-0.85"
+    },
+    {
+      "commit": "a16b604",
+      "message": "ensemble members: 80 trees, depth 7"
+    },
+    {
+      "commit": "a9d2359",
+      "message": "ensemble members: 150 trees, depth 8"
+    },
+    {
+      "commit": "3379c33",
+      "message": "24 members x 150 trees d8"
+    },
+    {
+      "commit": "2d3d3d0",
+      "message": "24 members, depth grid 6/7/8/9"
+    },
+    {
+      "commit": "b9c81a8",
+      "message": "add log-count features Origin/Dest/Route"
+    },
+    {
+      "commit": "9a28309",
+      "message": "members lr 0.07 x 220 trees"
+    },
+    {
+      "commit": "bb98bd9",
+      "message": "regularization diversity grid mcw/lam/colsample"
+    },
+    {
+      "commit": "ca74b61",
+      "message": "congestion counts: OriginHour/DestHour/CarrierHour"
+    },
+    {
+      "commit": "468b32c",
+      "message": "schedule-structure counts: OriginDow/DestDow/CarrierOrigin/CarrierDest/CarrierDow"
+    },
+    {
+      "commit": "d94a83d",
+      "message": "32 members"
+    },
+    {
+      "commit": "d064cbd",
+      "message": "fix DEP index overflow; 32 members"
+    },
+    {
+      "commit": "bcf6da5",
+      "message": "noise probe: same config, seeds +100"
+    },
+    {
+      "commit": "b7842ab",
+      "message": "30-min bucket congestion counts OriginB30/DestB30"
+    },
+    {
+      "commit": "5cc526b",
+      "message": "15-min buckets Origin/Dest + CarrierB30"
+    },
+    {
+      "commit": "a718e6f",
+      "message": "CarrierB15 + Origin/Dest B10 buckets"
+    },
+    {
+      "commit": "1a1bdde",
+      "message": "feature-group policies across members (no-cat / no-count / no-congestion)"
+    },
+    {
+      "commit": "2bda948",
+      "message": "40 members, 5 policies incl time+congestion-only"
+    },
+    {
+      "commit": "b69673a",
+      "message": "42 members, 6 policies incl cyc-free view"
+    },
+    {
+      "commit": "ffce425",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6635.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 335.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b69673a",
+  "best_commit_eval_auc": 0.7411,
+  "best_commit_holdout_auc": 0.7415943882620001,
+  "best_commit_holdout_ap": 0.734259853452591,
+  "best_commit_error": null,
+  "finalized_best": true
+}

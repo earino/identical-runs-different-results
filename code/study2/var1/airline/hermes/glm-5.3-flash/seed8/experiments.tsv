@@ -1,0 +1,8 @@
+n	commit	eval_auc	status	seconds	description
+1	59bb0d4	0.7141	ok	4	baseline
+2	2e870b3	0.0000	crash	7	numeric+cyclical deptime, 600t d8 mcw20 ss.8 cs.8 L2 10
+3	6bf3a3e	0.0000	crash	1	numeric+cyclical deptime, 600t d8 mcw20 ss.8 cs.8 L2 10
+4	1e55382	0.6965	ok	7	numeric+cyclical deptime, 600t d8 mcw20 ss.8 cs.8 L2 10
+5	c912e44	0.0000	crash	6	dep hour/minute + native cats, 600t d8
+6	bb62101	0.7184	ok	4	int-coded cats + dep hour/minute, 600t d8
+7	089c5fd	0.7206	ok	5	hp: d6 lr.05 n1500 ss.9 cs.9 (LOMO-selected)

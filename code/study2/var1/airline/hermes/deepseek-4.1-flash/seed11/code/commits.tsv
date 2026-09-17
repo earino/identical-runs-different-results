@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	6f474a3	1789537542	baseline
+01	b790d2a	1789537686	exp4: drop Month (seasonality does not transfer across years)
+02	2854249	1789537704	exp5: OOF smoothed target encoding for carrier/origin/dest/route
+03	d417c63	1789537745	exp7: 8-seed averaged XGBoost ensemble (subsample 0.9)
+04	7161d2f	1789537803	exp9: monotone-increasing constraint on DepTime
+05	183521b	1789537825	exp10: schedule-density features (airport/carrier/route hour share + size)
+06	b577bd9	1789537910	exp14: ablate target encodings (keep density/size + raw categoricals)
+07	73a2ef8	1789537941	exp15: drop dead TE/OOF code + relative hourly density features
+08	40e8adc	1789537959	exp17: clean code, drop relative-density features (keep share+size)
+09	59e7c69	1789538055	exp20: 16-member bagging ensemble, subsample/colsample 0.7
+10	527bb9b	1789538097	exp22: also drop DayofMonth (year-specific calendar noise)
+11	c8cfd1c	1789538297	exp31: peak-hour-offset features (hour relative to entity's busiest hour)
+12	8a2203f	1789538349	exp34: 32 members at 0.7 bagging
+13	6898f28	1789538365	exp35: ablate size_* (keep hourly share + peak offset)

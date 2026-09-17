@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	81de627	1789487132	baseline
+01	3dea48e	1789487222	FE round1: dep_min cyclical tod bins, date ints, dist log/bins; 500 trees
+02	2a991a8	1789487260	regularization config sweep
+03	a6ab90a	1789487381	smoothed target encoding origin/dest/carrier/month/dow/tod
+04	df28288	1789487540	clean: hard-code best cfg 300/depth4/mcw50 + TE
+05	f912f71	1789487551	5-model seed/config bag
+06	ced5ede	1789487669	feature-view diversity bag (full/note/teheavy)
+07	ef903e8	1789487700	view-rebalanced bag: 3 teheavy / 3 full / 1 note
+08	0df4324	1789487811	mixed-view bag with upgraded teheavy members
+09	63bef84	1789487879	E21 bag + tecore member
+10	c528eea	1789487906	5 teheavy members
+11	0289df0	1789488015	drop te_month/te_dow (drift ablation)
+12	e36b89a	1789488070	cleaned views + teheavy resweep -> top-4 bag
+13	385267b	1789488112	greedy member-subset selection

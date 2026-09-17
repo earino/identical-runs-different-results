@@ -1,0 +1,119 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789583299	98	0.061	uncounted	exit	0.0	0	-c
+1789583299	100	0.065	uncounted	exit	0.0	0	-c
+1789583299	102	0.031	uncounted	exit	0.0	0	-m --version
+1789583299	104	0.061	uncounted	exit	0.0	0	-c
+1789583370	189	4.794	counted	exit	3.3	1	train.py
+1789583385	224	1.550	uncounted	exit	0.9	0	-
+1789583399	242	1.450	uncounted	exit	0.8	0	-
+1789583402	260	1.465	uncounted	exit	0.8	0	-
+1789583407	278	1.473	uncounted	exit	0.8	0	-
+1789583432	323	0.034	uncounted	exit	0.0	0	-c
+1789583432	325	0.032	uncounted	exit	0.0	0	-c
+1789583432	327	0.066	uncounted	exit	0.0	0	-c
+1789583498	390	4.854	counted	exit	1.9	1	train.py
+1789583518	445	3.597	uncounted	exit	1.5	1	/tmp/probe.py
+1789583521	469	5.674	uncounted	exit	2.0	2	/tmp/probe.py
+1789583575	524	4.873	uncounted	exit	1.8	1	/tmp/probe2.py
+1789583585	549	0.068	uncounted	exit	0.0	0	/tmp/probe2.py
+1789583607	599	36.046	uncounted	exit	9.8	5	/tmp/probe2.py
+1789583657	654	42.136	uncounted	exit	11.8	7	/tmp/probe3.py
+1789583771	710	1.926	uncounted	exit	1.1	0	/tmp/probe4.py
+1789583940	734	1.493	uncounted	exit	0.8	0	/tmp/probe4.py
+1789583973	806	2.040	uncounted	exit	1.2	0	/tmp/probe4.py
+1789583980	880	6.572	uncounted	exit	2.3	1	/tmp/probe4.py
+1789583999	966	31.538	uncounted	exit	9.1	4	/tmp/probe4.py
+1789584034	1054	9.214	counted	exit	3.1	1	train.py
+1789584071	1121	2.056	uncounted	exit	1.4	0	/tmp/probe5.py
+1789584177	1178	50.728	uncounted	exit	14.2	7	/tmp/probe5.py
+1789584192	1252	13.642	counted	exit	4.5	1	train.py
+1789584229	1319	112.000	uncounted	exit	29.4	10	/tmp/probe6.py
+1789584253	1374	34.288	uncounted	exit	10.0	3	/tmp/probe7.py
+1789584282	1397	83.811	uncounted	exit	22.7	8	probe7.py
+1789584297	1497	12.904	counted	exit	4.8	1	train.py
+1789584340	1564	109.855	uncounted	exit	30.3	10	/tmp/probe8.py
+1789584415	1620	92.631	uncounted	exit	26.2	8	/tmp/probe9.py
+1789584434	1761	15.897	counted	exit	5.9	1	train.py
+1789584531	1829	132.974	uncounted	exit	35.6	8	/tmp/probe10.py
+1789584613	1884	256.347	uncounted	exit	66.0	8	/tmp/probe11.py
+1789584703	1907	214.834	uncounted	exit	55.5	5	-
+1789584764	1963	163.702	uncounted	exit	42.7	6	/tmp/probe12.py
+1789584824	2018	206.886	uncounted	exit	53.4	6	/tmp/probe13.py
+1789584891	2073	236.904	uncounted	exit	61.1	6	/tmp/probe14.py
+1789584913	2163	50.086	counted	exit	14.5	1	train.py
+1789584936	2230	49.011	uncounted	exit	14.0	1	/tmp/probe15.py
+1789584982	2305	62.513	uncounted	exit	19.4	2	/tmp/probe15.py
+1789584998	2360	2.931	uncounted	exit	2.2	0	/tmp/probe16.py
+1789585030	2431	103.357	uncounted	exit	28.6	2	/tmp/probe16.py
+1789585084	2558	50.225	counted	exit	15.1	1	train.py
+1789585191	2652	228.290	uncounted	exit	59.8	6	/tmp/probe17.py
+1789585218	2756	38.202	counted	exit	11.9	1	train.py
+1789585269	2823	162.274	uncounted	exit	43.2	5	/tmp/probe18.py
+1789585361	2878	317.666	uncounted	exit	82.0	11	/tmp/probe19.py
+1789585419	2968	155.533	counted	exit	43.3	5	train.py
+1789585501	3036	230.094	uncounted	exit	60.7	7	/tmp/probe20.py
+1789585624	3091	450.565	uncounted	term	115.0	10	/tmp/probe21.py
+1789585698	3146	257.793	uncounted	exit	66.5	5	/tmp/probe22.py 0
+1789585770	3158	281.188	uncounted	exit	72.5	5	/tmp/probe22.py 1
+1789585824	3170	204.178	uncounted	exit	53.3	5	/tmp/probe22.py 2
+1789585902	3376	209.112	counted	exit	56.9	5	train.py
+1789585963	3444	198.543	uncounted	exit	51.8	4	/tmp/probe23.py 2
+1789586009	3456	174.780	uncounted	exit	46.1	6	/tmp/probe23.py 1
+1789586114	3479	400.880	uncounted	exit	102.7	10	/tmp/probe23.py 0
+1789586122	3534	1.800	uncounted	exit	1.1	0	/tmp/probe24.py
+1789586239	3554	449.627	uncounted	term	115.0	14	probe24.py
+1789586341	3655	164.253	counted	exit	45.4	5	train.py
+1789586464	3723	449.952	uncounted	term	115.0	13	/tmp/probe25.py
+1789586550	3746	307.381	uncounted	exit	79.2	9	-
+1789586567	3802	3.180	uncounted	exit	2.5	0	/tmp/probe26.py
+1789586620	3873	148.736	uncounted	exit	39.7	6	/tmp/probe26.py
+1789586746	3928	446.307	uncounted	term	115.0	13	/tmp/probe27.py
+1789586864	3983	421.655	uncounted	exit	108.6	12	/tmp/probe28.py
+1789586944	4232	184.943	counted	exit	50.9	5	train.py
+1789587066	4300	429.734	uncounted	exit	110.6	9	/tmp/probe29.py
+1789587190	4355	446.861	uncounted	term	115.0	4	/tmp/probe30.py
+1789587298	4412	388.622	uncounted	term	100.0	4	/tmp/probe31.py 0
+1789587417	4436	428.499	uncounted	term	110.0	4	/tmp/probe31.py 0
+1789587420	4451	3.752	uncounted	exit	3.1	0	/tmp/probe31.py 1
+1789587424	4460	3.806	uncounted	exit	3.1	0	/tmp/probe31.py 2
+1789587427	4469	3.907	uncounted	exit	3.2	0	/tmp/probe31.py 3
+1789587540	4486	429.011	uncounted	term	110.0	4	probe31.py 0
+1789587650	4498	429.545	uncounted	term	110.0	4	probe31.py 1
+1789587752	4510	394.131	uncounted	exit	101.1	5	probe31.py 2
+1789587981	4648	273.250	uncounted	exit	70.7	3	/tmp/probe32.py 0
+1789588062	4660	313.981	uncounted	exit	81.2	3	/tmp/probe32.py 1
+1789588128	4672	252.819	uncounted	exit	65.8	3	/tmp/probe32.py 2
+1789588198	4695	259.764	uncounted	exit	67.5	3	/tmp/probe32.py 3
+1789588237	4707	145.467	uncounted	exit	38.8	3	/tmp/probe32.py 4
+1789588302	4719	245.740	uncounted	exit	64.2	3	/tmp/probe32.py 5
+1789588307	4762	0.038	uncounted	exit	0.0	0	-c
+1789588307	4764	0.038	uncounted	exit	0.0	0	-c
+1789588307	4766	0.044	uncounted	exit	0.0	0	-c
+1789588436	4822	447.893	counted	term	120.0	4	train.py
+1789588612	4872	280.863	uncounted	exit	72.6	3	-
+1789588765	4962	295.025	counted	exit	80.3	3	train.py
+1789588847	5030	270.549	uncounted	exit	70.4	3	/tmp/probe33.py 1
+1789588927	5053	294.196	uncounted	exit	76.2	3	/tmp/probe33.py 4
+1789589009	5076	306.121	uncounted	exit	79.1	3	/tmp/probe33.py 2
+1789589081	5088	279.401	uncounted	exit	72.4	3	/tmp/probe33.py 3
+1789589089	5110	1.509	uncounted	exit	0.8	0	-c
+1789589163	5119	285.199	uncounted	exit	73.8	3	/tmp/probe33.py 0
+1789589270	5174	284.459	uncounted	exit	73.6	3	/tmp/probe34.py 0
+1789589336	5186	251.002	uncounted	exit	65.1	3	/tmp/probe34.py 1
+1789589386	5209	179.847	uncounted	exit	47.3	3	/tmp/probe34.py 3
+1789589500	5232	429.001	uncounted	exit	110.0	5	/tmp/probe34.py 4
+1789589576	5255	287.417	uncounted	exit	74.2	3	/tmp/probe34.py 5
+1789589579	5298	0.038	uncounted	exit	0.0	0	-c
+1789589579	5300	0.038	uncounted	exit	0.0	0	-c
+1789589580	5302	0.069	uncounted	exit	0.0	0	-c
+1789589667	5358	290.575	counted	exit	78.9	3	train.py
+1789589738	5394	221.920	uncounted	exit	57.8	3	-
+1789589747	5417	3.702	uncounted	exit	3.0	0	-
+1789589751	5435	0.066	uncounted	exit	0.0	0	-c
+1789589763	5494	0.040	uncounted	exit	0.0	0	-c
+1789589766	5507	0.066	uncounted	exit	0.0	0	-c
+1789589766	5509	0.038	uncounted	exit	0.0	0	-c
+1789589894	5571	435.304	uncounted	term	115.0	4	/tmp/probe35.py
+1789589953	5605	150.470	uncounted	term	40.0	1	/tmp/probe35.py ref
+1789590014	5628	216.317	uncounted	exit	56.7	2	-
+1789590194	5720	297.289	exempt	exit	80.6	3	validate.py

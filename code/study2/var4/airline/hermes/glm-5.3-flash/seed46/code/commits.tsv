@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	a8dec73	1789512801	baseline
+01	0170fb5	1789512935	xgb tuned params + early stopping, raw features
+02	c3d144f	1789512945	xgb tuned params fixed 400 rounds full data
+03	69d4429	1789513144	cfg12: depth8 lr.05 600r colsample.6 mcw5
+04	fed9fbd	1789513415	noMonth/Dom + hhxcar/hhxorg + time feats, d8 a5 n500
+05	7d1292a	1789513437	noMonth/Dom + hhxcar + time feats, d8 a5 n500 (fix cats)
+06	857ab15	1789513767	ens: bag4 base col.85 n400 + 2 month-models w0.2
+07	e643c5c	1789514523	recency-weighted bag8 + 3 month-models w0.2
+08	62a1d1e	1789515215	recency a=5 bag6 + 4 unweighted month-models w0.7
+09	8538721	1789517619	#12 recipe scaled: bag8 base + 5 month-models w0.7
+10	6a79f44	1789519013	final: #22 recipe, mixture normalized for predict_proba contract

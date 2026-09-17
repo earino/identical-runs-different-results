@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	61fb370	0.7141	ok	4	baseline unmodified
+2	7654a60	0.7087	ok	9	exp2: time feats + depth8 + ES
+3	8597261	0.7164	ok	8	exp3: day-level feats + tuned XGB
+4	53f7a21	0.7186	ok	10	exp4: depth8 + subsample 0.8
+5	a1a154c	0.7220	ok	52	exp5: 5-seed bag
+6	1366b17	0.7241	ok	52	exp6: +dephour cat
+7	988f2e4	0.7288	ok	42	exp7: slim features + bag5
+8	ebc26dd	0.7301	ok	38	exp8: subsample 0.9
+9	fe426ae	0.7381	ok	24	exp9: d9 gamma3 alpha1
+10	c4f8bbd	0.7388	ok	43	exp10: bag10 mixed cfgs
+11	d5bf435	0.7437	ok	47	exp11: +depbin96 bag10
+12	970bed9	0.7448	ok	44	exp12: drop Month
+13	15dbeac	0.7455	ok	72	exp13: bag15 d10g5 lr-mix
+14	ed9a173	0.0000	crash	2	exp14: bag20 lr x cs mix
+15	98b2f06	0.7464	ok	94	exp14: bag20 lr x cs mix (fixed)
+16	42e9c07	0.7468	ok	74	exp16: rare-airport collapse
+17	49da0a1	0.7469	ok	105	exp17: bag20 5fam K240

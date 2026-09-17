@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	fa64524	1789531069	baseline
+01	60e4fdb	1789531385	drop Month/DayofMonth, shallow depth3 400 trees
+02	9123fdd	1789531967	depth-diverse ensemble depths 2-16
+03	644ec4d	1789532498	add hour, origin/dest-hour density features
+04	43ec063	1789533400	add carrier-hour density and cyclic time features
+05	0aae815	1789534328	extend ensemble to depth 20 with time-bounded schedule
+06	d6ab47f	1789534448	colsample 0.8 in ensemble
+07	d32af86	1789534532	colsample 0.6
+08	4740730	1789534604	colsample 0.4
+09	66a8d10	1789534806	extend ensemble to depth 24
+10	b359576	1789534933	extend ensemble to depth 28
+11	c4e36e7	1789535150	add carrier-origin and carrier-dest density
+12	f859ce2	1789535370	reduce tree counts for time headroom
+13	0b1434e	1789535687	per-member random seeds for feature-sampling diversity

@@ -1,0 +1,176 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 19,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T13:39:48+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s19-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T15:17:03+00:00",
+  "wall_seconds": 5835.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17327.4,
+  "endpoint_at_end": "ok",
+  "head": "1a811a3",
+  "n_commits": 19,
+  "n_experiments": 19,
+  "n_ok": 16,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7633,
+  "final_eval_auc": 0.7633,
+  "holdout_auc": 0.763747948184,
+  "holdout_ap": 0.754721508805203,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04897719644800003,
+  "generalization_gap": -0.00044794818400006875,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6357766,
+    "tokens_in_uncached": 57926,
+    "tokens_in_cached": 6299840,
+    "tokens_out": 126633,
+    "turns": null,
+    "api_calls": 119,
+    "method": "sum-of-119-events",
+    "cost_usd": 2.2762,
+    "cached_share": 0.991
+  },
+  "cpu_seconds_python": 17281.1,
+  "cpu_seconds_counted": 2364.8,
+  "cpu_seconds_uncounted": 14262.6,
+  "cpu_seconds_exempt": 653.7,
+  "python_processes": 86,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 778,
+  "fits_counted": 102,
+  "fits_uncounted": 652,
+  "commits": [
+    {
+      "commit": "f7a2074",
+      "message": "baseline"
+    },
+    {
+      "commit": "7ae6f92",
+      "message": "FE: hour/tod/cyclical + Route cat + log_dist; 1000 trees lr.05 d8 ES"
+    },
+    {
+      "commit": "517f404",
+      "message": "OOF target encoding incl Origin/Dest/Carrier x hour; ES fold + refit"
+    },
+    {
+      "commit": "77a0658",
+      "message": "add RHour/OCarrier/OHourBin TEs, K=30"
+    },
+    {
+      "commit": "798aa47",
+      "message": "sub.8/col.8; tree count via 5-fold mean val curve"
+    },
+    {
+      "commit": "2395e9e",
+      "message": "fix: eval_metric in constructor (trivial crash fix)"
+    },
+    {
+      "commit": "0a0bf14",
+      "message": "add traffic count features (Origin, Route, OriginHour, DestHour)"
+    },
+    {
+      "commit": "4818593",
+      "message": "fix quote typo"
+    },
+    {
+      "commit": "cd86b8e",
+      "message": "ensemble: 3 TE-seed models + 1 rawcat model, CV-curve tree counts"
+    },
+    {
+      "commit": "27e6ef6",
+      "message": "drop month/day-of-month feats everywhere; 3 TE + 2 raw (d8,d6) members"
+    },
+    {
+      "commit": "dce8d15",
+      "message": "add within-hour block TEs (Min10, Min5)"
+    },
+    {
+      "commit": "420daa2",
+      "message": "hard-code tree counts at CV-curve plateau (simplification, -60% runtime)"
+    },
+    {
+      "commit": "20c3306",
+      "message": "add cnt_CHour, cnt_RouteHour traffic counts"
+    },
+    {
+      "commit": "bd79eee",
+      "message": "add Origin/Dest/Route x 30min traffic counts"
+    },
+    {
+      "commit": "128c838",
+      "message": "add 30-min-granularity TEs (Origin/Dest/Route x Tod30, OriginMin10)"
+    },
+    {
+      "commit": "d08e9ce",
+      "message": "add RouteTod20 TE"
+    },
+    {
+      "commit": "7e3f9e2",
+      "message": "recency-weighted TE members; hybrid member (cats+key TEs, d6) replaces raw d6"
+    },
+    {
+      "commit": "ca49ae4",
+      "message": "fix DataFrame truth-value bug in member fit"
+    },
+    {
+      "commit": "c69b7a7",
+      "message": "add OriginTod20/CarrierTod20/OCHour TEs + am/pm mixture-of-experts member"
+    },
+    {
+      "commit": "1a811a3",
+      "message": "FINAL.md: best Eval AUC 0.7633, summary of what worked and what didn't"
+    }
+  ],
+  "cpu_seconds_budgeted": 16627.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 46.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c69b7a7",
+  "best_commit_eval_auc": 0.7633,
+  "best_commit_holdout_auc": 0.763747948184,
+  "best_commit_holdout_ap": 0.754721508805203,
+  "best_commit_error": null,
+  "finalized_best": true
+}

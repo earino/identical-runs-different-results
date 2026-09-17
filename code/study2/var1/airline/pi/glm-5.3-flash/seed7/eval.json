@@ -1,0 +1,188 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 7,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:56:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s7-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:34:11+00:00",
+  "wall_seconds": 2290.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7509.9,
+  "endpoint_at_end": "ok",
+  "head": "3825f68",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 2,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7357,
+  "final_eval_auc": 0.7357,
+  "holdout_auc": 0.738692308068,
+  "holdout_ap": 0.7285777241303568,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.023921556331999994,
+  "generalization_gap": -0.0029923080679999936,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 1888964,
+    "tokens_in_uncached": 21316,
+    "tokens_in_cached": 1867648,
+    "tokens_out": 37647,
+    "turns": null,
+    "api_calls": 61,
+    "method": "sum-of-61-events",
+    "cost_usd": 0.0781,
+    "cached_share": 0.989
+  },
+  "cpu_seconds_python": 7487.8,
+  "cpu_seconds_counted": 7121.3,
+  "cpu_seconds_uncounted": 6.8,
+  "cpu_seconds_exempt": 359.6,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 452,
+  "fits_counted": 432,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "a86ced2",
+      "message": "baseline"
+    },
+    {
+      "commit": "2807141",
+      "message": "FE v1: time-of-day, cyclical, route cat, distance bins; 600 trees depth 8"
+    },
+    {
+      "commit": "67f39e1",
+      "message": "FE v1 with smaller model: 150 trees depth 6 lr 0.1 mch 10"
+    },
+    {
+      "commit": "0778568",
+      "message": "ablate route category"
+    },
+    {
+      "commit": "a7e0d72",
+      "message": "early stopping on random 85/15 split + refit on full train"
+    },
+    {
+      "commit": "dd48ecc",
+      "message": "OOF smoothed target encoding + count features"
+    },
+    {
+      "commit": "42aab33",
+      "message": "TE + cap trees at 400"
+    },
+    {
+      "commit": "5767933",
+      "message": "cap trees at 250"
+    },
+    {
+      "commit": "ec5ce7e",
+      "message": "cap trees at 150"
+    },
+    {
+      "commit": "5fa67f1",
+      "message": "3-seed ensemble, cap 200"
+    },
+    {
+      "commit": "ed6a887",
+      "message": "5-model ensemble, depths 5/6/8"
+    },
+    {
+      "commit": "62fe6ab",
+      "message": "add origin-hour/dest-hour traffic counts"
+    },
+    {
+      "commit": "59ba404",
+      "message": "add te_dest_hour"
+    },
+    {
+      "commit": "6483cf5",
+      "message": "subsample/colsample 0.7"
+    },
+    {
+      "commit": "f05ec11",
+      "message": "7-model ensemble"
+    },
+    {
+      "commit": "aaf0d7e",
+      "message": "30-min granularity for time TE keys"
+    },
+    {
+      "commit": "220afc6",
+      "message": "15-min granularity for all time TE keys"
+    },
+    {
+      "commit": "0f3d9f9",
+      "message": "add 2 no-TE view models to ensemble"
+    },
+    {
+      "commit": "3ef3f06",
+      "message": "add exact deptime TE"
+    },
+    {
+      "commit": "572b0b5",
+      "message": "ES val 25% + DepTime >=2400 normalize"
+    },
+    {
+      "commit": "5aa6624",
+      "message": "add lossguide members to ensemble"
+    },
+    {
+      "commit": "80c942d",
+      "message": "swap 2 hist for lossguide 32/128"
+    },
+    {
+      "commit": "3825f68",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7128.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 22.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "80c942d",
+  "best_commit_eval_auc": 0.7357,
+  "best_commit_holdout_auc": 0.738692308068,
+  "best_commit_holdout_ap": 0.7285777241303568,
+  "best_commit_error": null,
+  "finalized_best": true
+}

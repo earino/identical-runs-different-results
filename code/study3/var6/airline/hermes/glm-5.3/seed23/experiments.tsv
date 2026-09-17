@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	fb9ce67	0.7141	ok	4	baseline
+2	fb9ce67+dirty	0.7057	ok	24	more trees + early stopping
+3	591579a	0.7100	ok	3	holdout-based early stopping
+4	20d676f	0.7300	ok	4	OOF interaction target encodings (8)
+5	b582efd	0.7306	ok	5	one-hot dates
+6	750375a	0.7431	ok	17	30-min time bins in TE keys
+7	9570c44	0.7451	ok	17	20-min time bins in TE keys
+8	f5c2b9d	0.7468	ok	17	mixed 20/15/20-min bins
+9	70d9689	0.7471	ok	18	max_depth=4
+10	65d0101	0.7482	ok	19	distH + distDow TEs
+11	d332f34	0.7493	ok	19	carrierOrg + carrierDest TEs
+12	9f61698	0.7500	ok	19	routeH60 + routePlain TEs
+13	ef011d2	0.7506	ok	20	plain-key TEs
+14	5cd1ed2	0.7513	ok	52	fold-varied ensemble of 4
+15	9369980	0.7517	ok	76	ens6 fold-varied + subsample
+16	ddd4e68	0.7522	ok	79	heterogeneous ensemble (depth/colsample/lr mix)
+17	6d21947	0.7538	ok	79	mini5 d6 ensemble
+18	0b155ec	0.7538	timeout	120	8-member d6 ensemble
+19	abefd6c	0.7539	ok	79	TE smoothing 35
+20	f31d783	0.7540	ok	101	7-member, leaner keys

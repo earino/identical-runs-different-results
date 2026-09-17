@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c3f7ee2	0.7141	ok	3	baseline
+2	67bb28c	0.7121	ok	4	2000 trees lr.05 d8 es50
+3	ddaaef3	0.7051	ok	2	FE v1: hour cyclical route logdist
+4	4d324a1	0.7133	ok	2	FE v1 no route
+5	d63a2a9	0.7117	ok	3	150 trees d6 mcw5
+6	24bac32	0.7125	ok	2	100 trees d6
+7	35be7c5	0.7119	ok	1	TE origin dest carrier hour
+8	8760283	0.7128	ok	2	15 trees d6
+9	7bd7b19	0.7115	ok	2	hour cat instead of DepTime int
+10	eca7101	0.7095	ok	2	d8 30t
+11	426f5eb	0.7151	ok	2	d5 30t
+12	a1e4dd3	0.7150	ok	2	d4 30t
+13	c3916b9	0.7156	ok	2	d5 60t
+14	4ebd2d0	0.7142	ok	2	d5 100t
+15	7e66ba5	0.7158	ok	2	d4 100t
+16	2c915d9	0.7156	ok	2	d4 150t
+17	74ee18f	0.7160	ok	4	d3 200t
+18	d112e98	0.7157	ok	2	d3 300t
+19	d1eb659	0.7166	ok	2	d3 400t lr.05
+20	5db3344	0.7160	ok	3	d3 600t lr.05
+21	08befdd	0.7169	ok	10	FE v1 no route d3 400 lr.05
+22	4514c95	0.7173	ok	3	TE added d3 400 lr.05
+23	66f9308	0.0000	crash	1	route TE added
+24	455eb3f	0.7066	ok	3	route TE added (fixed)
+25	b36fffd	0.7152	ok	3	carrier-hour TE
+26	1a9ccbf	0.7173	ok	2	vol origin dest
+27	df61c62	0.7174	ok	3	holiday peak flag
+28	5a8d837	0.7159	ok	3	sub/col 0.9
+29	bf0441b	0.7168	ok	3	TE smooth 50
+30	1e7b577	0.7174	ok	7	5-seed ensemble
+31	7c31f7c	0.7179	ok	3	lr.03 600t
+32	e9b172c	0.7173	ok	4	lr.02 800t
+33	03f4ca3	0.7182	ok	4	d4 600t lr.03
+34	6f4a909	0.7185	ok	4	d5 600t lr.03
+35	a0ffeeb	0.7169	ok	5	d6 600t lr.03
+36	52ec52e	0.7187	ok	5	d5 800t lr.03
+37	ac80e6a	0.7204	ok	8	ensemble d3/d4/d5
+38	0bcdfde	0.7209	ok	12	5-member ensemble
+39	e67818b	0.7208	ok	20	8-member ensemble
+40	a6d885a	0.7209	ok	13	5-member + per-member seeds

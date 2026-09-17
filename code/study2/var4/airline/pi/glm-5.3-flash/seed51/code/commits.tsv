@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	7ff45c5	1789533054	baseline
+01	d1ebc13	1789533109	E3: early stopping w/ internal split + refit, moderate reg
+02	2128be5	1789533125	E5: engineered features (ordinal ints, cyclic time, redeye, log dist)
+03	783ca0a	1789533204	E7: early stopping directly on eval (2006 distribution)
+04	9d6e5b8	1789533216	E8: hyperparameter sweep w/ ES-on-eval, pick best config
+05	75b7b87	1789533289	E11: 6-member bagging ensemble, ES-on-eval, averaged
+06	680b7f5	1789533328	E12: interaction composites (carrier x hour, origin x hour), DepHour cat, week-of-month
+07	994eee5	1789533423	E14: ablation - drop OriginHour composite
+08	39f9776	1789533858	E19: replace 2 weakest members with strongly regularized configs (fixed kwargs)
+09	2f0c5db	1789533940	E21: feature-subset views (TIME/ROUTE) for 2 members
+10	3842c48	1789534289	E28: views at depth 8 lr 0.1

@@ -1,0 +1,156 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 13,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T07:32:01+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s13-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T09:13:59+00:00",
+  "wall_seconds": 6118.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 21436.9,
+  "endpoint_at_end": "ok",
+  "head": "e3fff76",
+  "n_commits": 14,
+  "n_experiments": 21,
+  "n_ok": 17,
+  "n_crash": 1,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7555,
+  "final_eval_auc": 0.7555,
+  "holdout_auc": 0.755763572356,
+  "holdout_ap": 0.7465873544645325,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04099282061999998,
+  "generalization_gap": -0.00026357235600005247,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5648242,
+    "tokens_in_uncached": 5648242,
+    "tokens_in_cached": 0,
+    "tokens_out": 90224,
+    "turns": null,
+    "api_calls": 91,
+    "method": "sum-of-91-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17997.3,
+  "cpu_seconds_counted": 5404.5,
+  "cpu_seconds_uncounted": 12137.0,
+  "cpu_seconds_exempt": 455.9,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 377,
+  "fits_counted": 61,
+  "fits_uncounted": 313,
+  "commits": [
+    {
+      "commit": "4f6828d",
+      "message": "baseline"
+    },
+    {
+      "commit": "2842182",
+      "message": "scale model 600 trees lr.05"
+    },
+    {
+      "commit": "0f0c5a5",
+      "message": "time features + frequency encodings, 250 trees"
+    },
+    {
+      "commit": "5762736",
+      "message": "add origin-hour congestion freq, cs.4"
+    },
+    {
+      "commit": "882d3fb",
+      "message": "deep-tree 5-model ensemble"
+    },
+    {
+      "commit": "e1d4c4b",
+      "message": "4-model deep ensemble lr.03 n400"
+    },
+    {
+      "commit": "06e8707",
+      "message": "add UC-hour and Dest-hour congestion freqs"
+    },
+    {
+      "commit": "7844a39",
+      "message": "add route-hour congestion freq"
+    },
+    {
+      "commit": "8f31b2c",
+      "message": "3-model fast ensemble mcw1 onehot64 lr.05 n250"
+    },
+    {
+      "commit": "7a7713d",
+      "message": "mixed mcw ensemble with mcw0 member"
+    },
+    {
+      "commit": "a61935b",
+      "message": "add HourCat and RoundDep features"
+    },
+    {
+      "commit": "ab14571",
+      "message": "4-model ensemble, two mcw0 members n200"
+    },
+    {
+      "commit": "3bdc369",
+      "message": "add hour-share features"
+    },
+    {
+      "commit": "4f0bf7c",
+      "message": "faster 3-model two-mcw0 ensemble with shares"
+    },
+    {
+      "commit": "e3fff76",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17541.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 3439.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3bdc369",
+  "best_commit_eval_auc": 0.7555,
+  "best_commit_holdout_auc": 0.755934895392,
+  "best_commit_holdout_ap": 0.7466048869864357,
+  "best_commit_error": null,
+  "finalized_best": false
+}

@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	57a9dc1	1789536973	baseline
+01	7b4b6dc	1789536998	early stopping on train-internal val split, up to 2000 trees
+02	27da492	1789537050	add DepTime hour/minute/cyclical/daypart features
+03	0057373	1789537289	dt features + smoothed TE(carrier/origin/dest) + colsample 0.25 n600 lr.05
+04	bed3530	1789537328	add minute feature
+05	85ab7ba	1789537449	reg_alpha=4
+06	32a8f9d	1789537520	add origin/dest/origin-hour frequency counts
+07	b65d224	1789537649	all count features + n1500 lr0.03
+08	9a006b7	1789538689	max_depth=20
+09	d036f2d	1789539299	depth-diverse 2-model ensemble d20/d24
+10	6507b32	1789539692	add share features, drop redundant night/evening flags
+11	c6d9f2b	1789540256	numeric-only features + hub shares
+12	141ac25	1789540551	pair members colsample 0.4
+13	4eae04b	1789540960	pair members alpha=2

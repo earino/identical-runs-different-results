@@ -1,0 +1,188 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 42,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:19:21+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s42-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T22:56:44+00:00",
+  "wall_seconds": 9443.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18372.5,
+  "endpoint_at_end": "ok",
+  "head": "ffb3493",
+  "n_commits": 22,
+  "n_experiments": 37,
+  "n_ok": 30,
+  "n_crash": 0,
+  "n_timeout": 7,
+  "best_eval_auc": 0.7451,
+  "final_eval_auc": 0.7451,
+  "holdout_auc": 0.7460883859459999,
+  "holdout_ap": 0.7292043580656349,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03131763420999989,
+  "generalization_gap": -0.0009883859459999256,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 11719679,
+    "tokens_in_uncached": 3038015,
+    "tokens_in_cached": 8681664,
+    "tokens_out": 106355,
+    "turns": null,
+    "api_calls": 183,
+    "method": "cumulative-max",
+    "cost_usd": 6.9784,
+    "cached_share": 0.741
+  },
+  "cpu_seconds_python": 18097.0,
+  "cpu_seconds_counted": 10985.4,
+  "cpu_seconds_uncounted": 6533.7,
+  "cpu_seconds_exempt": 577.8,
+  "python_processes": 84,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 496,
+  "fits_counted": 286,
+  "fits_uncounted": 205,
+  "commits": [
+    {
+      "commit": "8d76a40",
+      "message": "baseline"
+    },
+    {
+      "commit": "960f99a",
+      "message": "capacity+early stopping"
+    },
+    {
+      "commit": "d01e61e",
+      "message": "time-of-day features, no route"
+    },
+    {
+      "commit": "3ca82ed",
+      "message": "bagged ensemble 7 seeds subsample 0.7"
+    },
+    {
+      "commit": "434a5bd",
+      "message": "CV-on-train grid to pick member params"
+    },
+    {
+      "commit": "047aadc",
+      "message": "refined CV grid depth10-14"
+    },
+    {
+      "commit": "c805c50",
+      "message": "hardcode exp10 CV winner d16 mcw5 lr.03"
+    },
+    {
+      "commit": "d73faa0",
+      "message": "10 members, colsample jitter"
+    },
+    {
+      "commit": "371db0f",
+      "message": "hour features, 7 members, 500-tree cap"
+    },
+    {
+      "commit": "b08f1a3",
+      "message": "rank-average ensemble"
+    },
+    {
+      "commit": "5d13bdc",
+      "message": "hour structure + volume congestion features"
+    },
+    {
+      "commit": "da765c8",
+      "message": "native API d12 lr.05 n400 cs.3 7 members"
+    },
+    {
+      "commit": "6eda518",
+      "message": "10 members"
+    },
+    {
+      "commit": "fd74a4d",
+      "message": "heterogeneous 4xd12n400 + 3xd16n300"
+    },
+    {
+      "commit": "91c2598",
+      "message": "bin30_rate prior"
+    },
+    {
+      "commit": "85f0024",
+      "message": "bin15_rate prior"
+    },
+    {
+      "commit": "7392207",
+      "message": "3xd12n400 + 4xd16n300"
+    },
+    {
+      "commit": "75e4d43",
+      "message": "combo: drop DepTime, log_dist, bin10_rate"
+    },
+    {
+      "commit": "8f29ba3",
+      "message": "5x d16 n300"
+    },
+    {
+      "commit": "0d8d264",
+      "message": "3xd16n300 + 2xd12n400"
+    },
+    {
+      "commit": "091dc8b",
+      "message": "reg_lambda 1.5 on 5xd16n300"
+    },
+    {
+      "commit": "9c734e2",
+      "message": "mcw3 on deep members"
+    },
+    {
+      "commit": "ffb3493",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17519.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 275.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9c734e2",
+  "best_commit_eval_auc": 0.7451,
+  "best_commit_holdout_auc": 0.7460883859459999,
+  "best_commit_holdout_ap": 0.7292043580656349,
+  "best_commit_error": null,
+  "finalized_best": true
+}

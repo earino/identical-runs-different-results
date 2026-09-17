@@ -1,0 +1,29 @@
+n	commit	unix_time	subject
+00	91f48ff	1789646967	baseline
+01	2ff5cfd	1789647165	scaled model: 1500 max rounds ES on 10pct train split, depth 8, both num+cat features, route
+02	bffbfa4	1789647195	AUC-metric ES + mini grid over depth/lr/mcw, refit best on full train
+03	38e08af	1789647230	rounds x feature-set surface with baseline recipe, final = argmax
+04	155a76c	1789647290	smoothed LOO target encodings (route/origin/dest/hour/carrier/month/dow) + arm grid
+05	a41b78e	1789647420	OOF target encoding (5 folds) fixes LOO leak; prior-fill unseen; arm grid
+06	69f733f	1789647465	origin x hour TE, dest x hour TE, 15-min block TE, volume counts; 7 arms
+07	f3013f6	1789647482	OH60 capacity/regularization arms: rounds grid, lr, depth, subsample, mcw
+08	dab00a4	1789647502	shallow/slow region: d3-5, lr 0.01-0.05, rounds to 1500
+09	68c24e5	1789647545	feature arms at d4/lr0.03/400: c_hour, o_month, o_block30, full TE dump
+10	6c780eb	1789647586	finer congestion TEs: o_block15/30 (m50/80), d_block30, capacity recheck
+11	143e752	1789647622	stack all congestion TEs, origin x dow TE, depth recheck
+12	dd03293	1789647652	10-min block TEs, full stack arms at d3
+13	8eb2950	1789647816	hierarchical block TEs (shrink to o_hour/d_hour parent), mcw/lambda/month-weight arms
+14	900f489	1789647864	lambda grid, alpha, rounds1600, d3+d4 blend, colsample ensemble
+15	faa6842	1789647929	ens8, alpha members, dow_hour TE, max_bin 512, lossguide
+16	508f030	1789648028	fix lossguide arm; alpha-ensemble variants
+17	4ee95f0	1789648137	fold-diverse ensemble members; holiday-distance features
+18	4afd90b	1789648244	holiday features in ensemble + sin/cos seasonality
+19	0cac0bb	1789648339	origin x week TE; K=10 OOF; bynode colsample; ss 0.95
+20	6d0e0df	1789648466	bynode colsample ensemble tuning
+21	6908566	1789648571	ablations: drop o_dow/d_blk15/d_hour/o_blk30; add d_dow; logit-avg
+22	778024b	1789648650	fix unpack; pruned feature ensemble
+23	8a88107	1789648708	remove stale duplicate unpack; clean-run check + 10-member arm
+24	26e34fa	1789648824	recipe- and feature-diverse 10-member ensembles
+25	c9e7c48	1789648954	product congestion feature; gamma 0.5; lr 0.02/1500
+26	95595ac	1789649049	second product feature; 8-member prod ensemble
+27	84a5d1e	1789649204	final cleanup: keep only winning pipeline (exact column order preserved), AUC-equal per simplicity criterion

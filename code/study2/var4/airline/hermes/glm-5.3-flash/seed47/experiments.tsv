@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ea8c410	0.7141	ok	4	baseline
+2	c639045	0.0000	crash	5	es + refit, lr0.05 depth6
+3	f266d17	0.7110	ok	9	es + refit, lr0.05 depth6
+4	ada3410	0.7078	ok	3	400 trees, lr0.1, no ES
+5	6e81dd9	0.7131	ok	2	deptime hour/min/cyclic + month cyclic
+6	e4e02ea	0.7056	ok	3	route+dephour cat+weekend+cyclic
+7	b2c6893	0.7056	ok	3	refactor contract-safe, same features as exp6
+8	df8c77b	0.0000	crash	1	string cats no pre Levels
+9	a3359c4	0.0000	crash	3	category dtype direct, route+hour
+10	ba788ba	0.7056	ok	3	train-only levels, unseen NaN
+11	b19df07	0.6995	ok	2	target encoding, smoothing 20
+12	8651b95	0.7056	ok	2	ordinal enc, route, deptime hour/min
+13	11ec43b	0.7131	ok	2	baseline+numeric time feats
+14	ff6b3e7	0.7152	ok	2	100 trees depth6 lr0.1
+15	161bd4c	0.7166	ok	3	200 trees depth6 lr0.1
+16	73f29da	0.7162	ok	3	400 trees depth6 lr0.1
+17	aae373c	0.7164	ok	3	300 trees depth6 lr0.1
+18	6e4937a	0.7123	ok	3	depth8 200 trees lr0.1
+19	21d22fd	0.7182	ok	3	depth5 200 trees lr0.1
+20	922d140	0.7183	ok	3	depth4 200 trees lr0.1
+21	8eab1cb	0.7184	ok	2	depth3 200 trees lr0.1
+22	9d51e50	0.7164	ok	2	depth3 lr0.05 200 trees
+23	bf45aef	0.7183	ok	3	depth3 300 trees lr0.1
+24	9b59956	0.7180	ok	2	depth3 min_child_weight 20
+25	3d8600e	0.7087	ok	2	ordinal cats + route, depth3
+26	18cb735	0.6999	ok	3	add TE origin/dest/carrier/route
+27	21c58a7	0.7155	ok	3	bag of 5 xgb depth3 100t
+28	a8081e4	0.7148	ok	2	depth3 200t colsample0.7 sub0.8
+29	d0f292b	0.7181	ok	2	freq features
+30	66a3f8e	0.0000	crash	2	hour dow interaction
+31	4090b77	0.7186	ok	2	hour dow interaction, levels fixed
+32	3a5903e	0.7196	ok	3	blend cat + ordinal models
+33	45c2b96	0.7207	ok	4	3-model blend +colsample var
+34	44da344	0.7197	ok	5	4-model diverse blend
+35	c09a7b6	0.7207	ok	4	3-model blend restored (best)
+36	5a8a773	0.7186	ok	4	3-model blend subsample 0.9
+37	f5e04ed	0.7210	ok	4	3-blend ordinal 300t
+38	dc19c9b	0.7213	ok	5	5-model blend
+39	94f1d79	0.7208	ok	5	5-blend depth diversity
+40	ade5f9a	0.7187	ok	5	month x hour interaction

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f7a2074	0.7141	ok	3	baseline
+2	b53bca6	0.7204	ok	3	numeric dates + early stopping, lr=0.05 depth=6
+3	49634bf	0.7202	ok	4	target encodings (origin/dest/carrier/route) + minute_of_day
+4	43d8e6f	0.7244	ok	5	depth=8 mcw=1 subsample=0.7 colsample=0.7 es=100
+5	4764a1e	0.7273	ok	5	depth=10
+6	a809dc9	0.7290	ok	6	depth=12
+7	84222ce	0.7317	ok	8	depth=14
+8	be52193	0.7323	ok	10	depth=16
+9	98d099f	0.7332	ok	12	depth=18
+10	d5d90b3	0.7370	ok	18	lr=0.03 es=200
+11	f835c5d	0.7240	ok	17	route cat + hour + minute_of_day
+12	bdc8c52	0.7397	ok	16	hour + minute_of_day (no route)
+13	f53d8eb	0.7429	ok	17	target encodings hour/carrier/origin/dest
+14	dc4a8f8	0.7408	ok	20	interaction TEs x hour
+15	e71f2e3	0.7312	ok	19	season sin/cos
+16	af03761	0.7429	ok	17	TE smoothing m=50
+17	761e387	0.7439	ok	78	5-bag seed ensemble
+18	0c08796	0.7436	ok	63	heterogeneous bag (varied depth/lr/ss/cs)
+19	ea7d284	0.7014	ok	68	OOF TE (5-fold) for training rows
+20	e5f629f	0.7443	ok	83	count features origin/dest/carrier/route
+21	6bb6067	0.7435	ok	85	TE month/dow
+22	bf45294	0.7328	ok	81	route TE m=200
+23	5292ac4	0.7375	ok	73	grow_policy=lossguide max_leaves=800
+24	c87a380	0.7452	ok	90	cnt origin/dest x hour volumes
+25	b554c13	0.7401	ok	53	min_child_weight=5
+26	c43f3b4	0.7311	ok	83	TE origin/dest x hour m=100
+27	ce6ffe6	0.7447	ok	91	recency weights (month ramp 0.5-1.5)
+28	e63e44d	0.7454	ok	101	6-bag ensemble
+29	d34f995	0.0000	timeout	120	max_bin=512
+30	e64f0a2	0.7482	ok	104	colsample_bytree=0.6
+31	90a28b7	0.7503	ok	101	colsample_bytree=0.5
+32	3abb3c3	0.7530	ok	98	colsample_bytree=0.4
+33	b52a027	0.7532	ok	94	colsample_bytree=0.3
+34	c582f0b	0.7541	ok	99	subsample=0.8 with cs=0.3
+35	2a72e51	0.7526	ok	83	depth=16, cs=0.3, ss=0.8
+36	a035802	0.0000	timeout	122	lr=0.02 with cs=0.3 ss=0.8
+37	ed9415d	0.7480	ok	97	drop raw DepTime feature
+38	4d669a5	0.7534	ok	105	reg_lambda=2.0
+39	b4168cf	0.7551	ok	112	depth=20 with cs=0.3 ss=0.8
+40	dd24a80	0.7551	ok	119	depth=22 final

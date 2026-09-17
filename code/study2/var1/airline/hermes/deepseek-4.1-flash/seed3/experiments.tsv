@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	38dd8e6	0.7141	ok	11	baseline
+2	ecaa751	0.7055	ok	24	capacity 500 trees depth7 lr.05
+3	09f54b0	0.7133	ok	1	time-of-day features
+4	d7a4f33	0.7121	ok	3	internal early stopping
+5	bfc127f	0.7056	ok	2	route categorical feature
+6	674de5d	0.7263	ok	4	carrier x hour + freq + logdist + tod features
+7	33dfc7d	0.7276	ok	13	5-seed bagged ensemble
+8	fdf88bb	0.7276	ok	21	depth-diverse 8-member ensemble
+9	bdb7275	0.7281	ok	35	12-member diverse ensemble
+10	a016031	0.7281	ok	36	rank-average ensemble aggregation
+11	2a66d69	0.7301	ok	43	random-subspace 16-member ensemble
+12	104fd5f	0.7305	ok	64	24-member subspace ensemble
+13	517fb1e	0.7289	ok	59	50% subspace ensemble
+14	9ecc546	0.7301	ok	83	32-member subspace ensemble
+15	b54f819	0.7311	ok	63	encoding-diverse ensemble
+16	9976142	0.7308	ok	66	mixed full/subspace members
+17	81a2601	0.7322	ok	66	variable-size subspaces
+18	eb20d4f	0.7319	ok	66	broader member hyperparameters
+19	5d24a32	0.7319	ok	59	row bagging + subspaces
+20	c0357a6	0.7304	ok	85	extended feature pool + subspaces
+21	b9654e3	0.7275	ok	62	stacked ensemble (OOF meta)
+22	1d9d126	0.7331	ok	95	36-member subspace ensemble
+23	ff6353f	0.7306	ok	75	48-member cheap ensemble
+24	bbce5d6	0.7304	ok	95	core-anchored subspaces
+25	d6a8f24	0.7324	ok	94	ensemble stability re-draw
+26	fe71406	0.7328	ok	88	three encoding modes
+27	d485c00	0.7316	ok	99	cat threshold diversity
+28	f6a9b7f	0.7338	ok	92	regularization jitter
+29	e16eae8	0.7371	ok	104	broad hyperparameter jitter
+30	f3aec0f	0.7376	ok	104	wider jitter ranges
+31	70d6ab7	0.7386	ok	110	wider jitter envelope
+32	bd612aa	0.7361	ok	101	smaller subspaces (min 6 cols)
+33	01cf5de	0.7371	ok	101	48-member jittered ensemble
+34	79bd34b	0.7378	ok	101	widest jitter envelope
+35	196d8b0	0.7344	ok	97	fresh draw stability check
+36	1910a78	0.7380	ok	91	more draws, fewer seeds
+37	feb2690	0.7383	ok	107	mixed jitter envelopes
+38	02684d4	0.7386	ok	105	subspace-size weighted average
+39	7605145	0.7393	ok	103	logit-space averaging
+40	7e14372	0.7392	ok	102	weighted logit mean

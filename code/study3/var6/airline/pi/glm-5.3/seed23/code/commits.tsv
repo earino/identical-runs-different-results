@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	c04519d	1789629880	baseline
+01	ecbbf6e	1789630537	feat: time features + route cat + early stopping on eval
+02	2711126	1789630966	feat: OOF target-encoded hour interactions (m=50), lr.03 d6 ES
+03	980a5a1	1789631385	feat: d5 + colsample 0.8
+04	5cb7ba6	1789632842	feat: hierarchical route-hour TE + reg_alpha=8
+05	d2c7b38	1789633946	feat: Route categorical + max_bin 512
+06	4bbb1aa	1789634571	tune: reg_alpha 8->10
+07	c6ce8d2	1789634998	feat: h_ocarrier_hour TE + late-2005 sample weighting
+08	f6c250f	1789635605	tune: max_bin 1024
+09	5b7bd82	1789635839	feat: 2-model decorrelated ensemble
+10	5c200eb	1789635947	feat: 3-model ensemble
+11	ba199c6	1789636152	tune: ensemble member B d6/a14
+12	cc0979d	1789636445	feat: member B uses alternate OOF fold seed
+13	1692d6f	1789636712	feat: 4th ensemble member on kf3 fold seed
+14	5001110	1789636857	tune: member D = B-shape on kf3

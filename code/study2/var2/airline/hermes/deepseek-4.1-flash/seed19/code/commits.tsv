@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	0687d57	1789513064	baseline
+01	fb6f191	1789513170	model: shallow + regularized (600x4, mcw20, lambda5)
+02	4f14ec1	1789513234	features: log traffic-volume counts for airport/route/hour group keys
+03	ebd4bf0	1789513261	features: out-of-fold target-rate encodings on top of counts
+04	b80619e	1789513280	features: add route-hour, origin-month, carrier-origin group keys
+05	a855732	1789513341	model: lr 0.02 with 1500 trees
+06	340808a	1789513388	features: share-of-parent-traffic congestion ratios
+07	a295e02	1789513405	model: 5-seed XGBoost ensemble
+08	769e003	1789513510	ablation: drop raw Origin/Dest categoricals
+09	7785a67	1789513602	ablation: also drop raw UniqueCarrier
+10	09ed162	1789513668	ablation: also drop DayofMonth
+11	3b756a7	1789513707	ensemble: 5 diverse members (depth 3-5, varied reg)
+12	3854df3	1789513775	features: 30-minute time-bin rate keys
+13	266d29b	1789513811	features: dest/carrier x 30-min bin keys
+14	41fc5b6	1789513849	features: 15-minute time-bin keys
+15	d5944f0	1789513964	features: 10/5-minute global bins + carrier x 15min
+16	95d9ba2	1789514069	features: ordinal month/dow/day-of-year
+17	987088c	1789514228	features: duration + arrival-time proxy
+18	9437dd4	1789514441	TE: smoothing 60
+19	c0af5f7	1789514636	ensemble: 9 diverse members

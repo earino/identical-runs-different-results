@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	9c2714b	0.7141	ok	3	baseline
+2	3d76781	0.0000	crash	2	time features + route cat + ES capacity
+3	fc7df4f	0.7109	ok	4	time features + route cat + ES capacity
+4	2591f7f	0.7120	ok	3	early stopping capacity on baseline features
+5	3f68992	0.7092	ok	1	FE time/route/numeric-date at 30 trees
+6	c3f9f8e	0.7138	ok	2	add DepHour+DepMinutes only
+7	3880a96	0.7121	ok	2	smoothed target-rate features, OOF for train
+8	847ad04	0.7173	ok	2	d4 n200 lr0.03 mcw5
+9	b8d17f4	0.7183	ok	11	seed ensemble 9x d4n300 cs0.7
+10	41ab1d8	0.7227	ok	16	alpha8 d6 mcw10 ens9
+11	15a7de5	0.7267	ok	18	interaction cats: hour, hrxcarr, carrxdow
+12	7379dc3	0.7285	ok	23	add Hour x Origin interaction
+13	0fbfa8e	0.7321	ok	46	alpha4 d8 n400 ens9
+14	80f90da	0.7331	ok	68	add RouteN + n600
+15	6c6ce4c	0.7323	ok	75	add HourNum + DayN
+16	cfd2f8a	0.7334	ok	81	lossguide ml64
+17	dd6b84e	0.7337	ok	98	lossguide ml128
+18	588440d	0.7334	ok	99	lossguide ml192
+19	c000fba	0.7335	ok	63	diverse 2-family ensemble
+20	d8a5b39	0.0000	timeout	120	n13 ensemble lossguide ml128
+21	caef437	0.7335	ok	102	n11 ens n500 lossguide ml128
+22	58004e3	0.7396	ok	109	DepBin20 categorical
+23	02ab3ea	0.7399	ok	108	DepBin10 categorical
+24	99abc76	0.0000	timeout	120	Bin10 x Carrier
+25	4bc0ae9	0.7382	ok	119	swap Bin10 x Carrier for Hour x Carrier
+26	7167f6c	0.0000	crash	90	5-min bins

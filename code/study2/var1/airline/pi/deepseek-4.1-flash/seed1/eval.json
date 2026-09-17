@@ -1,0 +1,192 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 1,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T15:53:17+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s1-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T16:19:13+00:00",
+  "wall_seconds": 1555.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3581.9,
+  "endpoint_at_end": "ok",
+  "head": "36b389e",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7594,
+  "final_eval_auc": 0.7594,
+  "holdout_auc": 0.759014665142,
+  "holdout_ap": 0.7408658844169868,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04424391340599998,
+  "generalization_gap": 0.0003853348579999638,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4735733,
+    "tokens_in_uncached": 4735733,
+    "tokens_in_cached": 0,
+    "tokens_out": 60656,
+    "turns": null,
+    "api_calls": 106,
+    "method": "sum-of-106-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3596.9,
+  "cpu_seconds_counted": 3376.1,
+  "cpu_seconds_uncounted": 1.9,
+  "cpu_seconds_exempt": 218.9,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 292,
+  "fits_counted": 274,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "3574e3f",
+      "message": "baseline"
+    },
+    {
+      "commit": "47ea03e",
+      "message": "shallow regularized model depth3 lr0.03 n800"
+    },
+    {
+      "commit": "3dc2523",
+      "message": "ensemble of 6 shallow xgb"
+    },
+    {
+      "commit": "c925ea0",
+      "message": "cross-fitted target encoding + freq"
+    },
+    {
+      "commit": "02b7e48",
+      "message": "add hour-interaction target encodings"
+    },
+    {
+      "commit": "202c595",
+      "message": "add route_hour TE"
+    },
+    {
+      "commit": "1c11ae7",
+      "message": "add carrier_route TE"
+    },
+    {
+      "commit": "ad66f7f",
+      "message": "add route 30-min bin TE"
+    },
+    {
+      "commit": "51c308e",
+      "message": "finer time bins + origin/dest/carrier bin TEs"
+    },
+    {
+      "commit": "cc6b111",
+      "message": "even finer bins"
+    },
+    {
+      "commit": "1f7b8ce",
+      "message": "add dow interaction TEs"
+    },
+    {
+      "commit": "9d9b441",
+      "message": "add route 5min bin TE"
+    },
+    {
+      "commit": "75d6ba3",
+      "message": "drop native categoricals, use TE + parsed numeric only"
+    },
+    {
+      "commit": "48e81c6",
+      "message": "finer origin/dest/carrier bins"
+    },
+    {
+      "commit": "2c489ea",
+      "message": "add carrier-origin/dest and route_dow TEs"
+    },
+    {
+      "commit": "f5258bd",
+      "message": "add carrier-route-bin TE"
+    },
+    {
+      "commit": "953e790",
+      "message": "finer + sibling carrier interactions"
+    },
+    {
+      "commit": "9d5ee57",
+      "message": "carrier route 5min + carrier origin/dest 15min bins"
+    },
+    {
+      "commit": "a21a4fc",
+      "message": "ensemble 10 models varied mcw/col"
+    },
+    {
+      "commit": "7cda467",
+      "message": "add depth5 members to ensemble"
+    },
+    {
+      "commit": "1915940",
+      "message": "ensemble 18 models incl depth6"
+    },
+    {
+      "commit": "5d8c9b3",
+      "message": "add frequency share features"
+    },
+    {
+      "commit": "c3df6c8",
+      "message": "add day-of-year seasonal features"
+    },
+    {
+      "commit": "36b389e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3378.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -15.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c3df6c8",
+  "best_commit_eval_auc": 0.7594,
+  "best_commit_holdout_auc": 0.759014665142,
+  "best_commit_holdout_ap": 0.7408658844169868,
+  "best_commit_error": null,
+  "finalized_best": true
+}

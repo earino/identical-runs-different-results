@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	5527db1	1789599584	baseline
+01	43e51f0	1789599804	f3 features: cat month/dom/dow, time-of-day numerics, no Route, 150 trees full-train
+02	53f5851	1789599962	d4 lr0.05 300 trees (drift-friendly shallow+slow)
+03	2e4a591	1789600505	14-member feature-diverse XGB ensemble on keep-DOW base + daypart interactions
+04	1278f07	1789600762	26-member ensemble: +freq, DOWHour, lossguide, regalpha, maxbin, lr/n variants, ablation members
+05	04e11cb	1789601682	group-weighted blend (g1/g2/g5 down, g3/g4/g6 up; validated by eval half-split transfer)
+06	756af71	1789606510	exp9: multiscale congestion features + deep stochastic members
+07	9ecf387	1789607131	exp10: carrier/arrival-ETA congestion + DepMod features, old-member weight 1.0
+08	13452bd	1789608030	exp11: 5 deep members (3 seeds of d20c50n140 + d24 + d16), old at w=1.0
+09	0093d7e	1789609382	exp13: 4 seeds of d20c50n140 + d24, old mix w=1.0
+10	5e5aa83	1789609902	exp14: 5 seeds of d20c50n140 + d24, old mix w=1.0
+11	16a9947	1789610882	exp21: d28 member instead of d24

@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	5ef5436	0.7141	ok	4	baseline
+2	c1b3de8	0.0000	crash	1	feat-v1: parsed calendar, hour/cyclic, route cat, 500 trees d8
+3	4d37c2c	0.0000	crash	7	feat-v1: parsed calendar, hour/cyclic, route cat, 500 trees d8
+4	7180a50	0.7077	ok	3	feat-v1: parsed calendar, hour/cyclic, route cat, 500 trees d8
+5	0f5fbba	0.7026	ok	8	feat-v2: calendar cats kept, full-data 500 trees d8
+6	145c859	0.7096	ok	6	ablation: baseline features, 500 trees d8 lr.06
+7	f869807	0.7184	ok	2	d4 200t +timefeats (hour/min/cyclic/logdist)
+8	3010db1	0.7403	ok	9	carrier x 30min-bin interaction, d4 2000t lr.03 alpha1 sub.9 cbn.9
+9	b86e5c9	0.7413	ok	61	6-model ensemble d4(0,1,2)+d5(0,1)+d6(0), equal-weight average
+10	09f7baf	0.7420	ok	49	ensemble d3(0,1)+d4(0,1)+d5(0,1)
+11	472c4c6	0.7432	ok	47	ensemble colsample_bynode 0.5 (feature-subset diversity)
+12	b6c4f4e	0.7457	ok	48	add hm15 time-slot categorical, drop cyclic sin/cos
+13	05453c4	0.7455	ok	49	colsample_bynode 0.4
+14	a3946de	0.7463	ok	74	8-model ensemble: add d6(0,1) members
+15	c712e52	0.7466	ok	114	10-model ensemble: add d7(0,1) members
+16	9aea13c	0.7465	ok	112	10-model ensemble, seeds rotated (10,11)
+17	62c9c85	0.7466	ok	109	budget check (no-op)

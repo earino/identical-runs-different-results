@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	e2fc500	0.7141	ok	4	baseline
+2	1364f33	0.7094	ok	2	features: time/route/freq
+3	2a029e2	0.7433	ok	15	time feats + deep regularized xgb
+4	a7b8675	0.7481	ok	18	TOD 30min categorical bins
+5	79e052d	0.7499	ok	18	carrier x tod interaction
+6	60c1d11	0.7517	ok	55	3-model depth-diverse ensemble
+7	d8b2175	0.7518	ok	89	5-model depth ensemble 12-20
+8	b18b77a	0.7549	ok	88	dist bins + raw DepTime + origin x hour
+9	42f8630	0.7574	ok	91	arrival TOD bins + holiday
+10	5856ece	0.0000	crash	2	ensemble hp diversity
+11	11775ba	0.7574	ok	101	ensemble hp diversity (fixed)
+12	c707abf	0.7586	ok	96	odc frequency feature
+13	87fac5c	0.7584	ok	107	4-model ensemble n250
+14	5b6cf8c	0.7584	ok	109	ensemble depths 15/17/19
+15	3137dd7	0.7591	ok	94	carrier frequency feature
+16	d5a4922	0.7590	ok	101	origin-carrier hub frequency
+17	3a9719b	0.7592	ok	95	weighted ensemble (deeper)

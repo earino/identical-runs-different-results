@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	059a1f3	0.7141	ok	4	baseline
+2	c2e273e	0.7215	ok	6	time features + numeric calendar + 600 trees
+3	dd54e26	0.7103	ok	9	route categorical + frequency counts
+4	595c005	0.7215	ok	6	OOF smoothed target encoding origin/dest/carrier/route
+5	c9d2c30	0.7130	ok	15	2000 trees lr .05 depth 7
+6	636b488	0.7207	ok	10	early stopping probe + refit (depth7 lr.05)
+7	975d03d	0.7221	ok	19	ensemble depths 5-8
+8	5d08839	0.7235	ok	35	ensemble depths 4-9
+9	688c09b	0.7289	ok	38	congestion and frequency counts
+10	fecea6c	0.7301	ok	42	carrier-hour counts + ratio features
+11	8befe77	0.7298	ok	44	target encoding on top of congestion features
+12	042bc58	0.7297	ok	42	dow + carrier-airport counts
+13	8549eb9	0.7303	ok	78	14-model seed-bagged ensemble
+14	7a1dc7e	0.7332	ok	67	ensemble + lossguide variants
+15	3d94221	0.7347	ok	102	14-model ensemble, more lossguide
+16	cb67495	0.7359	ok	109	airport/carrier-hour OOF target encoding
+17	7452af8	0.7405	ok	113	route-hour, origin-dow, carrier-dow TE
+18	32d6d70	0.7413	ok	69	tree scale 0.6 capacity test
+19	4e8930b	0.7409	ok	49	tree scale 0.4
+20	8bf2f82	0.7390	ok	75	additional composite TE keys
+21	48d8346	0.7416	ok	92	17-model ensemble, extra lossguide
+22	531265d	0.7417	ok	87	dep_abs_minutes + is_next_day
+23	5e59592	0.7392	ok	98	dest-dow, origin/carrier-month TE
+24	e8a2704	0.7414	ok	94	doy, global hour cnt, origin-carrier cnt
+25	f34308d	0.7428	ok	82	reg_lambda=3 reg_alpha=0.5
+26	967d7c9	0.7449	ok	89	reg_lambda=8 reg_alpha=1.5
+27	2f96030	0.7460	ok	86	reg_lambda=20 reg_alpha=4
+28	0cc7a09	0.7451	ok	76	reg_lambda=50 reg_alpha=8
+29	dc221db	0.7457	ok	82	reg_lambda=32 reg_alpha=6
+30	d0ee1ed	0.0000	timeout	120	TREE_SCALE=1.0 with reg 20/4
+31	d34fadc	0.7455	ok	86	min_child_weight +15
+32	43649d5	0.7457	ok	73	TREE_SCALE=0.5
+33	30c0f31	0.7460	ok	89	remove sin/cos cyclic features
+34	fe568bd	0.7457	ok	72	gamma=3
+35	af4b9d4	0.7461	ok	76	colsample x0.75
+36	8f9add7	0.7460	ok	80	logit average ensemble
+37	c8bed8e	0.7452	ok	82	subsample x0.8
+38	276569f	0.7462	ok	85	19-model ensemble
+39	5e2a5f1	0.7464	ok	92	TREE_SCALE=0.7
+40	2d901e0	0.0000	timeout	120	TREE_SCALE=0.8

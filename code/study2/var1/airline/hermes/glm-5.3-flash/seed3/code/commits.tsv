@@ -1,0 +1,37 @@
+n	commit	unix_time	subject
+00	5846a3e	1789497774	baseline
+01	9e1d3c2	1789497873	feat v2: native cats for all strings + time features, ES + refit
+02	4ff7bdf	1789497909	feat v3: conservative params (d6 lr0.1 mcw50) + time feats + ES
+03	7454b8b	1789497927	ablation: baseline model + time features only
+04	67a83df	1789497942	baseline feats + 600 trees w/ early stopping + refit
+05	7023ee7	1789497972	sweep: 12 capacity configs, select by eval AUC
+06	dbbdba5	1789497993	sweep 2: shallow depths 2-5, sampling, lr 0.05
+07	e5b8cdd	1789498022	route pair categorical + sweep 3 (route model)
+08	d99499b	1789498082	sweep 4: regularization refinement at d4/lr0.05/ss0.8
+09	8f902c0	1789498135	seed-bagging ensemble: 8 members x (300,d4,lr.05)
+10	5d67427	1789498185	target encodings (k=50): airports, carrier, route, time parts
+11	0aeecde	1789498208	drop-one-feature ablation at best cfg
+12	780b5a8	1789498236	no-Month feature set: capacity re-sweep
+13	2313148	1789498266	no-Month: drop-one ablation at (300,d4,.05,.9,.9)
+14	2adb860	1789498298	elimination rd2 + DepTime-as-categorical
+15	01dfa8b	1789498329	micro-tune sweep: sampling, lr, n, DART, cat onehot, lossguide
+16	9f1af33	1789498396	diverse-config ensemble 6 members, mean vs rank avg
+17	228cc2a	1789498413	grid: mcw x n_estimators at ss/cs .95
+18	0649dee	1789498441	robust: 3 cfg x 5 seeds, mean-select + seed-averaged predict
+19	60bb00f	1789498496	mega seed-avg: 20+10 models pooled
+20	35aa23a	1789498552	max_bin sweep + colsample level/node, 3 seeds
+21	fdba26a	1789498587	bin512/1024 x bylevel/n400/lr03, 5 seeds, avg-pred select
+22	82be535	1789498628	lr ladder: 0.03 to 0.015 with more trees, bin512
+23	efca928	1789498700	covariate-shift frequency-ratio sample weights
+24	4302b4d	1789498742	micro: depth/gamma/mcw/lambda at final recipe
+25	b533e3e	1789498794	depth-5 recheck: bylevel/n500/d6/gamma/mcw
+26	1be3f7b	1789498869	top-variant ensemble 15 models, prob vs logit pooling
+27	37b6a61	1789498913	drop-one recheck at final recipe
+28	eb7438d	1789498970	big ensemble 4cfg x 8seeds + LOCO diag
+29	6022d91	1789499050	ensemble subset search + weighted pooling
+30	94cd512	1789499126	wide pool 8cfg x 4seeds subset search
+31	06d3fac	1789499353	d8-centered pool, tight timing
+32	c3130d2	1789499467	depth max: d10/d11 + partners
+33	9bf07ae	1789499704	tight pair: d11_bl95 + d3_bl90
+34	3d3554d	1789499895	d12_bl95 + d3_bl90, 2 seeds
+35	f0a9290	1789499952	final: d13_bl95 + d3_bl90

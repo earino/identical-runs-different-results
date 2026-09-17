@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	97adf19	0.7141	ok	3	baseline
+2	582d1f8	0.7054	ok	6	500 trees depth7 lr.05
+3	1a0a873	0.7125	ok	2	100 trees depth6 lr.1
+4	fd5d546	0.7127	ok	1	dep hour/minute features
+5	87fd5d6	0.0000	crash	1	drop Origin Dest
+6	53436b1	0.7000	ok	2	drop Origin Dest
+7	9513ee2	0.7056	ok	2	add Route categorical
+8	467b1d6	0.7153	ok	3	300 trees d5 mcw20 reg5
+9	3e64527	0.7141	ok	5	800 trees d5 lr.03
+10	02e2cb7	0.7135	ok	3	300 trees d6 mcw20
+11	07c72f5	0.7163	ok	5	ensemble of 3 regularized
+12	d02aa22	0.7075	ok	6	target encoding carrier/origin/dest/route
+13	551be76	0.7163	ok	7	dep hour + freq encodings
+14	5f46450	0.7172	ok	11	ensemble of 5 diverse
+15	e75def2	0.7172	ok	9	rank-average 5 models
+16	eeda5df	0.7165	ok	11	monotone dep_min constraint
+17	889886d	0.7172	ok	15	ensemble of 8 diverse
+18	e8ec83b	0.7186	ok	11	origin/dest hour counts
+19	74c914f	0.7169	ok	10	add route+carrier hour counts
+20	cbb66a9	0.7201	ok	11	origin/dest hour ratios
+21	e0ed24f	0.7196	ok	11	route+carrier hour ratios
+22	d7c5e7c	0.7205	ok	11	arrival congestion ratio + dep hour
+23	eb585bd	0.7202	ok	12	add arr_hour + dest_arr_cnt
+24	6806425	0.7195	ok	12	cyclic hour/month/dow
+25	296f655	0.7205	ok	11	cat_smooth=50
+26	5171378	0.7228	ok	40	one-hot encoding ensemble
+27	f41da7c	0.7379	ok	70	deep one-hot ensemble
+28	d844413	0.7460	ok	103	deep mcw1 3-ensemble
+29	749c120	0.7454	ok	116	size + hour share features
+30	1107331	0.0000	timeout	123	airport throughput features
+31	d994edb	0.7456	ok	77	lean deep 3-ensemble
+32	6f6cb7d	0.7464	ok	91	lean ensemble + throughput
+33	4c5de9e	0.7459	ok	103	throughput ratios
+34	df95bb4	0.7472	ok	110	max_bin=512
+35	2c36d00	0.7470	ok	101	max_bin512 lean
+36	48a6f56	0.7466	ok	88	max_bin512 d20/32
+37	d5a638d	0.7468	ok	106	max_bin512 sub.8 col.7
+38	7b65670	0.7469	ok	94	max_bin512 d22/30
+39	d8c04e8	0.7470	timeout	120	max_bin512 reg_alpha1
+40	64df0a1	0.7481	ok	102	dep_min + leaner max_bin512

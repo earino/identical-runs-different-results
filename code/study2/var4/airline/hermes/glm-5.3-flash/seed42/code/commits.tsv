@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	2e4d29f	1789496385	baseline
+01	1ada98c	1789496535	feat: time/carrier features + tuned xgb early stopping
+02	a25cf1c	1789496552	clean rewrite; OOF diagnostic; DepTime edge fixes
+03	723cb00	1789496901	2-seed blend
+04	3ee08f6	1789497402	d11 lr0.03 (2-seed blend)
+05	4f3bb39	1789497639	d16 lr0.02 (2-seed blend)
+06	71c0592	1789498078	d16 lr0.02 cap1200 + flush
+07	c289c30	1789498169	d16 cs 0.7->0.6
+08	1c06307	1789498241	d16 cs 0.6->0.5
+09	45fb476	1789498281	d16 cs 0.5->0.4
+10	65d7882	1789498365	d16 cs0.4 sub0.9
+11	dda4e73	1789498403	d20 lr0.02 cs0.4 sub0.9
+12	a662134	1789498597	d20 3-seed blend

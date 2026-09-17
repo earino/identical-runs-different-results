@@ -1,0 +1,164 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:15:38+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T23:48:27+00:00",
+  "wall_seconds": 1968.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5369.5,
+  "endpoint_at_end": "ok",
+  "head": "1110239",
+  "n_commits": 16,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7335,
+  "final_eval_auc": 0.7335,
+  "holdout_auc": 0.7333791045720001,
+  "holdout_ap": 0.7242679065217333,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01860835283600004,
+  "generalization_gap": 0.00012089542799997854,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6793738,
+    "tokens_in_uncached": 54410,
+    "tokens_in_cached": 6739328,
+    "tokens_out": 43666,
+    "turns": null,
+    "api_calls": 143,
+    "method": "cumulative-max",
+    "cost_usd": 0.2322,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 5174.7,
+  "cpu_seconds_counted": 4710.8,
+  "cpu_seconds_uncounted": 153.7,
+  "cpu_seconds_exempt": 310.3,
+  "python_processes": 57,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 79,
+  "fits_counted": 73,
+  "fits_uncounted": 4,
+  "commits": [
+    {
+      "commit": "f048e86",
+      "message": "baseline"
+    },
+    {
+      "commit": "075d129",
+      "message": "bigger model + early stopping + time features"
+    },
+    {
+      "commit": "2b8a6f0",
+      "message": "depth4 lr0.03"
+    },
+    {
+      "commit": "e7fede9",
+      "message": "depth6 regularized"
+    },
+    {
+      "commit": "187b5d0",
+      "message": "depth8 regularized"
+    },
+    {
+      "commit": "0386424",
+      "message": "depth10 regularized"
+    },
+    {
+      "commit": "1793ec7",
+      "message": "depth12 regularized"
+    },
+    {
+      "commit": "2d41d9d",
+      "message": "depth12 lr0.01"
+    },
+    {
+      "commit": "c844a59",
+      "message": "heavier colsample"
+    },
+    {
+      "commit": "97f302d",
+      "message": "alpha 0.5"
+    },
+    {
+      "commit": "aa488ca",
+      "message": "carrier x hour cat"
+    },
+    {
+      "commit": "ec42c5f",
+      "message": "carrier x hour cat (fix)"
+    },
+    {
+      "commit": "7b26827",
+      "message": "origin x hour cat"
+    },
+    {
+      "commit": "93730dd",
+      "message": "heavier sampling on compound feats"
+    },
+    {
+      "commit": "761ec21",
+      "message": "depth14 with compounds"
+    },
+    {
+      "commit": "e942658",
+      "message": "depth16 with compounds"
+    },
+    {
+      "commit": "1110239",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4864.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 194.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e942658",
+  "best_commit_eval_auc": 0.7335,
+  "best_commit_holdout_auc": 0.7333791045720001,
+  "best_commit_holdout_ap": 0.7242679065217333,
+  "best_commit_error": null,
+  "finalized_best": true
+}

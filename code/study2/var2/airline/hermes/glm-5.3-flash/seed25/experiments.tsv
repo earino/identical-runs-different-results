@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	024ddd7	0.7141	ok	4	baseline
+2	727c9b5	0.7109	ok	4	big model lr.05 d8 + DepMin/sin/cos + month cyc, ES internal 90/10
+3	1100370	0.7107	ok	2	ES 2000 trees lr.1 d6, internal 90/10
+4	1e3395c	0.7133	ok	4	lr.05 ES colsample.8 mcw5 d6 subsample1.0 full train
+5	1e3395c	0.7126	ok	3	lr.05 ES colsample.8 mcw5 d8 subsample.8 full train
+6	2b84380	0.7120	ok	2	baseline + DepHour (hhmm -> hour)
+7	c1a25d2	0.7143	ok	3	d3 lr.05 500 trees + DepHour
+8	c434549	0.5956	ok	3	ablation d3 500t no DepHour
+9	c1a25d2	0.7134	ok	3	d4 500t + DepHour
+10	c1a25d2	0.7126	ok	2	d2 500t + DepHour
+11	e35b7b4	0.7173	ok	3	d3 500t + DepMin/sin/cos/dom-cyc
+12	c684268	0.7173	ok	4	d3 500t + TE carrier/origin/dest
+13	e35b7b4	0.7181	ok	4	d3 1200t lr.05 + DepMin/sin/cos
+14	e35b7b4	0.7175	ok	8	d3 2500t lr.05
+15	72af740	0.7146	ok	19	bag 5x1200t d3 lr.05 sub.85 col.85
+16	59de9f3	0.7181	ok	5	d3 1200t + freq encodings
+17	c0829a2	0.7174	ok	4	d3 1200t mcw=50
+18	2f2f84c	0.7183	ok	3	d3 1200t + min-in-hr/onslot/logdist
+19	1530a35	0.7193	ok	3	d3 1200t + DepHourCat
+20	1530a35	0.7208	ok	3	d4 1200t with DepHourCat
+21	3fa9aa7	0.7207	ok	4	d5 1200t with DepHourCat
+22	3fa9aa7	0.7218	ok	9	d4 2000t lr.03
+23	3fa9aa7	0.7204	ok	12	d4 3000t lr.02
+24	cb581cf	0.6988	ok	16	d4 lr.03 2000t + RouteCat + freqRoute
+25	a0bc4b1	0.7201	ok	3	d4 lr.03 2000t + freqRoute
+26	ecd4da4	0.7210	ok	51	d4 lr.03 2000t maxbin1024
+27	c3d2840	0.7300	ok	4	d4 lr.03 2000t + CarrierHour
+28	f8f45ea	0.7273	ok	5	d4 lr.03 2000t + OriginHour
+29	690da0f	0.7295	ok	4	d4 lr.03 2000t + CarrierDow
+30	c3ee78e	0.7246	ok	9	d4 lr.03 2000t + MonthHour
+31	3e4714a	0.7308	ok	4	d4 lr.03 2000t + DowHour
+32	4f48271	0.7313	ok	4	d4 lr.03 2000t + CarrierHalfHour
+33	61908f7	0.7310	ok	4	d4 lr.03 2000t + DowHalfHour
+34	4f48271	0.7312	ok	14	d4 3000t lr.02 at strong features
+35	0dd7a90	0.7314	ok	4	d4 lr.03 2000t gamma1
+36	58aab00	0.7315	ok	4	d4 lr.03 2000t + DepHalfHour
+37	1b1eb9d	0.7299	ok	4	d4 lr.03 2000t + Origin regroup <300
+38	58aab00	0.7289	ok	16	d4 lr.03 3000t
+39	34fe4da	0.7315	ok	6	2-seed avg 2000t d4 lr.03
+40	cfdfebe	0.7321	ok	5	d4 lr.03 2000t + DepQuarterHour (final)

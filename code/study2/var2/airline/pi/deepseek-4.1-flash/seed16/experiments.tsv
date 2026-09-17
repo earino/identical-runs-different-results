@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	9c5ae40	0.7141	ok	3	baseline
+2	a60a5f9	0.7006	ok	9	FE time/cyclical/route + 500 trees
+3	37594b7	0.7077	ok	4	capacity 600 trees lr.05 depth6
+4	fdb3b97	0.7163	ok	1	reg depth4 150trees
+5	912e6ac	0.0000	crash	1	FE time+cyclical+freq
+6	e45d707	0.7148	ok	2	FE time+cyclical+freq
+7	b417b9b	0.7156	ok	2	reg base + dep_hour
+8	805474e	0.7157	ok	2	reg depth3 400trees
+9	73e7055	0.7206	ok	3	dep-time FE + d6/n400/lr.05/col.7
+10	c1c4e88	0.7247	ok	3	tuned d7/col.5/alpha1/bin512
+11	b28a90d	0.7404	ok	5	origin_hour + carrier_hour interactions
+12	b98391e	0.7405	ok	35	retune d8/lambda1/bin256
+13	35be663	0.7446	ok	35	ensemble 5 models
+14	4e42e06	0.7448	ok	56	ensemble 8 models
+15	b89f23d	0.7457	ok	49	greedy ensemble 8 models
+16	1100d81	0.7474	ok	110	deep d12 ensemble A+B x2
+17	fce076a	0.7474	ok	54	deep ensemble A+B (2 models)
+18	e0d9ee8	0.7479	ok	81	A+A2+B ensemble
+19	cb495b9	0.7476	ok	80	max_delta_step=1
+20	545a668	0.7477	ok	78	2xA2 + B ensemble
+21	8377497	0.7479	ok	76	A+A2(col.6)+B
+22	336e3f1	0.7478	ok	79	A+A2(gamma.3)+B
+23	9deeeaf	0.7475	ok	87	A+A2+B+shallow

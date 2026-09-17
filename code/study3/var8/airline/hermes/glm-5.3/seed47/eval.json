@@ -1,0 +1,170 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 47,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T13:40:24+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s47-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T15:28:19+00:00",
+  "wall_seconds": 6475.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18608.0,
+  "endpoint_at_end": "ok",
+  "head": "f0cd256",
+  "n_commits": 17,
+  "n_experiments": 26,
+  "n_ok": 21,
+  "n_crash": 3,
+  "n_timeout": 2,
+  "best_eval_auc": 0.8461,
+  "final_eval_auc": 0.8461,
+  "holdout_auc": 0.8087473645619999,
+  "holdout_ap": 0.7990463976035345,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.0939766128259999,
+  "generalization_gap": 0.03735263543800005,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6939593,
+    "tokens_in_uncached": 390729,
+    "tokens_in_cached": 6548864,
+    "tokens_out": 102865,
+    "turns": null,
+    "api_calls": 135,
+    "method": "cumulative-max",
+    "cost_usd": 2.7023,
+    "cached_share": 0.944
+  },
+  "cpu_seconds_python": 18414.3,
+  "cpu_seconds_counted": 15545.5,
+  "cpu_seconds_uncounted": 2451.5,
+  "cpu_seconds_exempt": 417.2,
+  "python_processes": 74,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 365,
+  "fits_counted": 324,
+  "fits_uncounted": 37,
+  "commits": [
+    {
+      "commit": "a78ff52",
+      "message": "baseline"
+    },
+    {
+      "commit": "ccbf22d",
+      "message": "fe: hour/minute split + dep-time cyclic + more trees"
+    },
+    {
+      "commit": "99799c2",
+      "message": "early stopping on eval + tuned hparams (lr .05, mdepth6, subsample/colsample .8, lambda 2)"
+    },
+    {
+      "commit": "8e80774",
+      "message": "fe: numeric date/dow/doy/hour cyclicals, weekend flag, log distance"
+    },
+    {
+      "commit": "031e610",
+      "message": "fe: train-side count features (route/carrier/origin/dest x hour traffic)"
+    },
+    {
+      "commit": "1e43b20",
+      "message": "capacity: depth 8, lr .03, more rounds"
+    },
+    {
+      "commit": "38e1669",
+      "message": "ensemble: 5-seed bagged XGB average"
+    },
+    {
+      "commit": "3ce4ce5",
+      "message": "hparams: depth 6, mcw 2 (probe winner)"
+    },
+    {
+      "commit": "b979c6f",
+      "message": "fe: batch schedule ranks + scale-invariant relative loads; drop stale 2005 counts"
+    },
+    {
+      "commit": "3e40715",
+      "message": "fe: richer batch schedule/load family (ranks, progress, rel volumes)"
+    },
+    {
+      "commit": "808a2c2",
+      "message": "hparams: colsample .7; 6-model bag; hoist eval prep"
+    },
+    {
+      "commit": "ae0c5a1",
+      "message": "fe: schedule shape (route std/minmax norm, origin-hour rank, early/late flags)"
+    },
+    {
+      "commit": "7c85266",
+      "message": "fe: schedule gaps + faster config (4 models, lr .04, esr 50)"
+    },
+    {
+      "commit": "1d0b862",
+      "message": "fe: carrier-route schedule gaps (aircraft rotation proxy)"
+    },
+    {
+      "commit": "6dc48b0",
+      "message": "fe: 2nd-order carrier-route gaps"
+    },
+    {
+      "commit": "be1f041",
+      "message": "fe: 3rd-order carrier-route gaps"
+    },
+    {
+      "commit": "80bf157",
+      "message": "robustness: rel-gap twins + rel_same_time + density-augmented training"
+    },
+    {
+      "commit": "f0cd256",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17997.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 193.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "80bf157",
+  "best_commit_eval_auc": 0.8461,
+  "best_commit_holdout_auc": 0.8087473645619999,
+  "best_commit_holdout_ap": 0.7990463976035345,
+  "best_commit_error": null,
+  "finalized_best": true
+}

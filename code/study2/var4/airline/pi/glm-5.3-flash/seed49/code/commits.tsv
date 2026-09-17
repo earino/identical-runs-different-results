@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	7f52d11	1789521889	baseline
+01	c5e514b	1789522058	bagged ensemble: 5x baseline cfg on 80% row subsets
+02	7975cc8	1789522101	ensemble: feature-view diversity (raw/te/all members)
+03	85b65fc	1789522120	ensemble scaled to 12 members
+04	8f0491a	1789522143	TE set expanded (dow/month/origin-hour/dest-hour), freq encoding, num view, 14 members
+05	34061f5	1789522201	add 5 high-capacity/regularized members (19 total)
+06	3f99607	1789522229	strong-member sweep: 8 deep members (22 total)
+07	2e3b771	1789522586	max_bin=512 on deep members
+08	72f327a	1789522691	temporal drift weights: month ramp 0.75->1.5
+09	5790249	1789522743	stronger temporal ramp 0.5->2.0
+10	ee0de81	1789522877	te view += freq columns
+11	3334876	1789523164	max_bin=512 globally (uniform config)
+12	09260c8	1789523215	second-seed deep members (30 total)
+13	27b8e97	1789523372	prune DayofMonth from raw view
+14	af03369	1789523435	prune Month/DayOfWeek from raw view (TE covers them)

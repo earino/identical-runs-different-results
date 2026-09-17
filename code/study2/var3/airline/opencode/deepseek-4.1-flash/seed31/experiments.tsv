@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9807230	0.7141	ok	5	baseline
+2	9abc552	0.7032	ok	5	stronger model 500x d8 lr0.05
+3	4ab5550	0.7128	ok	2	120 trees d6 lr0.1 sub0.8
+4	0099167	0.7133	ok	2	departure clock features
+5	a7292ab	0.7139	ok	3	300 trees d6 lr0.05 reg
+6	bf1036b	0.7059	ok	2	route cat + freq enc
+7	7662c12	0.7135	ok	1	freq encodings only
+8	1b8e1cc	0.6998	ok	4	depth4 400 trees lr0.05
+9	80702be	0.6989	ok	3	depth7 150 trees lr0.08
+10	a7c0893	0.7061	ok	3	depth6 100t lr0.05 gamma/lambda/mcw
+11	522eb74	0.7080	ok	4	ensemble 5 small models
+12	6e1fa7f	0.7122	ok	2	dep_hour only + drop DayofMonth
+13	019f178	0.7141	ok	2	baseline config seed=1
+14	ce8b565	0.7139	ok	2	drop Distance
+15	2761b0c	0.7132	ok	3	dart 60 trees d6
+16	44ecdc1	0.7102	ok	4	one-hot categoricals
+17	249c4b1	0.7180	ok	2	drop Month+DayofMonth
+18	edc9132	0.7170	ok	2	drop Month (keep DayofMonth)
+19	130382b	0.7156	ok	2	drop Month+DayofMonth+DayOfWeek
+20	e22d893	0.7188	ok	2	60 trees d6 clean feats
+21	3c5af32	0.7189	ok	2	120 trees d6 clean feats
+22	8727258	0.7194	ok	2	depth7 120t clean feats
+23	9ad4a2c	0.7199	ok	2	depth8 120t clean feats
+24	ff4a049	0.7232	ok	3	depth9 120t clean feats
+25	dc2cad5	0.7254	ok	3	depth10 120t clean feats
+26	1adeb25	0.7281	ok	4	depth12 120t clean feats
+27	2f88da4	0.7322	ok	10	depth16 120t clean feats
+28	eda6b1e	0.7316	ok	15	depth24 120t clean feats
+29	2dfdc49	0.7346	ok	17	depth16 300t lr0.05
+30	a0aa865	0.7340	ok	39	depth16 600t lr0.03
+31	8c6520b	0.7310	ok	11	depth16 300t lr0.05 mcw5
+32	df7800b	0.7314	ok	19	depth16 300t sub0.8 col0.8
+33	83eb697	0.7341	ok	29	depth20 300t lr0.05
+34	949cc98	0.7362	ok	59	ensemble d12 d16 d20
+35	b195ba3	0.7359	ok	77	ensemble 400t lr0.04
+36	2bc16a7	0.7248	ok	64	ensemble + cyclic seasonality
+37	ab07d06	0.7362	ok	72	ensemble d10 d14 d18 d22
+38	13ec8f1	0.0000	crash	1	ensemble + subsample member
+39	65fcc70	0.7370	ok	71	ensemble + subsample member (fix)
+40	51f40c4	0.7377	ok	92	5-model ensemble final

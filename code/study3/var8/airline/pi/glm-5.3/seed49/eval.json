@@ -1,0 +1,216 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 49,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:51:56+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s49-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T08:43:57+00:00",
+  "wall_seconds": 6720.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10660.4,
+  "endpoint_at_end": "ok",
+  "head": "2883a25",
+  "n_commits": 29,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 2,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7384,
+  "final_eval_auc": 0.7384,
+  "holdout_auc": 0.738428574576,
+  "holdout_ap": 0.730453050995721,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.023657822839999954,
+  "generalization_gap": -2.8574576000028884e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8144911,
+    "tokens_in_uncached": 1111887,
+    "tokens_in_cached": 7033024,
+    "tokens_out": 95415,
+    "turns": null,
+    "api_calls": 140,
+    "method": "sum-of-140-events",
+    "cost_usd": 3.8051,
+    "cached_share": 0.863
+  },
+  "cpu_seconds_python": 10631.5,
+  "cpu_seconds_counted": 10197.8,
+  "cpu_seconds_uncounted": 7.7,
+  "cpu_seconds_exempt": 426.0,
+  "python_processes": 47,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 160,
+  "fits_counted": 156,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "b50b96b",
+      "message": "baseline"
+    },
+    {
+      "commit": "36a537c",
+      "message": "time features + route + early stopping"
+    },
+    {
+      "commit": "a2f97f9",
+      "message": "full train + AUC early stopping on eval"
+    },
+    {
+      "commit": "467c5cf",
+      "message": "baseline hyperparams + time features + es"
+    },
+    {
+      "commit": "55578bf",
+      "message": "month/dow categorical again + hour features"
+    },
+    {
+      "commit": "bd607d6",
+      "message": "drop route, keep hour features"
+    },
+    {
+      "commit": "f1d296d",
+      "message": "smoothed target encoding for carrier/origin/dest/route"
+    },
+    {
+      "commit": "a40fdea",
+      "message": "probe: regularization configs compared"
+    },
+    {
+      "commit": "39e85ac",
+      "message": "probe: depth/lr/mcw/lambda around depth3"
+    },
+    {
+      "commit": "54cdf61",
+      "message": "ensemble of 8 depth-3 models"
+    },
+    {
+      "commit": "095eae0",
+      "message": "probe feature variants in d3lam10 regime"
+    },
+    {
+      "commit": "71e79e7",
+      "message": "probe interaction categoricals"
+    },
+    {
+      "commit": "23210a5",
+      "message": "probe model tuning around carrier_hour"
+    },
+    {
+      "commit": "5b1ef88",
+      "message": "fix mcw dup + probe lr03/lr05 with hc"
+    },
+    {
+      "commit": "8d02543",
+      "message": "probe lr02 and lam100"
+    },
+    {
+      "commit": "6ee1f40",
+      "message": "probe hc48, carrier_month, hc+doy at lr03"
+    },
+    {
+      "commit": "bdabfe3",
+      "message": "bagged ensemble K=5 subsample 0.8"
+    },
+    {
+      "commit": "5cc5b5c",
+      "message": "lr-diversity ensemble (no sampling)"
+    },
+    {
+      "commit": "c450d1e",
+      "message": "3-member ensemble d4lr02+d4lr03+d3lr05"
+    },
+    {
+      "commit": "4fab2ef",
+      "message": "probe many cheap diverse ensemble members"
+    },
+    {
+      "commit": "f35b4da",
+      "message": "ensemble with loss + lossguide diversity"
+    },
+    {
+      "commit": "1b36d11",
+      "message": "slow+fast mixed ensemble, hb3 feature probe"
+    },
+    {
+      "commit": "e2a1490",
+      "message": "feature-diverse ensemble: 6 interaction variants"
+    },
+    {
+      "commit": "22a46b5",
+      "message": "micro-tune fast member config"
+    },
+    {
+      "commit": "455c3e7",
+      "message": "fixed 4-member roster ensemble"
+    },
+    {
+      "commit": "b0dc188",
+      "message": "5-member roster: +seed replica"
+    },
+    {
+      "commit": "03403a6",
+      "message": "d6 fast core in roster"
+    },
+    {
+      "commit": "2a1437b",
+      "message": "slow member upgraded to d6lr02"
+    },
+    {
+      "commit": "4141917",
+      "message": "slow anchor member upgrade"
+    },
+    {
+      "commit": "2883a25",
+      "message": "FINAL.md: final writeup"
+    }
+  ],
+  "cpu_seconds_budgeted": 10205.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 28.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "4141917",
+  "best_commit_eval_auc": 0.7384,
+  "best_commit_holdout_auc": 0.738428574576,
+  "best_commit_holdout_ap": 0.730453050995721,
+  "best_commit_error": null,
+  "finalized_best": true
+}

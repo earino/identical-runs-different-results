@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e8cfd5f	0.7141	ok	3	baseline
+2	4631cd3	0.7089	ok	2	feat: dep time decomposition + route/carrier categoricals
+3	a384a85	0.7127	ok	2	feat: add dep_hour/dep_min to baseline
+4	2c9a919	0.7126	ok	4	model: internal-val early stopping + refit on full train
+5	68221f5	0.7054	ok	3	feat: add route categorical
+6	9c56641	0.7153	ok	5	feat: dep hour/min/minutes with ES model
+7	fd9d6df	0.7144	ok	10	model: deeper trees depth8 lr0.03 + regularization
+8	a682d2b	0.7158	ok	5	feat: airport/carrier frequency encodings
+9	61f241a	0.7178	ok	24	model: 5-member diverse XGB ensemble
+10	f9002d9	0.7172	ok	27	feat: hub/connectivity count features
+11	77ddf0c	0.7192	ok	56	model: 10-member diverse ensemble
+12	3a36726	0.7226	ok	64	feat: hour-level congestion counts
+13	a44ea3c	0.7249	ok	68	feat: route freq + hour fractions + origin dow-hour
+14	ee43a61	0.7279	ok	95	feat: 30-min congestion + route-hour + dest dow-hour
+15	c194813	0.7300	ok	95	feat: 15-min bins, carrier-hub-hour, origin seasonal volume
+16	38363dd	0.7215	ok	116	feat: smoothed congestion windows + daily volume
+17	1d8db4d	0.7301	ok	113	feat: airport arrival/departure throughput totals
+18	7c5d6cf	0.7292	ok	53	perf: single shared tree budget, one fit per member
+19	5431d76	0.7301	ok	71	model: 14 members with shared budget
+20	42db6b0	0.7303	ok	84	feat: peak-hour congestion ratios
+21	051f991	0.7306	ok	88	feat: smoothed congestion windows only
+22	2863574	0.7301	ok	82	model: max_cat_threshold=128
+23	9f5ecee	0.7314	ok	101	feat: carrier hub-size and hub-share features
+24	f1fe812	0.7310	ok	114	feat: route competition features
+25	fb0ccf9	0.7312	ok	94	model: max_bin=128
+26	3384207	0.7304	ok	111	feat: seasonal share features
+27	ca1a8da	0.7308	ok	95	model: lossguide members replace deep trees
+28	6247357	0.0000	timeout	120	model: per-member round scaling by learning rate
+29	44ab29c	0.7317	ok	46	model: faster lr=0.10 shared across members
+30	e682673	0.7328	ok	77	model: 24-member ensemble
+31	d53bcac	0.7330	ok	95	model: 32-member ensemble
+32	c155c2f	0.7351	ok	102	feat: lagged (previous-hour) congestion
+33	834f386	0.7356	ok	98	feat: next-hour congestion
+34	d902178	0.7391	ok	89	feat: 30-min lead/lag congestion
+35	8c47c04	0.0000	timeout	120	feat: 15-min lead/lag congestion
+36	ca60901	0.7383	ok	117	feat: 15-min lead/lag congestion (24 members)
+37	498f791	0.7391	ok	91	feat: 2-hour lag congestion
+38	a504f8d	0.7393	ok	107	model: 40-member ensemble
+39	5a0eade	0.0000	timeout	120	feat: congestion trend deltas
+40	700b435	0.0000	timeout	120	model: 36 members + congestion trend deltas

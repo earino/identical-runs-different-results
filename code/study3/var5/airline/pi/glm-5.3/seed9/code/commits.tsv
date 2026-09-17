@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	5073808	1789619782	baseline
+01	a745c24	1789620346	numeric time features: hour, minute-of-day, sin/cos, numeric calendar cols
+02	8b86621	1789620410	feat v1 + 300 trees lr .1 depth 6
+03	ff61909	1789622706	one-hot carrier/origin/dest, numeric time feats, 800 trees lr.05
+04	608a471	1789623094	onehot 1600 trees lr .05
+05	22b9749	1789623212	onehot 3200 trees lr .05
+06	90c6213	1789623547	onehot 3200 trees mcw 10
+07	d572400	1789624069	structural summaries: origin/dest/route mean distance
+08	f4f189b	1789625436	recency weighting 0.7->1.0 by month
+09	d2e612f	1789625704	recency 0.7 ramp, 2600 trees
+10	9451def	1789625753	recency 0.7 ramp, 2000 trees
+11	201375e	1789625867	carrier x hour dummies for cells >=100 flights
+12	2b54dbc	1789625954	origin x hour dummies >=100 flights
+13	fb335f6	1789626240	origin-hour dummies + 2600 trees

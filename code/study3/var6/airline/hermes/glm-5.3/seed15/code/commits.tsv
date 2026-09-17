@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	13fcfc3	1789587069	baseline
+01	96badfa	1789587404	8-bag subsample.7 colsample.8
+02	5797b08	1789587438	8-bag + hour feat
+03	72cf14e	1789587555	bag + origin-hour/dest-hour TE m=100
+04	742af5e	1789587609	diversity bag depths
+05	7158119	1789587618	diversity bag depths+colsample
+06	e1d064b	1789587654	rank averaging
+07	9b7f9bc	1789587724	feature-view ensemble
+08	a44a6c1	1789587825	lean 400 rounds
+09	e214b01	1789587975	lean view + dep trig
+10	8b96682	1789588050	6 lean-view models
+11	4fc1762	1789588142	fix: normalized rank average to [0,1] (contract)

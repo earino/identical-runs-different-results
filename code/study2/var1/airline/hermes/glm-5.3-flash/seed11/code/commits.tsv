@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	84eb0f3	1789535164	baseline
+01	4609d72	1789535230	stronger model: dep_hour cyclic feats, 800x0.05 d8, early stopping on time split
+02	2ae4ef4	1789535244	add early_stopping_rounds=50 on time-ordered val
+03	6050528	1789535280	ablation: baseline features + strong model + early stop, add diagnostics
+04	dc9714e	1789535291	full-data fit, fixed 200 trees lr.05 d8 subsample
+05	43a0153	1789535301	d6 400x0.05 subsample .9 full data
+06	75eea06	1789535325	internal 4-fold CV grid over 8 model configs
+07	af1083f	1789535361	dep_delay_rate target encoding (OOF-validated), 200x0.05 d6
+08	12277d3	1789535396	dep_hour feature (minutes + red-eye semantics), 200x0.05 d6
+09	31ff89a	1789535410	regularized baseline: 30x0.1 d6 mcw20 gamma1, drop dep_hour
+10	6bda92c	1789535422	seed+subsample bag of 5 xgb models, 30x0.1 d6
+11	c8dfb78	1789535429	bag of 10, colsample .8
+12	8ec8b85	1789535438	heterogeneous bag of 12 (mixed depth/lr)
+13	91e58a5	1789535448	hetero bag 16 (8 configs x 2 seeds, depth 4-8)
+14	6c86ece	1789535463	hetero bag 16 + smoothed ddr target encoding
+15	9449b85	1789535536	logit averaging for the 16-member bag
+16	a372007	1789535642	bag 32 (8 cfg x 4 seeds), prob mean
+17	f59af1d	1789535770	bag 36: add depth-3 and depth-10 families
+18	bcacc49	1789535981	ablation: drop raw DayofMonth category, keep ddr_DayofMonth
+19	e143ab1	1789536027	also drop raw Month, keep ddr_Month
+20	b6fb581	1789536124	add depth-12 families to the bag (42 members)

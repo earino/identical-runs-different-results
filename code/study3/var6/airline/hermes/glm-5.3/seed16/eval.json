@@ -1,0 +1,192 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 16,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:42:22+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s16-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T23:00:32+00:00",
+  "wall_seconds": 8289.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18129.9,
+  "endpoint_at_end": "ok",
+  "head": "17c4cf3",
+  "n_commits": 23,
+  "n_experiments": 32,
+  "n_ok": 29,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7369,
+  "final_eval_auc": 0.7369,
+  "holdout_auc": 0.738175148092,
+  "holdout_ap": 0.7276041078458724,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.023404396356,
+  "generalization_gap": -0.0012751480920000224,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9056513,
+    "tokens_in_uncached": 3236865,
+    "tokens_in_cached": 5819648,
+    "tokens_out": 96395,
+    "turns": null,
+    "api_calls": 127,
+    "method": "cumulative-max",
+    "cost_usd": 6.4689,
+    "cached_share": 0.643
+  },
+  "cpu_seconds_python": 17995.1,
+  "cpu_seconds_counted": 6198.0,
+  "cpu_seconds_uncounted": 11329.4,
+  "cpu_seconds_exempt": 467.6,
+  "python_processes": 74,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1918,
+  "fits_counted": 369,
+  "fits_uncounted": 1537,
+  "commits": [
+    {
+      "commit": "2ec2d2a",
+      "message": "baseline"
+    },
+    {
+      "commit": "8c76d40",
+      "message": "exp5: shallow regularized 200@d3 mcw50"
+    },
+    {
+      "commit": "a906698",
+      "message": "exp7: mins-since-midnight + te_O + hour*dist + log_dist"
+    },
+    {
+      "commit": "dce5cba",
+      "message": "exp8: bagged ensemble 8x d4 ss/cs 0.8"
+    },
+    {
+      "commit": "64cc6b7",
+      "message": "exp9: 16-model bag"
+    },
+    {
+      "commit": "424a82e",
+      "message": "exp10: full feature set (sin/cos, te_hour30, counts) + 16-bag"
+    },
+    {
+      "commit": "97f9f59",
+      "message": "exp11: two-view ensemble h30/h10 time-TE"
+    },
+    {
+      "commit": "e5ca19a",
+      "message": "exp12: OOF target encoding (no self-leak) + 16-bag"
+    },
+    {
+      "commit": "733c0ca",
+      "message": "exp13: congestion counts (origin x 30min window, origin x dow)"
+    },
+    {
+      "commit": "9a5f204",
+      "message": "exp14: carrier congestion count"
+    },
+    {
+      "commit": "6d25d96",
+      "message": "exp15: mixed colsample feature-bagging"
+    },
+    {
+      "commit": "9fef40b",
+      "message": "exp17: 10-min time TE + origin x carrier count"
+    },
+    {
+      "commit": "260d185",
+      "message": "exp18: rich periodic hour basis k=2..7"
+    },
+    {
+      "commit": "5fbb883",
+      "message": "exp19: k24 hour harmonics + doy harmonics k1..4"
+    },
+    {
+      "commit": "00eeaea",
+      "message": "exp20: d6 ss.9 + dow harmonics"
+    },
+    {
+      "commit": "10ac671",
+      "message": "exp21: d7 n300 lr.08"
+    },
+    {
+      "commit": "b53ede9",
+      "message": "exp22: d8 n200 lr.1"
+    },
+    {
+      "commit": "0f43496",
+      "message": "exp23: d10 n150"
+    },
+    {
+      "commit": "53a2c58",
+      "message": "exp24: d12 n120"
+    },
+    {
+      "commit": "d429454",
+      "message": "exp25: d14 n100"
+    },
+    {
+      "commit": "49802e9",
+      "message": "exp27: d12 n120 mcw30"
+    },
+    {
+      "commit": "19b89dc",
+      "message": "exp30: 12 models n150 d12"
+    },
+    {
+      "commit": "4e0ef50",
+      "message": "exp32: origin-conditioned time harmonics"
+    },
+    {
+      "commit": "17c4cf3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17527.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 134.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "4e0ef50",
+  "best_commit_eval_auc": 0.7369,
+  "best_commit_holdout_auc": 0.738175148092,
+  "best_commit_holdout_ap": 0.7276041078458724,
+  "best_commit_error": null,
+  "finalized_best": true
+}

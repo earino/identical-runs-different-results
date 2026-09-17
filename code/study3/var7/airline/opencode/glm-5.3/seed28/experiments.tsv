@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	5245ee1	0.7141	ok	4	baseline
+2	c7fd8a9	0.7135	ok	5	tuned xgb + early stopping
+3	3d34220	0.7045	ok	6	FE v1: time features + route
+4	6a6f7ea	0.7287	ok	6	hour/minute FE + shallow L1-regularized xgb
+5	2a046ba	0.7404	ok	5	drop M/Dom + Block15 + HourCar
+6	ffb0f10	0.7512	ok	49	HourOrig + d12/lr.02/a2 tuned for interaction features
+7	c104af9	0.7536	ok	51	Block20 + d12/d3 ensemble
+8	bb3ca05	0.7556	ok	85	DevDist + 3-member seed/depth ensemble
+9	1cc2a51	0.7569	ok	91	subsample-bagged deep members
+10	033e7cb	0.7566	ok	74	mixed col0.4/0.85 deep members
+11	9ae6e90	0.7568	ok	97	mct192 deep members
+12	a7b18c5	0.7568	ok	86	shallow d5 swap
+13	3439e28	0.7572	ok	89	deep member block diversity (20/15)
+14	343830c	0.7575	ok	99	mct192 + shallow d5 combo

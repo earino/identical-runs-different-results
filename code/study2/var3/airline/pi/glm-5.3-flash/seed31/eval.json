@@ -1,0 +1,148 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 31,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:17:19+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s31-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:51:03+00:00",
+  "wall_seconds": 5624.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18419.2,
+  "endpoint_at_end": "ok",
+  "head": "dc3332f",
+  "n_commits": 12,
+  "n_experiments": 24,
+  "n_ok": 21,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7442,
+  "final_eval_auc": 0.7442,
+  "holdout_auc": 0.74634555777,
+  "holdout_ap": 0.7318448705800418,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03157480603399998,
+  "generalization_gap": -0.0021455577700000283,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6804532,
+    "tokens_in_uncached": 46388,
+    "tokens_in_cached": 6758144,
+    "tokens_out": 83128,
+    "turns": null,
+    "api_calls": 119,
+    "method": "sum-of-119-events",
+    "cost_usd": 0.2513,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 18370.5,
+  "cpu_seconds_counted": 3380.8,
+  "cpu_seconds_uncounted": 14653.7,
+  "cpu_seconds_exempt": 336.0,
+  "python_processes": 77,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 1,
+  "fits_total": 399,
+  "fits_counted": 47,
+  "fits_uncounted": 349,
+  "commits": [
+    {
+      "commit": "ac8428a",
+      "message": "baseline"
+    },
+    {
+      "commit": "8767451",
+      "message": "FE v1: int date parts, hour/minute, cyclical encodings, log dist, route cat; 100 trees"
+    },
+    {
+      "commit": "77ebe69",
+      "message": "ablation: FE v1 with baseline 30-tree params"
+    },
+    {
+      "commit": "fb2f2ee",
+      "message": "union FE (baseline cats + time numerics + route) + 1000 trees lr.05 depth8 ES on 20pct holdout"
+    },
+    {
+      "commit": "f78367e",
+      "message": "baseline features + 2000 trees lr.03 depth6 subs.8 colsample.8 ES100 internal holdout"
+    },
+    {
+      "commit": "787a66a",
+      "message": "baseline feats, depth4 n300 lr.1 no subsampling"
+    },
+    {
+      "commit": "b2cac4e",
+      "message": "n60 d5 lr.12 + doy numeric, canonical order"
+    },
+    {
+      "commit": "e4e8a44",
+      "message": "n150 d4 lr.08 + doy + dom num + dt10 cat"
+    },
+    {
+      "commit": "ed11c0d",
+      "message": "n300 d16 lr.03 lam10 alpha.5, dt10cat, -DoMcat"
+    },
+    {
+      "commit": "3c37164",
+      "message": "dt15cat + OOF TE(O,D,C,route) + n300 d16 lr.03 lam10 a.5 ss.8 cs.9"
+    },
+    {
+      "commit": "f2e0b6f",
+      "message": "3-seed average of exp13 config"
+    },
+    {
+      "commit": "dee1bb0",
+      "message": "lr-mix 3x d14 ensemble (M7)"
+    },
+    {
+      "commit": "dc3332f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18034.5,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 48.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "dee1bb0",
+  "best_commit_eval_auc": 0.7442,
+  "best_commit_holdout_auc": 0.74634555777,
+  "best_commit_holdout_ap": 0.7318448705800418,
+  "best_commit_error": null,
+  "finalized_best": true
+}

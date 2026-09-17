@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9edf92a	0.7141	ok	4	baseline
+2	ecd8db0	0.7003	ok	6	time features + route cat, 300x0.08 d7
+3	26b889b	0.7123	ok	3	baseline feats, 300x0.08 d6
+4	37dffd3	0.7146	ok	1	tod+cyclic+ordinal feats, baseline model
+5	bcf5f8f	0.7055	ok	2	add Route categorical
+6	b185366	0.7131	ok	3	target encoding OOF, baseline model
+7	cb13c70	0.7162	ok	8	200x0.05 d5 mcw10 subsample0.8
+8	04f4fdf	0.7187	ok	4	600x0.03 d4 mcw25 lambda5 cs0.7
+9	c0c8f0a	0.7201	ok	8	1500x0.02 d4 mcw40 lambda10 cs0.6
+10	4d0ebd7	0.7198	ok	13	3000x0.01 d4 mcw60 lambda10 cs0.6
+11	c0c8f0a	0.7201	ok	8	--help
+12	1e99f71	0.7218	ok	10	TE feats + 1500x0.02 d4
+13	a56e278	0.7236	ok	10	TE + freq encodings
+14	998bf69	0.7252	ok	12	extra TE keys (dest_hour, *_dow, car_dest)
+15	68bc717	0.7359	ok	13	add car_org + route_hour TE/freq
+16	3de7a0d	0.7397	ok	17	finer interactions: route_dow, org_hour_dow, car_route_hour
+17	21bec4d	0.7507	ok	19	30-min bucket TE (route/org/car)
+18	7ca3246	0.7552	ok	21	15-min bucket TE route/org + dest_b30
+19	1890ee7	0.7553	ok	24	10-min bucket TE route/org + dest_b15
+20	5a8f4d9	0.7540	ok	26	depth6 1200x0.025 with TE features
+21	579b41e	0.7580	ok	21	ablation: drop Origin/Dest/Carrier categoricals
+22	5d8a12c	0.7595	ok	23	depth5, trimmed cats
+23	88220e3	0.7591	ok	26	depth6, trimmed cats
+24	e263f92	0.7589	ok	29	dow-interaction encodings
+25	b505163	0.7584	ok	33	10-fold OOF TE
+26	ebfbb0d	0.7597	ok	39	3-model ensemble d4/d5/d6
+27	64d8e47	0.7591	ok	39	TE smoothing k x3
+28	f871484	0.7592	ok	40	heavier regularization
+29	b865a60	0.7593	ok	40	lighter regularization
+30	85ab436	0.7595	ok	41	traffic shares + route_month
+31	31a53e7	0.7542	ok	40	calendar seasonality encodings
+32	4672e0c	0.7597	ok	38	ablation: minimal numeric features
+33	54663d6	0.7549	ok	36	real ablation: minimal numerics
+34	7a70432	0.7601	ok	43	max_bin=512
+35	fefe168	0.7603	ok	57	5-model ensemble
+36	55faf7f	0.7603	ok	66	max_bin=1024
+37	e387f4e	0.7595	ok	58	colsample_bynode
+38	89923ae	0.7604	ok	69	8-model ensemble lr0.03
+39	af5261f	0.7605	ok	102	randomized 12-model ensemble
+40	dd49d11	0.7608	ok	74	randomized 9-model ensemble (runtime-safe)

@@ -1,0 +1,25 @@
+n	commit	eval_auc	status	seconds	description
+1	5527db1	0.7141	ok	3	baseline
+2	d545e2f	0.7062	ok	8	600 trees d7 lr0.1 + temporal parsing + Route
+3	43e51f0	0.7151	ok	3	f3 features + 150 trees d6 full-train
+4	53f5851	0.7191	ok	2	d4 lr0.05 300 trees
+5	2e4a591	0.7258	ok	17	14-member diverse ensemble (DOW base, parts interactions)
+6	ef837d7	0.0000	crash	2	26-member ensemble
+7	1278f07	0.7264	ok	30	26-member ensemble (fixed level ordering)
+8	04e11cb	0.7276	ok	31	group-weighted 26-member blend
+9	756af71	0.7551	ok	70	exp9: multiscale schedule-congestion features, d16-24 subsampled members + old-family mix
+10	9ecf387	0.7579	ok	77	exp10: CHC20 carrier banks + DETA8 arrival congestion + DepMod; old-mix 20%
+11	13452bd	0.7579	ok	89	exp11: seed-diverse deep ensemble, 5 members + old mix
+12	18abe38	0.7574	ok	94	exp12: 6 deep members (add d12c50n300) + old mix
+13	0093d7e	0.7581	ok	83	exp13: 4-seed deep ensemble + d24 + old mix
+14	5e5aa83	0.7584	ok	100	exp14: 5-seed deep ensemble + d24 + old mix
+15	d5ea201	0.7469	ok	70	ablation: no congestion features (deep members on BASE)
+16	1f12c4a	0.7582	ok	102	ablation: OLD_W=0 (no decorrelated old member)
+17	99dad26	0.7510	ok	19	ablation: single deep member only
+18	592e0fe	0.7454	ok	114	ablation: +Month/DayofMonth calendar features
+19	bd07ae5	0.7584	ok	105	replication: best config (5 seeds + d24 + old mix)
+20	5ac1b9d	0.7296	ok	12	ablation: shallow d4-d6 members on ALLB features
+21	16a9947	0.7586	ok	106	exp21: deeper d28 decorrelation member
+22	230a2b6	0.7585	ok	107	exp22: d32 decorrelation member
+23	af55092	0.7556	ok	98	ablation: secondary congestion features off
+24	527b8a2	0.7585	ok	108	exp24: OLD_W=1.25

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a599bdc	0.7141	ok	4	baseline
+2	77cddd4	0.7092	ok	7	feat eng: time/route/freq + 500t
+3	420a522	0.7119	ok	3	400t lr0.05 depth6 mcw5 sub/col0.8
+4	3df947e	0.7127	ok	1	baseline + hour/minute/tod
+5	1f3541e	0.7123	ok	3	early stopping internal 15% val
+6	8388ab0	0.7132	ok	2	baseline + hour, 30t
+7	5d65ebb	0.7098	ok	2	eng features + 30t baseline model
+8	47c1506	0.7131	ok	1	baseline + route frequency
+9	152d500	0.7158	ok	2	depth4 100t, train AUC diag
+10	b28561e	0.7160	ok	2	depth3 200t
+11	143917b	0.7140	ok	2	depth2 400t
+12	81eb62d	0.7160	ok	2	depth3 600t lr0.05
+13	e1ce6e1	0.7023	ok	3	eng features depth3 200t
+14	aed67da	0.7014	ok	3	baseline + route cat depth3 200t
+15	a8bae4a	0.7155	ok	3	depth3 lr.05 mcw10 sub/col.8 lam3
+16	b2cdb72	0.7047	ok	2	target encoding (full-train) depth3
+17	39c9684	0.7168	ok	5	ensemble of 5 shallow models
+18	b777bb9	0.7174	ok	8	ensemble of 10 diverse models
+19	a6e8471	0.7181	ok	8	ensemble + origin-hour freq
+20	495e5ae	0.7169	ok	9	ensemble + congestion bundle
+21	df42f21	0.7163	ok	8	ensemble + route_hour
+22	9998a96	0.7181	ok	9	ensemble + dest_hour
+23	3da14c3	0.7180	ok	9	ensemble + origin total
+24	3056f46	0.7183	ok	11	ensemble 12 incl lossguide
+25	c478494	0.7182	ok	54	ensemble 14 incl dart
+26	0f7a124	0.7180	ok	17	ensemble of 19 models
+27	87bc175	0.7183	ok	10	importance diagnostic
+28	2899fe5	0.7182	ok	11	OOF target enc carrier
+29	b7e09be	0.0000	crash	2	ablation drop DayofMonth
+30	b905240	0.7182	ok	10	ablation drop DayofMonth fixed
+31	06dd085	0.7176	ok	9	ensemble row-bagging 80%
+32	245ce86	0.7182	ok	11	add is_weekend
+33	431a255	0.7183	ok	10	colsample_bynode 0.8
+34	c346c2f	0.7188	ok	19	add carrier_hour
+35	722e95b	0.7161	ok	11	add carrier size + hour share
+36	dff7a0d	0.7157	ok	10	carrier-hour share only
+37	950ebf2	0.7189	ok	10	add dest_hour on best
+38	3cd802d	0.7191	ok	11	add carrier_origin
+39	dcc7c95	0.7187	ok	12	add carrier_dest
+40	2d5d6b3	0.7190	ok	12	add route count

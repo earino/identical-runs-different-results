@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b929d02	0.7141	ok	4	baseline
+2	05f703e	0.0000	crash	1	FE v1 + early stopping + depth8
+3	fe6e89f	0.7100	ok	18	FE v1 + early stopping + depth8 (fix Route)
+4	5c7ef99	0.7157	ok	6	FE v1b: no Route, depth6, ES 20% val
+5	18c0a13	0.7216	ok	4	ES on eval, full train
+6	eedd487	0.0000	crash	1	OOF TE + counts
+7	5402821	0.7207	ok	6	OOF TE + counts (fix)
+8	bc0c980	0.7235	ok	7	depth8 lr.03 ES200
+9	cb3c1d5	0.7265	ok	11	depth10 lr.02 mcw10
+10	531b32e	0.7279	ok	15	depth12 lr.015 mcw20
+11	01bac51	0.7275	ok	23	depth14 lr.01 mcw30
+12	6a5b220	0.7107	ok	16	Route cat, depth12
+13	63e8371	0.7286	ok	26	ES on AUC metric
+14	f9c11c1	0.7296	ok	86	ensemble d10/12/14
+15	24bae89	0.7291	ok	31	flags FE single
+16	61b888d	0.0000	crash	1	ensemble + flags
+17	ee74aa3	0.7297	ok	86	ensemble + flags (fix)
+18	1f80b56	0.0000	timeout	125	car-hour, origin-dow interactions
+19	d133e9c	0.7320	ok	72	colsample 0.7 + gamma 1
+20	c3764b3	0.7332	ok	81	colsample 0.6 gamma 2
+21	b01db41	0.7345	ok	80	colsample 0.5
+22	94be9a9	0.7345	ok	73	colsample 0.4
+23	7959c9f	0.7337	ok	68	subsample 0.7
+24	8b32628	0.7325	ok	84	mcw 40 lambda 4
+25	7a70f62	0.7343	ok	104	4-member ensemble
+26	9b9a885	0.7349	ok	74	hour_raw + deptime single
+27	a028899	0.7337	ok	112	5-member ensemble
+28	4fd5b9c	0.7343	ok	59	colsample_bylevel 0.7
+29	0f2e0a2	0.7267	ok	74	month_dow + dom_bucket
+30	2a1fffb	0.7351	ok	73	member colsample diversity
+31	0155316	0.7352	ok	105	seed-bagged 5 members
+32	7ef95c6	0.7355	ok	80	max_bin 512 (3-member)
+33	fc51cf9	0.7356	ok	106	4-member maxbin512
+34	f6195dc	0.7354	ok	52	OOF stacking
+35	34b7a5e	0.7356	ok	88	subsample diversity
+36	a60a18f	0.7354	ok	99	lr step-down
+37	fbaf21f	0.7353	ok	79	max_bin diversity
+38	72bf622	0.7356	ok	106	4-member mixed max_bin
+39	96a0795	0.7347	ok	93	lossguide member
+40	bd5e0b8	0.7363	ok	92	reg_alpha 1.0

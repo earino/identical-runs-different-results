@@ -1,0 +1,112 @@
+"""XGBoost binary classifier on the airline dataset. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import KFold
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+ALPHA = 20  # target-encoding smoothing
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+y = (train[TARGET] == POSITIVE).astype(int)
+
+# --- target encodings (fit on TRAIN only) --------------------------------------
+TE_COLS = ["UniqueCarrier", "Origin", "Dest", "route"]
+train = train.assign(route=train["Origin"].astype(str) + "_" + train["Dest"].astype(str))
+evald = evald.assign(route=evald["Origin"].astype(str) + "_" + evald["Dest"].astype(str))
+GLOBAL_MEAN = float(y.mean())
+
+
+def smoothed_map(df: pd.DataFrame, col: str, yy: pd.Series) -> dict:
+    grp = df.groupby(col, observed=True)[TARGET]
+    s = grp.apply(lambda s: (s == POSITIVE).sum())
+    n = grp.size()
+    return ((s + ALPHA * GLOBAL_MEAN) / (n + ALPHA)).to_dict()
+
+
+te_maps = {c: smoothed_map(train, c, y) for c in TE_COLS}
+
+FEATS = [
+    "Month", "DayofMonth", "DayOfWeek", "DepTime", "hour", "minute",
+    "tod_sin", "tod_cos", "Distance", "logDist",
+] + [c + "_te" for c in TE_COLS]
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = pd.DataFrame(index=df.index)
+    X["Month"] = pd.to_numeric(df["Month"].astype(str).str.slice(2), errors="coerce")
+    X["DayofMonth"] = pd.to_numeric(df["DayofMonth"].astype(str).str.slice(2), errors="coerce")
+    X["DayOfWeek"] = pd.to_numeric(df["DayOfWeek"].astype(str).str.slice(2), errors="coerce")
+    dt = pd.to_numeric(df["DepTime"], errors="coerce")
+    X["DepTime"] = dt
+    X["hour"] = dt // 100
+    X["minute"] = dt % 100
+    tod = (X["hour"] * 60 + X["minute"]) / 1440.0
+    X["tod_sin"] = np.sin(2 * np.pi * tod)
+    X["tod_cos"] = np.cos(2 * np.pi * tod)
+    dist = pd.to_numeric(df["Distance"], errors="coerce")
+    X["Distance"] = dist
+    X["logDist"] = np.log1p(dist)
+    route = df["Origin"].astype(str) + "_" + df["Dest"].astype(str)
+    for c in TE_COLS:
+        src = route if c == "route" else df[c]
+        X[c + "_te"] = src.map(te_maps[c]).fillna(GLOBAL_MEAN)
+    return X[FEATS]
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+model = xgb.XGBClassifier(
+    n_estimators=200,
+    max_depth=6,
+    learning_rate=0.1,
+    tree_method="hist",
+    random_state=SEED,
+    n_jobs=N_JOBS,
+)
+
+t0 = time.time()
+X_train = prepare(train)
+# out-of-fold target encoding for the training matrix (no self-leakage)
+kf = KFold(n_splits=5, shuffle=True, random_state=SEED)
+oof = pd.DataFrame(index=train.index, columns=[c + "_te" for c in TE_COLS], dtype=float)
+for tr_idx, va_idx in kf.split(train):
+    tr_part = train.iloc[tr_idx]
+    for c in TE_COLS:
+        m = smoothed_map(tr_part, c, y.iloc[tr_idx])
+        oof.iloc[va_idx, oof.columns.get_loc(c + "_te")] = train[c].iloc[va_idx].map(m).fillna(GLOBAL_MEAN).to_numpy()
+for c in TE_COLS:
+    X_train[c + "_te"] = oof[c + "_te"].to_numpy()
+model.fit(X_train, y.to_numpy())
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prepare(df))[:, 1]
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

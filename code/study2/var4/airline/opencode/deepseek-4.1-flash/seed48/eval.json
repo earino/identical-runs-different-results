@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 48,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:14:24+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s48-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:22:30+00:00",
+  "wall_seconds": 485.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 877.6,
+  "endpoint_at_end": "ok",
+  "head": "9867770",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7352,
+  "final_eval_auc": 0.7352,
+  "holdout_auc": 0.7347855706140001,
+  "holdout_ap": 0.7253020614983237,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02001481887800005,
+  "generalization_gap": 0.00041442938599989265,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3602543,
+    "tokens_in_uncached": 3602543,
+    "tokens_in_cached": 0,
+    "tokens_out": 17307,
+    "turns": null,
+    "api_calls": 97,
+    "method": "sum-of-97-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 762.4,
+  "cpu_seconds_counted": 731.5,
+  "cpu_seconds_uncounted": 0.8,
+  "cpu_seconds_exempt": 30.1,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 42,
+  "fits_counted": 41,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "963b7e6",
+      "message": "baseline"
+    },
+    {
+      "commit": "fcc2054",
+      "message": "model: regularize (mcw10, lambda5, subsample, colsample), 60 trees"
+    },
+    {
+      "commit": "0bf585a",
+      "message": "model: depth5, 80 trees, lr0.08"
+    },
+    {
+      "commit": "e20d51d",
+      "message": "FE: calendar ordinals + dep_hour"
+    },
+    {
+      "commit": "59e5a01",
+      "message": "FE: dep_minute, day-of-year, is_weekend"
+    },
+    {
+      "commit": "1c42909",
+      "message": "model: 220 trees lr0.03 mcw20 lambda10 colsample0.6"
+    },
+    {
+      "commit": "d25b5a9",
+      "message": "model: 400 trees lr0.02 mcw30 lambda20 colsample0.5"
+    },
+    {
+      "commit": "a438ca0",
+      "message": "FE: route/airport/carrier frequency features"
+    },
+    {
+      "commit": "2f4ca2e",
+      "message": "model: depth6 with strong reg"
+    },
+    {
+      "commit": "4acf420",
+      "message": "model: depth7 with strong reg"
+    },
+    {
+      "commit": "0426198",
+      "message": "model: depth8 with strong reg"
+    },
+    {
+      "commit": "462954f",
+      "message": "model: depth10 with strong reg"
+    },
+    {
+      "commit": "aff7f4c",
+      "message": "model: depth12 with strong reg"
+    },
+    {
+      "commit": "6e9e82b",
+      "message": "model: depth15 with strong reg"
+    },
+    {
+      "commit": "3dde532",
+      "message": "FE: focused smoothed target encoding carrier/origin/dest"
+    },
+    {
+      "commit": "35404e0",
+      "message": "model: depth20"
+    },
+    {
+      "commit": "4fae4d5",
+      "message": "model: add reg_alpha=5"
+    },
+    {
+      "commit": "00298ba",
+      "message": "model: lambda10 alpha5"
+    },
+    {
+      "commit": "9ce9f87",
+      "message": "model: lambda5 alpha5"
+    },
+    {
+      "commit": "8a70eb4",
+      "message": "model: mcw20 lambda5 alpha5"
+    },
+    {
+      "commit": "9867770",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 732.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 115.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8a70eb4",
+  "best_commit_eval_auc": 0.7352,
+  "best_commit_holdout_auc": 0.7347855706140001,
+  "best_commit_holdout_ap": 0.7253020614983237,
+  "best_commit_error": null,
+  "finalized_best": true
+}

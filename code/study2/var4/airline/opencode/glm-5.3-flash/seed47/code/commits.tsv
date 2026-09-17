@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	6fa2b0e	1789516788	baseline
+01	6092633	1789516819	time-of-day features from DepTime
+02	0c56067	1789516833	600 trees lr0.05 early stopping on internal valid
+03	cc81a19	1789516932	lr0.03 n1200
+04	d1a83ed	1789516951	carrier x hour interaction
+05	80da251	1789517043	5-fold CV bagging ensemble
+06	e7ab83c	1789517084	10-fold bagging
+07	3388ea7	1789517433	max_cat_threshold=32
+08	b97c4bb	1789517705	max_bin=512
+09	43de632	1789517868	2x10-fold lr0.1 members
+10	a0d318f	1789518116	dep_hour categorical
+11	6622427	1789518613	30-min slot categorical
+12	6dd1577	1789518782	15-min slot categorical

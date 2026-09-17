@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a20bd60	0.7141	ok	4	baseline
+2	61d7676	0.7119	ok	4	500 trees lr 0.05
+3	9f77181	0.7061	ok	2	time-of-day + route features
+4	65154c2	0.7158	ok	2	depth4 100 trees lr0.1
+5	703db3b	0.7162	ok	1	depth3 100 trees lr0.1
+6	9baa057	0.7119	ok	2	depth2 100 trees lr0.1
+7	04815ee	0.7167	ok	2	depth3 300 trees lr0.05
+8	8e3d2f5	0.7167	ok	4	depth3 800 trees lr0.02
+9	363bf3b	0.7163	ok	3	depth3 300 + tod/hour/weekend
+10	ac6b26c	0.7167	ok	3	depth3 300 + freq encodings
+11	b04c277	0.7153	ok	2	depth3 300 + subsample/colsample/mcw/lambda
+12	7adbcae	0.7163	ok	3	depth4 300 trees lr0.05
+13	32d9c86	0.7173	ok	5	ensemble depth3/4/5 x300 lr0.05
+14	a645477	0.7173	ok	9	ensemble depth3-7 x300 lr0.05
+15	8c35038	0.7027	ok	7	ensemble + route categorical
+16	8c222cf	0.0000	crash	1	ensemble drop Origin/Dest
+17	5551a61	0.7007	ok	4	ensemble drop Origin/Dest
+18	d81b819	0.7178	ok	5	ensemble colsample0.8
+19	ac1ae66	0.7168	ok	4	ensemble colsample+subsample0.8
+20	1c2180f	0.7181	ok	4	ensemble colsample0.6
+21	e2f13ab	0.7181	ok	5	ensemble colsample0.5
+22	205af1e	0.7184	ok	70	seed-bagged ensemble 3 depths x 3 seeds
+23	454981b	0.7183	ok	10	seed-bag mcw10
+24	49b4d9d	0.7189	ok	10	seed-bag + OOF target encodings
+25	ab6414e	0.7208	ok	11	seed-bag + TE route/org_hour/carrier_org
+26	f0067e3	0.7208	ok	12	seed-bag + TE dest_hour/carrier_hour/org_month/dest_month
+27	36bb3b8	0.7209	ok	10	TE smooth20
+28	56613b9	0.7208	ok	11	TE smooth10
+29	123441a	0.7192	ok	11	TE smooth20, colsample1.0
+30	13af2d6	0.7209	ok	10	TE smooth20 colsample0.5
+31	0ec33bb	0.7208	ok	11	TE + carrier_dest/origin_dow/dest_dow
+32	09d4784	0.7213	ok	11	TE smooth20 + max_bin512
+33	0630a0c	0.7213	ok	12	max_bin1024
+34	98e688f	0.7212	ok	19	700 trees lr0.025
+35	0a33833	0.7215	ok	12	ensemble depth4/5/6 with TE
+36	ae6b1dd	0.7216	ok	16	ensemble depth5/6/7 with TE
+37	0ffe287	0.7213	ok	21	ensemble depth6/7/8 with TE
+38	a9d5a46	0.7219	ok	20	ensemble depth4-7 with TE
+39	f040d8c	0.7222	ok	22	ensemble depth3-7 with TE
+40	e00d2bd	0.7222	ok	36	ensemble depth3-7 x 5 seeds

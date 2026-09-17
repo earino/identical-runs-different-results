@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	95f9b2a	0.7141	ok	3	baseline
+2	34ec2ec	0.7132	ok	2	exp2: scale up trees + early stopping
+3	09b96ea	0.6918	ok	21	exp3: learning curve diagnostic
+4	089a621	0.7154	ok	13	exp4: hp sweep depth/lr/n/mcw
+5	2c8ae30	0.7168	ok	2	exp5: time/date features
+6	af4bf69	0.0000	crash	1	exp6: target encoding
+7	bed41a2	0.7023	ok	3	exp6: target encoding (fixed)
+8	6e46359	0.7027	ok	2	exp7: interaction features
+9	9eb50c0	0.7165	ok	3	exp8: ablation route_cnt+dist_log
+10	6406ba9	0.7203	ok	4	exp9: bagged ensemble
+11	91eecf9	0.7193	ok	10	exp10: bigger ensemble
+12	36ccec9	0.7213	ok	20	exp11: ensemble config sweep
+13	69b2060	0.7218	ok	13	exp12: diversity ensemble
+14	c4b139b	0.7260	ok	14	exp13: carrier_hour interaction cat
+15	a95f225	0.7226	ok	17	exp14: more interaction cats + counts
+16	83efdc8	0.7263	ok	15	exp15: counts only ablation
+17	97e1cbc	0.7255	ok	16	exp16: dow_hour only
+18	d9ba052	0.7335	ok	16	exp17: minute/qblock/holiday
+19	2674f05	0.7317	ok	18	exp18: mod + 16 members
+20	78941d7	0.7340	ok	18	exp19: no mod, 16 members
+21	a2e29c4	0.7354	ok	13	exp20: 24 diversified members
+22	b4bd551	0.7343	ok	20	exp21: 32 members
+23	c193952	0.7355	ok	13	exp22: logit averaging
+24	f70d966	0.7322	ok	15	exp23: carrier qblock
+25	4813909	0.7354	ok	43	exp24: member reg sweep
+26	dabb9a2	0.7290	ok	14	exp25: day count + carrier distbin
+27	24496d6	0.7347	ok	13	exp26: carrier_distbin ablation
+28	8b8afd0	0.7287	ok	36	exp27: stacking
+29	e43030d	0.7355	ok	23	exp28: 48 members double seed
+30	a3b831b	0.7379	ok	35	exp29: 150-tree members
+31	ceea88b	0.7411	ok	51	exp30: 250-tree members
+32	f21f5b3	0.7418	ok	74	exp31: 400-tree members
+33	d343839	0.7413	ok	65	exp32: 500-tree members
+34	70b9200	0.7448	ok	102	exp33: deeper members
+35	5276716	0.7451	ok	99	exp34: d678 300 trees
+36	98353aa	0.7446	ok	97	exp35: mcw=10
+37	416eb7d	0.7452	ok	107	exp36: colsample_bynode
+38	9a709eb	0.7452	ok	104	exp37: combined families
+39	22e8fc8	0.0000	timeout	120	exp38: reg_lambda=3
+40	1a13e11	0.7459	ok	87	exp40: 40 members time-safe

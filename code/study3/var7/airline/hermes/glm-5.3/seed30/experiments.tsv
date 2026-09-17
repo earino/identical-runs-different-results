@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	36e8557	0.7141	ok	3	baseline
+2	15c5e9b	0.0000	crash	1	numeric time features + 400 trees
+3	a8e962a	0.7132	ok	4	numeric time features + 400 trees
+4	02a0051	0.7158	ok	4	hour/minute/sin/cos features, 400 trees, keep raw cats
+5	d7d1474	0.7114	ok	5	target-encoded hour/carrier/origin/dest/route
+6	1b73fcc	0.7140	ok	8	deeper trees (8) + 500 estimators
+7	9d1e314	0.6997	ok	7	route cat + day-of-year cyclical
+8	3c57eb7	0.7161	ok	6	early stopping with val split, lr 0.05, subsample 0.8, retrain on full
+9	bd4d5b2	0.7162	ok	11	lr 0.03 + 3000 trees early stop
+10	7f8c0be	0.7290	ok	19	30-min dep-time band categorical
+11	1e31eb1	0.7306	ok	21	15-min dep-time band categorical
+12	9dbdda6	0.7092	ok	13	exact DepTime as categorical
+13	58708c5	0.7304	ok	20	min_child_weight 5
+14	e1c65d7	0.7255	ok	57	add route categorical on top of dep band
+15	e4673a7	0.7302	ok	22	frequency encodings for route/carrier/origin/dest
+16	03232dc	0.7318	ok	21	month/day/dow/doy numeric features
+17	101ff1e	0.7318	ok	21	month cyclical + hour x dow interaction
+18	c822a55	0.7332	ok	14	3-model bagged ensemble, 600 trees lr 0.05
+19	992f4ae	0.7338	ok	28	5 bags, depth 7, colsample 0.7
+20	70423ed	0.7348	ok	43	8 bags with depth diversity 6-8
+21	4fe8645	0.7342	ok	91	8 bags lr 0.03 x 1200 trees
+22	6e21d7d	0.7448	ok	48	hour x carrier interaction categorical
+23	8ee5611	0.7351	ok	90	hour x origin/dest interaction categoricals
+24	08ecf58	0.7440	ok	57	band x carrier interaction categorical
+25	0457189	0.7383	ok	49	hour x dow interaction categorical
+26	c990194	0.7305	ok	54	hour x month interaction categorical
+27	a62ca7c	0.7448	ok	49	carrier hour aggregates
+28	2890b67	0.7444	ok	51	max_bin diversity in bag
+29	fabcb65	0.7450	ok	63	10 bags
+30	34b3bd4	0.7453	ok	76	12 bags
+31	d97f63e	0.7450	ok	71	14 bags x 500 trees
+32	47307c9	0.7436	ok	79	bootstrap sampling in bags
+33	479d1fb	0.7447	ok	75	reg_lambda 2.0 + subsample 0.75
+34	a0db804	0.7383	ok	80	hour x route-rank interaction
+35	241f15a	0.7451	ok	74	min_child_weight 3 in bags
+36	a5a4e00	0.7449	ok	77	evening/morning indicators
+37	b1c4892	0.7451	ok	98	12 bags lr 0.04 x 800 trees
+38	19af284	0.7459	ok	86	30-min band x carrier categorical
+39	ff81f13	0.7460	ok	94	14 bags with band30 x carrier
+40	4434f03	0.7461	ok	101	15 bags final

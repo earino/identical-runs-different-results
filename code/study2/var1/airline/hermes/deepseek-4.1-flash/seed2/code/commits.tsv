@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	5844e42	1789494503	baseline
+01	fc733a2	1789494564	model: depth6 lr0.05 2000 trees early stopping, baseline features
+02	3747d6b	1789494586	diag: grid sweep features x capacity
+03	e936e38	1789494627	fe: numeric calendar + dep-time parts + cyclical; model 800t lr.03 d5 heavy reg
+04	5977125	1789494645	diag: count/traffic + interaction feature sweep
+05	ee71eff	1789494687	fe: carrier-hour categorical + traffic counts; keep 800t reg model
+06	28482c2	1789495084	fe: carrier-origin share + dist x hour; model 2000t lr.01 d6 mcw50 lam10
+07	5867d14	1789495264	model: bag of 3 XGBoost models (seed-averaged)
+08	9185fce	1789495562	fe: drop cyclical encodings (overfit 2005); keep bag of 3
+09	8d93fb6	1789495899	fe: rare-level bucketing for categoricals; keep bag of 3
+10	800d763	1789496341	model: 2500t lr.01 depth7 mcw20 from random search; bag of 3
+11	315df23	1789496766	fe: add DepMinute (fine minute-of-hour structure); bag of 3 d7
+12	09b4d7a	1789496961	fe: add log_distance (independent binning view); bag of 3
+13	5853259	1789497246	model: colsample_bytree 0.4 (local sweep winner)
+14	fa51943	1789497456	model: min_child_weight 10 (final); bag of 3

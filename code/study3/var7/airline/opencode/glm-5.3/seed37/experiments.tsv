@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	114731c	0.7141	ok	4	baseline
+2	775733f	0.7061	ok	4	FE v1: tod features + route + ES
+3	52cda4b	0.7159	ok	6	FE v2: no route, ES-auc, lr .05
+4	3913211	0.0000	crash	0	FE v3: target encoding (k=20)
+5	86754d9	0.7081	ok	12	FE v3: target encoding (k=20), fixed
+6	4b0a717	0.7165	ok	10	HPO v1: lr.03 d8 mcw5 ss/cs .8
+7	0f430a1	0.7193	ok	10	FE v4: seasonal features
+8	c40c4ce	0.7191	ok	10	max_bin=512
+9	3f1041e	0.7191	ok	13	lossguide leaves=64
+10	72dc4a7	0.7210	ok	47	seed ensemble x5
+11	e2eecfc	0.7224	ok	91	8-member diverse ensemble
+12	a33a896	0.0000	crash	1	FE v5: est arrival time
+13	883e53a	0.7234	ok	106	FE v5: est arrival time (fixed)
+14	45692f9	0.7234	ok	92	ES150 cap3000 runtime safety
+15	010e55e	0.7221	ok	84	mcw=20 ensemble
+16	4610fba	0.7213	ok	72	ablation: drop minute/night/is_weekend
+17	19b8ec9	0.7278	ok	88	feature-bagged ensemble
+18	2b84e66	0.7264	ok	85	bagging v2 finer groups
+19	287751e	0.7269	ok	102	9th member with TE features
+20	1918226	0.7276	ok	90	holiday window flags
+21	8a445cb	0.7328	ok	119	3x calendar-drop members
+22	71334a7	0.7333	ok	99	7 members ES100 runtime retune
+23	8cb70c2	0.7357	ok	99	all cal-drop ensemble
+24	824cbda	0.7372	ok	104	clone d12/d10 winners
+25	f60bcac	0.7381	ok	104	rebalance deep members
+26	3a4bb3b	0.7390	ok	101	DOW-only calendar member
+27	4c9d6c6	0.7388	ok	95	all members keep DOW
+28	626b52d	0.7389	ok	94	dates_strict member (keep hour_of_week)
+29	2dbee5e	0.0000	crash	2	airport region prefixes
+30	0058ef7	0.0000	crash	2	airport region prefixes (fixed)
+31	4a82b51	0.0000	timeout	121	airport region prefixes (fixed2)
+32	0fe9130	0.7394	ok	74	6 members ES60 runtime margin
+33	88e67e5	0.7414	ok	91	dates-family ensemble
+34	0ec6ed7	0.7420	ok	57	prune m3 add stripped dates
+35	b07dd59	0.7431	ok	74	deep dates member swap
+36	57b6ebc	0.7429	ok	66	clone dates+airports view
+37	5e58169	0.7426	ok	66	full reseed robustness probe
+38	6a99dc4	0.7428	ok	84	second seed for dates+airports
+39	db2363e	0.7432	ok	78	reseed lottery draw C
+40	4f7a98a	0.7429	ok	71	ES40 runtime margin

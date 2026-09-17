@@ -1,0 +1,128 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 48,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:51:07+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s48-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:11:32+00:00",
+  "wall_seconds": 8425.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18261.2,
+  "endpoint_at_end": "ok",
+  "head": "cbae945",
+  "n_commits": 7,
+  "n_experiments": 15,
+  "n_ok": 13,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.744,
+  "final_eval_auc": 0.744,
+  "holdout_auc": 0.74546853892,
+  "holdout_ap": 0.7354933707401667,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03069778718399996,
+  "generalization_gap": -0.0014685389199999843,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5556836,
+    "tokens_in_uncached": 1318628,
+    "tokens_in_cached": 4238208,
+    "tokens_out": 63394,
+    "turns": null,
+    "api_calls": 115,
+    "method": "cumulative-max",
+    "cost_usd": 3.2269,
+    "cached_share": 0.763
+  },
+  "cpu_seconds_python": 18087.0,
+  "cpu_seconds_counted": 3624.8,
+  "cpu_seconds_uncounted": 13998.5,
+  "cpu_seconds_exempt": 463.7,
+  "python_processes": 69,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 613,
+  "fits_counted": 79,
+  "fits_uncounted": 527,
+  "commits": [
+    {
+      "commit": "957a916",
+      "message": "baseline"
+    },
+    {
+      "commit": "23734e5",
+      "message": "shallow trees + cyclical dep-time features"
+    },
+    {
+      "commit": "9df63ed",
+      "message": "depth-ensemble 2..10"
+    },
+    {
+      "commit": "56c582f",
+      "message": "depth 2..16 ensemble with colsample 0.4"
+    },
+    {
+      "commit": "1918b7e",
+      "message": "deep ens d20-28 cs0.4 lr.06 ne200"
+    },
+    {
+      "commit": "7ae72bc",
+      "message": "max_bin=512"
+    },
+    {
+      "commit": "c0d2279",
+      "message": "7 members d16-28 ne150 lr.08"
+    },
+    {
+      "commit": "cbae945",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17623.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 174.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c0d2279",
+  "best_commit_eval_auc": 0.744,
+  "best_commit_holdout_auc": 0.74546853892,
+  "best_commit_holdout_ap": 0.7354933707401667,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	36e8557	1789597027	baseline
+01	02a0051	1789597334	hour/minute/sin/cos features, 400 trees, keep raw cats
+02	3c57eb7	1789598160	early stopping with val split, lr 0.05, subsample 0.8, retrain on full
+03	bd4d5b2	1789598177	lr 0.03 + 3000 trees early stop
+04	7f8c0be	1789598206	30-min dep-time band categorical
+05	1e31eb1	1789598248	15-min dep-time band categorical
+06	03232dc	1789598805	month/day/dow/doy numeric features
+07	c822a55	1789598967	3-model bagged ensemble, 600 trees lr 0.05
+08	992f4ae	1789599010	5 bags, depth 7, colsample 0.7
+09	70423ed	1789599042	8 bags with depth diversity 6-8
+10	6e21d7d	1789599363	hour x carrier interaction categorical
+11	fabcb65	1789599909	10 bags
+12	34b3bd4	1789600039	12 bags
+13	19af284	1789600864	30-min band x carrier categorical
+14	ff81f13	1789600961	14 bags with band30 x carrier
+15	4434f03	1789601078	15 bags final

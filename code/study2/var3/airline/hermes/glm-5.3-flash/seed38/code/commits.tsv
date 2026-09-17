@@ -1,0 +1,5 @@
+n	commit	unix_time	subject
+00	2351589	1789537957	baseline
+01	236f0c1	1789538058	FE v4: route cat + raw DepTime + late_night + distance only
+02	b2bea31	1789538090	early stopping on 1/6 random val, lr05 depth6
+03	b09280b	1789538398	colsample_bynode 0.8

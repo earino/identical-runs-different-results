@@ -1,0 +1,172 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 5,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T12:09:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s5-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T14:17:53+00:00",
+  "wall_seconds": 7707.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17995.6,
+  "endpoint_at_end": "ok",
+  "head": "b39447d",
+  "n_commits": 18,
+  "n_experiments": 27,
+  "n_ok": 26,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7345,
+  "final_eval_auc": 0.7345,
+  "holdout_auc": 0.7353006107519999,
+  "holdout_ap": 0.724513416108893,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020529859015999907,
+  "generalization_gap": -0.0008006107519998862,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10804816,
+    "tokens_in_uncached": 276048,
+    "tokens_in_cached": 10528768,
+    "tokens_out": 77212,
+    "turns": null,
+    "api_calls": 181,
+    "method": "cumulative-max",
+    "cost_usd": 3.4637,
+    "cached_share": 0.974
+  },
+  "cpu_seconds_python": 17856.3,
+  "cpu_seconds_counted": 4417.2,
+  "cpu_seconds_uncounted": 12939.7,
+  "cpu_seconds_exempt": 499.4,
+  "python_processes": 69,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1731,
+  "fits_counted": 327,
+  "fits_uncounted": 1392,
+  "commits": [
+    {
+      "commit": "f3d0ce0",
+      "message": "baseline"
+    },
+    {
+      "commit": "74453da",
+      "message": "additive FE: keep raw DepTime, add hour and msm"
+    },
+    {
+      "commit": "c356502",
+      "message": "capacity for drift: 60 trees depth4 lr0.05, baseline features"
+    },
+    {
+      "commit": "4b15d97",
+      "message": "2-member ensemble: full cols + colsample0.7, hour feature"
+    },
+    {
+      "commit": "5ba235c",
+      "message": "x12 depth/colsample ensemble, nest150, max_bin512"
+    },
+    {
+      "commit": "9f4f5bb",
+      "message": "add minute-of-hour feature to x12 ensemble"
+    },
+    {
+      "commit": "459b070",
+      "message": "nest250 in x12 ensemble"
+    },
+    {
+      "commit": "beb3118",
+      "message": "nest500 in x12 ensemble"
+    },
+    {
+      "commit": "1e5f23e",
+      "message": "nest700 in x12 ensemble"
+    },
+    {
+      "commit": "846e581",
+      "message": "24 members at nest700"
+    },
+    {
+      "commit": "9d47107",
+      "message": "add logdist and night features"
+    },
+    {
+      "commit": "6e708d0",
+      "message": "cyclic sin/cos time-of-day features"
+    },
+    {
+      "commit": "a5cea41",
+      "message": "2nd harmonic of cyclic time"
+    },
+    {
+      "commit": "648f9cc",
+      "message": "3rd and 4th time harmonics"
+    },
+    {
+      "commit": "f839dd1",
+      "message": "5th and 6th time harmonics"
+    },
+    {
+      "commit": "12c6e1b",
+      "message": "7th and 8th time harmonics"
+    },
+    {
+      "commit": "fa468b0",
+      "message": "x12 members at nest1100"
+    },
+    {
+      "commit": "80d55cd",
+      "message": "deep member set (d5-8) at nest1100"
+    },
+    {
+      "commit": "b39447d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17356.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 139.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "80d55cd",
+  "best_commit_eval_auc": 0.7345,
+  "best_commit_holdout_auc": 0.7353006107519999,
+  "best_commit_holdout_ap": 0.724513416108893,
+  "best_commit_error": null,
+  "finalized_best": true
+}

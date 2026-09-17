@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7a86663	0.7141	ok	3	baseline
+2	712a490	0.7130	ok	6	exp2: 2000 trees lr.05 depth8 + early stopping refit
+3	8fc5d9d	0.7049	ok	9	exp3: FE v1 (tod, cyclical, route, logdist) + depth6 m cw20
+4	f7b1023	0.7063	ok	3	exp4: FE v1 + baseline model params
+5	52d01b8	0.7130	ok	3	exp5: FE v1 minus Route + baseline model
+6	930f815	0.6987	ok	9	exp6: TE Origin/Dest/Carrier/Route M50 + ES refit
+7	684b369	0.0000	crash	1	exp7: TE Hour/HourxDOW/HourxMonth + mild O/D/C TE
+8	98a0333	0.7172	ok	21	exp7: TE Hour/HourxDOW/HourxMonth + mild O/D/C TE
+9	0dd2718	0.7182	ok	18	exp9: +TE OriginxHour/CarrierxHour M100
+10	57b9224	0.7156	ok	13	exp10: ablation drop Distance/cyclical features
+11	a42b488	0.7193	ok	18	exp11: depth8 mcw10 colsample0.9
+12	329d57c	0.7177	ok	12	exp12: OxD M200 + DxD M100
+13	3da0661	0.7203	ok	20	exp13: lr 0.03 ES
+14	e549b86	0.0000	crash	2	exp14: 5-model ensemble diverse params
+15	832d789	0.7227	ok	109	exp14: 5-model ensemble diverse params
+16	9d1c216	0.0000	timeout	120	exp16: 8 members lr0.05 diverse
+17	02dfe7c	0.0000	timeout	121	exp18: 7 members lr0.04 DMatrix reuse
+18	c7ed8bd	0.7229	ok	88	exp19: 6 members lr0.04 max_bin128
+19	b426c1a	0.7222	ok	76	exp20: 8 members lr0.05 max_bin128
+20	542b0b2	0.7231	ok	76	exp21: TE smoothing diversity A/B
+21	50f76c9	0.7223	ok	103	exp22: 8 members TE-diverse
+22	da118e5	0.7233	ok	85	exp23: VALID_FRAC 0.3 + member AUCs
+23	9ac3869	0.7237	ok	98	exp24: max_bin 256
+24	9fcabe9	0.7241	ok	117	exp25: member swap 46->52
+25	8cde996	0.7239	ok	91	exp26: lr0.045 ES30
+26	cfa693d	0.0000	crash	78	exp27: val-AUC weighted avg ES30
+27	cbc7f6c	0.7239	ok	91	exp27: val-AUC weighted avg ES30
+28	9f5c10b	0.7244	ok	115	exp28: VALID_FRAC 0.4
+29	c50a08f	0.7238	ok	84	exp29: ES30 VF0.4
+30	d7b4cec	0.0000	timeout	123	exp30: warm-start continuation
+31	22b2cde	0.7239	ok	91	exp31: bin192 no diagnostics
+32	e040323	0.7214	ok	37	exp32: ES eval period 5
+33	ff5e671	0.7201	ok	39	exp33: gamma 2.0 global
+34	b3c18d8	0.7227	ok	113	exp34: residual TE interactions
+35	ad37ad3	0.7241	timeout	120	exp35: +TE_HourxDOM
+36	ab63c23	0.0000	timeout	122	exp36: member swap 44->54
+37	c6120b5	0.7241	ok	100	exp37: B mult 2.0
+38	c1548d2	0.7248	ok	104	exp38: member 44->58 d8 clone
+39	0caa084	0.7245	ok	89	exp39: VALID_FRAC 0.45
+40	138105f	0.7248	ok	101	exp40: member 43->59 d8 clone

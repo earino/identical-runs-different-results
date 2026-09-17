@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	aecadb7	1789490046	baseline
+01	a5e2d9c	1789490085	es100 lr0.05 3000trees mcw5 sub0.9 col0.9
+02	b0ce465	1789490106	exp2 + hour + cyclical only
+03	e120205	1789490134	hour_cat + carrier x hour interaction categorical
+04	a9e869e	1789490198	lr0.03 depth6
+05	6702a59	1789490208	lr0.015
+06	82fd5c8	1789490223	lr0.008
+07	098a66e	1789490310	ensemble of 3 xgb configs (d6 lr.008, d8 lr.05, lossguide)
+08	646234c	1789490416	single best model (exp14 cfg)
+09	612e7b6	1789490461	colsample_bynode 0.7, bytree 1.0
+10	dec3a26	1789490483	colsample_bynode 0.5
+11	0cea3d9	1789490510	colsample_bynode 0.3
+12	61dea7e	1789490715	mcw10 lambda5 at bynode0.3
+13	fb96906	1789490815	3-seed bag of best cfg (bynode diversity)

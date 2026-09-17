@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	d7713ee	1789520069	baseline
+01	af64920	1789520144	deep model: 1200 rounds lr0.05 depth8, early stopping on internal 15% val
+02	9a90e6e	1789520823	add CarrierHour interaction categorical, numeric time features, depth10/800 rounds
+03	ef7c799	1789521294	drop Month/DayofMonth, ensemble d8/d10/d12 x600 rounds
+04	25addcd	1789522787	ensemble of 5 depth-spread models 6/9/12/15/18 x300
+05	191e39e	1789522883	add shallow depth-3 member to ensemble
+06	644af49	1789522983	9-member ensemble depths 2-18, n250
+07	e5ec690	1789523838	colsample_bytree=0.75 feature bagging

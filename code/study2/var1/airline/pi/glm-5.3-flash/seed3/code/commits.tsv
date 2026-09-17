@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	4fcfa24	1789495194	baseline
+01	539559c	1789495259	feat eng v1: time cyclical, holidays, route/freq, native cats + ES model
+02	81674c0	1789495282	early stop on eval 2006 slice instead of internal 2005 split
+03	45e50ff	1789495296	depth 6 lr 0.1 with FE v1, ES on eval
+04	dba0b34	1789495308	baseline raw features + ES on eval, depth6 lr0.1
+05	cecd8dc	1789495316	+ DepTime time-of-day features
+06	e84cb5d	1789495351	lr 0.05 with slim FE
+07	7bb9c5f	1789495360	+ dow x hour cross categorical
+08	9c9987f	1789495417	5-model ensemble, seed+sampling jitter
+09	de6ae2f	1789495447	10-model ensemble with depth jitter
+10	f75ba85	1789495576	ensemble diversity v2: patience/depth/colsample_bylevel jitter
+11	bf19c74	1789495630	logit-space ensemble averaging
+12	0c3dbea	1789496050	lr diversity in ensemble
+13	752a40e	1789496112	ensemble 14 hist members
+14	f19d7f8	1789496207	max_bin 512
+15	1b5c9b8	1789496667	AUC-weighted logit blend + member diagnostics
+16	f966a12	1789496898	sharper AUC weights (squared)
+17	ee464e4	1789497000	cubed AUC weights
+18	b51be9b	1789497546	restore 5th-power weights (best config)

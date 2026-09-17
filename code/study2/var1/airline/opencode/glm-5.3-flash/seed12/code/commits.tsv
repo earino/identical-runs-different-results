@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	9c21b38	1789538604	baseline
+01	e25a58a	1789538709	5-seed bagged ensemble at baseline config
+02	94e3371	1789538768	bag with min_child_weight=20
+03	896fd99	1789538773	bag lr.05 x100 rounds mcw20
+04	21809cc	1789538827	internal 70/30 hyperparameter search + bag winner
+05	24f49b4	1789538849	search grid refined around d8 pocket
+06	4e23569	1789538879	hp search v3 around d9/lr.03 pocket
+07	79585e8	1789538928	hp search v4 more rounds lower lr
+08	cfab3f0	1789539094	hardcode winner spec, 9-member bag
+09	b767b54	1789539294	add hour/minute/late-night extras
+10	f59e7b5	1789539339	numeric date extras + doy + log_dist
+11	2345982	1789539387	origin/dest traffic-volume features
+12	b69d662	1789539956	subsample 0.85
+13	9d1ae55	1789540004	subsample 0.9

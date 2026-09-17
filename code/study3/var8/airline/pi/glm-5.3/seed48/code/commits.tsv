@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	5073808	1789619782	baseline
+01	a7c3610	1789620021	capacity + early stopping (90/10 probe, refit full)
+02	e83a53a	1789620138	diagnostic sweep: depth x rounds on eval
+03	7219475	1789620385	ablation: time/date/dist/route feature groups
+04	a5f7b48	1789620564	regularization sweep: mcw, lambda, lr schedule, depth
+05	a15d9d3	1789620963	target encoding: simple + interaction TEs, OOF for train
+06	8a0039d	1789621195	interaction TE family + smoothing sweep
+07	84e3a55	1789621566	hour_route variants: m sweep, bins, new interaction families
+08	6eeb58e	1789621784	hyperparameter sweep on TE feature set
+09	af66403	1789622175	hierarchical TE (hour_route->route prior), flight TE, count features
+10	d7f6c74	1789622554	flight TE variants: keys, smoothing, priors
+11	5d08a41	1789622969	combine flight/origdep/destdep TEs + f4 + hyper re-check
+12	e792a97	1789624045	hour-binned origdep/destdep, carrier-hour TEs, f4 variants
+13	fc61a65	1789625072	ensembling: seed avg, OOF-fold noise, 10-fold OOF, two-view
+14	886c278	1789625324	multi-view ensemble: view zoo, weights, seed-stacked views
+15	a4f7823	1789625391	4-view ensemble tuning: weights, extra views, rank-avg, seedx2
+16	4a1dc23	1789625567	grow view zoo: F4/C4/simple-TE view/bagged view + prune checks
+17	16b6ac8	1789625705	lossguide + DART ensemble members
+18	0053bb5	1789625965	new views: route-cat, noclock, 3-level flight prior, oof-seed members
+19	461b248	1789626061	spec-view members: base/flight/inter TE subsets, colsample/mcw members
+20	10e357b	1789626145	longer members: lr 0.02x1200, lr 0.03x800 across views
+21	9272230	1789626720	8-view ensemble at lr0.03 x 1200 rounds (clean single config)
+22	fe41078	1789626768	8-view ens at lr0.03 x 1600 rounds
+23	f8a8b4a	1789626830	8-view ens at lr0.025 x 2000 rounds
+24	345d63c	1789626991	test d5-variants and subsampled members at lr0.025 r2000
+25	66b01be	1789627196	16-member depth-ladder ensemble at lr0.025 r2000

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	341aa9f	0.7141	ok	4	baseline
+2	1cb53a9	0.7255	ok	13	time features + cyclical + early stop depth8 lr05
+3	4ca8a06	0.0000	crash	1	OOF target encoding + freq encoding
+4	bafef59	0.0000	crash	1	OOF target encoding + freq encoding
+5	19d510b	0.7258	ok	17	OOF target encoding + freq encoding
+6	7f83c5c	0.7231	ok	22	interaction TE carrier-hour, origin-month, carrier-origin
+7	eee11d8	0.7285	ok	20	depth10 subs07 cols07
+8	209d94c	0.7343	ok	18	depth12 cols06
+9	d8741e0	0.7369	ok	21	depth14
+10	049bb33	0.7380	ok	23	depth16
+11	bacb565	0.7385	ok	26	depth20
+12	c501122	0.7401	ok	36	lr003 depth16
+13	fc53538	0.7405	ok	55	lr002 depth16
+14	1bf727a	0.7373	ok	88	ensemble depth16/12/8 averaged
+15	37faa15	0.7324	ok	60	lossguide max_leaves128
+16	e5cc70b	0.7403	ok	48	maxbin512
+17	a2e2984	0.7338	ok	32	mcw10
+18	dbb64e6	0.7423	ok	69	2-seed bag depth16 lr03
+19	f40c38b	0.7428	ok	77	3-seed bag shared n_estimators
+20	916a5e7	0.7423	ok	82	refit trees 1.2x
+21	0a8b829	0.7422	ok	69	bag 2x d16 + 1x d14
+22	e3e1f25	0.7431	ok	112	5-seed bag depth16 lr03
+23	7693fb1	0.7429	ok	68	ablation: no TE, 3-seed bag
+24	c6b8212	0.7431	ok	100	5-seed bag no TE
+25	6aac5b1	0.0000	timeout	120	early stop metric auc
+26	76fa13f	0.7358	ok	80	single model auc early stop
+27	25bc892	0.7434	ok	64	bag subs08 cols07
+28	5cf70ee	0.7418	ok	59	bag subs09 cols08
+29	b97b191	0.7436	ok	70	mixed-lr bag
+30	eb543c5	0.7444	ok	81	depth18 mixed-lr bag
+31	f6dda4f	0.7450	ok	93	depth20 mixed-lr bag
+32	90b3efc	0.7446	ok	98	depth20 subs075 cols065
+33	aa568a4	0.7241	ok	97	route native categorical
+34	0865a67	0.7456	ok	101	colsample_bynode 0.9 depth20
+35	8c615ad	0.7455	ok	83	mixed-lr 030304 depth20
+36	9c08c5b	0.0000	timeout	122	reg_lambda 5 depth20
+37	eb23339	0.7439	ok	95	depth20 subs085 cols075
+38	dc13f70	0.7425	ok	83	drop sin/cos features
+39	fbce848	0.7482	ok	114	hour categorical
+40	fb0abe9	0.7477	ok	82	hour_cat 2-member bag

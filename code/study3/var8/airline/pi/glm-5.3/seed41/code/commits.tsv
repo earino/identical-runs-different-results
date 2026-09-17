@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	b1a064f	1789582829	baseline
+01	6fed039	1789582879	date ints, DepTime decomposition, route cat, early stopping
+02	21d7e74	1789583225	deep regularized XGB d24 + numeric dates + dep decomp
+03	eee61e8	1789583581	8-seed bagged ensemble of deep XGB
+04	9ad3fa2	1789584290	4x n300 lr0.03 deep ensemble, drop Month
+05	a51a570	1789584530	add reg_alpha=1 to ensemble
+06	483f3c1	1789584763	add HourCat categorical feature
+07	3134231	1789584973	3x n450 lr0.02 ensemble
+08	9c4c3d2	1789585188	add Origin x Hour and Origin x DOW flight counts
+09	66fbcaf	1789585298	add Dest x Hour/DOW counts and carrier size
+10	d6ffe89	1789585800	swap DOW counts for Carrier x Hour and Route counts
+11	a7d79cc	1789585915	reg_alpha=2
+12	0d0bc4c	1789586191	drop DayofMonth
+13	bcdfa49	1789586502	4-model ensemble n400 lr0.0225
+14	762f78c	1789587283	2nd time harmonic + airport hour share
+15	46daa6e	1789587403	only 2nd harmonic (no AirportHourShare)
+16	4e96869	1789587518	add 3rd time harmonic
+17	3ab59e0	1789587876	3x n460 lr0.021 for wall headroom
+18	f61b253	1789588123	add 4th harmonic + AbsNoon on 3-model base

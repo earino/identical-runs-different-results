@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	00e714c	1789487598	baseline
+01	4a3312c	1789487740	raw dep_minute + cyclical minute, origin/dest/route priors, no DepTime drop
+02	33d38c6	1789487764	baseline features, 600x8 lr.06 mcw20 lambda2 colsample.6
+03	d7b912d	1789487780	baseline features, 300x6 lr.1 (capacity probe)
+04	d70d717	1789487798	early stopping on eval (probe: where does 2006 AUC peak?)
+05	b057d29	1789487835	early stop + smoothed origin/dest/route delay priors
+06	3eb0cb7	1789488518	d4 lr.02 cs.5, ES on eval (probe-confirmed 0.7193)
+07	856e019	1789488531	ES patience 500 (probe: peak at 2189 trees)
+08	39e943f	1789488549	ES on AUC metric
+09	3966822	1789488759	dep_hour categorical (probe 0.7219)
+10	0af6b22	1789490069	carrier x half-hour-of-day crossing (probe 0.7399)

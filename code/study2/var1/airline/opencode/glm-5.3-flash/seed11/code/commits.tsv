@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	ef2bc83	1789534884	baseline
+01	85a13b0	1789534946	feat-v1: parsing+hour cat+cyclical+route, 400t d8
+02	fcba7ea	1789538346	v2: noroute feats + d20 col.5 bin512 mcw3 600t lr.05
+03	b9cc439	1789538394	v3: drop month/dom/dow cats (numeric only), d20 col.5 bin512
+04	d37e57d	1789538944	v4: +freq counts, 3-model ensemble (d20c5, d12c7, d20c5s7)
+05	0eb2f49	1789539039	v5: 4-model ensemble (+d16 c.6 400t s13)
+06	fc2687f	1789539499	v6: drop cyc m/w + early_morn, alpha1, bin1024
+07	376d85b	1789539542	v7: 3-model ensemble on new base (d20c5b1024a1, d12c7b512, d20c5s7)

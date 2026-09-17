@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	261c1ca	1789590031	baseline
+01	e6656d2	1789590082	FE v1: dep-time features, numeric dates, ES + full retrain
+02	7ebee21	1789590091	fix duplicate n_estimators kwarg
+03	dfc159a	1789591212	TE route/origin/dest/carrier x hour + counts + tuned XGB 4-seed ensemble
+04	9b35a38	1789594090	15/30-min bucket TEs + coarse hour TEs, deep mcw1 cs0.3, 4-seed ensemble
+05	c4565c3	1789595014	subsample 0.9
+06	cfa8f53	1789595099	subsample 1.0
+07	1c33973	1789595483	5-seed ensemble
+08	ebecc69	1789595841	6-seed ensemble

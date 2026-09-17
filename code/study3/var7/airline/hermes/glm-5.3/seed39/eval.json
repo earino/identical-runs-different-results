@@ -1,0 +1,174 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 39,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:01:17+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s39-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T11:51:45+00:00",
+  "wall_seconds": 3028.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9499.7,
+  "endpoint_at_end": "ok",
+  "head": "01cc594",
+  "n_commits": 18,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.8146,
+  "final_eval_auc": 0.8146,
+  "holdout_auc": 0.801068092862,
+  "holdout_ap": 0.7961745558057647,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.08629734112599996,
+  "generalization_gap": 0.01353190713800001,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6245067,
+    "tokens_in_uncached": 48075,
+    "tokens_in_cached": 6196992,
+    "tokens_out": 56387,
+    "turns": null,
+    "api_calls": 141,
+    "method": "cumulative-max",
+    "cost_usd": 1.9266,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 9250.3,
+  "cpu_seconds_counted": 8834.1,
+  "cpu_seconds_uncounted": 1.1,
+  "cpu_seconds_exempt": 415.1,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 263,
+  "fits_counted": 253,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "27b8683",
+      "message": "baseline"
+    },
+    {
+      "commit": "10a26f0",
+      "message": "time features + early stopping"
+    },
+    {
+      "commit": "d5f656b",
+      "message": "depth8 lr0.05 subsample"
+    },
+    {
+      "commit": "a557634",
+      "message": "frac_day time encoding"
+    },
+    {
+      "commit": "1ca0be8",
+      "message": "3-seed ensemble"
+    },
+    {
+      "commit": "3c0ba24",
+      "message": "5-model diverse-depth ensemble"
+    },
+    {
+      "commit": "3f70e38",
+      "message": "traffic volume features"
+    },
+    {
+      "commit": "ee47de5",
+      "message": "8-model diverse ensemble"
+    },
+    {
+      "commit": "af86291",
+      "message": "train on 2005+2006-fit-slice, honest 15pct val"
+    },
+    {
+      "commit": "eb4b23b",
+      "message": "10pct val slice"
+    },
+    {
+      "commit": "3fec866",
+      "message": "hourly airport traffic"
+    },
+    {
+      "commit": "6f448c4",
+      "message": "route-hour traffic"
+    },
+    {
+      "commit": "122865b",
+      "message": "lr .06 esr100"
+    },
+    {
+      "commit": "2dc4cf2",
+      "message": "3x weight on 2006 rows"
+    },
+    {
+      "commit": "78de8bb",
+      "message": "5pct val slice"
+    },
+    {
+      "commit": "2a1cd1e",
+      "message": "2pct val slice"
+    },
+    {
+      "commit": "7e4380f",
+      "message": "1pct val slice"
+    },
+    {
+      "commit": "5adfb2c",
+      "message": "10-model ensemble"
+    },
+    {
+      "commit": "01cc594",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8835.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 249.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "5adfb2c",
+  "best_commit_eval_auc": 0.8146,
+  "best_commit_holdout_auc": 0.801068092862,
+  "best_commit_holdout_ap": 0.7961745558057647,
+  "best_commit_error": null,
+  "finalized_best": true
+}

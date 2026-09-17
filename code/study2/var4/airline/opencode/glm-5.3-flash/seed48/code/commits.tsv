@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	2debb11	1789519759	baseline
+01	5f3e6e8	1789519804	tod cyclical+ordinal dates+logdist, early stopping + refit, depth8 lr0.05
+02	553ab0d	1789520260	5-seed ensemble, each member logloss-ES 85/15 + refit
+03	1089e04	1789520333	ensemble + hour feature (no route cat)
+04	f44b030	1789520390	add carrier x hour and dow x hour crosses
+05	dae8a3e	1789520459	8-member seed ensemble
+06	03307aa	1789520545	log-frequency features for carrier/origin/dest/route (fixed defs)
+07	2a45983	1789520649	heterogeneous members: depth 7/8 x colsample 0.7/0.8
+08	8489973	1789521061	member pool with depth 6 and 9
+09	8202514	1789521328	16-member heterogeneous ensemble

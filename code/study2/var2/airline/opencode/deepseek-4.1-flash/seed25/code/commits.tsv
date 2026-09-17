@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	d0d4093	1789543943	baseline
+01	1b33e56	1789543989	early stop on eval, lr .03, reg
+02	31e966e	1789543997	fe: dep hour/min/tod
+03	5a80b48	1789544023	tune: depth 4
+04	f0ce189	1789544052	fe: frequency encoding origin/dest/carrier/route
+05	e384a71	1789544082	ensemble depths 3-6
+06	034f7d4	1789544150	ensemble 8 diverse configs
+07	8223270	1789544190	fe: dep_hour categorical
+08	1e28659	1789544247	fe: dep 15min bin categorical
+09	9374107	1789544563	fe: dep minute bucket categorical
+10	3f42671	1789544679	8ens lr1.5x with dep_min_cat
+11	c8e5b88	1789544758	fe: weekend,dow_hour,dist bins
+12	6cc1523	1789544910	tune: max_cat_threshold 128 on depbin
+13	2e3fab7	1789545043	tune: reg_lambda 5
+14	e019117	1789545289	fe: carrier x hour categorical
+15	3c3d98d	1789545411	fe: carrier x 15min bin
+16	56d43bd	1789545694	tune: max_cat_threshold 96

@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	5123c36	0.7141	ok	5	baseline
+2	ae7dab9	0.7177	ok	6	time+dist features, early stopping depth7
+3	bb93041	0.7081	ok	3	route cat + freq encodings
+4	bd7a0f5	0.7163	ok	7	freq encodings only
+5	61fd938	0.7134	ok	5	target encodings origin/dest/carrier/route/hour
+6	ac71c25	0.7402	ok	14	minimal stable features, depth14 cs0.4
+7	caa94de	0.7384	ok	44	diverse 4-model ensemble
+8	c04adea	0.7463	ok	15	oh_cnt + carrier_hour cat + redeye
+9	6215bdd	0.7533	ok	47	4-config deep ensemble
+10	66c809b	0.7556	ok	49	dist_h + dh_cnt features
+11	91494b8	0.7559	ok	77	6-model ensemble incl lossguide
+12	0639d7e	0.7566	ok	73	add reg_alpha=1 to ensemble

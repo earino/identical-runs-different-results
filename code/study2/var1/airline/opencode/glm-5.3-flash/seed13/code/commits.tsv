@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	3c1d998	1789542382	baseline
+01	723934a	1789542505	ablation: baseline params (30 trees d6) + new features
+02	f43a6b5	1789542702	add Carrier x DepHour interaction categorical
+03	6599e1a	1789542731	CarrierDepHour -> Carrier x 15-min bucket
+04	39901d7	1789542748	add DayOfWeek x DepHour interaction
+05	9904371	1789542849	ensemble: 4 xgb members (d4k500, d6k300, seeds, colsample .9)
+06	dc8b394	1789542890	ensemble: expand to 8 members (depths 3-6, seeds, subsample)
+07	63f7121	1789542961	add MonthDow interaction + numeric DepHour
+08	01355a8	1789542992	ensemble: 12 members incl bagged (subsample .85-.9)
+09	4dc3def	1789543123	ensemble: 16 members
+10	865adcc	1789543249	add DepHour x DistanceBin interaction
+11	4b4136a	1789543435	ensemble k-scale sweep 0.8-1.5x, final 1.0x
+12	11b97c8	1789543539	ensemble at 1.4x tree scale
+13	c0cd3dc	1789543606	fix: blend at scale 1.4
+14	53338b0	1789543676	ensemble: 20 members at 1.4x
+15	bb6c1d3	1789543859	ensemble: 24 members

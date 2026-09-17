@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	dd9d179	1789517257	baseline
+01	9dc787d	1789517401	es 2000 lr.03 d8 eval-set (fixed predict)
+02	dc7dde4	1789517412	feat: hour cyclical + numeric + daypart flags
+03	e9c50cb	1789517479	feat: carrier x hour categorical
+04	b794944	1789517757	reg_lambda 5 with carrier_hour
+05	155dfd7	1789517834	ensemble: 2 xgb seeds/depths averaged
+06	f5a515a	1789518066	ensemble: d8s42 + d10s7 + d8s7
+07	ba167d3	1789518444	max_bin 512
+08	9f1610c	1789518602	ensemble: 4 models (+d9 s123)
+09	f216ba4	1789519428	interaction: raw hour (keeps 2400 distinct)
+10	6088b93	1789519518	ensemble: 5 models (2x d10)

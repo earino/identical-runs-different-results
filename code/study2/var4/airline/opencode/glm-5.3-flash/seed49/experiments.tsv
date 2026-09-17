@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2f68a48	0.7141	ok	4	baseline
+2	371f5cd	0.7120	ok	33	feat eng v1: cyclical time, freq+TE, depth8 ES
+3	03bf813	0.7071	ok	3	feat eng v1, depth6 mcw20 lr0.1 ES50
+4	1c68902	0.7086	ok	3	no TE/freq, depth6 mcw20 ES50
+5	bf5682a	0.7184	ok	10	5-fold bag, d6 mcw20 cs0.6, 400 trees
+6	aba1b90	0.7191	ok	18	10-fold bag, d6 mcw20 cs0.6, 400 trees
+7	b09c728	0.7194	ok	36	10-fold bag, d6 mcw20 cs0.6, lr0.05 800 trees
+8	c9712cb	0.7130	ok	42	bag + TE m=50-500
+9	0e615d0	0.7191	ok	38	hetero 10-fold bag depth/colsample
+10	07e02e1	0.7192	ok	35	10-fold bag mcw50 lr05/800
+11	83924df	0.7178	ok	55	two-bag blend
+12	d99d2e7	0.7143	ok	35	10-fold bag max_bin=64
+13	6e691b4	0.7193	ok	62	20-fold bag lr05/800
+14	9b89a85	0.7125	ok	69	10-fold bag lr05 1600 trees
+15	c1c461d	0.7164	ok	41	bag + hourxdow cat interaction
+16	17fbfd1	0.0000	crash	29	bag + gblinear blend (OOF weight)
+17	d4b1fba	0.0000	crash	27	bag + gblinear blend v2 (OOF weight)
+18	f045a4e	0.7194	ok	85	bag + gblinear blend v3
+19	c974b01	0.7211	ok	27	10-fold bag lr05 600 trees
+20	21b70d8	0.7219	ok	22	10-fold bag lr05 500 trees
+21	f39c126	0.7223	ok	20	10-fold bag lr05 450 trees
+22	0d1bb6d	0.7228	ok	17	10-fold bag lr05 350 trees
+23	d0ce074	0.7232	ok	13	10-fold bag lr05 250 trees
+24	297e5b7	0.7227	ok	8	10-fold bag lr05 150 trees
+25	87a866a	0.7232	ok	11	10-fold bag lr05 200 trees
+26	53b9503	0.7225	ok	9	10-fold bag lr0.1 200 trees
+27	556e700	0.7238	ok	14	10-fold bag depth7 250 trees
+28	5378869	0.7248	ok	17	10-fold bag depth8 250 trees
+29	4ec0287	0.7253	ok	19	10-fold bag depth9 250 trees
+30	695ff4e	0.7261	ok	23	10-fold bag depth10 250 trees
+31	7dec0a6	0.7268	ok	28	10-fold bag depth12 250 trees
+32	29a5367	0.7272	ok	40	10-fold bag depth16 250 trees
+33	b9c88ef	0.7278	ok	57	10-fold bag depth24 250 trees
+34	f2e9c1f	0.7277	ok	44	10-fold bag depth32 250 trees
+35	b394d1d	0.7293	ok	45	10-fold bag depth24 200 trees
+36	f60d3a7	0.7305	ok	31	10-fold bag depth24 150 trees
+37	a0cad07	0.7314	ok	17	10-fold bag depth24 100 trees
+38	681d01c	0.7297	ok	8	10-fold bag depth24 50 trees
+39	90d9a72	0.7314	ok	13	10-fold bag depth24 75 trees
+40	e7959e3	0.7310	ok	37	20-member dual-SKF bag depth24 n100

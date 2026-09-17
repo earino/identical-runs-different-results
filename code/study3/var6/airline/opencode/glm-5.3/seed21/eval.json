@@ -1,0 +1,160 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 21,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T03:45:29+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s21-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T07:22:44+00:00",
+  "wall_seconds": 13035.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10103.1,
+  "endpoint_at_end": "ok",
+  "head": "6b2ac6d",
+  "n_commits": 15,
+  "n_experiments": 27,
+  "n_ok": 26,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7486,
+  "final_eval_auc": 0.7486,
+  "holdout_auc": 0.749518358304,
+  "holdout_ap": 0.7272062189922708,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03474760656800002,
+  "generalization_gap": -0.0009183583039999998,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9026383,
+    "tokens_in_uncached": 2947471,
+    "tokens_in_cached": 6078912,
+    "tokens_out": 44325,
+    "turns": null,
+    "api_calls": 178,
+    "method": "sum-of-178-events",
+    "cost_usd": 5.902,
+    "cached_share": 0.673
+  },
+  "cpu_seconds_python": 9343.6,
+  "cpu_seconds_counted": 3122.7,
+  "cpu_seconds_uncounted": 5981.2,
+  "cpu_seconds_exempt": 239.6,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 296,
+  "fits_counted": 94,
+  "fits_uncounted": 197,
+  "commits": [
+    {
+      "commit": "86677d0",
+      "message": "baseline"
+    },
+    {
+      "commit": "a9f364a",
+      "message": "d6 lr0.05 mcw5 + early stopping"
+    },
+    {
+      "commit": "ad1fdae",
+      "message": "slow regularized profile: d3 lr0.02 mcw20 lambda10 subsample/colsample 0.7"
+    },
+    {
+      "commit": "3ea15d5",
+      "message": "TE v2: carrier/origin/dest/route + hour interactions, under slow profile"
+    },
+    {
+      "commit": "6e46f27",
+      "message": "TE family v3: route_hour, origin/dest x dow/month, counts"
+    },
+    {
+      "commit": "e8fa102",
+      "message": "5-seed ensemble, d4 lambda20 profile"
+    },
+    {
+      "commit": "d76d157",
+      "message": "add dep/calendar numeric + cyclic features to prepare"
+    },
+    {
+      "commit": "8fafa3a",
+      "message": "colsample_bytree 0.5"
+    },
+    {
+      "commit": "3585267",
+      "message": "slot TEs: origin/dest/carrier/route x 30-min slot (48 bins)"
+    },
+    {
+      "commit": "cfe5fb1",
+      "message": "15-min slot TEs, true 10-fold OOF, d5 mcw50 profile"
+    },
+    {
+      "commit": "f28519c",
+      "message": "add 10-min slot TEs (origin/dest/carrier) on top of 15-min"
+    },
+    {
+      "commit": "6ebba30",
+      "message": "d8 mcw200 lambda10 profile"
+    },
+    {
+      "commit": "64c8ccb",
+      "message": "per-model TE fold seeds (decorrelate OOF feature noise)"
+    },
+    {
+      "commit": "1cef40f",
+      "message": "colsample_bytree 0.4"
+    },
+    {
+      "commit": "0cad26a",
+      "message": "extreme colsample 0.08, mcw 20 (decorrelated weak-learner regime)"
+    },
+    {
+      "commit": "6b2ac6d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9103.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 759.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0cad26a",
+  "best_commit_eval_auc": 0.7486,
+  "best_commit_holdout_auc": 0.749518358304,
+  "best_commit_holdout_ap": 0.7272062189922708,
+  "best_commit_error": null,
+  "finalized_best": true
+}

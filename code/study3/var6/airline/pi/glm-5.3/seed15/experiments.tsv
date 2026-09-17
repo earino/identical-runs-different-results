@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3cfed71	0.7141	ok	3	baseline
+2	8369dee	0.7099	ok	22	FE v1 + early stopping depth8
+3	53a23a1	0.7076	ok	14	diagnostic rounds curve
+4	ac8da6e	0.0000	crash	6	FE ablation grid
+5	7514c47	0.0000	crash	6	FE ablation grid (fixed)
+6	e690220	0.7188	ok	13	FE ablation grid (fixed2)
+7	b56bbc4	0.7225	ok	14	hyperparam reg grid
+8	a4b6dae	0.7221	ok	20	shallow randomized grid
+9	cc27c36	0.7204	ok	11	TE ablation
+10	a6c17ac	0.7233	ok	15	TE-single x model config grid
+11	419b00a	0.7259	ok	11	ensemble of 7 xgb members
+12	05dd804	0.0000	crash	1	12-member ensemble
+13	d11e776	0.7264	ok	35	12-member ensemble (fixed)
+14	90a9e54	0.0000	crash	42	15-member ensemble + vol + mono
+15	a664a0f	0.7263	ok	60	15-member ensemble (fixed mono)
+16	b43bde2	0.7265	ok	63	curated slow ensemble
+17	0f3b4d5	0.0000	crash	18	peak rounds + month TE + decay weights
+18	55723e6	0.7266	ok	46	peak rounds + month TE + decay (fixed)
+19	4f7c5f3	0.0000	crash	6	ensemble v3 decay weights
+20	4ea4167	0.7276	ok	59	ensemble v3 (fixed)
+21	9954144	0.7281	ok	98	ensemble v4 dart/m20/cs04
+22	408184b	0.7297	ok	96	colsample exploration ensemble
+23	a141a9c	0.7298	ok	95	cs04 family ensemble
+24	fde95c0	0.7319	ok	68	d8 cs04 sub08 ensemble
+25	ae11830	0.7354	ok	94	deep cs04 ensemble
+26	be4446a	0.0000	timeout	126	depth frontier d13-d16
+27	422affa	0.0000	timeout	120	d14 ensemble short rounds
+28	8a3b80c	0.7470	ok	89	d14-18 @150
+29	f8d1574	0.7492	ok	65	deep lr scan d16-20
+30	ed79056	0.7509	ok	101	d18 family ensemble
+31	4c0475c	0.7520	ok	94	deep ensemble 10 members
+32	fbb4dab	0.7502	ok	97	deep ensemble bin128/lossguide
+33	20e233d	0.7520	ok	101	11 member deep ensemble
+34	36ff24c	0.7519	ok	100	blend rules + recency at d18
+35	b888a1c	0.7497	ok	86	d18 regularization probes
+36	bbc342d	0.7495	ok	90	rounds and d17 probes
+37	69e5e84	0.7506	ok	91	feature-drop probes + anchors
+38	3add459	0.7517	ok	92	member refresh + predict caching
+39	6a99b63	0.7520	ok	94	rounds 90 probe
+40	437c725	0.7527	ok	112	minute-of-day feature

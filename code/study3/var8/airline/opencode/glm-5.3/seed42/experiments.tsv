@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	f1e348c	0.7141	ok	3	baseline
+2	9fe71d1	0.7054	ok	5	capacity + internal ES (1500 trees, depth 8, lr 0.1)
+3	6c426b7	0.7204	ok	1	numMD features, d4 n100 lr0.1 full train
+4	7cb7a18	0.7327	ok	13	2-view blend native+deep-onehot logit avg
+5	9922ef2	0.7366	ok	64	m1 + bag5 deep-onehot logit avg
+6	9396a03	0.7384	ok	88	7-member deep bag (85/50 x5, 90/50 x2) + native bag5
+7	cb6d0ae	0.7390	ok	92	11 deep members n200 lr.075 (8x 85/50, 3x 90/50) + native bag5
+8	da4f2f2	0.7391	ok	91	11 deep (8x 85/50, 1x 90/50, 2x recency) + native bag5
+9	f0f7822	0.7386	ok	91	11 deep (7x85/50, 90/50, 85/35, 2x recency) + native bag5 d6
+10	d13fd62	0.7392	ok	100	12 deep (9x 85/50, 90/50, 2x recency) + native bag5
+11	00475a4	0.7394	ok	103	12 deep (9x 85/50, 2x rec a.5, 1x rec a1.0) + native bag5
+12	45cb886	0.7395	ok	100	12 deep (8x 85/50, 2x rec a.5, 2x rec a1.0) + native bag5
+13	280aab1	0.7398	ok	97	12 deep + 2 native, equal logit weights
+14	b68c8cb	0.7398	ok	96	12 deep (rec at w1.25) + 2 native
+15	4aa12f2	0.7398	ok	107	13 deep (8 plain, 2x rec a.5, 3x rec a1.0) + 2 native
+16	c4adde0	0.7428	ok	103	equal-weight config + MinOfHour feature
+17	bc5fb49	0.7424	ok	106	MinOfHour numeric + 12 five-min dummies

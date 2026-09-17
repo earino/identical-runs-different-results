@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	0401cd9	0.7141	ok	3	baseline
+2	ad09dcf	0.7121	ok	6	feat eng + early stopping
+3	f2d179f	0.7115	ok	4	capacity 400 trees
+4	c1d3e1b	0.7203	ok	2	time/cyclic features 100 trees
+5	9576cab	0.0000	crash	2	add freq encodings
+6	8146754	0.7203	ok	2	add freq encodings fix
+7	5b40fcb	0.7213	ok	4	400 trees lr0.05 time feats
+8	9fff772	0.7226	ok	6	depth 8
+9	2406532	0.7264	ok	14	depth 12
+10	fb0281c	0.7303	ok	27	depth 16
+11	f0f1328	0.7320	ok	33	depth 20
+12	cfe2328	0.7320	ok	35	depth unlimited
+13	4ce5fea	0.7325	ok	59	800 trees lr0.03
+14	3ae0a67	0.7313	ok	64	OOF target encoding
+15	453c025	0.7248	ok	32	mcw 10
+16	daef12e	0.7174	ok	85	route categorical
+17	0ed38ec	0.7331	ok	88	1200 trees lr0.02
+18	9fb4f20	0.7341	ok	113	1500 trees lr0.015
+19	08f81f3	0.7396	ok	106	colsample 0.7
+20	4d1395f	0.7413	ok	98	colsample 0.5
+21	2d6c620	0.7349	ok	85	colsample 0.3
+22	4af7646	0.7381	ok	93	subsample 0.7
+23	655f81a	0.7405	ok	103	colsample 0.6
+24	a73faa4	0.7344	ok	102	seasonal/weekend/logdist
+25	36851bb	0.7318	ok	95	drop minute
+26	2401bfd	0.7384	ok	117	colsample_bynode 0.5
+27	cbf4333	0.7400	ok	99	max_bin 128
+28	ef45263	0.7412	ok	111	1700 trees lr0.0135
+29	0d008a6	0.7412	ok	97	ensemble 3 seed
+30	9253e61	0.0000	timeout	121	dart booster
+31	b10ddd1	0.0000	timeout	122	dart 400
+32	29b251d	0.7417	ok	108	max_cat_threshold 256
+33	a791192	0.7411	ok	108	max_cat_threshold 512
+34	d9d90ce	0.7384	ok	110	lossguide 1024 leaves
+35	f47ccac	0.7451	ok	108	categorical hour
+36	89f3dd0	0.7393	ok	112	categorical month/dow
+37	f7c8f6b	0.7387	ok	112	categorical minute
+38	278ad0f	0.7437	ok	102	colsample 0.4
+39	4f785d8	0.0000	crash	2	carrier_hour cat
+40	8850dd0	0.0000	timeout	124	carrier_hour cat fixed

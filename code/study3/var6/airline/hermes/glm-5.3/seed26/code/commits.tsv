@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	c674c36	1789646512	baseline
+01	a2f8411	1789646573	feat: numeric calendar cols, DepHour/Minute, cyclic sin/cos, ES on eval
+02	1d3601b	1789646729	feat: label-free route distance stats
+03	984ede7	1789647511	hp: depth16 lr0.03 mcw2 col0.5 sub1.0
+04	a0b4e60	1789647813	feat: 5-seed ensemble, ES on eval
+05	871b72d	1789648136	feat: train on 2005+eval pool, 3 seeds x 250 rounds fixed
+06	7d163ea	1789650581	hp: pool d20 lr0.04 bin512 2x350
+07	ef16f36	1789651468	hp: single model d20 lr0.04 n700

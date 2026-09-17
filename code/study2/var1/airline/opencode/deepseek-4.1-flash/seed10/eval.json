@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T04:30:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:04:17+00:00",
+  "wall_seconds": 2057.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6172.8,
+  "endpoint_at_end": "ok",
+  "head": "9a0c78a",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7448,
+  "final_eval_auc": 0.7448,
+  "holdout_auc": 0.745035015544,
+  "holdout_ap": 0.7329445115458489,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.030264263807999958,
+  "generalization_gap": -0.00023501554399996127,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5095973,
+    "tokens_in_uncached": 5095973,
+    "tokens_in_cached": 0,
+    "tokens_out": 23421,
+    "turns": null,
+    "api_calls": 122,
+    "method": "sum-of-122-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 5942.6,
+  "cpu_seconds_counted": 5748.4,
+  "cpu_seconds_uncounted": 1.5,
+  "cpu_seconds_exempt": 192.7,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 97,
+  "fits_counted": 94,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "bdebb51",
+      "message": "baseline"
+    },
+    {
+      "commit": "edc71ca",
+      "message": "regularized deep ensemble depth4 lr.03"
+    },
+    {
+      "commit": "a7c3b53",
+      "message": "regularized + dep time features"
+    },
+    {
+      "commit": "57b8f8c",
+      "message": "lr.015 1500 trees stronger reg"
+    },
+    {
+      "commit": "97feece",
+      "message": "lr.01 3000 mcw30 lam20"
+    },
+    {
+      "commit": "f7db6d6",
+      "message": "add frequency congestion features"
+    },
+    {
+      "commit": "2b55a4b",
+      "message": "3-seed ensemble"
+    },
+    {
+      "commit": "3d8156b",
+      "message": "calendar features"
+    },
+    {
+      "commit": "28e1a72",
+      "message": "origin-hour congestion freq"
+    },
+    {
+      "commit": "9641a56",
+      "message": "dest-hour origin-day congestion ratio"
+    },
+    {
+      "commit": "78190c4",
+      "message": "dest-day freq and congestion ratios"
+    },
+    {
+      "commit": "391e984",
+      "message": "carrier hour day freq"
+    },
+    {
+      "commit": "02dc6e0",
+      "message": "depth5 with congestion"
+    },
+    {
+      "commit": "3c61004",
+      "message": "prev/next hour origin congestion"
+    },
+    {
+      "commit": "a409def",
+      "message": "extended congestion windows"
+    },
+    {
+      "commit": "c7ed77d",
+      "message": "origin 3h carrier 1h neighbors"
+    },
+    {
+      "commit": "8b0e8d9",
+      "message": "route temporal neighbors dest pm2"
+    },
+    {
+      "commit": "3d3cec2",
+      "message": "route ratio day carrier-route-hour"
+    },
+    {
+      "commit": "1e4ab2f",
+      "message": "depth6 lr.015 2000"
+    },
+    {
+      "commit": "100158c",
+      "message": "depth8 lr.02 1000"
+    },
+    {
+      "commit": "9a0c78a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5749.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 230.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "100158c",
+  "best_commit_eval_auc": 0.7448,
+  "best_commit_holdout_auc": 0.745035015544,
+  "best_commit_holdout_ap": 0.7329445115458489,
+  "best_commit_error": null,
+  "finalized_best": true
+}

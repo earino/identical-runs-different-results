@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	968791d	0.7141	ok	2	baseline
+2	e86e94a	0.7052	ok	2	capacity+early stopping, depth8 lr0.1
+3	4da5c1b	0.7117	ok	3	ES depth6, refit full data
+4	d237c22	0.7066	ok	3	FE round1: dep minutes/bin15/sin/cos, route, numeric cal, log dist
+5	a63ba53	0.7107	ok	5	FE round1, 300 rounds lr0.05 ss0.8 cs0.8
+6	b548b1c	0.7066	ok	2	ablation: FE + baseline 30-round config
+7	0c1a2b2	0.7147	ok	2	ablation: FE without route, baseline config
+8	40d2a81	0.7145	ok	2	TE round: OOF smoothed TE for 5 keys, baseline config
+9	06648b5	0.7232	ok	4	TE + capacity: 300 rounds lr0.05 depth6
+10	c439d83	0.7275	ok	4	TE interactions: origin/dest/carrier x hour, 300 rounds lr0.05
+11	aaace4b	0.7285	ok	7	capacity: 600 rounds lr0.03 depth6
+12	83680d4	0.0000	crash	1	TE: te_dep5 (5-min bins) + te_dow_dep
+13	601a172	0.7288	ok	7	TE: te_dep5 (5-min bins) + te_dow_dep (fix)
+14	2ad6ddb	0.7279	ok	7	TE smoothing alpha=10
+15	6b7ee38	0.7346	ok	27	ensemble: 5 seeds, ss0.8 cs0.8, 600 rounds lr0.03
+16	a0a8e35	0.7347	ok	53	ensemble: 10 seeds
+17	a171a12	0.7367	ok	70	ensemble: 10 seeds depth7
+18	0596401	0.7380	ok	80	ensemble: 8 seeds depth8
+19	2c65fc4	0.7387	ok	117	ensemble: 8 seeds depth9
+20	d02d88a	0.7382	ok	57	het ensemble: depths 7/8/9 x colsample 0.7-1.0, 6 members
+21	e42f44b	0.7386	ok	105	trim: drop sin/cos, numeric cal dupes, log_distance
+22	e2bedd0	0.7390	ok	88	ensemble: 6 seeds depth10, 450r lr0.04
+23	e88230e	0.7382	ok	67	ensemble d10 mcw5
+24	7d596bd	0.0000	crash	1	TE quality: 10 folds + te_origin_dow/te_dest_dow
+25	1d2ff2a	0.7388	ok	89	TE quality: 10 folds + origin/dest x dow TE (fix)
+26	a8c05bb	0.7390	ok	105	ensemble: 8 seeds d10 400r lr0.04
+27	1d556de	0.7378	ok	88	TE: carrier_month, origin_month seasonality
+28	03dd29f	0.0000	crash	1	TE: te_month_day holiday calendar
+29	b127773	0.7305	ok	84	TE: te_month_day (fixed)
+30	4b23801	0.7393	ok	91	TE decorrelation: per-member OOF folds
+31	f3ff1e7	0.7398	ok	96	ensemble: 7 members, colsample 0.65
+32	73ed99c	0.7399	ok	110	ensemble: 8 members cs0.65
+33	e29ab6d	0.7402	ok	110	TE: exact-minute dep encoding; print importances
+34	2560702	0.7398	ok	111	TE: te_carrier_dep15 finer carrier-time interaction
+35	79e4f8d	0.7393	ok	111	ensemble: ss0.7 cs0.65, 8 members
+36	501bfc7	0.7403	ok	110	TE: origin/dest/carrier x 2h-period coarse interactions
+37	f364b2e	0.7408	ok	111	randomized ensemble: hyperparam jitter per member
+38	bc8c79d	0.7405	ok	118	randomized ensemble: wider hyperparam jitter
+39	91a4302	0.7403	ok	112	ensemble: 10 members, lighter rounds
+40	34404e0	0.7401	ok	116	jitter ensemble: TE alpha 15-25, reg_lambda 1-2

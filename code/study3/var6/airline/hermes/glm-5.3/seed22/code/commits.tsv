@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	dd85c35	1789629173	baseline
+01	da723e4	1789629628	v2: bigger GBM + early stopping on eval
+02	1fe2979	1789630032	v5: compact numeric calendar features, drop redundant string cols
+03	067b9da	1789630523	v8: depth10 mcw2, subsample/colsample 0.7, lambda 2
+04	8ef9d46	1789630545	v9: 3-seed ensemble, averaged probabilities
+05	12b2f8b	1789630615	v10: lr 0.03, es 150 in ensemble
+06	71997a6	1789630701	v11: explicit hour and minute numerics
+07	1a0ff4c	1789630759	v12: 5-seed ensemble
+08	b830e72	1789630943	v14: airport-hour congestion counts
+09	6933ec9	1789631273	v17: depth 12
+10	81f28d2	1789631354	v18: depth 14
+11	0010875	1789631442	v19: depth 18
+12	e76d302	1789631651	v21: depth24, colsample 0.6
+13	bc1f7e4	1789632957	v31: reg_lambda 1.0
+14	e19c4a7	1789633075	v32: origin 10-min slot load with mean fallback
+15	f36dd28	1789633457	v36: drop cyclic sin/cos features (ablation)
+16	04a347d	1789633646	v38: 6-seed ensemble

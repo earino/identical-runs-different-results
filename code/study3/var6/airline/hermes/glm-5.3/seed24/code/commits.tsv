@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	dc3a75b	1789637759	baseline
+01	03ca165	1789637812	sin/cos hour + deeper forest with ES on eval
+02	0f3ace1	1789637820	fix: parse c-n strings to ints, keep sin/cos hour
+03	c2c1704	1789637831	lr 0.05, 3000 trees
+04	b75a238	1789637870	smoothed target encoding for Origin/Dest/Carrier
+05	72d92cc	1789637894	min_of_day + te_hour + fixed DepTime hour parsing (mod-24)
+06	ed5613a	1789637921	depth 8, lr 0.03
+07	54e1122	1789637941	interaction TEs: (Origin,Dest) x hour, route, carrier x hour
+08	0eba285	1789637975	OOF target encoding for all TE features
+09	30ca7e1	1789638006	OOF TEs, simple keys only (ablation)
+10	9206134	1789638023	depth 10
+11	c6efcee	1789638034	depth 12, lr 0.02
+12	86f98ac	1789638049	depth 14
+13	e9eeddb	1789638062	depth 16
+14	8d3218e	1789638081	depth 20
+15	b262c4c	1789638101	depth 24
+16	1721f75	1789638215	bagged ensemble of 5 deep XGB models
+17	0472b89	1789638428	less regularization: mcw 1, lambda 0.5
+18	c050ddf	1789639273	lr 0.04 for runtime headroom (fixed ordering)
+19	93952ce	1789639552	lr 0.04, 7 members
+20	9edcb01	1789639638	9 members
+21	689d29f	1789640273	colsample 0.6 for feature diversity

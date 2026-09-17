@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4a827af	0.7141	ok	8	baseline
+2	513d734	0.7091	ok	4	capacity: depth7 lr0.05 mw10 subsample, early stop
+3	8d69588	0.7078	ok	3	400 trees, depth6 lr0.1
+4	05a2f9a	0.7162	ok	2	smoother: depth4 300t lr0.05 mcw20 lambda5
+5	b03d789	0.7120	ok	3	smoother still: depth3 800t lr0.08
+6	50f2f9c	0.0000	crash	1	drop Month+DayofMonth
+7	a98b20c	0.7197	ok	3	drop Month+DayofMonth (fix)
+8	eb004ff	0.7048	ok	3	drop Origin+Dest
+9	101337e	0.0000	crash	1	TE carrier/origin/dest/route k=50
+10	313ba50	0.0000	crash	1	TE carrier/origin/dest/route k=50 (fix)
+11	6563be5	0.7101	ok	2	TE carrier/origin/dest/route k=50 (fix2)
+12	4e51792	0.7195	ok	3	800t lr0.03 depth4
+13	e242316	0.7204	ok	3	clean clock features replace DepTime
+14	09f8e5a	0.7207	ok	2	log-frequency counts origin/dest/carrier/route
+15	e2f7577	0.7045	ok	4	route categorical
+16	fd1fa99	0.7254	ok	2	carrier x hour cross
+17	b98ee99	0.7200	ok	4	origin x hour + dest x hour crosses
+18	4560cb8	0.7237	ok	3	dow x hour, carrier x dow crosses
+19	d865d32	0.7245	ok	3	carrier x hour + carrier x dow
+20	db6e28f	0.7278	ok	3	depth5 at best features
+21	2841c66	0.7288	ok	4	depth6 at best features
+22	12b6760	0.7287	ok	4	depth7 at best features
+23	210eac1	0.7255	ok	5	700 trees depth6
+24	e945f16	0.7265	ok	2	150 trees depth6
+25	9a99669	0.7288	ok	3	mcw50 depth6 300t
+26	c9647c0	0.7312	ok	3	colsample0.6
+27	509b752	0.7309	ok	3	colsample0.4
+28	0fbd8aa	0.7308	ok	3	subsample0.7 colsample0.6
+29	86b432a	0.7239	ok	3	origin/dest x hourbin crosses
+30	0e305d3	0.7334	ok	9	5-model seed/config ensemble
+31	dd79847	0.7332	ok	9	hour-level density counts
+32	32811d3	0.7332	ok	14	9-member ensemble, wider jitter
+33	0b82aee	0.7319	ok	11	drop Distance
+34	3e60a73	0.7283	ok	8	max_cat_threshold16
+35	101dab6	0.7338	ok	13	450t lr0.035 members
+36	68a5ef7	0.0000	crash	2	carrier x halfhour cross
+37	1df8c19	0.7406	ok	15	carrier x halfhour cross (fix)
+38	9eae54d	0.7395	ok	15	carrier x quarterhour cross
+39	cff8f8c	0.7401	ok	14	carrier x halfhour only (drop hour cross)
+40	c5b5e8d	0.7408	ok	18	600t lr0.028 members

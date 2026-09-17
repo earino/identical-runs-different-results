@@ -1,0 +1,184 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 7,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:12:04+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s7-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:49:01+00:00",
+  "wall_seconds": 2218.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6876.8,
+  "endpoint_at_end": "ok",
+  "head": "8abb86d",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7348,
+  "final_eval_auc": 0.7338,
+  "holdout_auc": 0.7352000118140001,
+  "holdout_ap": 0.7260872898839004,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020429260078000056,
+  "generalization_gap": -0.0014000118140000684,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4951566,
+    "tokens_in_uncached": 49934,
+    "tokens_in_cached": 4901632,
+    "tokens_out": 31596,
+    "turns": null,
+    "api_calls": 113,
+    "method": "cumulative-max",
+    "cost_usd": 0.1703,
+    "cached_share": 0.99
+  },
+  "cpu_seconds_python": 6774.7,
+  "cpu_seconds_counted": 5948.3,
+  "cpu_seconds_uncounted": 2.0,
+  "cpu_seconds_exempt": 824.4,
+  "python_processes": 54,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 99,
+  "fits_counted": 91,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "23bc6d6",
+      "message": "baseline"
+    },
+    {
+      "commit": "63c2a98",
+      "message": "deptime hour/cyclical + log distance"
+    },
+    {
+      "commit": "7f6b07f",
+      "message": "ES on 20% holdout + refit, 2k rounds lr.05 depth8"
+    },
+    {
+      "commit": "18b7964",
+      "message": "interaction cats: route, carrier x hour, origin x hour"
+    },
+    {
+      "commit": "4232a66",
+      "message": "more interaction cats: dest x hour, dow x hour"
+    },
+    {
+      "commit": "380eb90",
+      "message": "depth10 lr0.03"
+    },
+    {
+      "commit": "b5d9b09",
+      "message": "depth12 lr0.02"
+    },
+    {
+      "commit": "d17efdc",
+      "message": "dom bucket cat"
+    },
+    {
+      "commit": "0f9aff6",
+      "message": "subsample .7 colsample .5"
+    },
+    {
+      "commit": "973efcc",
+      "message": "subsample .6 colsample .4"
+    },
+    {
+      "commit": "73df5eb",
+      "message": "subsample .5 colsample .3"
+    },
+    {
+      "commit": "972c655",
+      "message": "subsample .4 colsample .2"
+    },
+    {
+      "commit": "35bc7f7",
+      "message": "reg_lambda 10"
+    },
+    {
+      "commit": "3f22c76",
+      "message": "depth14 (with sub.4 cs.2 lam10)"
+    },
+    {
+      "commit": "2489685",
+      "message": "depth16 (with sub.4 cs.2 lam10)"
+    },
+    {
+      "commit": "75685b0",
+      "message": "depth18"
+    },
+    {
+      "commit": "3e3256e",
+      "message": "depth20"
+    },
+    {
+      "commit": "ef8c9fc",
+      "message": "depth24"
+    },
+    {
+      "commit": "a937d39",
+      "message": "3-seed bag ensemble"
+    },
+    {
+      "commit": "8047958",
+      "message": "sub .45 cs .25 (bag)"
+    },
+    {
+      "commit": "00aed70",
+      "message": "final"
+    },
+    {
+      "commit": "8abb86d",
+      "message": "restore best params: subsample .4 colsample .2 (exp 35 config)"
+    }
+  ],
+  "cpu_seconds_budgeted": 5950.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 102.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a937d39",
+  "best_commit_eval_auc": 0.7348,
+  "best_commit_holdout_auc": 0.7352000118140001,
+  "best_commit_holdout_ap": 0.7260872898839004,
+  "best_commit_error": null,
+  "finalized_best": true
+}

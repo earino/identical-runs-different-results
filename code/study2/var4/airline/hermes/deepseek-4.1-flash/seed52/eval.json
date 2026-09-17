@@ -1,0 +1,196 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 52,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:38:37+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s52-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T08:09:08+00:00",
+  "wall_seconds": 5430.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17306.6,
+  "endpoint_at_end": "ok",
+  "head": "07a570d",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7554,
+  "final_eval_auc": 0.7554,
+  "holdout_auc": 0.755038178026,
+  "holdout_ap": 0.7462903430101366,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04026742629000002,
+  "generalization_gap": 0.00036182197399992067,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 17700844,
+    "tokens_in_uncached": 17700844,
+    "tokens_in_cached": 0,
+    "tokens_out": 100459,
+    "turns": null,
+    "api_calls": 175,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17009.1,
+  "cpu_seconds_counted": 7551.3,
+  "cpu_seconds_uncounted": 8952.7,
+  "cpu_seconds_exempt": 505.1,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 503,
+  "fits_counted": 130,
+  "fits_uncounted": 368,
+  "commits": [
+    {
+      "commit": "a906be4",
+      "message": "baseline"
+    },
+    {
+      "commit": "d95c892",
+      "message": "decompose DepTime into hour/tod, numeric month/dow"
+    },
+    {
+      "commit": "43c6fc7",
+      "message": "more capacity: 500 trees lr0.05 subsample"
+    },
+    {
+      "commit": "07d8337",
+      "message": "smoothed OOF target encoding for route"
+    },
+    {
+      "commit": "4703550",
+      "message": "generic OOF target encoding for 7 keys"
+    },
+    {
+      "commit": "8f48de8",
+      "message": "seasonal + route-hour + carrier-route target encodings"
+    },
+    {
+      "commit": "650ce7f",
+      "message": "raw calendar features only (doy/week/holiday)"
+    },
+    {
+      "commit": "bef3c8c",
+      "message": "strong feature subsampling: cs0.2 + lambda5"
+    },
+    {
+      "commit": "a3c6033",
+      "message": "log frequency counts (7 keys), reused under cs0.2"
+    },
+    {
+      "commit": "04219ff",
+      "message": "5-seed bagged ensemble"
+    },
+    {
+      "commit": "1daf63a",
+      "message": "prune harmful encodings: 5 TE keys, 30 features"
+    },
+    {
+      "commit": "c616d15",
+      "message": "carrier-affinity share features"
+    },
+    {
+      "commit": "0a6e5e1",
+      "message": "deep trees: max_depth 14"
+    },
+    {
+      "commit": "39fae22",
+      "message": "cumulative airport congestion by hour"
+    },
+    {
+      "commit": "55ebfd0",
+      "message": "wider categorical splits"
+    },
+    {
+      "commit": "867d0c3",
+      "message": "gradient-based row sampling"
+    },
+    {
+      "commit": "f4c9a78",
+      "message": "min_child_weight 0.5"
+    },
+    {
+      "commit": "4f66ac5",
+      "message": "depth-diverse bag (d10/d14/d18)"
+    },
+    {
+      "commit": "03bb676",
+      "message": "carrier-origin-hour congestion count"
+    },
+    {
+      "commit": "63b8fa2",
+      "message": "route-level cumulative congestion"
+    },
+    {
+      "commit": "5eac9fa",
+      "message": "cumulative carrier traffic"
+    },
+    {
+      "commit": "b1dfcce",
+      "message": "airport total movements cumulative"
+    },
+    {
+      "commit": "0af3676",
+      "message": "4-member bag (time margin)"
+    },
+    {
+      "commit": "e66ffcc",
+      "message": "restore 5-member bag (best eval)"
+    },
+    {
+      "commit": "07a570d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16504.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 297.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b1dfcce",
+  "best_commit_eval_auc": 0.7554,
+  "best_commit_holdout_auc": 0.755038178026,
+  "best_commit_holdout_ap": 0.7462903430101366,
+  "best_commit_error": null,
+  "finalized_best": true
+}

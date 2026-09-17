@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	5e678bb	1789519998	baseline
+01	6a5acc2	1789520087	model: 1500 trees lr .03 depth6, early stop on eval
+02	85deffb	1789520114	FE: depTime decomposition only
+03	7921b90	1789520130	FE: frequency encodings for origin/dest/carrier/route
+04	c7ef087	1789520178	hp: depth8 mcw5 colsample.7 lambda2
+05	ebcfe57	1789520193	hp: depth10 mcw3 lr.02
+06	670cfdc	1789520221	hp: depth12 mcw2
+07	29510a1	1789520244	hp: depth14 mcw1
+08	907e1af	1789520276	hp: depth16
+09	dd2c344	1789520317	hp: depth20
+10	f3bca8d	1789520365	hp: depth24
+11	7ab49c4	1789520616	hp: lr.01 depth24
+12	74ac240	1789521009	FE: hour-interaction frequency features
+13	c58cc87	1789521100	fix carrier freq column name
+14	7764751	1789521527	hp: colsample.4
+15	466f14c	1789521604	hp: colsample.3
+16	9b4bf2f	1789522091	hp: depth30 cs.3

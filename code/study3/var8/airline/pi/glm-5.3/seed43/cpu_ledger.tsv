@@ -1,0 +1,3 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789591930	47	4.636	counted	exit	3.3	1	train.py
+1789592062	95	3.986	counted	exit	1.5	1	train.py

@@ -1,0 +1,136 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 39,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T10:14:16+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s39-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T11:38:55+00:00",
+  "wall_seconds": 5079.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17780.1,
+  "endpoint_at_end": "ok",
+  "head": "8be610b",
+  "n_commits": 9,
+  "n_experiments": 12,
+  "n_ok": 11,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7547,
+  "final_eval_auc": 0.7547,
+  "holdout_auc": 0.7559359515399999,
+  "holdout_ap": 0.7445532856750205,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04116519980399991,
+  "generalization_gap": -0.001235951539999891,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2217351,
+    "tokens_in_uncached": 15367,
+    "tokens_in_cached": 2201984,
+    "tokens_out": 53171,
+    "turns": null,
+    "api_calls": 61,
+    "method": "sum-of-61-events",
+    "cost_usd": 0.828,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 17756.6,
+  "cpu_seconds_counted": 1716.6,
+  "cpu_seconds_uncounted": 15694.5,
+  "cpu_seconds_exempt": 345.6,
+  "python_processes": 38,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 152,
+  "fits_counted": 11,
+  "fits_uncounted": 140,
+  "commits": [
+    {
+      "commit": "602bf0e",
+      "message": "baseline"
+    },
+    {
+      "commit": "6ea9ee8",
+      "message": "capacity: 3000 rounds lr0.05 + early stopping on eval"
+    },
+    {
+      "commit": "8752f0e",
+      "message": "numeric dates + depth8 subsample/colsample/mincw reg"
+    },
+    {
+      "commit": "8194f91",
+      "message": "d16 ss0.7 cs0.6 mcw3 lr0.03 esr100 + hourcat"
+    },
+    {
+      "commit": "d12680a",
+      "message": "qtrcat+hourcat dep features, d16 lr0.01 esr300 cs0.5"
+    },
+    {
+      "commit": "65ee065",
+      "message": "hour_car interaction cat + mcw1"
+    },
+    {
+      "commit": "3a49b8c",
+      "message": "cyclic sin/cos of departure minute"
+    },
+    {
+      "commit": "72209fc",
+      "message": "half-day harmonic sin/cos"
+    },
+    {
+      "commit": "09b3362",
+      "message": "harmonics k=1..8 of dep minute, drop hourcat"
+    },
+    {
+      "commit": "8be610b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17411.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 23.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "09b3362",
+  "best_commit_eval_auc": 0.7547,
+  "best_commit_holdout_auc": 0.7559359515399999,
+  "best_commit_holdout_ap": 0.7445532856750205,
+  "best_commit_error": null,
+  "finalized_best": true
+}

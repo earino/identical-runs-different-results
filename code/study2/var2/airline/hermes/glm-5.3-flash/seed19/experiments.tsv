@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	b628f03	0.7141	ok	4	baseline
+2	97e2fa9	0.7090	ok	9	feat eng: time/cyclic/route/freq + depth8 lr.05 600 trees
+3	b0fb4eb	0.0000	crash	1	clean feat eng + baseline model
+4	5c2246d	0.7051	ok	2	clean feat eng + baseline model (fixed)
+5	a4f7055	0.7036	ok	2	smoothed TE all cats + baseline model
+6	7379b8e	0.7225	ok	2	OrgHour + time feats, num calendar, 60 trees (screened best)
+7	c21435f	0.0000	crash	1	8-member interaction-grain ensemble
+8	53fde45	0.7451	ok	39	8-member interaction-grain ensemble (fixed)
+9	7fa7b8f	0.7458	ok	35	greedy pool v2 with subsampled Car members
+10	2985938	0.7480	ok	37	noMo + recency-weighted 6-member pool
+11	7ad554c	0.0000	crash	2	union-frame 8-member ensemble (greedy-50s set)
+12	19de846	0.0000	timeout	121	union-frame 8-member ensemble (fixed)
+13	da9a54a	0.7501	ok	51	union-frame 8-member ensemble (params fixed)

@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	2b508be	1789528942	baseline
+01	ad5c922	1789529013	exp2: time features+cyclical+route+TE(smooth30), depth7 500 trees lr0.05 ES40
+02	f8f5a38	1789529090	exp3: TE smooth30 x7 + time feats, depth5 200t lr.08 mcw20 gamma1 ss.8 cs.8
+03	2dcafac	1789529123	exp4: 3-seed ensemble of exp3 config, cols numerics->cats->te
+04	578ee4c	1789529198	exp5: reg bump depth5 400t lr.04 mcw50 gamma3 ss.7 cs.7, 3 seeds
+05	d6fdd7b	1789529324	exp6: drop car/org/des TE, keep time TEs only (U set)
+06	8d0b68a	1789529526	exp7: hour as native categorical, drop te_hour, 5 seeds
+07	3655a74	1789529712	exp9: 15-min departure slot categorical (fix col order)
+08	d270ae3	1789530238	exp10: depth9 600t lr.033 gamma5 (enabled by slot feature)
+09	cf41fd9	1789531175	exp11: 12-seed ensemble
+10	6cfd222	1789531332	exp12: month-recency sample weights (1..1.5)
+11	df5ae2f	1789531686	exp13: slot-mixed ensemble (6x slot15 + 6x slot10), recency weights
+12	84659c6	1789531903	exp14: 4-way slot mix (15/10/20/12 x 3 seeds)
+13	4931bc6	1789532035	exp15: 4-way slot mix retry, cached prepare
+14	3253487	1789532185	exp16: 4-way slot mix, single base matrix + slot swap
+15	1bc1ce9	1789532337	exp17: 4-way slot mix, 3 seeds per slotdiv (12 fits)
+16	54747c4	1789532774	exp18: 5-way slot mix (15/10/20/12/25 x 3 seeds)
+17	149909c	1789532891	exp19: final config = 4-way slot mix, cached slot variants in predict_proba

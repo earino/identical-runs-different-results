@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	af3d486	1789521245	baseline
+01	5ec1351	1789521298	regularized depth6 + early stop + refit
+02	39d53a9	1789521371	target encodings: origin/dest/route/carrier/car-hour/org-hour + counts
+03	c7012d9	1789521389	TE v2: leak-free probe (maps fit on tr-part only)
+04	39d7042	1789521453	diagnostic sweep: AUC vs n_estimators
+05	a230e2d	1789521477	grid depth x n, subsample 0.8
+06	2430d65	1789521528	bagged ensemble: 8x (d4 n80 sub8 col8) averaged
+07	2bb0bfe	1789521540	ensemble member grid (4 configs x 8 seeds)
+08	4102924	1789521600	ablation: drop DayofMonth/Month variants
+09	3d2041e	1789521628	capacity re-grid on trimmed features + K16 test
+10	2d3b623	1789521671	deeper capacity grid d5/d6 + K32
+11	4e83e72	1789521889	TE retry on trimmed set + sincos variant
+12	2c49ea8	1789521931	K curve + dow sincos + hour bin + reg variants
+13	683c171	1789521997	ablations: route cat, -dist, -origin, -dest
+14	4da045d	1789522044	lr/capacity/mcw sweep on sincos base
+15	a55c480	1789522107	depth8 + n variants at d7
+16	81e9358	1789522155	d9/d10 + d8 n variants (explicit cfgs)
+17	784ed7f	1789522234	d12 + d10 n variants
+18	a68490c	1789522335	d14/d16 test
+19	89d20c5	1789522463	d16 n120 K8 single config
+20	13c3195	1789522567	d18 n100 K8
+21	7855efb	1789522677	cumulative seed prints; d20 n100
+22	93beb82	1789523066	d18 subsample0.9 K6
+23	57b5b74	1789523156	d18 subsample0.95 K6
+24	ef3d472	1789523244	d18 subsample1.0 K6
+25	47be798	1789523500	max_bin 512 at d18 sub1.0

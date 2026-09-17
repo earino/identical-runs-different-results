@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5356f07	0.7141	ok	4	baseline
+2	bf51135	0.7141	ok	3	capacity: 2000 trees lr=0.05 early stopping
+3	a23d4a9	0.7066	ok	3	feat: route + deptime breakdown
+4	299165a	0.7159	ok	3	feat: deptime breakdown, no route
+5	7a024f2	0.7157	ok	5	feat: smoothed hour/dow/month target rates
+6	a5ee8fc	0.7161	ok	3	feat: carrier/origin/dest smoothed target rates
+7	5458d37	0.7166	ok	5	hp: depth8 + row/col subsampling
+8	480fb47	0.7169	ok	5	hp: lr 0.03
+9	cd60fdd	0.7171	ok	6	feat: time blocks + dist interactions
+10	22c8812	0.7302	ok	10	feat: carrier x hour interactions
+11	dbbaddb	0.7206	ok	10	feat: origin/dest x block interactions
+12	73855b7	0.7245	ok	9	feat: dow x hour/block interactions
+13	411aac7	0.7287	ok	10	feat: route smoothed target rate
+14	7ab78eb	0.7301	ok	11	hp: stronger regularization mcw10 lambda5
+15	64bf4f0	0.7300	ok	11	feat: doy proxy + cyclical month
+16	79474c3	0.7315	ok	11	feat: smoothed interaction rates as numerics
+17	9d3ad06	0.7284	ok	11	feat: orghour + carorg rates
+18	1346a94	0.7167	ok	9	ablation: drop car_x cats
+19	d8ddbab	0.7243	ok	10	feat: car x coarse-origin x block rate
+20	ba0d15a	0.7320	ok	27	ensemble: 3-seed average
+21	1419f69	0.7320	ok	44	ensemble: 5 heterogeneous configs
+22	ce5f370	0.7324	ok	29	feat: congestion counts
+23	26b6c0b	0.7335	ok	29	feat: dist-band interaction rates
+24	eb22b14	0.7354	ok	31	feat: car-b30 + coarse-org-time rates
+25	4897fc4	0.7352	ok	31	feat: dest-side rates
+26	227c7ff	0.7354	ok	30	hp: max_cat_to_onehot=2
+27	9ea1123	0.7342	ok	30	feat: busy-route cat + rate
+28	8cb2e91	0.7328	ok	57	ensemble: 7 seeds bagged
+29	b587d1a	0.7356	ok	31	hp: feature weights
+30	ec59022	0.7346	ok	30	feat: deptime quantile rate
+31	a728619	0.7313	ok	30	feat: seasonal rates
+32	469ae1c	0.7326	ok	29	hp: depth10 mcw8
+33	5c99fae	0.7329	ok	27	feat: car x hour x dist rate
+34	8d70c55	0.7305	ok	25	feat: car x coarse-origin cat
+35	531da17	0.7347	ok	29	hp: fw without DepHour
+36	5957f06	0.7358	ok	40	ensemble: 4 seeds
+37	640847d	0.7355	ok	47	ensemble: 5 seeds
+38	ca0ed91	0.7354	ok	39	feat: car-hour congestion count
+39	d66c1ad	0.7357	ok	59	hp: lr 0.02 esr 150
+40	028475d	0.7356	ok	39	ensemble: 4 seeds varied sampling

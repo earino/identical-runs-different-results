@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 35,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T04:29:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s35-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T06:51:56+00:00",
+  "wall_seconds": 8565.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9216.8,
+  "endpoint_at_end": "ok",
+  "head": "81c3bce",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7408,
+  "final_eval_auc": 0.7408,
+  "holdout_auc": 0.742330724354,
+  "holdout_ap": 0.7312577004247264,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027559972618000028,
+  "generalization_gap": -0.0015307243540000348,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5503763,
+    "tokens_in_uncached": 1695059,
+    "tokens_in_cached": 3808704,
+    "tokens_out": 19377,
+    "turns": null,
+    "api_calls": 137,
+    "method": "sum-of-137-events",
+    "cost_usd": 3.4486,
+    "cached_share": 0.692
+  },
+  "cpu_seconds_python": 8749.4,
+  "cpu_seconds_counted": 8256.4,
+  "cpu_seconds_uncounted": 3.9,
+  "cpu_seconds_exempt": 489.1,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 203,
+  "fits_counted": 195,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "968791d",
+      "message": "baseline"
+    },
+    {
+      "commit": "e86e94a",
+      "message": "capacity + early stopping"
+    },
+    {
+      "commit": "d237c22",
+      "message": "FE round1: dep-time decomposition + route + numeric calendars"
+    },
+    {
+      "commit": "a63ba53",
+      "message": "FE + fixed capacity 300x lr.05 depth6 subsample"
+    },
+    {
+      "commit": "b548b1c",
+      "message": "FE round1 + exact baseline model config"
+    },
+    {
+      "commit": "0c1a2b2",
+      "message": "FE round1 minus route"
+    },
+    {
+      "commit": "06648b5",
+      "message": "TE + 300 rounds lr 0.05"
+    },
+    {
+      "commit": "c439d83",
+      "message": "interaction TEs origin/dest/carrier x hour"
+    },
+    {
+      "commit": "aaace4b",
+      "message": "600 rounds lr 0.03"
+    },
+    {
+      "commit": "601a172",
+      "message": "finer te_dep5 + dow x hour interaction TE"
+    },
+    {
+      "commit": "6b7ee38",
+      "message": "5-seed bagged ensemble ss/cs 0.8"
+    },
+    {
+      "commit": "a0a8e35",
+      "message": "10-seed ensemble"
+    },
+    {
+      "commit": "a171a12",
+      "message": "ensemble depth 7"
+    },
+    {
+      "commit": "0596401",
+      "message": "8-seed ensemble depth 8"
+    },
+    {
+      "commit": "2c65fc4",
+      "message": "8-seed ensemble depth 9"
+    },
+    {
+      "commit": "e42f44b",
+      "message": "trim redundant features"
+    },
+    {
+      "commit": "e2bedd0",
+      "message": "6-seed depth10 450 rounds lr0.04"
+    },
+    {
+      "commit": "4b23801",
+      "message": "per-member OOF fold seeds for TE decorrelation"
+    },
+    {
+      "commit": "f3ff1e7",
+      "message": "7 members colsample 0.65"
+    },
+    {
+      "commit": "73ed99c",
+      "message": "8 members"
+    },
+    {
+      "commit": "e29ab6d",
+      "message": "te_dep exact-minute + print importances"
+    },
+    {
+      "commit": "501bfc7",
+      "message": "coarse 2h interaction TEs origin/dest/carrier"
+    },
+    {
+      "commit": "f364b2e",
+      "message": "randomized hyperparam jitter across members"
+    },
+    {
+      "commit": "81c3bce",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8260.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 467.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f364b2e",
+  "best_commit_eval_auc": 0.7408,
+  "best_commit_holdout_auc": 0.742330724354,
+  "best_commit_holdout_ap": 0.7312577004247264,
+  "best_commit_error": null,
+  "finalized_best": true
+}

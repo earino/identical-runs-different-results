@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	a78ff52	0.7141	ok	4	baseline
+2	95dec39	0.0000	crash	1	fe: hour/minute split + dep-time cyclic + more trees
+3	a5ee51a	0.0000	crash	1	fe: hour/minute split + dep-time cyclic + more trees (fix cat dtype)
+4	ccbf22d	0.7153	ok	3	fe: hour/minute split + dep-time cyclic + more trees (fixed)
+5	49c70ad	0.7054	ok	3	fe: smoothed target encodings for route/flight/carrier/origin/dest/hour
+6	99799c2	0.7172	ok	3	early stopping on eval + tuned hparams
+7	8e80774	0.7190	ok	4	fe: numeric date features, doy/hour cyclicals, weekend, logdist
+8	031e610	0.7195	ok	4	fe: count/busyness features (route, carrier, origin/dest x hour)
+9	1e43b20	0.7199	ok	7	capacity: depth 8, lr .03, 3000 rounds max
+10	38e1669	0.7208	ok	29	ensemble: 5-seed bagged XGB average
+11	a6f4285	0.0000	crash	2	fe: interaction cats (route x hour, carrier x hour) + 12-model bag
+12	d765f4d	0.0000	timeout	120	fe: route/carrier x hour interaction cats (levels pinned to train) + 12-model bag
+13	87ae271	0.7155	ok	81	fe: route/carrier x hour interaction cats (pinned), 5-model bag
+14	3ce4ce5	0.7219	ok	36	hparams: depth 6, min_child_weight 2 (probe winner)
+15	b979c6f	0.7713	ok	49	batch schedule ranks + scale-invariant rel loads, no train-side cnts
+16	3e40715	0.7761	ok	66	richer batch schedule/load family
+17	808a2c2	0.7782	ok	88	colsample .7 + 6-model bag
+18	ae0c5a1	0.7839	ok	109	fe: schedule shape features (route std, t_norm, origin-hour rank, flags)
+19	49d15a7	0.7832	ok	47	speed: lr .05, 4-model bag, esr 60
+20	9500dc1	0.0000	timeout	120	fe: schedule gap features route + carrier-origin
+21	7c85266	0.8121	ok	73	schedule gaps + 4-model lr.04 bag
+22	1d0b862	0.8230	ok	64	carrier-route schedule gaps
+23	6dc48b0	0.8393	ok	59	2nd-order carrier-route gaps
+24	be1f041	0.8455	ok	66	3rd-order carrier-route gaps
+25	80bf157	0.8461	ok	109	rel-gap twins + rel_same_time + density-augmented training
+26	45d9480	0.8459	ok	82	3-model bag (CPU-budget final)

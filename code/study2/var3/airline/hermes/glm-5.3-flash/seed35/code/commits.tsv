@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	365e0cf	1789526652	baseline
+01	cb5eaa7	1789526752	exp3: 300 trees depth 4
+02	5260a6a	1789527011	exp4: dep_min+sincos, drop Distance, 800 trees lr0.04
+03	10e4de2	1789527106	exp5: insertion-order categories
+04	51bfde0	1789527663	exp6: carrier x 30-min block, 1200 trees lr0.03
+05	0a86919	1789527977	exp7: 5-model diverse ensemble (depth x +/-Distance)
+06	87ca2dd	1789528178	exp8: 9-member bagged ensemble (subsample 0.8 bags)
+07	a9c9b32	1789528746	exp9: 12-member ensemble (+carmon+dist, huber, nodest)
+08	e774aaa	1789529282	exp10: 14 members (+minute-of-hour members)
+09	3903291	1789530298	exp11: M12 = 11 XGB + quantile booster, drop redundant plain-d6 members
+10	4ade867	1789531324	exp13: 12 members incl airport-x-hour, drop plain bags
+11	5b13a6d	1789531463	exp14: 11 members n1100 (runtime safety)
+12	d7f8c3d	1789531749	final: clip member probs to [0,1] (huber member emits raw values)
+13	59118aa	1789532066	exp16: greedy-11 subset at n1100 (runtime-safe)

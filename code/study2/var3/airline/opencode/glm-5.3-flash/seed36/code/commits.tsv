@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	1609419	1789530182	baseline
+01	d585d9f	1789530302	E6: FE v1 - time-of-day cyclic/flags, numeric month/dom/dow, log distance
+02	b4ccf0b	1789530359	E10: 300 trees lr0.05 on E6 features
+03	452a1c7	1789530371	E11: 600 trees lr0.025
+04	722b4c8	1789530378	E12: 1000 trees lr0.015
+05	10165ba	1789530454	E17: 5-seed bag of E12 config, averaged probas
+06	8016042	1789530491	E18: diverse 5-config ensemble
+07	49a3d34	1789530527	E19: 8-model diverse ensemble
+08	ec1d962	1789530590	E20: diagnostic - per-member eval AUC for 8-model ensemble
+09	939c4eb	1789530667	E21: single model sub0.9 col0.6 mcw10 d6 1000@0.015
+10	3e2d96e	1789530677	E22: col 0.5 probe
+11	3b0dc20	1789530686	E23: col 0.4 probe
+12	69b3a63	1789530699	E24: col 0.3 probe
+13	6a6095e	1789530723	E26: 2000 trees lr0.008 col0.3 mcw10
+14	ad20a11	1789530817	E29: subsample 1.0 probe
+15	4f70de0	1789530844	E30: + colsample_bynode 0.5
+16	bfa83ef	1789530871	E32: depth 7 probe
+17	e486cc8	1789530890	E33: depth 8 probe
+18	77c0f57	1789530909	E34: depth 10 probe

@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 22,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T05:23:06+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s22-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T07:28:44+00:00",
+  "wall_seconds": 7538.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11037.1,
+  "endpoint_at_end": "ok",
+  "head": "43615ba",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 2,
+  "n_timeout": 2,
+  "best_eval_auc": 0.733,
+  "final_eval_auc": 0.733,
+  "holdout_auc": 0.7341320553940001,
+  "holdout_ap": 0.7241318927848728,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01936130365800004,
+  "generalization_gap": -0.0011320553940000755,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7198070,
+    "tokens_in_uncached": 2355702,
+    "tokens_in_cached": 4842368,
+    "tokens_out": 30717,
+    "turns": null,
+    "api_calls": 136,
+    "method": "sum-of-136-events",
+    "cost_usd": 4.6922,
+    "cached_share": 0.673
+  },
+  "cpu_seconds_python": 10520.9,
+  "cpu_seconds_counted": 9474.7,
+  "cpu_seconds_uncounted": 44.9,
+  "cpu_seconds_exempt": 1001.2,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 197,
+  "fits_counted": 184,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "b5b902e",
+      "message": "baseline"
+    },
+    {
+      "commit": "50e7bd2",
+      "message": "early stopping with 3000 trees"
+    },
+    {
+      "commit": "672d398",
+      "message": "FE v2: tod/hour/sin-cos/ordinal dates, no route"
+    },
+    {
+      "commit": "6d52462",
+      "message": "early stopping on AUC"
+    },
+    {
+      "commit": "ce545fd",
+      "message": "d8 lr0.05 mcw50 subsample/colsample 0.8"
+    },
+    {
+      "commit": "5267358",
+      "message": "d10 lr0.03 mcw100 ss0.7 cs0.6"
+    },
+    {
+      "commit": "6b3e96f",
+      "message": "3-seed ensemble d10"
+    },
+    {
+      "commit": "5f36afe",
+      "message": "5-member diverse ensemble"
+    },
+    {
+      "commit": "b874af3",
+      "message": "probe: lossguide max_leaves 128"
+    },
+    {
+      "commit": "eda207f",
+      "message": "8-member ensemble incl lossguide, ES patience 150"
+    },
+    {
+      "commit": "bdc6f61",
+      "message": "7-member ensemble in low-colsample region"
+    },
+    {
+      "commit": "aa4c954",
+      "message": "10-member ensemble with lr/lambda/mcw/bin diversity"
+    },
+    {
+      "commit": "3b9f9ad",
+      "message": "ensemble around mcw50/maxbin512 sweet spot"
+    },
+    {
+      "commit": "b7ba0d7",
+      "message": "finer bins/mcw ensemble, all cs.5 ss.75"
+    },
+    {
+      "commit": "380ec03",
+      "message": "minute feature + mcw 5-10 ensemble"
+    },
+    {
+      "commit": "cd38969",
+      "message": "6-member lossguide-centric ensemble"
+    },
+    {
+      "commit": "aed43a2",
+      "message": "consolidated 6-member ensemble, patience 100"
+    },
+    {
+      "commit": "8c11b56",
+      "message": "bynode+d16-centric ensemble"
+    },
+    {
+      "commit": "2dba1be",
+      "message": "ES on 50k eval subsample"
+    },
+    {
+      "commit": "c3505e4",
+      "message": "bynode .6 mcw10 member"
+    },
+    {
+      "commit": "de8e2b5",
+      "message": "patience 70, ES on 30k"
+    },
+    {
+      "commit": "8965195",
+      "message": "minute + tod harmonic features"
+    },
+    {
+      "commit": "43615ba",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9519.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 516.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8965195",
+  "best_commit_eval_auc": 0.733,
+  "best_commit_holdout_auc": 0.7341320553940001,
+  "best_commit_holdout_ap": 0.7241318927848728,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	149ba8b	0.7141	ok	4	baseline
+2	40df9cb	0.7084	ok	4	capacity 500 trees lr0.05
+3	2cce301	0.7057	ok	5	early stop internal valid
+4	b097d29	0.7127	ok	2	feat dep_hour/min/tod
+5	b23e665	0.7000	ok	1	ablate Origin/Dest
+6	34563f6	0.7056	ok	2	feat route cat
+7	0b2c9e3	0.7150	ok	3	depth3 800 trees lr0.05
+8	c82de65	0.7146	ok	3	depth4 600 trees lr0.05
+9	5327aea	0.7142	ok	3	depth3 + dep_hour/tod
+10	78012f6	0.7034	ok	3	TE origin/dest/route + freq
+11	7f18fa4	0.7125	ok	4	depth2 1500 trees
+12	f3cdfc1	0.7155	ok	8	3-seed bag
+13	08e83aa	0.7157	ok	7	depth-diverse bag
+14	65d5208	0.7189	ok	8	group rare airports K=50
+15	22c28ca	0.7182	ok	8	group rare airports K=100
+16	8e77bd0	0.7190	ok	7	group rare airports K=25
+17	63e9e46	0.7158	ok	7	grouped route cat top300
+18	1f428c8	0.7186	ok	7	min_child_weight=50
+19	c4550e0	0.7187	ok	9	5-member bagged ens
+20	a131135	0.7190	ok	6	dep_hour monotone +1
+21	e3fa652	0.7193	ok	7	max_bin=512
+22	3d71fe2	0.7195	ok	7	max_bin=1024
+23	1c1ac55	0.7203	ok	15	lr0.02 x2.5 trees
+24	186205a	0.7191	ok	37	lr0.01 x2.5 trees
+25	cebaeff	0.7226	ok	14	carrier x hour cat
+26	69e081d	0.7211	ok	16	carrier_hour + origin_hour
+27	a39e2a4	0.7177	ok	15	carrier_hour + dow_hour
+28	37e0f1a	0.7180	ok	16	carrier_hour + carrier_origin
+29	809ffba	0.7235	ok	15	carrier_hour grouped sparse
+30	abc599c	0.7205	ok	16	carrier-hour support >=600
+31	1dbeacd	0.7239	ok	16	carrier-hour support >=150
+32	b9ce9d0	0.7246	ok	16	airport min-support 1000
+33	2dee358	0.7268	ok	16	airport min-support 500
+34	b23d6f0	0.7278	ok	15	airport min-support 200
+35	2788e54	0.7281	ok	17	airport min-support 100
+36	72ce17f	0.7257	ok	16	airport no grouping
+37	ace6a9d	0.7283	ok	30	5-member ensemble
+38	d257f7c	0.7284	ok	25	carrier-hour support >=75
+39	0d6c50f	0.7285	ok	28	carrier_hour + origin_hour(min300)
+40	01f45b4	0.7281	ok	26	reg_lambda=5

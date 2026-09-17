@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	48f442e	0.7141	ok	4	baseline
+2	5ac4eba	0.0000	crash	1	deptime hour/minute/cyclic + distance log/bin features
+3	2627eb2	0.0000	crash	2	deptime hour/minute/cyclic + distance log/bin features
+4	3fc0d05	0.7147	ok	2	deptime hour/minute/cyclic + distance log/bin features
+5	709293d	0.7166	ok	22	early stopping rounds search + refit, lr0.05 depth8 subs/cols 0.9
+6	a8b2081	0.7050	ok	6	interaction cats: route, carrier-origin, carrier-dest
+7	a370e14	0.7162	ok	26	smoothed target encoding + frequency encoding for carrier/origin/dest
+8	1db43c2	0.7027	ok	16	DepTime as raw categorical (1341 levels)
+9	fc22781	0.7159	ok	24	depth10 mcw20 gamma1
+10	94c5325	0.7148	ok	20	depth6 lr0.05
+11	bd25c10	0.7160	ok	54	lr0.03 es100 max4000 depth8
+12	abd37c1	0.7190	ok	56	4-model diverse ensemble averaged
+13	e029ba2	0.7193	ok	69	6-member ensemble
+14	f972713	0.0000	timeout	123	OOF target encodings: origin/dest/carrier/route/carrier-hour
+15	2d7246e	0.7164	ok	93	OOF target encodings, 4-member ensemble
+16	d6d1948	0.7183	ok	78	calendar features: day-of-year + holiday season flags
+17	da71d91	0.7185	ok	59	6-member bagged ensemble (80% row subsample per member)
+18	895fc91	0.7201	ok	74	add lossguide member to ensemble
+19	b8a035a	0.7205	ok	95	second lossguide member (leaves=128)
+20	cb6589f	0.7205	ok	98	finder joins ensemble + val-AUC weighted average
+21	8cffd40	0.0000	crash	80	add dart member (300 trees lr0.1 depth6)
+22	4fc75a2	0.7209	ok	92	add dart member (300 trees lr0.1 depth6)
+23	f7f7ea3	0.7215	ok	105	10th member: lossguide leaves=32
+24	ea1dd05	0.7216	ok	100	rank-average blending
+25	e901833	0.7221	ok	71	slim finder + 11th member (dart depth7 seed9)
+26	a6aaf4f	0.7221	ok	86	12th member: dart depth8 lr0.08
+27	995d226	0.7219	ok	92	lossguide members 1.5x rounds
+28	561bf56	0.7357	ok	89	carrier x hour raw categorical
+29	b28d9c3	0.7276	ok	68	hour-x-dow + carrier-x-dow interactions
+30	823c98e	0.7289	ok	85	carrier-x-origin categorical
+31	aef8874	0.7088	ok	46	simplify: drop minute/sin/cos, add raw distance
+32	dcf1b6f	0.0000	timeout	123	origin-x-hour categorical
+33	f24db5b	0.7377	ok	90	carrier-x-distbin categorical
+34	910d704	0.7236	ok	74	carrier-x-month categorical
+35	335f64c	0.7427	ok	111	hour-x-distbin categorical
+36	a39f9d9	0.7422	ok	103	finer distance bins (15)
+37	84bc740	0.7415	ok	84	subsample 0.8 for all members
+38	7defada	0.7425	ok	98	min_child_weight 10
+39	590d9ff	0.7443	ok	73	coarser distance bins (7)
+40	5964efb	0.7433	ok	74	coarser distance bins (5)

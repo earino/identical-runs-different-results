@@ -1,0 +1,23 @@
+n	commit	eval_auc	status	seconds	description
+1	2051860	0.7141	ok	4	baseline
+2	900c765	0.7119	ok	4	n500 lr0.05
+3	5aa70c7	0.7178	ok	2	tod+cyc features depth3 n400
+4	6dcf643	0.7328	ok	10	carrier_hour d4 mcw20 e.05 n2000
+5	bab83bc	0.7372	ok	28	ensemble 3 members (ch, ch+cb30, d3)
+6	bbd5c32	0.7409	ok	35	ensemble5 diverse families
+7	510d5f7	0.7419	ok	54	ensemble4 + hour x distance interaction
+8	6788b58	0.7421	ok	60	prob-avg ensemble 5 members
+9	0e4aaa2	0.7422	ok	53	e.04 retune equal-AUC lower-cost
+10	24f214d	0.7424	ok	63	M1 n4000 M5 n3000
+11	06302b5	0.7427	ok	68	num_parallel_tree=2 on M2,M5
+12	6ef37e9	0.7399	ok	80	num_parallel_tree=2 all members
+13	cc4aedb	0.7407	ok	77	npt=2 on M1,M3 as well
+14	77ba510	0.7411	ok	48	compact 10k trees
+15	f6ea352	0.7417	ok	57	6th member depth3 strong feats
+16	068b306	0.7426	ok	71	M2 npt2 1250, M5 npt2 1750
+17	50f31c9	0.7427	ok	70	lam1 all members
+18	c432c7b	0.7394	ok	67	max_cat_to_onehot=8
+19	281bc0f	0.7427	ok	71	M4 ch+cdist+hdist
+20	a5a758b	0.7379	ok	44	subsample .95 compact
+21	f1cb416	0.7400	ok	41	gamma .2 compact
+22	8e37549	0.7399	ok	43	colsample .8/.9 compact

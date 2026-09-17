@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f52d7a3	0.7141	ok	5	baseline
+2	28a64d9	0.6947	ok	5	feat: dephour/depmin/route/dayofyear, 300 trees
+3	5831aa4	0.7079	ok	3	feat eng dephour/route/dayofyear, 30 trees
+4	b5616d8	0.7127	ok	2	baseline + dephour/depmin
+5	f92140a	0.7083	ok	2	baseline features, 300 trees
+6	4541343	0.7119	ok	5	early stopping (10% val) + refit, lr 0.05
+7	51b73b1	0.7149	ok	4	deep reg: depth4 lr.03 800t mcw10 sub.8 col.8
+8	fb1f281	0.7138	ok	8	depth4 lr.02 2000t mcw20 lam5
+9	05ef5a0	0.7152	ok	5	depth5 lr.03 600t mcw10 lam2
+10	c81a758	0.7153	ok	4	depth6 lr.03 400t mcw10 lam2
+11	c7d8030	0.7173	ok	3	add dephour/depmin/isweekend
+12	055a3a9	0.7042	ok	5	add route categorical
+13	e1fb247	0.7195	ok	5	add dayofyear
+14	d806aa4	0.7195	ok	4	add carrier/origin/dest/route freq encodings
+15	930a4a4	0.7192	ok	4	add numeric month/dom/dow
+16	4fa12a1	0.7205	ok	8	ensemble of 3 depths (5/6/7)
+17	3dfb99e	0.7201	ok	8	OOF target encoding carrier/origin/dest on ensemble
+18	58be0e9	0.7155	ok	8	drop origin/dest categoricals, keep OOF TE
+19	bfe13a4	0.7207	ok	16	6-model ensemble (2 seeds x 3 depths)
+20	05c8c11	0.7199	ok	18	max_cat_threshold=128
+21	9795625	0.7149	ok	15	add carrier_origin interaction categorical
+22	900eca6	0.7201	ok	20	lossguide ensemble leaves 31/63/127
+23	1ea4b3e	0.7210	ok	30	12-model seed ensemble
+24	9a0d895	0.7208	ok	48	12-ensemble lr.02 800/650/500 trees
+25	32e9dfa	0.7211	ok	30	12-ensemble mcw15 sub.7 col.7
+26	84b4263	0.7201	ok	30	bootstrap-bagged 12-model ensemble
+27	599cbf6	0.7211	ok	29	logit-average 12-model ensemble
+28	5beb696	0.0000	timeout	120	dart booster ensemble (3 models)
+29	a534e81	0.7206	ok	29	monotone +1 on DepHour
+30	dd8aec2	0.7197	ok	25	max_cat_threshold=16
+31	53c70cf	0.0000	crash	0	add hour-weekend/hour-dist/hour-sq features
+32	ad69294	0.7215	ok	32	add hour-weekend/hour-dist/hour-sq features
+33	4758122	0.7218	ok	45	15-model ensemble depths 4-8 x 3 seeds
+34	9890596	0.7215	ok	43	add continuous DepTimeMin
+35	a1ed756	0.7218	ok	65	25-model ensemble depths 4-8 x5 seeds
+36	2d1bdcc	0.7219	ok	39	add HourAfter5 / IsEarlyMorning
+37	171dcb0	0.7217	ok	45	add HourXMonth/HourXDOW
+38	5e1d423	0.7219	ok	29	15-ensemble lr.04 fewer trees
+39	f2246bf	0.7220	ok	41	lighter reg mcw5 lam1
+40	515a419	0.7220	ok	41	even lighter reg mcw3 lam.5

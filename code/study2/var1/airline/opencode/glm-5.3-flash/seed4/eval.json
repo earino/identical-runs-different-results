@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 4,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T19:32:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s4-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:05:08+00:00",
+  "wall_seconds": 5587.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 15514.4,
+  "endpoint_at_end": "ok",
+  "head": "697745f",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7546,
+  "final_eval_auc": 0.7546,
+  "holdout_auc": 0.754893828098,
+  "holdout_ap": 0.7413832908171869,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.040123076361999965,
+  "generalization_gap": -0.0002938280979999375,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9593916,
+    "tokens_in_uncached": 359100,
+    "tokens_in_cached": 9234816,
+    "tokens_out": 137423,
+    "turns": null,
+    "api_calls": 184,
+    "method": "sum-of-184-events",
+    "cost_usd": 0.3996,
+    "cached_share": 0.963
+  },
+  "cpu_seconds_python": 14513.2,
+  "cpu_seconds_counted": 4159.1,
+  "cpu_seconds_uncounted": 10157.3,
+  "cpu_seconds_exempt": 196.9,
+  "python_processes": 225,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 2196,
+  "fits_counted": 652,
+  "fits_uncounted": 1521,
+  "commits": [
+    {
+      "commit": "2f7fb8f",
+      "message": "baseline"
+    },
+    {
+      "commit": "d66e017",
+      "message": "exp2: early stopping + refit, 2000 trees"
+    },
+    {
+      "commit": "3d8274c",
+      "message": "exp5: FE v1 (ints, tod cyclic, hour cat, route, weekend, log dist)"
+    },
+    {
+      "commit": "fe1e036",
+      "message": "exp5: 11 target encodings + cyclic + 3-model XGB blend"
+    },
+    {
+      "commit": "1bb8e92",
+      "message": "exp7: 5-model blend (te d2/d3/d4 + gblinear + raw d3) with holiday feats"
+    },
+    {
+      "commit": "1d59fd1",
+      "message": "exp8: 6-model blend (te d2/d3/d4 + gblinear + raw+doy + carrier-subset d3)"
+    },
+    {
+      "commit": "2ce098d",
+      "message": "exp9: swap carrier-subset member for numerics-only tree member (d3n)"
+    },
+    {
+      "commit": "f5acdda",
+      "message": "exp10: per-feature TE smoothing m (low-card 20-30, interactions 150)"
+    },
+    {
+      "commit": "e4284c1",
+      "message": "exp11: add d4n numerics-only member (7-model blend)"
+    },
+    {
+      "commit": "8b1dbc5",
+      "message": "exp13: seed-averaged tree members (2 seeds x te_d4/d3/d2)"
+    },
+    {
+      "commit": "18090c6",
+      "message": "exp14: 3-seed averaging incl raw_d3 member"
+    },
+    {
+      "commit": "6d460ec",
+      "message": "exp15: 5-seed averaging for te tree members"
+    },
+    {
+      "commit": "e5eeb7c",
+      "message": "exp16: half-hour buckets for interaction TEs"
+    },
+    {
+      "commit": "3742ef6",
+      "message": "exp17: quarter-hour interaction TEs, m=300"
+    },
+    {
+      "commit": "a031a7f",
+      "message": "exp18: fold-seed 7 robustness variant"
+    },
+    {
+      "commit": "dca40ec",
+      "message": "exp22: TE support-count features (log1p train counts)"
+    },
+    {
+      "commit": "8fd3079",
+      "message": "exp26: seed-average d3n/d4n members"
+    },
+    {
+      "commit": "7454b70",
+      "message": "exp27: combined TE m micro-retune (Route150, Org/Dst50, hour40)"
+    },
+    {
+      "commit": "ab9d813",
+      "message": "exp33: d3n n600"
+    },
+    {
+      "commit": "25a6ce0",
+      "message": "exp34: d4n n300"
+    },
+    {
+      "commit": "d17ef97",
+      "message": "exp36: te_d3 n600"
+    },
+    {
+      "commit": "9042528",
+      "message": "exp37: te_d2 n900"
+    },
+    {
+      "commit": "d7c801c",
+      "message": "exp38: raw_d3 n500"
+    },
+    {
+      "commit": "697745f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 14316.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 1001.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "d7c801c",
+  "best_commit_eval_auc": 0.7546,
+  "best_commit_holdout_auc": 0.754893828098,
+  "best_commit_holdout_ap": 0.7413832908171869,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	a5597fb	1789509070	baseline
+01	bf5d130	1789509160	route/carrier target+frequency encoding, moderate model
+02	deedf45	1789509195	add interaction TE keys: carrier_route, origin_hour, carrier_hour
+03	1df829f	1789509222	more interaction TE keys: hour, origin/carrier month, route_dow, dest_hour
+04	aeb7cc5	1789509233	add origin/dest-carrier, route_month, origin_dow, hour_dow keys
+05	52f5ee4	1789509243	more regularized: colsample 0.6 mcw15
+06	911e6e0	1789509259	ensemble of 5 bagged XGBoost seeds
+07	181bfbe	1789509356	5-bag 400 trees lr0.03
+08	67e52c9	1789509428	ablation: drop 5 interaction keys added in batch2
+09	d58250b	1789509489	add L1 reg + gamma
+10	e15567b	1789509511	add numeric seasonality + weekend + dep_cos
+11	3e30955	1789509569	stronger regularization colsample0.5 mcw30 lambda5
+12	b858b7a	1789509606	lossguide grow policy 64 leaves
+13	4c6aedf	1789509632	lossguide 128 leaves
+14	c9e3f9b	1789509672	lossguide 256 leaves
+15	6ae04a0	1789509735	lossguide 384 leaves
+16	b89e9df	1789509817	lossguide 512 leaves
+17	1420ddb	1789510094	add route share ratios
+18	c0b4c9f	1789510316	add origin/dest carrier share ratios

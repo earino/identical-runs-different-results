@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	73eacf1	1789486920	baseline
+01	7515824	1789486972	FE v1: numeric date/time, cyclical tod, route cat, log dist, ES on eval
+02	653079e	1789486982	ES metric auc, patience 200
+03	e7297ef	1789487049	FE v2: drop route, int dates+hour+sincos, lr .05 depth 6 ES-auc
+04	e26195b	1789487201	FE v3: +carrier_hour cross
+05	73a7cb1	1789487275	depth 8 mcw 20 (with carrier_hour)
+06	bdfdefa	1789487411	d12 mcw5 lr.02 sub.9 col.8
+07	7cf54a9	1789487686	+congestion counts (orig/dest/origin-hour, train-fitted)
+08	b58a04c	1789487717	3-seed ensemble
+09	5940637	1789488343	max_bin 512
+10	668e59b	1789489643	mixed ensemble: 2 cat-view + 1 ordinal-view
+11	049f74b	1789489872	2cat+2ord ensemble

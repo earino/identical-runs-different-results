@@ -1,0 +1,212 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 5,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T12:09:27+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s5-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T12:48:17+00:00",
+  "wall_seconds": 2330.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5369.7,
+  "endpoint_at_end": "ok",
+  "head": "c5d6c7e",
+  "n_commits": 28,
+  "n_experiments": 39,
+  "n_ok": 26,
+  "n_crash": 12,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7334,
+  "final_eval_auc": 0.7334,
+  "holdout_auc": 0.7348484446519999,
+  "holdout_ap": 0.7211244863997122,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020077692915999923,
+  "generalization_gap": -0.0014484446519998917,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8200025,
+    "tokens_in_uncached": 90841,
+    "tokens_in_cached": 8109184,
+    "tokens_out": 105344,
+    "turns": null,
+    "api_calls": 133,
+    "method": "sum-of-133-events",
+    "cost_usd": 2.6991,
+    "cached_share": 0.989
+  },
+  "cpu_seconds_python": 5348.0,
+  "cpu_seconds_counted": 5069.3,
+  "cpu_seconds_uncounted": 196.1,
+  "cpu_seconds_exempt": 82.6,
+  "python_processes": 78,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 435,
+  "fits_counted": 390,
+  "fits_uncounted": 40,
+  "commits": [
+    {
+      "commit": "91f48ff",
+      "message": "baseline"
+    },
+    {
+      "commit": "2ff5cfd",
+      "message": "scaled model: 1500 max rounds ES on 10pct train split, depth 8, both num+cat features, route"
+    },
+    {
+      "commit": "bffbfa4",
+      "message": "AUC-metric ES + mini grid over depth/lr/mcw, refit best on full train"
+    },
+    {
+      "commit": "38e08af",
+      "message": "rounds x feature-set surface with baseline recipe, final = argmax"
+    },
+    {
+      "commit": "155a76c",
+      "message": "smoothed LOO target encodings (route/origin/dest/hour/carrier/month/dow) + arm grid"
+    },
+    {
+      "commit": "a41b78e",
+      "message": "OOF target encoding (5 folds) fixes LOO leak; prior-fill unseen; arm grid"
+    },
+    {
+      "commit": "69f733f",
+      "message": "origin x hour TE, dest x hour TE, 15-min block TE, volume counts; 7 arms"
+    },
+    {
+      "commit": "f3013f6",
+      "message": "OH60 capacity/regularization arms: rounds grid, lr, depth, subsample, mcw"
+    },
+    {
+      "commit": "dab00a4",
+      "message": "shallow/slow region: d3-5, lr 0.01-0.05, rounds to 1500"
+    },
+    {
+      "commit": "68c24e5",
+      "message": "feature arms at d4/lr0.03/400: c_hour, o_month, o_block30, full TE dump"
+    },
+    {
+      "commit": "6c780eb",
+      "message": "finer congestion TEs: o_block15/30 (m50/80), d_block30, capacity recheck"
+    },
+    {
+      "commit": "143e752",
+      "message": "stack all congestion TEs, origin x dow TE, depth recheck"
+    },
+    {
+      "commit": "dd03293",
+      "message": "10-min block TEs, full stack arms at d3"
+    },
+    {
+      "commit": "8eb2950",
+      "message": "hierarchical block TEs (shrink to o_hour/d_hour parent), mcw/lambda/month-weight arms"
+    },
+    {
+      "commit": "900f489",
+      "message": "lambda grid, alpha, rounds1600, d3+d4 blend, colsample ensemble"
+    },
+    {
+      "commit": "faa6842",
+      "message": "ens8, alpha members, dow_hour TE, max_bin 512, lossguide"
+    },
+    {
+      "commit": "508f030",
+      "message": "fix lossguide arm; alpha-ensemble variants"
+    },
+    {
+      "commit": "4ee95f0",
+      "message": "fold-diverse ensemble members; holiday-distance features"
+    },
+    {
+      "commit": "4afd90b",
+      "message": "holiday features in ensemble + sin/cos seasonality"
+    },
+    {
+      "commit": "0cac0bb",
+      "message": "origin x week TE; K=10 OOF; bynode colsample; ss 0.95"
+    },
+    {
+      "commit": "6d0e0df",
+      "message": "bynode colsample ensemble tuning"
+    },
+    {
+      "commit": "6908566",
+      "message": "ablations: drop o_dow/d_blk15/d_hour/o_blk30; add d_dow; logit-avg"
+    },
+    {
+      "commit": "778024b",
+      "message": "fix unpack; pruned feature ensemble"
+    },
+    {
+      "commit": "8a88107",
+      "message": "remove stale duplicate unpack; clean-run check + 10-member arm"
+    },
+    {
+      "commit": "26e34fa",
+      "message": "recipe- and feature-diverse 10-member ensembles"
+    },
+    {
+      "commit": "c9e7c48",
+      "message": "product congestion feature; gamma 0.5; lr 0.02/1500"
+    },
+    {
+      "commit": "95595ac",
+      "message": "second product feature; 8-member prod ensemble"
+    },
+    {
+      "commit": "84a5d1e",
+      "message": "final cleanup: keep only winning pipeline (exact column order preserved), AUC-equal per simplicity criterion"
+    },
+    {
+      "commit": "c5d6c7e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5265.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 21.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c9e7c48",
+  "best_commit_eval_auc": 0.7334,
+  "best_commit_holdout_auc": 0.7348484446519999,
+  "best_commit_holdout_ap": 0.7211244863997122,
+  "best_commit_error": null,
+  "finalized_best": false
+}

@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	7bf89c4	1789532928	baseline
+01	cc2ab97	1789533116	bagged ensemble: 7x baseline-config members on 80% row subsamples, averaged
+02	3e8aed6	1789533122	bagging 25 members
+03	3dfd018	1789533130	bagging 60 members
+04	59dc1af	1789533150	bagging with depth diversity {5,6,7}
+05	9fcff48	1789533255	bagging: depth x lr diversity
+06	a935862	1789533272	members 50 trees
+07	7ff2e48	1789533291	100 members
+08	a77bfd1	1789533432	rank-average ensemble instead of proba-average
+09	75dce7d	1789533465	200 members, rank average
+10	e26f104	1789533532	seed variance probe (43)
+11	1d1bde8	1789533601	depth diversity {4,5,6,7}
+12	b780139	1789533669	n_estimators diversity {30,50,80}
+13	5e5a1bd	1789533857	frac 0.9 on rich-diversity ensemble
+14	8dd767c	1789533997	depth window {3,4,5,6}
+15	b60848d	1789534150	trees window {50,80,120}
+16	1084eae	1789534225	trees window {80,120,180}
+17	6d6f8f2	1789534678	restore best config (E38: 0.7192)

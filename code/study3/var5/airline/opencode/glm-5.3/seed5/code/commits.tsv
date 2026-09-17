@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	cc27031	1789600663	baseline
+01	8159e07	1789600722	FE v1: numeric dates, time-of-day, route cat, early stopping
+02	96c0461	1789601404	robust FE (TOD/Hour/carrier/origin) + deep trees + alpha=1 + max_bin=512, fixed rounds
+03	ee993fb	1789602130	add Dest categorical, n_estimators=300
+04	8e7ae85	1789602173	3-config depth/bin ensemble (d14mb512, d16mb1024, d20mb512)
+05	6132faf	1789602972	6-member diverse config ensemble (add d10, d8-lam10, d18-a2)
+06	ce7a4b5	1789604022	add label-free traffic features (origin/dest hour counts, route count, hour share)
+07	310cdac	1789606471	add arrival-hour dest congestion (AHcnt) and carrier-origin counts (COcnt)
+08	fb1d0ed	1789608776	5-member ensemble: 3 deep n300 + numeric-only + cats-heavy diversity members
+09	bde1b3b	1789610381	8-member ens: drop d14, add shallow d3/d2, d3-numeric, d1-stump members
+10	c46df12	1789611316	AHfrac feature + logit-space ensemble averaging
+11	df78c82	1789611702	Circular day-position features SinTod/CosTod for all members
+12	16914f4	1789611880	Circular estimated-arrival features SinArr/CosArr

@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	15287b5	0.7141	ok	3	baseline
+2	d28c404	0.7111	ok	3	feat: time-of-day, logdist, route cat + 600 trees ES
+3	cf3aa88	0.7157	ok	2	baseline cats + time/distance feats + ES
+4	7069fca	0.7154	ok	4	target+freq encoding carrier/origin/dest/route
+5	cf3aa88	0.7157	ok	3	noop-check
+6	2277345	0.7180	ok	4	regularized depth5 lr0.03
+7	eb11a96	0.7191	ok	8	regularized depth4 lambda5 alpha1
+8	07da546	0.7186	ok	14	regularized depth3 lr0.02
+9	1ad4f9b	0.7183	ok	6	frequency encoding on regularized model
+10	22256b3	0.7200	ok	9	colsample 0.4
+11	a5ae1db	0.7207	ok	10	depth5 lr0.02 cs0.4
+12	34c91cc	0.7221	ok	12	drop raw DepTime, add dep_min
+13	8dac1ce	0.7218	ok	37	5-model seed ensemble
+14	7fbfe18	0.7254	ok	10	deep trees low mcw
+15	3b6e79b	0.7280	ok	15	depth8 lr0.015 mcw5
+16	a5a3bb1	0.7324	ok	24	depth10 lr0.01 mcw1
+17	da8b1de	0.7362	ok	40	depth14 lr0.008

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2f7fb8f	0.7141	ok	1	baseline: 30 trees, depth 6, lr 0.1
+2	1491a10	0.7158	ok	6	exp2: big model early stopping, hour features
+3	5b56bc9	0.7150	ok	6	exp3: interaction categoricals
+4	bf35df1	0.7123	ok	6	exp4: OOF target encoding
+5	ebbcbfb	0.7200	ok	9	exp5: deeper slower model
+6	a4855aa	0.7236	ok	15	exp6: push depth/regularization further
+7	842a6fd	0.7250	ok	26	exp7: even deeper slower
+8	5f455d4	0.7244	ok	35	exp8: d16 push
+9	0a62f73	0.0000	timeout	120	exp9: 5-seed ensemble
+10	e53581f	0.7256	ok	102	exp10: 4-seed ensemble
+11	1dfca41	0.7252	ok	91	exp11: heterogeneous ensemble
+12	d590387	0.7185	ok	23	exp12: month_hour dow_hour interactions
+13	cdf9c66	0.7249	ok	25	exp13: max_bin 512
+14	9e168fd	0.7250	ok	37	exp14: lossguide
+15	2d6e823	0.7241	ok	22	exp15: micro-tune reg
+16	5e18ef0	0.7231	ok	26	exp16: stronger leaf regularization
+17	9d89df3	0.7198	ok	25	exp17: bynode colsample
+18	2a2b70c	0.7247	ok	93	exp18: row-bagged 5-member ensemble
+19	a88bdb8	0.7246	ok	26	exp19: ordinals + freq counts
+20	92293f5	0.7251	ok	24	exp20: lr 0.015
+21	2a749cb	0.7246	ok	29	exp21: lr 0.010
+22	23c940b	0.7256	ok	102	exp22: 5-seed ES250 ensemble
+23	7433891	0.7221	ok	26	exp23: monotone dep_min
+24	4b897b2	0.7247	ok	25	exp24: gamma 0.5
+25	27b6e10	0.7213	ok	18	exp25: ablate dep_hour cat
+26	281f5b4	0.7286	ok	28	exp26: ablate DayofMonth
+27	26ec29a	0.7239	ok	27	exp27: also drop DayOfWeek
+28	614dfab	0.7277	ok	23	exp28: day_num ordinal
+29	abec1b2	0.7281	ok	104	exp29: ensemble without DayofMonth
+30	9f313e0	0.7274	ok	28	exp30: seed variance probe
+31	b5f0ab8	0.7304	ok	32	exp31: lighter reg on clean features
+32	a1b76d6	0.7294	ok	32	exp32: even lighter reg
+33	adab01b	0.7321	ok	32	exp33: mcw 20 only
+34	d1d685e	0.7341	ok	36	exp34: mcw 10
+35	3fd7ac8	0.7358	ok	32	exp35: mcw 5
+36	7381d83	0.7366	ok	34	exp36: mcw 2
+37	e270b61	0.7368	ok	37	exp37: mcw 1
+38	e306617	0.7346	ok	45	exp38: col 0.7 mcw 1
+39	815e770	0.0000	timeout	120	exp39: tuned 4-seed ensemble
+40	d45dab7	0.7379	ok	50	exp40: subsample 0.8

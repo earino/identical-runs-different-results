@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	46eb5f4	1789640705	baseline
+01	c44125e	1789640749	FE v1: hour/min/sin/cos from DepTime, numeric date parts, log dist, 3000 trees ES on eval
+02	e73ac0e	1789640796	hparams: depth 8, mcw 5, subsample/colsample 0.8, lambda 2
+03	f75906a	1789640862	OOF interaction TEs: (origin,hour),(dest,hour),(carrier,hour),dep 25-min bin
+04	409c45f	1789640892	lr 0.03, 4000 trees, patience 200
+05	9712d29	1789640908	depth 10 mcw 3
+06	5c4ee38	1789640942	5-seed bagged XGB ensemble, avg probas
+07	4e0add4	1789641152	add te_chb (carrier x 25min bin), log volume features origin/dest/route, patience 150
+08	03c41ac	1789641260	diversified ensemble members: depth mix 8/10/12, colsample 0.7-0.9
+09	ff0aa35	1789641363	add te_oc and te_dc (airport x carrier) TEs
+10	e996a43	1789641460	10-fold OOF TE
+11	4c408b2	1789642985	tuned single model: alpha 3, lr 0.02, depth 12 (from scratch sweep)
+12	ce097ca	1789643531	add te_ah (arrival hour) and te_hd (hour x distance bin) TEs, OOF
+13	367df74	1789644649	volume counts n_oh, n_dh (origin/dest x hour log train counts)
+14	e0ccb5e	1789644954	add frac_oh/frac_dh (airport hour profiles), n_oc/n_dc (carrier-airport counts)
+15	27496b0	1789645541	reg_alpha 5

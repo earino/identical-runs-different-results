@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	80c116f	1789586173	baseline
+01	1974232	1789586226	feat: time-of-day + numeric calendar features
+02	ec49d45	1789586232	feat: 2000 trees + early stopping on eval
+03	c9ffc8a	1789586316	tune: depth 10
+04	0c2664e	1789586324	tune: depth 14
+05	9be780f	1789586344	tune: lr 0.05 es 100
+06	1e62635	1789586384	tune: subsample+colsample 0.7
+07	276f40f	1789586402	tune: subsample+colsample 0.5
+08	6784434	1789586441	tune: lr 0.03 es 200
+09	308794f	1789586459	tune: lr 0.02 es 300
+10	d40cdeb	1789586484	tune: lr 0.01 es 400
+11	f237171	1789586567	tune: depth 16 at lr 0.01
+12	669d3df	1789586608	tune: depth 20 at lr 0.01
+13	a2d4595	1789586662	tune: depth 24 at lr 0.01
+14	f6ccc87	1789587032	feat: frequency + relative-distance route stats
+15	ee4e359	1789587100	feat: origin-hour and dest-hour congestion counts
+16	c49761d	1789587309	tune: lr 0.007 es 250
+17	8c7e809	1789588029	feat: categorical hour
+18	dd7b79b	1789588742	feat: second-harmonic tod
+19	a2b592b	1789588838	feat: third-harmonic tod

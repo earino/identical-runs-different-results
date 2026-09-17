@@ -1,0 +1,148 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 12,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:50:59+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s12-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:26:36+00:00",
+  "wall_seconds": 2136.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6784.8,
+  "endpoint_at_end": "ok",
+  "head": "3c03118",
+  "n_commits": 12,
+  "n_experiments": 40,
+  "n_ok": 32,
+  "n_crash": 7,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7211,
+  "final_eval_auc": 0.7211,
+  "holdout_auc": 0.721319911688,
+  "holdout_ap": 0.7110595688658254,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.0065491599520000054,
+  "generalization_gap": -0.0002199116880000629,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": "topreason\":\"pending\",\"timestamp\":1789538466927,\"responseid\":\"429467c294094094905338923e31d5dd\"}} {\"type\":\"message_update\",\"usage\":{\"input\":0,\"output\":0,\"cachere",
+  "usage": {
+    "tokens_in": 4205280,
+    "tokens_in_uncached": 25376,
+    "tokens_in_cached": 4179904,
+    "tokens_out": 54854,
+    "turns": null,
+    "api_calls": 105,
+    "method": "sum-of-105-events",
+    "cost_usd": 0.1566,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 6758.3,
+  "cpu_seconds_counted": 6020.8,
+  "cpu_seconds_uncounted": 3.6,
+  "cpu_seconds_exempt": 734.0,
+  "python_processes": 65,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 648,
+  "fits_counted": 590,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "ae59b68",
+      "message": "baseline"
+    },
+    {
+      "commit": "4181835",
+      "message": "exp6: baseline + DepTime_min"
+    },
+    {
+      "commit": "123fee1",
+      "message": "exp7: 12-config regularization mini-grid, ES on train val split"
+    },
+    {
+      "commit": "fd90192",
+      "message": "exp8: ES on eval.csv (2006 dev set), lr0.05 depth6 mcw30"
+    },
+    {
+      "commit": "12ba451",
+      "message": "exp11: 5-seed ensemble of best config"
+    },
+    {
+      "commit": "84102dc",
+      "message": "exp12: 6-model diverse ensemble (depth/mcw/colsample mix)"
+    },
+    {
+      "commit": "1e0878e",
+      "message": "exp15: 16-model ensemble, gamma/lambda diversity, patience 100"
+    },
+    {
+      "commit": "83e90a1",
+      "message": "exp16: +2 dart members (150 trees lr0.1)"
+    },
+    {
+      "commit": "bfad5dd",
+      "message": "exp21: 26-member diverse ensemble"
+    },
+    {
+      "commit": "5a4a357",
+      "message": "exp25: +doy feature (mmdd), member AUC diagnostics"
+    },
+    {
+      "commit": "10b0b7f",
+      "message": "exp26: rebalance ensemble to shallow/colsample winners (20+2 dart)"
+    },
+    {
+      "commit": "10407f3",
+      "message": "exp28: 30 gbtree + 2 dart (extra seeds of winners)"
+    },
+    {
+      "commit": "3c03118",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6024.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 26.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "10407f3",
+  "best_commit_eval_auc": 0.7211,
+  "best_commit_holdout_auc": 0.721319911688,
+  "best_commit_holdout_ap": 0.7110595688658254,
+  "best_commit_error": null,
+  "finalized_best": true
+}

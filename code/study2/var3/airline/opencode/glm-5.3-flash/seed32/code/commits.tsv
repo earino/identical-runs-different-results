@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	f1f8fbc	1789509332	baseline
+01	19221eb	1789509390	exp5: depth10, 600 trees, early stopping on 80/20 split, refit full
+02	8530f1c	1789509412	exp6: depth8, 500 trees, no early stopping
+03	f925e55	1789509436	exp7: cyclical time features + log distance, depth6 200 trees
+04	06409a2	1789509445	exp8: internal capacity sweep d4-d8, pick best on eval
+05	da8a447	1789509490	exp12: regularization sweep around d4/400 (fixed kwargs)
+06	e0ab27f	1789509511	exp13: lr/trees frontier sweep d3-d5
+07	dc4fc58	1789509536	exp14: push shallow frontier d2/d3 more trees
+08	0450879	1789509568	exp15: hour categorical + distance quantile bins
+09	29c33e9	1789509663	exp18: ensemble of 5 diverse shallow xgbs
+10	8f2d8c9	1789509698	exp19: depth-spread ensemble d2-d6, 7 members
+11	0b23cf4	1789509870	exp22: max_bin 512 for all ensemble members
+12	60724a0	1789509917	exp23: 12-member ensemble
+13	4bdaf7d	1789509998	exp24: add 3 lossguide members
+14	5f5f0ff	1789510347	exp27: hour x dist_bin interaction categorical
+15	a2ece43	1789510452	exp28: four more low-cardinality interactions
+16	c97727d	1789510581	exp29: prune slow members, probe deeper members
+17	659e7f6	1789510712	exp30: 10 strong members within time budget
+18	b031d72	1789510801	exp31: 12 members incl d5/600 and lg128
+19	9f259c1	1789511022	exp33: half-hour x dist interaction (48 blocks)

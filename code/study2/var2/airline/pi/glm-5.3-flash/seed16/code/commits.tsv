@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	8c89566	1789494959	baseline
+01	826fde4	1789494999	FE v1: time-of-day features, native categoricals, 600 trees + early stopping
+02	3c3ae91	1789495010	ablation: FE v1 with baseline hyperparams
+03	0394e9a	1789495018	ES on eval.csv (drift-aligned stopping)
+04	20b4e35	1789495095	count/congestion features (route, origin, dest, origin-hour)
+05	39df867	1789495130	4-member diverse ensemble (fixed kwargs 2)
+06	94cb8dc	1789495208	8-member diverse ensemble (kwargs clean)
+07	effc7e7	1789495246	crossed cats carrier-hour/origin-hourblock + hour cat; explicit member specs
+08	789c858	1789495642	12-member ensemble
+09	c38c994	1789496135	lean 7-member ensemble around deep+L5 family
+10	c63e0b7	1789496464	rank-average ensemble
+11	c2f1e18	1789496745	+ultra-deep regularized member (d14 col0.5 lam10)
+12	cfd9cd9	1789497325	weighted rank-average (deep family x2)
+13	93b2151	1789497437	6 deep members, plain average
+14	3e22be9	1789497734	gamma 0.3 global

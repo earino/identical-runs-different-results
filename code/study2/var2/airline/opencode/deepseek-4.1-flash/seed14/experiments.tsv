@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c390fc4	0.7141	ok	3	baseline
+2	2bb7e0e	0.7112	ok	4	400 trees lr0.05 capacity
+3	649c766	0.7178	ok	1	time features + cyclic date encodings
+4	3406f59	0.7175	ok	2	count encodings carrier/origin/dest/route
+5	aea3254	0.7178	ok	2	OOF target encoding carrier/origin/dest/route
+6	57535bf	0.7162	ok	4	internal val early stopping
+7	c0c13fb	0.7170	ok	2	depth4 30 trees
+8	70d2780	0.7151	ok	1	15 trees depth6
+9	83e55a3	0.7176	ok	2	subsample0.8 colsample0.8
+10	0da3ef4	0.7093	ok	1	route as categorical
+11	a0cfae9	0.7205	ok	4	10-seed bagged ensemble
+12	78eb22c	0.7206	ok	7	30-seed bag
+13	8169d1e	0.7219	ok	9	depth-diverse bag
+14	1e05a48	0.7220	ok	17	60-member depth-diverse bag
+15	ad344f7	0.7220	ok	17	time-conditioned OOF target encoding
+16	93f4f72	0.7180	ok	18	add categorical date encodings
+17	147f782	0.7182	ok	14	drop origin/dest cats use OOF TE
+18	e86f4c9	0.7222	ok	15	reg_lambda5 mcw5 gamma1
+19	9d5bf1d	0.7222	ok	26	60 trees lr0.05 per member
+20	fe03e10	0.7233	ok	17	airport-hour congestion counts
+21	8cee53c	0.7253	ok	19	route and route-hour counts
+22	9b644ad	0.7334	ok	20	OOF TE on interaction keys
+23	2dbdb16	0.7332	ok	23	broader TE keys
+24	77aefbb	0.7333	ok	20	TE alpha 50
+25	3561be2	0.7335	ok	22	dow interaction TEs
+26	e685479	0.7356	ok	31	deeper depth cycle
+27	a58a712	0.7373	ok	46	deeper depth cycle v2
+28	ad95145	0.7384	ok	64	deeper depth cycle v3
+29	29f23a3	0.7391	ok	82	deeper depth cycle v4
+30	8ffac6a	0.7395	ok	101	deeper depth cycle v5
+31	fa389a3	0.7399	ok	110	add d_h c_h TE
+32	632aaab	0.7399	ok	115	very deep depth cycle
+33	092aae2	0.7410	ok	97	dow dest/carrier TE, bag 50
+34	9f1676f	0.7405	ok	98	global o/d/c keys, bag 45
+35	a23d140	0.7404	ok	100	2h bucket TE keys, bag 47
+36	cb38830	0.7389	ok	56	min_child_weight 20
+37	6234ebf	0.7404	ok	117	bag70 shallower cycle
+38	9443314	0.7432	ok	86	subsample/colsample 0.7
+39	d52c763	0.7453	ok	71	subsample/colsample 0.6
+40	080c322	0.7454	ok	59	subsample/colsample 0.5

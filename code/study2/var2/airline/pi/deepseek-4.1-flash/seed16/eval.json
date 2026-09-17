@@ -1,0 +1,152 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 16,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:50:01+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s16-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:22:26+00:00",
+  "wall_seconds": 5545.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17596.1,
+  "endpoint_at_end": "ok",
+  "head": "7548256",
+  "n_commits": 13,
+  "n_experiments": 23,
+  "n_ok": 22,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7479,
+  "final_eval_auc": 0.7479,
+  "holdout_auc": 0.7470504500780001,
+  "holdout_ap": 0.7380340875380473,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03227969834200006,
+  "generalization_gap": 0.0008495499219999259,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5024470,
+    "tokens_in_uncached": 5024470,
+    "tokens_in_cached": 0,
+    "tokens_out": 79946,
+    "turns": null,
+    "api_calls": 96,
+    "method": "sum-of-96-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17570.4,
+  "cpu_seconds_counted": 3146.5,
+  "cpu_seconds_uncounted": 13655.8,
+  "cpu_seconds_exempt": 768.2,
+  "python_processes": 56,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 558,
+  "fits_counted": 57,
+  "fits_uncounted": 495,
+  "commits": [
+    {
+      "commit": "9c5ae40",
+      "message": "baseline"
+    },
+    {
+      "commit": "fdb3b97",
+      "message": "regularized: depth4 150trees lr.05 mcw20 lambda5"
+    },
+    {
+      "commit": "805474e",
+      "message": "reg: depth3 400trees"
+    },
+    {
+      "commit": "73e7055",
+      "message": "FE dep-time decomposition + tuned deep model"
+    },
+    {
+      "commit": "c1c4e88",
+      "message": "tuned: d7 col.5 alpha1 maxbin512"
+    },
+    {
+      "commit": "b28a90d",
+      "message": "FE: origin x hour and carrier x hour interactions"
+    },
+    {
+      "commit": "b98391e",
+      "message": "retune on interaction features: d8/lambda1/onehot1/bin256"
+    },
+    {
+      "commit": "35be663",
+      "message": "ensemble: 3x d8 + 2x d9 diverse seeds"
+    },
+    {
+      "commit": "4e42e06",
+      "message": "ensemble 5x main + 3x deep seeds"
+    },
+    {
+      "commit": "b89f23d",
+      "message": "ensemble: greedy-selected diverse configs"
+    },
+    {
+      "commit": "1100d81",
+      "message": "ensemble: two deep depth-12 configs x2 seeds"
+    },
+    {
+      "commit": "fce076a",
+      "message": "simplify ensemble to 2 deep models (same AUC, safer time)"
+    },
+    {
+      "commit": "e0d9ee8",
+      "message": "ensemble: add colsample_bylevel/bynode variant A2"
+    },
+    {
+      "commit": "7548256",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16802.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 25.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e0d9ee8",
+  "best_commit_eval_auc": 0.7479,
+  "best_commit_holdout_auc": 0.7470504500780001,
+  "best_commit_holdout_ap": 0.7380340875380473,
+  "best_commit_error": null,
+  "finalized_best": true
+}

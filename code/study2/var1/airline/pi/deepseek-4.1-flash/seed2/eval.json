@@ -1,0 +1,184 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 2,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:06:42+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s2-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T17:46:21+00:00",
+  "wall_seconds": 2378.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7537.8,
+  "endpoint_at_end": "ok",
+  "head": "44fd53b",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7437,
+  "final_eval_auc": 0.7437,
+  "holdout_auc": 0.744109547988,
+  "holdout_ap": 0.7393169643918838,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.029338796251999977,
+  "generalization_gap": -0.0004095479879999697,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2780742,
+    "tokens_in_uncached": 2780742,
+    "tokens_in_cached": 0,
+    "tokens_out": 42469,
+    "turns": null,
+    "api_calls": 89,
+    "method": "sum-of-89-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 7517.9,
+  "cpu_seconds_counted": 7345.3,
+  "cpu_seconds_uncounted": 4.3,
+  "cpu_seconds_exempt": 168.2,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 69,
+  "fits_counted": 65,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "83944e4",
+      "message": "baseline"
+    },
+    {
+      "commit": "a8d1654",
+      "message": "drop Month/DayofMonth (poor year transfer)"
+    },
+    {
+      "commit": "6ca19b8",
+      "message": "add DepHour/DepMinutes/LogDistance to no-seasonal"
+    },
+    {
+      "commit": "8a1dd72",
+      "message": "add frequency encodings for Origin/Dest/Carrier/Route"
+    },
+    {
+      "commit": "8d21aa9",
+      "message": "capacity: 300 trees lr0.1"
+    },
+    {
+      "commit": "d7aa2c0",
+      "message": "capacity: 800 trees lr0.05"
+    },
+    {
+      "commit": "a0882cf",
+      "message": "capacity: 2000 trees lr0.03"
+    },
+    {
+      "commit": "13fa4de",
+      "message": "capacity: 4000 trees lr0.015"
+    },
+    {
+      "commit": "1e30bea",
+      "message": "depth 8, 2000 trees lr0.03"
+    },
+    {
+      "commit": "411b156",
+      "message": "depth 10, 2000 trees lr0.02"
+    },
+    {
+      "commit": "9c39cf9",
+      "message": "depth 12, 2000 trees lr0.02"
+    },
+    {
+      "commit": "121e2cb",
+      "message": "depth 14, 1500 trees lr0.025"
+    },
+    {
+      "commit": "68fe471",
+      "message": "ensemble depth12+depth14"
+    },
+    {
+      "commit": "cbc8b2e",
+      "message": "ensemble depth14+depth16"
+    },
+    {
+      "commit": "0a57797",
+      "message": "add origin-hour and carrier-hour frequency features"
+    },
+    {
+      "commit": "3cf217b",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "069f826",
+      "message": "max_cat_to_onehot 32"
+    },
+    {
+      "commit": "1fcdccc",
+      "message": "max_cat_threshold 128"
+    },
+    {
+      "commit": "ae48a4a",
+      "message": "max_cat_threshold 256"
+    },
+    {
+      "commit": "2de8802",
+      "message": "one-hot all categoricals (incl Origin/Dest)"
+    },
+    {
+      "commit": "9a2600d",
+      "message": "4-member seed/depth ensemble one-hot"
+    },
+    {
+      "commit": "44fd53b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7349.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 19.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9a2600d",
+  "best_commit_eval_auc": 0.7437,
+  "best_commit_holdout_auc": 0.744109547988,
+  "best_commit_holdout_ap": 0.7393169643918838,
+  "best_commit_error": null,
+  "finalized_best": true
+}

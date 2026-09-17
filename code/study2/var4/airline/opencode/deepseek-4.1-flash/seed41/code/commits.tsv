@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	79aaf43	1789493999	baseline
+01	6ea1b40	1789494047	time features, 30-tree baseline model
+02	5d88faa	1789494096	150 trees lr0.1
+03	c430702	1789494282	ensemble of 6 xgb configs
+04	5bc5376	1789494310	ensemble 12 members incl seed bagging and deep/deep
+05	1ff9ee0	1789494375	ensemble 15 members incl lossguide
+06	e74f8cf	1789494410	ensemble + origin/carrier hour congestion share
+07	5d0e941	1789494445	ensemble + dest-hour share and volume counts
+08	49fdc20	1789494505	ensemble + carrier hub shares
+09	9d0c0fa	1789494595	ensemble + estimated arrival-hour congestion
+10	9ff7e20	1789494702	ensemble + OOF target encoding origin/dest/carrier-hour
+11	93feec1	1789494732	add arrival-hour TE groups
+12	a33dc22	1789494833	add carrier-origin/dest TE
+13	d11549c	1789494968	add distance-bin and distance-hour TE
+14	d50316c	1789495111	add hour categorical feature

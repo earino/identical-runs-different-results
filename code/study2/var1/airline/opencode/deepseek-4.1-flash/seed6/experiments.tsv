@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cb58ddd	0.7141	ok	3	baseline
+2	5619be1	0.7054	ok	5	capacity 500 trees lr.05 d7
+3	60554b3	0.7128	ok	2	100 trees d6 lr.1 sub/col .8
+4	a1d7118	0.7090	ok	2	time ints + route cat
+5	16dd883	0.7056	ok	2	baseline + Route categorical
+6	5e03fee	0.7138	ok	2	baseline + dep_hour/min/tod/weekend
+7	6f8bd76	0.7139	ok	2	ablation drop Distance
+8	df1ca07	0.7137	ok	2	OOF target encoding carrier/origin/dest/route
+9	9948982	0.7000	ok	1	drop Origin/Dest
+10	43b7b36	0.7102	ok	5	one-hot encoding
+11	8c618b2	0.7171	ok	3	250 trees d4 lr.05 mcw5 col.8
+12	7f2a468	0.7168	ok	3	450 trees d3 lr.05 mcw5 col.8
+13	64e149b	0.7159	ok	3	400 trees d5 lr.03 mcw10 sub.8 col.8
+14	23ccb35	0.7158	ok	4	600 trees d4 lr.03 mcw5 sub.8 col.8
+15	b60b939	0.7163	ok	2	250 trees d4 lr.05 sub.8 col.6
+16	83c3d45	0.7180	ok	5	5-seed ensemble best config
+17	1efe1cd	0.7178	ok	6	ensemble + dep_hour/tod
+18	2af8a03	0.7182	ok	8	diversified ensemble 3cfg x2 seeds
+19	3c9533a	0.7221	ok	9	TE origin/dest/carrier x hour + ensemble
+20	94a7416	0.7231	ok	10	TE + dist_hour + carrier_dow
+21	f5a4bd3	0.7228	ok	10	TE + origin_dow + dest_dow
+22	2171339	0.7229	ok	14	ensemble + depth6 config
+23	c26e14a	0.7230	ok	15	5-config ensemble x2 seeds
+24	1003f9c	0.7246	ok	9	TE + carrier_origin_hour
+25	f1d2ddb	0.7271	ok	10	TE + carrier_dest_hour
+26	829c6ed	0.7308	ok	12	TE + carrier/dest/origin x distb x hour
+27	d9237da	0.7321	ok	14	TE + carrier x airport x distb x hour quads
+28	6477015	0.7421	ok	17	TE + minute buckets + carrier_h_dow
+29	34296f7	0.7464	ok	20	TE + db_h_mb + carrier quads with mb
+30	c6b7aa9	0.7485	ok	23	TE + origin/dest h mb db + carrier h mb dow
+31	caf239d	0.7480	ok	23	smoothing 50
+32	241d1b9	0.7490	ok	28	ensemble + depth6 config
+33	1362bb6	0.7496	ok	37	ensemble + depth8 reg config
+34	1498bc0	0.7502	ok	46	ensemble + depth10 reg config
+35	eab343d	0.7504	ok	59	ensemble + lossguide config
+36	e222c97	0.7524	ok	70	add count encodings
+37	d9bf9b4	0.7525	ok	73	add base volume counts
+38	538c113	0.7529	ok	77	TE + 5-min bucket interactions
+39	843409d	0.7529	ok	79	TE + carrier h m5 db
+40	44bb52e	0.7525	ok	85	3-seed ensemble

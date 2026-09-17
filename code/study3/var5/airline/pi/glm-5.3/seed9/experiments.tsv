@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5073808	0.7141	ok	4	baseline
+2	257dd53	0.7105	ok	4	tuned hyperparams + early stopping
+3	a745c24	0.7145	ok	1	feat v1: numeric time features
+4	8b86621	0.7148	ok	3	feat v1 + 300 trees
+5	827ba1a	0.7119	ok	4	OOF target encodings (7 groups)
+6	52dc40c	0.7067	ok	4	reliable TEs only, route smoothed
+7	e513da2	0.7134	ok	3	regularized shallow model
+8	69e75fb	0.7090	ok	3	seasonality: day-of-year features
+9	8126283	0.0000	crash	1	density features (hub volume)
+10	3eb8231	0.7130	ok	3	density features (hub volume) fixed
+11	89d9880	0.7141	ok	12	5-seed bagged ensemble
+12	ff61909	0.7271	ok	18	one-hot encoding representation
+13	c26f2d4	0.7267	ok	12	ablation: onehot@300trees
+14	608a471	0.7291	ok	28	capacity scale-up: 1600 trees
+15	22b9749	0.7303	ok	48	3200 trees
+16	34028d5	0.7287	ok	90	6400 trees
+17	90c6213	0.7308	ok	56	min_child_weight 10
+18	e49f8a2	0.7269	ok	59	min_child_weight 30
+19	dca658f	0.7302	ok	87	subsample/colsample 0.7 + 5000 trees
+20	e19f4f3	0.7290	ok	55	depth 8
+21	d572400	0.7313	ok	57	per-airport distance summaries
+22	85d38e6	0.7270	ok	56	holiday proximity feature
+23	c612117	0.7308	ok	77	lr 0.03 x 5000 trees
+24	22b3c84	0.7302	ok	63	frequent-route dummies
+25	dde9ca1	0.7312	ok	58	max_bin 64
+26	96884b8	0.7311	ok	92	2-seed ensemble
+27	f33efc9	0.7315	ok	94	diverse 3-model ensemble
+28	f4f189b	0.7324	ok	52	recency sample weighting
+29	60dee3f	0.7301	ok	59	recency 0.5-1.0
+30	0a5c708	0.7317	ok	66	4000 trees under recency
+31	d2e612f	0.7327	ok	44	2600 trees under recency
+32	9451def	0.7327	ok	36	2000 trees under recency
+33	ca38dc8	0.0000	crash	2	carrier-hour interaction dummies
+34	201375e	0.7330	ok	54	carrier-hour interaction dummies (fixed)
+35	2b54dbc	0.7359	ok	68	origin-hour interaction dummies
+36	706cb85	0.7357	ok	77	dest-hour interaction dummies
+37	9cda86e	0.7353	ok	83	origin-hour dummies >=50
+38	fb335f6	0.7360	ok	84	2600 trees with interaction dummies
+39	1fb37c8	0.7359	ok	86	colsample 0.8
+40	c93ddba	0.7350	ok	83	lr 0.04 gentler steps

@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	17d809f	0.7141	ok	4	baseline
+2	09f60cd	0.7075	ok	7	FE v1: hour/cyc time, route cat, ES+refit
+3	17ac574	0.7058	ok	3	FE v1 features + baseline small model
+4	7aca782	0.7213	ok	37	48-model bag, no Month/DayofMonth
+5	7d0c92c	0.7262	ok	74	6-view ensemble
+6	3a44e85	0.7272	ok	59	5-view OOF-TE ensemble (md/oh/ch/no_od/fullte), 80 models
+7	c5f06a2	0.7386	ok	45	lossguide big-leaf trees, per-view configs, 5 views x 4 seeds
+8	17bc10a	0.7401	ok	61	4 decorrelated views under lossguide regime, 24 models
+9	158dfe6	0.7408	ok	72	n150 lr.05 lossguide, 20 models
+10	41fca22	0.7409	ok	79	n200 lr.04 lossguide, 16 models
+11	686404f	0.7403	ok	69	5 views incl. modom temporal TE, 15 models
+12	638217d	0.7395	ok	66	leaves 256, 16 models
+13	6f0abd0	0.7414	ok	85	max_bin 512, 16 models
+14	42f3654	0.7414	ok	99	max_bin 1024, 16 models
+15	054f0d5	0.7422	ok	95	leaves 384 + max_bin 512
+16	feed904	0.7432	ok	109	leaves 448 + max_bin 512
+17	f25b870	0.7430	ok	81	n150/lr.05/leaves448/bin512
+18	8022416	0.7440	ok	92	leaves 512 + bin512 + n150

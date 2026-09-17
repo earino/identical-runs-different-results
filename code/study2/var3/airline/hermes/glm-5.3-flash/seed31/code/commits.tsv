@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	2aade82	1789504061	baseline
+01	0f2e808	1789504189	feat: numeric month/dow, dep-time hour/minute + cyclical, log-distance
+02	48b1380	1789504259	scale-up: 4000 rounds, ES-80 on probe, xgb3 predict ravel
+03	d82111c	1789504349	sweep: full-100k depth6 lr05, AUC at round checkpoints 30..600
+04	1a31767	1789504511	capacity: depth 8, checkpoints to 800
+05	b10decf	1789504536	lock: depth8 lr05 200 rounds (sweep peak)
+06	018f876	1789504549	lr sweep: eta 0.1 depth8, checkpoints 50..400
+07	5d57d09	1789504564	lr sweep: eta 0.02 depth8, checkpoints to 800
+08	c864d73	1789504628	reg sweep: subsample/colsample 0.7
+09	2d36064	1789504646	reg sweep: subsample/colsample 0.6, to 1200 rounds
+10	d6e0508	1789505234	lock: depth16 lr02 0.6/0.6, 200 rounds
+11	28c750d	1789505379	ensemble: 3-seed bag of best config
+12	98c29d3	1789505425	ensemble: 6-seed bag
+13	d4522c6	1789505832	bag with depth 18 members
+14	257bcbd	1789505964	ensemble: mixed-depth bag (3x d18 + 3x d16)
+15	b7340ef	1789506523	fix contract: objective binary:logistic so predict returns probabilities
+16	9fa806b	1789506623	fix contract: clip squared-loss margins to [0,1] in predict_proba

@@ -1,0 +1,29 @@
+n	commit	unix_time	subject
+00	46566bb	1789625508	baseline
+01	985d768	1789625594	bigger model + internal early stopping, refit on full train
+02	5226fe9	1789625851	exp5: ablate feature sets at fixed model, ship best
+03	0d43318	1789625961	exp6: time feature extensions ablation
+04	1047d4f	1789626005	exp7: smoothed target encodings for route/origin/dest/carrier
+05	35e97d7	1789626041	exp8: hyperparameter grid depth/mcw/subsample at fixed features
+06	265d6b0	1789626093	exp9: 8-seed XGBoost ensemble at best config
+07	bd92194	1789626115	exp10: bagged XGBoost ensembles (row/col subsampling)
+08	ef024c8	1789626161	exp11: bag composition tuning (colsample/subsample/depth/k/mcw)
+09	52fdaef	1789626320	exp12: deeper bags with stronger column subsampling
+10	cc273c2	1789626436	exp13: push colsample lower and depth higher in bags
+11	9a4fbf3	1789626607	exp14: col0.3 n=20, col0.4 d10, col0.25 d12
+12	ecefa7d	1789626856	exp15: structural traffic-count features (airport/hour congestion)
+13	5614e40	1789627006	exp16: count features with cached-prob harness
+14	7219cd1	1789627053	fix: unpack dict bag configs
+15	371c3c0	1789627269	exp18: extended count family + route distance deviation
+16	cc821f6	1789627517	exp19: arrival-hour congestion features
+17	8823554	1789627559	fix: explicit count key set
+18	d4c0116	1789627783	exp21: deterministic column order; more rounds at low colsample
+19	8bbadfa	1789628062	exp22: fast DMatrix harness; 5-bag diverse union
+20	8826520	1789628283	exp23: union of strong deep bags, best-subset ship
+21	e93b8ba	1789628460	exp24: d14 n=12 + d16 n=6 union with fit deadline guard
+22	8f52b66	1789628590	exp25: d16 vs d18 bags
+23	b08bcc2	1789628876	exp26: d20 col03 and d18 col02
+24	d706d32	1789629436	exp28: share features vs control at d18
+25	c9ff96e	1789629615	fix: per-bag feature frame routing
+26	ee1d75c	1789630778	exp35: consolidate 2-view union n=8 each
+27	9367751	1789632561	cleanup: remove dead code, fix diag label (no functional change)

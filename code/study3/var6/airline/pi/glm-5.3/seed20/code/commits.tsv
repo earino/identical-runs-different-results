@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	e4b2493	1789608294	baseline
+01	12f081c	1789609017	numeric time features, route, early-stopped GBM
+02	2579929	1789611270	deep-tree bagged ensemble (d16, cs0.5), engineered time features
+03	a18e7cb	1789611666	depth 18, rounds 130
+04	b047801	1789611764	depth 22, rounds 110
+05	0a788b4	1789612044	depth 26, rounds 95
+06	40bef7f	1789612395	depth 32, rounds 90, 10 members
+07	e8efd22	1789612486	depth 40, rounds 80, 12 members
+08	de230f4	1789612792	depth 60, rounds 65
+09	9bcecce	1789613181	traffic-volume features + hour categorical
+10	d67369a	1789613276	extended volume features: carrier, origin-hour, dow-hour, carrier-hour
+11	ad158e5	1789613633	rounds 65 -> 45
+12	312e59e	1789613887	recency weighting: linear ramp over 2005 months
+13	4d6ba68	1789613994	steeper recency ramp
+14	09e4f94	1789614087	recency ramp coefficient 2.0
+15	48ddbb6	1789614608	rounds 35
+16	c6c6517	1789614692	rounds 30

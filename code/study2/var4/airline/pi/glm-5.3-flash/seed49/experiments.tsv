@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7f52d11	0.7141	ok	5	baseline: 30 trees, depth 6, lr 0.1, native categoricals
+2	b1da693	0.7053	ok	2	FE v1: time/calendar/route features, model unchanged
+3	9624ad4	0.7120	ok	4	model scale-up: ES, depth 8, lr .05
+4	a1f426f	0.7108	ok	3	baseline cfg + ES depth6 lr0.1
+5	28efa23	0.7123	ok	2	TE v1: 6 smoothed target encodings, OOF
+6	066d349	0.0000	crash	1	hour as native categorical
+7	4e218e0	0.7116	ok	2	hour as native categorical
+8	d957134	0.7111	ok	2	colsample_bynode decorrelation
+9	c5e514b	0.7144	ok	2	bagging 5x80% baseline cfg
+10	b1a5e8e	0.7151	ok	4	hetero ensemble 8 members
+11	7975cc8	0.7172	ok	3	ensemble w/ TE feature views
+12	5b4edef	0.0000	crash	4	12-member ensemble
+13	85b65fc	0.7187	ok	6	12-member ensemble
+14	8f0491a	0.7221	ok	7	expanded TE+freq views, 14 members
+15	1d933b3	0.7171	ok	8	TE interaction expansion, 16 members
+16	8bd2484	0.7219	ok	7	rank-average aggregation
+17	34061f5	0.7233	ok	19	19-member ensemble w/ strong members
+18	3f99607	0.7239	ok	46	22-member ensemble, deep sweep
+19	bc3a864	0.0000	timeout	120	cyclical time + hour-cat views
+20	6323c9c	0.7239	ok	43	cyclical time + numeric hour
+21	087e917	0.7238	ok	54	26 members, reg diversity
+22	9fa209c	0.7238	ok	39	product TE features
+23	2e3b771	0.7240	ok	46	max_bin 512 deep members
+24	03a3be0	0.7240	ok	47	lossguide tree-shape members
+25	72f327a	0.7245	ok	48	temporal month-ramp weights
+26	5790249	0.7246	ok	48	temporal ramp 0.5-2.0
+27	b4195b3	0.7240	ok	54	dow-hour and day-of-month TE
+28	a439a57	0.0000	crash	4	te view with freq
+29	ee0de81	0.7257	ok	46	te view with freq
+30	a8d9ef9	0.0000	crash	4	raw view with freq
+31	a3b956a	0.7256	ok	48	raw view with freq
+32	e5a7f19	0.7256	ok	48	sharper route TE
+33	da7479e	0.7251	ok	48	ablation: no num members
+34	cabbb3a	0.7257	ok	47	max_bin 512 everywhere
+35	3334876	0.7257	ok	46	max_bin 512 uniform (simplified)
+36	09260c8	0.7258	ok	61	30 members, deep seed-bagging
+37	725225a	0.7258	ok	69	38 members
+38	11822ea	0.0000	crash	3	prune day-of-month from raw
+39	27b8e97	0.7270	ok	58	prune day-of-month from raw
+40	af03369	0.7282	ok	58	prune month/dow from raw

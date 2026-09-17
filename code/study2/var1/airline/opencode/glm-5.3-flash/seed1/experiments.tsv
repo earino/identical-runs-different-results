@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	00e714c	0.7141	ok	3	baseline
+2	3826211	0.0000	crash	1	FE v1: cyclic time feats, hour cat, ES+refit, 800x0.05 d8
+3	c28bad5	0.7232	ok	22	FE v1: cyclic time feats, hour cat, ES+refit, 800x0.05 d8
+4	a0ea4f5	0.7180	ok	28	add smoothed TE origin/dest/carrier/route/carrier-hour + counts
+5	c6ed1a0	0.7152	ok	25	route-only TE m=200 + route count
+6	61aa039	0.7192	ok	26	OOF TE route (train rows), full TE eval
+7	fef4843	0.7260	ok	22	reg: mcw5 sub0.8 col0.8 lambda2
+8	b1873ff	0.7270	ok	33	depth 10 (reg same)
+9	db23a4a	0.7289	ok	40	depth 12
+10	b7cf134	0.7298	ok	50	depth 14
+11	da0f1d9	0.7314	ok	52	depth 16
+12	80fbbb5	0.7330	ok	48	depth 20
+13	8ad29b6	0.7305	ok	67	depth 24
+14	c9cc362	0.7295	ok	90	lossguide max_leaves=512
+15	6a7287b	0.7242	ok	65	interaction cats carrier x hour, origin x hour
+16	b5b4b0c	0.7301	ok	32	carrier x hour only
+17	399f9a3	0.7330	ok	62	lr 0.04 1500 rounds
+18	218dca3	0.7296	ok	44	mcw 10
+19	9ea5c0b	0.7323	ok	53	sub 0.9 col 0.9
+20	442ad5e	0.7348	ok	82	3-model ensemble d16/20/24 seeds 500r
+21	b7287fa	0.7358	ok	110	5-model ensemble d14-22 400r
+22	b4746d7	0.7297	ok	113	FE month_dow + tod_bin on 5-ensemble
+23	5b0cdc0	0.7358	ok	110	rank-averaging ensemble
+24	e6d378a	0.7334	ok	93	bagged ensemble 80pct rows
+25	6906484	0.7363	ok	118	ensemble colsample diversity
+26	5d4beee	0.7368	ok	102	350 rounds for headroom
+27	94bb1da	0.7375	ok	107	6 members 300 rounds
+28	edd1a8e	0.0000	timeout	120	7 members 280 rounds
+29	33693c7	0.0000	timeout	120	max_bin 512
+30	06eb511	0.7374	ok	112	lr diversity across members
+31	774193c	0.7451	ok	105	prune cyclic sin/cos
+32	bdd4d37	0.7389	ok	95	prune tod sin/cos
+33	2ba1d61	0.7442	ok	99	drop raw DepTime
+34	3e2c2a8	0.7449	ok	101	logit-space averaging
+35	7eae88a	0.7425	ok	93	4 members 400-500 rounds
+36	c5481f2	0.7450	ok	100	6 members rounds 350-240
+37	9f682d2	0.7452	ok	104	subsample diversity
+38	65b6f57	0.7479	ok	101	reg_alpha 0.5
+39	8cd5fc2	0.7496	ok	97	reg_alpha 1.0
+40	bbd5957	0.7512	ok	86	reg_alpha 2.0

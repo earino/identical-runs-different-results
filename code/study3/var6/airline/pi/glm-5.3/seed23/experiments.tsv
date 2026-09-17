@@ -1,0 +1,35 @@
+n	commit	eval_auc	status	seconds	description
+1	c04519d	0.7141	ok	4	baseline
+2	0788a36	0.0000	crash	1	numeric time features + route cat + 600x8
+3	9ef5d23	0.7131	ok	40	numeric time features + route cat + 600x8
+4	ecbbf6e	0.7128	ok	4	features + early stopping (lr .05, d8)
+5	2711126	0.7291	ok	16	OOF TE hour interactions m50 lr.03 d6
+6	980a5a1	0.7322	ok	14	d5 colsample 0.8 lr.03
+7	5cb7ba6	0.7406	ok	27	hier route-hour TE + reg_alpha 8, 4000 trees
+8	dcf284f	0.0000	crash	2	Route cat + max_bin 512 under alpha8
+9	788c350	0.0000	crash	2	Route cat + max_bin 512 under alpha8 (fix)
+10	d2c7b38	0.7413	ok	33	Route cat + max_bin 512 under alpha8 (fix2)
+11	4bbb1aa	0.7414	ok	32	reg_alpha 10
+12	e4af585	0.7413	ok	88	3-seed ensemble avg
+13	c6ce8d2	0.7420	ok	33	h_ocarrier_hour + quad month weighting
+14	43f09d9	0.7420	ok	32	dist_dev feature
+15	dc10d21	0.7414	ok	27	reg_alpha 12 with oc_hour TE
+16	46ebd95	0.7400	ok	34	doy sin/cos
+17	23bd952	0.7420	ok	27	colsample 0.7
+18	3d5aaea	0.7419	ok	33	recency-weighted TEs
+19	f6c250f	0.7421	ok	37	max_bin 1024
+20	8da0c86	0.7419	ok	28	lr 0.035 + bin1024
+21	6243226	0.7421	ok	34	TE smoothing m=40
+22	2852532	0.7420	ok	32	subsample 0.95
+23	089478b	0.0000	crash	3	A/B param-diverse ensemble
+24	5b7bd82	0.7422	ok	62	A/B param-diverse ensemble (fix)
+25	5c200eb	0.7427	ok	88	3-model param-diverse ensemble
+26	b238d3c	0.7427	ok	89	rank averaging
+27	ba199c6	0.7432	ok	83	member B: d6 alpha14
+28	e60ea2b	0.7432	ok	99	4-model ensemble
+29	cc0979d	0.7438	ok	82	B on kf2 OOF TEs
+30	afb4727	0.7438	ok	84	C on kf3 too
+31	1692d6f	0.7439	ok	104	4 members, D on kf3
+32	5001110	0.7440	ok	103	D: d6/a13 on kf3
+33	58326e2	0.7440	ok	97	C: d7 alpha18
+34	cf8e086	0.7437	ok	98	C on kf4

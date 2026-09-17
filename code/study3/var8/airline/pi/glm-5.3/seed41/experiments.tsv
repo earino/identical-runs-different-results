@@ -1,0 +1,37 @@
+n	commit	eval_auc	status	seconds	description
+1	b1a064f	0.7141	ok	4	baseline
+2	6fed039	0.7048	ok	2	date ints + DepTime decomposition + route cat + ES
+3	21d7e74	0.7446	ok	14	deep+regularized d24 sub0.75 col0.5 n150
+4	eee61e8	0.7479	ok	98	8-seed ensemble d24 n150
+5	9ad3fa2	0.7489	ok	99	4-model ens n300 d24 lr0.03, drop Month
+6	a51a570	0.7498	ok	80	4x n300 d24 lr0.03 alpha1
+7	483f3c1	0.7510	ok	80	4x n300 d24 lr0.03 a1 + HourCat
+8	3134231	0.7513	ok	92	3-model ens n450 lr0.02 d24 a1
+9	cc21d31	0.0000	crash	1	3x n450 + OHCount ODCount
+10	9c4c3d2	0.7527	ok	102	3x n450 + OHCount ODCount (fixed)
+11	66fbcaf	0.7536	ok	112	3x n450 + dest counts + carrier count
+12	1fa0fbd	0.7530	ok	100	3x n450 max_bin=128
+13	94f610e	0.7529	ok	102	mixed-depth ens (450/500/600 trees)
+14	d6ffe89	0.7554	ok	108	counts swap: CHCount+RouteCount instead of OD/DD
+15	a7d79cc	0.7554	ok	92	alpha=2
+16	f9d2970	0.7553	ok	106	OHRatio/DHRatio/OriginTotal replace CarrierCount
+17	0d0bc4c	0.7580	ok	83	drop DayofMonth
+18	cced4a0	0.7575	ok	85	drop DOW
+19	f0824d4	0.7566	ok	90	add HourDowCount + DestTotal
+20	bcdfa49	0.7582	ok	102	4x n400 lr0.0225
+21	fc3f653	0.7582	ok	100	log1p count features
+22	7d7d64d	0.7578	ok	100	sub=0.7
+23	1771a75	0.7582	ok	93	col=0.45
+24	2045ed2	0.7576	ok	101	lambda=2
+25	a9f1cd5	0.7582	ok	113	4x n450 lr0.02
+26	3d8f3dd	0.7574	ok	103	DOW native cat instead of numeric
+27	762f78c	0.7603	ok	116	add TodSin2/Cos2 + AirportHourShare
+28	46daa6e	0.7608	ok	110	TodSin2/Cos2 only
+29	4e96869	0.7619	ok	119	TodSin3/Cos3
+30	f84496f	0.0000	timeout	124	3x n520 lr0.019 + h4 + AbsNoon - CarrierCount
+31	3ab59e0	0.7616	ok	97	3x n460 lr0.021 (headroom)
+32	9edc64d	0.7617	ok	110	4x n370 lr0.024
+33	f61b253	0.7626	ok	102	3x n400 + h4 + AbsNoon
+34	eea481b	0.7626	ok	105	h5 harmonic
+35	718a05f	0.7618	ok	96	TodAbsEve
+36	1cae7a2	0.7614	ok	116	QuarterCat 15-min categorical

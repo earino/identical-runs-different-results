@@ -1,0 +1,144 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 33,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:07:37+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s33-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:49:45+00:00",
+  "wall_seconds": 2528.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8329.1,
+  "endpoint_at_end": "ok",
+  "head": "226f37f",
+  "n_commits": 11,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 2,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7404,
+  "final_eval_auc": 0.7404,
+  "holdout_auc": 0.74035107814,
+  "holdout_ap": 0.7287987910044855,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.025580326403999987,
+  "generalization_gap": 4.89218599999397e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6874742,
+    "tokens_in_uncached": 50294,
+    "tokens_in_cached": 6824448,
+    "tokens_out": 30613,
+    "turns": null,
+    "api_calls": 157,
+    "method": "cumulative-max",
+    "cost_usd": 0.2276,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 8239.2,
+  "cpu_seconds_counted": 7619.6,
+  "cpu_seconds_uncounted": 115.1,
+  "cpu_seconds_exempt": 504.5,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 97,
+  "fits_counted": 90,
+  "fits_uncounted": 2,
+  "commits": [
+    {
+      "commit": "dd9d179",
+      "message": "baseline"
+    },
+    {
+      "commit": "9dc787d",
+      "message": "es 2000 lr.03 d8 eval-set (fixed predict)"
+    },
+    {
+      "commit": "dc7dde4",
+      "message": "feat: hour cyclical + numeric + daypart flags"
+    },
+    {
+      "commit": "e9c50cb",
+      "message": "feat: carrier x hour categorical"
+    },
+    {
+      "commit": "b794944",
+      "message": "reg_lambda 5 with carrier_hour"
+    },
+    {
+      "commit": "155dfd7",
+      "message": "ensemble: 2 xgb seeds/depths averaged"
+    },
+    {
+      "commit": "f5a515a",
+      "message": "ensemble: d8s42 + d10s7 + d8s7"
+    },
+    {
+      "commit": "ba167d3",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "9f1610c",
+      "message": "ensemble: 4 models (+d9 s123)"
+    },
+    {
+      "commit": "f216ba4",
+      "message": "interaction: raw hour (keeps 2400 distinct)"
+    },
+    {
+      "commit": "6088b93",
+      "message": "ensemble: 5 models (2x d10)"
+    },
+    {
+      "commit": "226f37f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7734.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 89.9,
+  "best_commit_dirty_rows_excluded": 1,
+  "best_commit": "6088b93",
+  "best_commit_eval_auc": 0.7404,
+  "best_commit_holdout_auc": 0.74035107814,
+  "best_commit_holdout_ap": 0.7287987910044855,
+  "best_commit_error": null,
+  "finalized_best": true
+}

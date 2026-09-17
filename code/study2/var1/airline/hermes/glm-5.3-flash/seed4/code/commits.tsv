@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	9cf9dca	1789503531	baseline
+01	1a6920f	1789503660	bigger model + early stopping
+02	c3ce07a	1789503892	te + time features
+03	09b7ab7	1789503913	time features only, no TE
+04	fbfc986	1789504921	featB d16 n300 bag5
+05	f9db5a3	1789505925	h30 bins + car_h30
+06	98aa89d	1789506251	counts + distbin
+07	01289c0	1789506764	mcw5
+08	bbfb6e5	1789507482	n400 lr.0375
+09	a323267	1789507592	maxbin512
+10	4a088b8	1789508477	cs0.3
+11	8aeb36e	1789508838	n450 lr.0333

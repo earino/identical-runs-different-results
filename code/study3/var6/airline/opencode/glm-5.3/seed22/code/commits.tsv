@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	b5b902e	1789622586	baseline
+01	50e7bd2	1789622790	early stopping with 3000 trees
+02	672d398	1789623222	FE v2: tod/hour/sin-cos/ordinal dates, no route
+03	6d52462	1789623327	early stopping on AUC
+04	ce545fd	1789623695	d8 lr0.05 mcw50 subsample/colsample 0.8
+05	5267358	1789624511	d10 lr0.03 mcw100 ss0.7 cs0.6
+06	6b3e96f	1789624984	3-seed ensemble d10
+07	5f36afe	1789625140	5-member diverse ensemble
+08	b874af3	1789625569	probe: lossguide max_leaves 128
+09	eda207f	1789625592	8-member ensemble incl lossguide, ES patience 150
+10	bdc6f61	1789625700	7-member ensemble in low-colsample region
+11	aa4c954	1789625860	10-member ensemble with lr/lambda/mcw/bin diversity
+12	3b9f9ad	1789626280	ensemble around mcw50/maxbin512 sweet spot
+13	b7ba0d7	1789626381	finer bins/mcw ensemble, all cs.5 ss.75
+14	380ec03	1789626517	minute feature + mcw 5-10 ensemble
+15	cd38969	1789626920	6-member lossguide-centric ensemble
+16	aed43a2	1789627476	consolidated 6-member ensemble, patience 100
+17	8c11b56	1789627689	bynode+d16-centric ensemble
+18	2dba1be	1789627840	ES on 50k eval subsample
+19	c3505e4	1789628045	bynode .6 mcw10 member
+20	de8e2b5	1789628310	patience 70, ES on 30k
+21	8965195	1789629543	minute + tod harmonic features

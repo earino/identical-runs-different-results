@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b957d5c	0.7141	ok	4	baseline: 30 trees, depth 6, lr 0.1
+2	4ca4bab	0.7152	ok	3	exp2: big model + early stopping
+3	478a3ea	0.0000	crash	2	exp3: time/calendar features
+4	613a84a	0.7161	ok	11	exp3: time/calendar features
+5	ce12a88	0.7115	ok	13	exp5: target encoding
+6	bf58240	0.7168	ok	13	exp6: freq-only ablation
+7	10c9a6f	0.7128	ok	31	exp7: OOF target encoding
+8	81251f5	0.7141	ok	27	exp8: deeper regularized trees
+9	172c467	0.7164	ok	40	exp9: lower lr, longer patience
+10	7637ac5	0.7200	ok	43	exp10: 3-member ensemble
+11	adf9b29	0.7208	ok	68	exp11: 5-member ensemble
+12	635532b	0.0000	timeout	120	exp12: hour x airport interactions
+13	3b4f294	0.7197	ok	93	exp13: hour_bucket + mins
+14	391f657	0.7223	ok	63	exp14: 9-member ensemble shared rounds
+15	277cfd5	0.7204	ok	103	exp15: more count features
+16	81425ad	0.7212	ok	80	exp16: structurally diverse 9-member ensemble
+17	af56f49	0.7218	ok	97	exp17: 15-member ensemble
+18	7f892ac	0.7243	ok	41	exp18: rounds cap 0.6R
+19	9737117	0.7244	ok	29	exp19: rounds cap 0.4R
+20	720fb3a	0.7231	ok	23	exp20: rounds cap 0.25R
+21	35cd314	0.7234	ok	47	exp21: OOF TE retest at 0.4R
+22	f2239af	0.7244	ok	32	exp22: rank averaging
+23	3ba9f52	0.7239	ok	46	exp23: 15 members 0.4R
+24	0d02eb2	0.7246	ok	68	exp24: dual-cap blend
+25	3ca0dda	0.0000	crash	2	exp25: covariate shift weights
+26	c902c59	0.7223	ok	108	exp25: covariate shift weights
+27	affd744	0.7247	ok	87	exp27: triple-cap blend
+28	3c2e36f	0.7247	ok	92	exp28: log1p freq
+29	9949fa5	0.7249	ok	104	exp29: +depth9 member
+30	ba572a6	0.7217	ok	100	exp30: prune duplicate features
+31	f4074d2	0.0000	timeout	120	exp31: more calendar numerics
+32	00904e6	0.7247	ok	84	exp32: dual-cap 10 members
+33	8b6c9dd	0.0000	timeout	120	exp33: seasonal counts
+34	2fc9a88	0.7246	ok	67	exp34: lean dual-cap
+35	27fcbf0	0.7246	ok	62	exp35: caps 0.35/0.6
+36	1f46007	0.7303	ok	58	exp36: feature bagging
+37	88f1a96	0.7324	ok	56	exp37: keep 0.6
+38	925c2b2	0.7291	ok	85	exp38: keep 0.5 15 members
+39	9df127d	0.7305	ok	76	exp39: keep 0.6 12 members
+40	b50e363	0.7311	ok	59	exp40: keep 0.65

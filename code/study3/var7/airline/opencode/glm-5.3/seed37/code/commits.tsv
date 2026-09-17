@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	114731c	1789633647	baseline
+01	775733f	1789633724	FE v1: time-of-day + route interaction, early stopping on eval
+02	52cda4b	1789633776	FE v2: drop route cat, ES on AUC, lr 0.05 more trees
+03	4b0a717	1789633943	HPO v1: lr .03 depth 8 mcw 5 subsample/colsample .8 ES 200
+04	0f430a1	1789634108	FE v4: seasonal features day_of_year, weekend, hour_of_week
+05	72dc4a7	1789634184	ensemble: average 5 seed models
+06	e2eecfc	1789634246	ensemble: 8 diverse members
+07	883e53a	1789634361	FE v5: estimated arrival time features
+08	45692f9	1789634496	runtime safety: ES 150, cap 3000 trees
+09	19b8ec9	1789634830	feature-bagged ensemble: per-member group drops
+10	8a445cb	1789635678	clone calendar-drop member family x3
+11	71334a7	1789635839	runtime: 7 members, ES 100
+12	8cb70c2	1789636110	all-calendar-drop ensemble, varied entity drops
+13	824cbda	1789636348	clone deep-slow winners: 2x d12 cal+dist, 2x d10 cal+carrier
+14	f60bcac	1789636646	rebalance: 3x d12 deep (cal+dist family), trim d8 redundancy
+15	3a4bb3b	1789636768	keep-DOW member variant + prepare once
+16	0fe9130	1789637349	runtime margin: 6 members, ES 60
+17	88e67e5	1789637534	dates-family ensemble: keep DOW views with varied drops
+18	0ec6ed7	1789637734	prune dates+distance, add stripped clocks+distance dates member
+19	b07dd59	1789637892	swap stripped member for deep dates view
+20	db2363e	1789638398	reseed lottery draw C on best 6-view config

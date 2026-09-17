@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	414fc3c	1789505186	baseline
+01	b79cce8	1789505234	time features, no route, 400 trees
+02	5bb7249	1789505304	drop Month+DayofMonth
+03	7258f5c	1789505388	6-model XGB ensemble
+04	6cebd46	1789505498	OOF target encodings route+hour interactions
+05	d6eb27c	1789505541	add dow_hour TE
+06	8537b7c	1789505586	12-model diverse ensemble
+07	766a818	1789505792	TE smooth 20
+08	392c347	1789505792	TE smooth 40
+09	1a1a055	1789505841	add route_hour TE
+10	2a7bb0b	1789505902	add carrier/airport/dow x hour triple TEs
+11	d604db6	1789505971	add carrier x route TEs
+12	f6874aa	1789506060	add carrier_dow_hour and route_dow TEs
+13	f8813b9	1789506138	drop native Origin/Dest cats, keep TEs
+14	4d745c4	1789506204	also drop native carrier cat
+15	6e20556	1789506272	add univariate main-effect TEs
+16	e15c1e7	1789506342	add carrier-dow and dbin-hour TEs
+17	62a1d4d	1789506418	16-model ensemble
+18	da7a7f5	1789506727	add group support count features
+19	80020b4	1789506821	more support count features
+20	71bcd6f	1789507272	4 more support counts

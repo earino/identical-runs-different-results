@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	6d80b28	1789654872	baseline
+01	1894ccc	1789654951	hour-of-day categorical + 300 trees
+02	48cbf3b	1789655010	600 trees lr.05 d6
+03	7645538	1789655020	1500 trees lr.03
+04	3b192a7	1789655372	max_bin 512 + min_child_weight 5
+05	d500881	1789655550	carrier x hour interaction cat
+06	dc79e24	1789655645	2500 trees with carrier_hour
+07	c250948	1789655671	qhour 15-min buckets
+08	1b98308	1789655813	cyclic tod_sin/cos alongside qhour

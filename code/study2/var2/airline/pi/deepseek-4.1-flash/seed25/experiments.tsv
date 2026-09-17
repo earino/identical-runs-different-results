@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9c6972f	0.7141	ok	4	baseline
+2	a123ca1	0.7119	ok	3	300 trees lr0.05 depth6
+3	de2b763	0.7097	ok	2	FE time+route, 30 trees
+4	b0ed938	0.7445	ok	19	ord date/hourcat/traffic deep16
+5	4de8eb0	0.7455	ok	53	ensemble depths 14/16/18
+6	d6f0c9f	0.7449	ok	63	ensemble 5 depths 12-20
+7	14865a5	0.7452	ok	52	wrap hour + ensemble
+8	43ec750	0.7455	ok	52	rank-avg ensemble
+9	47b3784	0.7469	ok	55	neighbor-hour traffic
+10	fd3295e	0.7467	ok	62	dest neighbors + ratios
+11	e580e24	0.7469	ok	74	ensemble depths 14/16/18/20
+12	ffce0c6	0.7458	ok	56	hub-ness features
+13	8747c40	0.7484	ok	51	reg_alpha=1 ensemble
+14	e0378aa	0.7496	ok	68	mcw=2 ensemble
+15	8ce19a0	0.7504	ok	79	mcw=1 ensemble
+16	ca3534f	0.7506	ok	100	mcw=0 ensemble
+17	379f696	0.7499	ok	79	mcw0 300 trees
+18	7fa8d32	0.7507	ok	94	colsample 0.6 mcw0
+19	3639424	0.7525	ok	96	lambda=1
+20	d53f9e8	0.7534	ok	95	lambda=0
+21	3c4c889	0.0000	timeout	120	alpha=0
+22	84e8053	0.7520	ok	71	depths 12/14/16
+23	a461a24	0.7522	ok	91	subsample 0.6
+24	38fe1bd	0.7537	ok	98	subsample 0.8
+25	86190e1	0.7539	ok	101	subsample 0.9
+26	578e0f8	0.7539	ok	108	colsample 0.7 sub0.9
+27	e965c8e	0.7547	ok	94	colsample 0.5 sub0.9
+28	3333761	0.7531	ok	74	colsample 0.4
+29	360462d	0.7542	ok	93	wrap hour @best
+30	a31ddfd	0.7544	ok	97	dst neighbor traffic
+31	776ec07	0.7534	ok	75	alpha=2
+32	866187c	0.7556	ok	93	DepMinOfDay
+33	c20a9c0	0.7558	ok	102	max_bin 512
+34	8d70006	0.0000	timeout	121	colsample 0.45
+35	106210e	0.0000	timeout	120	depths 15/17/19
+36	8371b16	0.7554	ok	77	350 trees lr.023
+37	70bb8d9	0.7562	ok	107	alpha=0.5
+38	77c8b86	0.7577	ok	115	freq features
+39	d71dbab	0.7575	ok	91	320 trees lr.025 freq
+40	55a2224	0.7577	ok	101	350 trees lr.023 freq

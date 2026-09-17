@@ -1,0 +1,28 @@
+n	commit	unix_time	subject
+00	29fb77b	1789596913	baseline
+01	391a690	1789597002	fe: numeric time/calendar features, cyclic, route categorical, early stopping
+02	22829f3	1789597842	drop categorical Month (year-specific noise), numeric month_n; d3 n100 rl30
+03	75c3d9c	1789598400	ensemble of 4 diverse XGB configs (depth/lr/rounds/subsample)
+04	b12747d	1789598978	schedule-position features: origin dep-time ECDF percentile + offset vs origin mean
+05	3e71089	1789599441	6-member ensemble: +depth-5 member +robust-feature member
+06	b970ead	1789599672	9-member ensemble: +deep high-mcw members (d6/d8), odist variant
+07	a2ff982	1789599849	greedy-weighted 7-member ensemble: odist/deep-mcw/lossguide-stump/robust members
+08	f8ac167	1789600249	RS member (robust cats + schedule features) replaces R; retuned greedy weights
+09	91cc5b7	1789600795	add CODE species: Origin/Dest as numeric codes (w=2, d8 mcw100 rl5)
+10	fb7879a	1789600886	arrival-position features (odist2/odist3 members) + C8 weight 2->4
+11	1905840	1789601028	arrival-heavy 7-member ensemble (odist3/codeA members dominate), greedy weights
+12	e8d2d7b	1789601244	route-level daily-flow position (r_pct/r_offset) in top-3 members
+13	e129995	1789601415	r_pct shrunk toward o_pct (m=1); reweight to route-heavy greedy (Ir/P/CAr/S3r/C8/RS)
+14	024763b	1789601625	shrink r_offset toward o_offset (m=1 pseudo-count)
+15	f8f132b	1789601800	operational congestion features: o_arr_before, d_dep_near_arr, r_std
+16	be9d58c	1789602002	congestion features for all variants via _add_congestion
+17	bf0451b	1789602200	add relative load factors o_arr_rel, d_dep_rel
+18	784b02b	1789602848	capacity bump: n800 lr0.03 for Ir/S3r/P/RS, n500 for CAr
+19	ec2da38	1789603119	greedy reweight: Ir7 P6 CAr7 S3r5 C8:1 RS5 +U3r w1
+20	ac4c5e4	1789603479	fix: 'r'-suffixed variants were missing arrival/dist features (base variant normalization)
+21	1428bcc	1789604604	per-member route shrinkage m (odist3rN), tuned Ir (mcw25 rl50)
+22	39f4c54	1789606515	circadian trig encoding of dep and est arrival minutes
+23	bc169d6	1789606863	2nd harmonic of departure minute
+24	bc62022	1789607123	universal arrival trig; final greedy weights + RSr member
+25	6c1cb95	1789607605	add deep lossguide member; greedy weights (Ir4 CAr8 P7 LG8 RS4 RSr3)
+26	e7cc87e	1789608076	lossguide-dominant ensemble: LGCA8 P11 LGRS7 LG96:10 Ir2 RS2

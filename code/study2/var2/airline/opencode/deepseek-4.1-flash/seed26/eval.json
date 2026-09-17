@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 26,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T08:21:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s26-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T08:53:28+00:00",
+  "wall_seconds": 1922.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6562.5,
+  "endpoint_at_end": "ok",
+  "head": "b659a13",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7329,
+  "final_eval_auc": 0.7329,
+  "holdout_auc": 0.7350595056260001,
+  "holdout_ap": 0.723997789463904,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020288753890000066,
+  "generalization_gap": -0.002159505626000091,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4527299,
+    "tokens_in_uncached": 4527299,
+    "tokens_in_cached": 0,
+    "tokens_out": 21100,
+    "turns": null,
+    "api_calls": 111,
+    "method": "sum-of-111-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 6402.8,
+  "cpu_seconds_counted": 6026.6,
+  "cpu_seconds_uncounted": 3.2,
+  "cpu_seconds_exempt": 373.0,
+  "python_processes": 50,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 474,
+  "fits_counted": 450,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "77373d0",
+      "message": "baseline"
+    },
+    {
+      "commit": "74507de",
+      "message": "feat: time-of-day decomposition, 200 trees depth6"
+    },
+    {
+      "commit": "a8c11c2",
+      "message": "feat: cyclical departure time"
+    },
+    {
+      "commit": "6eff30b",
+      "message": "feat: frequency encodings"
+    },
+    {
+      "commit": "e64dd93",
+      "message": "ens: 5-seed XGBoost ensemble"
+    },
+    {
+      "commit": "2aa0aee",
+      "message": "feat: day-of-year seasonality"
+    },
+    {
+      "commit": "77b9c3b",
+      "message": "feat: origin/carrier-hour congestion freq"
+    },
+    {
+      "commit": "9add69a",
+      "message": "feat: dest-hour congestion freq"
+    },
+    {
+      "commit": "c6934e9",
+      "message": "ens: 8 diverse XGBoost models"
+    },
+    {
+      "commit": "a3ce2f0",
+      "message": "feat: route-hour congestion freq"
+    },
+    {
+      "commit": "80a3bdd",
+      "message": "tune: lr0.03 350 trees"
+    },
+    {
+      "commit": "87cafdf",
+      "message": "feat: hour traffic share ratios"
+    },
+    {
+      "commit": "4c412da",
+      "message": "ens: 16 diverse models"
+    },
+    {
+      "commit": "14a5415",
+      "message": "tune: lr0.025 450 trees"
+    },
+    {
+      "commit": "2222893",
+      "message": "feat: hour as categorical"
+    },
+    {
+      "commit": "53ccfc0",
+      "message": "feat: 15-min time bucket categorical"
+    },
+    {
+      "commit": "57d2286",
+      "message": "feat: distance bucket categorical"
+    },
+    {
+      "commit": "a32c18f",
+      "message": "ens: 24 diverse models"
+    },
+    {
+      "commit": "cdaa196",
+      "message": "feat: holiday indicator on strong feature set"
+    },
+    {
+      "commit": "f4dfef5",
+      "message": "ablation: drop minute and dep trig features"
+    },
+    {
+      "commit": "3b95ebd",
+      "message": "feat: hour x weekend interaction"
+    },
+    {
+      "commit": "2d61548",
+      "message": "tune: max_cat_to_onehot=32"
+    },
+    {
+      "commit": "b659a13",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6029.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 159.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "2d61548",
+  "best_commit_eval_auc": 0.7329,
+  "best_commit_holdout_auc": 0.7350595056260001,
+  "best_commit_holdout_ap": 0.723997789463904,
+  "best_commit_error": null,
+  "finalized_best": true
+}

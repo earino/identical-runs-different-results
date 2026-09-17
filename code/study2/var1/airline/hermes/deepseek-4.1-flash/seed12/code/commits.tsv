@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	cf64f93	1789540901	baseline
+01	08eeb51	1789540946	fe v2: tod/calendar/distance + route & freq encodings, 300 trees
+02	f16e4ad	1789540961	v2 minus route categorical
+03	95d0a54	1789540972	capacity probe 1000 trees lr0.03 mcw10
+04	fee4491	1789541091	ablation: origin/dest as plain codes instead of categoricals
+05	f52dc97	1789541108	ablation: drop origin/dest codes (freq only)
+06	87ec2ed	1789541207	lossguide max_leaves 48
+07	cfb6e37	1789541219	lossguide max_leaves 96
+08	bfa2848	1789541258	lossguide96 mcw5
+09	0e12b16	1789541273	lossguide96 mcw2
+10	85d6762	1789541303	lossguide128 mcw2
+11	f8f3a63	1789541319	lossguide192 mcw2
+12	4943588	1789541340	lossguide256 mcw2
+13	a66bab8	1789541365	lr0.02 1500 trees leaves256
+14	c888d47	1789541457	subsample0.8 colsample0.7
+15	17bf89a	1789541521	subsample0.7 colsample0.6
+16	9e03433	1789541647	3-seed ensemble of best config
+17	dd96707	1789541754	congestion counts retest at high capacity
+18	e9ca9f2	1789542420	leaves384 x 900 trees
+19	9ad95e7	1789542508	leaves512 x 700 trees

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	bf94fed	1789507701	baseline
+01	fd24a43	1789507750	params: early stopping, lr0.05 depth8 subsample, 2000 trees
+02	a5b2a7d	1789507763	feats v1: dep hour/min, cyclical, numeric calendar, log dist
+03	3f8daf7	1789507848	v1 feats + 100 trees depth6 lr0.1
+04	ed796e3	1789507852	v1 feats + 200 trees d6 lr0.1
+05	8ea391f	1789507856	v1 feats + 400 trees d6 lr0.1
+06	4ec7ac4	1789507888	lr0.05 600 trees d6
+07	037bd9c	1789507913	lr0.05 800 trees d6
+08	c75539e	1789507943	5-seed ensemble of 800-tree d6 lr0.05 config
+09	f30b366	1789507978	diverse 4-config ensemble
+10	17504d5	1789508002	8-member diverse ensemble
+11	ef27d65	1789508071	8-member ensemble + hour categorical
+12	0220ef5	1789508143	12-member diverse ensemble
+13	2047853	1789508725	12-member ensemble + dep 15min bins
+14	6e81d5b	1789508854	10-member ensemble + dep_bin15 (dropped 2 weakest)
+15	d40a891	1789509110	add 11th member (200,d3,0.2)

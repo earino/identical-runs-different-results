@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	a8dec73	0.7141	ok	3	baseline (30 trees depth6 lr0.1)
+2	eca6e39	0.0000	crash	1	tuned model + time/route/freq features
+3	139910c	0.7058	ok	12	tuned model + time/route/freq features
+4	0170fb5	0.7131	ok	3	xgb tuned params + early stopping, raw features
+5	c3d144f	0.7121	ok	4	xgb tuned params fixed 400 rounds full data
+6	69d4429	0.7132	ok	6	cfg12: depth8 lr.05 600r colsample.6 mcw5
+7	fed9fbd	0.0000	crash	1	noMonth/Dom + hhxcar/hhxorg + time feats, d8 a5 n500
+8	7d1292a	0.7415	ok	6	noMonth/Dom + hhxcar + time feats, d8 a5 n500 (fix cats)
+9	8273578	0.0000	crash	17	ens: bag4 base col.85 n400 + 2 month-models w0.2
+10	857ab15	0.7455	ok	34	ens: bag4 base col.85 n400 + 2 month-models w0.2
+11	e643c5c	0.7469	ok	61	recency-weighted bag8 + 3 month-models w0.2
+12	62a1d1e	0.7505	ok	61	recency a=5 bag6 + 4 unweighted month-models w0.7
+13	2983ebd	0.0000	timeout	120	bag10 a5 + 3 diversity families (M, MxCar, MxOrg) w0.2
+14	09a81bd	0.0000	timeout	120	bag10 a5 + 3 diversity families, native API, fast predict
+15	fa7b85d	0.7474	ok	111	bag8 a5 + 3 diversity families (n=3 each), native API
+16	a36b288	0.0000	timeout	121	3 diversity fams (no-org div), base8 n4, w0.25, cached matrices
+17	082fd41	0.7479	ok	107	3 diversity fams, base8 n3, w0.25, cached matrices
+18	fb76e65	0.7491	ok	109	3 diversity fams, base8 n3, w0.25, per-member seeds
+19	e6c099e	0.7487	ok	91	3fam base6 n600 + 2/2/2 div, per-member seeds
+20	11b22b9	0.7488	ok	76	3fam n600, hhxorg only in base variant
+21	0280604	0.7488	ok	78	3fam n600 exact sweep-A replica
+22	8538721	0.7506	ok	78	#12 recipe scaled: bag8 base + 5 month-models w0.7
+23	8538721	0.7506	ok	79	#22 recipe rerun (seed-lottery draw)
+24	8538721	0.7506	ok	80	#22 recipe rerun 2 (seed-lottery draw)
+25	6b964c8	0.7490	ok	97	3fam base8 n600 + 2/2/2 div (bigger lot)
+26	f6a2779	0.7488	ok	81	3fam n600 sweep-exact col order, div col1.0

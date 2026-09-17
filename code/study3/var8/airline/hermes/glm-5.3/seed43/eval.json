@@ -1,0 +1,194 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 43,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:57:41+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s43-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T23:43:04+00:00",
+  "wall_seconds": 9922.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18473.7,
+  "endpoint_at_end": "ok",
+  "head": "7d094d4",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7612,
+  "final_eval_auc": 0.7612,
+  "holdout_auc": 0.7600165883680001,
+  "holdout_ap": 0.7498366050787357,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.0452458366320001,
+  "generalization_gap": 0.0011834116319998644,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 18672387,
+    "tokens_in_uncached": 3552643,
+    "tokens_in_cached": 15119744,
+    "tokens_out": 126539,
+    "turns": null,
+    "api_calls": 216,
+    "method": "cumulative-max",
+    "cost_usd": 9.4616,
+    "cached_share": 0.81
+  },
+  "cpu_seconds_python": 18079.5,
+  "cpu_seconds_counted": 2939.0,
+  "cpu_seconds_uncounted": 14845.9,
+  "cpu_seconds_exempt": 294.6,
+  "python_processes": 136,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1831,
+  "fits_counted": 307,
+  "fits_uncounted": 1492,
+  "commits": [
+    {
+      "commit": "791e1d8",
+      "message": "baseline"
+    },
+    {
+      "commit": "d0c4bfd",
+      "message": "exp10: target encoding (OOF for train, smoothed maps for predict)"
+    },
+    {
+      "commit": "d443fc9",
+      "message": "exp11: add route (origin-dest) target encoding"
+    },
+    {
+      "commit": "1ea558f",
+      "message": "exp15: depth8 mcw10 60 trees for TE features"
+    },
+    {
+      "commit": "2c36f4c",
+      "message": "exp18: route x hour TE interaction"
+    },
+    {
+      "commit": "09f27d4",
+      "message": "exp19: +origin_hour,dest_hour TEs, refactor keys, n120"
+    },
+    {
+      "commit": "f5a5cae",
+      "message": "exp20: smooth50, n240 lr0.07"
+    },
+    {
+      "commit": "371f022",
+      "message": "exp21: train-only aggregates (counts, avg dist/dep, diversity)"
+    },
+    {
+      "commit": "5431556",
+      "message": "exp22: TE count features + colsample 0.7"
+    },
+    {
+      "commit": "e4cf2c4",
+      "message": "exp23: carrier_dist TE + 480 trees lr0.05"
+    },
+    {
+      "commit": "1fb6332",
+      "message": "exp24: 15-min bucket TEs (origin_m15, route_m15) + counts"
+    },
+    {
+      "commit": "382f5dd",
+      "message": "exp25: 4-model bagged ensemble (2 fold-splits x 2 seeds)"
+    },
+    {
+      "commit": "3e7863a",
+      "message": "exp26: 8-model ensemble (4 fold-splits x 2 seeds)"
+    },
+    {
+      "commit": "0e79f2c",
+      "message": "exp27: recency-weighted training (late-2005 months upweighted)"
+    },
+    {
+      "commit": "7e50e7a",
+      "message": "exp28: 16-model ensemble (8 fold splits)"
+    },
+    {
+      "commit": "4feb098",
+      "message": "exp29: minute_of_hour feature"
+    },
+    {
+      "commit": "9439f50",
+      "message": "exp30: route x minute-of-hour TE"
+    },
+    {
+      "commit": "197859a",
+      "message": "exp31: carrier x 15-min TE"
+    },
+    {
+      "commit": "11fdcad",
+      "message": "exp33: hierarchical TE shrinkage toward parent keys"
+    },
+    {
+      "commit": "8ecbac5",
+      "message": "exp34: hier TE blend 0.5/0.5"
+    },
+    {
+      "commit": "0ad015f",
+      "message": "exp35: 24-model ensemble"
+    },
+    {
+      "commit": "42ed1a7",
+      "message": "exp36: 32 members, n360 lr0.066"
+    },
+    {
+      "commit": "628af4c",
+      "message": "exp37: subsample 0.85, colsample 0.6"
+    },
+    {
+      "commit": "7d094d4",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17784.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 394.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "628af4c",
+  "best_commit_eval_auc": 0.7612,
+  "best_commit_holdout_auc": 0.7600165883680001,
+  "best_commit_holdout_ap": 0.7498366050787357,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,144 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T04:04:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:41:38+00:00",
+  "wall_seconds": 5831.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 19722.7,
+  "endpoint_at_end": "ok",
+  "head": "3419009",
+  "n_commits": 11,
+  "n_experiments": 17,
+  "n_ok": 16,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7592,
+  "final_eval_auc": 0.7592,
+  "holdout_auc": 0.758691274332,
+  "holdout_ap": 0.7478635600427592,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04392052259599999,
+  "generalization_gap": 0.0005087256679999763,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5447682,
+    "tokens_in_uncached": 5447682,
+    "tokens_in_cached": 0,
+    "tokens_out": 80732,
+    "turns": null,
+    "api_calls": 94,
+    "method": "sum-of-94-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 18412.3,
+  "cpu_seconds_counted": 4024.9,
+  "cpu_seconds_uncounted": 13563.1,
+  "cpu_seconds_exempt": 824.3,
+  "python_processes": 48,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 0,
+  "fits_total": 253,
+  "fits_counted": 41,
+  "fits_uncounted": 206,
+  "commits": [
+    {
+      "commit": "e2fc500",
+      "message": "baseline"
+    },
+    {
+      "commit": "2a029e2",
+      "message": "time features + deep regularized xgb (300x16 lr.03)"
+    },
+    {
+      "commit": "a7b8675",
+      "message": "add 30-min time-of-day categorical bins"
+    },
+    {
+      "commit": "79e052d",
+      "message": "add carrier x time-of-day interaction"
+    },
+    {
+      "commit": "60c1d11",
+      "message": "3-model depth-diverse xgb ensemble"
+    },
+    {
+      "commit": "b18b77a",
+      "message": "add dist bins, raw DepTime, origin x hour interaction"
+    },
+    {
+      "commit": "42f8630",
+      "message": "add scheduled arrival TOD bins and holiday flag"
+    },
+    {
+      "commit": "c707abf",
+      "message": "add origin-dest-carrier frequency"
+    },
+    {
+      "commit": "3137dd7",
+      "message": "add carrier frequency"
+    },
+    {
+      "commit": "662235c",
+      "message": "final"
+    },
+    {
+      "commit": "3a9719b",
+      "message": "weight ensemble toward deeper models"
+    },
+    {
+      "commit": "3419009",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17588.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 1310.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3a9719b",
+  "best_commit_eval_auc": 0.7592,
+  "best_commit_holdout_auc": 0.758691274332,
+  "best_commit_holdout_ap": 0.7478635600427592,
+  "best_commit_error": null,
+  "finalized_best": true
+}

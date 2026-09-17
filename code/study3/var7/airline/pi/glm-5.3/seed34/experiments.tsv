@@ -1,0 +1,6 @@
+n	commit	eval_auc	status	seconds	description
+1	46f1417	0.7141	ok	4	baseline
+2	ab0bdeb	0.7086	ok	4	feat engineering + early stopping
+3	1a46823	0.7286	ok	10	numeric cal feats + hour cat + ES depth6
+4	e93d0ec	0.7463	ok	28	d14 lr03 alpha1 onehot ES100
+5	ea648d7	0.7482	ok	90	3-seed ensemble d14a1

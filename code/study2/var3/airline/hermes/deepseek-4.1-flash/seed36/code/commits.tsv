@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	79a3db4	1789532622	baseline
+01	c7e4de8	1789532727	exp3: ordinal c-N, clock features, log distance
+02	97b01c6	1789532742	exp4: 200 trees lr .05 depth6 + subsample/colsample
+03	fb24e11	1789532801	exp6: frequency/congestion count features (train-only)
+04	70afbad	1789532833	exp7: smoothed out-of-fold target encoding of keys
+05	4696f62	1789532886	exp10: 5-seed XGBoost bagging ensemble
+06	9a3b06e	1789532924	exp12: TE_ALPHA 20 -> 60
+07	7f8b4c4	1789532969	exp14: airport hourly schedule-share congestion features
+08	2569d4c	1789533284	exp25: depth-mixed ensemble (d5/d6/d7 x 3 seeds)
+09	a3490f7	1789533348	exp28: max_bin 256 -> 512
+10	c8a49ae	1789533373	exp29: prune cnt_* to Origin/Dest/route only
+11	fb46205	1789533427	exp31: ensemble 9 -> 15 members
+12	992343e	1789533500	exp33: ensemble 15 -> 21 members
+13	f743341	1789533553	exp34: 30 members, depths 4-8
+14	0c9d4da	1789533701	exp36: colsample_bytree 0.8 -> 0.6
+15	0080507	1789533757	exp37: colsample_bytree 0.6 -> 0.4

@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	05f69d2	1789523917	baseline
+01	a0a7a33	1789523955	time feats only, 300 trees lr0.05
+02	5a1b1b5	1789523998	150 trees
+03	b2243f5	1789524008	heavy reg 700 trees lr0.03
+04	306b0ba	1789524042	lambda3
+05	8be435a	1789524048	lambda8
+06	d9f89f2	1789524055	lambda20
+07	3412329	1789524076	default max_cat_to_onehot
+08	770ebac	1789524083	reg_alpha2
+09	71e5369	1789524090	reg_alpha5
+10	694cdaa	1789524097	reg_alpha10
+11	65deeee	1789524111	alpha10 1200 trees lr0.02
+12	8451fb9	1789524120	mcw20
+13	de9d834	1789524130	mcw10
+14	04f95f7	1789524166	4-model xgb ensemble
+15	986f9ee	1789524400	single model lambda10
+16	f381457	1789524545	shifted-day time features
+17	c8af6d6	1789524560	4-model ensemble + shifted features
+18	6798de1	1789524630	drop unshifted minute_of_day

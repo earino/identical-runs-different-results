@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	76579fd	1789540087	baseline
+01	d788312	1789540141	time features: hour/min cyclical, month/dow numeric+cyclical, tod bin, log distance
+02	afc62f1	1789540157	800 rounds lr0.05 depth8, early stopping on 15% val split, subsample/colsample 0.9
+03	8689365	1789540260	smoothed target encoding (OOF for train) for carrier/origin/dest/route/originhour + route count
+04	f385309	1789540274	refit final model on full train with best_iter from early stopping
+05	e3766a4	1789540306	add DestTOD + CarrierHour TE features
+06	f472439	1789540367	add Hour and CarrierDist-bin TE features
+07	9f844d8	1789540465	lower lr 0.03, 2000 rounds, es 100, lambda 1
+08	71b0a0a	1789540494	add RouteHour + CarrierTOD TE features
+09	9657465	1789540655	bag of 3 seeds, averaged
+10	19eca67	1789540784	add DestHour TE feature
+11	dbabfc5	1789540834	add OriginTOD TE feature
+12	35665cd	1789540946	add DistBin TE feature
+13	29fe398	1789541134	bag of 6 seeds
+14	81a9992	1789541350	bag of 8 seeds
+15	416deb4	1789541468	lr 0.025 with 8-bag
+16	b1538e2	1789541837	cache prepare() across bag members in predict_proba

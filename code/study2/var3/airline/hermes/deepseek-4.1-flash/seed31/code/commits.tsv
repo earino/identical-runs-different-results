@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	c187fdb	1789508759	baseline
+01	9a1efab	1789508844	early stopping on internal val split
+02	b722a32	1789508865	departure time-of-day decomposition
+03	1b66b5f	1789508988	carrier/origin/dest x hour delay-rate encodings
+04	953e923	1789509114	lr 0.02
+05	603337a	1789509234	depth-diverse 3-model ensemble
+06	6f2c4fa	1789509274	5-model depth ensemble
+07	cf0bb0b	1789509460	6-model depth 3-8 ensemble
+08	d4fcbce	1789509532	8-model depth 2-10 ensemble
+09	d263f25	1789509819	add two no-rate feature-view members
+10	48a46a5	1789509908	add no-cats feature-view members
+11	a0b5951	1789510140	fixed 1200 rounds per member, no probe
+12	1c372a8	1789510210	14-member three-view ensemble
+13	370487e	1789510511	lr 0.03 with 900 rounds
+14	978491c	1789510598	18-member ensemble
+15	2227875	1789510810	16 members 1100 rounds
+16	ffb1322	1789511002	1200 rounds
+17	fa8b8bb	1789511105	1300 rounds
+18	baed2fb	1789511227	remove dead code (unused import/param/split)

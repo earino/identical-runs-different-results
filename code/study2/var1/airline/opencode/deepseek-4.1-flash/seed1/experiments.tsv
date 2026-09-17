@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ed145b9	0.7141	ok	3	baseline
+2	084ec1c	0.7098	ok	3	stronger xgb 500 trees lr0.05
+3	451dc6b	0.7132	ok	1	time-of-day features
+4	3e4d01e	0.7114	ok	2	OOF target encoding
+5	f005c9e	0.7125	ok	2	100 trees lr0.1
+6	d82d730	0.7150	ok	2	depth 4
+7	61e408c	0.7119	ok	1	depth 3
+8	88b3ae4	0.7167	ok	2	depth4 200 trees lr0.05
+9	020748e	0.7150	ok	3	depth4 500 trees lr0.05
+10	af80a54	0.7157	ok	2	TE at depth4/200
+11	aa53b9c	0.7167	ok	2	time features depth4/200
+12	169cced	0.7046	ok	3	route categorical depth4/200
+13	f95aca1	0.7165	ok	2	subsample colsample 0.8
+14	722b960	0.7167	ok	2	min_child_weight 10
+15	44ed940	0.7170	ok	4	3-seed ensemble
+16	6a41312	0.7176	ok	7	5-model diverse ensemble
+17	feb7f57	0.7176	ok	12	10-model ensemble
+18	0eef59d	0.7185	ok	7	hour categorical ensemble
+19	844c784	0.7189	ok	8	tod numeric + cyclic
+20	0d3f0eb	0.7186	ok	8	frequency counts
+21	8ff1812	0.7182	ok	6	max_cat_to_onehot 32
+22	8063ebd	0.7186	ok	14	10-model ensemble hour
+23	8df6f88	0.7162	ok	28	one-hot encoding
+24	066bc3f	0.7196	ok	8	holiday flag
+25	9246dc4	0.7198	ok	8	is_weekend
+26	f1c36de	0.7197	ok	8	day-of-year cyclic
+27	01fe7e7	0.7201	ok	8	reg_lambda 5
+28	29d4bb8	0.7204	ok	8	reg_lambda 20
+29	5561e43	0.7201	ok	8	reg_lambda 50
+30	086981b	0.7222	ok	8	reg_alpha 5
+31	e1c215a	0.7200	ok	7	reg_alpha 20
+32	11f3d3e	0.7226	ok	8	lambda 10 alpha 5
+33	e45dcc1	0.7227	ok	7	lambda 5 alpha 5
+34	266e11e	0.7227	ok	8	gamma 0.3
+35	867238c	0.7229	ok	8	travel_rush + holiday_day
+36	18218d4	0.7230	ok	11	gradient_based sampling
+37	f2b6916	0.7246	ok	11	carrier_hour interaction
+38	c258a5a	0.7272	ok	14	origin_hour interaction
+39	bfe003c	0.7273	ok	15	dest_hour interaction
+40	d2d702b	0.7270	ok	16	carrier_origin interaction

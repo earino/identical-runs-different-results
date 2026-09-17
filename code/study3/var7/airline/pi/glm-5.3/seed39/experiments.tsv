@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	602bf0e	0.7141	ok	9	baseline
+2	6ea9ee8	0.7145	ok	30	capacity + early stopping
+3	6a41577	0.7095	ok	32	feature engineering pass 1
+4	8752f0e	0.7242	ok	4	numdates + depth8 regularization
+5	cb4724b	0.0000	crash	1	deep forest tuned + hourcat
+6	8194f91	0.7389	ok	13	deep forest tuned + hourcat (fix)
+7	d12680a	0.7480	ok	41	quarter-hour categorical + deep slow lr
+8	65ee065	0.7505	ok	62	hour x carrier interaction, mcw1
+9	3a49b8c	0.7528	ok	62	sin/cos minutes
+10	72209fc	0.7532	ok	68	half-day harmonic
+11	09b3362	0.7547	ok	81	harmonic bank H=8
+12	8855df1	0.7547	ok	69	esr150 leaner

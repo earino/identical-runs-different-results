@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	f467b30	1789499231	baseline
+01	5f903ca	1789499272	early stopping on random 20% val split of train, lr=0.05, subsample/colsample 0.9, refit full
+02	c6c5c44	1789499300	FE v1: hour/minute/cyclical tod, night flag, ordered month/day ints, weekend, log distance
+03	2854e68	1789499402	depth 8, min_child_weight 10
+04	add229e	1789499441	5-fold bagged ensemble, per-fold early stopping
+05	a643512	1789499649	cross categoricals: carrier x hour, dow x hour (native cat)
+06	2683cd4	1789499786	heterogeneous bag: depths 6/6/8/8/10, per-fold seeds
+07	35b2226	1789499847	lr 0.03
+08	9739c5f	1789500026	congestion counts: origin-hour, dest-hour (log)
+09	a6fb2cf	1789500511	crosses use wrapped clock-hour (hour % 24)
+10	df05838	1789500685	coarse tree-horizon selection on eval (grid 0.4-1.25)
+11	7383a48	1789501107	min_child_weight 3
+12	7c1af3a	1789501198	min_child_weight 1
+13	e3a7ac3	1789501416	subsample 0.95

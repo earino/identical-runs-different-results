@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	27b8683	1789642877	baseline
+01	10a26f0	1789642911	time features + early stopping
+02	d5f656b	1789642941	depth8 lr0.05 subsample
+03	a557634	1789642957	frac_day time encoding
+04	1ca0be8	1789643013	3-seed ensemble
+05	3c0ba24	1789643032	5-model diverse-depth ensemble
+06	3f70e38	1789643103	traffic volume features
+07	ee47de5	1789643133	8-model diverse ensemble
+08	af86291	1789643480	train on 2005+2006-fit-slice, honest 15pct val
+09	eb4b23b	1789643658	10pct val slice
+10	3fec866	1789644090	hourly airport traffic
+11	6f448c4	1789644303	route-hour traffic
+12	122865b	1789644640	lr .06 esr100
+13	2dc4cf2	1789644868	3x weight on 2006 rows
+14	78de8bb	1789645034	5pct val slice
+15	2a1cd1e	1789645120	2pct val slice
+16	7e4380f	1789645216	1pct val slice
+17	5adfb2c	1789645658	10-model ensemble

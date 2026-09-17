@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	582bd94	0.7141	ok	4	baseline
+2	c25e215	0.7126	ok	4	FE + early stopping + bigger model
+3	4054673	0.7124	ok	4	depth6 lr0.05 mcw20 es100
+4	f8021c4	0.7216	ok	7	ablation: drop Route
+5	7e34ce1	0.7231	ok	5	depth8 no-route
+6	81d2f7d	0.7257	ok	6	depth10 no-route
+7	3340610	0.7282	ok	5	depth12 no-route
+8	98741f5	0.7297	ok	6	depth16 no-route
+9	ad05e59	0.7293	ok	5	depth20 no-route
+10	7af3d39	0.0000	crash	2	OOF TE + freq, depth16
+11	20142da	0.7248	ok	9	OOF TE + freq, depth16 (fixed)
+12	38fb870	0.7278	ok	9	TE-only no native cats
+13	0477a92	0.7299	ok	9	lr0.03 deep, es200
+14	ed50937	0.7162	ok	14	native cats month/dom/dow/hour
+15	d4204b9	0.7245	ok	8	mcw50
+16	a932862	0.7312	ok	9	bagging ss0.8 cs0.7
+17	b682cfe	0.7316	ok	14	bagging ss0.7 cs0.6
+18	ef372e7	0.7336	ok	28	3-model ensemble
+19	0a6678a	0.7340	ok	54	5-model ensemble
+20	91d4ec6	0.7325	ok	41	freq counts
+21	5d67db4	0.7339	ok	58	max_bin 512 single
+22	6f050fe	0.7333	ok	43	holiday flags
+23	39e21c7	0.7354	ok	77	8-model ensemble
+24	c845d78	0.7355	ok	88	rank average
+25	5b7aa93	0.0000	crash	72	feature-subset diversity
+26	78b89b1	0.7354	ok	83	feature-subset diversity (fixed)
+27	820f65c	0.7382	ok	11	single sweet-spot probe
+28	afc6ea4	0.7362	ok	11	cs0.4 probe
+29	3abefe0	0.7373	ok	12	ss0.85 probe
+30	98b7ab7	0.7403	ok	12	mcw5 probe
+31	474e395	0.7440	ok	19	mcw1 probe
+32	9b7b576	0.7457	ok	25	depth20 mcw1
+33	c35dae6	0.7454	ok	35	depth24 mcw1
+34	7352ad1	0.7444	ok	25	cs0.5 at d20 mcw1
+35	9a31def	0.7429	ok	25	reg_lambda 0.1
+36	1aea854	0.7520	ok	85	4-seed champion ensemble
+37	18a19bc	0.7522	ok	101	6-seed ensemble es100
+38	9c250a9	0.7517	ok	90	mixed-depth 6 members
+39	672c35a	0.7526	ok	113	8-seed es50
+40	2c7ed1b	0.0000	timeout	121	9-seed es50

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6d80b28	0.7141	ok	5	baseline
+2	ae364fa	0.7138	ok	3	tod features + 500 trees w/ ES
+3	1894ccc	0.7156	ok	3	hour cat feature + 300 trees
+4	e5590ac	0.7105	ok	3	target encoding route/origin/dest/carrier
+5	5872907	0.7052	ok	14	capacity+regularization: d8 lr.05 s.8 c.8
+6	48cbf3b	0.7193	ok	5	600 trees lr.05 d6
+7	7645538	0.7203	ok	10	1500 trees lr.03 d6
+8	dfb39e5	0.7196	ok	20	3000 trees lr.02 d6
+9	092c421	0.7110	ok	12	fine time: minute-of-day, minute cat, dom cyclic
+10	799337e	0.6958	ok	20	route Origin_x_Dest cat feature
+11	bc326c5	0.7202	ok	11	volume counts route/origin/dest/carrier
+12	ed60ddf	0.7115	ok	12	stochastic: subsample.8 colsample.8
+13	6c00c92	0.7203	ok	48	5-seed ensemble avg
+14	347c736	0.7079	ok	2	time-aware early stopping month split
+15	0ccaf81	0.7200	ok	11	volume origin/dest/carrier x hour
+16	f0898c5	0.7144	ok	13	lossguide max_leaves=48
+17	3b192a7	0.7218	ok	11	max_bin=512 mcw=5
+18	aa21750	0.7198	ok	11	max_bin=1024 mcw=8
+19	de137e7	0.7188	ok	13	d7 + bin512 + mcw5
+20	f244313	0.7206	ok	13	2000x lr.02 bin512 mcw5
+21	be731a5	0.6795	ok	9	OOF TE route/origin/dest/carrier
+22	d1d3f61	0.7137	ok	12	OOF TE v2 honest train matrix
+23	d500881	0.7316	ok	11	carrier_hour interaction cat
+24	27b8ffe	0.7149	ok	24	origin_hour + dest_hour cats
+25	aa2c370	0.7233	ok	17	carrier_dow + hour_dow cats
+26	dc79e24	0.7317	ok	17	2500 trees on carrier_hour featset
+27	c250948	0.7376	ok	19	qhour 96-bucket time feature
+28	ad7b6c6	0.7285	ok	23	carrier_qhour 1920-level cat
+29	2b669b0	0.7368	ok	25	no hour col; tod_min; 3000 trees
+30	fcae514	0.7367	ok	20	thour 144-bucket
+31	1b98308	0.7387	ok	20	tod_sin/cos + qhour
+32	8c6ed99	0.7381	ok	20	hhour 48-bucket
+33	32402f7	0.7380	ok	21	distance transforms
+34	cedbf1f	0.7375	ok	27	3500x lr.025 on rich featset
+35	ae3970d	0.7372	ok	36	3-seed ensemble 1500x lr.05
+36	c58a03a	0.7342	ok	35	subsample.7 x4000
+37	c860888	0.7384	ok	20	carrier_hour_vol numeric
+38	40f6040	0.7374	ok	28	colsample.7 x4000
+39	20f05fe	0.7316	ok	23	origin_carrier cat
+40	39b9718	0.7377	ok	20	mcw=10 gamma=.1

@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	4802df8	1789639807	baseline
+01	539489c	1789639851	time features: hour/minute/cyclic + numeric calendar
+02	70a6464	1789639873	early stopping on eval set
+03	1f7427a	1789639914	depth 4 probe
+04	a790691	1789639924	lr 0.05 depth 4
+05	efab7b7	1789640050	operational-day minutes feature (day starts 5am)
+06	b88ef30	1789640066	covariate-shift importance weighting (domain classifier)
+07	b1b2cca	1789640125	diverse-config 3-model ensemble
+08	dcfb65a	1789640139	5-member diverse ensemble
+09	4c872a4	1789640210	one-hot hour dummies
+10	ae6074a	1789640394	colsample_bynode 0.8 in members
+11	2ea6b03	1789640422	colsample_bynode 0.6
+12	36ddada	1789640448	colsample_bynode 0.4
+13	9587d38	1789640478	colsample_bynode 0.25
+14	375d76d	1789640551	deeper members under bynode randomization
+15	10ede73	1789640578	even deeper members
+16	3dd620a	1789640605	deeper still
+17	3ff579c	1789640641	depth ladder 5: 16-24
+18	ee4f344	1789640698	depth ladder 6: 12-32

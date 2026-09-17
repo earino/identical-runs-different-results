@@ -1,0 +1,180 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 39,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T07:39:12+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s39-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T08:03:44+00:00",
+  "wall_seconds": 1471.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 0.0,
+  "endpoint_at_end": "ok",
+  "head": "57aae2e",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7479,
+  "final_eval_auc": 0.7479,
+  "holdout_auc": 0.7492438780940001,
+  "holdout_ap": 0.7353840368362623,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03447312635800004,
+  "generalization_gap": -0.0013438780940000505,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3870024,
+    "tokens_in_uncached": 3870024,
+    "tokens_in_cached": 0,
+    "tokens_out": 46216,
+    "turns": null,
+    "api_calls": 80,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 4371.6,
+  "cpu_seconds_counted": 4114.9,
+  "cpu_seconds_uncounted": 2.5,
+  "cpu_seconds_exempt": 254.3,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 186,
+  "fits_counted": 177,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "76f6878",
+      "message": "baseline"
+    },
+    {
+      "commit": "a18339f",
+      "message": "numeric time/calendar features + log dist"
+    },
+    {
+      "commit": "0881ad7",
+      "message": "bigger model: 500 trees depth7 lr.05 subsample"
+    },
+    {
+      "commit": "440173b",
+      "message": "hour categorical + is_weekend flag"
+    },
+    {
+      "commit": "c300ff7",
+      "message": "30-min departure bucket categorical"
+    },
+    {
+      "commit": "ef4ca08",
+      "message": "15-min departure bucket categorical"
+    },
+    {
+      "commit": "ea0217d",
+      "message": "3-model bagged ensemble"
+    },
+    {
+      "commit": "193f722",
+      "message": "5-model bag with depth diversity"
+    },
+    {
+      "commit": "228afed",
+      "message": "7-model bag: depth/lr/lambda diversity"
+    },
+    {
+      "commit": "97edf69",
+      "message": "max_cat_threshold 128"
+    },
+    {
+      "commit": "66367a0",
+      "message": "lossguide growth, 255 leaves"
+    },
+    {
+      "commit": "a5e7d82",
+      "message": "bag with two bounded leaf-wise members"
+    },
+    {
+      "commit": "80a87b3",
+      "message": "3 leaf-wise members at 127 leaves depth10"
+    },
+    {
+      "commit": "a37be2f",
+      "message": "one member at 255 leaves depth12"
+    },
+    {
+      "commit": "334e96d",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "ba0f633",
+      "message": "estimated arrival time features (tod + distance-derived duration)"
+    },
+    {
+      "commit": "b39ba01",
+      "message": "simplify: drop arrival sin/cos"
+    },
+    {
+      "commit": "9e66553",
+      "message": "grow bag to 8 members"
+    },
+    {
+      "commit": "a966e0f",
+      "message": "add 30-min arrival bucket (multi-scale arrival)"
+    },
+    {
+      "commit": "3600251",
+      "message": "min_child_weight 3"
+    },
+    {
+      "commit": "57aae2e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4117.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -4371.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3600251",
+  "best_commit_eval_auc": 0.7479,
+  "best_commit_holdout_auc": 0.7492438780940001,
+  "best_commit_holdout_ap": 0.7353840368362623,
+  "best_commit_error": null,
+  "finalized_best": true
+}

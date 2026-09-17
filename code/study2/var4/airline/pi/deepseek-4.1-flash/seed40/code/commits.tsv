@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	2e8afa8	1789487159	baseline
+01	74b8697	1789487608	ensemble of 2 heavily-regularized XGB configs x5 seeds
+02	e5fdaf8	1789488406	dep time-of-day categorical buckets; drop Month/DayofMonth
+03	d27f834	1789491238	deep d14 ensemble, fast n=400
+04	8c2b447	1789491842	add carrier x hour interaction and log distance
+05	5e6d6cb	1789492337	add route popularity feature
+06	ee656ee	1789492606	add airport-hour congestion frequency features
+07	cc778c5	1789492779	5-model ensemble, smaller trees, more cs diversity

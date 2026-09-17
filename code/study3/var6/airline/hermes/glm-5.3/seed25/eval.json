@@ -1,0 +1,184 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 25,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T10:25:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s25-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T11:57:52+00:00",
+  "wall_seconds": 5546.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17796.2,
+  "endpoint_at_end": "ok",
+  "head": "fa66097",
+  "n_commits": 21,
+  "n_experiments": 35,
+  "n_ok": 33,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7626,
+  "final_eval_auc": 0.7626,
+  "holdout_auc": 0.7619845387500002,
+  "holdout_ap": 0.7510857814742621,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04721378701400014,
+  "generalization_gap": 0.0006154612499997825,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 15662702,
+    "tokens_in_uncached": 74670,
+    "tokens_in_cached": 15588032,
+    "tokens_out": 109608,
+    "turns": null,
+    "api_calls": 196,
+    "method": "cumulative-max",
+    "cost_usd": 4.6397,
+    "cached_share": 0.995
+  },
+  "cpu_seconds_python": 17650.5,
+  "cpu_seconds_counted": 5368.5,
+  "cpu_seconds_uncounted": 11860.9,
+  "cpu_seconds_exempt": 421.1,
+  "python_processes": 79,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 375,
+  "fits_counted": 93,
+  "fits_uncounted": 277,
+  "commits": [
+    {
+      "commit": "23b6548",
+      "message": "baseline"
+    },
+    {
+      "commit": "4f1bee7",
+      "message": "early stopping with internal 80/20 split, 2000 trees cap"
+    },
+    {
+      "commit": "844df7d",
+      "message": "time-of-day + cyclical features (30-tree baseline model)"
+    },
+    {
+      "commit": "5b1be45",
+      "message": "regularized slow learning: lr .05, 300 trees, subsample, lambda"
+    },
+    {
+      "commit": "f6ef336",
+      "message": "drop calendar c-strings, depth 8"
+    },
+    {
+      "commit": "dbc3ba9",
+      "message": "strong regularization: mcw20 lam10 ss.7 depth8"
+    },
+    {
+      "commit": "1bff24f",
+      "message": "depth12 colsample 0.4"
+    },
+    {
+      "commit": "fc58776",
+      "message": "cs0.3 500 trees lr.04"
+    },
+    {
+      "commit": "10a64d9",
+      "message": "3-seed ensemble"
+    },
+    {
+      "commit": "c4b69c0",
+      "message": "max_bin 1024"
+    },
+    {
+      "commit": "339be08",
+      "message": "traffic count features (origin/dest/route x hour, dist vs route median)"
+    },
+    {
+      "commit": "6ea9f1c",
+      "message": "rich count features v2 (route-hour, carrier-hour, ratios, logs)"
+    },
+    {
+      "commit": "16ccaf1",
+      "message": "block30 count features (origin/dest/carrier x 30min block)"
+    },
+    {
+      "commit": "525b074",
+      "message": "cs0.2 + 5-seed ensemble"
+    },
+    {
+      "commit": "d03af10",
+      "message": "15-min block counts + minute-of-hour"
+    },
+    {
+      "commit": "41f9a7d",
+      "message": "depth14 ss0.8 for 47-col set"
+    },
+    {
+      "commit": "54bd8fb",
+      "message": "rush flags, dist bins, carrier-hour cat, weekend/holiday"
+    },
+    {
+      "commit": "2e3e597",
+      "message": "exponential recency weighting 1.25^month"
+    },
+    {
+      "commit": "3220449",
+      "message": "3 seeds x 400 trees (runtime cut, same AUC)"
+    },
+    {
+      "commit": "4c60159",
+      "message": "min_child_weight 10"
+    },
+    {
+      "commit": "0061140",
+      "message": "5-seed ensemble at final config"
+    },
+    {
+      "commit": "fa66097",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17229.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 145.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0061140",
+  "best_commit_eval_auc": 0.7626,
+  "best_commit_holdout_auc": 0.7619845387500002,
+  "best_commit_holdout_ap": 0.7510857814742621,
+  "best_commit_error": null,
+  "finalized_best": true
+}

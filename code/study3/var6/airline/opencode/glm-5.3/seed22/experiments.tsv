@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b5b902e	0.7141	ok	4	baseline
+2	50e7bd2	0.7142	ok	2	early stopping, 3000 trees lr0.1 d6
+3	f84b921	0.7060	ok	3	FE v1: tod/hour/sin-cos, route, ordinal dates
+4	672d398	0.7145	ok	2	FE v2 (no route)
+5	6d52462	0.7145	ok	5	ES on AUC (rounds=200)
+6	ce545fd	0.7157	ok	7	capacity+regularization: d8 lr.05 mcw50 s.8 c.8
+7	cb4f5dd	0.7151	ok	9	OOF TE route/origin/dest/carrier smooth=20
+8	c555ea2	0.7152	ok	12	congestion: origin/dest hour counts, route counts, hour share
+9	5267358	0.7180	ok	10	capacity sweep: d10 lr.03 mcw100 ss.7 cs.6
+10	3db80aa	0.7180	ok	11	d12 same rest
+11	6b3e96f	0.7194	ok	34	3-seed ensemble of d10 config
+12	5f36afe	0.7205	ok	58	5-member diverse ensemble
+13	24e29f7	0.7203	ok	68	interaction cats: month/dow/carrier x hour
+14	998e862	0.7177	ok	17	probe lr.02 + max_bin 1024
+15	10445f4	0.0000	crash	114	probe DART lr.04 d10 250 rounds
+16	b874af3	0.7182	ok	15	probe lossguide leaves=128
+17	eda207f	0.7203	ok	64	8-member ensemble (5 depth + 3 lossguide)
+18	bdc6f61	0.7218	ok	58	7-member ensemble cs .5-.6
+19	df15bf5	0.0000	crash	72	10-member ensemble, hp diversity
+20	aa4c954	0.7222	ok	78	10-member ensemble, hp diversity (fixed kwarg merge)
+21	1e3216b	0.7194	ok	10	probe origin_cdf single d10
+22	792b563	0.7196	ok	10	probe: drop Distance
+23	14c0a1a	0.7218	ok	66	12-member ensemble
+24	08006e7	0.7222	ok	78	AUC-weighted ensemble
+25	3b9f9ad	0.7237	ok	68	8-member fine-bin ensemble (mcw 25-75, bin 512-1024)
+26	b7ba0d7	0.7254	ok	74	7-member ultra-fine ensemble
+27	380ec03	0.7289	ok	109	minute feature + mcw5-10 members
+28	cea91da	0.0000	timeout	121	lg-centric ensemble around minute feature
+29	cd38969	0.7300	ok	111	6-member lg ensemble (fits in time)
+30	08f3448	0.7296	ok	118	6-member: lr.02 lg probe, fast d12 lr.04
+31	aed43a2	0.7310	ok	109	consolidated 6-member, bynode probe
+32	8c11b56	0.7313	ok	120	6-member bynode/d16 ensemble
+33	2dba1be	0.7313	ok	105	same ensemble, ES on 50k subsample
+34	c3505e4	0.7322	ok	118	swap weakest member: bynode .6
+35	de8e2b5	0.7323	ok	99	speed: patience 70, ES 30k
+36	60fc51e	0.7318	ok	62	speed: patience 50, ES 20k
+37	5d74aa1	0.7323	ok	100	member swap: lg384 bynode .7
+38	d87cee6	0.7323	ok	100	rank blend in predict_proba
+39	8965195	0.7330	ok	106	harmonic time features (minute 60/30, tod 24/12h)
+40	121758a	0.0000	timeout	120	tod harmonics 8h/6h

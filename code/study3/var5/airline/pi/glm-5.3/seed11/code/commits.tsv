@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	9c1a7e8	1789629568	baseline
+01	861a5c7	1789629902	feat: hour/minute, numeric month/day/dow, log distance, Route pair
+02	04ab23d	1789630627	feat: hour/minute + hour-as-categorical; lr.02 x800 cols0.6
+03	1eb3fd2	1789632139	carrier x hour categorical, airport-hour counts, 5-seed d8 ensemble
+04	41a4819	1789632738	add 30-min DepTime slot categorical
+05	f6f38d8	1789633313	hub shares + heterogeneous 5-model ensemble
+06	c6d21dc	1789636385	final: airport-hour schedule shares + reg_lambda=2 (validated 0.7480, CONTRACT OK)

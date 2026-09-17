@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	06b3d0c	0.7141	ok	4	baseline
+2	0dad304	0.7087	ok	8	time+route+cat features, 600 trees depth8
+3	bdf6f29	0.7089	ok	4	baseline feats, 600 trees lr0.05 depth6
+4	c56f549	0.7152	ok	3	regularized 300 depth5
+5	b9ca777	0.7178	ok	3	dep time decomposition features
+6	bf85da2	0.7045	ok	4	add route categorical
+7	d6563dd	0.7180	ok	3	frequency encodings
+8	6662123	0.7173	ok	3	target encoding airports/carrier
+9	d627624	0.0000	crash	1	feature pruning
+10	c997e48	0.7191	ok	3	feature pruning (fixed)
+11	e264d33	0.7222	ok	4	depth6 400 lr0.04 mcw15
+12	f40add1	0.7256	ok	5	depth7 strong reg
+13	90f8ee1	0.7309	ok	5	depth8 strong reg
+14	aff598d	0.7317	ok	8	depth10 strong reg
+15	1ce73b5	0.7339	ok	9	depth12 strong reg
+16	069189d	0.7321	ok	11	depth15 strong reg
+17	f3484e1	0.7339	ok	18	depth12 lr0.02 2000 trees
+18	5c9cf13	0.7336	ok	13	route categorical heavy reg
+19	bee4a25	0.7341	ok	26	3-model ensemble
+20	5f194cc	0.7308	ok	28	time interaction features
+21	242f912	0.7320	ok	27	cyclical month/dow + weekend
+22	cea4f22	0.0000	crash	1	5-model diverse ensemble
+23	b2753d0	0.7335	ok	49	5-model diverse ensemble (fixed)
+24	866ec96	0.7334	ok	27	ensemble depth12/13/14
+25	3ff2297	0.7349	ok	25	add route frequency
+26	e074688	0.7382	ok	27	airport-hour frequency features
+27	a2d8ebd	0.7382	ok	29	hub + route-hour frequencies
+28	a28c1bf	0.7408	ok	29	hour-share ratios
+29	0f9c039	0.7394	ok	31	conditional share ratios
+30	c3ced28	0.7419	ok	30	hour-relative concentration
+31	223580d	0.7429	ok	32	hour lift features
+32	bef00eb	0.7397	ok	34	route-hour + weekday lift
+33	f54e60a	0.7430	ok	45	4-model depth ensemble
+34	b05ea65	0.7436	ok	45	hour categorical
+35	86094b0	0.7439	ok	46	congestion differences
+36	483211a	0.7431	ok	47	ensemble depths 11-14
+37	2720d18	0.7442	ok	43	route competition features
+38	5c06a89	0.7441	ok	52	hub breadth features
+39	b221aed	0.7445	ok	51	relative distance features
+40	ce80733	0.7446	ok	54	dist rel dest

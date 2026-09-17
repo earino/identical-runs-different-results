@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	9048723	1789612382	baseline
+01	3501c16	1789612454	time-of-day features + calendar ints, baseline model
+02	6434fb9	1789612480	regularized ensemble: 400@0.05, depth5, subsample
+03	563f711	1789612527	5-seed ensemble of exp4 config
+04	418152f	1789612618	mcw 50 (redo after reset)
+05	8d7a9c4	1789612858	drop DayofMonth (noise)
+06	bdaa7b8	1789612889	drop Month categorical, keep Month_i
+07	44863f6	1789613032	restore reg_lambda 10
+08	6f0f5b9	1789613042	traffic density features (origin, origin-hour, hour counts)
+09	fe7701a	1789613061	extended density: dest, carrier, route volumes
+10	642ca18	1789613118	depth 6 with density features
+11	f9888d1	1789613151	depth 7
+12	b9140c6	1789613262	reg_lambda 20
+13	5607ca4	1789613308	7-member diverse colsample ensemble
+14	a3f5760	1789613467	colsample_bynode 0.6
+15	2a082aa	1789613492	reg_alpha 1.0
+16	6b4b07d	1789613532	reg_alpha 3.0
+17	f2c5eb2	1789613560	reg_alpha 6.0

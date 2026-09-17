@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	638db8a	1789541057	baseline
+01	dc7ab8f	1789541102	depth4 200 trees lr0.05
+02	e8a1bfc	1789541135	depth4 350 trees lr0.03
+03	946d259	1789541324	treat c-columns as ordinal numerics
+04	4ec7da5	1789541351	collapse rare Origin/Dest levels
+05	0c5b5b4	1789541356	rare threshold 100
+06	b739789	1789541359	rare threshold 200
+07	b1cd0c6	1789541363	rare threshold 400
+08	725447c	1789541372	threshold400 + depth5
+09	3c72362	1789541404	add dep_hour/dep_minute to best
+10	d85835c	1789541409	add dep_time_min + cyclic
+11	e6ab329	1789541414	depth6 with full time feats
+12	4ca9032	1789541418	depth7
+13	940267d	1789541423	depth8
+14	7ef634b	1789541429	depth10
+15	8a97391	1789541437	depth14
+16	d21ee33	1789541457	depth20
+17	6355bf8	1789541522	unlimited depth

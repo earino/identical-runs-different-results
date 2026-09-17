@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	ac8428a	1789503439	baseline
+01	8767451	1789503484	FE v1: int date parts, hour/minute, cyclical encodings, log dist, route cat; 100 trees
+02	77ebe69	1789503494	ablation: FE v1 with baseline 30-tree params
+03	fb2f2ee	1789503513	union FE (baseline cats + time numerics + route) + 1000 trees lr.05 depth8 ES on 20pct holdout
+04	f78367e	1789503536	baseline features + 2000 trees lr.03 depth6 subs.8 colsample.8 ES100 internal holdout
+05	787a66a	1789503600	baseline feats, depth4 n300 lr.1 no subsampling
+06	b2cac4e	1789503729	n60 d5 lr.12 + doy numeric, canonical order
+07	e4e8a44	1789503811	n150 d4 lr.08 + doy + dom num + dt10 cat
+08	ed11c0d	1789504483	n300 d16 lr.03 lam10 alpha.5, dt10cat, -DoMcat
+09	3c37164	1789506333	dt15cat + OOF TE(O,D,C,route) + n300 d16 lr.03 lam10 a.5 ss.8 cs.9
+10	f2e0b6f	1789506754	3-seed average of exp13 config
+11	dee1bb0	1789507603	lr-mix 3x d14 ensemble (M7)

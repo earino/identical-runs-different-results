@@ -1,0 +1,146 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 16,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:43:17+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s16-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:22:16+00:00",
+  "wall_seconds": 2339.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6330.0,
+  "endpoint_at_end": "ok",
+  "head": "527553d",
+  "n_commits": 11,
+  "n_experiments": 40,
+  "n_ok": 28,
+  "n_crash": 11,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7377,
+  "final_eval_auc": 0.7377,
+  "holdout_auc": 0.737863436272,
+  "holdout_ap": 0.7307138085626697,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.023092684535999997,
+  "generalization_gap": -0.0001634362719999949,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4893931,
+    "tokens_in_uncached": 54251,
+    "tokens_in_cached": 4839680,
+    "tokens_out": 54289,
+    "turns": null,
+    "api_calls": 114,
+    "method": "cumulative-max",
+    "cost_usd": 0.1805,
+    "cached_share": 0.989
+  },
+  "cpu_seconds_python": 6221.5,
+  "cpu_seconds_counted": 5830.1,
+  "cpu_seconds_uncounted": 2.2,
+  "cpu_seconds_exempt": 389.2,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 185,
+  "fits_counted": 175,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "97dbfce",
+      "message": "baseline"
+    },
+    {
+      "commit": "4016062",
+      "message": "proper params + time-ordered early stopping"
+    },
+    {
+      "commit": "d82028c",
+      "message": "seed ensemble x3"
+    },
+    {
+      "commit": "3d2e66f",
+      "message": "freq encodings + diverse seed ensemble"
+    },
+    {
+      "commit": "a0feb86",
+      "message": "5-model diverse ensemble"
+    },
+    {
+      "commit": "9343239",
+      "message": "rank-average ensemble"
+    },
+    {
+      "commit": "93a09c5",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "aaf2b71",
+      "message": "6-model parallel ensemble, max_bin 512"
+    },
+    {
+      "commit": "9738abd",
+      "message": "9-model ensemble"
+    },
+    {
+      "commit": "fb4a9cb",
+      "message": "DistCat + hour 2nd harmonic"
+    },
+    {
+      "commit": "3aeae4f",
+      "message": "DepHour categorical"
+    },
+    {
+      "commit": "527553d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5832.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 108.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3aeae4f",
+  "best_commit_eval_auc": 0.7377,
+  "best_commit_holdout_auc": 0.737863436272,
+  "best_commit_holdout_ap": 0.7307138085626697,
+  "best_commit_error": null,
+  "finalized_best": true
+}

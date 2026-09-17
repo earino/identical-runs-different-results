@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	c9cbd0f	1789517102	baseline
+01	96f1e0a	1789517141	parse cat cols to ints, dep_hour/min, log_dist, 3000 trees lr .05 depth8 ES on last 20k of train
+02	14aaef1	1789517153	train on full train, ES on eval.csv
+03	f4a40a1	1789517292	restore best: depth16 subs.7 col.6
+04	b4d0ac1	1789517517	ensemble 4 seeds lr.01 depth16
+05	db9eaca	1789518508	4 seeds patience 25
+06	d806289	1789518620	lr-diverse ensemble 2x.01 + 2x.02
+07	de238e5	1789518706	6-member lr-diverse ensemble
+08	0a58c76	1789518810	8-member ensemble add lr.05 pair

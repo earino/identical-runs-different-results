@@ -1,0 +1,3 @@
+n	commit	eval_auc	status	seconds	description
+1	c152c54	0.7141	ok	3	baseline
+2	c623f58	0.7067	ok	2	capacity+es

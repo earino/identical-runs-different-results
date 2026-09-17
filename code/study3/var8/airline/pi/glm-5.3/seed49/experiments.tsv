@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b50b96b	0.7141	ok	3	baseline
+2	36a537c	0.7094	ok	3	time features + route + early stopping
+3	a2f97f9	0.7118	ok	3	full train, es on eval auc
+4	467c5cf	0.7097	ok	3	baseline hparams, time features, es on eval
+5	55578bf	0.7062	ok	4	cat month/dow + hour features
+6	bd607d6	0.7139	ok	3	baseline + hour features, no route
+7	f1d296d	0.7058	ok	4	target encoding features
+8	a40fdea	0.7164	ok	12	probe regularization configs
+9	39e85ac	0.7171	ok	24	probe depth3 neighborhood
+10	54cdf61	0.7171	ok	17	8-seed ensemble depth3
+11	095eae0	0.7283	ok	25	probe feature additions
+12	71e79e7	0.7283	ok	42	probe interaction features
+13	23210a5	0.0000	crash	75	probe model tuning with hc
+14	5b1ef88	0.0000	timeout	120	probe lr05/lr03 around hc
+15	8d02543	0.7315	ok	107	probe d4 lr02 lam100
+16	6ee1f40	0.7312	ok	86	probe time-granularity and month interactions
+17	bdabfe3	0.7233	ok	32	bagged 5-model ensemble
+18	5cc5b5c	0.7318	ok	95	lr-diversity ensemble
+19	17c7e33	0.7312	ok	65	probe monotone time constraints
+20	1cea1ba	0.7306	ok	48	probe month_hour + hc TE
+21	c450d1e	0.7326	ok	105	3-member lr/depth ensemble
+22	4fab2ef	0.7330	ok	98	probe 6-member cheap ensemble
+23	102378d	0.0000	crash	56	probe rank:pairwise
+24	3499a40	0.0000	timeout	120	probe rank:pairwise fixed
+25	f35b4da	0.7330	ok	109	ensemble loss+shape diversity
+26	1b36d11	0.7334	ok	97	mixed slow+fast ensemble
+27	e2a1490	0.7292	ok	62	feature-diverse ensemble probe
+28	22a46b5	0.7323	ok	99	micro-tune fast member
+29	455c3e7	0.7362	ok	87	fixed roster ensemble
+30	b0dc188	0.7365	ok	106	roster + seed replica
+31	03403a6	0.7368	ok	89	d6 core member probe
+32	f1d4588	0.7365	ok	88	d7 core member probe
+33	c1e5494	0.7366	ok	103	d6 roster + seed replica
+34	321054c	0.7363	ok	98	roster + hb3 member
+35	5ff4957	0.7368	ok	95	roster + no-carrier anchor
+36	2a1437b	0.7383	ok	97	slow member d6lr02
+37	4ef4b3d	0.7380	ok	90	upgraded mid+anchor members
+38	93e04a0	0.7381	ok	118	champion + lam10 d5 member
+39	3d9be7e	0.7379	ok	96	L1 alpha on all members
+40	4141917	0.7384	ok	102	slow anchor member

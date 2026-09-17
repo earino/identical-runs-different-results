@@ -1,0 +1,196 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 39,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:20:06+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s39-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:50:17+00:00",
+  "wall_seconds": 1810.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5284.4,
+  "endpoint_at_end": "ok",
+  "head": "d1eb412",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7324,
+  "final_eval_auc": 0.7324,
+  "holdout_auc": 0.733102128294,
+  "holdout_ap": 0.7166783224347629,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01833137655799999,
+  "generalization_gap": -0.0007021282939999596,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6105284,
+    "tokens_in_uncached": 31556,
+    "tokens_in_cached": 6073728,
+    "tokens_out": 53434,
+    "turns": null,
+    "api_calls": 128,
+    "method": "sum-of-128-events",
+    "cost_usd": 0.2137,
+    "cached_share": 0.995
+  },
+  "cpu_seconds_python": 5247.2,
+  "cpu_seconds_counted": 4887.9,
+  "cpu_seconds_uncounted": 65.7,
+  "cpu_seconds_exempt": 293.7,
+  "python_processes": 54,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 147,
+  "fits_counted": 138,
+  "fits_uncounted": 5,
+  "commits": [
+    {
+      "commit": "fdfc8bc",
+      "message": "baseline"
+    },
+    {
+      "commit": "86091ca",
+      "message": "E3: time-of-day features + log distance, moderate model"
+    },
+    {
+      "commit": "ff7159a",
+      "message": "E4: tod features + small model 50 trees depth6"
+    },
+    {
+      "commit": "712aa85",
+      "message": "E5: OOF target+count encoding Origin/Dest/Route/Carrier"
+    },
+    {
+      "commit": "a90e944",
+      "message": "E6: interaction TE origin/dest/carrier x hour-bucket"
+    },
+    {
+      "commit": "17d2ada",
+      "message": "E7: monotone tod, mcw20 gamma1, lean features"
+    },
+    {
+      "commit": "2e39811",
+      "message": "E8: fix monotone constraints format"
+    },
+    {
+      "commit": "e53bcd6",
+      "message": "E9: shallow robust model d4 mcw30, lean TE features"
+    },
+    {
+      "commit": "0c21cd1",
+      "message": "E10: shallow robust + interaction TEs incl DOWxhb"
+    },
+    {
+      "commit": "34be553",
+      "message": "E11: 5-seed ensemble of shallow robust model"
+    },
+    {
+      "commit": "fc6f293",
+      "message": "E13: drop DayofMonth (unstable across years)"
+    },
+    {
+      "commit": "8c0dfbe",
+      "message": "E14: drop Month too"
+    },
+    {
+      "commit": "4a087de",
+      "message": "E15: capacity retest after drift removal (d5 250t)"
+    },
+    {
+      "commit": "16d1e39",
+      "message": "E16: d6 350t mcw10"
+    },
+    {
+      "commit": "f5eaf98",
+      "message": "E17: d7 450t mcw5"
+    },
+    {
+      "commit": "f7dd110",
+      "message": "E18: d8 500t"
+    },
+    {
+      "commit": "bb53511",
+      "message": "E19: d9 550t"
+    },
+    {
+      "commit": "361cfcc",
+      "message": "E20: d10 600t"
+    },
+    {
+      "commit": "4ebbdd3",
+      "message": "E21: lr 0.05, 900 trees d9"
+    },
+    {
+      "commit": "dfd314a",
+      "message": "E25: distance-bin x hb TE"
+    },
+    {
+      "commit": "2248822",
+      "message": "E27: diverse ensemble (depth/col/sub vary)"
+    },
+    {
+      "commit": "d8a0ed5",
+      "message": "E30: congestion features (origin/dest x hour volume)"
+    },
+    {
+      "commit": "bb49ab8",
+      "message": "E31: + originxDOW and carrierxhour volumes"
+    },
+    {
+      "commit": "e27ca36",
+      "message": "E36: lr 0.04, 1100 trees"
+    },
+    {
+      "commit": "d1eb412",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4953.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 37.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e27ca36",
+  "best_commit_eval_auc": 0.7324,
+  "best_commit_holdout_auc": 0.733102128294,
+  "best_commit_holdout_ap": 0.7166783224347629,
+  "best_commit_error": null,
+  "finalized_best": true
+}

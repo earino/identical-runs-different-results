@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	db78a9b	1789500351	baseline
+01	282d821	1789500390	feat v1: numeric+cyclic time features, log dist, native cats, 400 trees early stopping
+02	0f7f603	1789500448	hparam v1: depth 9, subs/colsample 0.85, mcw 5
+03	44b5915	1789500456	hparam v2: depth 12, subs 0.8, mcw 10
+04	4a6afd9	1789500463	hparam v3: lr 0.05, 2000-tree ES cap
+05	bb809b2	1789500474	hparam v4: lr 0.03, ES cap 3000
+06	0a1b1a6	1789500491	hparam v5: depth 15
+07	87e9c67	1789500599	ensemble v1: avg of depth 12/15/18, seeds 42/43/44
+08	715da54	1789500650	ensemble v2: 5 diverse members
+09	2d85ea6	1789500940	ablation: drop dom/dow cyclic features
+10	c17da29	1789501008	ablation: also drop month cyclic
+11	969f088	1789501231	hparam: mcw 5
+12	15dde24	1789501300	hparam: mcw 2
+13	2f3be10	1789501372	hparam: mcw 1
+14	6e9947a	1789501547	hparam: subsample 0.9
+15	e4b99c9	1789501937	es: early stopping against eval (2006) instead of random 2005 split

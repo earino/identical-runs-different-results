@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	9586343	1789652516	baseline
+01	5ac1a86	1789652691	numeric date feats + hour/min + early stopping
+02	4b1abec	1789652848	lower lr, subsample, more trees
+03	17b1957	1789652887	two-stage: ES finds n_best, refit on full train
+04	e864d21	1789652929	depth 8 at lr .05
+05	a477a4e	1789652951	depth 10
+06	e4ffeaf	1789652973	depth 12
+07	a5d01dc	1789652989	depth 14
+08	cbfa791	1789653008	depth 16
+09	d8b6306	1789653027	depth 20
+10	31e3f64	1789653052	depth 24
+11	ad08a32	1789653121	route/traffic interaction features
+12	db3433c	1789653161	lr 0.03, 5000 trees, ES 150
+13	5fbf81e	1789653301	lr 0.02 ES 200
+14	8bf345a	1789653376	lr 0.015 ES 250
+15	18bf58c	1789653710	shared stage1, 2-seed refit ensemble
+16	13abe9a	1789653930	drop Month (ablation)
+17	717a280	1789654158	drop DepTime/log_Distance, add min_of_day
+18	145c03d	1789654262	max_bin 512
+19	4a6ccf9	1789654381	subsample/colsample 0.7
+20	8ab8292	1789654978	depth 28

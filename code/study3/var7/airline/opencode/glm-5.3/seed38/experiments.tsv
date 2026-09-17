@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	55ebe6a	0.7141	ok	4	baseline
+2	99aa37c	0.7077	ok	3	capacity + early stopping
+3	d9a0007	0.7014	ok	3	FE v1: cyclic time + route
+4	efc8666	0.7008	ok	3	FE v1, 100 trees depth 6, full train
+5	144f739	0.7134	ok	1	time features only, baseline capacity
+6	063ecea	0.7080	ok	8	target encoding v1
+7	ab512c2	0.7323	ok	8	hour interaction features + slow boosting
+8	8960c0f	0.7350	ok	9	car_hh interaction
+9	ff2e9b9	0.7381	ok	7	hh_dist interaction
+10	591ba1d	0.7418	ok	21	bag3 colsample 0.6
+11	ecd2b24	0.7441	ok	19	feature pruning
+12	f924c59	0.7438	ok	20	20-min carrier bins
+13	7ad4e9c	0.7456	ok	31	car_m20 + bag5
+14	02d13c8	0.7473	ok	40	d5 col0.5 dist8
+15	771c4df	0.7476	ok	51	bag7
+16	2932144	0.7484	ok	57	car@24min
+17	6396188	0.7484	ok	72	bag9

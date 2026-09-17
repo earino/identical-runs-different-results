@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	a917edf	0.7141	ok	4	baseline
+2	6c9218f	0.7142	ok	2	capacity: 2000 trees + early stopping
+3	e203e41	0.7083	ok	4	feat v1: dep_minutes + route + cyclic
+4	7e10047	0.7184	ok	2	feat: dep_minutes+hour, numeric cal dates
+5	f2a1f49	0.7212	ok	4	tuned: depth4 lr.03 cs0.7
+6	f4cf32d	0.7225	ok	5	feat: minute-of-hour, max_bin 512
+7	2389ae4	0.7502	ok	90	lossguide8192 wrap lr.015 cs.6
+8	694a780	0.7504	ok	103	mb1024 cs.55
+9	4a783c1	0.7505	ok	106	lr 0.0135
+10	c42093a	0.0000	timeout	125	lr 0.0125
+11	4ee9938	0.7489	ok	102	cat onehot 30
+12	ab044fb	0.7505	ok	99	cs 0.5

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	dd9d179	0.7141	ok	4	baseline
+2	61f9b33	0.6999	ok	7	xgb 600/d8/lr.05/sub.9
+3	0cf82ff	0.7047	ok	8	xgb 300/d10 lr.1
+4	dd9d179+dirty	0.6939	ok	15	xgb 600/d10 lr.1 sub.9
+5	a43064d	0.0000	crash	4	early stop 2000 lr.03 d8 on eval
+6	9dc787d	0.7144	ok	5	early stop 2000 lr.03 d8 on eval (fixed)
+7	dc7dde4	0.7173	ok	10	hour cyclical+num+daypart
+8	28cd7f8	0.7162	ok	14	calendar cyclical + dow flags + dist transforms
+9	65bb733	0.7110	ok	14	target-rate aggregates smoothed
+10	e9c50cb	0.7378	ok	22	carrier-hour interaction categorical
+11	f1dc1c4	0.7282	ok	47	origin/dest-hour interactions
+12	81b1ca0	0.0000	crash	1	origin-hour interaction added
+13	a6f17bc	0.7336	ok	42	origin-hour interaction
+14	5393d85	0.7376	ok	35	depth 10 w/ carrier_hour
+15	5af9374	0.7369	ok	21	lr .05 w/ carrier_hour
+16	fc0424a	0.7335	ok	18	subsample .8 colsample .8
+17	2079aca	0.7372	ok	48	depth 12 w/ carrier_hour
+18	b794944	0.7381	ok	25	reg_lambda 5
+19	ddf1db5	0.7252	ok	30	route categorical
+20	155dfd7	0.7395	ok	50	2-model ensemble d8+d10
+21	16bc390	0.7394	ok	63	3-model ensemble
+22	9b1dace	0.7390	ok	38	seed ensemble d8 42+7
+23	12ec564	0.7391	ok	66	ensemble d8+d12
+24	f5a515a	0.7397	ok	61	3-model d8s42+d10s7+d8s7
+25	d777ebe	0.7270	ok	70	month-hour categorical added
+26	a5df74b	0.7395	ok	73	min_child_weight 10 + gamma 1
+27	399c418	0.7335	ok	62	subsample 0.7 (3-model ensemble)
+28	676e461	0.7375	ok	75	colsample 0.7 (3-model ensemble)
+29	ba167d3	0.7398	ok	87	max_bin 512
+30	a214892	0.7377	ok	63	lossguide growth, 64 leaves
+31	9f1610c	0.7399	ok	111	4-model ensemble +d9s123
+32	603c3c0	0.0000	timeout	121	5-model ensemble
+33	536b749	0.7393	ok	51	ensemble lr .05 (3 models)
+34	8ed9cd7	0.7399	ok	82	early stopping rounds 50
+35	0409325	0.7399	ok	119	early stopping rounds 200
+36	ceba1b6	0.7396	ok	103	5x d8 seed-bag
+37	69c2579	0.7134	ok	32	carrier-hour-dow interaction
+38	eb0d2d0	0.7399	ok	106	3x d8 seed-bag
+39	f216ba4	0.7402	ok	87	raw-hour interaction (2400 as own level)
+40	6088b93	0.7404	ok	115	5-model ensemble 2x d10

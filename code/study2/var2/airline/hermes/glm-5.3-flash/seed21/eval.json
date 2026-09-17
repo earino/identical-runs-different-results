@@ -1,0 +1,166 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 21,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:16:04+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s21-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:51:14+00:00",
+  "wall_seconds": 5710.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16612.0,
+  "endpoint_at_end": "ok",
+  "head": "caa4c46",
+  "n_commits": 16,
+  "n_experiments": 20,
+  "n_ok": 17,
+  "n_crash": 2,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7544,
+  "final_eval_auc": 0.7544,
+  "holdout_auc": 0.754265570416,
+  "holdout_ap": 0.7429356317497937,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03949481867999993,
+  "generalization_gap": 0.00013442958400000649,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 14825418,
+    "tokens_in_uncached": 159050,
+    "tokens_in_cached": 14666368,
+    "tokens_out": 151402,
+    "turns": null,
+    "api_calls": 159,
+    "method": "cumulative-max",
+    "cost_usd": 0.5395,
+    "cached_share": 0.989
+  },
+  "cpu_seconds_python": 16181.7,
+  "cpu_seconds_counted": 4284.6,
+  "cpu_seconds_uncounted": 10376.0,
+  "cpu_seconds_exempt": 1521.1,
+  "python_processes": 86,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 701,
+  "fits_counted": 202,
+  "fits_uncounted": 433,
+  "commits": [
+    {
+      "commit": "b210336",
+      "message": "baseline"
+    },
+    {
+      "commit": "5a1de0c",
+      "message": "exp2: tuned XGB, DepTime cyclical/slot cats, log distance, ES"
+    },
+    {
+      "commit": "ee44b3d",
+      "message": "exp4: tuned hyperparams, baseline features, fixed 400 trees"
+    },
+    {
+      "commit": "5043eac",
+      "message": "exp5: clean rewrite, keep best (400t tuned, DepTime feats)"
+    },
+    {
+      "commit": "a3afc46",
+      "message": "exp6: d4 n1200 lr.05 col.5 sub.8 mcw20 lam5 alpha1"
+    },
+    {
+      "commit": "b8750db",
+      "message": "exp7: +carrier_halfhour interaction, n1600 lr.04"
+    },
+    {
+      "commit": "4e1017b",
+      "message": "exp8: 3-model diverse ensemble (full d4, full d6 col.7, minimal d4)"
+    },
+    {
+      "commit": "c463377",
+      "message": "exp9: 5-model ensemble over full/full_qh/geo/minimal views"
+    },
+    {
+      "commit": "ea8e29c",
+      "message": "exp10: quad ensemble + month-recency weights on 3 members"
+    },
+    {
+      "commit": "ec8ee2d",
+      "message": "exp11: 8-model ensemble (seed bags over 4 views)"
+    },
+    {
+      "commit": "66e37e6",
+      "message": "exp12: 14-model ensemble (+6 bare n800/lr.08 members)"
+    },
+    {
+      "commit": "3aa112c",
+      "message": "exp13: +2 bare sub.5 full members (16 total)"
+    },
+    {
+      "commit": "23062a0",
+      "message": "exp14: 18-model ensemble (+LSboost reg members)"
+    },
+    {
+      "commit": "6145ebe",
+      "message": "exp16: +2 more reg members (20 total)"
+    },
+    {
+      "commit": "c8e5db2",
+      "message": "exp17: +2 reg-geo members (22 total)"
+    },
+    {
+      "commit": "62cacc6",
+      "message": "exp18: clip predict_proba output to [0,1] (contract fix)"
+    },
+    {
+      "commit": "caa4c46",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 14660.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 430.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c8e5db2",
+  "best_commit_eval_auc": 0.7544,
+  "best_commit_holdout_auc": 0.754260185492,
+  "best_commit_holdout_ap": 0.7428981530172623,
+  "best_commit_error": null,
+  "finalized_best": false
+}

@@ -1,0 +1,176 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 13,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:57:24+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s13-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T08:21:34+00:00",
+  "wall_seconds": 5050.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17536.0,
+  "endpoint_at_end": "ok",
+  "head": "5a9aee2",
+  "n_commits": 19,
+  "n_experiments": 30,
+  "n_ok": 30,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.759,
+  "final_eval_auc": 0.759,
+  "holdout_auc": 0.7597404541660001,
+  "holdout_ap": 0.7504880835708246,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04496970243000009,
+  "generalization_gap": -0.000740454166000104,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3558081,
+    "tokens_in_uncached": 26305,
+    "tokens_in_cached": 3531776,
+    "tokens_out": 69654,
+    "turns": null,
+    "api_calls": 77,
+    "method": "sum-of-77-events",
+    "cost_usd": 0.1447,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 17503.6,
+  "cpu_seconds_counted": 7050.1,
+  "cpu_seconds_uncounted": 10133.7,
+  "cpu_seconds_exempt": 319.8,
+  "python_processes": 77,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 234,
+  "fits_counted": 75,
+  "fits_uncounted": 156,
+  "commits": [
+    {
+      "commit": "abffede",
+      "message": "baseline"
+    },
+    {
+      "commit": "0591685",
+      "message": "capacity: 2000 trees depth6 lr0.1 + early stopping on eval"
+    },
+    {
+      "commit": "4bb003c",
+      "message": "subsample0.9 colsample0.9 lr0.05 es100 depth6"
+    },
+    {
+      "commit": "7c4814c",
+      "message": "add cyclical dep_sin/dep_cos time encoding"
+    },
+    {
+      "commit": "856fbdd",
+      "message": "ensemble of 3 diverse xgb members"
+    },
+    {
+      "commit": "65ca6f7",
+      "message": "deep: d16 lr0.01 col0.3 sub0.9 es100"
+    },
+    {
+      "commit": "f0b6eba",
+      "message": "2-seed d16 ensemble"
+    },
+    {
+      "commit": "0f4365e",
+      "message": "features: +dep_min, +dep_hour cat (2-seed d16 ens)"
+    },
+    {
+      "commit": "037ab02",
+      "message": "features v2: numeric dates, carr_hour, harmonics; 2-seed d16"
+    },
+    {
+      "commit": "afd25d3",
+      "message": "harm3 + 2-member col0.4/col0.35 ensemble"
+    },
+    {
+      "commit": "efbdf84",
+      "message": "3-member bag lr0.015 es50 col0.4"
+    },
+    {
+      "commit": "a1063b2",
+      "message": "4-member bag lr0.015 es50 col0.4"
+    },
+    {
+      "commit": "9991378",
+      "message": "+route_freq feature; 4-member bag"
+    },
+    {
+      "commit": "e315e5e",
+      "message": "+orig/dest freq features; 4-member bag"
+    },
+    {
+      "commit": "01607f8",
+      "message": "3-member bag + odfreq (simpler)"
+    },
+    {
+      "commit": "be56747",
+      "message": "ablation: drop dep_hour"
+    },
+    {
+      "commit": "150d46c",
+      "message": "3-member sub0.95"
+    },
+    {
+      "commit": "c4d272d",
+      "message": "3-member sub1.0"
+    },
+    {
+      "commit": "1acc94e",
+      "message": "3-member col0.35 sub1.0"
+    },
+    {
+      "commit": "5a9aee2",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17183.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 32.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1acc94e",
+  "best_commit_eval_auc": 0.759,
+  "best_commit_holdout_auc": 0.7597404541660001,
+  "best_commit_holdout_ap": 0.7504880835708246,
+  "best_commit_error": null,
+  "finalized_best": true
+}

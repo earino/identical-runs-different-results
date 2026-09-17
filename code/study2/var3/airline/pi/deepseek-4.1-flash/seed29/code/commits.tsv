@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	3892f36	1789498221	baseline
+01	4a28ab2	1789498281	model: depth4 300 trees lr0.05 mcw20
+02	50f889b	1789498324	feat: hour/minute/cyclic time-of-day
+03	aeff63b	1789498356	feat: smoothed target encoding carrier/origin/dest
+04	a7483d4	1789498379	model: lr0.03 800 trees
+05	3dbc599	1789498560	te: alpha 50
+06	2d60db8	1789498565	te: alpha 100
+07	61058e4	1789498581	feat: origin/dest x hour-bucket target encoding
+08	9561f12	1789498596	feat: carrier x hour TE
+09	a839b22	1789498638	feat: 5-fold OOF target encoding + per-fold models
+10	ce79270	1789498712	OOF: 10 folds
+11	72501d1	1789498780	feat: estimated arrival time features

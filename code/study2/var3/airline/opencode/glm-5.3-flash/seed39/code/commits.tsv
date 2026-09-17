@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	58a6122	1789541645	baseline
+01	20f7c8a	1789541721	FE v1 + milder model d6 lr.1 400 trees ES30
+02	18a4836	1789541731	ablation: FE v1, no ES, full train, 100 trees
+03	d163fae	1789541807	subsample+colsample .8, 200 trees
+04	1e839b7	1789541814	5-seed bag of sub/col .8 models
+05	941c9f3	1789541851	10-seed bag
+06	00582da	1789541876	heterogeneous bag 3 depths x 3 subsamples
+07	c9d27ec	1789541892	hetero bag 15 members d4-d8
+08	5599250	1789541914	hetero bag 25 members
+09	bc74fed	1789541948	bag members lr.05 400t
+10	2adf2f5	1789542224	max_bin 512
+11	fe45155	1789542294	bag 28 members d3-d9
+12	0e16aec	1789542640	interaction TE carrier/origin/dest x hour-bin
+13	7a666c3	1789542840	interaction TE with bin30
+14	dc883df	1789542932	interaction TE with bin15
+15	e89cd8a	1789543024	multi-scale TE bins 15/30/60

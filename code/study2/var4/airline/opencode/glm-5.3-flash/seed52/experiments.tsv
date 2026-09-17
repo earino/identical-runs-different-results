@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c779be9	0.7141	ok	4	baseline
+2	b31bd31	0.7067	ok	6	feat: DepHour, numeric m/d/dow, Route, LogDist; 300 trees depth8
+3	e1edd88	0.7115	ok	2	features v1 + 100 trees depth6 lr0.1
+4	29ad3b7	0.7010	ok	3	cat m/d/dow + DepHour + Route, 100t d6
+5	ee7ae72	0.7141	ok	2	baseline params + DepHour+Route features
+6	c4b4730	0.0000	crash	1	OOF TE (carrier/origin/dest/route/carrier-hour/origin-hour) + cat features
+7	3a3fe02	0.7171	ok	2	OOF TE (carrier/origin/dest/route/carrier-hour/origin-hour) + cat features
+8	b88d0ac	0.7318	ok	3	TE + more keys (dow, hour, route-hour, dest-hour, carrier-dow, month, dom)
+9	feac943	0.7327	ok	4	TE set + 600 trees depth7 lr0.05 subs0.8
+10	e0cbed0	0.7349	ok	4	TE + DepSlot15/CarrierSlot15/DistBin keys
+11	47d06a0	0.7352	ok	4	drop raw Origin/Dest/Route cats (TE covers them)
+12	8e012b4	0.7329	ok	5	TE smoothing m=50
+13	5a1e05d	0.7353	ok	7	1200 trees depth7 lr0.03
+14	6349432	0.7345	ok	8	TE + RouteCarrier/WeekOfYear + day-of-year cyclical
+15	52d0613	0.7363	ok	17	ensemble of 3 xgb (seeds 42/7/2024), 1200t lr0.03
+16	567756d	0.7365	ok	16	3-model diverse ensemble (d6 col0.9, d7 col0.8, d8 col0.6)
+17	74ce7d5	0.7426	ok	18	add CNT freq encoding for Origin/Dest/Route/Carrier
+18	21dbcd9	0.7463	ok	19	CNT also for CarrierHour/RouteHour/OriginHour/DepSlot15/DestHour/CarrierDoW
+19	8d761dd	0.7461	ok	24	CNT all TE keys + log1p scaled counts
+20	758c1f8	0.7464	ok	20	TE smoothing m=10
+21	0d6050e	0.7458	ok	21	TE smoothing m=5
+22	df6f549	0.7458	ok	24	ensemble d6/7/8/5 col 0.9/0.8/0.6/1.0
+23	32fdeb9	0.7463	ok	24	3-model ensemble with max_bin=512
+24	28ebc15	0.7459	ok	21	add CarrierDist, RouteDist to TE and CNT
+25	cb524b3	0.7460	ok	32	5-model diverse ensemble
+26	afeafeb	0.7424	ok	20	month-ordered TimeSeriesSplit OOF for TE
+27	6899bd2	0.7448	ok	22	10-fold OOF for TE
+28	7e4750e	0.7462	ok	38	6-model ensemble: 2 seeds x (d6 c0.9, d7 c0.8, d8 c0.6)
+29	f569503	0.7460	ok	21	add Slot15xDayOfWeek TE key
+30	5f700cd	0.7455	ok	19	3-model ensemble + min_child_weight=10
+31	1ee81c4	0.7433	ok	23	add Origin/Dest/Carrier/Route x Month TE keys
+32	6d244da	0.7461	ok	20	DistVsRoute/DistVsCarrier + MinuteRound features
+33	72f5ee7	0.7460	ok	22	explicit TE product features (carrier*origin etc)
+34	5534760	0.7469	ok	20	recency sample weights (Jan=1 .. Dec=2)
+35	f8fc3fa	0.7472	ok	22	recency weights Jan=1 .. Dec=3
+36	e4e7bf0	0.7474	ok	21	recency weights Jan=1 .. Dec=4
+37	a39bc89	0.7479	ok	23	recency weights Jan=1 .. Dec=6
+38	40fbe17	0.7476	ok	21	recency weights Jan=1 .. Dec=11
+39	388b982	0.7477	ok	22	recency weights Jan=1 .. Dec=8 (slope 7)
+40	6f2a769	0.7475	ok	21	recency weights Jan=1 .. Dec=5 (slope 4)

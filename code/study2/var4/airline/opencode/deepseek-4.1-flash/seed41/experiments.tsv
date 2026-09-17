@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	79aaf43	0.7141	ok	4	baseline
+2	81d9a48	0.7053	ok	6	engineered features + 400 trees lr0.05
+3	6ea1b40	0.7144	ok	2	time features, 30-tree baseline model
+4	7fc5a12	0.7136	ok	5	early stopping on internal 80/20 split, lr0.05
+5	5d88faa	0.7207	ok	2	150 trees lr0.1
+6	c889a01	0.7205	ok	4	400 trees lr0.05 no route
+7	fb634f8	0.7008	ok	3	add route categorical, 150 trees
+8	d29b66f	0.0000	crash	1	count/frequency features
+9	baa0675	0.7196	ok	3	count/frequency features v2
+10	64bc010	0.0000	crash	1	depth8 150 trees
+11	adc1e2c	0.7200	ok	3	depth8 150 trees
+12	bb8163b	0.7175	ok	3	OOF target encoding origin/dest/carrier/route
+13	24e2568	0.7189	ok	4	400 trees lr0.05 subsample/colsample/mcw
+14	b21321e	0.7197	ok	2	depth5 150 trees
+15	a00eb17	0.7157	ok	39	dart booster 300 trees
+16	152c748	0.7185	ok	3	300 trees lr0.1
+17	c430702	0.7233	ok	8	ensemble of 6 xgb configs
+18	2618200	0.7193	ok	9	ensemble + tod/doy seasonality features
+19	5bc5376	0.7241	ok	14	ensemble 12 members incl seed bagging and deep
+20	1ff9ee0	0.7243	ok	20	ensemble 15 members incl lossguide
+21	e74f8cf	0.7289	ok	20	ensemble + origin/carrier hour congestion share
+22	5d0e941	0.7299	ok	23	ensemble + dest-hour share and volume counts
+23	eb34733	0.7296	ok	25	ensemble + dow shares and global time shares
+24	49fdc20	0.7308	ok	23	ensemble + carrier hub shares
+25	2a996d6	0.7270	ok	24	ensemble + carrier-origin-hour triple shares
+26	87c2469	0.7290	ok	22	prune dep_raw/hour_sin/hour_cos
+27	9d0c0fa	0.7324	ok	25	ensemble + estimated arrival-hour congestion
+28	d590a55	0.7319	ok	26	ensemble + carrier arrival share and arrival counts
+29	0649892	0.7321	ok	30	ensemble 21 members
+30	9ff7e20	0.7335	ok	25	ensemble + OOF TE hour groups
+31	93feec1	0.7346	ok	27	add arrival-hour TE groups
+32	6e1f524	0.7325	ok	30	add dow and month TE groups
+33	a33dc22	0.7350	ok	28	add carrier-origin/dest TE
+34	85d100c	0.7350	ok	31	add global month-hour and dow-hour TE
+35	ff43cc6	0.7329	ok	28	add origin-dest route TE
+36	92cef48	0.7348	ok	28	TE smoothing 100
+37	d11549c	0.7353	ok	29	add distance-bin and distance-hour TE
+38	3a7603f	0.7352	ok	44	ensemble 23 members seed-bagged
+39	f8df234	0.7345	ok	29	add calendar holiday flags
+40	d50316c	0.7366	ok	31	add hour categorical feature

@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	d499b0f	1789522009	baseline
+01	4885ff0	1789522061	baseline + time features
+02	12fcfd9	1789522067	time feats + 120 trees
+03	ce2b9e6	1789522149	lr0.05 300 trees regularized
+04	54c6786	1789522154	lr.03 600 trees more reg
+05	89ae9e1	1789522161	lr.02 1000 more reg
+06	5f289f3	1789522171	lr.01 2000 more reg
+07	53741fa	1789522185	lr.007 3000 more reg
+08	99ef2f9	1789522205	lr.005 5000 more reg
+09	ed95938	1789522285	count encodings
+10	73912e6	1789522360	cs.3 mcw100 lam20
+11	ba38ee7	1789522536	3-seed ensemble best config
+12	8e2d865	1789522829	drop Month
+13	fed55f6	1789522907	drop Month+DayofMonth
+14	d8283df	1789523106	retune reg mcw50 cs.4 lam10
+15	f69c263	1789523257	depth7 under new feats
+16	51d3318	1789523348	depth8
+17	6c7c3aa	1789523474	depth9 3500 trees
+18	2d5b2e1	1789523554	depth10 3000 trees
+19	a3ea3e6	1789523656	depth11 2500 trees
+20	295cfde	1789523733	depth12 2000 trees
+21	414cb81	1789523799	depth13 1800 trees

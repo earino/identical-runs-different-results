@@ -1,0 +1,130 @@
+"""XGBoost binary classifier for the airline delay task. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- statistics/encoders fitted on TRAIN ONLY ---------------------------------
+CAT_COLS = ["UniqueCarrier", "Origin", "Dest"]
+CAT_LEVELS = {c: pd.Index(sorted(train[c].dropna().unique())) for c in CAT_COLS}
+_tod_tr = (((train["DepTime"] // 100).astype(int) % 24) * 60 + (train["DepTime"] % 100).to_numpy()) // 30
+_ch = _tod_tr.astype(str) + "_" + train["UniqueCarrier"].astype(str)
+CARRIER_HALFHOUR_LEVELS = pd.Index(sorted(_ch.unique()))
+_oh = ((train["DepTime"] // 100).astype(int) % 24).astype(str) + "_" + train["Origin"].astype(str)
+_ovc = _oh.value_counts()
+ORIGIN_HOUR_LEVELS = pd.Index(sorted(_ovc[_ovc >= 150].index))
+_dh = ((train["DepTime"] // 100).astype(int) % 24).astype(str) + "_" + train["Dest"].astype(str)
+_dvc = _dh.value_counts()
+DEST_HOUR_LEVELS = pd.Index(sorted(_dvc[_dvc >= 150].index))
+
+
+def _int_col(df, col):
+    # values look like "c-12"; map to 12. Coerce garbage to NaN for safety on unseen data.
+    return pd.to_numeric(df[col].astype(str).str.slice(2), errors="coerce")
+
+
+# --- features -----------------------------------------------------------------
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = pd.DataFrame(index=df.index)
+    X["month"] = _int_col(df, "Month")
+    X["dom"] = _int_col(df, "DayofMonth")
+    X["dow"] = _int_col(df, "DayOfWeek")
+    hh = (df["DepTime"] // 100).astype(int).to_numpy()
+    mm = (df["DepTime"] % 100).astype(int).to_numpy()
+    hh = np.where(hh >= 24, hh - 24, hh)  # 2400-2639 wrap past midnight
+    tod = hh * 60 + mm
+    X["tod"] = tod
+    X["tod_sin"] = np.sin(2 * np.pi * tod / 1440.0)
+    X["tod_cos"] = np.cos(2 * np.pi * tod / 1440.0)
+    X["hour"] = pd.Categorical(hh, categories=list(range(24)))
+    qh = (tod // 30).astype(int)  # half-hour bucket
+    X["hour_x_carrier"] = pd.Categorical(
+        pd.Series(qh, index=df.index).astype(str) + "_" + df["UniqueCarrier"].astype(str),
+        categories=CARRIER_HALFHOUR_LEVELS,
+    )
+    X["hour_x_origin"] = pd.Categorical(
+        pd.Series(hh, index=df.index).astype(str) + "_" + df["Origin"].astype(str),
+        categories=ORIGIN_HOUR_LEVELS,
+    )
+    X["hour_x_dest"] = pd.Categorical(
+        pd.Series(hh, index=df.index).astype(str) + "_" + df["Dest"].astype(str),
+        categories=DEST_HOUR_LEVELS,
+    )
+    X["log_dist"] = np.log1p(df["Distance"].astype(float))
+    for c in CAT_COLS:
+        X[c] = pd.Categorical(df[c], categories=CAT_LEVELS[c])  # unseen levels -> NaN
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+# early-stopping split: last 15% of train rows (random order) as the internal validation set
+rng = np.random.RandomState(SEED)
+_perm = rng.permutation(len(train))
+_n_val = int(len(train) * 0.15)
+_val_idx = np.sort(_perm[:_n_val])
+_tr_idx = np.sort(_perm[_n_val:])
+
+
+def fit_model():
+    m = xgb.XGBClassifier(
+        n_estimators=2600,
+        learning_rate=0.02,
+        max_depth=13,
+        min_child_weight=25.0,
+        subsample=0.9,
+        colsample_bytree=0.35,
+        reg_lambda=8.0,
+        gamma=2.0,
+        tree_method="hist",
+        enable_categorical=True,
+        early_stopping_rounds=80,
+        random_state=SEED,
+        n_jobs=N_JOBS,
+    )
+    m.fit(
+        prepare(train.iloc[_tr_idx]),
+        to_y(train.iloc[_tr_idx]),
+        eval_set=[(prepare(train.iloc[_val_idx]), to_y(train.iloc[_val_idx]))],
+        verbose=False,
+    )
+    return m
+
+
+t0 = time.time()
+model = fit_model()
+print(f"Training time: {time.time() - t0:.1f}s (trees={model.best_iteration + 1})")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prepare(df))[:, 1]
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

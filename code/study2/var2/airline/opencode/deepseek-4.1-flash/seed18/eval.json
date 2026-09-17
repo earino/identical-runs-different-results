@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:51:10+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:15:21+00:00",
+  "wall_seconds": 1451.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4115.6,
+  "endpoint_at_end": "ok",
+  "head": "b4f68d1",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7365,
+  "final_eval_auc": 0.7365,
+  "holdout_auc": 0.736497930958,
+  "holdout_ap": 0.7296114472464174,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02172717922199996,
+  "generalization_gap": 2.0690420000635257e-06,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5110694,
+    "tokens_in_uncached": 5110694,
+    "tokens_in_cached": 0,
+    "tokens_out": 20631,
+    "turns": null,
+    "api_calls": 122,
+    "method": "sum-of-122-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3961.9,
+  "cpu_seconds_counted": 3599.0,
+  "cpu_seconds_uncounted": 0.8,
+  "cpu_seconds_exempt": 362.1,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 164,
+  "fits_counted": 159,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "a5597fb",
+      "message": "baseline"
+    },
+    {
+      "commit": "bf5d130",
+      "message": "route/carrier target+frequency encoding, moderate model"
+    },
+    {
+      "commit": "deedf45",
+      "message": "add interaction TE keys: carrier_route, origin_hour, carrier_hour"
+    },
+    {
+      "commit": "1df829f",
+      "message": "more interaction TE keys: hour, origin/carrier month, route_dow, dest_hour"
+    },
+    {
+      "commit": "aeb7cc5",
+      "message": "add origin/dest-carrier, route_month, origin_dow, hour_dow keys"
+    },
+    {
+      "commit": "52f5ee4",
+      "message": "more regularized: colsample 0.6 mcw15"
+    },
+    {
+      "commit": "911e6e0",
+      "message": "ensemble of 5 bagged XGBoost seeds"
+    },
+    {
+      "commit": "181bfbe",
+      "message": "5-bag 400 trees lr0.03"
+    },
+    {
+      "commit": "67e52c9",
+      "message": "ablation: drop 5 interaction keys added in batch2"
+    },
+    {
+      "commit": "d58250b",
+      "message": "add L1 reg + gamma"
+    },
+    {
+      "commit": "e15567b",
+      "message": "add numeric seasonality + weekend + dep_cos"
+    },
+    {
+      "commit": "3e30955",
+      "message": "stronger regularization colsample0.5 mcw30 lambda5"
+    },
+    {
+      "commit": "b858b7a",
+      "message": "lossguide grow policy 64 leaves"
+    },
+    {
+      "commit": "4c6aedf",
+      "message": "lossguide 128 leaves"
+    },
+    {
+      "commit": "c9e3f9b",
+      "message": "lossguide 256 leaves"
+    },
+    {
+      "commit": "6ae04a0",
+      "message": "lossguide 384 leaves"
+    },
+    {
+      "commit": "b89e9df",
+      "message": "lossguide 512 leaves"
+    },
+    {
+      "commit": "1420ddb",
+      "message": "add route share ratios"
+    },
+    {
+      "commit": "c0b4c9f",
+      "message": "add origin/dest carrier share ratios"
+    },
+    {
+      "commit": "b4f68d1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3599.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 153.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c0b4c9f",
+  "best_commit_eval_auc": 0.7365,
+  "best_commit_holdout_auc": 0.736497930958,
+  "best_commit_holdout_ap": 0.7296114472464174,
+  "best_commit_error": null,
+  "finalized_best": true
+}

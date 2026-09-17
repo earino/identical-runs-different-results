@@ -1,0 +1,30 @@
+n	commit	unix_time	subject
+00	d6ef39d	1789539080	baseline
+01	0b51fcf	1789539134	decode c-n codes as ordinal, decompose DepTime, 300 trees
+02	ab2d33a	1789539174	depth8 lr0.05 subsample + early-stopping round selection
+03	fc3586e	1789539208	depth8 lr0.05 + early-stopping callback
+04	ddaf155	1789539240	xgb.train low-level API, depth8/lr0.05, early-stopped rounds
+05	41f8696	1789539321	deeper trees depth12 lr0.03 stronger regularization
+06	294020e	1789539372	max_cat_threshold 256 for airport partitions
+07	5537564	1789539619	3-seed bagged XGBoost ensemble
+08	f21eab0	1789539848	stronger stochastic regularization
+09	48f72f4	1789539948	eta 0.02 with best regularization
+10	0dcb059	1789540250	max_cat_to_onehot=8; bound rounds and seeds to the 120s limit
+11	5f09bdd	1789540330	rank-based ensemble pooling, restore 3 seeds
+12	b6b9815	1789540423	diverse 2-config ensemble (deep slow + shallow fast)
+13	dcbfdbd	1789540909	restore best-known config (single deep bag)
+14	a640e34	1789540918	ablation: drop tod_sin/cos and log_dist
+15	a531a92	1789541022	cyclic month/day-of-week + weekend flag
+16	7b3217c	1789541110	diverse per-member sampling rates in the bag
+17	d059564	1789541190	2-fold averaged round selection
+18	74a065c	1789541300	shrink stopping round by 15% to counter year-shift overshoot
+19	19a16ee	1789541367	shrink factor 0.70
+20	422f171	1789541427	shrink factor 0.55
+21	8c566aa	1789541519	shrink factor 0.40
+22	411dee1	1789541564	shrink factor 0.30
+23	bc1f796	1789541602	shrink factor 0.20
+24	707d76f	1789541635	6-member bag at shrink 0.30
+25	086220b	1789541689	min_child_weight 10
+26	258bfbc	1789541759	min_child_weight 5
+27	c1eceda	1789541824	min_child_weight 2
+28	c9beb93	1789541917	min_child_weight 1

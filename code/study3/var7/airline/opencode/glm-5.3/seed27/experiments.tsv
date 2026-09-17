@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	84477fe	0.7141	ok	3	baseline
+2	d8a1109	0.0000	crash	1	fe: numeric time features + route + early stopping
+3	1ab9f5a	0.7073	ok	2	fe: numeric time features + route + early stopping (fix)
+4	09de3f8	0.6939	ok	6	full data 400 trees no subsample
+5	679940f	0.7204	ok	2	tuned regularized model, numeric features
+6	224b1a0	0.7226	ok	2	te_origin + te_hd (OOF) with n100 lr.03
+7	467e425	0.7330	ok	5	deep model + 4 TEs (origin,hd,route,oh)
+8	dddf3be	0.7345	ok	55	deep ensemble + count encodings
+9	907e396	0.7431	ok	64	te_t15 + oh15/dh15/ch15 congestion curves
+10	dc8ce8b	0.7519	ok	60	te_r15 route-time congestion
+11	9328031	0.7570	ok	56	cs0.30 + mcw10/15 ensemble retune
+12	2ab682f	0.7586	ok	56	te_r20 route x 20min congestion
+13	17c8bd9	0.7588	ok	53	drop te_oh
+14	18812e9	0.7590	ok	51	lighter leaf min_child_weight 8/12
+15	9e39da3	0.7589	ok	58	deeper trees d18/20
+16	b7797c9	0.7585	ok	57	learning rate 0.025
+17	7514e36	0.7582	ok	55	drop te_origin (lowest importance)
+18	f264d78	0.7589	ok	51	L2 reg_lambda 2.0
+19	906fc5f	0.7589	ok	61	10-fold OOF target encodings
+20	d3b43e3	0.7590	ok	53	min_split_loss gamma 0.1
+21	506d13a	0.7576	ok	53	te_r12 route x 12min
+22	7f55c19	0.7589	ok	69	max_bin 1024
+23	79df497	0.7592	ok	60	mcw 6/10
+24	b196bb2	0.7593	ok	68	mcw 4/8
+25	98abedb	0.7595	ok	82	mcw 3/6
+26	59d2765	0.7596	ok	94	mcw 2/4 final probe

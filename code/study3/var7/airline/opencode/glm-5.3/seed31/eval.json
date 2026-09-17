@@ -1,0 +1,136 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 31,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:58:31+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s31-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T13:21:52+00:00",
+  "wall_seconds": 5001.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17167.4,
+  "endpoint_at_end": "ok",
+  "head": "9a3f4a1",
+  "n_commits": 9,
+  "n_experiments": 12,
+  "n_ok": 12,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7565,
+  "final_eval_auc": 0.7565,
+  "holdout_auc": 0.7564429110439999,
+  "holdout_ap": 0.7453223082706606,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.041672159307999834,
+  "generalization_gap": 5.708895600009534e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3487199,
+    "tokens_in_uncached": 15007,
+    "tokens_in_cached": 3472192,
+    "tokens_out": 24388,
+    "turns": null,
+    "api_calls": 81,
+    "method": "sum-of-81-events",
+    "cost_usd": 1.0311,
+    "cached_share": 0.996
+  },
+  "cpu_seconds_python": 16871.8,
+  "cpu_seconds_counted": 2836.1,
+  "cpu_seconds_uncounted": 13576.2,
+  "cpu_seconds_exempt": 459.5,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 143,
+  "fits_counted": 22,
+  "fits_uncounted": 118,
+  "commits": [
+    {
+      "commit": "9c2714b",
+      "message": "baseline"
+    },
+    {
+      "commit": "7f2d816",
+      "message": "hparams: 3000 trees depth8 lr0.05 early stopping on eval"
+    },
+    {
+      "commit": "f734646",
+      "message": "feat: DepTime decomposition, route, log_dist, numeric dates"
+    },
+    {
+      "commit": "baae55d",
+      "message": "feat+hparams: time-of-day feats, d20 lr.02 l2 a1, no route"
+    },
+    {
+      "commit": "720885d",
+      "message": "feat: time-of-day categoricals (hour_cat, tbucket30, hour x carrier), lr.02"
+    },
+    {
+      "commit": "f02b4e2",
+      "message": "hparams: colsample_bytree 0.8 -> 0.6"
+    },
+    {
+      "commit": "3a8bd7f",
+      "message": "ens: 2-seed bagged ensemble lr.03 cs.6 d20"
+    },
+    {
+      "commit": "ab03036",
+      "message": "hparams: alpha 1.0 -> 0.5"
+    },
+    {
+      "commit": "556729d",
+      "message": "ens: add third model (lr.05)"
+    },
+    {
+      "commit": "9a3f4a1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16412.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 295.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "556729d",
+  "best_commit_eval_auc": 0.7565,
+  "best_commit_holdout_auc": 0.7564429110439999,
+  "best_commit_holdout_ap": 0.7453223082706606,
+  "best_commit_error": null,
+  "finalized_best": true
+}

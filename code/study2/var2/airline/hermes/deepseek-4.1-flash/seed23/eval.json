@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 23,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:55:49+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s23-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T07:26:10+00:00",
+  "wall_seconds": 5421.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16808.0,
+  "endpoint_at_end": "ok",
+  "head": "e2cae3b",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 3,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7499,
+  "final_eval_auc": 0.7499,
+  "holdout_auc": 0.7498462803300001,
+  "holdout_ap": 0.7422388084010512,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.035075528594000094,
+  "generalization_gap": 5.3719669999896524e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 15999357,
+    "tokens_in_uncached": 15999357,
+    "tokens_in_cached": 0,
+    "tokens_out": 92821,
+    "turns": null,
+    "api_calls": 167,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 16474.6,
+  "cpu_seconds_counted": 9650.4,
+  "cpu_seconds_uncounted": 6313.2,
+  "cpu_seconds_exempt": 511.0,
+  "python_processes": 70,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 387,
+  "fits_counted": 240,
+  "fits_uncounted": 139,
+  "commits": [
+    {
+      "commit": "e1abf17",
+      "message": "baseline"
+    },
+    {
+      "commit": "0f6cf4f",
+      "message": "time features: hour/minute/cyclic tod, numeric calendar"
+    },
+    {
+      "commit": "8a92855",
+      "message": "deep trees d13 + colsample0.4 + lambda20"
+    },
+    {
+      "commit": "b8eaf88",
+      "message": "hour x carrier interaction categorical"
+    },
+    {
+      "commit": "9fb2107",
+      "message": "add hour x origin interaction, 500 trees"
+    },
+    {
+      "commit": "b62a211",
+      "message": "3-model xgboost ensemble (d13 cs.4 / d16 / d13 cs.3)"
+    },
+    {
+      "commit": "fba8be8",
+      "message": "6-model ensemble"
+    },
+    {
+      "commit": "19c4e68",
+      "message": "8-member ensemble (+lossguide, +gamma)"
+    },
+    {
+      "commit": "1f3fb21",
+      "message": "ensemble encoding diversity: one-hot low-card, tighter cat threshold"
+    },
+    {
+      "commit": "ae183ed",
+      "message": "ensemble feature-view diversity (2 members on reduced views)"
+    },
+    {
+      "commit": "a074023",
+      "message": "L1 regularization member"
+    },
+    {
+      "commit": "e7c4148",
+      "message": "max_delta_step=1 all members"
+    },
+    {
+      "commit": "6b6d004",
+      "message": "L1 regularization on all members"
+    },
+    {
+      "commit": "aab2d47",
+      "message": "min_child_weight 15"
+    },
+    {
+      "commit": "12c8de6",
+      "message": "min_child_weight 10"
+    },
+    {
+      "commit": "672e25f",
+      "message": "min_child_weight 6 with 350 trees on lr.05 members"
+    },
+    {
+      "commit": "f8b3e63",
+      "message": "min_child_weight 3, lr.03 member 600 trees"
+    },
+    {
+      "commit": "bc4364c",
+      "message": "seed stability check (+1000)"
+    },
+    {
+      "commit": "86a3cd7",
+      "message": "final: tidy train.py (behaviour identical to experiment 39)"
+    },
+    {
+      "commit": "e2cae3b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 15963.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 333.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "bc4364c",
+  "best_commit_eval_auc": 0.7499,
+  "best_commit_holdout_auc": 0.7498462803300001,
+  "best_commit_holdout_ap": 0.7422388084010512,
+  "best_commit_error": null,
+  "finalized_best": false
+}

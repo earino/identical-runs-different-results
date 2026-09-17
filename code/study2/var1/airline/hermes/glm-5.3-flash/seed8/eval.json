@@ -1,0 +1,124 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 8,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:26:39+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s8-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:18:44+00:00",
+  "wall_seconds": 3125.0,
+  "exit_code": 137,
+  "timed_out": false,
+  "stalled": true,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11113.6,
+  "endpoint_at_end": "ok",
+  "head": "089c5fd",
+  "n_commits": 6,
+  "n_experiments": 7,
+  "n_ok": 4,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7206,
+  "final_eval_auc": 0.7206,
+  "holdout_auc": 0.720099610284,
+  "holdout_ap": 0.7125743119246677,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.005328858548000026,
+  "generalization_gap": 0.0005003897159999715,
+  "final_md_written": false,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 1866828,
+    "tokens_in_uncached": 52620,
+    "tokens_in_cached": 1814208,
+    "tokens_out": 42370,
+    "turns": null,
+    "api_calls": 57,
+    "method": "cumulative-max",
+    "cost_usd": 0.0835,
+    "cached_share": 0.972
+  },
+  "cpu_seconds_python": 10211.9,
+  "cpu_seconds_counted": 102.5,
+  "cpu_seconds_uncounted": 10109.4,
+  "cpu_seconds_exempt": 0.0,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 723,
+  "fits_counted": 6,
+  "fits_uncounted": 717,
+  "commits": [
+    {
+      "commit": "59bb0d4",
+      "message": "baseline"
+    },
+    {
+      "commit": "2e870b3",
+      "message": "numeric features + cyclical dep time, 600 trees depth 8"
+    },
+    {
+      "commit": "6bf3a3e",
+      "message": "fix: remap cats to train levels (unseen->NaN)"
+    },
+    {
+      "commit": "1e55382",
+      "message": "fix: remap cats to train levels (unseen->NaN)"
+    },
+    {
+      "commit": "c912e44",
+      "message": "dep_hour/minute, native cats (unseen-level crash reproduced on eval; reload fixed it)"
+    },
+    {
+      "commit": "bb62101",
+      "message": "int-coded cats, drop cyclical (native cats hurt: 0.697 vs 0.718 offline)"
+    },
+    {
+      "commit": "089c5fd",
+      "message": "hp tune via LOMO: d6 lr.05 n1500 ss.9 cs.9"
+    }
+  ],
+  "cpu_seconds_budgeted": 10211.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 901.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "089c5fd",
+  "best_commit_eval_auc": 0.7206,
+  "best_commit_holdout_auc": 0.720099610284,
+  "best_commit_holdout_ap": 0.7125743119246677,
+  "best_commit_error": null,
+  "finalized_best": true
+}

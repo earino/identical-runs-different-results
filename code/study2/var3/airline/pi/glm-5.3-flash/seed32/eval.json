@@ -1,0 +1,144 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 32,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:50:40+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s32-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:45:03+00:00",
+  "wall_seconds": 3263.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10371.7,
+  "endpoint_at_end": "ok",
+  "head": "06af22b",
+  "n_commits": 11,
+  "n_experiments": 40,
+  "n_ok": 32,
+  "n_crash": 3,
+  "n_timeout": 5,
+  "best_eval_auc": 0.7248,
+  "final_eval_auc": 0.7248,
+  "holdout_auc": 0.7262771311160001,
+  "holdout_ap": 0.7148904707601205,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.011506379380000098,
+  "generalization_gap": -0.0014771311160001188,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5135694,
+    "tokens_in_uncached": 32398,
+    "tokens_in_cached": 5103296,
+    "tokens_out": 90020,
+    "turns": null,
+    "api_calls": 95,
+    "method": "sum-of-95-events",
+    "cost_usd": 0.203,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 10360.3,
+  "cpu_seconds_counted": 9939.3,
+  "cpu_seconds_uncounted": 22.5,
+  "cpu_seconds_exempt": 398.5,
+  "python_processes": 103,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 355,
+  "fits_counted": 343,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "7a86663",
+      "message": "baseline"
+    },
+    {
+      "commit": "52d01b8",
+      "message": "exp5: FE v1 without Route, baseline model"
+    },
+    {
+      "commit": "98a0333",
+      "message": "exp7: hour TEs + DepHour, ES refit model"
+    },
+    {
+      "commit": "0dd2718",
+      "message": "exp9: add OriginxHour and CarrierxHour TE (M=100)"
+    },
+    {
+      "commit": "c7ed8bd",
+      "message": "exp19: 6 members lr0.04 max_bin128 ES50, xgb.train"
+    },
+    {
+      "commit": "542b0b2",
+      "message": "exp21: TE-smoothing-diverse ensemble"
+    },
+    {
+      "commit": "da118e5",
+      "message": "exp23: VALID_FRAC 0.3 + member diagnostics"
+    },
+    {
+      "commit": "9ac3869",
+      "message": "exp24: max_bin 256"
+    },
+    {
+      "commit": "9fcabe9",
+      "message": "exp25: swap weakest member for d8 mcw1"
+    },
+    {
+      "commit": "d2f26ba",
+      "message": "exp28: VALID_FRAC 0.4 (restore best)"
+    },
+    {
+      "commit": "c1548d2",
+      "message": "exp38: swap d10 member for d8 seed clone"
+    },
+    {
+      "commit": "06af22b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9961.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 11.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c1548d2",
+  "best_commit_eval_auc": 0.7248,
+  "best_commit_holdout_auc": 0.7262771311160001,
+  "best_commit_holdout_ap": 0.7148904707601205,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	4a827af	1789519205	baseline
+01	05a2f9a	1789519304	smoother model: depth4 300 trees lr0.05 strong reg
+02	a98b20c	1789519325	drop Month/DayofMonth (drift-only features)
+03	e242316	1789519380	clock features: hour/minute_of_day/sin/cos replacing raw DepTime
+04	09f8e5a	1789519388	frequency encodings for origin/dest/carrier/route
+05	fd1fa99	1789519418	add carrier x hour cross categorical
+06	db6e28f	1789519442	depth5 with cross features
+07	2841c66	1789519446	depth6 with cross features
+08	c9647c0	1789519505	colsample 0.6
+09	0e305d3	1789519533	5-model XGBoost ensemble averaged
+10	101dab6	1789519626	members: 450 trees lr0.035
+11	1df8c19	1789519659	add carrier x halfhour cross
+12	c5b5e8d	1789519721	members: 600 trees lr0.028

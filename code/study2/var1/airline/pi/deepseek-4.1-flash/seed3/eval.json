@@ -1,0 +1,120 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 3,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:45:14+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s3-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:14:24+00:00",
+  "wall_seconds": 5350.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17892.0,
+  "endpoint_at_end": "ok",
+  "head": "f6f8ff3",
+  "n_commits": 5,
+  "n_experiments": 18,
+  "n_ok": 13,
+  "n_crash": 0,
+  "n_timeout": 5,
+  "best_eval_auc": 0.756,
+  "final_eval_auc": 0.756,
+  "holdout_auc": 0.7571240242499999,
+  "holdout_ap": 0.7454085148511959,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.042353272513999896,
+  "generalization_gap": -0.001124024249999911,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3677719,
+    "tokens_in_uncached": 3677719,
+    "tokens_in_cached": 0,
+    "tokens_out": 67129,
+    "turns": null,
+    "api_calls": 80,
+    "method": "sum-of-80-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 16989.9,
+  "cpu_seconds_counted": 5313.2,
+  "cpu_seconds_uncounted": 10844.6,
+  "cpu_seconds_exempt": 832.1,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 155,
+  "fits_counted": 36,
+  "fits_uncounted": 115,
+  "commits": [
+    {
+      "commit": "bb60bdd",
+      "message": "baseline"
+    },
+    {
+      "commit": "612035a",
+      "message": "baseline FE + deeper boosting, eval early stopping"
+    },
+    {
+      "commit": "b372f6b",
+      "message": "numeric date feats + deep trees (d20 lr.01)"
+    },
+    {
+      "commit": "7d04966",
+      "message": "tuned deep model: d24 lr.005 mcw1 col.6 +minute"
+    },
+    {
+      "commit": "3b31c23",
+      "message": "2-model XGB ensemble d20 lr.01"
+    },
+    {
+      "commit": "f6f8ff3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16157.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 902.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3b31c23",
+  "best_commit_eval_auc": 0.756,
+  "best_commit_holdout_auc": 0.7571240242499999,
+  "best_commit_holdout_ap": 0.7454085148511959,
+  "best_commit_error": null,
+  "finalized_best": true
+}

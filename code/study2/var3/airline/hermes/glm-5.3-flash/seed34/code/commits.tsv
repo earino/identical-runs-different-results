@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	acc8a96	1789523803	baseline
+01	b879ab1	1789524453	exp4: FE without Route, depth12 lr0.05 600t
+02	91bf28f	1789524492	exp5: FE no-Route, depth6 lr0.05 400t
+03	093a490	1789524511	exp6: Dep_hour as categorical
+04	9498588	1789524619	exp14: lr0.03 700t mcw10 lambda3
+05	6b91160	1789524627	exp15: lr0.02 900t mcw20 lambda6
+06	789f2c0	1789524635	exp16: lr0.015 1200t mcw30 lambda10
+07	99e8b0e	1789524651	exp17: lr0.01 1600t mcw50 lambda15 colsample0.7
+08	4c2a703	1789524746	exp20: 3-seed bagged ensemble
+09	580d697	1789524783	exp21: subsample0.7 colsample0.6
+10	5fd8f14	1789525237	exp33: reg_alpha=0.5
+11	8f29cb5	1789525273	exp34: reg_alpha=2.0
+12	ba43751	1789525302	exp35: reg_alpha=5.0
+13	e182869	1789525406	exp38: alpha5 2400t 4-seed

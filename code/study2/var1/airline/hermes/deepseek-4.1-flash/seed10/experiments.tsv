@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	76b4b1f	0.7141	ok	4	baseline
+2	a190de1	0.7124	ok	6	time-of-day feats + depth7/lr0.05 500 trees
+3	083233e	0.7125	ok	3	params only: 400 trees d6 lr.05 sub.9 col.8
+4	c0c4efe	0.7115	ok	4	params + dep_hour/tod features
+5	2d1966f	0.7125	ok	2	baseline params, 100 trees
+6	18bf8d7	0.7132	ok	2	baseline + shifted-circadian tod feature
+7	b3c0972	0.0000	crash	1	route cat + freq counts + smoothed target rates
+8	c77e6b0	0.6987	ok	2	route cat + freq counts + smoothed target rates
+9	8395ae6	0.7121	ok	2	tod_shift + carrier/origin/dest/route frequency counts
+10	42608e7	0.7163	ok	2	regularized depth4 150 trees
+11	c2c1c22	0.7155	ok	2	shallower: depth3 400 trees
+12	4d4b7cf	0.7154	ok	3	depth5 150 trees lr.05
+13	8edb783	0.7155	ok	3	depth4 + tod_shift + freq counts
+14	f34f59e	0.7159	ok	2	heavier reg: mcw30 sub.7 col.7 L1/L2
+15	ccfbceb	0.7166	ok	3	slower lr: 400 trees lr.025 depth4
+16	5b1917b	0.7167	ok	5	lr0.0125 800 trees depth4
+17	e217828	0.0000	crash	9	ensemble of 5 regularized boosters
+18	5f771b2	0.7170	ok	11	ensemble of 5 regularized boosters
+19	d876669	0.7010	ok	16	ablation: drop Origin/Dest categoricals
+20	96ef288	0.7122	ok	3	best single model + max_cat_to_onehot8/threshold16
+21	a80c25c	0.7159	ok	4	single model + max_cat_threshold256
+22	b53a199	0.7060	ok	16	ensemble + route (Origin_Dest) categorical
+23	a846649	0.7169	ok	18	8-member ensemble, varied depth/lr/bagging
+24	e9f825a	0.7173	ok	11	ensemble, drop DayofMonth (date memorisation)
+25	f2ff409	0.7134	ok	11	also drop DayOfWeek
+26	1aed42c	0.0000	crash	1	single model d4 lr.025 400 trees, no DayofMonth
+27	d34b1d6	0.7171	ok	3	single model d4 lr.025 400 trees, no DayofMonth
+28	f579e69	0.7197	ok	2	also drop Month
+29	3113a34	0.7163	ok	3	drop all calendar features (Month/Day/DOW)
+30	9843f97	0.7208	ok	4	reduced features, depth5
+31	2b3a797	0.7216	ok	4	reduced features, depth6
+32	e1558c8	0.7243	ok	5	reduced features, depth8
+33	5075a2f	0.7292	ok	10	reduced features, depth12
+34	8e2302c	0.7313	ok	18	reduced features, depth16
+35	73f986a	0.7331	ok	25	unlimited depth (max_depth=0), 400 trees
+36	c6480c6	0.7336	ok	49	unlimited depth, 800 trees lr.0125
+37	f6871a9	0.7335	ok	74	ensemble of 4 deep members (unlimited/12/16)
+38	86d166e	0.7310	ok	69	unlimited depth, 1200 trees lr.0125
+39	aec0a37	0.7295	ok	28	unlimited depth 800 trees + mcw30/lambda5
+40	c3894de	0.7336	ok	80	two-member bag: lr.0125/800 + lr.02/500

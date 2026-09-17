@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	948898c	1789640634	baseline
+01	d9271e3	1789640880	base features + ES-then-refit-full d9
+02	338d857	1789641208	fixed d14 n=800 full train, drop ES stage
+03	13e6c90	1789643214	d16 bin1024 + hour feature
+04	38f265a	1789643538	3-model structural ensemble d14b1024/d16b1024/d16b2048 n600
+05	322c5dd	1789644176	month-recency sample weighting alpha=2
+06	5e4703b	1789644458	swap members: d16b1024/d16b2048/csn-diverse member

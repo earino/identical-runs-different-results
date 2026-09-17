@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c91d924	0.7141	ok	4	baseline
+2	477b5b7	0.7143	ok	4	exp2: bigger model + early stopping
+3	b7134b5	0.7177	ok	32	exp3: time features
+4	e3685eb	0.7097	ok	5	exp4: route categorical
+5	5f79e00	0.7159	ok	44	exp5: target encoding
+6	f2fa41f	0.7201	ok	44	exp6: lr 0.03
+7	af87ac0	0.7272	ok	40	exp7: hour categorical
+8	2c20785	0.7153	ok	30	exp8: calendar categoricals
+9	b1e8859	0.7325	ok	42	exp9: 30-min bins
+10	3b98ccf	0.7322	ok	62	exp10: 15-min bins
+11	09d21ec	0.0000	crash	2	exp11: hour x dow
+12	6cf9009	0.7253	ok	18	exp11: hour x dow (fixed)
+13	2e9570d	0.7318	ok	75	exp13: depth 10
+14	d4521b8	0.7310	ok	37	exp14: depth 6
+15	a6857fe	0.7335	ok	67	exp15: 2-seed ensemble
+16	61c3da9	0.7339	ok	107	exp16: 3-seed ensemble
+17	5828251	0.7317	ok	83	exp17: iter scale 1.25
+18	6f6fc00	0.7335	ok	66	exp18: mcw 10
+19	76a8e74	0.7305	ok	92	exp19: subsample/colsample .7
+20	0b80923	0.7324	ok	103	exp20: distance feats
+21	dffa109	0.7275	ok	78	exp21: ablation numerics
+22	ec1571a	0.7345	ok	68	exp22: depth diverse ensemble
+23	827c055	0.7357	ok	73	exp23: depths 8/6/5
+24	f0641d3	0.7370	ok	84	exp24: depths 8/6/5/4
+25	b6e005b	0.0000	timeout	122	exp25: depths 8/6/5/4/10
+26	5389b6a	0.7381	ok	87	exp26: depths 8/6/5/4/3
+27	4922600	0.7381	ok	112	exp27: 6 members
+28	9a08150	0.7367	ok	106	exp28: max_bin 512
+29	1f236b2	0.7368	ok	104	exp29: member iter scaling
+30	ed2d052	0.0000	timeout	120	exp30: frequency encoding
+31	8d28f90	0.7395	ok	92	exp31: reg_lambda 10
+32	b0d14cd	0.0000	timeout	120	exp32: reg_lambda 30
+33	1db61e0	0.7391	ok	111	exp33: gamma 0.5
+34	39dea80	0.0000	timeout	121	exp34: ES 100
+35	aa64d7a	0.7395	ok	67	exp35: ES 1200/100
+36	63cc669	0.7395	ok	71	exp36: 6 members
+37	679c0d4	0.7401	ok	78	exp37: recency weights
+38	2e99380	0.7402	ok	73	exp38: weight 1->2
+39	73a9677	0.7400	ok	72	exp39: lr 0.025
+40	6fd83bd	0.7396	ok	77	exp40: colsample 1.0

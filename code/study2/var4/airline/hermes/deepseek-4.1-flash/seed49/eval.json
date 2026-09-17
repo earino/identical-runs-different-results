@@ -1,0 +1,140 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 49,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:26:21+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s49-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:58:34+00:00",
+  "wall_seconds": 1933.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4892.7,
+  "endpoint_at_end": "ok",
+  "head": "602cbf6",
+  "n_commits": 10,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7409,
+  "final_eval_auc": 0.7409,
+  "holdout_auc": 0.741338703726,
+  "holdout_ap": 0.7288202203379484,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02656795198999995,
+  "generalization_gap": -0.0004387037259999671,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10378013,
+    "tokens_in_uncached": 10378013,
+    "tokens_in_cached": 0,
+    "tokens_out": 59722,
+    "turns": null,
+    "api_calls": 147,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 4653.2,
+  "cpu_seconds_counted": 4460.0,
+  "cpu_seconds_uncounted": 5.1,
+  "cpu_seconds_exempt": 188.2,
+  "python_processes": 51,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 59,
+  "fits_counted": 58,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "c20426e",
+      "message": "baseline"
+    },
+    {
+      "commit": "12998f1",
+      "message": "feat: departure clock features (hour, minute, tod, red-eye)"
+    },
+    {
+      "commit": "120d5bb",
+      "message": "feat: ordered calendar (month/dom/dow ints + day_of_year)"
+    },
+    {
+      "commit": "c99ff8e",
+      "message": "feat: carrier x hour and origin x hour categoricals"
+    },
+    {
+      "commit": "cd7b6c6",
+      "message": "tune: max_depth 10"
+    },
+    {
+      "commit": "3ed1421",
+      "message": "tune: max_depth 13"
+    },
+    {
+      "commit": "b43b4df",
+      "message": "tune: learning_rate 0.02"
+    },
+    {
+      "commit": "3127d39",
+      "message": "simplify: fixed 700 rounds, single full-data fit (no probe/refit)"
+    },
+    {
+      "commit": "62a660b",
+      "message": "tune: max_bin 512"
+    },
+    {
+      "commit": "709fd74",
+      "message": "tune: max_bin 1024"
+    },
+    {
+      "commit": "602cbf6",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4465.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 239.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "709fd74",
+  "best_commit_eval_auc": 0.7409,
+  "best_commit_holdout_auc": 0.741338703726,
+  "best_commit_holdout_ap": 0.7288202203379484,
+  "best_commit_error": null,
+  "finalized_best": true
+}

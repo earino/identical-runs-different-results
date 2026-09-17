@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	da85654	1789524701	baseline
+01	44eca97	1789524866	restore baseline + CV_MODE diagnostics
+02	79c8988	1789524910	max_depth=4
+03	8ca90a9	1789524921	depth4 n60
+04	3a72ba3	1789524934	lr 0.05 n120 depth4
+05	41fb869	1789525008	diverse 6-model ensemble
+06	c6583f4	1789525039	monotone constraint on DepTime
+07	2735f17	1789525073	9-model mixed ensemble (6 mono + 3 unconstrained)
+08	95d6bac	1789525408	20-member dual-view ensemble (base + grp-deviation frames)
+09	37657ed	1789526225	40-member 4-view ensemble (base/grp/doy/both)
+10	a738fc1	1789526433	50-member 5-view ensemble (+carrier/origin x hour norms)
+11	c9f3f67	1789526739	60-member 6-view ensemble (+route x hour norms)
+12	678c4e0	1789527092	70-member 7-view ensemble (+chr+rhr combined)
+13	3a4529c	1789527464	80-member 8-view ensemble (+triple norm view)
+14	6de0289	1789527874	90-member 9-view ensemble (+quint norms+rate TE)
+15	0319e72	1789528316	100-member 10-view ensemble (+route x quarter-day)
+16	93eb63c	1789534149	110-member 11-view ensemble (+origin x hour rate TE)

@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T13:39:48+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T14:17:01+00:00",
+  "wall_seconds": 2233.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5797.8,
+  "endpoint_at_end": "ok",
+  "head": "a70a0dd",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7539,
+  "final_eval_auc": 0.7539,
+  "holdout_auc": 0.754196472366,
+  "holdout_ap": 0.7437996151609039,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03942572062999994,
+  "generalization_gap": -0.00029647236599994464,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4804314,
+    "tokens_in_uncached": 84954,
+    "tokens_in_cached": 4719360,
+    "tokens_out": 31715,
+    "turns": null,
+    "api_calls": 127,
+    "method": "cumulative-max",
+    "cost_usd": 1.4855,
+    "cached_share": 0.982
+  },
+  "cpu_seconds_python": 5717.8,
+  "cpu_seconds_counted": 5362.7,
+  "cpu_seconds_uncounted": 0.4,
+  "cpu_seconds_exempt": 354.7,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 461,
+  "fits_counted": 446,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "f7a2074",
+      "message": "baseline"
+    },
+    {
+      "commit": "7c59c96",
+      "message": "feat: parse c- strings, time+route features, early stopping"
+    },
+    {
+      "commit": "b9206a4",
+      "message": "exp7: baseline + time-of-day features, 30 trees"
+    },
+    {
+      "commit": "4cf780a",
+      "message": "exp10: numeric Month/DayofMonth/DayOfWeek instead of c-strings"
+    },
+    {
+      "commit": "2008231",
+      "message": "exp11: numeric month/day/dow, drop raw c-strings, keep time feats"
+    },
+    {
+      "commit": "efbb1aa",
+      "message": "exp12: depth 6->8"
+    },
+    {
+      "commit": "a6056ee",
+      "message": "exp14: bagged ensemble of 15 xgb (col+row subsample)"
+    },
+    {
+      "commit": "d9f3677",
+      "message": "exp16: ensemble depth 10"
+    },
+    {
+      "commit": "ee41b3a",
+      "message": "exp17: ensemble depth 12"
+    },
+    {
+      "commit": "682e56e",
+      "message": "exp18: ensemble depth 14"
+    },
+    {
+      "commit": "d4ce0df",
+      "message": "exp19: ensemble depth 16"
+    },
+    {
+      "commit": "c0441ae",
+      "message": "exp20: ensemble depth 20"
+    },
+    {
+      "commit": "e1e51ee",
+      "message": "exp21: ensemble depth 24"
+    },
+    {
+      "commit": "9dee806",
+      "message": "exp22: full row sample per member, colsample 0.8"
+    },
+    {
+      "commit": "ee251ca",
+      "message": "exp23: colsample 0.6"
+    },
+    {
+      "commit": "bba8e0f",
+      "message": "exp29: log-odds averaging of ensemble members"
+    },
+    {
+      "commit": "91949d1",
+      "message": "exp30: hour*distance and dow*hour interactions"
+    },
+    {
+      "commit": "f55f844",
+      "message": "exp34: 40 trees per member"
+    },
+    {
+      "commit": "bfb73d0",
+      "message": "exp40: 45 trees per member"
+    },
+    {
+      "commit": "a70a0dd",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5363.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 80.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "bfb73d0",
+  "best_commit_eval_auc": 0.7539,
+  "best_commit_holdout_auc": 0.754196472366,
+  "best_commit_holdout_ap": 0.7437996151609039,
+  "best_commit_error": null,
+  "finalized_best": true
+}

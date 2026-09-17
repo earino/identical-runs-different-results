@@ -1,0 +1,68 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789640923	112	0.036	uncounted	exit	0.0	0	-c
+1789640923	114	0.038	uncounted	exit	0.0	0	-c
+1789640923	116	0.038	uncounted	exit	0.0	0	-m --version
+1789640923	118	0.036	uncounted	exit	0.0	0	-c
+1789640974	197	4.966	counted	exit	3.5	1	train.py
+1789640989	232	0.769	uncounted	exit	0.4	0	-
+1789641037	275	0.034	uncounted	exit	0.0	0	-c
+1789641037	277	0.071	uncounted	exit	0.0	0	-c
+1789641037	279	0.039	uncounted	exit	0.0	0	-c
+1789641046	341	3.746	counted	exit	1.6	1	train.py
+1789641063	466	11.298	counted	exit	3.5	1	train.py
+1789641088	553	7.005	counted	exit	2.5	1	train.py
+1789641110	707	2.780	counted	exit	1.3	1	train.py
+1789641178	790	117.949	exempt	exit	32.5	35	diag.py
+1789641196	843	1.655	exempt	exit	1.0	0	diag2.py
+1789641209	912	24.241	exempt	exit	8.1	20	diag2.py
+1789641243	964	61.197	exempt	exit	16.6	70	diag3.py
+1789641302	1016	182.519	exempt	exit	47.2	230	diag4.py
+1789641312	1090	9.386	counted	exit	3.0	10	train.py
+1789641374	1169	112.014	exempt	exit	29.1	132	diag5.py
+1789641425	1222	149.245	exempt	exit	38.7	110	diag6.py
+1789641440	1275	1.576	exempt	exit	1.0	0	diag7.py
+1789641524	1344	256.964	exempt	exit	79.0	150	diag7.py
+1789641540	1498	12.778	counted	exit	4.0	10	train.py
+1789641614	1564	238.507	exempt	exit	63.3	200	diag8.py
+1789641668	1617	168.175	exempt	exit	43.3	160	diag9.py
+1789641728	1670	196.236	exempt	exit	50.3	180	diag10.py
+1789641742	1823	12.905	counted	exit	4.0	10	train.py
+1789641800	1889	190.192	exempt	exit	48.7	170	diag11.py
+1789641885	1942	297.581	exempt	exit	75.7	210	diag12.py
+1789641975	1995	320.484	exempt	exit	81.4	150	diag13.py
+1789642131	2048	574.432	exempt	exit	145.8	160	diag14.py
+1789642409	2101	1043.347	exempt	exit	266.1	180	diag15.py
+1789642463	2242	159.330	counted	exit	41.5	10	train.py
+1789642895	2309	1627.498	exempt	term	420.1	105	diag16.py
+1789643297	2339	1550.211	exempt	term	400.0	100	diag16.py
+1789643298	2373	0.058	exempt	exit	0.0	0	diag16b.py
+1789643303	2404	0.036	uncounted	exit	0.0	0	-c
+1789643303	2418	0.051	uncounted	exit	0.0	0	-c
+1789643303	2421	0.044	uncounted	exit	0.0	0	-c
+1789643528	2431	847.483	exempt	exit	219.1	50	diag16b.py
+1789643889	2500	1353.635	exempt	exit	347.7	100	diag17.py
+1789643939	2600	151.463	counted	exit	39.7	10	train.py
+1789643974	2669	63.372	exempt	exit	19.5	26	screen.py features
+1789643989	2691	44.066	exempt	exit	13.8	18	screen.py features
+1789644300	2745	1158.142	exempt	exit	302.4	72	verify_full.py
+1789644363	2889	188.482	counted	exit	49.7	10	train.py
+1789644404	2970	111.075	exempt	exit	29.5	36	tune2.py sur
+1789644433	2993	102.318	exempt	exit	27.2	32	tune2.py sur
+1789644692	3048	966.279	exempt	exit	251.3	92	tune3.py
+1789645077	3140	1407.693	exempt	exit	365.9	82	ens2.py
+1789645290	3206	733.387	exempt	exit	191.1	44	ens3.py
+1789645567	3261	1019.671	exempt	exit	266.0	68	ens4.py
+1789645622	3353	168.497	counted	exit	44.5	10	train.py
+1789645676	3422	149.781	exempt	exit	40.8	42	tune4.py sur
+1789645849	3445	649.858	exempt	exit	171.0	38	tune4.py full
+1789645978	3513	434.362	exempt	exit	114.0	28	scale1.py x16
+1789646023	3536	160.069	exempt	exit	42.8	12	scale1.py col6
+1789646071	3548	177.499	exempt	exit	47.5	12	scale1.py d32
+1789646218	3571	493.409	exempt	exit	132.2	28	scale1.py maxbin
+1789646266	3660	155.080	counted	exit	40.9	10	train.py
+1789646419	3729	518.141	exempt	exit	136.2	38	ablate.py
+1789646439	3784	6.280	exempt	exit	2.5	2	screen_nd.py
+1789646467	3858	46.649	exempt	exit	14.8	18	screen_nd.py
+1789646640	3912	621.702	exempt	exit	163.6	42	confirm2.py
+1789646663	3945	0.000	counted	refused	0.0	0	run_experiment.sh
+1789646752	3966	164.361	exempt	exit	43.7	10	validate.py

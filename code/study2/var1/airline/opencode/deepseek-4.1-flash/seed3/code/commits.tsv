@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	1b016c5	1789499179	baseline
+01	1c8634e	1789499250	depth10 n100 lr.05 reg
+02	3f775ac	1789499277	5-seed ensemble depth10
+03	64b873c	1789499363	ensemble + OOF target encoding
+04	7405a34	1789499399	add carrier_hour categorical
+05	e1e93fb	1789499486	carrier_hour depth11
+06	f547808	1789499533	carrier 30min time bucket
+07	9d6aaab	1789499571	30min bucket depth12
+08	8417903	1789499584	30min bucket depth13
+09	1cf73c5	1789499598	30min bucket depth14
+10	d8ee902	1789499614	30min bucket depth16
+11	082c0c9	1789499635	30min bucket depth20
+12	a8df1a4	1789499654	30min bucket depth24
+13	3724852	1789499674	depth24 n250 lr.03
+14	6044d7c	1789499729	depth24 n400 lr.02
+15	1f6897c	1789500096	depth24 lambda20

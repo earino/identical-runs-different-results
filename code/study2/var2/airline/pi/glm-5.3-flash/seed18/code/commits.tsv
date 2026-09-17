@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	b957d5c	1789505291	baseline
+01	4ca4bab	1789505325	exp2: 3000 trees lr0.05 + early stopping (10% val), subsample/colsample 0.8
+02	613a84a	1789505344	exp3: time-of-day hour/minute, cyclic sin/cos, day-of-year, log-distance
+03	ce12a88	1789505369	exp5: target+frequency encoding for Origin/Dest/Carrier/route/hour/carrier_hour
+04	bf58240	1789505393	exp6: frequency encoding only (TE ablated)
+05	7637ac5	1789505551	exp10: ensemble of 3 diverse XGB members (depth 5/6/7, seeds, subsample)
+06	adf9b29	1789505599	exp11: 5-member ensemble with more diversity
+07	391f657	1789505931	exp14: 9-member ensemble, shared early-stopped round count, full-data fits
+08	7f892ac	1789506329	exp18: cap member rounds at 0.6xR (shift-regularization)
+09	9737117	1789506373	exp19: rounds cap 0.4xR
+10	0d02eb2	1789506583	exp24: blend 0.4R + 0.7R ensembles
+11	affd744	1789506782	exp27: triple-cap blend 0.25/0.4/0.7
+12	9949fa5	1789506975	exp29: add depth-9 member
+13	00904e6	1789507323	exp32: dual-cap 0.4/0.7 with 10 members (runtime headroom)
+14	2fc9a88	1789507565	exp34: lean 9-member dual-cap (runtime safety)
+15	1f46007	1789507711	exp36: per-member feature bagging (75% cols)
+16	88f1a96	1789507773	exp37: feature bagging keep=0.6

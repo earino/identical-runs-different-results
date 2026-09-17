@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	26c960a	1789487161	baseline
+01	07b9635	1789487317	exp2: deptime parse + cyclical + numeric calendar + fixed cats
+02	1a46f20	1789487338	exp3: hour + dow as categoricals
+03	047f048	1789487369	exp4: smoothed target encoding Origin/Dest/Carrier (train-fit)
+04	9379350	1789487475	exp10: deeper regularized (d11 lr0.02 mcw20)
+05	1be75c1	1789487491	exp11: 800 rounds
+06	6070f8b	1789487644	exp16: add 5-fold CV harness
+07	65991b0	1789488032	exp21: time-ordered CV harness
+08	e076e76	1789488113	exp22: drop Month (year-shift hypothesis)
+09	0a18309	1789488651	exp29: 2-model ensemble deep+shallow
+10	2d9b67d	1789488844	exp31: tod-cat 96 + dom-cat on ensemble
+11	03bfd71	1789489578	exp37: remove CV from timed path
+12	0e558c7	1789489670	exp39: depth 12 base member
+13	d7639df	1789489722	exp40: depth 14 second member

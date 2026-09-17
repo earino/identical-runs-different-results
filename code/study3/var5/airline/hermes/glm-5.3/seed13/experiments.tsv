@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	42ec480	0.7141	ok	4	baseline
+2	c2464e4	0.7081	ok	2	time feats (hour,min,sin/cos,day_of_year,log_dist) + route cat
+3	fa4c439	0.7078	ok	3	n_estimators 30->400 (capacity)
+4	2cf41f0	0.7069	ok	3	baseline cats + time feats + route, ES on 15% holdout, lr .05
+5	7ff1d3e	0.7133	ok	2	baseline features + min_of_day only, 30 trees
+6	2370965	0.7167	ok	3	10-seed colsample ensemble, d5 col=.9, 30 trees
+7	3abdbed	0.7207	ok	4	numeric Month/DayofMonth/DayOfWeek, n_estimators=50
+8	7895a02	0.7229	ok	4	hour/min_of_day + colsample_bynode=.7 + reg_alpha=1
+9	363861a	0.7425	ok	42	max_depth=24, gamma=0, a2, bynode.7 (deep+regularized)
+10	6bf0277	0.7453	ok	39	n30, a1, bynode=.8 (candidate from grid)
+11	f9fdcb4	0.7503	ok	50	sin/cos of day + route/origin/dest traffic counts
+12	d80c751	0.7579	ok	45	drop Month/DayofMonth/DayOfWeek (drift)
+13	2893176	0.7585	ok	41	colsample_bytree 0.6 in no-date regime

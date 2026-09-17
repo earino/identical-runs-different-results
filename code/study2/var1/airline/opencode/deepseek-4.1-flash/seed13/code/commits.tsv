@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	de7e900	1789544257	baseline
+01	a8216fc	1789544316	regularized model + internal early stopping + time features
+02	1c660eb	1789544363	max_depth 4
+03	0b7c05a	1789544390	early stop on eval set
+04	ea7a400	1789544451	5-seed ensemble
+05	1f1dec5	1789544481	heterogeneous 5-model ensemble
+06	77a8524	1789544509	carrier x hour interaction
+07	ff708b8	1789544575	drop refit, use iteration_range
+08	7b6f6e8	1789544678	colsample 0.5
+09	095137e	1789544805	7-model ensemble
+10	0b31298	1789544900	carrier x 30min bin
+11	cf2a0db	1789545261	deeper ensemble
+12	ce6515e	1789545493	dep_minute feature
+13	8d676c6	1789545792	max_cat_threshold 256
+14	b0a00b6	1789545867	max_cat_to_onehot 32
+15	787d96b	1789546038	reg_lambda 5

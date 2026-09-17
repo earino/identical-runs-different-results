@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	e0c5b6a	1789491882	baseline
+01	2642a7f	1789491988	early stopping + more capacity (depth 8, lr .05, 3000 rounds)
+02	4339808	1789492010	temporal features: dep hour/minute/sin-cos, red-eye flag, month/dom/dow numerics, log distance
+03	419816a	1789492126	lr 0.03, early stopping 200
+04	28b900f	1789492160	dep_hour_cat, drop minute/dow-cyc, max_cat_to_onehot
+05	e7d0cae	1789492206	3-seed bagging
+06	7f9a0ea	1789492252	5-seed bagging
+07	15dedd8	1789492321	carrier x hour interaction categorical
+08	83e5611	1789492765	mixed-depth bag {8,8,6,10,8}
+09	bc7fb0e	1789492856	lr 0.02 mixed-depth bag
+10	ee4fa33	1789492973	fix cyclical time encoding (true minutes of day)
+11	812fbe5	1789494525	restore best (00f2270) lineage
+12	42eec2c	1789494532	min_child_weight 5
+13	2a783b1	1789495220	4-member bag, es 100

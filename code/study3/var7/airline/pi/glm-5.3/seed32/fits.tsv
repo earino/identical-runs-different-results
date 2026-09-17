@@ -1,0 +1,5 @@
+ts	pid	kind	api	rows	seconds
+1789602929	62	counted	train	100000	0.15
+1789603144	175	counted	train	89976	0.76
+1789603448	221	counted	train	89976	0.71
+1789603693	261	counted	train	100000	0.65

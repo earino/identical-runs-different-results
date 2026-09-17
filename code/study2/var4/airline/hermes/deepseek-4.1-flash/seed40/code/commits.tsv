@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	62c91bc	1789490003	baseline
+01	b9601de	1789490079	feat: time decomposition, route cat, log distance
+02	03c4315	1789490214	hp: lr 0.03, 2500 rounds, early stop 100
+03	9c9b1b2	1789490557	hp: fixed n2000, no probe, lr0.03
+04	01a1d14	1789490594	hp: fixed n2000 no probe, lr0.03 (fix crash)
+05	c3b200c	1789490641	ens: 3-seed average n2000
+06	dd553fd	1789490828	feat: traffic volume counts + route share (3-seed ens)
+07	767eaa1	1789491446	ablate: drop Month+DayofMonth
+08	61eba9b	1789491543	ablate: drop month cyclicals
+09	e75587f	1789491631	ablate: drop DayOfWeek features
+10	91bfd1a	1789491906	ablate: drop count features
+11	d08c4f8	1789492009	feat: weekday only + drop dead count code
+12	360b05c	1789492280	ens: 3 seeds n2500
+13	980492f	1789492490	feat: daily harmonics (2nd, 3rd)
+14	964135f	1789492603	feat: harmonics k=1..6, n2000
+15	b445b97	1789492699	feat: harmonics k=1..12
+16	86fcd75	1789493009	ens: n2200 with harmonics
+17	d69f1cf	1789493327	reg: colsample0.6 n2000 harmonics
+18	958ca32	1789493737	simplify: drop unused calendar feature computations

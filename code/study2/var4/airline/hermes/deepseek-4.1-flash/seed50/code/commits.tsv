@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	575354e	1789530925	baseline
+01	02813e5	1789530973	time features + stronger boosting
+02	9ccdd4a	1789530986	bigger capacity: d8 lr0.03 4000 trees
+03	e264913	1789531200	probe rounds then refit on full train
+04	44a00b4	1789531238	3-seed bagged ensemble
+05	a9cbcb5	1789531437	round scale 0.7
+06	f15cfee	1789531488	round scale 0.5
+07	bba727b	1789531527	round scale 0.35
+08	3fb2e91	1789531559	round scale 0.25
+09	e11e2e7	1789531655	depth 10 at scale 0.25
+10	2b8f28f	1789531690	depth 12 at scale 0.25
+11	0a2acb6	1789531735	depth 14 at scale 0.25
+12	3e32ae3	1789531784	depth 18 at scale 0.25
+13	7b77ce2	1789531822	unlimited depth at scale 0.25
+14	409fb3a	1789531872	6-seed bag
+15	309265d	1789532188	colsample 0.5
+16	c93c35d	1789532665	conjunction cats: carrier_hour, origin_hour
+17	94568d9	1789533005	freeze round count, drop probe
+18	7c333ea	1789533234	diverse ensemble members
+19	51d417f	1789533520	rounds 170
+20	70833c2	1789533782	final

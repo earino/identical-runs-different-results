@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	d120550	1789539571	baseline
+01	95d814a	1789539656	depth4 60 trees
+02	98a84cd	1789539666	depth4 200 trees lr.05
+03	e456217	1789539672	depth4 400 trees lr.03
+04	d4182d5	1789539728	add hour/tod cyclic only
+05	9af63f6	1789539842	seed-averaged ensemble of 6 depth4 models
+06	ada4c48	1789539858	add day-of-year cyclic
+07	0c04095	1789539920	add frequency encodings
+08	05a8ecf	1789539963	add holiday-distance feature
+09	88d913c	1789540009	mixed-depth ensemble
+10	4775ce5	1789540031	network features: route carriers, carrier airport share
+11	cae84df	1789540072	diverse 12-model ensemble
+12	f58f58e	1789540125	stronger regularization
+13	63280b4	1789540152	stronger reg 20/5/3
+14	b1e3b7d	1789540231	700 trees lr.02 with reg
+15	0c8184b	1789540284	higher min_child_weight
+16	0cabb38	1789540326	deeper ensemble depth+1
+17	a5fe2ea	1789540376	deeper still depth+1
+18	1554161	1789540434	depth+1 v3
+19	35b30ec	1789540506	depth+1 v4
+20	7bb1549	1789540582	depth+1 v5
+21	6c95584	1789540670	depth+1 v6

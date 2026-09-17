@@ -1,0 +1,182 @@
+"""XGBoost binary classifier for the airline delay task.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+     ALL feature engineering lives in prepare(), which is the only code path predict_proba uses.
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- feature spec (fit on training data only) ---------------------------------
+RAW_FEATS = [c for c in train.columns if c not in ID_COLS + [TARGET]]
+CAT_RAW = ["UniqueCarrier", "Origin", "Dest"]
+
+CAT_LEVELS = {c: pd.Index(sorted(train[c].dropna().astype(str).unique())) for c in CAT_RAW}
+# route = Origin_Dest, encoded by frequency (fit on train) + categorical code
+train_route = train["Origin"].astype(str) + "_" + train["Dest"].astype(str)
+FREQ_MAPS = {
+    "carrier": train["UniqueCarrier"].astype(str).value_counts(),
+    "origin": train["Origin"].astype(str).value_counts(),
+    "dest": train["Dest"].astype(str).value_counts(),
+    "route": train_route.value_counts(),
+}
+ROUTE_LEVELS = pd.Index(sorted(FREQ_MAPS["route"].index))
+
+
+def _hour_bucket(df: pd.DataFrame) -> pd.Series:
+    """3-hour bucket 0..7 from scheduled departure time."""
+    dt = pd.to_numeric(df["DepTime"], errors="coerce")
+    hh = np.floor(dt / 100.0)
+    mm = dt - hh * 100.0
+    bad = ((hh < 0) | (hh > 23) | (mm < 0) | (mm > 59)).to_numpy()
+    hb = (hh // 3).clip(0, 7)
+    hb[bad] = -1
+    return hb.fillna(-1).astype(int).astype(str)
+
+
+def _count_frame(df: pd.DataFrame) -> pd.DataFrame:
+    carrier = df["UniqueCarrier"].astype(str)
+    origin = df["Origin"].astype(str)
+    dest = df["Dest"].astype(str)
+    route = origin + "_" + dest
+    hb = _hour_bucket(df)
+    dow = _cnum(df["DayOfWeek"]).fillna(-1).astype(int).astype(str)
+    return pd.DataFrame({
+        "origin_hb": origin + "_" + hb,
+        "dest_hb": dest + "_" + hb,
+        "carrier_hb": carrier + "_" + hb,
+        "route_hb": route + "_" + hb,
+        "route_dow": route + "_" + dow,
+    })
+
+
+def _codes(s: pd.Series, levels: pd.Index) -> np.ndarray:
+    return pd.Categorical(s.astype(str), categories=levels).codes.astype(np.float32)
+
+
+def _freq(s: pd.Series, counts: pd.Series) -> np.ndarray:
+    return s.astype(str).map(counts).fillna(-1.0).astype(np.float32).to_numpy()
+
+
+def _cnum(s: pd.Series) -> pd.Series:
+    """'c-4' -> 4.0 for any c-<n> style column."""
+    return pd.to_numeric(s.astype(str).str.extract(r"(\d+)", expand=False), errors="coerce")
+
+
+_train_counts = _count_frame(train)
+COUNT_MAPS = {c: _train_counts[c].value_counts() for c in _train_counts.columns}
+COUNT_COLS = list(COUNT_MAPS)
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows.
+    X = pd.DataFrame(index=df.index)
+
+    # time of day -------------------------------------------------------------
+    dt = pd.to_numeric(df["DepTime"], errors="coerce")
+    hh = np.floor(dt / 100.0)
+    mm = dt - hh * 100.0
+    bad = (hh < 0) | (hh > 23) | (mm < 0) | (mm > 59)
+    hh = hh.where(~bad)
+    mm = mm.where(~bad)
+    hour = hh + mm / 60.0
+    X["tod"] = hour.astype(np.float32)
+    X["minute"] = mm.astype(np.float32)
+    X["tod_sin"] = np.sin(2 * np.pi * hour / 24).astype(np.float32)
+    X["tod_cos"] = np.cos(2 * np.pi * hour / 24).astype(np.float32)
+    X["tod_missing"] = bad.astype(np.float32)
+
+    # calendar ----------------------------------------------------------------
+    month = _cnum(df["Month"])
+    dom = _cnum(df["DayofMonth"])
+    dow = _cnum(df["DayOfWeek"])
+    X["month"] = month.astype(np.float32)
+    X["day_of_month"] = dom.astype(np.float32)
+    X["day_of_week"] = dow.astype(np.float32)
+    X["is_weekend"] = (dow >= 6).astype(np.float32)
+    X["dow_sin"] = np.sin(2 * np.pi * dow / 7).astype(np.float32)
+    X["dow_cos"] = np.cos(2 * np.pi * dow / 7).astype(np.float32)
+
+    # distance ----------------------------------------------------------------
+    dist = pd.to_numeric(df["Distance"], errors="coerce")
+    X["distance"] = dist.astype(np.float32)
+    X["log_distance"] = np.log1p(dist).astype(np.float32)
+
+    # categorical identities ---------------------------------------------------
+    carrier = df["UniqueCarrier"].astype(str)
+    origin = df["Origin"].astype(str)
+    dest = df["Dest"].astype(str)
+    route = origin + "_" + dest
+    X["carrier"] = pd.Categorical(carrier, categories=CAT_LEVELS["UniqueCarrier"])
+    X["carrier_freq"] = _freq(carrier, FREQ_MAPS["carrier"])
+    X["origin_freq"] = _freq(origin, FREQ_MAPS["origin"])
+    X["dest_freq"] = _freq(dest, FREQ_MAPS["dest"])
+    X["route_freq"] = _freq(route, FREQ_MAPS["route"])
+    cf = _count_frame(df)
+    for c in COUNT_COLS:
+        X["n_" + c] = _freq(cf[c], COUNT_MAPS[c])
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model: average of identical XGBoost models over different seeds ----------
+X_train = prepare(train)
+y_train = to_y(train)
+
+PARAMS = dict(
+    n_estimators=1500,
+    max_depth=0,
+    learning_rate=0.02,
+    subsample=0.7,
+    colsample_bytree=0.6,
+    min_child_weight=2,
+    grow_policy="lossguide",
+    max_leaves=256,
+    tree_method="hist",
+    enable_categorical=True,
+    max_cat_to_onehot=1,
+    n_jobs=N_JOBS,
+)
+SEEDS = [42, 7, 2024]
+
+t0 = time.time()
+models = []
+for s in SEEDS:
+    m = xgb.XGBClassifier(random_state=s, **PARAMS)
+    m.fit(X_train, y_train)
+    models.append(m)
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    X = prepare(df)
+    p = np.zeros(len(X), dtype=float)
+    for m in models:
+        p += m.predict_proba(X)[:, 1]
+    return p / len(models)
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

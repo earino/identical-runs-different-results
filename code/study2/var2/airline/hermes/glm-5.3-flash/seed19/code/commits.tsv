@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	b628f03	1789510847	baseline
+01	7379b8e	1789511131	OrgHour interaction + time features, numeric calendar, 60 trees
+02	c21435f	1789511544	8-member interaction-grain ensemble (screened stable set)
+03	53fde45	1789511562	8-member interaction-grain ensemble (tag fix)
+04	7fa7b8f	1789512248	subsample-regularized Car members, greedy-stable 8-member pool
+05	2985938	1789512633	noMo members + recency weights + min10 Car/Org; greedy-stable 6-pool
+06	7ad554c	1789513458	union-frame 8-member ensemble (greedy-50s set, 0.7506 offline)
+07	19de846	1789513472	union-frame 8-member ensemble (fix empty-frame base cols)
+08	da9a54a	1789513614	explicit per-member params (fix timeout)

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cf64f93	0.7141	ok	4	baseline
+2	08eeb51	0.7062	ok	5	fe v2 + 300 trees lr0.05
+3	f16e4ad	0.7224	ok	4	v2 minus route categorical
+4	95d0a54	0.7235	ok	11	capacity probe 1000t lr0.03
+5	8f3202e	0.7219	ok	12	OOF target encoding 8 keys
+6	b9a57e3	0.7075	ok	13	route cat + cat_smooth100 cat_l2 50
+7	5bedc8c	0.7226	ok	11	count features: hb congestion + route_dow
+8	6fe4480	0.7084	ok	13	interaction cats carrier_hb origin_hb carrier_dest
+9	fee4491	0.7251	ok	7	ablation: origin/dest -> codes not cats
+10	f52dc97	0.7255	ok	7	ablation: drop origin/dest codes
+11	cc7be68	0.7210	ok	6	depth 4
+12	2adeceb	0.7245	ok	9	depth 8 mcw 30
+13	6b8e1f5	0.7242	ok	5	ablation: drop carrier categorical too
+14	5a19e83	0.7252	ok	18	ensemble of 3 xgb (depth 6/7/5)
+15	9824d5e	0.7245	ok	6	regularization lambda/alpha/gamma
+16	87ec2ed	0.7276	ok	9	grow_policy lossguide max_leaves48
+17	cfb6e37	0.7299	ok	12	lossguide max_leaves 96
+18	1d20ade	0.7297	ok	19	lossguide max_leaves 192
+19	bfa2848	0.7312	ok	12	lossguide 96 mcw5
+20	0e12b16	0.7318	ok	11	lossguide 96 mcw2
+21	90ecb1f	0.7317	ok	12	lossguide 96 mcw1
+22	85d6762	0.7323	ok	14	lossguide 128 mcw2
+23	f8f3a63	0.7328	ok	18	lossguide 192 mcw2
+24	4943588	0.7329	ok	20	lossguide 256 mcw2
+25	a66bab8	0.7348	ok	31	lr0.02 n1500 leaves256
+26	298e3ed	0.7347	ok	51	lr0.015 n2500 leaves256
+27	c888d47	0.7372	ok	27	sub0.8 col0.7 leaves256 lr0.02
+28	17bf89a	0.7378	ok	31	sub0.7 col0.6 leaves256 lr0.02
+29	8643c42	0.7361	ok	29	sub0.6 col0.5 leaves256 lr0.02
+30	6ce7695	0.7357	ok	50	n2500 lr0.02 sub0.7 col0.6 leaves256
+31	9e03433	0.7393	ok	88	3-seed ensemble best config
+32	dd96707	0.7434	ok	102	counts retest + 3-seed ensemble
+33	14a8a53	0.7411	ok	101	exact-hour counts + dow counts
+34	4216a57	0.7428	ok	108	+origin/dest_dow counts
+35	0ef6340	0.7411	ok	95	OOF TE 6 keys, n1200 3 seeds
+36	b679526	0.7433	ok	98	4 seeds x 1100 trees
+37	cf51771	0.7416	ok	109	share/ratio features
+38	e9ca9f2	0.7441	ok	83	leaves384 n900 3 seeds
+39	9ad95e7	0.7444	ok	86	leaves512 n700 3 seeds
+40	218e04a	0.7437	ok	80	diverse-capacity 3-config ensemble

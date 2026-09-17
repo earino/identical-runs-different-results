@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	cc80138	1789630701	baseline
+01	04d1ddd	1789631192	OOF target encoding + cyclical time features + tuned xgb (fixes exp2 leakage)
+02	264359f	1789631280	refit final model on 100% of train at ES-sized n_estimators
+03	a8fb929	1789631573	3-model ensemble (depth 6/8/10) at lr 0.1 ES size
+04	f753b72	1789632058	5-model diverse ensemble (adds d6-regularized and d12-wide members)
+05	7e6f042	1789632831	add te_slot15 + count features (route/origin/dest train support)
+06	58f74b0	1789633836	greedy-selected 5-member ensemble at fixed 500 trees
+07	f18b27b	1789634514	reg_alpha=2 on all ensemble members
+08	bbdd1a0	1789635195	per-member reg_alpha diversity (2/5/3/8/1)
+09	448725d	1789635376	remove unused ES sizing run (simplicity, saves 13s)
+10	20c1d32	1789636270	stronger TE smoothing for route/origin/dest/carrier
+11	5e7f77b	1789636486	flight-day clock features (minutes since 5am cyclic + ops_hour)
+12	6fbfcad	1789637137	TE keys origin/dest x ops_hour (flight-day hour)

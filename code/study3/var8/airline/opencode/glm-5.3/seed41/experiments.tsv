@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	80c116f	0.7141	ok	2	baseline
+2	1974232	0.7163	ok	2	time features
+3	ec49d45	0.7199	ok	3	capacity+early stop
+4	c9ffc8a	0.7226	ok	3	depth 10
+5	0c2664e	0.7278	ok	6	depth 14
+6	ef25b0b	0.7273	ok	7	depth 16
+7	9be780f	0.7284	ok	10	lr 0.05 depth 14
+8	cfc9a93	0.7087	ok	10	route pair
+9	1e62635	0.7405	ok	9	bagging 0.7
+10	276f40f	0.7411	ok	9	bagging 0.5
+11	499fd4c	0.7380	ok	7	bagging 0.4
+12	e64a6b5	0.7403	ok	7	mcw 3
+13	6784434	0.7439	ok	15	lr 0.03
+14	308794f	0.7457	ok	21	lr 0.02
+15	d40cdeb	0.7466	ok	35	lr 0.01
+16	02228b8	0.7420	ok	28	depth 12 lr 0.01
+17	f237171	0.7494	ok	38	depth 16 lr 0.01
+18	669d3df	0.7518	ok	51	depth 20 lr 0.01
+19	a2d4595	0.7522	ok	52	depth 24 lr 0.01
+20	7151677	0.7503	ok	69	bynode 0.5
+21	7951446	0.7517	ok	61	max_bin 512
+22	fc72da6	0.7482	ok	64	minute-of-week cyclic
+23	269772a	0.7470	ok	51	drop sin/cos tod
+24	f6ccc87	0.7566	ok	61	freq encoding
+25	ee4e359	0.7574	ok	65	oh/dh congestion
+26	43ccc00	0.7559	ok	70	route TE
+27	c49761d	0.7579	ok	69	lr 0.007
+28	166efb3	0.0000	timeout	124	2-seed ensemble
+29	d85abdd	0.7571	ok	81	2-seed ensemble v2
+30	7a204ea	0.0000	timeout	122	reg_lambda 3
+31	b20bb10	0.7563	ok	71	reg_lambda 3
+32	29ad2fd	0.7579	ok	69	raw tod
+33	8c7e809	0.7584	ok	74	hour cat
+34	a948182	0.7472	ok	64	lossguide 256
+35	b73a1f3	0.7566	ok	63	mcw 2
+36	44d9d09	0.7584	ok	77	ch/od freq
+37	85ee614	0.7583	ok	86	gradient sampling
+38	b57d11b	0.7582	ok	71	lr 0.006
+39	dd7b79b	0.7590	ok	76	harmonic 2 tod
+40	a2b592b	0.7599	ok	83	harmonic 3 tod

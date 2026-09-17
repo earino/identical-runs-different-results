@@ -1,0 +1,26 @@
+n	commit	unix_time	subject
+00	1a46e0c	1789627055	baseline
+01	18a104d	1789627389	hour features + cyclical + early stopping 500 trees
+02	ab41a59	1789627552	OOF target encoding carrier/origin/dest
+03	0b0077b	1789627794	TE: route + carrier/origin/dest x hour interactions
+04	bfc985a	1789627815	lr 0.05, 3000 trees, es 100
+05	aec76e4	1789627858	more TE interactions + calendar TEs + log dist
+06	5fc6594	1789627926	min_child_weight 1
+07	6131285	1789627939	lr 0.03 4000 trees
+08	4d006d0	1789628220	time buckets t10/t15/t30 + doy + dist buckets
+09	c6e7057	1789628374	t30-granularity TE interactions
+10	d030664	1789628395	t15 TE interactions
+11	6def87a	1789628735	t10 TE interactions
+12	236083a	1789628982	te smoothing 50
+13	76f7f22	1789629026	te smoothing 100
+14	5b58a44	1789629110	te smoothing 200
+15	25399c1	1789629223	te smoothing 400
+16	7f32bd9	1789629409	te smoothing 600
+17	bda1c54	1789629644	2-model logit ensemble: TE model + raw-cat model
+18	bbfc2b1	1789629920	ensemble weights 65/35
+19	933ff96	1789629975	ensemble weights 60/40
+20	7300fee	1789630030	3-model ensemble: TE + raw-cat + TE-only views
+21	db81ec8	1789630551	time-decay sample weights on model B
+22	289f875	1789630584	time-decay weights on all models
+23	60d2717	1789630682	time-decay 0.35-1.0
+24	9b3a840	1789631374	final weight tweak 40/35/25

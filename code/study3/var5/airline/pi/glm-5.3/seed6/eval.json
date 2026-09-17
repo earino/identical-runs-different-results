@@ -1,0 +1,220 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T23:40:38+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T02:29:12+00:00",
+  "wall_seconds": 10114.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12539.4,
+  "endpoint_at_end": "ok",
+  "head": "12acbc6",
+  "n_commits": 30,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7516,
+  "final_eval_auc": 0.7516,
+  "holdout_auc": 0.752502496236,
+  "holdout_ap": 0.7428978698972164,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03773174449999994,
+  "generalization_gap": -0.0009024962359999167,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4527162,
+    "tokens_in_uncached": 2639482,
+    "tokens_in_cached": 1887680,
+    "tokens_out": 77844,
+    "turns": null,
+    "api_calls": 118,
+    "method": "sum-of-118-events",
+    "cost_usd": 4.5286,
+    "cached_share": 0.417
+  },
+  "cpu_seconds_python": 12505.6,
+  "cpu_seconds_counted": 12030.7,
+  "cpu_seconds_uncounted": 1.9,
+  "cpu_seconds_exempt": 473.0,
+  "python_processes": 71,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 149,
+  "fits_counted": 148,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "982160c",
+      "message": "baseline"
+    },
+    {
+      "commit": "8b57048",
+      "message": "FE v1: cyclical date/time, dep minutes, route cat, early stopping"
+    },
+    {
+      "commit": "9565135",
+      "message": "cat dates + route + time features, 600 rounds, learning-curve diag"
+    },
+    {
+      "commit": "308d430",
+      "message": "sweep rounds x route, final model at best config"
+    },
+    {
+      "commit": "55913f5",
+      "message": "smoothed target encodings (k=100), sweep airport/TE/rounds"
+    },
+    {
+      "commit": "229620c",
+      "message": "config sweep: lr x rounds x depth x reg + 5-seed ensembles"
+    },
+    {
+      "commit": "766c5b9",
+      "message": "sweep around bagged low-lr config: sub/col/depth/mcw/lambda + ens3"
+    },
+    {
+      "commit": "2acd0cc",
+      "message": "sweep: d10/d12-ish, lambda, sub.4, ens5 of d8 bagged anchor"
+    },
+    {
+      "commit": "fa985d3",
+      "message": "sweep d12, sub.4col.4, mcw30, ens3 at d10/lr.01/r400"
+    },
+    {
+      "commit": "9527d9a",
+      "message": "sweep d12 + bagged anchor, r600, ens3"
+    },
+    {
+      "commit": "68b17cb",
+      "message": "d12 anchor: r600, lossguide-256, ens3"
+    },
+    {
+      "commit": "b8e3ddb",
+      "message": "diverse member ensemble, pick best subset by eval AUC"
+    },
+    {
+      "commit": "003d2bd",
+      "message": "traffic-volume count features x {lossguide256, d12}"
+    },
+    {
+      "commit": "5c12afe",
+      "message": "extended volume features + lossguide leaves sweep"
+    },
+    {
+      "commit": "bd70d31",
+      "message": "plain vs ext volume features at lg512; r900 variant"
+    },
+    {
+      "commit": "f52abcc",
+      "message": "plain vs ext volume features, r900, sub.5col.5 at lg512"
+    },
+    {
+      "commit": "2c47a83",
+      "message": "3-seed ensemble of plain-vol lg512 r600"
+    },
+    {
+      "commit": "a1f7a20",
+      "message": "config-diverse strong members (lambda3, bin512) + best subset"
+    },
+    {
+      "commit": "fde062b",
+      "message": "member sweep: mcw5, r900, lambda5"
+    },
+    {
+      "commit": "08fb84f",
+      "message": "members: mcw3, mcw1, r900@mcw5"
+    },
+    {
+      "commit": "9d7ad9d",
+      "message": "members: mcw0, mcw1 seed, lg1024@mcw1"
+    },
+    {
+      "commit": "183a9e3",
+      "message": "members: lg1536/lg768 at mcw1"
+    },
+    {
+      "commit": "df727be",
+      "message": "member: lg2048 at mcw1"
+    },
+    {
+      "commit": "5f6b5eb",
+      "message": "member: lg2560 at mcw1"
+    },
+    {
+      "commit": "1b3506f",
+      "message": "member: subsample 0.5 at lg2048 mcw1"
+    },
+    {
+      "commit": "d725a11",
+      "message": "member: lg2560 at sub.5 col.4 mcw1"
+    },
+    {
+      "commit": "d19b154",
+      "message": "member: mcw 0.5 at sub.5 lg2560"
+    },
+    {
+      "commit": "6bb49be",
+      "message": "add 12h-cyclic and fractional-hour time features"
+    },
+    {
+      "commit": "dfd18bf",
+      "message": "add 6h and 4h cyclic time features"
+    },
+    {
+      "commit": "41b73ca",
+      "message": "add 8h cyclic features; reuse member preds for eval print"
+    },
+    {
+      "commit": "12acbc6",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 12032.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 33.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "41b73ca",
+  "best_commit_eval_auc": 0.7516,
+  "best_commit_holdout_auc": 0.752502496236,
+  "best_commit_holdout_ap": 0.7428978698972164,
+  "best_commit_error": null,
+  "finalized_best": true
+}

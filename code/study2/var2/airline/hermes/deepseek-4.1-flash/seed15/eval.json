@@ -1,0 +1,134 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 15,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:50:05+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s15-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:13:09+00:00",
+  "wall_seconds": 4984.7,
+  "exit_code": 137,
+  "timed_out": false,
+  "stalled": true,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12714.5,
+  "endpoint_at_end": "ok",
+  "head": "28d8317",
+  "n_commits": 8,
+  "n_experiments": 11,
+  "n_ok": 10,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7965,
+  "final_eval_auc": 0.7965,
+  "holdout_auc": 0.803630404558,
+  "holdout_ap": 0.7962011989652666,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.08885965282200003,
+  "generalization_gap": -0.00713040455800007,
+  "final_md_written": false,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 12738306,
+    "tokens_in_uncached": 12738306,
+    "tokens_in_cached": 0,
+    "tokens_out": 134797,
+    "turns": null,
+    "api_calls": 122,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 11368.0,
+  "cpu_seconds_counted": 528.9,
+  "cpu_seconds_uncounted": 10839.2,
+  "cpu_seconds_exempt": 0.0,
+  "python_processes": 106,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 515,
+  "fits_counted": 23,
+  "fits_uncounted": 492,
+  "commits": [
+    {
+      "commit": "221e832",
+      "message": "baseline"
+    },
+    {
+      "commit": "c4c0d8e",
+      "message": "capacity: 600 trees, depth 8, lr 0.05, subsample/colsample 0.8"
+    },
+    {
+      "commit": "dc17fe5",
+      "message": "target encodings (OOF) + share-of-flights features; depth6 600 trees"
+    },
+    {
+      "commit": "12a9ec7",
+      "message": "target stats + traffic-share encodings over 33 keys; depth7 800 trees"
+    },
+    {
+      "commit": "2e628f4",
+      "message": "3-seed ensemble of the depth7/800-tree model"
+    },
+    {
+      "commit": "36ecb83",
+      "message": "marginal+conditional traffic shares (route/airport/day x time), 3-seed ensemble"
+    },
+    {
+      "commit": "15f00c9",
+      "message": "3-fold OOF target stats (noisier encodings regularise the year shift)"
+    },
+    {
+      "commit": "38e3cf5",
+      "message": "ensemble over independent OOF fold seeds and model seeds"
+    },
+    {
+      "commit": "28d8317",
+      "message": "6-member ensemble: 3 OOF fold seeds x 2 model seeds"
+    }
+  ],
+  "cpu_seconds_budgeted": 11368.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 1346.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "28d8317",
+  "best_commit_eval_auc": 0.7965,
+  "best_commit_holdout_auc": 0.803630404558,
+  "best_commit_holdout_ap": 0.7962011989652666,
+  "best_commit_error": null,
+  "finalized_best": true
+}

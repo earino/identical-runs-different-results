@@ -1,0 +1,152 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 23,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T04:45:47+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s23-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:47:31+00:00",
+  "wall_seconds": 3704.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12357.7,
+  "endpoint_at_end": "ok",
+  "head": "0bc43d5",
+  "n_commits": 13,
+  "n_experiments": 40,
+  "n_ok": 31,
+  "n_crash": 4,
+  "n_timeout": 5,
+  "best_eval_auc": 0.7278,
+  "final_eval_auc": 0.7278,
+  "holdout_auc": 0.7298402703320002,
+  "holdout_ap": 0.7161237706371322,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.015069518596000142,
+  "generalization_gap": -0.0020402703320001603,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5933203,
+    "tokens_in_uncached": 33619,
+    "tokens_in_cached": 5899584,
+    "tokens_out": 56409,
+    "turns": null,
+    "api_calls": 144,
+    "method": "sum-of-144-events",
+    "cost_usd": 0.2102,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 12340.2,
+  "cpu_seconds_counted": 11286.5,
+  "cpu_seconds_uncounted": 511.7,
+  "cpu_seconds_exempt": 542.0,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 317,
+  "fits_counted": 293,
+  "fits_uncounted": 14,
+  "commits": [
+    {
+      "commit": "6708b16",
+      "message": "baseline"
+    },
+    {
+      "commit": "77c6b5a",
+      "message": "exp2: int parsing, hour/minute, native cats, 800 trees lr.05 d8 early stop"
+    },
+    {
+      "commit": "8b3f579",
+      "message": "exp11: 5-seed bagged ensemble of best config"
+    },
+    {
+      "commit": "9774150",
+      "message": "exp12: diversity ensemble d6/d8/d10 x 2 seeds"
+    },
+    {
+      "commit": "35048a7",
+      "message": "exp13: 3 configs x 3 seeds"
+    },
+    {
+      "commit": "0b57a83",
+      "message": "exp14: +lossguide(max_leaves=64) config, 2 seeds each"
+    },
+    {
+      "commit": "546e556",
+      "message": "exp15: +d12/ss0.7 config (10 models)"
+    },
+    {
+      "commit": "9f9b336",
+      "message": "exp23: E15 + dt5 appended"
+    },
+    {
+      "commit": "698fe85",
+      "message": "exp27: d12 -> 600 rounds (runtime headroom)"
+    },
+    {
+      "commit": "ea56a83",
+      "message": "exp29: +smoothed carrier-hour TE numeric"
+    },
+    {
+      "commit": "3401069",
+      "message": "exp31: +te_dow_hour, te_carrier_dow"
+    },
+    {
+      "commit": "520c60f",
+      "message": "exp32: +te_origin_hour (m=500)"
+    },
+    {
+      "commit": "b07646d",
+      "message": "exp37: +cnt_route log-count"
+    },
+    {
+      "commit": "0bc43d5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 11798.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 17.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b07646d",
+  "best_commit_eval_auc": 0.7278,
+  "best_commit_holdout_auc": 0.7298402703320002,
+  "best_commit_holdout_ap": 0.7161237706371322,
+  "best_commit_error": null,
+  "finalized_best": true
+}

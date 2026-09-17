@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	9546865	1789531357	baseline
+01	c285972	1789531488	ensemble of 6 xgb models (depth 4/6/8 x 2 seeds)
+02	fe8c989	1789531504	ensemble 12 models depth 3-8 varied sampling
+03	41068f0	1789531558	ensemble 21 models depth 3-9 x 3 seeds varied
+04	3d5b30c	1789531595	ensemble 32 models depth 3-10 x 4 seeds
+05	a9f5dc1	1789531685	add OOF target encodings for stable hour interactions
+06	7cd7df3	1789531935	TE smoothing 150
+07	b990dd7	1789532259	max_bin 512
+08	200e23b	1789532356	mix lossguide/depthwise ensemble
+09	b023ed6	1789532509	add distance-bin hour TE
+10	e294ed3	1789532861	add 10-min slot target encodings
+11	36b7927	1789532977	add db/dow/month t10 TEs
+12	1b8f464	1789533214	n=250 lr=0.045
+13	ef2e654	1789533314	SMOOTH 50
+14	5fc45d9	1789533412	SMOOTH 20
+15	e9aded9	1789533734	residual-from-t10 TE features
+16	795699f	1789534562	n=220 lr=0.05 for margin

@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	5356f07	0.7141	ok	4	baseline
+2	97f35b3	0.7041	ok	4	feateng: DepTime decomp, Route cat, numeric dates, es stopping
+3	b9486b1	0.7425	ok	5	hourcat+todcat96+hourcarr, d8 lam100 mcw20 subs0.7 col0.7, 350 rounds
+4	51ebb63	0.7470	ok	37	diverse 5-model ensemble (lr/d/colsample/seed varied)
+5	c1389db	0.7498	ok	50	A+C+D jitter ensemble (d8lam100 + d10lam30 + onehot96, 2x DepTime jitter)
+6	7272cb2	0.7504	ok	72	A+C+D+M jitter ensemble w/ origin/dest-hour congestion
+7	f9f60ba	0.7512	ok	53	A2+C2+D2: hour+15min congestion all members, 3-member jitter ensemble
+8	f6fa4b5	0.7536	ok	65	A3+C3+D3 full feature set (route dep time, ch, hub)
+9	7a1d324	0.7538	ok	74	A5+C5+D5 lr0.03 (700/500/700 rounds)
+10	c7a03ea	0.7533	ok	94	A5+C5+D5 lr0.03 full rounds 900/600/900
+11	1e048c5	0.7545	ok	78	G5+C6+D6 colsample 0.6 (800/520/800)
+12	5e9f1e0	0.7561	ok	100	TTA amp5 x5 views on G5+C6+D6
+13	7182174	0.7565	ok	109	TTA amp5 x9 views
+14	2d31563	0.7565	ok	110	memory-safe streaming TTA, verify identical AUC
+15	ef0848d	0.0000	timeout	121	TTA amp5 x13 views (final)

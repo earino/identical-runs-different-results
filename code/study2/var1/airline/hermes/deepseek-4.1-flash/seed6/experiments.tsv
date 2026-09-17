@@ -1,0 +1,36 @@
+n	commit	eval_auc	status	seconds	description
+1	f06f887	0.7141	ok	4	baseline
+2	f186473	0.7127	ok	1	dep clock features + log distance
+3	a8b5a66	0.7054	ok	5	capacity: 500 trees lr=0.05 depth=7
+4	c71145e	0.7133	ok	1	dep clock features v2 + log distance
+5	ef40446	0.7128	ok	2	capacity: 200 trees lr=0.08 d6 mcw5
+6	e4331fd	0.7184	ok	3	clock features + shallow regularized model
+7	9319150	0.7201	ok	3	drop Month+DayofMonth (year-specific noise)
+8	5fa6476	0.7202	ok	2	core feats: clock+cyc, drop dist_log/raw DepTime
+9	f63ab95	0.7209	ok	7	5-seed ensemble, prob-averaged
+10	a9e895a	0.7229	ok	7	full clock block restored (minute+raw DepTime+dlog)
+11	2fac703	0.7318	ok	8	carrier x hour cross (d6)
+12	53c0171	0.7467	ok	20	dist_bin_hour cross + d8
+13	0511332	0.7502	ok	21	tod15 categorical bucket
+14	eb13a86	0.7509	ok	31	depth-diverse 6-model bag
+15	55cddd8	0.7510	ok	28	simplify features (drop raw DepTime, dlog, cyc)
+16	3d390a8	0.7535	ok	47	bag10: depths 4-12 x mcw 5/10
+17	24e8f9e	0.7543	ok	46	top-30 origin x hour cross
+18	6dd44a4	0.7546	ok	52	bag: all mcw=5
+19	a09a380	0.7518	ok	48	top-60 origin x hour cross
+20	dd4d573	0.7542	ok	71	bag12 with slow-learning members
+21	dfa44fe	0.7544	ok	51	colsample_bynode=0.9 added
+22	f5f1948	0.7544	ok	54	reg_lambda=2 for all members
+23	4a7ac64	0.7555	ok	50	sampling_method=gradient_based
+24	730eaab	0.7533	ok	53	gradient_based + subsample=0.8
+25	442c2ae	0.7558	ok	54	gradient_based + subsample=0.95
+26	2a19cf8	0.7560	ok	94	500 trees lr=0.03
+27	e663a61	0.7563	ok	102	mcw=3 for all bag members
+28	615514c	0.7565	ok	99	colsample_bytree=0.8
+29	3f7e1c5	0.7573	ok	100	reg_alpha=0.5
+30	c5c6762	0.7564	ok	95	reg_alpha=1.0
+31	c0aa0a7	0.7572	ok	103	min_split_loss gamma=0.3
+32	93870b3	0.7564	ok	103	tod bucket = 12 min
+33	0ab0e1e	0.7566	ok	100	origin top-40 x hour
+34	1d24be6	0.7564	ok	104	bag without depth-4 members
+35	c9f7055	0.7569	ok	101	subsample=0.9 retest

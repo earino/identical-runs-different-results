@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 29,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:34:47+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s29-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T18:50:37+00:00",
+  "wall_seconds": 949.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2210.2,
+  "endpoint_at_end": "ok",
+  "head": "8403367",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 6,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7255,
+  "final_eval_auc": 0.7255,
+  "holdout_auc": 0.72649554758,
+  "holdout_ap": 0.7175547878528035,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.011724795843999991,
+  "generalization_gap": -0.000995547579999978,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": "on__)\\\"\"},\"partialresult\":{\"content\":[{\"type\":\"text\",\"text\":\"429bb52 baseline\\n\"}],\"details\":{}}} {\"type\":\"tool_execution_update\",\"toolcallid\":\"call_e56eb2d422d",
+  "usage": {
+    "tokens_in": 3349996,
+    "tokens_in_uncached": 25772,
+    "tokens_in_cached": 3324224,
+    "tokens_out": 37067,
+    "turns": null,
+    "api_calls": 109,
+    "method": "sum-of-109-events",
+    "cost_usd": 0.1221,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 2212.6,
+  "cpu_seconds_counted": 2074.5,
+  "cpu_seconds_uncounted": 5.9,
+  "cpu_seconds_exempt": 132.2,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 164,
+  "fits_counted": 156,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "429bb52",
+      "message": "baseline"
+    },
+    {
+      "commit": "9e60850",
+      "message": "exp2: 500 trees depth8 lr0.1 early stopping + refit on full train"
+    },
+    {
+      "commit": "4ae041a",
+      "message": "exp4: depth6 lr0.1 max100 ES+refit"
+    },
+    {
+      "commit": "404ad3e",
+      "message": "exp5: baseline model + time features (hour, cyclic tod, log dist, night)"
+    },
+    {
+      "commit": "8e3b95e",
+      "message": "exp6: + smoothed target encodings carrier/origin/dest"
+    },
+    {
+      "commit": "8815581",
+      "message": "exp8: regularized 300x lr0.05 d6 sub/col 0.8 mcw5 on TE features"
+    },
+    {
+      "commit": "6a85283",
+      "message": "exp9: + interaction TEs (route, carrier x hour, origin x hour)"
+    },
+    {
+      "commit": "02c8ad9",
+      "message": "exp10: stronger reg 500 trees lr0.03 sub/col0.7 mcw10 gamma1"
+    },
+    {
+      "commit": "3431ecf",
+      "message": "exp12: OOF (5-fold) target encoding for training fit"
+    },
+    {
+      "commit": "c4878e1",
+      "message": "exp13: 5-seed ensemble at exp12 config"
+    },
+    {
+      "commit": "022ee50",
+      "message": "exp15: 5-config diversity ensemble (gamma fixed, lr merge)"
+    },
+    {
+      "commit": "9d45b98",
+      "message": "exp17: stronger TE shrinkage k 50/200/200"
+    },
+    {
+      "commit": "68a0444",
+      "message": "exp24: per-member OOF-TE fold variants"
+    },
+    {
+      "commit": "6ae4e1f",
+      "message": "exp25: colsample_bynode=0.7"
+    },
+    {
+      "commit": "5b8cfe2",
+      "message": "exp26: colsample_bynode=0.5"
+    },
+    {
+      "commit": "b9253fe",
+      "message": "exp27: colsample_bynode=0.35"
+    },
+    {
+      "commit": "5e47056",
+      "message": "exp29: 800 trees on member 1"
+    },
+    {
+      "commit": "22bbbe7",
+      "message": "exp33: 7-member ensemble with per-member bynode"
+    },
+    {
+      "commit": "b8c49ff",
+      "message": "exp34: depth8 heavily-reg member replaces depth7"
+    },
+    {
+      "commit": "d7d161e",
+      "message": "exp35: 8th member with bynode=0.15"
+    },
+    {
+      "commit": "8403367",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2080.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -2.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "d7d161e",
+  "best_commit_eval_auc": 0.7255,
+  "best_commit_holdout_auc": 0.72649554758,
+  "best_commit_holdout_ap": 0.7175547878528035,
+  "best_commit_error": null,
+  "finalized_best": true
+}

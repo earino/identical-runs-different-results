@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	c20c3c4	1789494690	baseline
+01	94c31fb	1789494809	fe: time-of-day + log-dist + weekend, baseline cats, 300 trees lr0.05
+02	7d8e99e	1789494842	fe: frequency encodings for origin/dest/route/carrier
+03	d7fa2c5	1789494881	params: 800 trees lr0.03 colsample0.6 mcw10 reg2
+04	6560094	1789494893	params: 2000 trees lr0.015 depth7 mcw20 lambda5
+05	1771ff8	1789494917	params: 3000 trees lr0.01 depth8 mcw40 lambda10 cat64
+06	6d6cbb4	1789494949	params: 4000 trees lr0.008 depth10 mcw80 lambda20 cs0.3
+07	bf7f30e	1789495115	model: 3-model XGBoost ensemble (seed/reg/depth bagging)
+08	c500073	1789495213	ablation: lossguide growth (255 leaves) single model
+09	b3b19b7	1789495772	ens: 2 lossguide models 2000 trees lr0.013
+10	c5ff8c5	1789496055	fe: route/carrier schedule-position (tod z-score)
+11	174fede	1789496139	ens: 2 lossguide models on z-score feature set
+12	5655eeb	1789496235	fe: extend schedule-position z-scores to origin/dest
+13	b6101e2	1789496338	fe: route/origin/dest departure-hour density
+14	ae55781	1789496563	fe: carrier dominance shares (route/origin/dest)
+15	dcdac0a	1789496771	fe: rotation position (first/last flight of day)
+16	6b05df0	1789497211	ens: 3 diverse lossguide models (1500/1500/2200 trees lr0.017)
+17	95bfa85	1789497658	ablation: cheaper 2-model ensemble (1500 trees lr0.017) for timeout margin
+18	45b1ae5	1789497735	ens: 3 diverse lossguide models (1300 trees lr0.019)

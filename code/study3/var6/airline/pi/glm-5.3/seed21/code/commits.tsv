@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	bf97200	1789616365	baseline
+01	4f8739f	1789617356	feat: time-of-day features, route categorical, numeric calendar, stronger model with early stopping
+02	e839be2	1789619160	feat: time-of-day + calendar/carrier/airport TEs + counts, regularized depth-5 with AUC early stopping
+03	a27e05e	1789619835	feat: origin/dest x hour flight-volume (congestion) features
+04	614fb45	1789619981	feat: 8-model xgboost ensemble, prob averaging
+05	83a0562	1789620269	feat: month sin/cos + log count transforms
+06	77e0a54	1789620524	feat: route/origin-hour/dest-hour share ratios
+07	21cf575	1789623474	feat: strong-member 10-model ensemble (reg_alpha/gamma variants)
+08	2c25181	1789624386	feat: 9-member lossguide ensemble (max_leaves 64-192)
+09	20bd090	1789624927	feat: refreshed 9-member LG ensemble, patience 40
+10	aa50387	1789625757	feat: standalone minute-of-hour feature
+11	4a35eb9	1789626092	feat: big-leaf LG ensemble (ml 128-256, lr .05-.07, mcw 20-60)
+12	1ccd04d	1789627198	feat: drop raw categoricals, 6-member no-cat LG ensemble
+13	ee7a9e1	1789627700	feat: add with-cats diversity member to no-cat ensemble
+14	bbc60d4	1789628375	feat: add depthwise with-cats diversity member

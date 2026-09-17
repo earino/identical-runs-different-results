@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	8810328	1789535667	baseline
+01	5af7e4a	1789535690	time-of-day features + 400 trees lr0.05
+02	49e6215	1789535790	estimated arrival time features
+03	90db284	1789535837	monotone dep_hour/arr_hour increasing
+04	8897086	1789535896	depth5 900 trees lr0.03
+05	e718835	1789535993	ensemble of depth 4/5/6 models
+06	80ad200	1789536010	5-model depth 3/4/5/6/8 ensemble
+07	4311f09	1789536035	7-model depth 3-10 ensemble
+08	50024df	1789536089	9-model ensemble incl depth12 and subsampled model
+09	920a236	1789536250	2nd Fourier harmonics of dep/arr time
+10	11ddee4	1789536325	3rd Fourier harmonics
+11	c93155f	1789536415	4th Fourier harmonics
+12	ce9e672	1789536507	5th and 6th Fourier harmonics
+13	fb55a01	1789536750	leaner 6-model ensemble + harmonics 7-8
+14	64fdbe7	1789536819	harmonics up to Nyquist k=12
+15	40f4904	1789537236	hour-of-day native categorical features
+16	0fe3769	1789537319	carrier x dep-hour categorical

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6497aaa	0.7141	ok	4	baseline
+2	3bcbdb9	0.7094	ok	3	ES on eval, depth 8, up to 3000 rounds
+3	6f4831e	0.7097	ok	3	ES tracking AUC, depth 8
+4	ea5b7f9	0.7063	ok	4	FE v1: time features + route, depth 6, ES(AUC)
+5	0934b3e	0.7154	ok	5	FE v2: time features only, depth 6, ES(AUC)
+6	aa4848e	0.0000	crash	1	TE v1: OOF TE route/origin/dest, m=20
+7	f4881ec	0.7145	ok	3	TE v1: OOF TE route/origin/dest, m=20
+8	ee60839	0.7150	ok	4	TE v2: route_te only m=10
+9	67d0ed2	0.7187	ok	10	lr=0.05
+10	f315f83	0.7195	ok	22	lr=0.02
+11	d7e229d	0.7184	ok	11	regularization vs drift
+12	e48a6ed	0.7185	ok	11	sampling 0.8 at lr 0.02
+13	ec34ec6	0.7196	ok	19	depth 4
+14	3ae711b	0.7203	ok	22	FE v3: interaction TEs + counts
+15	044bd5a	0.7203	ok	22	FE v3b: + DOW interaction TEs
+16	1f3e1b6	0.7201	ok	25	TE m=50
+17	07c0b27	0.7217	ok	45	ensemble of 3 XGBs
+18	af6692e	0.7225	ok	82	5-model ensemble
+19	ac4fce4	0.7224	ok	93	5-ensemble: swap d4/lr.05+sampling -> d6/lr.02
+20	be22376	0.7232	ok	79	FE v4: hb_dow TE + doy
+21	3397248	0.7217	ok	71	FE v5: seasonal TEs
+22	3f75fdd	0.7231	ok	89	6-model ensemble
+23	ecbace2	0.7231	ok	80	FE v6: congestion counts
+24	d307344	0.7235	ok	85	10-fold OOF TE
+25	fc6467e	0.7238	ok	80	max_bin 512
+26	2235901	0.7237	ok	78	hb 2h bins
+27	e7aa75c	0.7238	ok	94	d4 member lr 0.01
+28	a0519a3	0.7206	ok	65	plain TEs revisited
+29	09ab0c2	0.7235	ok	97	lossguide member swap
+30	85350ac	0.7237	ok	79	rank-mean ensemble
+31	6531bde	0.7238	ok	88	second d4 seed member
+32	1093071	0.7233	ok	82	max_bin 1024
+33	09c26d8	0.7238	ok	84	patience 500 strong members
+34	3551fc4	0.7266	ok	75	hourly origin/dest TEs
+35	249edc9	0.7271	ok	81	carrier_hr + hr_dow TEs
+36	d40ee1a	0.7264	ok	79	hourly TE m=100
+37	83394bb	0.7265	ok	70	simplify: only hourly TEs
+38	56cec2b	0.7271	ok	92	hourly congestion counts
+39	2d49b20	0.7272	ok	80	hourly TE m=30
+40	fa76f59	0.7271	ok	76	mcw=5

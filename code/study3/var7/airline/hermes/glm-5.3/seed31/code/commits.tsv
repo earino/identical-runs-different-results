@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	9c2714b	1789646311	baseline
+01	26dc108	1789646400	exp4: 300 rounds d6 lr0.1 + dep-time decomposition features
+02	a273b05	1789646538	exp9: 120 rounds (near ES optimum) on dep-time features
+03	6a503c0	1789646549	exp10: depth4 400 rounds shallow ensemble
+04	4b1568a	1789646638	exp15: DOW/Carrier x hour-block interactions
+05	10a7452	1789646751	exp18: max_bin=512
+06	0e7776b	1789646769	exp20: colsample_bytree 0.7
+07	7054c25	1789646822	exp25: colsample 0.6
+08	a693a52	1789646829	exp26: colsample_bylevel 0.8
+09	2fe6d73	1789646846	exp28: 7-seed bagged ensemble on best params
+10	4800afa	1789646864	exp29: 12-seed bagged ensemble
+11	6cfcede	1789646894	exp30: diverse colsample per ensemble member
+12	cfdd52b	1789646957	exp32: 18-seed diverse ensemble
+13	a40fc62	1789647010	exp33: depth diversity 3/4/5 in ensemble
+14	16a2d5f	1789647053	exp34: 24-member diverse ensemble

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	79c4811	0.7141	ok	4	baseline
+2	5350065	0.6977	ok	5	400 trees d8 lr.08 ss.9 cs.9
+3	932f71f	0.7125	ok	2	100 trees d6 lr.1
+4	bc2ba67	0.7184	ok	2	FE v1: tod features + int ccols, 30 trees d6
+5	4cb1f9a	0.7164	ok	4	300 trees d6 lr.1 + FE v1
+6	b7078a0	0.7131	ok	2	FE v2: route+hour_dow+carrier_hour cats, 100 trees d6
+7	0d605d7	0.7278	ok	2	ablation: no route cat
+8	92dfa28	0.7284	ok	3	FE v3: freq encodings
+9	00769f0	0.7172	ok	2	ablation: no carrier_hour
+10	d3e765d	0.7285	ok	2	origin_hour + mcw20
+11	3634cab	0.7292	ok	3	mcw20 only
+12	41304d9	0.7300	ok	3	200 trees mcw20
+13	f284833	0.7300	ok	4	400 trees lr.08 mcw20
+14	4e275cd	0.7271	ok	3	date/holiday features
+15	59f107a	0.7275	ok	3	OOF TE carrier/origin/dest/route m=30
+16	175290f	0.7274	ok	3	ss.8 cs.8 mcw20 200 trees
+17	9ff8073	0.7268	ok	4	d8 mcw20 200 trees
+18	16ce4b1	0.7296	ok	3	hour as categorical
+19	4d92ec0	0.7283	ok	4	d5 400 trees mcw20
+20	336bccb	0.7301	ok	3	mcw50
+21	b61a6f9	0.7335	ok	7	ensemble 3 models
+22	2d4c0e6	0.7344	ok	14	ensemble 6 models
+23	00d8597	0.7348	ok	23	ensemble 10 models
+24	e4c479c	0.7325	ok	25	carrier_dow interaction
+25	f6a9e0c	0.7346	ok	24	ablate cyclical tod
+26	6c548d7	0.7276	ok	21	ablate dep_min+log_dist
+27	a831de9	0.7345	ok	22	ablate log_dist only
+28	fc327e7	0.7346	ok	20	bagged members 80%
+29	cf13505	0.7347	ok	29	month_hour + dist_bin
+30	f30f37c	0.7310	ok	23	early stopping members
+31	eec199a	0.7351	ok	35	ensemble 16 models
+32	b819ac9	0.7350	ok	38	TE for carrier/hour/dow/month
+33	ca1cfe3	0.7352	ok	37	max_bin 512
+34	26b9ae2	0.7357	ok	49	ensemble 24 models
+35	7ffe313	0.7348	ok	46	ablate freq encodings
+36	187be81	0.7356	ok	66	ensemble 32 models
+37	87ec216	0.7357	ok	48	drop raw DepTime
+38	5a14982	0.7082	ok	56	dep_time_cat
+39	442278b	0.7355	ok	56	ensemble 28 models
+40	8889210	0.0000	crash	50	logit averaging

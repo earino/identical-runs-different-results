@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	3db17bc	0.7141	ok	3	baseline
+2	eb4c1a8	0.0000	crash	1	feat v1 + 400 trees
+3	1761df4	0.0000	crash	1	feat v1 + 400 trees
+4	50fef69	0.7084	ok	8	feat v1 + 400 trees
+5	ca202a6	0.7092	ok	2	feat v1, baseline model config
+6	d55f17b	0.7349	ok	36	harmonics + seed ensemble
+7	808ccd2	0.7434	ok	44	carrier-hour interaction feature
+8	742cfc8	0.7458	ok	57	8 seeds + bynode 0.2
+9	efaacdc	0.7520	ok	50	lean feature set
+10	aa27bc7	0.7527	ok	48	mixed ensemble diversity
+11	5a3b24b	0.7531	ok	50	dist x hour interaction
+12	3565e99	0.7538	ok	49	add log_dist
+13	3c4fc95	0.7543	ok	72	12-member ensemble
+14	a36368e	0.7545	ok	85	stronger LG members
+15	0e83267	0.7544	ok	110	16-member ensemble
+16	96cfc52	0.7552	ok	93	deeper LG members
+17	7c466e3	0.7557	ok	107	6 d8 + 6 LG
+18	f1eadf1	0.7560	ok	107	4 d8 + 8 LG

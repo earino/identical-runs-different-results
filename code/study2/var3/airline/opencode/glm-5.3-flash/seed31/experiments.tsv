@@ -1,0 +1,29 @@
+n	commit	eval_auc	status	seconds	description
+1	b92c9ba	0.7141	ok	4	baseline
+2	10976b4	0.0000	crash	2	feat v1 + xgb d9 ES
+3	df86455	0.7033	ok	6	feat v1 + xgb d9 ES
+4	d17ddd0	0.7046	ok	5	route+hour cats, d10 lr.05
+5	b7611dc	0.7276	ok	6	d10 cs.5 rl30 minimal cats
+6	2ba8d0e	0.0000	crash	12	5-member seed/jitter ensemble
+7	a4508ec	0.0000	crash	6	5-member seed/jitter ensemble
+8	dbaa87f	0.7283	ok	33	5-member seed/jitter ensemble
+9	f6bb28d	0.7318	ok	71	8-member ensemble 2 recipes
+10	a1bda79	0.7344	ok	80	ensemble + minute features
+11	29100d7	0.7348	ok	97	9-member 3-recipe ensemble
+12	ecdaf71	0.0000	timeout	120	congestion features ensemble
+13	ee33aab	0.7431	ok	88	6-member congestion ensemble
+14	3d8d62f	0.7437	ok	99	3-recipe depth ensemble
+15	c8b88b6	0.7486	ok	115	slot30 congestion ensemble
+16	48f7ed9	0.7500	ok	118	mcw5 + ES100 ensemble
+17	a4d99fc	0.7500	ok	69	4-member lean ensemble
+18	330ed4e	0.7471	ok	31	8-member row-bagged ensemble
+19	f0c7806	0.0000	crash	53	6-member cs.45 diversity
+20	89ff3f8	0.0000	crash	0	6-member cs.45 diversity fixed
+21	9cbefa3	0.7504	ok	104	6-member cs.45 diversity fixed v2
+22	0afc098	0.0000	crash	2	rl20 alpha1 mcw3 ensemble
+23	12ae43e	0.0000	timeout	121	rl20 alpha1 mcw3 ensemble fixed
+24	eb6025f	0.7532	ok	91	4 members rl20a1
+25	b3ead5c	0.7534	ok	119	5 members with d15
+26	0770aef	0.7530	ok	114	6 members lr04
+27	cf3f52a	0.7534	ok	112	5 members d15 ES80
+28	c3a6d51	0.0000	timeout	125	s15 counts + slot float

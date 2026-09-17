@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	7010e40	1789586279	baseline
+01	f8d875f	1789586402	capacity+early stopping: 3000 trees lr .05 depth 6, es on eval
+02	87f511d	1789586424	FE: hour/minute/minute_of_day from DepTime + route categorical
+03	aba394d	1789586439	FE: hour/minute/minute_of_day only (drop route cat)
+04	74c176b	1789586465	regularize: depth 4, mcw 10, subsample .7, colsample .7, lambda 5
+05	e229227	1789586594	ensemble: average of 6 seed-varied early-stopped XGB models
+06	f0bdd70	1789586642	ensemble depth6 mcw20 sub.8 col.8 lr.03
+07	98bec8e	1789586811	diversified ensemble: 12 members, 3 configs x 2 feature sets x 2 seeds + hour24
+08	dbacbf8	1789587035	features: sin/cos time-of-day + log distance
+09	324872b	1789587412	hub-ness count features (origin/dest/route, log1p)
+10	3046bd8	1789587542	count features + trimmed 12-member ensemble (timeout fix)
+11	3d01837	1789587885	max_bin=512 for finer hist splits
+12	4e9708a	1789588141	calendar features: doy cycle + holiday distance
+13	33853a2	1789588309	scale to 16 members (extra seed reps)
+14	1d3490a	1789589071	hour_cat ensemble: 8 members from 2 strong families
+15	bc5395f	1789589296	hour_cat ensemble done right: 8 members, 2 families, clean file
+16	ae09244	1789589918	time_slot cat, 4 members to fit runtime
+17	e345a28	1789589990	time_slot 6 members, depth6-biased

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d79a0ac	0.7141	ok	3	baseline: 30 trees, depth 6, native categorical
+2	655d8d8	0.0000	crash	3	exp2: bigger model + early stopping
+3	29fce86	0.7143	ok	4	exp2: bigger model + early stopping (fixed kwarg)
+4	7736bc6	0.0000	crash	21	exp4: AUC metric + FE v1
+5	24bf547	0.7057	ok	22	exp4: AUC metric + FE v1 (fixed unseen route cats)
+6	3481e0d	0.7030	ok	3	exp6: FE v1 + baseline capacity
+7	c0a632a	0.7319	ok	59	exp7: onehot+carhour 5fold bag d8
+8	10d5dea	0.7310	ok	69	exp8: +dow-hour interaction
+9	4a22976	0.7334	ok	84	exp9: 600 trees per bag
+10	991e6db	0.7335	ok	88	exp10: depth 9
+11	0a4c918	0.7333	ok	86	exp11: drop raw DepTime
+12	6ddf18c	0.7344	ok	88	exp12: seed-diverse bag
+13	cdc383c	0.7343	ok	104	exp13: +TE stack
+14	f795764	0.7343	ok	92	exp14: sub/col 0.7
+15	f5f3165	0.7325	ok	99	exp15: 10-model bag 300t
+16	4241565	0.7339	ok	93	exp16: day-of-month onehot
+17	6f749d5	0.7335	ok	95	exp17: gamma=2
+18	82fa2ee	0.7338	ok	90	exp18: seed-noise calibration
+19	c8c8949	0.0000	timeout	121	exp19: lossguide
+20	9a95bad	0.7342	ok	99	exp20: lr.08 700t
+21	61cfd74	0.7340	ok	79	exp21: max_bin 512
+22	c376ebc	0.7315	ok	102	exp22: origin-dow interaction
+23	372363e	0.7335	ok	87	exp23: full-data seed bag
+24	c5f6522	0.7348	ok	86	exp24: simplify numerics
+25	4f7e6c2	0.7342	ok	86	exp25: drop hour sin-cos
+26	00412d2	0.7338	ok	88	exp26: drop raw DepTime
+27	fc3ef84	0.7359	ok	89	exp27: drop day
+28	e4d5262	0.7338	ok	87	exp28: drop raw Distance
+29	73c9f71	0.7353	ok	85	exp29: drop raw Distance (redo)
+30	0668f23	0.7344	ok	80	exp30: d8 pruned
+31	d40298a	0.7361	ok	116	exp31: 7fold 550t
+32	2ed9031	0.7361	ok	118	exp32: chunked predict
+33	d7d2cfe	0.7358	ok	109	exp33: 500t margin
+34	32b58d9	0.7352	ok	91	exp34: 6fold 500t
+35	6a1da0d	0.7339	ok	60	exp35: 5x400t float32
+36	7f0b0cf	0.7351	ok	87	exp36: 5x600t maxbin128
+37	4725dbd	0.7343	ok	72	exp37: 5x500t maxbin128
+38	664776c	0.7342	ok	73	exp38: colsample 0.9
+39	7c435ee	0.7341	ok	73	exp39: seed-44 robustness
+40	5e061d5	0.7341	ok	70	exp40: subsample 0.85

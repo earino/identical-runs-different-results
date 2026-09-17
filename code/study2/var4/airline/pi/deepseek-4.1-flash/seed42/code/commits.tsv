@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	a84db70	1789498209	baseline
+01	a5b385f	1789498248	add dep_hour/dep_min only
+02	6a5d62e	1789498268	more trees lower lr
+03	c6687a4	1789498322	800 trees lr0.03
+04	4376001	1789498373	normalized hour no dep_mins
+05	d82a70d	1789498550	dep_hour categorical
+06	6b3d53c	1789498568	carrier x hour categorical
+07	abace50	1789498606	depth7 with carrier_hour
+08	87d10c7	1789498617	1800 trees lr0.02 depth7
+09	1e68f54	1789498668	depth8 n1200 lr0.03
+10	3d17ff3	1789499320	half-hour categorical
+11	ad8ad97	1789499343	8-member ensemble + time30
+12	8b82e6c	1789499448	15-min categorical

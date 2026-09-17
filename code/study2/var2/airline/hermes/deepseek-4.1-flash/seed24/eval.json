@@ -1,0 +1,172 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 24,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:56:09+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s24-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T07:13:53+00:00",
+  "wall_seconds": 1063.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2947.1,
+  "endpoint_at_end": "ok",
+  "head": "4f8b039",
+  "n_commits": 18,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7225,
+  "final_eval_auc": 0.7225,
+  "holdout_auc": 0.724141906882,
+  "holdout_ap": 0.7154777244306241,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.009371155145999954,
+  "generalization_gap": -0.0016419068819999438,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4244997,
+    "tokens_in_uncached": 4244997,
+    "tokens_in_cached": 0,
+    "tokens_out": 48264,
+    "turns": null,
+    "api_calls": 83,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 2845.7,
+  "cpu_seconds_counted": 2617.6,
+  "cpu_seconds_uncounted": 2.5,
+  "cpu_seconds_exempt": 225.6,
+  "python_processes": 71,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 850,
+  "fits_counted": 790,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "0c71246",
+      "message": "baseline"
+    },
+    {
+      "commit": "bc69ed8",
+      "message": "ablation: max_depth 4 (capacity curve down)"
+    },
+    {
+      "commit": "f6d1bab",
+      "message": "depth4 with 150 trees"
+    },
+    {
+      "commit": "63d0b1f",
+      "message": "add coarse time-of-day features (Hour/TOD/IsWeekend) on top of depth4 150t best"
+    },
+    {
+      "commit": "d1570c9",
+      "message": "add subsample .8 colsample .8"
+    },
+    {
+      "commit": "997c2e1",
+      "message": "seed-averaged ensemble of 5 shallow boosters"
+    },
+    {
+      "commit": "e68ca87",
+      "message": "traffic-volume features (origin/dest/route/origin-hour/carrier counts)"
+    },
+    {
+      "commit": "062209f",
+      "message": "ensemble over depths 3-6 x2 seeds (8 models)"
+    },
+    {
+      "commit": "aa9fd8a",
+      "message": "20-member ensemble varying depth/subsample/colsample/seed"
+    },
+    {
+      "commit": "9eb9811",
+      "message": "cyclic sin/cos encodings for hour and month"
+    },
+    {
+      "commit": "1ed3f2c",
+      "message": "drop DayofMonth (noise-level feature)"
+    },
+    {
+      "commit": "575fa56",
+      "message": "traffic-structure share features (fixed dh_key)"
+    },
+    {
+      "commit": "9cde944",
+      "message": "more load features: hour-vol, dest-hour share, carrier-at-origin share"
+    },
+    {
+      "commit": "9772f9e",
+      "message": "40-member ensemble"
+    },
+    {
+      "commit": "13cf67f",
+      "message": "60-member ensemble"
+    },
+    {
+      "commit": "96c8c0b",
+      "message": "peak-shape ratios (origin-hour peak, system hour share)"
+    },
+    {
+      "commit": "5f5b119",
+      "message": "reg_lambda 3.0"
+    },
+    {
+      "commit": "c4d8df8",
+      "message": "reg_lambda 10.0"
+    },
+    {
+      "commit": "4f8b039",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2620.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 101.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c4d8df8",
+  "best_commit_eval_auc": 0.7225,
+  "best_commit_holdout_auc": 0.724141906882,
+  "best_commit_holdout_ap": 0.7154777244306241,
+  "best_commit_error": null,
+  "finalized_best": true
+}

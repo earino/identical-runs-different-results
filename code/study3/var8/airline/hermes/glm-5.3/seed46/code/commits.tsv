@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	11948ba	1789648833	baseline
+01	57241b5	1789648888	keep all categoricals, early stopping, tuned depth
+02	0ff83e0	1789648897	DepTime sin/cos features + depth 8
+03	7a13480	1789648969	early stopping on AUC instead of logloss
+04	1382c2c	1789648982	lower learning rate 0.03, more rounds
+05	096e01c	1789649002	lr 0.02
+06	9cae388	1789649024	lr 0.012
+07	bb818b5	1789649229	depth 10
+08	81338b5	1789649270	depth 12
+09	3b898a1	1789649312	depth 14
+10	b4fd60b	1789649340	depth 16
+11	8286d02	1789649372	depth 20
+12	18d9f2c	1789649412	depth 24
+13	bba4bf9	1789649454	depth 30
+14	c81035b	1789649803	min_child_weight 2
+15	b7768f5	1789649868	min_child_weight 1
+16	277c6c9	1789649952	gamma 0.1
+17	3d7e717	1789650386	3-seed ensemble, fixed 300 rounds
+18	6b3ca4e	1789650519	diversify ensemble colsample 0.7/0.8/0.9
+19	0895895	1789650649	depth diversity 24/30/36 in ensemble
+20	0b6c237	1789651820	max_bin 512, 2-member ensemble

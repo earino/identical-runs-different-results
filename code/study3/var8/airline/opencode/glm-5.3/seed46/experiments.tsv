@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a5090b7	0.7141	ok	4	baseline
+2	89ee076	0.7129	ok	2	capacity: depth8 + ES on eval
+3	109d8b6	0.7141	ok	2	lr 0.05 + ES frame
+4	b877a9f	0.7152	ok	3	FE: time-of-day features
+5	19fd2c6	0.0000	crash	1	FE: OOF target encoding
+6	092b3c2	0.7153	ok	5	FE: OOF target encoding (fixed)
+7	14374f7	0.7175	ok	5	FE: seasonality + freq + dist
+8	9bc24ba	0.7143	ok	6	FE: interaction TEs
+9	4062690	0.7185	ok	24	8-model seed/depth ensemble
+10	811358e	0.7173	ok	27	FE: marginal rate TEs
+11	a8730a4	0.7192	ok	26	subsample/colsample 0.7 ensemble
+12	afa1d76	0.7192	ok	26	subsample/colsample 0.7 ensemble (re-run)
+13	db7e49b	0.7200	ok	25	ablation: no TEs
+14	d5110b6	0.7205	ok	48	16-member diverse ensemble
+15	663f9f5	0.0000	crash	1	monotone ramp feature
+16	eb2a85d	0.7190	ok	49	monotone ramp feature (fixed)
+17	1284f9d	0.7205	ok	64	lower lr 0.03
+18	555ee45	0.7202	ok	47	min_child_weight 10
+19	fd4d3ca	0.7204	ok	52	FE: schedule density
+20	dcefe08	0.7199	ok	47	ensemble: 8 hist + 8 lossguide
+21	e556db2	0.7158	ok	62	hour-rate base_margin offset
+22	9598b5a	0.7205	ok	70	24 members
+23	3c7e5a3	0.7205	ok	49	max_bin 512
+24	0da218b	0.7205	ok	49	reg_lambda 2.0
+25	a5a1512	0.6569	ok	27	FE: p_hour LOO rate feature
+26	ced499f	0.7195	ok	48	depths 4-6 only
+27	fc2b0b7	0.7205	ok	49	logit averaging
+28	6c75adb	0.7205	ok	47	seed variance check (404)
+29	66ca44d	0.7208	ok	50	subsample/colsample 0.5
+30	b4cbdf3	0.7208	ok	75	24 members x 0.5 sampling
+31	5b652c2	0.7207	ok	67	num_parallel_tree mix
+32	7643af4	0.7209	ok	52	colsample_bynode 0.7
+33	c4a50d9	0.7207	ok	53	ablation: no seasonality
+34	53866d5	0.7210	ok	55	FE: within-hour bucket
+35	7661640	0.7211	ok	54	gamma 0.5
+36	16cd226	0.7213	ok	60	two-family ensemble
+37	2b3cd59	0.7212	ok	90	two-family x24
+38	331a2f0	0.7227	ok	63	add deep family (4 members)
+39	6e3c217	0.7233	ok	58	more deep members
+40	5608d8a	0.7240	ok	58	final: 8 deep members

@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	b92c9ba	1789503475	baseline
+01	d17ddd0	1789503668	route+hour categoricals, d10 lr.05 ES
+02	b7611dc	1789504162	minimal cats DOW/carrier/OD + DepTime/Distance, d10 cs.5 rl30 ES
+03	dbaa87f	1789504207	5-member seed/jitter ensemble
+04	f6bb28d	1789504652	8-member ensemble: d12/lr.05 + d11/lr.03/mcw10 x 4 seeds
+05	a1bda79	1789504885	ensemble + minute features (float+cyclic)
+06	29100d7	1789505277	9-member ensemble: 3 recipes incl d12/lr.03, minute feats
+07	ee33aab	1789505730	6-member ensemble with congestion counts, capped trees
+08	3d8d62f	1789505931	3 depth recipes (d11/d12/d13) x 2 seeds with congestion feats
+09	c8b88b6	1789506167	slot30 congestion + d12/d13/d14 recipes
+10	48f7ed9	1789506399	mcw5 recipes, ES100
+11	a4d99fc	1789506808	4-member lean ensemble
+12	f0c7806	1789506955	6-member with cs.45/ss.8 diversity
+13	89ff3f8	1789507015	fix duplicate subsample kwarg; 6-member diversity
+14	9cbefa3	1789507022	fix indentation in member loop
+15	0afc098	1789507291	rl20+alpha1+mcw3 regularization combo
+16	12ae43e	1789507304	remove hardcoded reg_lambda from base
+17	eb6025f	1789507430	4 members rl20 alpha1 recipes
+18	cf3f52a	1789508164	5 members d15 ES80

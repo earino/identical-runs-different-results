@@ -1,0 +1,168 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 24,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T08:40:45+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s24-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T10:21:19+00:00",
+  "wall_seconds": 6033.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16817.6,
+  "endpoint_at_end": "ok",
+  "head": "dabc7ff",
+  "n_commits": 17,
+  "n_experiments": 25,
+  "n_ok": 24,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7638,
+  "final_eval_auc": 0.7638,
+  "holdout_auc": 0.7626446195540001,
+  "holdout_ap": 0.7533561868704608,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04787386781800007,
+  "generalization_gap": 0.0011553804459999428,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5696164,
+    "tokens_in_uncached": 389156,
+    "tokens_in_cached": 5307008,
+    "tokens_out": 137724,
+    "turns": null,
+    "api_calls": 100,
+    "method": "sum-of-100-events",
+    "cost_usd": 2.5306,
+    "cached_share": 0.932
+  },
+  "cpu_seconds_python": 16768.6,
+  "cpu_seconds_counted": 6194.1,
+  "cpu_seconds_uncounted": 9888.2,
+  "cpu_seconds_exempt": 686.3,
+  "python_processes": 73,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 388,
+  "fits_counted": 120,
+  "fits_uncounted": 256,
+  "commits": [
+    {
+      "commit": "eb5b5a3",
+      "message": "baseline"
+    },
+    {
+      "commit": "2b8131c",
+      "message": "TE features (core+interactions), time feats, d8/lr.03/ES on AUC"
+    },
+    {
+      "commit": "f706b90",
+      "message": "add count features (route/origin/carrier + congestion)"
+    },
+    {
+      "commit": "1dd3e51",
+      "message": "5-seed ensemble with per-seed OOF folds"
+    },
+    {
+      "commit": "e00f19a",
+      "message": "add 30-min-bucket interaction TEs (route/carrier/origin/dow)"
+    },
+    {
+      "commit": "f904a8e",
+      "message": "add 30-min congestion count features"
+    },
+    {
+      "commit": "c7b43f7",
+      "message": "schedule-deviation features (tod vs group-mean tod)"
+    },
+    {
+      "commit": "b65b494",
+      "message": "feature-diverse 6-member ensemble (30min/15min/max_bin variants)"
+    },
+    {
+      "commit": "e0d3ba0",
+      "message": "swap mb512 variant for nohm (hour-TE-only) members"
+    },
+    {
+      "commit": "c909427",
+      "message": "fix: give merged fine-OOF only to the fine variant"
+    },
+    {
+      "commit": "bf7be96",
+      "message": "min_child_weight 10->5 across ensemble members"
+    },
+    {
+      "commit": "42c3853",
+      "message": "4-fold OOF target encoding"
+    },
+    {
+      "commit": "43a5210",
+      "message": "depth 9 for base/fine members, nohm stays d8"
+    },
+    {
+      "commit": "af96a55",
+      "message": "all members depth 9"
+    },
+    {
+      "commit": "075f8a2",
+      "message": "all members depth 10"
+    },
+    {
+      "commit": "54fe222",
+      "message": "min_child_weight 3 with d10"
+    },
+    {
+      "commit": "7c7b254",
+      "message": "ES 120 for runtime headroom"
+    },
+    {
+      "commit": "dabc7ff",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16082.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 49.0,
+  "best_commit_dirty_rows_excluded": 1,
+  "best_commit": "54fe222",
+  "best_commit_eval_auc": 0.7638,
+  "best_commit_holdout_auc": 0.7626446195540001,
+  "best_commit_holdout_ap": 0.7533561868704608,
+  "best_commit_error": null,
+  "finalized_best": false
+}

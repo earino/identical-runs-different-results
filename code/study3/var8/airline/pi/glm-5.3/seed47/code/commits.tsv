@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	f953dbd	1789650975	baseline
+01	d2da821	1789651014	hour/minute/time_of_day + route categorical, 300 rounds depth 8
+02	9fcab79	1789651248	shallow d4 400r lr.03 + OOF TE(hourxorigin/hourxdest m200), 5-seed ensemble
+03	3958b58	1789651534	multi-granularity time-bin x airport TE (k25 m50, k12 m100)
+04	0ed292e	1789651706	add carrier k12 TE; d5 600r cs.6
+05	2ff2d07	1789652314	kernel-smoothed time profiles per Origin/Dest/Carrier (OOF), drop Month/DayofMonth, d6 600r
+06	1ec6c28	1789652975	arrival-time-indexed profiles + gblinear blend 0.7/0.3
+07	5b7e1d8	1789654895	deep d16 config: 500r lr.036 max_bin128 3 seeds
+08	3755f9a	1789655351	add route (Origin-Dest) kernel profile s15 m2
+09	9ced80b	1789655779	add Origin x Carrier composite kernel profile s10 m2
+10	d43c68a	1789656033	add Dest x Carrier composite profile s10 m2; GL_W 0.25
+11	9bde5d7	1789656222	d18 450r lr.04

@@ -1,0 +1,216 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 4,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T19:24:37+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s4-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:20:15+00:00",
+  "wall_seconds": 3337.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9642.5,
+  "endpoint_at_end": "ok",
+  "head": "445ea18",
+  "n_commits": 29,
+  "n_experiments": 40,
+  "n_ok": 28,
+  "n_crash": 10,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7458,
+  "final_eval_auc": 0.7458,
+  "holdout_auc": 0.746929053798,
+  "holdout_ap": 0.7381546513087225,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03215830206199999,
+  "generalization_gap": -0.0011290537979999904,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6620365,
+    "tokens_in_uncached": 97421,
+    "tokens_in_cached": 6522944,
+    "tokens_out": 120023,
+    "turns": null,
+    "api_calls": 117,
+    "method": "sum-of-117-events",
+    "cost_usd": 0.2703,
+    "cached_share": 0.985
+  },
+  "cpu_seconds_python": 9599.7,
+  "cpu_seconds_counted": 9087.3,
+  "cpu_seconds_uncounted": 10.0,
+  "cpu_seconds_exempt": 502.4,
+  "python_processes": 73,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 665,
+  "fits_counted": 642,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "fd0a2d6",
+      "message": "baseline"
+    },
+    {
+      "commit": "882084b",
+      "message": "time features, cats, smoothed TE, early stop + refit (depth8 lr.05)"
+    },
+    {
+      "commit": "44b8adb",
+      "message": "diag: regularization levels + no-TE ablation + small model"
+    },
+    {
+      "commit": "e4ade8f",
+      "message": "diag2: feature-group ablations on small models"
+    },
+    {
+      "commit": "99af709",
+      "message": "diag3: micro-ablations around baseline + sin/cos + seed ensemble (fixed)"
+    },
+    {
+      "commit": "889c5ff",
+      "message": "diag4: shallow depths, lambda, ensembles of small models"
+    },
+    {
+      "commit": "479f051",
+      "message": "diag5: diverse member pool + ensemble combos"
+    },
+    {
+      "commit": "f46160f",
+      "message": "diag6: full-train members, seed averaging, d8 diversity"
+    },
+    {
+      "commit": "1bda636",
+      "message": "diag7: deeper members, interaction cats, subset members"
+    },
+    {
+      "commit": "3eca76e",
+      "message": "diag8: wide lossguide, bagged d8, micro members, weights"
+    },
+    {
+      "commit": "9842aba",
+      "message": "diag9: node-bagging, interaction member, block30 (dart dropped)"
+    },
+    {
+      "commit": "dc366e3",
+      "message": "diag10: node-bagged family + hour_month member"
+    },
+    {
+      "commit": "9fe568b",
+      "message": "diag11: colsample_bynode recipe grid"
+    },
+    {
+      "commit": "e55b110",
+      "message": "diag12: cbn=0.3 family"
+    },
+    {
+      "commit": "5e19b6e",
+      "message": "diag13: 4-fold OOF stacking, tree/linear meta"
+    },
+    {
+      "commit": "e548e83",
+      "message": "diag14: d6c3 seeds/bags/gamma/mcw, rank-mean (fixed)"
+    },
+    {
+      "commit": "3c855d4",
+      "message": "diag15: champion feature variants, rounds sweep (fixed2)"
+    },
+    {
+      "commit": "100ef2d",
+      "message": "diag16: hour_cat family rebuild"
+    },
+    {
+      "commit": "c8377ec",
+      "message": "diag17: block-bin sweep around q4 (fixed)"
+    },
+    {
+      "commit": "00a5229",
+      "message": "diag18: multi-scale bins, minute, dow_block15"
+    },
+    {
+      "commit": "a6e3a46",
+      "message": "diag19: b1530 micro-grid + interaction views"
+    },
+    {
+      "commit": "e68c444",
+      "message": "diag20: rounds + interactions + seeds (fixed R init)"
+    },
+    {
+      "commit": "75f5bb2",
+      "message": "diag21: interaction zoo expansion"
+    },
+    {
+      "commit": "13d61ef",
+      "message": "diag22: interactions wave 2 (fixed helpers)"
+    },
+    {
+      "commit": "774b135",
+      "message": "diag23: seed bags on top recipes (fixed grid)"
+    },
+    {
+      "commit": "b53cf9b",
+      "message": "diag24: long-round carrier-time sweep"
+    },
+    {
+      "commit": "0e31c97",
+      "message": "diag24b: slim prepare, affordable long rounds (fixed)"
+    },
+    {
+      "commit": "0daf318",
+      "message": "diag25: fourth wave origin/carrier-time 800t"
+    },
+    {
+      "commit": "1a025db",
+      "message": "final: clean 23-member block-bin ensemble"
+    },
+    {
+      "commit": "445ea18",
+      "message": "final report: 0.7458 eval AUC"
+    }
+  ],
+  "cpu_seconds_budgeted": 9097.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 42.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0daf318",
+  "best_commit_eval_auc": 0.7458,
+  "best_commit_holdout_auc": 0.746929052908,
+  "best_commit_holdout_ap": 0.7381546495487368,
+  "best_commit_error": null,
+  "finalized_best": false
+}

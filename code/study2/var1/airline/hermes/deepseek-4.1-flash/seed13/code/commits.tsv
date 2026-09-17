@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	f677fb1	1789546345	baseline
+01	dd564b4	1789546597	time features + carrier_x_hour interaction + 1200 trees lr.03 depth4
+02	c0255ad	1789546918	depth6 + colsample_bylevel .8, 800 trees
+03	48388da	1789547160	depth8 + colsample_bylevel .7
+04	8935f93	1789547178	ensemble of 3 diverse xgb configs (d8/d6/lossguide)
+05	f550082	1789547371	ensemble of 4 diverse configs (d8, d10, d8+alpha, d4-deep-trees)
+06	7f40ea6	1789547828	ensemble5 at 500t/lr.04 (d8a,d9,d4,m d8a2,d10)
+07	d87e031	1789548373	reg_lambda=3 global
+08	fee5b02	1789548514	ensemble6: extra seed of the d9 member
+09	450e64f	1789548583	add target-encoded-view member (OOF TE of carrier/origin/dest/route/carrier_hour)
+10	8b110d2	1789548644	3 members on the TE feature view
+11	ffd98ad	1789548714	add carrier_origin, origin_hour, carrier_dow target encodings to view 2
+12	85bb3d0	1789548780	add dest_hour, route_dow, carrier_route target encodings
+13	3295980	1789548849	5 members on TE view
+14	490c475	1789548995	TE smoothing k=500
+15	7ebde4c	1789549148	10-fold OOF target encoding
+16	e71078e	1789549326	TE-view members: 800 trees lr.03
+17	a644f90	1789549676	20-fold OOF target encoding
+18	8f11796	1789550112	7 native members
+19	f83a103	1789550208	6 TE members

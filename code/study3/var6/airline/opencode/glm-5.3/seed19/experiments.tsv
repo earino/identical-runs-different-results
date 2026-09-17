@@ -1,0 +1,38 @@
+n	commit	eval_auc	status	seconds	description
+1	268592d	0.7141	ok	4	baseline
+2	6072722	0.7168	ok	3	capacity+early-stop
+3	4d618b3	0.7101	ok	5	FE time+route
+4	03079d7	0.7171	ok	4	FE time numerics only
+5	23b6df5	0.0000	crash	1	target encoding
+6	ee4aa93	0.7168	ok	5	target encoding
+7	180398f	0.7146	ok	6	deep trees
+8	c3d54fc	0.7171	ok	7	patience 300
+9	fa36fca	0.7180	ok	11	early stop on auc
+10	d6f8e47	0.7177	ok	11	TE + ES-AUC
+11	22e1313	0.7168	ok	19	regularized slow learning
+12	2e348e6	0.7184	ok	46	seed ensemble 5
+13	ffe32d4	0.7187	ok	52	congestion features
+14	982e0dd	0.7188	ok	61	cyclic time
+15	e1c936b	0.7193	ok	84	lossguide
+16	2dd7a3f	0.7194	ok	68	diverse ensemble
+17	893afdc	0.0000	crash	1	interaction TE
+18	c5d5ed6	0.0000	crash	2	interaction TE
+19	3938bda	0.0000	crash	2	interaction TE
+20	e136118	0.7195	ok	85	interaction TE
+21	9ba44f8	0.7253	ok	107	subset-diverse ensemble
+22	0fe4036	0.7314	ok	106	drop calendar cats
+23	0a82974	0.7350	ok	113	drop mon+dom numerics
+24	9f4c2c6	0.0000	timeout	122	drop TE (simplify)
+25	a326c3f	0.7346	ok	83	time-safe 3-member
+26	3ed0b05	0.7347	ok	79	patience100 cap1900
+27	12b6fed	0.0000	timeout	120	hour categorical
+28	5cbd673	0.7345	ok	92	hour cat time-safe
+29	f4b2eff	0.7351	ok	91	2full+1short
+30	860695d	0.7408	ok	67	hourcat 50k-es
+31	768fc40	0.7416	ok	92	4 members
+32	d84cff8	0.7421	ok	100	hour vol
+33	7999f52	0.7424	ok	84	3 strong members
+34	22040e6	0.7419	ok	97	lr 0.02 ensemble
+35	2c52b77	0.7433	ok	76	rate-diverse trio
+36	59583bf	0.7437	ok	98	quad with L128
+37	1f31a8c	0.7438	ok	98	quad: 2xL128

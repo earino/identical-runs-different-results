@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	9c2714b	1789646311	baseline
+01	847ad04	1789646603	slow learning d4 n200 lr0.03 mcw5
+02	b8d17f4	1789646927	9-model seed ensemble cs0.7 lr0.05 n300 d4
+03	41ab1d8	1789647532	L1 reg: alpha8, d6, mcw10 in ensemble
+04	15a7de5	1789647731	FE: hour, hour x carrier, carrier x dow cats
+05	7379dc3	1789648491	FE: add HourOrigin interaction
+06	0fbfa8e	1789649806	params: alpha4 d8 n400
+07	80f90da	1789651034	RouteN feature + n600
+08	cfd2f8a	1789651431	try lossguide growth max_leaves=64
+09	dd6b84e	1789651516	lossguide max_leaves=128
+10	58004e3	1789652060	FE: 20-min DepTime bins as categorical
+11	02ab3ea	1789652174	FE: 10-min DepTime bins

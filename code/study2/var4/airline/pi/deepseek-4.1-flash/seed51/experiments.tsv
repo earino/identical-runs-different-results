@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e2f19f3	0.7141	ok	3	baseline
+2	3cf9e15	0.7098	ok	4	stronger XGB: 500 trees lr0.05 depth6 subsample
+3	3378e56	0.7036	ok	2	FE: dep hour/min, route categorical
+4	0cb2882	0.7101	ok	2	capacity: 200 trees lr0.1 depth6
+5	3083e86	0.7127	ok	1	FE: dep hour/min only
+6	7a7a955	0.7122	ok	2	OOF target+count encoding
+7	f9b0a89	0.7138	ok	12	diagnostic: learning curve
+8	5306148	0.7168	ok	5	bagged ensemble 8x100
+9	3f5ffe5	0.7173	ok	7	ensemble + hour/min + counts
+10	08b78c8	0.7080	ok	9	add Route categorical
+11	5605898	0.7189	ok	15	diverse ensemble 20 models
+12	491a2b7	0.7188	ok	17	ensemble + OOF target encoding
+13	5cf3e45	0.7185	ok	10	ensemble 70 trees lr0.07
+14	f30ee7b	0.7195	ok	27	ensemble 220 trees lr0.035
+15	13d5a99	0.7197	ok	52	ensemble 450 trees lr0.02
+16	3d61d4c	0.7195	ok	59	ensemble 40x260 lr0.03
+17	6f0a5a2	0.7219	ok	52	composite count features
+18	42d8557	0.7232	ok	70	more composite counts
+19	e4d0a02	0.7235	ok	64	dow/month interaction counts
+20	6137b12	0.7351	ok	77	OOF TE of interactions
+21	b75e1f3	0.7359	ok	73	expand TE keys
+22	048a75c	0.7354	ok	72	TE smoothing 15
+23	cd6088f	0.7350	ok	76	more interaction TEs
+24	38f7029	0.7359	ok	77	temporal TEs
+25	f001fe6	0.0000	timeout	121	deeper trees 7-9
+26	8883b61	0.7351	ok	54	shallower trees 4-6
+27	95ffcb3	0.7358	ok	76	plain category TEs
+28	3bf07c8	0.7368	ok	76	3-way interaction TEs
+29	59b3ca7	0.7392	ok	84	more 3-way TEs
+30	4bf512f	0.7394	ok	85	2 more interaction TEs
+31	1d02f73	0.7395	ok	107	2 more TEs
+32	7c09174	0.7393	ok	88	30x280 lr0.03
+33	24fdbcf	0.7397	ok	82	stronger regularization
+34	0b79591	0.7398	ok	76	even stronger regularization
+35	a8c7966	0.7411	ok	89	counts for every TE key
+36	73f223f	0.7411	ok	97	distance-bin interaction TEs
+37	e559b8e	0.7410	ok	86	TE smoothing 25
+38	88f4fd0	0.7398	ok	96	3 more interaction TEs
+39	c7bc9b8	0.7429	ok	81	lower colsample
+40	2994345	0.7436	ok	70	even lower colsample

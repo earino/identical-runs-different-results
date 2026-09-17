@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	62c91bc	0.7141	ok	11	baseline
+2	f63557e	0.7137	ok	5	hp: depth8 lr.05 early stop refit
+3	b9601de	0.7152	ok	43	feat: time decomposition + route cat
+4	c6d9295	0.7148	ok	42	feat: OOF target encoding + counts
+5	b57fd1b	0.7107	ok	4	hp: month-based early-stopping val
+6	03c4315	0.7160	ok	73	hp: lr 0.03 more rounds
+7	c786d5f	0.7130	ok	53	hp: fixed 3500 rounds depth8
+8	41abef6	0.7155	ok	53	hp: lr0.03 n3500 no probe
+9	17acd7a	0.7126	ok	72	feat: seasonality/weekend/holiday
+10	b0517ad	0.7134	ok	6	reg: mcw20 subsample.7 colsample.6
+11	9c9b1b2	0.0000	crash	26	hp: fixed n2000 no probe
+12	01a1d14	0.7157	ok	31	hp: fixed n2000 no probe
+13	c3b200c	0.7175	ok	86	ens: 3-seed average n2000
+14	5f78585	0.7169	ok	74	ens: diverse members depth 6/8/10
+15	dd553fd	0.7176	ok	88	feat: volume counts on 3-seed ensemble
+16	683cfb6	0.7170	ok	60	ens: num_parallel_tree=4 single call
+17	946c530	0.7155	ok	88	reg: recency weights on 3-seed ens
+18	36d26e7	0.7167	ok	102	cat: max_cat_threshold128 onehot16
+19	f4589a7	0.7166	ok	86	ens: 4 seeds n1500
+20	767eaa1	0.7194	ok	86	ablate: drop Month+DayofMonth
+21	61eba9b	0.7198	ok	84	ablate: drop month cyclicals
+22	e75587f	0.7207	ok	84	ablate: drop DayOfWeek
+23	0248b5a	0.7158	ok	83	ablate: drop minute+tmin
+24	f987925	0.7188	ok	84	ablate: drop Distance
+25	91bfd1a	0.7207	ok	83	ablate: drop counts
+26	d08c4f8	0.7220	ok	85	feat: add raw DayOfWeek only
+27	22e56ed	0.7195	ok	81	ablate: drop minute only
+28	0fdfa49	0.7212	ok	83	ens: 4 seeds n1500 lean
+29	360b05c	0.7224	ok	98	ens: 3 seeds n2500
+30	aa9d3fd	0.7141	ok	101	ablate: drop sin/cos time cyclicals
+31	980492f	0.7290	ok	107	feat: daily harmonics
+32	964135f	0.7332	ok	89	feat: harmonics k1-6, n2000
+33	b445b97	0.7393	ok	97	feat: harmonics k1-12
+34	2fce227	0.7358	ok	107	feat: weekly harmonics k1-6
+35	c99b0c4	0.7388	ok	83	feat: harmonics k1-24, n1600
+36	86fcd75	0.7399	ok	109	ens: n2200 harmonics
+37	4a82759	0.7390	ok	77	ens: depth10 n1100
+38	c9cd87e	0.7387	ok	120	ens: 4 seeds n1800
+39	d69f1cf	0.7419	ok	88	reg: colsample0.6 n2000
+40	852b812	0.7418	ok	101	reg: colsample0.5 n2400

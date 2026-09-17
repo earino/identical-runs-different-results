@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5e678bb	0.7141	ok	5	baseline
+2	f382560	0.0000	crash	1	FE time+route, 600 trees early stop
+3	26aa38c	0.7060	ok	5	FE time+route, 600 trees early stop
+4	6a5acc2	0.7166	ok	4	capacity+earlystop on eval
+5	6f2e717	0.7094	ok	6	FE route+deptime
+6	85deffb	0.7192	ok	8	FE deptime only
+7	7921b90	0.7198	ok	9	FE freq encodings
+8	7960673	0.7184	ok	10	FE target encoding
+9	c7ef087	0.7215	ok	11	hp depth8 mcw5
+10	ebcfe57	0.7256	ok	21	hp depth10 mcw3
+11	670cfdc	0.7268	ok	21	hp depth12
+12	29510a1	0.7301	ok	29	hp depth14
+13	907e1af	0.7321	ok	37	hp depth16
+14	dd2c344	0.7334	ok	46	hp depth20
+15	f3bca8d	0.7339	ok	47	hp depth24
+16	fb4d8e9	0.7313	ok	60	FE calendar cyclic
+17	71fef7f	0.7311	ok	66	hp lossguide
+18	539f83d	0.7338	ok	57	hp max_bin512
+19	7ab49c4	0.7347	ok	59	hp lr.01 depth24
+20	3e4a57a	0.7294	ok	81	FE TE hour interactions
+21	e1e391d	0.7345	ok	95	hp boosted forest
+22	990cd3f	0.7272	ok	25	hp regularization
+23	900ff7f	0.7348	ok	62	hp depth30
+24	74ac240	0.7355	ok	79	FE interaction freqs
+25	89c63aa	0.0000	crash	1	FE dow freqs + shares
+26	c58cc87	0.7384	ok	80	FE dow freqs + shares
+27	35719bf	0.0000	timeout	123	FE more interaction freqs
+28	fb0366f	0.7332	ok	66	FE more freqs lr.02
+29	bb03f82	0.7251	ok	116	hp colsample.8 subsample.9
+30	7764751	0.7500	ok	74	hp colsample.4
+31	466f14c	0.7531	ok	100	hp colsample.3
+32	64c49c7	0.7530	ok	52	hp colsample.2 lr.02
+33	0faaa17	0.7346	ok	26	hp colsample.1 lr.02
+34	8b0ed4a	0.7495	ok	49	hp subsample.6 cs.3
+35	08e3696	0.7528	ok	53	hp cs.25 lr.02
+36	07aea6b	0.7529	ok	98	ensemble cs.2+.3
+37	5184841	0.7402	ok	55	FE extended freqs cs.3 lr.02
+38	9b4bf2f	0.7534	ok	96	hp depth30 cs.3
+39	99733e2	0.7508	ok	79	hp mcw3 depth30
+40	537ca83	0.0000	crash	2	FE dep_hour categorical

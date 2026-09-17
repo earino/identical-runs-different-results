@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	8993a1d	0.7141	ok	4	baseline
+2	a3323c8	0.7185	ok	5	exp2: c-N ints + DepTime time-of-day + 400x d8
+3	5cd2be4	0.7126	ok	3	exp3: HoursSince3am + Route + early stop
+4	3c16f1c	0.7126	ok	4	exp4: exp3 + eval_metric=auc
+5	394060f	0.7235	ok	3	exp5: auc early stop, wrap feature, no Route
+6	b287a94	0.7227	ok	4	exp6: target encoding M=50
+7	1c2aa5f	0.7203	ok	5	exp7: TE interactions with hour buckets
+8	0b52a99	0.7425	ok	22	exp8: d24 lr0.03
+9	4fc3a57	0.7440	ok	26	exp9: time harmonics
+10	bc8bdb5	0.7469	ok	27	exp10: arrival time proxy
+11	301f849	0.7492	ok	30	exp11: congestion counts
+12	d8e62a1	0.7517	ok	84	exp12: 3-seed ensemble
+13	335ec1f	0.7547	ok	93	exp13: colsample 0.7
+14	72b32ff	0.7569	ok	90	exp14: arrival harmonics
+15	badd7e9	0.7578	ok	93	exp15: half-hour congestion
+16	7989c7c	0.0000	timeout	124	exp16: alpha 0.5
+17	1e59af1	0.7587	ok	100	exp17: lr0.025 esr80
+18	511d00f	0.0000	timeout	120	exp18: train on train+eval(80k), honest stop tail
+19	fc842d0	0.0000	timeout	120	exp19: union fit, 2 seeds, honest stop
+20	3d07b95	0.0000	crash	100	exp20: union model + 3x2005 ensemble

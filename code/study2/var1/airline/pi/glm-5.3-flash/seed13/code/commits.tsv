@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	abffede	1789541844	baseline
+01	0591685	1789541881	capacity: 2000 trees depth6 lr0.1 + early stopping on eval
+02	4bb003c	1789541976	subsample0.9 colsample0.9 lr0.05 es100 depth6
+03	7c4814c	1789542021	add cyclical dep_sin/dep_cos time encoding
+04	856fbdd	1789542031	ensemble of 3 diverse xgb members
+05	65ca6f7	1789543318	deep: d16 lr0.01 col0.3 sub0.9 es100
+06	f0b6eba	1789543364	2-seed d16 ensemble
+07	0f4365e	1789543746	features: +dep_min, +dep_hour cat (2-seed d16 ens)
+08	037ab02	1789544229	features v2: numeric dates, carr_hour, harmonics; 2-seed d16
+09	afd25d3	1789544778	harm3 + 2-member col0.4/col0.35 ensemble
+10	efbdf84	1789544963	3-member bag lr0.015 es50 col0.4
+11	a1063b2	1789545134	4-member bag lr0.015 es50 col0.4
+12	9991378	1789545582	+route_freq feature; 4-member bag
+13	e315e5e	1789545872	+orig/dest freq features; 4-member bag
+14	01607f8	1789545983	3-member bag + odfreq (simpler)
+15	be56747	1789546234	ablation: drop dep_hour
+16	150d46c	1789546313	3-member sub0.95
+17	c4d272d	1789546394	3-member sub1.0
+18	1acc94e	1789546626	3-member col0.35 sub1.0

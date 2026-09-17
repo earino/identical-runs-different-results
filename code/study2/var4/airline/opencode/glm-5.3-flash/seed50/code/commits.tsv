@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	48f442e	1789527645	baseline
+01	3fc0d05	1789527698	deptime hour/minute/cyclic + distance log/bin features
+02	709293d	1789527711	early stopping rounds search + refit, lr0.05 depth8 subs/cols 0.9
+03	abd37c1	1789527931	4-model diverse ensemble averaged
+04	e029ba2	1789527993	6-member ensemble
+05	895fc91	1789528505	add lossguide member to ensemble
+06	b8a035a	1789528582	second lossguide member (leaves=128)
+07	4fc75a2	1789528885	add dart member (300 trees lr0.1 depth6)
+08	f7f7ea3	1789528983	10th member: lossguide leaves=32
+09	ea1dd05	1789529097	rank-average blending
+10	e901833	1789529204	slim finder + 11th member (dart depth7 seed9)
+11	561bf56	1789529484	carrier x hour raw categorical
+12	f24db5b	1789529948	carrier-x-distbin categorical
+13	335f64c	1789530132	hour-x-distbin categorical
+14	590d9ff	1789530563	coarser distance bins (7)

@@ -1,0 +1,26 @@
+n	commit	eval_auc	status	seconds	description
+1	b1a064f	0.7141	ok	3	baseline
+2	92ef917	0.7090	ok	3	route+cyclic+interactions, 600 trees ES
+3	60a454d	0.7180	ok	11	md6 lr.02 col.6 lam10 ES-tail
+4	7eed806	0.7196	ok	4	full-data 700 trees fixed
+5	ab7cacb	0.7245	ok	5	cyc month + cyc dep time
+6	a47676f	0.7417	ok	34	md16 col.4 lam3 + hour_x_carrier
+7	a3eddb1	0.7451	ok	13	fixed n=200
+8	538832b	0.7465	ok	48	4-seed ensemble
+9	46acded	0.7525	ok	106	k=8 harmonics + md20, 4-seed
+10	d4a76f4	0.7528	ok	55	2-seed baseline check
+11	4cea40b	0.7498	ok	60	day cyc harmonics
+12	e7b80bb	0.7528	ok	61	max_bin 512
+13	2fe1685	0.0000	crash	1	dep 15min bins
+14	af44672	0.7539	ok	57	dep 15min bins fixed
+15	c4dc543	0.7538	ok	54	30min bins
+16	5d6bebd	0.7494	ok	61	bin x carrier
+17	374de50	0.7526	ok	34	mcw=5
+18	a815e46	0.7458	ok	14	lossguide 256 leaves
+19	b8f734b	0.7558	ok	60	dist interactions
+20	d3adeae	0.7566	ok	65	log dist, dist/min
+21	4179ed3	0.7563	ok	64	bin x dist
+22	e7a5602	0.7575	ok	73	n=250
+23	6e92edd	0.7574	ok	82	n=300
+24	d8e5f59	0.7580	ok	105	3-seed n250
+25	5c0117a	0.7575	ok	104	drop raw DepTime

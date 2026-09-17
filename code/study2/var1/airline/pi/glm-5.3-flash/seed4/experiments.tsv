@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	fd0a2d6	0.7141	ok	3	baseline: 30 trees depth6 lr0.1, categoricals enabled
+2	882084b	0.7137	ok	34	feat v2: hour/route/carr-hour cats + TE, ES+refit
+3	44b8adb	0.7122	ok	68	diag: 5 variants (depth/mcw, noTE, small)
+4	e4ade8f	0.7131	ok	9	diag2: feature ablations G1-G9
+5	82e7e39	0.0000	crash	1	diag3: 12 micro variants
+6	99af709	0.7146	ok	5	diag3: 12 micro variants
+7	889c5ff	0.7200	ok	12	diag4: shallow d3-d5, lambda, ens
+8	479f051	0.7199	ok	31	diag5: 8 members + ensemble combos
+9	f46160f	0.7216	ok	15	diag6: full-train trio + variants
+10	1bda636	0.7239	ok	54	diag7: diversity expansion
+11	3eca76e	0.7240	ok	57	diag8: 12 members + weight combos
+12	b2681eb	0.0000	timeout	120	diag9: dart + node-bagging + ints
+13	9842aba	0.7251	ok	60	diag9b: node-bagging + ints, no dart
+14	dc366e3	0.7253	ok	103	diag10: node-bagging expansion
+15	9fe568b	0.7261	ok	62	diag11: cbn grid + combos
+16	e55b110	0.7262	ok	73	diag12: cbn .3 family + combos
+17	5e19b6e	0.7260	ok	57	diag13: OOF stack experiments
+18	5c15fde	0.0000	crash	20	diag14: d6c3 family + rank mean
+19	e548e83	0.7264	ok	39	diag14: d6c3 family + rank mean
+20	a88ab70	0.0000	crash	28	diag15: champion refinement
+21	b56adf1	0.0000	crash	46	diag15: champion refinement
+22	3c855d4	0.7267	ok	44	diag15: champion refinement
+23	100ef2d	0.7287	ok	46	diag16: HC family + combos
+24	292e44b	0.0000	crash	54	diag17: block bins + combos
+25	c8377ec	0.7339	ok	55	diag17: block bins + combos
+26	00a5229	0.7346	ok	57	diag18: multiscale bins
+27	a6e3a46	0.7362	ok	70	diag19: recipe micro-grid + interactions
+28	4139cf5	0.0000	crash	65	diag20: rounds + interactions + seeds
+29	0f3d761	0.0000	crash	65	diag20: rounds + interactions + seeds
+30	e68c444	0.7395	ok	65	diag20: rounds + interactions + seeds
+31	75f5bb2	0.7430	ok	96	diag21: interaction zoo
+32	10522f7	0.0000	crash	103	diag22: interactions wave 2
+33	13d61ef	0.7437	ok	103	diag22: interactions wave 2
+34	4e46e1e	0.0000	crash	96	diag23: seed bags
+35	774b135	0.7443	ok	110	diag23: seed bags
+36	b53cf9b	0.0000	timeout	120	diag24: long rounds carb
+37	9a27017	0.0000	crash	1	diag24b: long rounds carb (slim)
+38	0e31c97	0.7455	ok	107	diag24b: long rounds carb (slim)
+39	0daf318	0.7458	ok	108	diag25: wave 4
+40	1a025db	0.7458	ok	116	final: locked 23-member ensemble

@@ -1,0 +1,30 @@
+n	commit	unix_time	subject
+00	b50b96b	1789627916	baseline
+01	36a537c	1789628154	time features + route + early stopping
+02	a2f97f9	1789628310	full train + AUC early stopping on eval
+03	467c5cf	1789628381	baseline hyperparams + time features + es
+04	55578bf	1789628515	month/dow categorical again + hour features
+05	bd607d6	1789628653	drop route, keep hour features
+06	f1d296d	1789628896	smoothed target encoding for carrier/origin/dest/route
+07	a40fdea	1789628983	probe: regularization configs compared
+08	39e85ac	1789629308	probe: depth/lr/mcw/lambda around depth3
+09	54cdf61	1789629453	ensemble of 8 depth-3 models
+10	095eae0	1789629612	probe feature variants in d3lam10 regime
+11	71e79e7	1789629717	probe interaction categoricals
+12	23210a5	1789629941	probe model tuning around carrier_hour
+13	5b1ef88	1789630126	fix mcw dup + probe lr03/lr05 with hc
+14	8d02543	1789630464	probe lr02 and lam100
+15	6ee1f40	1789630595	probe hc48, carrier_month, hc+doy at lr03
+16	bdabfe3	1789630780	bagged ensemble K=5 subsample 0.8
+17	5cc5b5c	1789630852	lr-diversity ensemble (no sampling)
+18	c450d1e	1789631307	3-member ensemble d4lr02+d4lr03+d3lr05
+19	4fab2ef	1789631533	probe many cheap diverse ensemble members
+20	f35b4da	1789632274	ensemble with loss + lossguide diversity
+21	1b36d11	1789632421	slow+fast mixed ensemble, hb3 feature probe
+22	e2a1490	1789632537	feature-diverse ensemble: 6 interaction variants
+23	22a46b5	1789632625	micro-tune fast member config
+24	455c3e7	1789632743	fixed 4-member roster ensemble
+25	b0dc188	1789632875	5-member roster: +seed replica
+26	03403a6	1789633041	d6 fast core in roster
+27	2a1437b	1789633723	slow member upgraded to d6lr02
+28	4141917	1789634346	slow anchor member upgrade

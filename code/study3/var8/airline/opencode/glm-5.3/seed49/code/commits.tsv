@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	7f9220b	1789630999	baseline
+01	3fcbcdf	1789632541	25-member bagged ensemble of pure baseline config (no TE)
+02	1b80022	1789632555	60 members
+03	9df7cdc	1789632640	9-way (subsample, colsample) grid diversity, 60 members
+04	4c6e709	1789632662	add depth 5/7 to member grid (27 types)
+05	6e9023b	1789632774	drop DayofMonth
+06	09159f0	1789632875	recency weights: Oct-Dec 2005 x2
+07	84483c1	1789632924	120 members
+08	02e8d91	1789632959	linear recency ramp Jan->Dec 1.0->2.0
+09	b257681	1789633064	depth 8 in grid
+10	eff0fdc	1789633099	depth grid 4..9
+11	1b5c1ce	1789633134	depth grid 3..10 (72 types)
+12	986de2b	1789633169	200 members

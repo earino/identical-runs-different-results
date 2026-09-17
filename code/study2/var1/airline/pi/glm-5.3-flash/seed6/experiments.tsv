@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	53d4d88	0.7141	ok	3	baseline
+2	8ba1988	0.6960	ok	5	FE v1: time-of-day + cyclical + Route cat, 300 trees
+3	844660e	0.7100	ok	3	baseline feats + early stopping internal split, 2000 trees cap
+4	f5eed92	0.7138	ok	4	n_estimators sweep 15-130, depth 6
+5	e680d5c	0.7180	ok	1	FE time-of-day/cyclical no Route, 40 trees
+6	4dffc42	0.7075	ok	2	add Route cat, 40 trees
+7	4dbf988	0.7191	ok	5	depth x n_est grid on FE v1b
+8	2e64445	0.7203	ok	9	mcw/subsample/colsample grid, depth 4
+9	feeb9f5	0.7211	ok	16	lr x n_est sweep depth 4
+10	363f80b	0.7200	ok	19	cyclic timeXdow/timeXmonth products + freq counts, lr .03 n500
+11	502e716	0.7211	ok	11	ablation: products vs freq vs both
+12	b722936	0.7211	ok	15	smoothed TE m in 50/200/1000
+13	5d8aaf0	0.7213	ok	17	ensemble of 6 xgb models
+14	f013d19	0.0000	crash	5	feature-shape ablation in-run
+15	5e85892	0.7218	ok	11	feature-shape ablation in-run (fixed)
+16	2ea31e4	0.7226	ok	34	reg_lambda/gamma/mcw/colsample grid, hourcat
+17	696358f	0.7226	ok	37	reg_lambda 10-100 x mcw 20-100 x cols 0.5-0.6
+18	b55384b	0.7238	ok	16	n_est x lr recheck at strong reg
+19	f4cdefd	0.7242	ok	35	8-model ensemble strong-reg family
+20	2643929	0.7238	ok	13	hod_dow cat pair + minute_cat variants
+21	1971cf4	0.7242	ok	40	reg recheck lr.05, ensemble with best reg
+22	5f366c6	0.7238	ok	12	holiday flags + doy cyclical variants
+23	2282774	0.7241	ok	34	ensemble 8+5 CV-bag
+24	d63c74a	0.7297	ok	20	lossguide / cat_threshold exploration
+25	44d9fc8	0.7318	ok	78	lossguide leaves/bin sweep
+26	9288f2b	0.7334	ok	99	lossguide 128-256 leaves recheck
+27	70aa489	0.7336	ok	81	reg recheck lossguide leaves192
+28	2a32c85	0.7359	ok	69	5-member lossguide ensemble
+29	51cfe1c	0.7362	ok	104	8-member lossguide ensemble, rank vs prob avg
+30	d03e8c1	0.0000	crash	1	feature revisit under lossguide
+31	b7471e3	0.7343	ok	97	feature revisit under lossguide (fixed)
+32	3690918	0.7336	ok	79	mcw recheck + hour_cat ablation lossguide
+33	01a41ac	0.7365	ok	111	10-member lossguide ensemble n450
+34	13af678	0.7373	ok	93	mixed family ensemble
+35	6b38721	0.7371	ok	99	12-member mixed ensemble
+36	1b48462	0.7356	ok	47	carrier_hour pair under lossguide
+37	9f92b02	0.7394	ok	105	ensemble with carrier_hour features
+38	b875980	0.7406	ok	97	feature-diverse ensemble mix
+39	a0e1da0	0.7403	ok	106	12-member extended diversity
+40	f20f6cd	0.7406	ok	100	weighted group mix final

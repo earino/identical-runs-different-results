@@ -1,0 +1,11 @@
+n	commit	eval_auc	status	seconds	description
+1	49fe7ea	0.7141	ok	3	baseline
+2	1addf63	0.7085	ok	7	scale up: 500 trees depth8 lr0.1
+3	3093fcc	0.6967	ok	4	FE v1: hour/min/cyclic/route + 200@6
+4	34ca000	0.7093	ok	2	FE v1 features at baseline capacity 30@6
+5	dd30007	0.7053	ok	1	hour + smoothed TEs at 30@6
+6	04967be	0.7216	ok	2	mixed enc + hour + tuned regularized model
+7	7aabb3f	0.7285	ok	12	route_hour cat + recency reweight + col.6 ne500
+8	f54b830	0.7294	ok	18	lr.03 ne800 (slow shallow boosting)
+9	a8c0255	0.7318	ok	14	col_bytree.8 + colsample_bynode.5
+10	fc170d1	0.7441	ok	48	rh+oh cats, d10, bynode.3

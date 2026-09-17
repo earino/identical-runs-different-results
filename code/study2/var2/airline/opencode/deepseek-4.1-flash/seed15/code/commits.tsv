@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	ffb5f01	1789493694	baseline
+01	774fcdd	1789493739	baseline cats + dep time feats, 300 trees
+02	7e85c50	1789493771	600 trees lr 0.025
+03	ba75ebb	1789493809	depth 5
+04	c4a9493	1789493832	3-seed ensemble
+05	7167ef8	1789493846	cyclical encodings
+06	0f93c8f	1789493911	heterogeneous 3-model ensemble
+07	5ba3946	1789493936	5-model diverse ensemble
+08	861ac75	1789494010	add reg_lambda/reg_alpha
+09	6a956eb	1789494030	stronger regularization
+10	26e25d5	1789494408	1000 trees under strong reg
+11	92e181f	1789494508	8-model ensemble
+12	90c862f	1789494720	origin/dest hour congestion counts

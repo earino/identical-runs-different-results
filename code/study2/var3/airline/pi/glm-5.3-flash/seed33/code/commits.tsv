@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	619fefe	1789516358	baseline
+01	ef9421f	1789516404	scale up: 3000 trees, lr0.05, depth8, early stopping + refit
+02	8c57bff	1789516424	depth 8->6 with ES
+03	63e30d1	1789516443	FE: route pair, day-of-year, weekend, red-eye
+04	c109a4d	1789516457	ablate: calendar features only, route dropped
+05	72c5114	1789516474	TE: smoothed target encoding for carrier/origin/dest
+06	c17c27d	1789516488	strong reg: depth5 mcw20 gamma1 lambda5
+07	df044bc	1789516499	reg push: depth4 mcw50 gamma2 lambda10
+08	18acc5c	1789516600	FE: carrier x hour crossed categorical
+09	d77634d	1789516805	ensemble: depth4+depth6 2-model average
+10	eac2791	1789516828	ensemble: 3 models depth 4/5/6
+11	1aae49a	1789516953	ES patience 50
+12	0871432	1789516978	ES patience 25
+13	418d0f1	1789517005	ES val fraction 0.2
+14	db8312b	1789517073	mcw 40

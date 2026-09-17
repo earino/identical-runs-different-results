@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2debb11	0.7141	ok	11	baseline
+2	5f3e6e8	0.7228	ok	15	tod cyclical+ordinal dates+logdist, early stopping + refit, depth8 lr0.05
+3	7cc1ccf	0.5985	ok	19	LOO target encoding + freq encoding carrier/origin/dest/route
+4	a26e2ce	0.7172	ok	44	OOF kfold TE + freq encoding carrier/origin/dest/route
+5	bd2c22e	0.6051	ok	22	full-map TE train=predict, m 20/25/25/60
+6	b83638b	0.7179	ok	35	E2 features + AUC-based early stopping (no TE)
+7	1597515	0.7196	ok	59	4-fold averaged ES round (AUC), refit full
+8	e2e70c4	0.7177	ok	41	depth 6, 4-fold averaged ES
+9	553ab0d	0.7251	ok	39	5-seed ensemble (E2 procedure per member)
+10	1384334	0.7136	ok	17	ensemble + route cat + hour
+11	1089e04	0.7266	ok	50	ensemble + hour, no route
+12	f44b030	0.7269	ok	21	ensemble + carrier_hour + dow_hour crosses
+13	d32dfea	0.0000	crash	1	ensemble + OOF te_route m=20
+14	03a20bc	0.7268	ok	21	ensemble + OOF te_route m=20
+15	dae8a3e	0.7276	ok	36	8-member seed ensemble
+16	40ffd8f	0.7268	ok	33	min_child_weight=20 on 8-member ensemble
+17	04fe63b	0.0000	crash	1	ensemble + log-frequency features
+18	03307aa	0.7279	ok	37	ensemble + log-frequency features
+19	d793370	0.7277	ok	56	lr 0.03 on 8-member ensemble
+20	2a45983	0.7290	ok	37	heterogeneous ensemble members
+21	abc0605	0.7291	ok	53	12-member heterogeneous ensemble
+22	b2fae71	0.7282	ok	37	bagged refits (80% rows per member)
+23	b1d6ab3	0.7201	ok	52	ensemble + month_hour cross
+24	217e36a	0.7272	ok	36	ablation: no sin/cos time features
+25	3f05500	0.7288	ok	38	doy + weekend features
+26	ffde0f6	0.0000	crash	1	origin-hour and dest-hour congestion features
+27	35a1de1	0.7288	ok	41	origin-hour and dest-hour congestion features
+28	1fd44c9	0.7290	ok	37	rank-averaged 8-member ensemble
+29	b0b02b2	0.7290	ok	36	subsample 0.7 ensemble
+30	8489973	0.7293	ok	40	depth 6/7/8/9 member mix
+31	2e8a9d9	0.7288	ok	37	gamma=1.0 ensemble
+32	1b05fe2	0.7225	ok	43	carrier_distbin + month_dow crosses
+33	a4d1c2e	0.7291	ok	41	lr-diverse member ensemble
+34	c9f2884	0.7293	ok	39	ES patience 100
+35	09ca888	0.7293	ok	39	val-AUC-weighted member ensemble
+36	8202514	0.7294	ok	76	16-member heterogeneous ensemble
+37	15a0758	0.0000	crash	39	feature-dropout member diversity
+38	4fb5cc4	0.7286	ok	65	feature-dropout member diversity
+39	1e4d228	0.7293	ok	86	mixed ES metric members
+40	804b187	0.7274	ok	67	ablation: no day-of-month

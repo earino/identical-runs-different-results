@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	2ec2d2a	1789591342	baseline
+01	8c76d40	1789592011	exp5: shallow regularized 200@d3 mcw50
+02	a906698	1789592260	exp7: mins-since-midnight + te_O + hour*dist + log_dist
+03	dce5cba	1789592270	exp8: bagged ensemble 8x d4 ss/cs 0.8
+04	64cc6b7	1789592352	exp9: 16-model bag
+05	424a82e	1789592439	exp10: full feature set (sin/cos, te_hour30, counts) + 16-bag
+06	97f9f59	1789592633	exp11: two-view ensemble h30/h10 time-TE
+07	e5ca19a	1789593045	exp12: OOF target encoding (no self-leak) + 16-bag
+08	733c0ca	1789593596	exp13: congestion counts (origin x 30min window, origin x dow)
+09	9a5f204	1789593737	exp14: carrier congestion count
+10	6d25d96	1789594171	exp15: mixed colsample feature-bagging
+11	9fef40b	1789594529	exp17: 10-min time TE + origin x carrier count
+12	260d185	1789594820	exp18: rich periodic hour basis k=2..7
+13	5fbb883	1789595445	exp19: k24 hour harmonics + doy harmonics k1..4
+14	00eeaea	1789596939	exp20: d6 ss.9 + dow harmonics
+15	10ac671	1789597039	exp21: d7 n300 lr.08
+16	b53ede9	1789597311	exp22: d8 n200 lr.1
+17	0f43496	1789597525	exp23: d10 n150
+18	53a2c58	1789597643	exp24: d12 n120
+19	d429454	1789597811	exp25: d14 n100
+20	49802e9	1789598172	exp27: d12 n120 mcw30
+21	19b89dc	1789598794	exp30: 12 models n150 d12
+22	4e0ef50	1789599193	exp32: origin-conditioned time harmonics

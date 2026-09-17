@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3c1d998	0.7141	ok	4	baseline
+2	c9cfa5b	0.0000	crash	1	feat eng: deptime->hour/cyclical, origin/dest/route cat, 2000 trees lr .05 es
+3	60ed5a0	0.0000	crash	2	feat eng: deptime->hour/cyclical, origin/dest/route cat, 2000 trees lr .05 es
+4	751cb14	0.7065	ok	45	feat eng: deptime->hour/cyclical, origin/dest/route cat, 2000 trees lr .05 es
+5	ae893b5	0.7128	ok	4	features + 400 trees d6 lr.1 mcw10, no route
+6	723934a	0.7132	ok	2	ablation: baseline params + new features (origin/dest/hour)
+7	45563da	0.7171	ok	21	diagnostic: k-sweep curves, new features, d6 lr.1
+8	d3a811a	0.7197	ok	28	diagnostic: full-data k sweep d6 lr.1
+9	97e3ca8	0.7159	ok	32	diagnostic: d4/d8 k-sweep, final d8 k400
+10	5351792	0.7199	ok	14	reg sweep d4: mcw/lam/sub/col x2 configs
+11	321d165	0.6988	ok	5	feature: +Route cat
+12	5fb29d8	0.7198	ok	4	feature: +raw DepTime num
+13	f43a6b5	0.7294	ok	4	feature: +CarrierDepHour cat
+14	df557aa	0.7215	ok	6	feature: +OriginDepHour cat
+15	5a81920	0.7226	ok	4	feature: +MonthDepHour cat
+16	6599e1a	0.7299	ok	4	feature: CarrierDepQ (15-min buckets)
+17	878da8c	0.7256	ok	4	feature: +CarrierMonth
+18	39901d7	0.7307	ok	4	feature: +DowDepHour
+19	31d8b20	0.0000	crash	2	feature: +TE origin/dest/carrier (smooth m100)
+20	cdfa5c8	0.7293	ok	5	feature: +TE origin/dest/carrier (smooth m100)
+21	ffa4fc2	0.7286	ok	21	sweep: lr 0.05 vs 0.15 k-grid
+22	9904371	0.7337	ok	13	ensemble: avg of 4 members
+23	c19c3e4	0.7323	ok	14	feature: +CarrierDistBin
+24	dc8b394	0.7345	ok	25	ensemble: 8 members
+25	7314144	0.7150	ok	27	feature: +DomDepHour
+26	63f7121	0.7349	ok	26	features: +MonthDow, +DepHourNum
+27	01355a8	0.7361	ok	39	ensemble: 12 members bagged
+28	f4f821d	0.7287	ok	40	feature: +DowDepQ
+29	8c767d3	0.7355	ok	38	feature: +DepMin numeric
+30	4dc3def	0.7368	ok	52	ensemble: 16 members
+31	4c5d623	0.7367	ok	61	ensemble: 20 members
+32	865adcc	0.7386	ok	52	feature: +DepHourDistBin
+33	ee6e426	0.7360	ok	55	feature: +CarrierDow
+34	f3b1183	0.7381	ok	55	feature: +DowDistBin
+35	4b4136a	0.7386	ok	97	sweep: ensemble scale 0.8-1.5
+36	11b97c8	0.7386	ok	63	ensemble scale 1.4x final
+37	c0cd3dc	0.7393	ok	65	ensemble scale 1.4 (fixed blend)
+38	53338b0	0.7396	ok	82	ensemble: 20 members 1.4x
+39	d599975	0.7396	ok	89	diagnostic: mean vs rank blend
+40	bb6c1d3	0.7399	ok	92	ensemble: 24 members 1.4x

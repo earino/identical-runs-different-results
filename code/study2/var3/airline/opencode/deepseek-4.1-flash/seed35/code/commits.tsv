@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	9665640	1789527200	baseline
+01	ac11cee	1789527282	regularized 300 trees depth5
+02	0c4587f	1789527302	OOF target encoding for carrier/origin/dest
+03	3596f29	1789527354	ensemble of 5 xgboost models (depths/seeds)
+04	424276a	1789527372	TE smooth50 cv10
+05	ffa9836	1789527587	stronger regularization ensemble
+06	c8b0925	1789527619	lossguide max_leaves48 max_bin128
+07	5f56935	1789527662	8-model ensemble
+08	be3218a	1789527714	gamma+alpha regularization
+09	23c6c11	1789527734	stronger gamma/alpha/lambda
+10	2c40197	1789527865	dep features under strong reg
+11	e2215f5	1789527977	min_child_weight10

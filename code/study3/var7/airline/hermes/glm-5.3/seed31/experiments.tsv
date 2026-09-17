@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9c2714b	0.7141	ok	4	baseline
+2	71f37eb	0.7088	ok	5	exp2: depth8 400 rounds, keep Origin/Dest
+3	5c04dd5	0.0000	crash	1	exp3: regularized depth8 lr0.05 subsample/colsample
+4	acf774a	0.7066	ok	5	exp3: regularized depth8 lr0.05 subsample/colsample fixed
+5	26dc108	0.7164	ok	3	exp4: 300 rounds d6 lr0.1 + dep-time features
+6	63c193a	0.7138	ok	3	exp5: TE carrier/origin/dest
+7	cdf5083	0.7146	ok	4	exp6: route/airport aggregate features
+8	f446c8b	0.0000	crash	2	exp7: OOF TE carrier/origin/dest/route/hour
+9	38442b4	0.0000	crash	5	exp7 fixed: OOF TE carrier/origin/dest/route/hour
+10	b6c7af2	0.6977	ok	5	exp7 v2: OOF TE + pinned route/hour categories
+11	1f52ded	0.7155	ok	3	exp8: early stopping on eval, lr0.05
+12	a273b05	0.7167	ok	2	exp9: 120 rounds d6 lr0.1
+13	6a503c0	0.7173	ok	3	exp10: depth4 400 rounds
+14	05cd35d	0.7155	ok	4	exp11: d4 lr0.05 800r subsample colsample
+15	1607046	0.7156	ok	3	exp12: d4 lr0.1 600 rounds
+16	60f3e92	0.7173	ok	3	exp13: d3 800 rounds
+17	18818ef	0.7173	ok	9	exp14: 5-seed bagged ensemble d4 400r
+18	3766e76	0.0000	crash	1	exp15: DOW/Carrier x time-block interactions
+19	4b1568a	0.7175	ok	4	exp15 fixed: DOW/Carrier x time-block interactions
+20	ca9fd9b	0.7123	ok	3	exp16: Month x Hour interaction
+21	76b956a	0.7144	ok	3	exp17: Origin/Dest x block interactions
+22	10a7452	0.7181	ok	3	exp18: max_bin 512
+23	5501694	0.7181	ok	3	exp19: dep-time flags
+24	0e7776b	0.7198	ok	3	exp20: colsample 0.7
+25	8be2070	0.7109	ok	3	exp21: subsample 0.8
+26	a28f602	0.7165	ok	4	exp22: 800 rounds colsample 0.7
+27	e06c3ec	0.7196	ok	3	exp23: 300 rounds colsample 0.7
+28	24dcc90	0.7176	ok	4	exp24: depth5 colsample 0.7
+29	7054c25	0.7200	ok	3	exp25: colsample 0.6
+30	a693a52	0.7204	ok	3	exp26: colsample_bylevel 0.8
+31	bd2bc63	0.7199	ok	3	exp27: min_child_weight 2
+32	2fe6d73	0.7245	ok	14	exp28: 7-seed bagged ensemble
+33	4800afa	0.7248	ok	23	exp29: 12-seed bagged ensemble
+34	6cfcede	0.7252	ok	23	exp30: varied colsample across members
+35	853c506	0.7192	ok	26	exp31: varied subsample across members
+36	cfdd52b	0.7254	ok	34	exp32: 18-seed diverse ensemble
+37	a40fc62	0.7257	ok	35	exp33: depth-diverse ensemble
+38	16a2d5f	0.7258	ok	47	exp34: 24-member ensemble
+39	23144ae	0.7258	ok	56	exp35: 24 members 500 rounds
+40	cffc0be	0.7257	ok	47	exp36: lr diversity in ensemble

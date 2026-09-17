@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	d8765b8	1789526020	baseline
+01	9bf745b	1789526127	tuned model on baseline-style categoricals (isolate: model vs features)
+02	f715da1	1789526145	tuned 200@0.1 d6 full-data no-ES on baseline cats
+03	34c94a0	1789526160	400 trees @0.1 d6 full data (baseline cats)
+04	a470709	1789526172	100 trees @0.1 d6 full data (baseline cats)
+05	23b3cbe	1789526257	target encoding (smoothed 20) Origin/Dest/Route/Carrier/Month
+06	d3b876c	1789526358	3-seed ensemble of best config
+07	e933d9c	1789526365	8-seed ensemble of best config
+08	37fafa7	1789526381	16-seed ensemble
+09	ba896a7	1789526399	heterogeneous 8-member ensemble (jittered ss/cs/depth)
+10	8fbb7bd	1789526491	seed-bag ablation: same seeds as 8-seed homo test
+11	89b6153	1789526549	12-member hetero ensemble
+12	51c6a9b	1789526575	16-member hetero ensemble

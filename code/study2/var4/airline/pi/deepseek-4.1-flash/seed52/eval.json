@@ -1,0 +1,160 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 52,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:05:28+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s52-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:35:22+00:00",
+  "wall_seconds": 1793.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4793.6,
+  "endpoint_at_end": "ok",
+  "head": "0037052",
+  "n_commits": 15,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 3,
+  "n_timeout": 1,
+  "best_eval_auc": 0.735,
+  "final_eval_auc": 0.735,
+  "holdout_auc": 0.74204080766,
+  "holdout_ap": 0.7335580217159179,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027270055924000003,
+  "generalization_gap": -0.007040807660000037,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3121998,
+    "tokens_in_uncached": 3121998,
+    "tokens_in_cached": 0,
+    "tokens_out": 59890,
+    "turns": null,
+    "api_calls": 77,
+    "method": "sum-of-77-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 4772.0,
+  "cpu_seconds_counted": 4423.9,
+  "cpu_seconds_uncounted": 13.2,
+  "cpu_seconds_exempt": 334.8,
+  "python_processes": 73,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 597,
+  "fits_counted": 565,
+  "fits_uncounted": 2,
+  "commits": [
+    {
+      "commit": "c8b53b3",
+      "message": "baseline"
+    },
+    {
+      "commit": "3b54c86",
+      "message": "model: shallow regularized"
+    },
+    {
+      "commit": "d56d39a",
+      "message": "ensemble: 5-seed bag of regularized xgb"
+    },
+    {
+      "commit": "5637988",
+      "message": "ensemble cfg: depth5 mcw20"
+    },
+    {
+      "commit": "1fd7df5",
+      "message": "ensemble: 10 diverse models"
+    },
+    {
+      "commit": "9cebe55",
+      "message": "ensemble: 20 models (5 cfg x 4 seeds)"
+    },
+    {
+      "commit": "d5a1916",
+      "message": "fe: day-of-year features"
+    },
+    {
+      "commit": "ce1ce36",
+      "message": "fe: holiday flags"
+    },
+    {
+      "commit": "8cb643f",
+      "message": "fe: schedule-share features"
+    },
+    {
+      "commit": "57e0d33",
+      "message": "fe: extended schedule-share features"
+    },
+    {
+      "commit": "5d77c98",
+      "message": "fe: reverse shares + route composition"
+    },
+    {
+      "commit": "be0fcba",
+      "message": "ensemble: deeper configs (4-7)"
+    },
+    {
+      "commit": "8860fbf",
+      "message": "ensemble: add depth8"
+    },
+    {
+      "commit": "7bd6f5f",
+      "message": "fe: OOF airport/carrier-hour target encoding"
+    },
+    {
+      "commit": "4166989",
+      "message": "ensemble: 6 seeds"
+    },
+    {
+      "commit": "0037052",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4437.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 21.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "4166989",
+  "best_commit_eval_auc": 0.735,
+  "best_commit_holdout_auc": 0.74204080766,
+  "best_commit_holdout_ap": 0.7335580217159179,
+  "best_commit_error": null,
+  "finalized_best": true
+}

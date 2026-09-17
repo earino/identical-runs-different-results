@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 28,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:51:30+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s28-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T18:46:07+00:00",
+  "wall_seconds": 3277.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10414.9,
+  "endpoint_at_end": "ok",
+  "head": "65304e9",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 33,
+  "n_crash": 2,
+  "n_timeout": 5,
+  "best_eval_auc": 0.744,
+  "final_eval_auc": 0.744,
+  "holdout_auc": 0.7452009062119999,
+  "holdout_ap": 0.7340087120951373,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.030430154475999838,
+  "generalization_gap": -0.0012009062119998637,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5261865,
+    "tokens_in_uncached": 5261865,
+    "tokens_in_cached": 0,
+    "tokens_out": 54427,
+    "turns": null,
+    "api_calls": 98,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 10264.9,
+  "cpu_seconds_counted": 9834.3,
+  "cpu_seconds_uncounted": 3.8,
+  "cpu_seconds_exempt": 426.7,
+  "python_processes": 89,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 65,
+  "fits_counted": 62,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "c20c3c4",
+      "message": "baseline"
+    },
+    {
+      "commit": "94c31fb",
+      "message": "fe: time-of-day + log-dist + weekend, baseline cats, 300 trees lr0.05"
+    },
+    {
+      "commit": "7d8e99e",
+      "message": "fe: frequency encodings for origin/dest/route/carrier"
+    },
+    {
+      "commit": "d7fa2c5",
+      "message": "params: 800 trees lr0.03 colsample0.6 mcw10 reg2"
+    },
+    {
+      "commit": "6560094",
+      "message": "params: 2000 trees lr0.015 depth7 mcw20 lambda5"
+    },
+    {
+      "commit": "1771ff8",
+      "message": "params: 3000 trees lr0.01 depth8 mcw40 lambda10 cat64"
+    },
+    {
+      "commit": "6d6cbb4",
+      "message": "params: 4000 trees lr0.008 depth10 mcw80 lambda20 cs0.3"
+    },
+    {
+      "commit": "bf7f30e",
+      "message": "model: 3-model XGBoost ensemble (seed/reg/depth bagging)"
+    },
+    {
+      "commit": "c500073",
+      "message": "ablation: lossguide growth (255 leaves) single model"
+    },
+    {
+      "commit": "b3b19b7",
+      "message": "ens: 2 lossguide models 2000 trees lr0.013"
+    },
+    {
+      "commit": "c5ff8c5",
+      "message": "fe: route/carrier schedule-position (tod z-score)"
+    },
+    {
+      "commit": "174fede",
+      "message": "ens: 2 lossguide models on z-score feature set"
+    },
+    {
+      "commit": "5655eeb",
+      "message": "fe: extend schedule-position z-scores to origin/dest"
+    },
+    {
+      "commit": "b6101e2",
+      "message": "fe: route/origin/dest departure-hour density"
+    },
+    {
+      "commit": "ae55781",
+      "message": "fe: carrier dominance shares (route/origin/dest)"
+    },
+    {
+      "commit": "dcdac0a",
+      "message": "fe: rotation position (first/last flight of day)"
+    },
+    {
+      "commit": "6b05df0",
+      "message": "ens: 3 diverse lossguide models (1500/1500/2200 trees lr0.017)"
+    },
+    {
+      "commit": "95bfa85",
+      "message": "ablation: cheaper 2-model ensemble (1500 trees lr0.017) for timeout margin"
+    },
+    {
+      "commit": "45b1ae5",
+      "message": "ens: 3 diverse lossguide models (1300 trees lr0.019)"
+    },
+    {
+      "commit": "65304e9",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9838.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 150.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "45b1ae5",
+  "best_commit_eval_auc": 0.744,
+  "best_commit_holdout_auc": 0.7452009062119999,
+  "best_commit_holdout_ap": 0.7340087120951373,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,168 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 3,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:23:53+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s3-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T23:06:03+00:00",
+  "wall_seconds": 9730.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18154.0,
+  "endpoint_at_end": "ok",
+  "head": "15cf2b4",
+  "n_commits": 17,
+  "n_experiments": 19,
+  "n_ok": 19,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7576,
+  "final_eval_auc": 0.7576,
+  "holdout_auc": 0.758153259938,
+  "holdout_ap": 0.7497661179714915,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04338250820199996,
+  "generalization_gap": -0.0005532599379999281,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10205216,
+    "tokens_in_uncached": 2485152,
+    "tokens_in_cached": 7720064,
+    "tokens_out": 89024,
+    "turns": null,
+    "api_calls": 188,
+    "method": "sum-of-188-events",
+    "cost_usd": 5.8781,
+    "cached_share": 0.756
+  },
+  "cpu_seconds_python": 17352.0,
+  "cpu_seconds_counted": 2812.2,
+  "cpu_seconds_uncounted": 14171.3,
+  "cpu_seconds_exempt": 368.4,
+  "python_processes": 85,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1150,
+  "fits_counted": 171,
+  "fits_uncounted": 961,
+  "commits": [
+    {
+      "commit": "d673c53",
+      "message": "baseline"
+    },
+    {
+      "commit": "88f04f0",
+      "message": "feature engineering: hour, minute_of_day, numeric date, dist_log"
+    },
+    {
+      "commit": "c1c384e",
+      "message": "FE features + depth 4, 100 rounds"
+    },
+    {
+      "commit": "4c82a22",
+      "message": "interactions (hour_x_dow/carrier/origin), cyclical month, route freq, gamma=1, 75 rounds"
+    },
+    {
+      "commit": "c7cd151",
+      "message": "deep model: d12, colsample 0.3, gamma 2, lambda 5, eta 0.05 x150"
+    },
+    {
+      "commit": "c7776df",
+      "message": "8-model ensemble: 5x full features + 3x basic features, d12 css0.3"
+    },
+    {
+      "commit": "7ad883e",
+      "message": "restore inter+route features in full variant (8-model ensemble)"
+    },
+    {
+      "commit": "1f3b642",
+      "message": "depth 20 ensemble members"
+    },
+    {
+      "commit": "e097243",
+      "message": "d20 members: gamma 1, lambda 3, 100 rounds"
+    },
+    {
+      "commit": "5de8164",
+      "message": "13-member ensemble (full6+basic4+hourcat3) at depth 30"
+    },
+    {
+      "commit": "6ee8275",
+      "message": "13-member ensemble: full5+basic4+cyctime4 (dep sin/cos)"
+    },
+    {
+      "commit": "bf64e7f",
+      "message": "12-member ensemble: full6+cyctime6 (drop basic)"
+    },
+    {
+      "commit": "5bb3e37",
+      "message": "18 members: full6@css0.25 + cyctime6@0.35 + cyctime6@0.40, lam2"
+    },
+    {
+      "commit": "af049a9",
+      "message": "20 members: add sizefreq pool (carrier/origin/dest frequency)"
+    },
+    {
+      "commit": "99fcaac",
+      "message": "20 members: split sizefreq pool into sizefreq + sfr (with route freq)"
+    },
+    {
+      "commit": "78d8172",
+      "message": "18 members: fullfreq pool + sf2 pool (airport-hour congestion freqs)"
+    },
+    {
+      "commit": "10745b2",
+      "message": "18 members: sf3r pool with route-hour congestion freqs"
+    },
+    {
+      "commit": "15cf2b4",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16983.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 802.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "10745b2",
+  "best_commit_eval_auc": 0.7576,
+  "best_commit_holdout_auc": 0.758153259938,
+  "best_commit_holdout_ap": 0.7497661179714915,
+  "best_commit_error": null,
+  "finalized_best": true
+}

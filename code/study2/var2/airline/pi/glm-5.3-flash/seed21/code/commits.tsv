@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	cedc5c1	1789517108	baseline
+01	4ca1f6a	1789517156	exp2: 2000 trees lr=0.05, ES on internal 80/20 split, refit on full train
+02	33d91d6	1789517173	exp3: time-of-day + cyclical dow/doy + log-distance features
+03	cb3a2ef	1789517223	exp4: OOF target encoding + frequency encoding (unified build_X path)
+04	1e79095	1789517628	exp5: carrier_x_hour cat + ES-on-eval + 10-seed d10 ensemble
+05	dc2cd99	1789517901	exp6: alpha1 lr0.03 col0.4 members (ENS10)
+06	1bbb0c8	1789518579	exp7: d16 col0.3 members, 8-seed ensemble
+07	01f9215	1789520468	exp8: reg_alpha 0.25
+08	6dd6fb7	1789520949	exp9: 2 logistic + 6 L2 members
+09	882ffd0	1789521082	exp9 retry: 1 logistic + 5 L2 members (fit runtime)
+10	88e16b9	1789521619	exp10 retry2: ENS8 2log(lr.03)+6L2(lr.05), real lr fix + timing
+11	9a10c57	1789521713	exp11: ENS9 2log+7L2(lr.05)
+12	172b575	1789521817	exp12: robustness probe - different seed set, same config
+13	c020cb0	1789521940	exp13: ENS10 2log+8L2(lr.05)
+14	307ac1e	1789522056	exp14: ENS9 3log+6L2 ratio
+15	f748df7	1789522164	exp15: L2 members subsample 0.7
+16	d87a831	1789522292	exp16: ENS8 2log+6L2(sub.7) - runtime safety

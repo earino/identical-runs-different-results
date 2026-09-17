@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	dff744d	1789636718	baseline
+01	3509f1b	1789637004	regularized: lr.05 mcw10 lambda10 subsample.7
+02	46a19ef	1789637071	n200 lr.025
+03	f243f4b	1789637154	5-seed bagged ensemble d7 lr.03
+04	928d376	1789637214	minute feature
+05	053189d	1789637261	hour categorical
+06	3a053c8	1789637426	dep_minutes + min_bin + hour levels fix
+07	7bc7733	1789637472	log_dist + dom_bin
+08	1ec4850	1789638012	deep trees d20 cs.4 lr.05
+09	a1c3829	1789638796	mcw1 deep trees
+10	46bc9bc	1789641269	s1.0 l2 deep trees

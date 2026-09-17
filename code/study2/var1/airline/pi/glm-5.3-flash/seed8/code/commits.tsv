@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	d79a0ac	1789520167	baseline
+01	29fce86	1789520220	exp2: 1000 trees lr.05 depth8, early stop on 20pct val, retrain full
+02	24bf547	1789520275	exp4: AUC early stopping + FE v1 (dep time parse, cyclical, route, log dist)
+03	3481e0d	1789520307	exp6: FE v1 with baseline capacity (depth6 lr.1 200 trees)
+04	c0a632a	1789520872	exp7: one-hot + numeric FE + carhour, 5-fold bag 400t d8
+05	4a22976	1789521040	exp9: 600 trees per bag member
+06	991e6db	1789521126	exp10: depth 9
+07	6ddf18c	1789521315	exp12: per-fold-model seed diversity in bag
+08	c5f6522	1789522569	exp24: drop redundant month/dow numeric + is_weekend
+09	fc3ef84	1789522836	exp27: drop day numeric
+10	d40298a	1789523190	exp31: 7-fold bag, 550 trees
+11	2ed9031	1789523322	exp32: chunked predict_proba (1M-row memory safety)
+12	d7d2cfe	1789523443	exp33: 500 trees (runtime safety margin)
+13	6a1da0d	1789523663	exp35: 5-fold x 400t, float32 prepare (hidden-runtime safe)
+14	7f0b0cf	1789523988	exp36: 5x600t max_bin=128, chunk-safe predict
+15	4725dbd	1789524082	exp37: 5x500t max_bin=128 (final safety profile)

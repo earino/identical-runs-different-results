@@ -1,0 +1,184 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 29,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T21:18:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s29-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T22:57:29+00:00",
+  "wall_seconds": 5943.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8472.2,
+  "endpoint_at_end": "ok",
+  "head": "e1ea1e3",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7855,
+  "final_eval_auc": 0.7397,
+  "holdout_auc": 0.74182299605,
+  "holdout_ap": 0.7303821568959518,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027052244313999996,
+  "generalization_gap": -0.0021229960499999923,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6747267,
+    "tokens_in_uncached": 1396803,
+    "tokens_in_cached": 5350464,
+    "tokens_out": 67145,
+    "turns": null,
+    "api_calls": 149,
+    "method": "cumulative-max",
+    "cost_usd": 3.6421,
+    "cached_share": 0.793
+  },
+  "cpu_seconds_python": 8221.9,
+  "cpu_seconds_counted": 1888.0,
+  "cpu_seconds_uncounted": 6094.5,
+  "cpu_seconds_exempt": 239.4,
+  "python_processes": 75,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 657,
+  "fits_counted": 174,
+  "fits_uncounted": 471,
+  "commits": [
+    {
+      "commit": "1476c09",
+      "message": "baseline"
+    },
+    {
+      "commit": "130d1c7",
+      "message": "route feature, hour/minute from DepTime, 200 trees"
+    },
+    {
+      "commit": "48a0c45",
+      "message": "numeric dates + hour/minute/depminutes, 30 trees"
+    },
+    {
+      "commit": "3b14363",
+      "message": "lr 0.03 x 250 trees"
+    },
+    {
+      "commit": "09e923c",
+      "message": "subsample 0.7 colsample 0.7"
+    },
+    {
+      "commit": "958adcb",
+      "message": "subsample+colsample 0.5"
+    },
+    {
+      "commit": "5d131ba",
+      "message": "depth 8, 200 trees lr0.05, sampling 0.5"
+    },
+    {
+      "commit": "2202c3b",
+      "message": "min_child_weight 5, reg_lambda 3"
+    },
+    {
+      "commit": "ed0ced7",
+      "message": "3-seed bagged ensemble"
+    },
+    {
+      "commit": "27c76e0",
+      "message": "6-seed bagged ensemble"
+    },
+    {
+      "commit": "6fa549f",
+      "message": "6-seed ensemble, depths 6/8/10"
+    },
+    {
+      "commit": "dae5b1f",
+      "message": "9-model ensemble, varied depth+subsample"
+    },
+    {
+      "commit": "3f2f9c3",
+      "message": "day-of-year + hour as categorical"
+    },
+    {
+      "commit": "8a21a3b",
+      "message": "15-min time bins + clean day-of-year"
+    },
+    {
+      "commit": "7591b14",
+      "message": "reg_alpha 2, DistPerMin, OriginTE sm500, CarrierTE sm100"
+    },
+    {
+      "commit": "0f4f3bd",
+      "message": "timebin + dow target encodings"
+    },
+    {
+      "commit": "98eeeb8",
+      "message": "out-of-fold target encodings"
+    },
+    {
+      "commit": "e497963",
+      "message": "route OOF TE sm500"
+    },
+    {
+      "commit": "017d152",
+      "message": "hour/month/day OOF TEs"
+    },
+    {
+      "commit": "c189162",
+      "message": "corrected float TEs, honest OOF for train rows only, 12-model ensemble"
+    },
+    {
+      "commit": "f418210",
+      "message": "k10 OOF folds, lr 0.03 x 350 trees"
+    },
+    {
+      "commit": "e1ea1e3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7982.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 250.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "017d152",
+  "best_commit_eval_auc": 0.7855,
+  "best_commit_holdout_auc": 0.701475300372,
+  "best_commit_holdout_ap": 0.6760036694923431,
+  "best_commit_error": null,
+  "finalized_best": false
+}

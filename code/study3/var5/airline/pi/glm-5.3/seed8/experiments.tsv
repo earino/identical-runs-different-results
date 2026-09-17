@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	30ce436	0.7141	ok	4	baseline
+2	f65f043	0.0000	crash	1	early stopping + deeper, 3000 trees
+3	4260591	0.7107	ok	3	early stopping + deeper, 3000 trees (fix)
+4	e7587bf	0.7081	ok	4	300 trees depth 8 fixed
+5	6952b04	0.6994	ok	3	FE: hour/min features + route cat
+6	4c7b565	0.7169	ok	3	FE without route cat
+7	6dc43f0	0.0000	crash	2	target encodings
+8	9331a6b	0.7170	ok	2	target encodings (fixed)
+9	a1def79	0.7174	ok	5	400 trees d7 subsample
+10	1dedd14	0.7215	ok	19	5-seed bag
+11	8fe8781	0.7250	ok	26	diverse 8-model bag
+12	36a8c64	0.7263	ok	28	interaction TEs with hour
+13	1ddf800	0.7271	ok	31	count/frequency features
+14	fd69fe7	0.7272	ok	57	14-model bag
+15	690579d	0.7286	ok	59	carrier-airport TEs
+16	bb92fcf	0.7310	ok	54	ablation: drop plain TEs
+17	abab85f	0.7305	ok	51	prune redundant count cols
+18	2039cbb	0.7321	ok	73	capacity: lr .05 x800 trees
+19	81f7a49	0.7323	ok	75	calendar features doy/dow
+20	42ce70b	0.7294	ok	78	hierarchical parent-shrunk TEs
+21	a7f24ac	0.7323	ok	63	mcw/subsample-diverse grid bag
+22	7936068	0.7319	ok	85	hour-neighborhood TEs
+23	0689a5c	0.7319	ok	70	max_bin=128
+24	39a9b72	0.7327	ok	77	TE_SMOOTH=40
+25	db25821	0.7322	ok	89	capacity lr .04 x1200
+26	73a4c9b	0.7340	ok	105	dart+gbtree blend
+27	a476bf8	0.7341	ok	105	dart rate_drop .25
+28	b84181c	0.7329	ok	93	row-bag gbtree members
+29	4930065	0.7344	ok	113	dart 350@.09 + 6 gbtree
+30	76064ad	0.7340	ok	107	trim: gbtree 700@.055
+31	2f6c91c	0.7333	ok	119	dart skip_drop .5 + 7 gbtree
+32	bbe5506	0.7347	ok	66	2 small darts + 5 gbtree
+33	26752ea	0.7341	ok	104	4 darts + 6 gbtree
+34	fa9d691	0.7339	ok	85	2 darts + 7 gbtree
+35	7f0f4c8	0.7347	ok	67	dart weight 2.0
+36	f7cda31	0.7351	ok	68	dart weight 2.0 (fix)
+37	d5ab52e	0.7341	ok	68	TE_SMOOTH=30
+38	6c5c937	0.7296	ok	70	prune DepTime/minute
+39	655661a	0.7352	ok	75	dart depth 8
+40	6189761	0.7343	ok	75	gbtree subsample .7

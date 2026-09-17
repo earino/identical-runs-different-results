@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	23bc6d6	1789517524	baseline
+01	63c2a98	1789517569	deptime hour/cyclical + log distance
+02	7f6b07f	1789517620	ES on 20% holdout + refit, 2k rounds lr.05 depth8
+03	18b7964	1789517687	interaction cats: route, carrier x hour, origin x hour
+04	4232a66	1789517708	more interaction cats: dest x hour, dow x hour
+05	380eb90	1789517737	depth10 lr0.03
+06	b5d9b09	1789517756	depth12 lr0.02
+07	d17efdc	1789517935	dom bucket cat
+08	0f9aff6	1789518115	subsample .7 colsample .5
+09	973efcc	1789518136	subsample .6 colsample .4
+10	73df5eb	1789518165	subsample .5 colsample .3
+11	972c655	1789518204	subsample .4 colsample .2
+12	35bc7f7	1789518329	reg_lambda 10
+13	3f22c76	1789518541	depth14 (with sub.4 cs.2 lam10)
+14	2489685	1789518587	depth16 (with sub.4 cs.2 lam10)
+15	75685b0	1789518642	depth18
+16	3e3256e	1789518698	depth20
+17	ef8c9fc	1789518744	depth24
+18	a937d39	1789518875	3-seed bag ensemble
+19	8047958	1789519395	sub .45 cs .25 (bag)
+20	8abb86d	1789519609	restore best params: subsample .4 colsample .2 (exp 35 config)

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	63247d3	0.7141	ok	4	baseline
+2	6b28fb2	0.7137	ok	1	time features + log distance
+3	ee6d1cc	0.7142	ok	2	800 rounds + ES
+4	dc38a94	0.0000	crash	1	hour + route interaction
+5	b21f30d	0.7061	ok	3	hour + route interaction (fixed)
+6	b6dc2a8	0.7176	ok	5	TE features + tuned xgb config
+7	b0396ef	0.7192	ok	6	raw cats + TEs
+8	fcdfd26	0.7208	ok	37	6-seed ensemble
+9	2818455	0.7299	ok	44	k-fold cross-fitted TE
+10	0792ad9	0.7278	ok	50	month TE, d12, ss/cs 0.7
+11	37c1c48	0.7357	ok	57	d12 only
+12	c0c6969	0.7402	ok	68	d14
+13	4a2d998	0.7431	ok	91	d16
+14	b6ace4f	0.7441	ok	83	d16 ss/cs 0.7
+15	73ee782	0.7406	ok	84	10-fold TE
+16	b560ba6	0.7459	ok	94	count features
+17	1a43b00	0.7410	ok	101	dow_hour TE
+18	63746b9	0.7415	ok	63	mcw5
+19	027af0a	0.0000	crash	2	mixed ensemble
+20	71cdb96	0.7406	ok	63	mixed ensemble (fixed)
+21	af0bef3	0.7460	ok	89	max_bin 192
+22	c0df443	0.7460	ok	84	ES on half eval
+23	e5fa65b	0.7459	ok	93	8-model cs-variety ensemble
+24	78a6ec9	0.7470	ok	92	d18
+25	781e812	0.7474	ok	110	d20
+26	b5a3edf	0.0000	crash	2	recency weights
+27	97628fa	0.0000	crash	2	calendar features revived
+28	175185c	0.7444	ok	109	calendar features revived
+29	c5819d0	0.7485	ok	97	explicit calendar drop
+30	f800a41	0.7499	ok	110	recency weights 0.1/mo
+31	ad5603b	0.7504	ok	117	recency 0.2
+32	b8e5f56	0.0000	timeout	121	DayOfWeek only
+33	6e84ad5	0.7499	ok	101	speed: patience 60, max_bin 160
+34	829ec8f	0.7504	ok	104	patience 60
+35	f3a7cb9	0.7511	ok	110	congestion count features
+36	680ab5b	0.7507	ok	111	TE_M 40
+37	e4d87ba	0.7511	ok	116	recency 0.3
+38	4e38e4b	0.7502	ok	116	N_carrier_hour
+39	e3cff3e	0.0000	timeout	121	ES metric = AUC
+40	3fdf5e1	0.7511	ok	112	logit-mean ensemble

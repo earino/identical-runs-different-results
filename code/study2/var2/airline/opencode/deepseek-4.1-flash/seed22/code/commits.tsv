@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	17a6c20	1789529315	baseline
+01	bb8f208	1789529359	depth4 200 trees lr0.05
+02	749ee12	1789529375	time-derived features depth4
+03	66632ec	1789529583	drop Month, keep DayOfWeek + cyclical time; d5 n400
+04	5d1c39c	1789529635	ensemble of 5 XGBoost configs
+05	3b9e6d0	1789529809	recency sample weighting
+06	e2cabbb	1789530515	colsample_bylevel 0.3
+07	49bd8ab	1789531098	4x trees with colsample_bylevel 0.3
+08	45d2f6e	1789531626	carrier x hour target encoding
+09	6fa0e2c	1789532046	max_bin 512
+10	61386bd	1789532085	10-member ensemble (add 2x-tree members)
+11	2611c1d	1789532911	hour as categorical feature
+12	97e31e7	1789533024	15-min time-of-day bin categorical
+13	24087c0	1789533259	distance bin categorical
+14	a2edf9a	1789533984	carrier x 30-min-bin target encoding

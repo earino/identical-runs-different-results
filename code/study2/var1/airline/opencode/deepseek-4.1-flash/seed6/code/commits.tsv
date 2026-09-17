@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	cb58ddd	1789516001	baseline
+01	8c618b2	1789516159	shallow 250 trees d4 lr.05 mcw5
+02	83c3d45	1789516197	5-seed ensemble of best config
+03	2af8a03	1789516220	diversified ensemble 3 configs x 2 seeds
+04	3c9533a	1789516284	add stable (origin/dest/carrier x hour) target encodings
+05	94a7416	1789516304	add dist_hour and carrier_dow target encodings
+06	1003f9c	1789516392	add carrier_origin_hour TE
+07	f1d2ddb	1789516408	add carrier_dest_hour TE
+08	829c6ed	1789516459	add distance-bucket hour triples
+09	d9237da	1789516478	add carrier x airport x distb x hour quads
+10	6477015	1789516543	add minute-bucket and carrier-hour-dow TEs
+11	34296f7	1789516571	add more mb/db interactions
+12	c6b7aa9	1789516594	add airport x h x mb x db and carrier h mb dow
+13	241d1b9	1789516659	add depth6 config to ensemble with TE features
+14	1362bb6	1789516691	add depth8 regularized config
+15	1498bc0	1789516732	add depth10 heavily regularized config
+16	eab343d	1789516783	add lossguide max_leaves config
+17	e222c97	1789516852	add frequency/count encodings for TE keys
+18	d9bf9b4	1789516930	add base volume encodings
+19	538c113	1789517014	add 5-minute bucket interactions

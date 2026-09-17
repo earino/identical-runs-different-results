@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	c39afb4	1789632257	baseline
+01	40a7ad0	1789632474	numeric time features + Route cat + bigger model
+02	aaa9b8b	1789632484	numeric time features + Route cat + bigger model (fixed)
+03	b04f885	1789632741	numeric time feats + recency weights, 200 d4 lr.05
+04	76a6b62	1789632936	reg_alpha=8, depth 7
+05	250377f	1789633247	hour interactions (Origin/Carrier/Dest x Hour), a4 d7 ne300
+06	c02dae1	1789633640	half-hour interactions + dist*hour, alpha 5
+07	2dc731d	1789634275	sin/cos depmin cyclical time
+08	1adcb76	1789634378	8-model hyperparameter-diverse ensemble
+09	662613e	1789635210	feature-bagged ensemble: 2 full + 8 bagged members
+10	0e7baad	1789635840	airport-hour volume features in core
+11	41ae485	1789636079	vol_dh features in ensemble core
+12	efc0ebe	1789637205	ensemble members ne=400
+13	8933cdd	1789637784	full-feature members at reg_alpha 2
+14	3daa6f5	1789638265	base members depth 8

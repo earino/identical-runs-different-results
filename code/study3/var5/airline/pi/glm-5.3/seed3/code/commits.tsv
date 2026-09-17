@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	3db17bc	1789590010	baseline
+01	ca202a6	1789590111	features v1 with baseline model (30 trees d6)
+02	d55f17b	1789590789	harmonics + 5-seed ensemble d8 lr0.05 600 bynode0.4
+03	808ccd2	1789592754	carrier x hour interaction categorical
+04	742cfc8	1789593451	8-seed ensemble, colsample_bynode 0.2
+05	efaacdc	1789594022	lean features: drop Month and DayofMonth (dilution)
+06	aa27bc7	1789594335	mixed ensemble: 4 deep + 4 lossguide members
+07	5a3b24b	1789594780	log(Distance) x hour interaction feature
+08	3565e99	1789594904	add log_dist feature
+09	3c4fc95	1789594963	12-member ensemble: 8 deep + 4 lossguide
+10	a36368e	1789595091	stronger lossguide members (leaves 64, 700 trees)
+11	96cfc52	1789595431	deeper lossguide members: leaves 96, 800 trees, bn 0.25
+12	7c466e3	1789595592	rebalance: 6 deep + 6 lossguide members
+13	f1eadf1	1789595854	rebalance further: 4 deep + 8 lossguide

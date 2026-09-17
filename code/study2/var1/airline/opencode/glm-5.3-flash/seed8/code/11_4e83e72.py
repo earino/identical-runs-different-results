@@ -1,0 +1,116 @@
+"""XGBoost binary classifier on airline delays. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- features -----------------------------------------------------------------
+feature_cols = [c for c in train.columns if c not in ID_COLS + [TARGET]]
+obj_cols = [c for c in feature_cols if pd.api.types.is_object_dtype(train[c]) or pd.api.types.is_string_dtype(train[c])]
+cat_cols = [c for c in obj_cols if train[c].nunique() <= 1000]
+feature_cols = [c for c in feature_cols if c not in obj_cols or c in cat_cols]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in cat_cols}
+
+y = (train[TARGET] == POSITIVE).astype(int).to_numpy()
+ye = (evald[TARGET] == POSITIVE).astype(int).to_numpy()
+
+# trimmed feature set (Month/DayofMonth removed: 2005-specific noise)
+kept_cols = [c for c in feature_cols if c not in ("Month", "DayofMonth")]
+kept_lv = {c: cat_levels[c] for c in cat_cols if c in kept_cols}
+
+# target encodings fit on train only
+p_bar = float(y.mean())
+
+
+def _te(keys: pd.Series, m: float = 20.0) -> dict:
+    g = pd.DataFrame({"k": keys.to_numpy(), "y": y}).groupby("k")["y"].agg(["sum", "count"])
+    return ((g["sum"] + m * p_bar) / (g["count"] + m)).to_dict()
+
+
+_hh_tr = (train["DepTime"].fillna(-1).astype(int) // 100).astype(str)
+TE = {
+    "car_hour": _te(train["UniqueCarrier"].astype(str) + "_" + _hh_tr),
+    "dow_hour": _te(train["DayOfWeek"].astype(str) + "_" + _hh_tr),
+    "carrier": _te(train["UniqueCarrier"]),
+    "dow": _te(train["DayOfWeek"]),
+    "origin": _te(train["Origin"]),
+    "dest": _te(train["Dest"]),
+}
+
+base = dict(
+    learning_rate=0.1,
+    max_depth=6,
+    n_estimators=120,
+    tree_method="hist",
+    enable_categorical=True,
+    subsample=0.8,
+    colsample_bytree=0.8,
+    n_jobs=N_JOBS,
+)
+K = 8
+
+
+def prep_extra(df: pd.DataFrame, extra: str) -> pd.DataFrame:
+    X = df[kept_cols].copy()
+    for c in kept_lv:
+        X[c] = pd.Categorical(X[c], categories=kept_lv[c])
+    hh = (df["DepTime"].fillna(-1).astype(int) // 100).clip(0, 24).astype(str)
+    if extra in ("car_dow_hour", "car_dow_hour_crod"):
+        X["te_car_hour"] = (df["UniqueCarrier"].astype(str) + "_" + hh).map(TE["car_hour"])
+        X["te_dow_hour"] = (df["DayOfWeek"].astype(str) + "_" + hh).map(TE["dow_hour"])
+    if extra == "car_dow_hour_crod":
+        X["te_carrier"] = df["UniqueCarrier"].map(TE["carrier"])
+        X["te_dow"] = df["DayOfWeek"].map(TE["dow"])
+        X["te_origin"] = df["Origin"].map(TE["origin"])
+        X["te_dest"] = df["Dest"].map(TE["dest"])
+    if extra == "sincos":
+        tod = (df["DepTime"].fillna(-1).astype(int) // 100 * 60 + df["DepTime"].fillna(-1).astype(int) % 100).astype(float)
+        X["tod_sin"] = np.sin(2 * np.pi * tod / 1440.0)
+        X["tod_cos"] = np.cos(2 * np.pi * tod / 1440.0)
+    return X
+
+
+def run_variant(extra, label):
+    X, Xe = prep_extra(train, extra), prep_extra(evald, extra)
+    preds = [xgb.XGBClassifier(random_state=SEED + k, **base).fit(X, y).predict_proba(Xe)[:, 1] for k in range(K)]
+    auc = roc_auc_score(ye, np.mean(preds, axis=0))
+    print(f"{label}: {auc:.4f}")
+    return auc, extra
+
+
+t0 = time.time()
+results = [
+    run_variant("none", "base trimmed"),
+    run_variant("car_dow_hour", "+car_hour,dow_hour TE"),
+    run_variant("car_dow_hour_crod", "+car,dow,origin,dest TE"),
+    run_variant("sincos", "+sin/cos tod"),
+]
+best_auc, best_extra = max(results, key=lambda r: r[0])
+print(f"Training time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {best_auc:.4f}")
+
+model = xgb.XGBClassifier(random_state=SEED, **base)
+model.fit(prep_extra(train, best_extra), y)
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prep_extra(df, best_extra))[:, 1]

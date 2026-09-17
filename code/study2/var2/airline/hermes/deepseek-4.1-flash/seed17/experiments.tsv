@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	06dd032	0.7141	ok	4	baseline
+2	3e9f032	0.7152	ok	4	deptime decomposition + more trees
+3	94bb5ee	0.7153	ok	3	calendar/cyclical features
+4	01dfc67	0.6981	ok	5	route categorical + counts
+5	bdbd537	0.7152	ok	4	traffic count features
+6	d95b761	0.7122	ok	9	max_depth 10
+7	369bb95	0.7159	ok	4	no raw DepTime
+8	7f8f5e8	0.7193	ok	3	peak-hour congestion counts
+9	f9ac21d	0.7175	ok	4	smoothed target encodings
+10	dec110e	0.7172	ok	9	1500 trees
+11	8c1a883	0.7188	ok	4	regularized + slower learning
+12	e1251b0	0.7191	ok	4	counts incl route_hour + congestion shares
+13	e86c38e	0.7198	ok	3	inbound congestion + movements
+14	0296056	0.7198	ok	12	5-seed bagging
+15	5b0e159	0.7213	ok	11	diverse subsampled ensemble
+16	17991c0	0.7244	ok	12	lag1 congestion
+17	bcca0d4	0.7250	ok	12	lags 1-3 x3 sides
+18	69b921b	0.7253	ok	14	lags 1-6
+19	e9ad610	0.7246	ok	15	calendar-conditional traffic
+20	68bae90	0.7259	ok	27	6-member ensemble
+21	03e4fd6	0.7269	ok	31	lags 1-12
+22	99869ef	0.7275	ok	42	leads 1-12
+23	7582f7d	0.7283	ok	49	carrier daily profile
+24	2186dae	0.7285	ok	50	carrier-mix congestion
+25	5f49718	0.7288	ok	53	holiday proximity
+26	e6a9fee	0.7268	ok	40	ablate dest-side profile
+27	bdfa07b	0.7289	ok	59	dest outbound profile
+28	9b9785c	0.7337	ok	46	no raw airport categoricals
+29	1440292	0.7408	ok	43	drop DayofMonth cat
+30	b54f9ad	0.7422	ok	40	Month as numeric/cyclical
+31	3f1808c	0.7422	ok	41	dow numeric/cyclical
+32	4cd4083	0.7413	ok	37	no categoricals at all
+33	9b62cb4	0.7466	ok	54	deeper ensemble members
+34	0d20b40	0.7520	ok	77	deep ensemble
+35	3cfd021	0.7556	ok	93	very deep ensemble
+36	ce3cc5b	0.7560	ok	109	depth 16 members
+37	381d2b7	0.7541	ok	72	lighter deep ensemble
+38	d35544b	0.7530	ok	69	leaf-size floor for deep trees
+39	4d36fe5	0.7555	ok	99	7-member deep ensemble
+40	1e8d7b2	0.7556	ok	99	trimmed depth-16 ensemble

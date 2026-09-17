@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	7ed959d	1789529406	baseline
+01	e9beebc	1789529464	time-of-day features, drop route, depth6 lr.05 ES
+02	6fa8588	1789529498	depth5 300 trees fixed, train on full data
+03	16b17df	1789529529	add calendar/seasonality features
+04	f0f44df	1789529674	colsample .4 lr .03 n500
+05	143e9dd	1789530679	deep depth12 + L1 alpha3 + 5-seed ensemble
+06	a27ec70	1789531117	add airport/route traffic-frequency features
+07	c39c731	1789531529	add route-hour and carrier-hour traffic counts
+08	7883dfa	1789532301	add 30-min origin/route bucket counts
+09	db8ca09	1789532371	add dest/carrier 30min bucket counts
+10	488b7dc	1789532713	max_depth 15
+11	e28ae67	1789533128	adjacent-bucket congestion, network diversity, shares
+12	b89710a	1789533446	extend congestion windows to +-2 and dest/carrier adjacency
+13	35c3480	1789533626	wider congestion windows, 4 seeds
+14	026eeea	1789533734	wider congestion: ob/rb +-4, db/cb +-3
+15	fdae9a4	1789534299	colsample 0.3
+16	1454586	1789534586	carrier-origin and carrier-dest frequencies

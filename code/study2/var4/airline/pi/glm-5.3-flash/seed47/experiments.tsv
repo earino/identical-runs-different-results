@@ -1,0 +1,32 @@
+n	commit	eval_auc	status	seconds	description
+1	7fa221d	0.7141	ok	4	baseline as-is
+2	3ed3373	0.6902	ok	5	hyperparams: 500 trees depth8 subsample
+3	30361ac	0.7018	ok	3	depth6 400t stronger reg
+4	9863841	0.7158	ok	1	depth4 100 trees
+5	320148e	0.7158	ok	2	feateng v1: deptime+cyclical+buckets+numeric mdd
+6	da655ab	0.7040	ok	2	feateng v2: freq + route
+7	10f73ff	0.7201	ok	3	tod decomp + tuned d4 ensemble-ready
+8	aa6396b	0.7212	ok	8	5-seed ensemble averaged
+9	a8d946f	0.0000	crash	1	mix12 ensemble depth x lr x seed
+10	09237a5	0.7220	ok	13	mix12 ensemble depth x lr x seed (fixed)
+11	0b9319f	0.7247	ok	35	ensemble d3-8 x2lr x2seeds
+12	b764610	0.7258	ok	63	ensemble d3-10 x2lr x2seeds
+13	79b6160	0.7250	ok	64	champion with different member seeds (stability check)
+14	4173537	0.7258	ok	78	champion + reg-diverse members
+15	499957a	0.7233	ok	58	ablation: drop dep_min
+16	ba72bc7	0.7258	ok	96	3 seeds on d3-10 mix
+17	e7ce3f8	0.7256	ok	65	ablation: drop raw DepTime
+18	f2f08ff	0.7258	ok	70	colsample_bynode 0.9 diversity
+19	7b04e4a	0.7248	ok	65	subsample 0.8 shallow members
+20	deba738	0.7292	ok	56	drop DayofMonth feature
+21	073893b	0.7337	ok	59	drop Month + DayofMonth
+22	2bfb8b6	0.7489	ok	62	rare grouping 500 + deep mix d8-14 mcw5
+23	4ad0779	0.7499	ok	65	mcw3
+24	474311e	0.7483	ok	66	rare threshold 800
+25	df27787	0.7426	ok	71	drop Distance
+26	c9fbbcc	0.7504	ok	62	drop DayOfWeek
+27	92b0021	0.7500	ok	84	depths 9,11,13,15
+28	d330c80	0.7501	ok	65	colsample 0.7
+29	94a74e4	0.7505	ok	73	mcw2
+30	c867609	0.7501	ok	84	subsample 0.9
+31	3d23bb3	0.0000	crash	30	RARE_MIN 400 (final experiment)

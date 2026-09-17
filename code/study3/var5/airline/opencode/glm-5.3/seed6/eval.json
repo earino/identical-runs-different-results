@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T00:15:39+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T02:51:39+00:00",
+  "wall_seconds": 9359.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9114.1,
+  "endpoint_at_end": "ok",
+  "head": "f87fcdd",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 32,
+  "n_crash": 4,
+  "n_timeout": 4,
+  "best_eval_auc": 0.75,
+  "final_eval_auc": 0.75,
+  "holdout_auc": 0.75069864895,
+  "holdout_ap": 0.7422039636666407,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.035927897214000026,
+  "generalization_gap": -0.000698648950000047,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10148670,
+    "tokens_in_uncached": 903870,
+    "tokens_in_cached": 9244800,
+    "tokens_out": 44805,
+    "turns": null,
+    "api_calls": 183,
+    "method": "sum-of-183-events",
+    "cost_usd": 3.8662,
+    "cached_share": 0.911
+  },
+  "cpu_seconds_python": 8575.3,
+  "cpu_seconds_counted": 8067.6,
+  "cpu_seconds_uncounted": 0.1,
+  "cpu_seconds_exempt": 507.7,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 207,
+  "fits_counted": 202,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "1d98632",
+      "message": "baseline"
+    },
+    {
+      "commit": "8699e67",
+      "message": "capacity/regularization scan on baseline features"
+    },
+    {
+      "commit": "a889f75",
+      "message": "OOF target-encoded route numeric"
+    },
+    {
+      "commit": "11c3032",
+      "message": "add hour-of-day categorical"
+    },
+    {
+      "commit": "e3f7934",
+      "message": "early stopping calibrated on eval (2006), lr 0.03 depth 4"
+    },
+    {
+      "commit": "ed84d96",
+      "message": "colsample/seed ensemble, ES on eval"
+    },
+    {
+      "commit": "9555468",
+      "message": "colsample sweep 0.3/0.4/0.5, ship best group ensemble"
+    },
+    {
+      "commit": "d07ba5d",
+      "message": "depth scan 4/6/8 at cs=0.5"
+    },
+    {
+      "commit": "2377ea5",
+      "message": "depth/cs 2D exploration around d8 cs0.5"
+    },
+    {
+      "commit": "bf31985",
+      "message": "4-seed ensemble d18 cs0.3"
+    },
+    {
+      "commit": "f335eaa",
+      "message": "candidate re-scan under deep regime"
+    },
+    {
+      "commit": "0a815aa",
+      "message": "dep_min vs dep_min+ohc, 3 seeds"
+    },
+    {
+      "commit": "d655a68",
+      "message": "5-seed ensemble dep_min+ohc"
+    },
+    {
+      "commit": "c5be694",
+      "message": "candidate scan: dest_hour_count, carrier_hour_te, dep sincos"
+    },
+    {
+      "commit": "668e2b7",
+      "message": "stack dest_hour_count + carrier_hour_te + sincos, 4 seeds"
+    },
+    {
+      "commit": "eec67ca",
+      "message": "candidate scan: carrier_hour_count, origin/dest hour TE"
+    },
+    {
+      "commit": "08290d9",
+      "message": "6-seed core+chc ensemble"
+    },
+    {
+      "commit": "5035cd3",
+      "message": "stack deep ensemble with shallow members"
+    },
+    {
+      "commit": "cbcb143",
+      "message": "lr 0.02, 5-seed ensemble"
+    },
+    {
+      "commit": "f87fcdd",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8067.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 538.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "cbcb143",
+  "best_commit_eval_auc": 0.75,
+  "best_commit_holdout_auc": 0.75069864895,
+  "best_commit_holdout_ap": 0.7422039636666407,
+  "best_commit_error": null,
+  "finalized_best": true
+}

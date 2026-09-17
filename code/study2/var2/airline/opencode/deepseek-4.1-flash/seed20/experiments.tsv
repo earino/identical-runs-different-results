@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	d3760f9	0.7141	ok	4	baseline
+2	6743fda	0.0000	crash	2	feat eng + early stopping
+3	6f52735	0.7030	ok	5	feat eng + early stopping (typo fix)
+4	a7783c0	0.7078	ok	3	400 trees lr0.1 depth6
+5	20ae839	0.0000	crash	1	time+carrier_hour+hour_distbin d8 n1200
+6	c026135	0.7428	ok	28	time+carrier_hour+hour_distbin d8 n1200 (fix)
+7	80d5522	0.7468	ok	68	ensemble depths 5/7/9/11 n700 lr0.04
+8	653d441	0.7466	ok	80	cyclical month/dow
+9	80ced63	0.7479	ok	108	ensemble depths 3/5/7/9/11/13 n600 lr0.05
+10	94da21c	0.7477	ok	109	ensemble depths 3/6/9/12/15 n600 lr0.05
+11	8379ac6	0.7486	ok	109	quantile distance bins
+12	46310e1	0.7464	ok	104	16 quantile distance bins
+13	3b5c62a	0.7474	ok	71	min_child_weight10 lambda2
+14	49c4ae2	0.0000	timeout	122	colsample0.8 n700 lr0.045
+15	5baecd8	0.7486	ok	72	ensemble 3/6/9/12 n700 lr0.05
+16	48eb32e	0.7488	ok	73	origin/dest counts
+17	98fc35b	0.7446	ok	84	carrier-origin
+18	966f1b2	0.7482	ok	75	8 quantile distance bins
+19	a4cb64b	0.7502	ok	82	max_cat_to_onehot 32
+20	e6ec6f0	0.7501	ok	80	onehot32 + 8 bins
+21	cbb3768	0.7518	ok	115	ensemble 2/5/8/11/14 onehot32
+22	87b8420	0.7521	ok	84	ensemble 2/6/10/14 onehot32
+23	8c72f32	0.7526	ok	106	ensemble 1/6/11/16 onehot32
+24	e687174	0.7526	ok	102	rare-category capping (min25)
+25	43279a8	0.7522	ok	108	ensemble 1/7/13/19 n600
+26	52f6ab1	0.7517	ok	103	12 quantile distance bins

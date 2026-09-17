@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	a12627d	1789525136	baseline
+01	e908f86	1789525210	exp6: depth4 100 trees
+02	33abd68	1789525222	exp8: depth3 100 trees
+03	d7251f5	1789525232	exp11: depth3 100 + min_child_weight 20
+04	b5e87de	1789525259	exp14: depth ladder 3/4/5 ensemble
+05	dbef009	1789525263	exp15: depth ladder 2-6 ensemble
+06	1ea85cf	1789525283	exp17: + dep_hour categorical on ladder ensemble
+07	00f2d7c	1789525316	exp21: depth ladder x lr {0.05,0.1,0.2} ensemble
+08	0f179ef	1789525337	exp23: month recency sample weights 1->2
+09	84e77b2	1789525369	exp26: ensemble colsample 0.7
+10	12f7154	1789525425	exp29: recency alpha diversity {0.5,1,2} (45 members)
+11	33d355d	1789525528	exp33: half-hour bucket cat
+12	bc35efa	1789525551	exp34: 15-min bucket cat
+13	c81a409	1789525600	exp36: 15-min + 30-min multi-scale dep buckets
+14	ecb5003	1789525629	exp37: + 10-min buckets (10/15/30/60 multi-scale)
+15	98d8bb6	1789525659	exp38: 150 trees per member
+16	9e3eddc	1789525696	exp39: 200 trees per member
+17	d0eb65a	1789525739	exp40: 300 trees per member

@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	23b6548	1789640726	baseline
+01	4f1bee7	1789640803	early stopping with internal 80/20 split, 2000 trees cap
+02	844df7d	1789640821	time-of-day + cyclical features (30-tree baseline model)
+03	5b1be45	1789640828	regularized slow learning: lr .05, 300 trees, subsample, lambda
+04	f6ef336	1789640949	drop calendar c-strings, depth 8
+05	dbc3ba9	1789640956	strong regularization: mcw20 lam10 ss.7 depth8
+06	1bff24f	1789641107	depth12 colsample 0.4
+07	fc58776	1789641161	cs0.3 500 trees lr.04
+08	10a64d9	1789641232	3-seed ensemble
+09	c4b69c0	1789641460	max_bin 1024
+10	339be08	1789641680	traffic count features (origin/dest/route x hour, dist vs route median)
+11	6ea9f1c	1789641798	rich count features v2 (route-hour, carrier-hour, ratios, logs)
+12	16ccaf1	1789641951	block30 count features (origin/dest/carrier x 30min block)
+13	525b074	1789642226	cs0.2 + 5-seed ensemble
+14	d03af10	1789642613	15-min block counts + minute-of-hour
+15	41f9a7d	1789642944	depth14 ss0.8 for 47-col set
+16	54bd8fb	1789643276	rush flags, dist bins, carrier-hour cat, weekend/holiday
+17	2e3e597	1789644152	exponential recency weighting 1.25^month
+18	3220449	1789644564	3 seeds x 400 trees (runtime cut, same AUC)
+19	4c60159	1789644870	min_child_weight 10
+20	0061140	1789645895	5-seed ensemble at final config

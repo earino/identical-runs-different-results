@@ -1,0 +1,20 @@
+n	commit	eval_auc	status	seconds	description
+1	f7a2074	0.7141	ok	4	baseline
+2	7ae6f92	0.7048	ok	3	FE + big model with early stopping
+3	517f404	0.7230	ok	7	OOF TE features + ES/refit XGB
+4	77a0658	0.7302	ok	14	TE: +RHour,OCarrier,OHourBin K=30
+5	798aa47	0.0000	crash	3	sub/col 0.8 + CV curve tree count
+6	2395e9e	0.7324	ok	34	sub/col 0.8 + CV curve tree count (fixed)
+7	0a0bf14	0.0000	crash	1	+count features (traffic volume)
+8	4818593	0.7354	ok	37	+count features (traffic volume) fixed
+9	cd86b8e	0.7410	ok	80	ensemble 3xTE + rawcat
+10	27e6ef6	0.7482	ok	90	no-calendar-noise features; 5-member ensemble
+11	dce8d15	0.7511	ok	91	+Min10/Min5 within-hour TEs
+12	420daa2	0.7511	ok	31	fixed tree counts 800 (ablation)
+13	20c3306	0.7535	ok	32	+carrier/route x hour counts
+14	bd79eee	0.7574	ok	36	+origin/dest/route x 30-min counts
+15	128c838	0.7600	ok	35	+30min TEs
+16	d08e9ce	0.7619	ok	37	+route x 20-min TE
+17	7e3f9e2	0.0000	crash	24	recency weights + hybrid member
+18	ca49ae4	0.7627	ok	38	recency weights + hybrid member (fixed)
+19	c69b7a7	0.7633	ok	51	+3 TEs + MoE member

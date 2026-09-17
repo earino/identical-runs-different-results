@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	9d14f3a	1789495791	baseline
+01	dc64f7e	1789495840	exp2: 600 trees lr.05 depth8 early stopping on 10% valid
+02	7c8686a	1789495849	exp3: depth10 lr.1 1000 trees mcw5 subs.8 + es60 on 20% valid
+03	d43dafa	1789495856	exp4: depth6 lr.1 1000 trees mcw5 subs.8 es60
+04	bca1ac1	1789495860	exp5: depth6 lr.1 1000 trees es60 no subsampling
+05	19ce391	1789495879	exp6: sweep depth x ntrees on eval+valid2005
+06	90d9d69	1789495915	exp7b: time feats + cat combos (route, x hour), cats fit on train
+07	5fcd053	1789495955	exp9: grid depth{4,5,6} x n{60,120,250} on combo features
+08	c1d83a9	1789495986	exp10: lr.05 depth{5,6,7} x n{400,800}
+09	be12a90	1789496349	exp13: depth7 lr.05 n1600 single config
+10	c2f9cac	1789496587	exp16: n3200 max_bin128 depth7
+11	92d1881	1789497050	exp21: n4400 max_bin64 depth7
+12	48f829d	1789498210	exp31: colsample_bynode 0.9
+13	15701c1	1789498434	exp33: colsample_bynode 0.8
+14	ab3d340	1789498541	exp34: colsample_bynode 0.7
+15	351ada8	1789498636	exp35: colsample_bynode 0.6
+16	3518378	1789498723	exp36: colsample_bynode 0.5
+17	07b1cbd	1789498804	exp37: colsample_bynode 0.4
+18	a7fcd52	1789498884	exp38: colsample_bynode 0.3

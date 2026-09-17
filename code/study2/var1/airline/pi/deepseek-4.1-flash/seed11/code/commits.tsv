@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	cb238e2	1789536145	baseline
+01	05ef6fb	1789536310	depth4, 200 trees, reg
+02	6a76bb6	1789536335	5-seed ensemble of depth4 models
+03	fbd1074	1789536372	ensemble + day-of-year seasonality
+04	e1f975b	1789536428	ensemble lr0.05/400trees depth4
+05	db17f16	1789536440	10-seed ensemble lr0.05
+06	d5ecdbd	1789536463	20-seed ensemble lr0.05
+07	f4eb8d0	1789536541	max_cat_to_onehot=16
+08	b72a2ea	1789536905	carrier_hour categorical
+09	dfeeaac	1789537047	add carrier_dist interaction
+10	08cb8dc	1789537089	carrier half-hour bucket
+11	0dacdd3	1789537204	depth5 300trees with carrier_hh
+12	2cd6cb5	1789537274	depth5 lr0.03 600trees
+13	799e2cb	1789537549	min_child_weight5

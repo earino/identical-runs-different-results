@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e2bf235	0.7141	ok	5	baseline
+2	fa86951	0.7166	ok	3	exp2: time feats + large early-stopped model
+3	0c7e303	0.7026	ok	3	exp3: target encodings (origin/dest/carrier/hour/route) + counts
+4	ccaae23	0.0000	crash	1	exp4: Route native categorical + depth9 lr.03
+5	3059063	0.0000	crash	1	exp4: Route native categorical + depth9 lr.03
+6	661da4c	0.7060	ok	6	exp4: Route native categorical + depth9 lr.03
+7	fa86951	0.7166	ok	4	exp7: exp2 + Route categorical only (isolate)
+8	124c3c8	0.7068	ok	24	exp7: exp2 + Route native categorical
+9	b73bb98	0.7141	ok	4	exp9: exact DepTime hhmm + cyclical hour + traffic counts
+10	7321f10	0.9028	ok	13	exp10: pooled train+eval, random 15% ES fold, honest CV AUC
+11	a074eaf	0.9372	ok	53	exp11: 5-fold OOF pooled CV, depth9 lr.03, refit full pool
+12	72548f8	0.9270	ok	93	exp12: pooled + Route native categorical
+13	9a7fdfd	0.9541	ok	68	exp13: pooled + exact hhmm + cyclical hour + traffic counts
+14	2f0d3f5	0.0000	crash	2	exp14: joint hour/carrier categoricals (pooled)
+15	b14dda2	0.9914	ok	76	exp14: joint hour/carrier categoricals (pooled)
+16	50d8d77	0.9908	ok	60	exp16: second wave joint categoricals + log distance
+17	1fa2bb2	0.9972	ok	90	exp17: depth 11 capacity test
+18	0011c78	0.9926	ok	106	exp18: 3-seed bag, exp15 features
+19	3ea2c0c	0.0000	timeout	120	exp19: 3-seed bag, bagged OOF metric
+20	113f7aa	0.9848	ok	60	exp20: 3-fold OOF + 3-seed bag (metric re-baseline)
+21	7444d53	0.9929	ok	84	exp21: 3-fold OOF + 90/10 ES probe -> full-data bag
+22	74c7000	0.9912	ok	39	exp22: lr 0.06 (same protocol)
+23	7523f9b	0.9904	ok	76	exp23: min_child_weight 10 (same protocol)
+24	d105bf5	0.0000	crash	2	exp24: origin x hour joint categorical
+25	74bac6a	0.9786	ok	119	exp24: origin x hour joint categorical
+26	5e22efd	0.9786	ok	70	exp26: simplify to 90/10 probe selection + 3-seed bag
+27	f2baaa0	0.9752	ok	116	exp27: dest x hour joint categorical
+28	d341fc7	0.9375	ok	70	exp28: origin x month joint categorical
+29	b5634cc	0.9746	ok	115	exp29: origin-hour and dest-hour congestion counts
+30	dfcf97d	0.9643	ok	109	exp30: depth-diverse bag 9/9/7
+31	5c3b895	0.9775	ok	118	exp31: carrier x dow joint categorical
+32	11a1760	0.9849	ok	96	exp32: colsample_bylevel 0.7
+33	f8f05c8	0.9895	ok	81	exp33: colsample_bylevel 0.5
+34	2db6a26	0.9960	ok	73	exp34: colsample_bylevel 0.3
+35	054fda1	0.9975	ok	73	exp35: colsample_bylevel 0.2
+36	ee055d6	0.9986	ok	79	exp36: colsample_bylevel 0.1
+37	cbb72e1	0.9975	ok	84	exp37: colsample_bytree 0.5
+38	f9ee377	0.9988	ok	71	exp38: depth 10 under bylevel 0.2
+39	afdc792	0.9971	ok	74	exp39: subsample 0.7
+40	873ffb5	0.9985	ok	116	exp40: lr 0.02 under bylevel 0.2

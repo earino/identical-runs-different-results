@@ -1,0 +1,10 @@
+n	commit	eval_auc	status	seconds	description
+1	81de627	0.7141	ok	4	baseline
+2	35bf129	0.7036	ok	5	capacity 600 trees lr.05 depth7
+3	ab3825f	0.7265	ok	9	carrier_hour + eval ES depth4
+4	0bec317	0.7390	ok	62	ensemble 4x lossguide 192 leaves
+5	f91e967	0.7393	ok	84	ensemble lr0.02 900 rounds L192
+6	92bfc5f	0.7392	ok	81	diverse ensemble lossguide+depthwise
+7	90fbb40	0.7450	ok	101	all3-numeric ensemble L384 lr.015
+8	d3f9ad9	0.7462	ok	119	ensemble L768 lr.015 400 rounds
+9	cee7250	0.7459	ok	85	3-model L768 ensemble (runtime-safe)

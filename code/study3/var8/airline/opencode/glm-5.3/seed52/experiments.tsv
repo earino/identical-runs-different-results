@@ -1,0 +1,26 @@
+n	commit	eval_auc	status	seconds	description
+1	877c0d4	0.7141	ok	4	baseline
+2	7024d0d	0.7117	ok	4	FE: time features, route, cyclical, log dist + early stopping
+3	7422b1e	0.7526	ok	17	FE v3: time/freq/congest features + deep tree (d18, cols .4, lr .03)
+4	8200c4f	0.7545	ok	89	5-member ensemble: cols .38-.48, seeds, d18 lr.03
+5	848fac2	0.7559	ok	19	single: +carrier freq feats, d20, mb512
+6	81fbc4a	0.0000	timeout	123	ensemble5: +carrier freq, d20, mb512, cols .38-.48
+7	c236b8a	0.7548	ok	18	ensemble5: carrier freq, d20, mb256, cols .38-.48
+8	315dc21	0.7562	ok	119	ensemble5 d20 mb512, prepare once
+9	1eb121a	0.0000	timeout	120	ensemble8: d20 mb256 es40, cols .34-.48
+10	f167bbd	0.7562	ok	97	ensemble5: d20 mb256 es40, cols .36-.48
+11	073ae3c	0.7563	ok	102	ensemble5: depth mix 18/20/22/24/22, cols .36-.48
+12	0bf43a2	0.7564	ok	101	ensemble5 depth-mix + rank averaging
+13	a6db218	0.7557	ok	91	ensemble6: feature-subset bagging + depth/cols diversity, es30
+14	b5c5d19	0.7556	ok	109	ensemble6: all feats, depths 16-24, cols .34-.48
+15	f673be4	0.7569	ok	114	ensemble5: mb512 members, es30, depth mix
+16	4aa042d	0.7568	ok	99	ensemble5: mb512, es20, depth mix 18-24
+17	a0254db	0.7565	ok	100	seed stability: same config, seeds 111-115
+18	b32a464	0.7558	ok	55	snapshot ensemble: 2 fits d20/d22, k=70..130
+19	6aeb74f	0.7558	ok	66	hybrid snapshot ensemble: 3 fits d18/20/22 x k=75..120
+20	f2061e6	0.7565	ok	107	ensemble5: mb512 es20 + subsample 0.97
+21	3bd0bf7	0.7578	ok	95	ensemble5 + oc/dc freq features, mb512 es20
+22	68c1098	0.7576	ok	97	ensemble5: LR-diverse members 0.02-0.05, mb512 es20
+23	f2ff461	0.0000	timeout	120	ensemble6: + member (cols .52, d20), mb512 es20
+24	1122984	0.7581	ok	107	weighted rank-avg by member eval AUC
+25	33448b9	0.7583	ok	119	weighted ensemble, cols ladder .34-.44

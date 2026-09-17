@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	ea8c410	1789516809	baseline
+01	ff6b3e7	1789517026	100 trees
+02	161bd4c	1789517036	200 trees
+03	21d22fd	1789517070	depth 5, 200 trees
+04	922d140	1789517077	depth 4, 200 trees
+05	8eab1cb	1789517084	depth 3, 200 trees
+06	4090b77	1789517198	hour x dow, train-fitted levels
+07	3a5903e	1789517212	2-model blend cat+ordinal
+08	45c2b96	1789517227	3-model blend with colsample diversity
+09	c09a7b6	1789517262	restore 3-model blend
+10	f5e04ed	1789517292	3-blend, ordinal model 300t
+11	dc19c9b	1789517307	5-model blend

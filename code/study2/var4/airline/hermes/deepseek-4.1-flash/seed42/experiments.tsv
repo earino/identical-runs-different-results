@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4f6f5d0	0.7141	ok	5	baseline
+2	84f1526	0.7084	ok	5	scale model: 500 trees, lr 0.05, subsample/colsample 0.9, mcw 5
+3	8271153	0.7070	ok	6	diag: eval AUC vs n_trees (30..600) at baseline params
+4	e9ecc8d	0.7141	ok	23	diag: depth x lr x regularization sweep
+5	7a40241	0.7172	ok	2	adopt diag winner: depth 4, lr 0.03, 300 trees
+6	32d794b	0.7055	ok	16	feat eng: dep-time components+cyclic, route categorical, freq encodings
+7	e68d8da	0.7166	ok	3	feat: dep_hour, tod/month/dow cyclic, is_weekend, log_distance
+8	2dcffc0	0.7172	ok	19	diag: 12-config hyperparameter grid
+9	fbd3624	0.7173	ok	8	feat: OOF smoothed target encoding of origin/dest/carrier
+10	3f3a750	0.7171	ok	10	ensemble: 8 bagged XGB members (subsample/colsample 0.85)
+11	9daf8e6	0.7171	ok	21	diag: TE blocks (origin/carrier x hour, route), 3-seed avg
+12	df5e0e9	0.7190	ok	2	adopt TE subset: origin/dest/carrier + Origin_hour
+13	869c876	0.0000	crash	10	diag: extra interaction keys (dest_hour, origin_month/dow, bins, smoothing)
+14	55c1b3a	0.7195	ok	9	k-sweep for Origin_hour TE; adopt k=30
+15	bddbe4d	0.7195	ok	19	diag: capacity retune and count features under TE feature set
+16	c3dc698	0.7201	ok	16	ensemble: 8 diverse XGB members (members reported)
+17	3ed0a69	0.7194	ok	30	ensemble: 20 members, 5 configs x 4 seeds with bagging
+18	51aee4b	0.7197	ok	28	stacking: 4 level-1 configs x 5 folds -> XGB meta
+19	03d3c26	0.7201	ok	18	ensemble: 10 diverse strong members, no bagging
+20	43d1a71	0.7206	ok	98	diag: structural XGBoost variants + ensemble of them
+21	d3e1a0c	0.7208	ok	62	diag: L1 alpha sweep + ensemble incl. alpha members
+22	c920132	0.7219	ok	24	diag: reg_alpha 5-50 sweep, depth/tree variants; adopt alpha=5 single
+23	f64f2e3	0.7230	ok	29	diag: alpha 8-15, depth/tree/lr variants; adopt alpha=10
+24	0e9c410	0.7245	ok	61	diag: trees 1200-4000 at alpha=10; adopt n=1200
+25	e934228	0.7244	ok	42	ensemble: 8 L1-regularized members (alpha 5-10)
+26	d9c3b43	0.7245	ok	38	diag: feature blocks (time/counts/extra TE) under alpha=10
+27	3df637d	0.7258	ok	48	diag: retune under time features; adopt time + alpha10 n1200
+28	c3c0d9c	0.7268	ok	48	diag: retune around time+counts; adopt time+counts
+29	951efd2	0.7276	ok	92	diag: tree/param push at time+counts; adopt n=2000
+30	10140b6	0.7284	ok	67	diag: n=3000 combos; adopt time+counts n=3000
+31	6c5b727	0.0000	crash	2	diag: encoding variants under L1; keep t+c n=3000
+32	ea57248	0.7284	ok	79	diag: encoding variants under L1 (fixed key dtype); keep t+c n=3000
+33	f376053	0.7302	ok	71	diag: dep_minute and time-block ablations; keep t+c n=3000
+34	7b1497a	0.7302	ok	79	diag: Origin_5min density + dep_min5 + ablations; keep ref n3000
+35	502c2cd	0.7300	ok	71	adopt: +cnt_Origin_min5, drop log_distance/is_weekend, n=3000
+36	52e8fc3	0.7337	ok	62	adopt: te_Origin_min5 + d5 n1500 (combo of the two best diag wins)
+37	e29f008	0.7342	ok	58	diag: d6/d7 + alpha variants with min5TE; adopt d6 n=1000
+38	711f1f3	0.7351	ok	30	clean rewrite: 4-member L1-regularized ensemble (d5/d6/d7)
+39	189877c	0.7351	ok	64	ensemble: widen to 8 diverse L1 members
+40	b32fce4	0.7356	ok	51	ensemble: 6 members with mild bagging on two of them

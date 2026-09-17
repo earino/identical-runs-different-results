@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	d28affd	1789514773	baseline
+01	c5e3fdb	1789514826	exp2: numeric time features + early stopping
+02	7f081aa	1789514948	exp7: interaction categoricals hour x carrier, dow x hour
+03	d464fd3	1789515052	exp13: lr 0.03 patience 200
+04	24a75aa	1789515065	exp14: subsample 0.7 colsample 0.6
+05	737782a	1789515080	exp15: subsample 0.6 colsample 0.5
+06	1a50979	1789515094	exp16: subsample 0.5 colsample 0.4
+07	3d3dfa1	1789515132	exp18: depth 10 with subsample 0.5
+08	ef4e192	1789515150	exp19: depth 12
+09	2662749	1789515166	exp20: depth 14
+10	9677758	1789515192	exp21: depth 16
+11	0fb9bd3	1789515215	exp22: depth 20
+12	107d987	1789515245	exp23: depth 25
+13	f71df50	1789515278	exp24: depth 30
+14	cbe0d20	1789515311	exp25: lr 0.02 patience 300
+15	e01a455	1789515413	exp27: congestion volume features
+16	a754be1	1789515472	exp28: lr 0.015 patience 400
+17	47198da	1789515539	exp29: lr 0.01 patience 500
+18	d1b5a96	1789515804	exp32: max_bin 512
+19	0aa76c7	1789516796	exp35 restored: seed 7 (best, eval AUC 0.7510)

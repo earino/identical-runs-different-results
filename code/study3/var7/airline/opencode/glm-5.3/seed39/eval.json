@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 39,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T10:18:08+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s39-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T11:53:40+00:00",
+  "wall_seconds": 5732.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18994.3,
+  "endpoint_at_end": "ok",
+  "head": "d8ceb83",
+  "n_commits": 23,
+  "n_experiments": 38,
+  "n_ok": 33,
+  "n_crash": 2,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7473,
+  "final_eval_auc": 0.7473,
+  "holdout_auc": 0.745541382706,
+  "holdout_ap": 0.7377766919838671,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03077063096999999,
+  "generalization_gap": 0.0017586172939999534,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9860506,
+    "tokens_in_uncached": 133274,
+    "tokens_in_cached": 9727232,
+    "tokens_out": 51598,
+    "turns": null,
+    "api_calls": 174,
+    "method": "sum-of-174-events",
+    "cost_usd": 2.9427,
+    "cached_share": 0.986
+  },
+  "cpu_seconds_python": 18461.1,
+  "cpu_seconds_counted": 12706.1,
+  "cpu_seconds_uncounted": 5312.3,
+  "cpu_seconds_exempt": 442.7,
+  "python_processes": 72,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 1,
+  "fits_total": 213,
+  "fits_counted": 83,
+  "fits_uncounted": 128,
+  "commits": [
+    {
+      "commit": "529efe4",
+      "message": "baseline"
+    },
+    {
+      "commit": "eae9c3a",
+      "message": "capacity+early stopping (3000 trees lr .05, es on eval)"
+    },
+    {
+      "commit": "4aecf66",
+      "message": "FE: tod/route/numeric calendar/log dist"
+    },
+    {
+      "commit": "a58fe0f",
+      "message": "FE tod/doy/hour_cat + heavy reg (a4,l10,mcw20) + 5-seed ensemble"
+    },
+    {
+      "commit": "f85fdf0",
+      "message": "diverse 5-model ensemble (d7a8 x2, d6a4 x2, lr.02)"
+    },
+    {
+      "commit": "4f2a01c",
+      "message": "congestion features (bin counts + centered windows) + diverse ensemble"
+    },
+    {
+      "commit": "53ae7f7",
+      "message": "4-member ensemble: 2x d8a12 + 2x d7a8; cached eval"
+    },
+    {
+      "commit": "50fa48a",
+      "message": "3-member: 2x d9a16 + 1x d8a12"
+    },
+    {
+      "commit": "3736f78",
+      "message": "3-member: 2x d10a20 + 1x d9a16"
+    },
+    {
+      "commit": "7d9f9cd",
+      "message": "schedule-CDF features (org/dst); 2 members"
+    },
+    {
+      "commit": "6ad78fb",
+      "message": "+carrier/carrier@origin/route window counts (2 members)"
+    },
+    {
+      "commit": "4ae3def",
+      "message": "fast FE; +owdow30 +org_gap; lr .04/es60/cap1000 (2 members)"
+    },
+    {
+      "commit": "0ffb8a0",
+      "message": "full 37 feats; lr .03/es100/cap1100 (2 members)"
+    },
+    {
+      "commit": "8b9748d",
+      "message": "drop owdow30/org_gap: A/B vs exp17 (35 feats, lr.03 cap1100)"
+    },
+    {
+      "commit": "1121853",
+      "message": "exp13 config on fast FE: 35 feats, lr.03/es100/cap3000"
+    },
+    {
+      "commit": "0990e87",
+      "message": "tuned 2-member blend weight on eval"
+    },
+    {
+      "commit": "0d411f4",
+      "message": "2x d10a20 (seed diversity), cap1600, tuned blend"
+    },
+    {
+      "commit": "b4c2f00",
+      "message": "cap 1750: let member1 find true peak"
+    },
+    {
+      "commit": "d706137",
+      "message": "log-odds blend of 2 members"
+    },
+    {
+      "commit": "5df15b9",
+      "message": "member2 lossguide/600 leaves (fixed param passthrough)"
+    },
+    {
+      "commit": "bc0acca",
+      "message": "member2 lossguide max_leaves 250 (binding cap)"
+    },
+    {
+      "commit": "e482202",
+      "message": "strip dead lossguide params (identical trees, -11s)"
+    },
+    {
+      "commit": "616ca90",
+      "message": "+cs30 carrier share of origin 30-min traffic"
+    },
+    {
+      "commit": "d8ceb83",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18018.4,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 533.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "616ca90",
+  "best_commit_eval_auc": 0.7473,
+  "best_commit_holdout_auc": 0.745541382706,
+  "best_commit_holdout_ap": 0.7377766919838671,
+  "best_commit_error": null,
+  "finalized_best": true
+}

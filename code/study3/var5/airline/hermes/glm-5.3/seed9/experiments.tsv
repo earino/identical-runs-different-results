@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ae6e945	0.7141	ok	4	baseline
+2	b4d5cec	0.0000	crash	1	time features + route + tuned model
+3	4750fcf	0.0000	crash	1	time features + route + tuned model (fixed)
+4	ba66f6f	0.7118	ok	4	time features + route + tuned model (fixed v2)
+5	d9540bb	0.7078	ok	3	features only, baseline model
+6	e9c79d9	0.7063	ok	2	add hour features + route cat
+7	4f3e50c	0.7145	ok	3	more trees + early stopping
+8	ddf1488	0.7151	ok	3	hour features on tuned model
+9	022f1ad	0.7072	ok	4	route interaction
+10	bcae9b0	0.7178	ok	14	5-seed bagging ensemble
+11	70829f5	0.7181	ok	29	10-seed bagging
+12	a919c99	0.7105	ok	40	target encoding
+13	bb81605	0.7183	ok	50	slower learning, more patience
+14	b09c61d	0.7185	ok	61	depth 8
+15	fb59d3e	0.7192	ok	76	depth 10
+16	a1344f8	0.7204	ok	109	depth 12
+17	064fa4a	0.0000	timeout	120	depth 14
+18	8722aa2	0.0000	timeout	120	carrier x hour interaction
+19	5284338	0.0000	timeout	120	carrier_hour, es=50
+20	6a3d818	0.0000	timeout	120	carrier_hour, 6 models
+21	48d80a0	0.7203	ok	78	lr .05 depth 12
+22	7606a32	0.0000	timeout	121	stronger row/col sampling
+23	4cf1de0	0.7201	ok	107	max_bin 128
+24	f4bdfb3	0.0000	timeout	120	traffic counts
+25	830a599	0.7200	ok	63	6 models baseline-feats
+26	317bb2b	0.7188	ok	87	mixed depth ensemble
+27	8d6f987	0.0000	timeout	121	depth 13 max_bin 128
+28	99c46a2	0.7210	ok	108	depth 13 es50
+29	2cd291c	0.7188	ok	58	min_child_weight 10
+30	d67736a	0.7237	ok	116	reg_alpha 0.5
+31	cc10188	0.7253	ok	107	reg_alpha 1.0
+32	e9af3d0	0.7273	ok	100	reg_alpha 2.0
+33	dc2a9dd	0.7285	ok	109	reg_alpha 4.0
+34	97a1e0f	0.7279	ok	107	reg_alpha 8.0
+35	7aba817	0.7283	ok	112	reg_alpha 6.0
+36	a40ba41	0.0000	timeout	120	internal split ES
+37	58cf6a6	0.7285	ok	103	rank averaging
+38	2a753c4	0.7285	ok	88	depth 14, 8 models
+39	a7c800f	0.0000	timeout	120	lr 0.02
+40	a508a11	0.7287	ok	109	subsample 0.9

@@ -1,0 +1,10 @@
+run.log
+validate.log
+experiments.tsv
+__pycache__/
+*.pyc
+.opencode/
+opencode.json
+.claude/
+.codex/
+.pi/

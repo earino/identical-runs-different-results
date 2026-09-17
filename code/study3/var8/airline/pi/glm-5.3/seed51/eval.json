@@ -1,0 +1,178 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 51,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T09:44:28+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s51-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T11:24:21+00:00",
+  "wall_seconds": 5993.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18281.0,
+  "endpoint_at_end": "ok",
+  "head": "6c39aca",
+  "n_commits": 19,
+  "n_experiments": 15,
+  "n_ok": 15,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7566,
+  "final_eval_auc": 0.7566,
+  "holdout_auc": 0.755919131108,
+  "holdout_ap": 0.7474057306517513,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.041148379372,
+  "generalization_gap": 0.0006808688920000305,
+  "final_md_written": true,
+  "violations": [
+    "modified-tracked:probe-log.md"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6178478,
+    "tokens_in_uncached": 173934,
+    "tokens_in_cached": 6004544,
+    "tokens_out": 124685,
+    "turns": null,
+    "api_calls": 119,
+    "method": "sum-of-119-events",
+    "cost_usd": 2.3533,
+    "cached_share": 0.972
+  },
+  "cpu_seconds_python": 18274.7,
+  "cpu_seconds_counted": 3009.4,
+  "cpu_seconds_uncounted": 14833.7,
+  "cpu_seconds_exempt": 431.5,
+  "python_processes": 65,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1206,
+  "fits_counted": 150,
+  "fits_uncounted": 1040,
+  "commits": [
+    {
+      "commit": "5af0862",
+      "message": "baseline"
+    },
+    {
+      "commit": "c6b0597",
+      "message": "numeric time features, route categorical, log distance"
+    },
+    {
+      "commit": "56282d4",
+      "message": "capacity: 600 trees lr .05 depth 8, ES on internal 20pct split"
+    },
+    {
+      "commit": "175f459",
+      "message": "ablation: baseline features with ES capacity model"
+    },
+    {
+      "commit": "c52a796",
+      "message": "drop Month/DayofMonth (year shift), depth 5"
+    },
+    {
+      "commit": "bbf0947",
+      "message": "rare-airport bucketing (>=500), deep trees d12/100tr lr.05"
+    },
+    {
+      "commit": "d8b45e6",
+      "message": "16-member ensemble: rare-ladder x depth, colsample .85"
+    },
+    {
+      "commit": "8fbe6b0",
+      "message": "max_bin=384 for all ensemble members"
+    },
+    {
+      "commit": "8b28bb6",
+      "message": "add carrier-share-at-origin structural feature"
+    },
+    {
+      "commit": "2223d88",
+      "message": "depth diversity: swap d16 for d18"
+    },
+    {
+      "commit": "3e87aae",
+      "message": "10-experiment synthesis"
+    },
+    {
+      "commit": "f8a0d6e",
+      "message": "n_estimators 100 -> 110"
+    },
+    {
+      "commit": "b59fb91",
+      "message": "densify mid rare-ladder (drop 150/200, add 600/800)"
+    },
+    {
+      "commit": "ecfdaac",
+      "message": "Revert \"densify mid rare-ladder (drop 150/200, add 600/800)\""
+    },
+    {
+      "commit": "c8e4bbd",
+      "message": "shift rare ladder down (add 100, drop 1500)"
+    },
+    {
+      "commit": "f716ca2",
+      "message": "Revert \"shift rare ladder down (add 100, drop 1500)\""
+    },
+    {
+      "commit": "762911b",
+      "message": "weighted aggregation: upweight mid-ladder members"
+    },
+    {
+      "commit": "a4edf8c",
+      "message": "Revert \"weighted aggregation: upweight mid-ladder members\""
+    },
+    {
+      "commit": "3aeb53b",
+      "message": "max_cat_to_onehot=32 (one-hot splits for dow/carrier) + grouped predict prepares"
+    },
+    {
+      "commit": "6c39aca",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17843.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 6.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3aeb53b",
+  "best_commit_eval_auc": 0.7566,
+  "best_commit_holdout_auc": 0.755919131108,
+  "best_commit_holdout_ap": 0.7474057306517513,
+  "best_commit_error": null,
+  "finalized_best": true
+}

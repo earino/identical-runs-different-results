@@ -1,0 +1,30 @@
+n	commit	unix_time	subject
+00	b6bc214	1789618656	baseline
+01	b86c7f6	1789619853	FE: hour/min-of-day, route cat, early stopping
+02	33e24ed	1789620035	diag: route vs noroute
+03	595df62	1789620147	sweep: capacity/regularization
+04	0ee7b1c	1789620498	sweep: d3-d4 regularization
+05	e76f7e7	1789620666	target encoding + dayofyear sweep
+06	a98719e	1789621183	seed bagging test
+07	aa2f699	1789621596	time-block + hour*dow features, lr sweep
+08	98b1b57	1789622086	monotone constraints + cv bag
+09	f9a770e	1789622239	cvbag size + monotone combo
+10	c916875	1789622714	volume/carrierhour/season features screen
+11	53d8470	1789624144	clean: cvbag10 + CarrierHour
+12	e4fe841	1789624253	depth/mcw sweep with CarrierHour
+13	5832c7e	1789625108	origin/dest x carrier interaction screen
+14	f01899a	1789625562	within-df congestion rates screen
+15	c4f1230	1789625783	congestion variants: carrier-hour, 30min slots
+16	bd4dad7	1789625995	rolling congestion counts screen
+17	8a28720	1789626121	asymmetric multi-scale rolling congestion
+18	59c9c8b	1789626901	production: full congestion + daypos features
+19	427e9f1	1789626979	gap + carrier queue screen
+20	b134854	1789627593	queue v2: long windows, day fractions, shares
+21	e680cff	1789627808	dest-side queue features + carrier gap + burst
+22	ca7d476	1789628018	fwd/dow rates + prune + col08 screen
+23	dd4c2b8	1789628154	fix importance index; rerun fwd/dow screen
+24	a0dbf1d	1789628653	depmin/quarter + subsample probes
+25	f64c062	1789629023	sub09 + depth-diversity ensemble screen
+26	d90a671	1789629628	final production: prune features, sub0.9, cvbag10
+27	8a2e484	1789630378	carrier-at-airport queue screen
+28	c578125	1789630546	final: carrier x airport queue, cvbag10 production

@@ -1,0 +1,196 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:11:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T23:52:25+00:00",
+  "wall_seconds": 2473.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7515.0,
+  "endpoint_at_end": "ok",
+  "head": "0fbef66",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7406,
+  "final_eval_auc": 0.7406,
+  "holdout_auc": 0.741217059212,
+  "holdout_ap": 0.7339365691767777,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.026446307475999964,
+  "generalization_gap": -0.0006170592119999485,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7914195,
+    "tokens_in_uncached": 89299,
+    "tokens_in_cached": 7824896,
+    "tokens_out": 90691,
+    "turns": null,
+    "api_calls": 134,
+    "method": "sum-of-134-events",
+    "cost_usd": 0.2935,
+    "cached_share": 0.989
+  },
+  "cpu_seconds_python": 7481.9,
+  "cpu_seconds_counted": 6657.6,
+  "cpu_seconds_uncounted": 1.7,
+  "cpu_seconds_exempt": 822.6,
+  "python_processes": 46,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 354,
+  "fits_counted": 334,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "53d4d88",
+      "message": "baseline"
+    },
+    {
+      "commit": "844660e",
+      "message": "baseline feats + early stopping on internal 90/10 split"
+    },
+    {
+      "commit": "f5eed92",
+      "message": "n_estimators sweep on baseline features"
+    },
+    {
+      "commit": "e680d5c",
+      "message": "FE v1b: time-of-day + cyclical (no Route), n_est=40"
+    },
+    {
+      "commit": "4dffc42",
+      "message": "add Route cat back at n_est=40"
+    },
+    {
+      "commit": "4dbf988",
+      "message": "depth x n_est sweep"
+    },
+    {
+      "commit": "2e64445",
+      "message": "regularizer grid at depth 4"
+    },
+    {
+      "commit": "feeb9f5",
+      "message": "lr sweep at depth 4"
+    },
+    {
+      "commit": "5e85892",
+      "message": "feature-shape ablation: hour_cat, calcats, nodom (fix return cols)"
+    },
+    {
+      "commit": "2ea31e4",
+      "message": "regularization grid on hourcat features"
+    },
+    {
+      "commit": "696358f",
+      "message": "extended reg grid"
+    },
+    {
+      "commit": "b55384b",
+      "message": "n_est x lr re-check at rl10 mcw20 cols0.6"
+    },
+    {
+      "commit": "f4cdefd",
+      "message": "8-model ensemble at strong-reg configs"
+    },
+    {
+      "commit": "d63c74a",
+      "message": "lossguide and max_cat_threshold variants"
+    },
+    {
+      "commit": "44d9fc8",
+      "message": "lossguide leaves x max_bin sweep"
+    },
+    {
+      "commit": "9288f2b",
+      "message": "lossguide higher leaves + lr/cols recheck"
+    },
+    {
+      "commit": "70aa489",
+      "message": "reg recheck at lossguide 192"
+    },
+    {
+      "commit": "2a32c85",
+      "message": "5-member lossguide ensemble"
+    },
+    {
+      "commit": "51cfe1c",
+      "message": "8-member lossguide ensemble + rank-avg compare"
+    },
+    {
+      "commit": "01a41ac",
+      "message": "10-member lossguide ensemble n=450"
+    },
+    {
+      "commit": "13af678",
+      "message": "mixed-family ensemble test (8 lg + 2 hist)"
+    },
+    {
+      "commit": "9f92b02",
+      "message": "ensemble 8lg+2hist on hourcat+carrier_hour"
+    },
+    {
+      "commit": "b875980",
+      "message": "feature-diverse ensemble: 4 lg@hc + 4 lg@ch + 2 hist@ch"
+    },
+    {
+      "commit": "8140238",
+      "message": "fix predict_proba: per-member column sets (validation bug)"
+    },
+    {
+      "commit": "0fbef66",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6659.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 33.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b875980",
+  "best_commit_eval_auc": 0.7406,
+  "best_commit_holdout_auc": null,
+  "best_commit_holdout_ap": null,
+  "best_commit_error": "scorer failed (exit 1): as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/app/bench/score_holdout.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/app/bench/score_holdout.py\", line 27, in main\n    p = np.asarray(fn(df.drop(columns=[target])), dtype=float).ravel()\n                   ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"train.py\", line 190, in predict_proba\n    return np.mean([m.predict_proba(X)[:, 1] for m in MODELS], axis=0)\n                    ~~~~~~~~~~~~~~~^^^\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/sklearn.py\", line 1972, in predict_proba\n    class_probs = super().predict(\n        X=X,\n    ...<2 lines>...\n        iteration_range=iteration_range,\n    )\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/sklearn.py\", line 1508, in predict\n    predts = self.get_booster().inplace_predict(\n        data=X,\n    ...<4 lines>...\n        validate_features=validate_features,\n    )\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 2687, in inplace_predict\n    self._validate_features(fns)\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 3325, in _validate_features\n    raise ValueError(msg.format(self.feature_names, feature_names))\nValueError: feature_names mismatch: ['UniqueCarrier', 'Origin', 'Dest', 'dep_hour', 'time_min', 'time_sin', 'time_cos', 'month_num', 'month_sin', 'month_cos', 'dow_num', 'dow_sin', 'dow_cos', 'dom_num', 'dom_sin', 'dom_cos', 'Distance', 'hour_cat'] ['UniqueCarrier', 'Origin', 'Dest', 'dep_hour', 'time_min', 'time_sin', 'time_cos', 'month_num', 'month_sin', 'month_cos', 'dow_num', 'dow_sin', 'dow_cos', 'dom_num', 'dom_sin', 'dom_cos', 'Distance', 'hour_cat', 'carrier_hour']\ntraining data did not have the following fields: carrier_hour",
+  "finalized_best": false
+}

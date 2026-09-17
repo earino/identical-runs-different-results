@@ -1,0 +1,188 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 20,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:05:04+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s20-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:42:50+00:00",
+  "wall_seconds": 2265.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6568.2,
+  "endpoint_at_end": "ok",
+  "head": "4383be3",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7483,
+  "final_eval_auc": 0.7483,
+  "holdout_auc": 0.748862156468,
+  "holdout_ap": 0.7406286413607112,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03409140473200001,
+  "generalization_gap": -0.0005621564680000635,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8081519,
+    "tokens_in_uncached": 8081519,
+    "tokens_in_cached": 0,
+    "tokens_out": 46224,
+    "turns": null,
+    "api_calls": 131,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 6332.0,
+  "cpu_seconds_counted": 5894.1,
+  "cpu_seconds_uncounted": 1.1,
+  "cpu_seconds_exempt": 436.8,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 147,
+  "fits_counted": 140,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "19ccee4",
+      "message": "baseline"
+    },
+    {
+      "commit": "8c079a5",
+      "message": "fe without route/freq: time+calendar numerics, carrier/origin/dest cats"
+    },
+    {
+      "commit": "fb494d8",
+      "message": "200 trees lr0.05 d6 with regularization on best fe"
+    },
+    {
+      "commit": "1e3934e",
+      "message": "depth 8 (re-apply)"
+    },
+    {
+      "commit": "367241f",
+      "message": "depth 10"
+    },
+    {
+      "commit": "5713010",
+      "message": "smoothed target encodings (carrier/origin/dest/hour) with OOF train values"
+    },
+    {
+      "commit": "511267a",
+      "message": "lossguide 256 leaves"
+    },
+    {
+      "commit": "e09219b",
+      "message": "lossguide 512 leaves"
+    },
+    {
+      "commit": "f810902",
+      "message": "lossguide 1024 leaves"
+    },
+    {
+      "commit": "ee4b446",
+      "message": "3-seed ensemble average"
+    },
+    {
+      "commit": "1cb31eb",
+      "message": "heterogeneous 3-model ensemble (lossguide1024 / depth12 / lossguide512)"
+    },
+    {
+      "commit": "e400794",
+      "message": "4-model heterogeneous ensemble (+lg2048)"
+    },
+    {
+      "commit": "01f153f",
+      "message": "5-model ensemble with feature-subset diversity"
+    },
+    {
+      "commit": "2d1123f",
+      "message": "7-model ensemble"
+    },
+    {
+      "commit": "0e84601",
+      "message": "fe: traffic-volume counts (carrier/origin/dest/origin-hour)"
+    },
+    {
+      "commit": "773c485",
+      "message": "fe: hour sin/cos + route volume"
+    },
+    {
+      "commit": "817b69a",
+      "message": "fe: route share, origin-hour share of origin traffic"
+    },
+    {
+      "commit": "344e8fe",
+      "message": "recency sample weights by month"
+    },
+    {
+      "commit": "f72ec9b",
+      "message": "te: carrier-origin, carrier-dest"
+    },
+    {
+      "commit": "a9887dc",
+      "message": "max_cat_threshold=128"
+    },
+    {
+      "commit": "20cd329",
+      "message": "max_cat_threshold=256"
+    },
+    {
+      "commit": "1c2207d",
+      "message": "strengthen weak member (lg1024x250 lr.045)"
+    },
+    {
+      "commit": "4383be3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5895.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 236.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1c2207d",
+  "best_commit_eval_auc": 0.7483,
+  "best_commit_holdout_auc": 0.748862156468,
+  "best_commit_holdout_ap": 0.7406286413607112,
+  "best_commit_error": null,
+  "finalized_best": true
+}

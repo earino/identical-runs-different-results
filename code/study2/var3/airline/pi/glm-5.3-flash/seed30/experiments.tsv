@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f467b30	0.7141	ok	4	baseline
+2	5f903ca	0.7148	ok	3	early stopping val split, lr 0.05, refit full
+3	c6c5c44	0.7214	ok	24	FE v1: tod features, ordered date ints, log distance
+4	0f3eec7	0.7189	ok	29	TE: origin/dest/route/carrier-hour, OOF 5-fold
+5	2854e68	0.7219	ok	28	depth 8 + min_child_weight 10
+6	add229e	0.7240	ok	86	5-fold bag, per-fold early stopping
+7	b30159f	0.7240	ok	96	freq encoding origin/dest/route
+8	a643512	0.7339	ok	26	cross cats carrier-hour, dow-hour
+9	c71279c	0.7253	ok	41	crosses: +origin-hour, carrier-month, month-hour
+10	5635c50	0.7162	ok	21	crosses: +carrier-month, month-hour
+11	21d233e	0.7292	ok	27	cross: carrier-dow
+12	2683cd4	0.7340	ok	27	heterogeneous depth bag
+13	8e79938	0.7316	ok	18	subsample/colsample 0.7
+14	35b2226	0.7349	ok	38	lr 0.03
+15	9132e15	0.7347	ok	57	lr 0.02
+16	d559359	0.7347	ok	64	K=8 bag
+17	9739c5f	0.7354	ok	35	congestion origin-hour/dest-hour counts
+18	3c8c6be	0.7346	ok	38	mcw 25 + reg_lambda 5
+19	40df6c2	0.0000	crash	1	ablate minute + tod cyclical
+20	d549021	0.7255	ok	26	ablate minute + tod cyclical
+21	76bd5a5	0.7353	ok	74	lr-diverse 10-model bag
+22	9c7e9d2	0.7350	ok	41	holiday window flag
+23	9369a91	0.7353	ok	35	max_bin 64
+24	1dfc7c6	0.0000	crash	1	cross carrier-distbin
+25	07d3cee	0.7297	ok	48	cross carrier-distbin
+26	a50b5bd	0.7348	ok	56	patience 200
+27	ce68b7f	0.0000	crash	2	hour_cat native categorical
+28	ce060f4	0.7349	ok	43	hour_cat native categorical (int)
+29	a6fb2cf	0.7356	ok	52	crosses with wrapped hour
+30	07522ad	0.7356	ok	54	cap 1000 trees
+31	53782d1	0.0000	crash	50	tree-horizon grid on eval
+32	df05838	0.7358	ok	80	tree-horizon grid on eval
+33	cd21493	0.7269	ok	40	simplify: drop DepTime/night/weekend
+34	4086cbc	0.7354	ok	74	cong carrier-hour
+35	917745d	0.7358	ok	100	depths 6/6/8/10/12
+36	f2eed4a	0.7358	ok	90	colsample_bynode 0.8
+37	7383a48	0.7361	ok	89	mcw 3
+38	7c1af3a	0.7362	ok	90	mcw 1
+39	e9182ec	0.0000	timeout	122	no sampling (1.0/1.0)
+40	e3a7ac3	0.7371	ok	118	subsample 0.95

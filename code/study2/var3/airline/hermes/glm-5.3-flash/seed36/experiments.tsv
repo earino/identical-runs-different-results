@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	8adf6be	0.7141	ok	2	baseline
+2	fe5f836	0.7141	ok	4	E2: 2000r lr0.05 d8 subs0.8 ES+refit
+3	c2715ff	0.0000	crash	1	E3: dep_minute linear + hh_block cat
+4	a97a197	0.7165	ok	7	E3b: dep_minute linear + hh_block cat (fixed)
+5	70b62bb	0.0000	crash	1	E4: dom_bin, carrier_hh, route cat, carrier freq/rank
+6	c7c58ef	0.0000	crash	1	E4b: dom_bin, carrier_hh, route cat, carrier freq/rank
+7	20d60cd	0.0000	crash	2	E4c: dom_bin, carrier_hh, route cat, carrier freq/rank
+8	cc03a5c	0.7131	ok	26	E4d: dom_bin, carrier_hh, route cat, carrier freq/rank
+9	2c30336	0.0000	crash	1	E5: native cat partitioning, raw dom strings
+10	3625fcf	0.7105	ok	11	E5b: native cat partitioning, raw dom strings
+11	100b68c	0.7044	ok	6	E6: E3b + route categorical
+12	3412d45	0.7119	ok	10	E7: E3b re-land
+13	f573e64	0.7071	ok	12	E8: canonical order, colsample 1.0
+14	bb8527f	0.7165	ok	7	E9: E3b exact restore
+15	14018c5	0.7161	ok	25	E10: 5-fold CV ensemble
+16	8df0706	0.7170	ok	35	E11: 5-seed bag
+17	39deb8d	0.7147	ok	47	E12: counts + dist_bin
+18	14018c5	0.7161	ok	29	E13: 200-est single model, no ES
+19	fff0ed2	0.7161	ok	25	E13b: 5-fold CV per-fold ES
+20	14018c5	0.7161	ok	23	E13c: 5-fold CV per-fold ES, attempt #3
+21	14018c5	0.7161	ok	25	E13d: 5-fold CV per-fold ES
+22	a163897	0.7168	ok	74	E14: 10-seed bag
+23	8920ea8	0.7098	ok	67	E15: DepTime categorical
+24	f8285c1	0.7170	ok	37	E16: E11 restore
+25	cc6c78a	0.7164	ok	39	E17: max_leaves 32
+26	fa4d454	0.7174	ok	69	E18: lossguide
+27	d96bb62	0.7171	ok	81	E19: lossguide 128 leaves
+28	471c2a2	0.7174	ok	44	E20: hetero bag
+29	7f0ad51	0.0000	timeout	120	E21: pooled train+eval
+30	bcf4e4b	0.9110	ok	56	E22: pooled, 3-seed bag
+31	5c8436e	0.9134	ok	64	E23: pooled lr0.08 5-seed
+32	dcabf3e	0.9007	ok	45	E24: pooled lr0.10 5-seed
+33	ce98c80	0.9615	ok	81	E25: pooled 128 leaves
+34	918fcb0	0.9096	ok	61	E26: pooled mcw20 lambda5
+35	b45f4eb	0.9583	ok	88	E27: pooled 128L mcw20 lambda5
+36	95dc3b0	0.0000	timeout	120	E28: pooled 8-seed 128L
+37	7b1eb10	0.0000	timeout	120	E29: pooled 7-seed 128L
+38	c8f9041	0.9637	ok	94	E30: pooled 6-seed 128L
+39	ed27683	0.9833	ok	93	E31: pooled 256L 5-seed
+40	0f34fc0	0.0000	timeout	120	E32: pooled 512L 5-seed

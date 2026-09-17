@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	d7713ee	1789520069	baseline
+01	7236ab4	1789520139	capacity check: 200 trees depth 6
+02	a189281	1789520161	feat: DepTime clock/cyclical, weekend, freq encodings
+03	59c66ad	1789520339	clock features + d4/n400/colsample0.8
+04	bc538d2	1789520348	5-seed bagged ensemble
+05	5ee785a	1789521229	deep trees (d24) + colsample0.5 + 3-seed bag
+06	f8a44b6	1789522443	diverse deep-tree bag (4 depths x 2 seeds)
+07	b59dabd	1789522881	drop calendar cats, add freq counts
+08	b28cc11	1789523282	drop weekend flag, add hub-size stats
+09	30bcf52	1789523828	add estimated arrival-time features, drop dep_minute
+10	0c8ff27	1789524154	wider bag: 10 models, 5 depths x 2 seeds, n90
+11	24a2480	1789524251	14-model bag, 7 depths x 2 seeds, n70
+12	11a5ad4	1789524357	18-model bag, 9 depths x 2 seeds, n55
+13	8d6be79	1789524582	feature-subset diversity: half bag drops Origin/Dest cats
+14	ab0479a	1789525082	max_bin 128 to fit more trees per model
+15	e33922f	1789525179	n80 with max_bin 128

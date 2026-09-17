@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d692c5c	0.7141	ok	11	baseline
+2	b75bde8	0.7116	ok	5	early stopping depth8
+3	1635b48	0.7073	ok	8	500 trees depth6 lr0.1
+4	147b14b	0.7113	ok	4	DepTime -> hour,min,continuous
+5	efb961a	0.7127	ok	2	hour features, 30 trees
+6	ea8fdd2	0.7047	ok	1	TE + hour features
+7	32c91ee	0.7061	ok	2	Route cat feature + DepHour, 30 trees
+8	53fc3f4	0.7167	ok	5	capacity probe 8 configs
+9	66e4ec2	0.7168	ok	13	shallow region probe
+10	90017bf	0.7168	ok	16	seedens vs hour features probe
+11	4f21831	0.7196	ok	8	feature variant probe
+12	e1d2ee9	0.7196	ok	6	calendar refinement probe
+13	6c4e6c7	0.7196	ok	15	capacity probe on cal features
+14	41c3678	0.7203	ok	11	small model + hour ablation probe
+15	71d6d14	0.7206	ok	12	alpha spectrum + bagging probe
+16	61ba00c	0.0000	crash	8	time-of-day variant probe
+17	8153c81	0.7220	ok	11	time-of-day variant probe (fixed)
+18	9c9559e	0.7220	ok	8	drop combos probe
+19	3d53f47	0.7241	ok	10	interaction features probe
+20	95852c3	0.7241	ok	12	orighour neighborhood probe
+21	832eb65	0.7287	ok	16	capacity probe on best features
+22	b4ef44f	0.7299	ok	18	grid around new optimum
+23	53d65c9	0.7311	ok	31	deeper trees + volume probe
+24	f669331	0.7321	ok	47	subsample/colsample grid
+25	7d301eb	0.7333	ok	50	bagged ensemble probe
+26	3a24427	0.7333	ok	69	dest/carr hour bag probe
+27	74baf5b	0.7331	ok	33	bag8 expanded
+28	3196d41	0.7333	ok	79	recency weights probe
+29	4f4c687	0.0000	timeout	120	dow interaction probe
+30	ce976db	0.0000	crash	14	OHE probe
+31	568d608	0.0000	crash	23	OHE probe fixed
+32	6e77806	0.7333	ok	24	chronological ES probe
+33	d3ba04a	0.7312	ok	53	column bagging probe
+34	1074313	0.7333	ok	61	booster params + bag
+35	cc3c9f6	0.7341	ok	28	7-member diverse bag
+36	ef63969	0.7344	ok	29	fixed 7-member mean bag
+37	fa43a38	0.7349	ok	38	10-member bag
+38	a3472bd	0.7351	ok	57	mega-bag 16
+39	ea4e9c5	0.7350	ok	87	24-member seed-family bag
+40	837ad85	0.7351	ok	58	union16 final

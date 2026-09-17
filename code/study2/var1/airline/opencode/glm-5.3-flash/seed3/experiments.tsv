@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2f9f7c2	0.7141	ok	4	baseline: 30 trees depth6 lr0.1 native categorical
+2	2dcde70	0.0000	crash	16	feat v2 + early-stop retrain
+3	5cd4dd3	0.7183	ok	48	feat v2 + early-stop retrain
+4	ac61a03	0.7182	ok	82	lr 0.04 + 3000 cap
+5	c680675	0.0000	crash	2	TE + count encoding
+6	9987477	0.6891	ok	7	TE + count encoding
+7	9608e3b	0.7171	ok	56	count encodings only
+8	1c1cb6a	0.0000	crash	1	OOF TE origin/dest/route
+9	90c1019	0.7138	ok	54	OOF TE origin/dest/route
+10	cd7515e	0.7154	ok	25	interaction cats originXhour carrierXhour
+11	51611f5	0.6895	ok	6	depth 8
+12	d57b021	0.7014	ok	65	depth12 mcw40 patience200
+13	a145cd8	0.7054	ok	93	3-model ensemble
+14	327dc50	0.7213	ok	77	ensemble 3x clean v2
+15	9a0c7fa	0.0000	crash	64	ensemble 4 members
+16	147f619	0.7213	ok	98	ensemble 4 members
+17	d22d9db	0.7206	ok	75	lr-diverse ensemble
+18	ad6e6a2	0.7213	ok	80	max_bin 512
+19	469fc4a	0.7208	ok	77	gamma 1.0
+20	62b464e	0.7057	ok	79	date fields as cats
+21	2ef8651	0.0000	timeout	120	lossguide 128 leaves
+22	e02a83c	0.0000	crash	43	dart member ensemble
+23	081c28e	0.0000	crash	43	dart member ensemble
+24	421c75e	0.0000	timeout	120	dart member ensemble
+25	53ec2ad	0.7173	ok	81	colsample_bynode 0.8
+26	5dd9f2a	0.0000	crash	1	canonical route + dir
+27	f4cfcad	0.7122	ok	87	canonical route + dir
+28	c4dac43	0.7206	ok	51	members 1000 trees
+29	6645aa5	0.7210	ok	100	4 members plain
+30	ff86c90	0.7201	ok	86	drop raw DepTime
+31	3fb8494	0.7237	ok	76	feature-dropout members
+32	b795cdc	0.7220	ok	98	4th time-blind member
+33	703e156	0.7243	ok	76	deeper dropout
+34	50fa7ac	0.7236	ok	75	M2 no-dow no-dist
+35	d5f75e6	0.7234	ok	75	weights 2-1-1
+36	53fb88e	0.7236	ok	73	M2 coarse time
+37	a4493cf	0.7290	ok	70	M3 no route
+38	d69be75	0.7289	ok	70	M2 no origin
+39	7820a57	0.7305	ok	92	4th member no-carrier no-dest
+40	d23af1e	0.0000	crash	76	5th member

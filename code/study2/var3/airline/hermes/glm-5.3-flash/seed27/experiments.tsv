@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	81de627	0.7141	ok	3	baseline
+2	e134364	0.7148	ok	5	cyclical deptime, cat train via DMatrix, depth10 lr.05 ES50
+3	a49f5f9	0.7170	ok	6	target encodings (oof) + counts + deptime cyclical, depth8 ES100
+4	f0355ba	0.7183	ok	6	regularize: depth6 mcw20 sub.7 col.7
+5	a63a992	0.7195	ok	9	more TE interactions: dest_hour, carrier_hour, dtblock
+6	ece9333	0.7195	ok	10	drop noisy cat cols, TE on hour-chain keys only
+7	ca6d7f1	0.7199	ok	9	eta .03 mcw50
+8	2b51f4c	0.7274	ok	64	bagged ensemble 6 seeds x 90/10 ES
+9	d47e8b3	0.7274	ok	104	10 bags
+10	a3758a2	0.7280	ok	66	diverse-config ensemble: 6 bags varied depth/col/mcw
+11	ce88481	0.7275	ok	68	TE month_hour, dow_hour interactions
+12	af3f9b9	0.7210	ok	60	TE month_dom (holiday spikes)
+13	dc59f84	0.7494	ok	66	congestion features: flights per origin/dest-day
+14	685fdc5	0.7620	ok	61	expand congestion: cong_day, cong_ohb, cong_c
+15	7c4ff70	0.7625	ok	62	cong_dhb, cong_r
+16	52ad19c	0.7626	ok	55	TE origin_hb, hour_x_congday
+17	9441d7a	0.7624	ok	60	cong_day_hb, share ratios
+18	5f473b7	0.7591	ok	49	hour/dom/dow categorical splits
+19	5da2a4c	0.7629	ok	73	8 diverse bags
+20	2189d59	0.7627	ok	48	5-fold CV ensemble, ES on held-out fold
+21	78fbe33	0.7629	ok	60	deeper bags: base depth 8
+22	05eda22	0.7625	ok	75	frac_day (schedule position), hour_x_cong
+23	8e0811c	0.7629	ok	76	finer hour TE: half-hour bins (48)
+24	5c3b622	0.7633	ok	72	cong_och, cong_chb (carrier congestion)
+25	a4ccef7	0.7628	ok	81	hour_raw ordinal, is_nextday flag
+26	f820dc5	0.0000	crash	2	fixed cong bins for HOUR_CONG, eta-diverse 8 bags
+27	7405beb	0.7628	ok	62	fixed cong bins for HOUR_CONG, eta-diverse 8 bags (fix)
+28	c0a2a5e	0.7633	ok	75	subsample .85 (bagging from ES split)
+29	ba74c47	0.7634	ok	115	12 diverse bags
+30	37a0eaf	0.7632	ok	90	10 bags, refreshed configs
+31	31ab0e1	0.7612	ok	116	TE origin_x_congday_bucket
+32	81f2267	0.0000	timeout	120	rank-average ensemble aggregation
+33	029f713	0.0000	timeout	120	hybrid: 6 ES bags + 4 full-data bags at median rounds
+34	e1ade8f	0.7630	ok	71	hybrid: 6 ES bags + 2 full-data bags
+35	da8b2e6	0.7630	ok	114	ES on 15% holdout per bag
+36	f40e15d	0.7632	ok	113	TE dow_x_timeblock
+37	686a8ad	0.7628	ok	108	xgb stacker over 12 bag OOF preds
+38	c41c04d	0.7633	ok	103	arrival-side congestion (dest x est arrival block)
+39	8fe8920	0.0000	timeout	120	hybrid 6ES+2full + arrival congestion
+40	c31a031	0.7635	ok	110	12 bags, subsample .8, round cap 2400

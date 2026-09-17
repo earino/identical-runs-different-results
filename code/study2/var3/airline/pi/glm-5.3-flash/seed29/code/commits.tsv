@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	429bb52	1789497287	baseline
+01	9e60850	1789497343	exp2: 500 trees depth8 lr0.1 early stopping + refit on full train
+02	4ae041a	1789497371	exp4: depth6 lr0.1 max100 ES+refit
+03	404ad3e	1789497381	exp5: baseline model + time features (hour, cyclic tod, log dist, night)
+04	8e3b95e	1789497394	exp6: + smoothed target encodings carrier/origin/dest
+05	8815581	1789497401	exp8: regularized 300x lr0.05 d6 sub/col 0.8 mcw5 on TE features
+06	6a85283	1789497417	exp9: + interaction TEs (route, carrier x hour, origin x hour)
+07	02c8ad9	1789497429	exp10: stronger reg 500 trees lr0.03 sub/col0.7 mcw10 gamma1
+08	3431ecf	1789497472	exp12: OOF (5-fold) target encoding for training fit
+09	c4878e1	1789497482	exp13: 5-seed ensemble at exp12 config
+10	022ee50	1789497557	exp15: 5-config diversity ensemble (gamma fixed, lr merge)
+11	9d45b98	1789497619	exp17: stronger TE shrinkage k 50/200/200
+12	68a0444	1789497840	exp24: per-member OOF-TE fold variants
+13	6ae4e1f	1789497864	exp25: colsample_bynode=0.7
+14	5b8cfe2	1789497887	exp26: colsample_bynode=0.5
+15	b9253fe	1789497905	exp27: colsample_bynode=0.35
+16	5e47056	1789497944	exp29: 800 trees on member 1
+17	22bbbe7	1789498064	exp33: 7-member ensemble with per-member bynode
+18	b8c49ff	1789498094	exp34: depth8 heavily-reg member replaces depth7
+19	d7d161e	1789498125	exp35: 8th member with bynode=0.15

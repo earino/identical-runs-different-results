@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	aecadb7	0.7141	ok	1	baseline: 30 trees depth6 lr0.1, categorical native
+2	a5e2d9c	0.7152	ok	3	early stopping on eval, 3000 trees lr0.05
+3	9d6abb5	0.7110	ok	5	FE v1: numeric date parts, hour cyclical, route categorical
+4	b0ce465	0.7165	ok	3	ablation: exp2 + dep_hour + cyclical (no route)
+5	04179f1	0.0000	crash	1	target encoding (OOF) + frequency for carrier/origin/dest
+6	ec3a023	0.7156	ok	5	target encoding (OOF) + frequency for carrier/origin/dest
+7	e120205	0.7232	ok	6	hour categorical + carrier x hour interaction
+8	dcdffdc	0.7195	ok	5	add origin x hour and dest x hour interactions
+9	2bd84c2	0.7119	ok	5	low-card interactions: dow x hour, carrier x month, day_cat
+10	214b913	0.7209	ok	5	ablation: dow x hour only
+11	f5a7b3e	0.7219	ok	6	hyperparams: depth 8, lr 0.03
+12	a9e869e	0.7247	ok	8	hyperparams: lr 0.03 only
+13	6702a59	0.7254	ok	13	hyperparams: lr 0.015
+14	82fd5c8	0.7258	ok	23	hyperparams: lr 0.008
+15	d00af84	0.7251	ok	25	regularization: subsample/colsample 0.7
+16	a509c4d	0.7259	ok	23	regularization: min_child_weight 10, lambda 5
+17	098a66e	0.7245	ok	30	3-model xgb ensemble, mean proba
+18	ef95c86	0.7258	ok	66	3-seed bag, same config
+19	646234c	0.7258	ok	20	restore single best config
+20	e5435ab	0.7253	ok	21	max_bin 512
+21	612e7b6	0.7267	ok	20	colsample_bynode 0.7
+22	dec3a26	0.7286	ok	26	colsample_bynode 0.5
+23	0cea3d9	0.7316	ok	32	colsample_bynode 0.3
+24	570af29	0.7317	ok	38	colsample_bynode 0.2
+25	6dc7cc4	0.7297	ok	29	subsample 0.7 with bynode 0.3
+26	9198b14	0.7252	ok	6	depth 8, lr 0.02, bynode 0.3
+27	c00034f	0.7281	ok	14	lossguide growth, 64 leaves
+28	3cd93cb	0.7311	ok	42	lr 0.005, es patience 200
+29	596841c	0.7313	ok	29	depth 7
+30	61dea7e	0.7318	ok	32	mcw 10, lambda 5 (bynode regime)
+31	cbae6f8	0.7311	ok	31	gamma 1.0
+32	0ef7c4f	0.0000	crash	1	interaction constraints: carrier_hour w/ carrier+hour
+33	83d3fd5	0.7100	ok	15	interaction constraints: carrier_hour w/ carrier+hour
+34	fb96906	0.7324	ok	103	3-seed bag with bynode sampling
+35	7545ef0	0.7290	ok	72	ablation: no cyclical, 3-seed bag
+36	0ff5e0b	0.7292	ok	66	neighborhood: sub 0.8, bynode 0.4
+37	86c96cb	0.7322	ok	100	mcw 20, lambda 10
+38	6ff10e6	0.7324	ok	93	cat_smooth 50
+39	7e8b73a	0.7315	ok	85	ablation: drop hour_cat
+40	9c9ac3e	0.7318	ok	97	bag with subsample jitter per seed

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	73eacf1	0.7141	ok	4	baseline
+2	68a1e97	0.7057	ok	30	fe v1 + early stopping
+3	27f83e4	0.7094	ok	2	fe v1, baseline hp
+4	fae216b	0.7134	ok	1	fe-lite tod only
+5	2213c61	0.7053	ok	6	capacity 500t reg
+6	02b4e00	0.7144	ok	2	TE oof m30
+7	3b813dd	0.7098	ok	2	TE cap200
+8	bc651ae	0.7143	ok	2	TE 20t d5
+9	b6ace00	0.7087	ok	3	TE interactions
+10	2f54b01	0.7164	ok	3	ens5
+11	17dc46d	0.7161	ok	7	ens20
+12	027db63	0.7170	ok	4	ens depthmix
+13	534c2c2	0.7179	ok	8	ens16 wide
+14	7d19e8e	0.7180	ok	11	ens24 soup
+15	f4f7121	0.7178	ok	7	TE m15
+16	4581449	0.7181	ok	7	freq feats
+17	f7e24e9	0.7181	ok	8	rank avg
+18	61203d4	0.7181	ok	8	nest div
+19	425e765	0.7183	ok	9	tod feats ens
+20	05412ad	0.7180	ok	9	hourcat weekend
+21	bfce158	0.7175	ok	11	ens24 seeds
+22	a617014	0.7191	ok	9	bynode col
+23	aa0803d	0.7201	ok	8	bynode 0.5
+24	ccd6fd3	0.7207	ok	8	bynode 0.35
+25	0c6baa0	0.7212	ok	8	bynode 0.25
+26	bb2ac80	0.7205	ok	8	bynode 0.15
+27	71a7c51	0.7205	ok	8	sub 0.6
+28	fa01127	0.7212	ok	8	mcw5
+29	ecb9295	0.7171	ok	7	drop od cats
+30	925c597	0.7215	ok	14	ens32
+31	eb75201	0.7214	ok	28	ens64
+32	9c905ca	0.7220	ok	15	lr mix
+33	252b534	0.7229	ok	15	nest mix
+34	ee6fa4b	0.7229	ok	16	sub mix
+35	c84cc49	0.7228	ok	16	bytree mix
+36	dd4147d	0.7212	ok	13	depth reshuffle
+37	f53fdb8	0.7230	ok	16	bynode mix
+38	7544833	0.7229	ok	16	maxbin512
+39	2458e2c	0.7230	ok	23	ens48
+40	09e313c	0.7228	ok	16	lambda mix

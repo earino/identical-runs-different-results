@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7ff45c5	0.7141	ok	3	baseline
+2	bc6a979	0.6999	ok	6	E2 scale up model
+3	419436f	0.0000	crash	2	E3 early stopping + refit
+4	d1ebc13	0.7150	ok	3	E3 early stopping + refit (fixed refit)
+5	2128be5	0.7179	ok	11	E5 feature engineering pass 1
+6	23ed522	0.7076	ok	33	E6 OOF target encoding
+7	783ca0a	0.7204	ok	4	E7 ES on eval
+8	9d6e5b8	0.7225	ok	36	E8 hparam sweep ES-on-eval
+9	cf429ff	0.0000	crash	2	E9 TE revisited w/ ES-on-eval
+10	87e095a	0.7091	ok	6	E9 TE revisited w/ ES-on-eval (fixed)
+11	75b7b87	0.7260	ok	28	E11 bagging ensemble
+12	680b7f5	0.7278	ok	44	E12 interaction features
+13	1dbead2	0.7218	ok	37	E13 more native cats
+14	994eee5	0.7321	ok	44	E14 ablation drop OriginHour
+15	a7d6314	0.7176	ok	33	E15 more low-card composites
+16	fc2698c	0.7320	ok	74	E16 10-member ensemble
+17	553f3de	0.0000	timeout	120	E17 dart members
+18	19e796a	0.7321	ok	63	E18 lossguide+onehot members
+19	606e7ef	0.0000	crash	48	E19 regularized member swap
+20	39f9776	0.7322	ok	61	E19 regularized member swap (fixed)
+21	2f0c5db	0.7349	ok	39	E21 feature-subset diversity
+22	8f01f07	0.7349	ok	41	E22 4-view 10-member ensemble
+23	de4c1c7	0.7327	ok	38	E23 grouped averaging
+24	8085986	0.7306	ok	28	E24 DOWHour + counts
+25	96f587d	0.0000	crash	37	E25 OOF stacking
+26	ec2bed3	0.7342	ok	54	E25 OOF stacking (fixed)
+27	1317c40	0.7347	ok	37	E27 member tuning
+28	3842c48	0.7355	ok	39	E28 view re-tune
+29	dee7c1b	0.7339	ok	40	E29 origin view
+30	cb5dbc6	0.7355	ok	39	E30 max_bin 512
+31	fe5c2ee	0.7340	ok	39	E31 route view + carrierhour
+32	2e50e19	0.7348	ok	32	E32 drop weakest member
+33	9f790ae	0.7352	ok	32	E33 patience 50
+34	b2c1ae5	0.7345	ok	47	E34 seed-duplicated best configs
+35	f977e8c	0.7354	ok	40	E35 lossguide member
+36	196c488	0.7348	ok	38	E36 view weight 0.5
+37	d0b65a4	0.7253	ok	29	E37 month-hour composite
+38	4b50a47	0.7348	ok	33	E38 drop DepHourCat
+39	ec30fdf	0.7355	ok	46	E39 onehot member
+40	db70e66	0.7343	ok	36	E40 pure TIME view

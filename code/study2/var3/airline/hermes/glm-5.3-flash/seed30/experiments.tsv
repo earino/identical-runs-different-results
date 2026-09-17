@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	39ffe8f	0.7141	ok	2	baseline: default 30 trees depth6, categoricals enabled
+2	5fd5b42	0.7156	ok	4	exp2: 1500 trees lr0.05 depth6 subsample/colsample 0.8, early stop 50 on eval
+3	5263c9f	0.7169	ok	4	exp3: DepTime hour+cyclic, Distance log
+4	50b4708	0.7164	ok	5	exp4: freq + smoothed target encoding for cat cols (alpha=20)
+5	84cb63b	0.7051	ok	6	exp5: Origin>Dest route freq + TE(alpha=20)
+6	ac20eb2	0.7159	ok	5	exp6: frequency encodings only (carrier/origin/dest/route)
+7	6e1e471	0.7154	ok	5	exp7: depth10 mcw10, 3000 trees lr0.05 es100
+8	b3ffe46	0.7173	ok	8	exp8: lr0.02 8000 trees depth6 es200
+9	4633ac9	0.7171	ok	11	exp9: 20000 trees lr0.02 es500 + time-decay weights
+10	115e2f9	0.7178	ok	35	exp10: 5-seed bag of lr0.02 depth6
+11	548e68c	0.7016	ok	7	exp11: interaction categoricals MonthDay/CarrierHour/DOWHour
+12	d0e1f43	0.7174	ok	9	exp12: DepMin numeric + day-of-year seasonality sin/cos
+13	fec6186	0.7179	ok	38	exp13: 5-seed bag + DepMin/season numerics
+14	680d5e0	0.7178	ok	43	exp14: 5-seed bag depth8 mcw10
+15	e6a5a2e	0.7179	ok	48	exp15: 7-member mixed-depth bag
+16	856fd09	0.7198	ok	55	exp16: 5-member colsample-diverse bag
+17	9c7dd4f	0.7199	ok	50	exp17: bag with colsample+subsample diversity
+18	ab6a039	0.0000	timeout	120	exp18: 8-member colsample bag
+19	49e9602	0.7205	ok	84	exp19: 7-member colsample bag
+20	a0d5e26	0.8988	ok	67	exp20: pool train+eval80, ES on eval20 tail
+21	531f014	0.0000	timeout	120	exp21: pooled 5-member colsample bag
+22	ff41294	0.0000	timeout	120	exp22: pooled 3-member bag lr0.03
+23	9a79f5a	0.8739	ok	42	exp23: pooled 2-member bag lr0.05
+24	cf4d471	0.8550	ok	15	exp24: pooled single lr0.05 colsample0.8
+25	b34f0ca	0.8663	ok	32	exp25: pooled, ES on random 20pct of eval
+26	3e21d52	0.7264	ok	34	exp26: 2-stage stack: 3 bases ES-on-eval, meta on eval rows
+27	8399bd1	0.8769	ok	30	exp27: pooled single + scale_pos_weight=1.5
+28	42fda8b	0.7200	ok	89	exp28: 7-member colsample bag depth5
+29	3fbee0a	0.7207	ok	110	exp29: 7-member colsample bag lr0.015
+30	6d67d80	0.7216	ok	91	exp30: 7-member colsample bag gamma0.5 alpha0.5
+31	eccfda5	0.7128	ok	106	exp31: bag ES on train tail instead of eval
+32	2ec6f41	0.7208	ok	94	exp32: bag + early/redeye/weekend/distbucket features
+33	934596a	0.7212	ok	37	exp33: 3-member bag cs 0.9/0.4/0.75
+34	736e37c	0.7208	ok	75	exp34: 7-member colsample bag depth7 gamma0.5
+35	008d4b2	0.7204	ok	87	exp35: rank-average ensemble
+36	8b06c6d	0.7205	ok	84	exp36: retest exp19 config (variance check)
+37	9fc9996	0.7200	ok	72	exp37: 7-member colsample bag lr0.025
+38	68d6de6	0.7203	ok	79	exp38: 7-member colsample bag mcw10
+39	c7cecea	0.7199	ok	77	exp39: 7-member colsample bag subsample0.7
+40	fa727fa	0.0000	timeout	121	exp40: 7-member bag + DepHour categorical

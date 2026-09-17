@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b9f9d7f	0.7141	ok	3	baseline
+2	6734ba7	0.7082	ok	4	capacity+ES depth8 lr.05 ES100
+3	13fef23	0.0000	crash	5	diagnostic learning curve depth8
+4	eeeb175	0.0000	crash	4	diagnostic learning curve depth8 fixed
+5	841cc27	0.7082	ok	4	diagnostic curve clamped
+6	b7ddbf7	0.0000	crash	2	features v1 (time cyclical, route, dist bin)
+7	841d6a8	0.7020	ok	2	features v1 (time cyclical, route, dist bin)
+8	bce2127	0.7065	ok	2	features v1 @30 trees
+9	6a14c66	0.7134	ok	2	features v2 cyclical-only @30 trees
+10	76b036a	0.7139	ok	2	+TE OOF smoothed @30 trees
+11	018f7cb	0.7091	ok	7	TE + regularized model + eval curve
+12	cb82c81	0.0000	crash	1	lean TE set + curve
+13	93446f1	0.0000	crash	2	lean TE set + curve (fixed)
+14	fa4f9f0	0.7073	ok	7	lean TE set + curve (fixed2)
+15	e64415b	0.7151	ok	9	+interaction TEs + curve
+16	f02234d	0.7129	ok	8	+more interaction TEs + curve
+17	a5f61b0	0.7088	ok	10	depth8 probe + curve
+18	8381cf6	0.7172	ok	7	depth5 probe + curve
+19	a0fb9bb	0.0000	crash	5	depth5 mcw50 + curve
+20	8b957a7	0.7186	ok	5	depth5 mcw50 + curve (fixed)
+21	b09dbf6	0.7189	ok	7	depth5 col0.7 + curve
+22	8249733	0.7182	ok	7	depth5 col.7 sub.7 + curve
+23	b768f98	0.7205	ok	7	lr.03 n800 + curve
+24	4712f57	0.7202	ok	12	lr.02 n1500 + curve
+25	b326c0e	0.7210	ok	18	3-seed ensemble
+26	ec8b9e8	0.7117	ok	18	+te_md calendar TE, 3-seed ensemble
+27	d74d7f8	0.7221	ok	19	diverse 3-member ensemble
+28	a17b5b6	0.7214	ok	32	6-member diverse ensemble
+29	9cb836a	0.7188	ok	19	bootstrap bagged diverse ensemble
+30	d1842d5	0.7218	ok	19	+carrier x distbin TE
+31	537e129	0.7217	ok	14	per-member n_estimators
+32	8a183a6	0.7220	ok	18	TE m50 probe
+33	953706e	0.7220	ok	18	+carrier x origin TE
+34	9397e24	0.7209	ok	18	prune redundant numerics
+35	21a59bb	0.7214	ok	23	4-member ensemble lr diversity
+36	5d450d2	0.7221	ok	18	rank-average combiner
+37	5589c46	0.7219	ok	18	+traffic count features
+38	788d4ee	0.7223	ok	18	mcw12 probe
+39	5d027d0	0.7221	ok	18	gamma0.5 probe
+40	9613abe	0.0000	crash	14	n600 final confirm

@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	76b4b1f	1789533698	baseline
+01	42608e7	1789533860	regularized: depth4 lr.05 150 trees mcw10
+02	ccfbceb	1789533894	lr0.025 400 trees depth4
+03	5b1917b	1789533899	lr0.0125 800 trees
+04	5f771b2	1789533925	5-member averaged ensemble, varied depth/lr/seed
+05	e9f825a	1789534095	drop DayofMonth
+06	d34b1d6	1789534137	single model, no DayofMonth
+07	f579e69	1789534146	drop DayofMonth and Month
+08	9843f97	1789534158	reduced features + depth5
+09	2b3a797	1789534164	reduced features + depth6
+10	e1558c8	1789534170	reduced features + depth8
+11	5075a2f	1789534179	reduced features + depth12
+12	8e2302c	1789534193	reduced features + depth16
+13	73f986a	1789534216	unlimited depth
+14	c6480c6	1789534244	unlimited depth lr0.0125 800 trees

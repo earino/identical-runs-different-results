@@ -1,0 +1,32 @@
+n	commit	eval_auc	status	seconds	description
+1	160b374	0.7141	ok	4	baseline
+2	e9c0ad6	0.7109	ok	20	FE + capacity + early stopping
+3	9a687a3	0.7467	ok	64	deep ensemble + hour categorical + freq features
+4	c196c40	0.7472	ok	75	add origin/dest x hour schedule-density frequency features
+5	a0e802a	0.7525	ok	73	add half-hour-of-day categorical feature
+6	1484480	0.7532	ok	79	add quarter-hour categorical (hierarchical time cats)
+7	333571c	0.7536	ok	84	carrier x half-hour density + deeper ensemble mix
+8	fb24551	0.7538	ok	84	subsample diversity (0.7/0.8) in member mix
+9	8cbc308	0.7546	ok	93	wider ensemble: 8 members (d16-28) at 125 rounds
+10	3d77145	0.7553	ok	95	add origin/dest x half-hour density features
+11	a7f29c9	0.7554	ok	113	carrier volume + log-ratio share features
+12	1531a5e	0.7555	ok	97	colsample diversity (0.6/0.7/0.8) across members
+13	81753e6	0.7554	ok	99	swap weakest d16 member for deeper d24
+14	803d5c6	0.7549	ok	89	FE diversity: two members trained without density features
+15	2e673b3	0.7559	ok	95	bump member subsampling to 0.75/0.85
+16	0fa3082	0.7556	ok	104	subsample 0.85/0.95
+17	aa6f0d0	0.7556	ok	114	per-member rounds diversity (100-190)
+18	eea1f05	0.7557	ok	102	per-member eta diversity (0.06-0.09) with compensated rounds
+19	01082db	0.7559	ok	100	trimmed-mean aggregation of member margins
+20	e6f49a6	0.7548	ok	91	simplify: drop hourly oh/dh density features
+21	7188d4a	0.7546	ok	87	reg_lambda 20
+22	075e9a5	0.7557	ok	93	per-member max_bin diversity (128/256/512)
+23	a6a81ef	0.7561	ok	104	depth frontier: swap d16/d18 members for d30/d32
+24	3c5b871	0.7560	ok	110	swap d20 members for d34/d36 (all members now d22+)
+25	5c612d9	0.7548	ok	65	min_child_weight 3
+26	cb00666	0.7557	ok	112	carrier x quarter-hour density feature
+27	6fb9a4e	0.7561	ok	119	9th member (d30, ss .80)
+28	bd9b019	0.7562	ok	109	depth-weighted member aggregation
+29	d048ccb	0.7562	ok	105	steeper depth-weighted aggregation
+30	a5d2e74	0.7561	ok	107	one full-data member (ss 1.0) for data-fraction diversity
+31	5fbea70	0.7562	ok	108	noop post-final sanity check (budget probe)

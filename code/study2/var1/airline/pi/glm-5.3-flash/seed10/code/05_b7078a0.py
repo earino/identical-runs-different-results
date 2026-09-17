@@ -1,0 +1,102 @@
+"""Baseline XGBoost binary classifier. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- features -----------------------------------------------------------------
+CAT_COLS = ["UniqueCarrier", "Origin", "Dest"]          # true categoricals, kept as such
+feature_cols = [c for c in train.columns if c not in ID_COLS + [TARGET]]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in CAT_COLS}
+
+
+def _c_to_int(s: pd.Series) -> pd.Series:
+    # "c-<n>" -> integer n
+    return s.str.slice(2).astype("int64")
+
+
+# level spaces for interaction categoricals, fitted on train only
+_t = train.copy()
+_t["_hour"] = (_t["DepTime"].astype("int64") // 100) % 24
+route_levels = pd.Index(sorted((_t["Origin"].astype(str) + "_" + _t["Dest"].astype(str)).unique()))
+hr_dow_levels = pd.Index(sorted((_t["_hour"].astype(str) + "_" + _c_to_int(_t["DayOfWeek"].astype(str)).astype(str)).unique()))
+car_hr_levels = pd.Index(sorted((_t["UniqueCarrier"].astype(str) + "_" + _t["_hour"].astype(str)).unique()))
+del _t
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = pd.DataFrame(index=df.index)
+    # c-<n> string cols as integers
+    for c in ["Month", "DayofMonth", "DayOfWeek"]:
+        X[c] = _c_to_int(df[c].astype(str))
+    # time of day from DepTime (hhmm, may exceed 2359 -> wrap)
+    dt = df["DepTime"].astype("int64")
+    X["DepTime"] = dt
+    hour = (dt // 100) % 24
+    minute = dt % 100
+    X["dep_hour"] = hour
+    X["dep_min"] = minute
+    tod = (hour * 60 + minute).astype(float)
+    X["tod_sin"] = np.sin(2 * np.pi * tod / 1440.0)
+    X["tod_cos"] = np.cos(2 * np.pi * tod / 1440.0)
+    X["late_night"] = ((hour >= 22) | (hour <= 5)).astype("int64")
+    X["log_dist"] = np.log1p(df["Distance"].astype(float))
+    X["Distance"] = df["Distance"].astype(float)
+    # interaction categoricals (row-local; level spaces fitted on train only)
+    X["route"] = pd.Categorical(df["Origin"].astype(str) + "_" + df["Dest"].astype(str), categories=route_levels)
+    X["hour_dow"] = pd.Categorical(hour.astype(str) + "_" + X["DayOfWeek"].astype(str), categories=hr_dow_levels)
+    X["carrier_hour"] = pd.Categorical(df["UniqueCarrier"].astype(str) + "_" + hour.astype(str), categories=car_hr_levels)
+    for c in CAT_COLS:
+        X[c] = pd.Categorical(df[c], categories=cat_levels[c])  # unseen levels -> NaN
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+model = xgb.XGBClassifier(
+    n_estimators=100,
+    max_depth=6,
+    learning_rate=0.1,
+    tree_method="hist",
+    enable_categorical=True,
+    random_state=SEED,
+    n_jobs=N_JOBS,
+)
+
+t0 = time.time()
+model.fit(prepare(train), to_y(train))
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prepare(df))[:, 1]
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	f138082	1789535101	baseline
+01	4d8d91a	1789535253	ensemble depth6+depth3
+02	f540864	1789535261	ensemble depth6+3+12
+03	a768084	1789535395	add depth18 member
+04	8397643	1789535410	add depth24 member
+05	5d4e7d8	1789535458	rank-average ensemble
+06	ec71d98	1789535486	colsample diversity member
+07	7632a20	1789535510	add d18 colsample0.3 member
+08	9bba5d1	1789535582	two more colsample members
+09	f401068	1789535619	two more colsample members v2
+10	593aa24	1789535660	60 trees lr0.05 per member
+11	9fc72d4	1789535914	weighted rank average
+12	e29e386	1789535983	100 trees lr0.03
+13	c61ff16	1789536269	depdist interaction feature

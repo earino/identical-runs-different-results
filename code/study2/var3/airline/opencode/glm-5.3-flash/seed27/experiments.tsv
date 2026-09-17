@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	81de627	0.7141	ok	4	baseline
+2	98b0c0f	0.7087	ok	4	early stopping + bigger model
+3	3dea48e	0.7083	ok	6	FE round1: dep_min cyclical tod bins, date ints, dist log/bins; 500 trees
+4	2a991a8	0.7165	ok	20	regularization config sweep
+5	2e8a554	0.7043	ok	31	route interaction + frequency encodings
+6	a7f1165	0.7139	ok	20	low-cardinality interactions
+7	83cffeb	0.0000	crash	2	smoothed target encoding
+8	a6ab90a	0.7177	ok	24	smoothed target encoding
+9	cd688ad	0.0000	crash	4	TE smoothing/extra-target sweep
+10	be77dca	0.7162	ok	12	TE smoothing/extra-target sweep
+11	df28288	0.7177	ok	3	clean best cfg
+12	f912f71	0.7195	ok	13	5-model seed/config bag
+13	4f404df	0.7192	ok	28	10-member diverse bag
+14	6707194	0.7177	ok	16	pure seed bag
+15	30501dd	0.7194	ok	22	curated 8-member diverse bag
+16	ced5ede	0.7214	ok	21	feature-view diversity bag
+17	ef903e8	0.7250	ok	19	view-rebalanced bag
+18	e1eeacd	0.0000	crash	1	teheavy TE-enrichment sweep
+19	88f12d5	0.7241	ok	24	teheavy TE-enrichment sweep
+20	f75c0cf	0.7213	ok	20	teheavy config sweep -> top-5 bag
+21	0df4324	0.7263	ok	21	mixed-view bag with upgraded teheavy members
+22	0089e61	0.7255	ok	26	10-member bag with new views
+23	63bef84	0.7266	ok	22	E21 bag + tecore member
+24	c528eea	0.7267	ok	25	5 teheavy members
+25	21b26cd	0.7264	ok	27	holiday flags + hub-relative distance
+26	d77e808	0.7266	ok	25	rank-average blending
+27	0289df0	0.7280	ok	25	drop te_month/te_dow
+28	e36b89a	0.7285	ok	33	cleaned views + teheavy resweep
+29	385267b	0.7287	ok	36	greedy member-subset selection
+30	961e7b1	0.7287	ok	38	AUC-weighted blend
+31	4447b75	0.7287	ok	38	bootstrap members
+32	c34f45a	0.7284	ok	36	TE product features
+33	9aabcbd	0.7287	ok	48	TE smoothing sweep
+34	3db538a	0.7266	ok	38	cyclical month/dow + te_hour
+35	7b75669	0.7268	ok	55	OOF stacking
+36	9fb0f2a	0.7287	ok	36	seed copies
+37	22fe6f3	0.7274	ok	33	drop te_carrier
+38	40a94c8	0.7285	ok	37	quantile dep-time bins
+39	015a203	0.7283	ok	33	differentiated TE smoothing
+40	07c1be5	0.7285	ok	22	frozen bag simplification

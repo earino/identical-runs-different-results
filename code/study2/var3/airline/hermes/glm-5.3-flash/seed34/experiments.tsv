@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	acc8a96	0.7141	ok	4	baseline: XGBClassifier depth6 lr0.1 n30, categorical native
+2	9187101	0.0000	crash	1	exp2: FE(hour/late/route/numcal) + depth8 lr0.05 ES
+3	2f42c4f	0.7021	ok	4	exp2: FE(hour/late/route/numcal) + depth8 lr0.05 ES
+4	b879ab1	0.7065	ok	20	exp4: FE no-Route depth12 lr0.05 600t
+5	91bf28f	0.7144	ok	4	exp5: FE no-Route depth6 lr0.05 400t
+6	093a490	0.7199	ok	4	exp6: Dep_hour categorical
+7	f7ce0b4	0.7170	ok	6	exp7: depth8 cat-hour FE
+8	8ae73cb	0.7192	ok	4	exp8: frequency features
+9	bb10bef	0.0000	crash	1	exp9: OOF target encoding Origin/Dest/Carrier/Route
+10	b855551	0.7185	ok	4	exp9: OOF target encoding Origin/Dest/Carrier/Route
+11	5ed078d	0.7195	ok	4	exp11: TE on DepTime hour
+12	244ea92	0.7164	ok	4	exp12: drop Dep_min/Dep_minOfDay
+13	d4a2c6b	0.7087	ok	4	exp13: Hour x Month, Hour x DOW crosses
+14	9498588	0.7215	ok	6	exp14: lr0.03 700t mcw10 lambda3
+15	6b91160	0.7228	ok	6	exp15: lr0.02 900t mcw20 lambda6
+16	789f2c0	0.7231	ok	9	exp16: lr0.015 1200t mcw30 lambda10
+17	99e8b0e	0.7235	ok	12	exp17: lr0.01 1600t mcw50 lambda15 colsample0.7
+18	a610ca4	0.7229	ok	11	exp18: drop numeric calendar duplicates
+19	fd89f43	0.0000	crash	11	exp19: early stopping to pick tree count
+20	40fdf38	0.7235	ok	21	exp19: early stopping to pick tree count
+21	4c2a703	0.7237	ok	32	exp20: 3-seed bagged ensemble
+22	580d697	0.7241	ok	31	exp21: subsample0.7 colsample0.6
+23	ae3c8ea	0.7240	ok	32	exp22: subsample0.6 colsample0.5 mcw80 lambda20
+24	31c44e7	0.7127	ok	42	exp23: Route categorical back with strong reg
+25	3c3afa1	0.7190	ok	31	exp24: simplify DepTime/Distance features
+26	491ef95	0.7197	ok	35	exp25: Dep_min categorical
+27	0701d1b	0.7241	ok	55	exp26: 5-seed bag
+28	adffe90	0.7241	ok	32	exp27: numeric Month/DOW back with strong reg
+29	646078c	0.7224	ok	26	exp28: depth5
+30	aa67623	0.7241	ok	33	exp29: numeric Day_n back
+31	d4e58ab	0.7238	ok	33	exp30: subsample0.75 colsample0.65
+32	2c6ff2c	0.7237	ok	33	exp31: drop IsLateNight
+33	12827f1	0.7241	ok	33	exp32: gamma=2
+34	5fd8f14	0.7247	ok	33	exp33: reg_alpha=0.5
+35	8f29cb5	0.7261	ok	27	exp34: reg_alpha=2.0
+36	ba43751	0.7266	ok	33	exp35: reg_alpha=5.0
+37	6d7c286	0.7262	ok	33	exp36: reg_alpha=10 lambda=8
+38	b45b8db	0.7263	ok	31	exp37: reg_alpha=8 lambda=15
+39	e182869	0.7272	ok	59	exp38: alpha5 2400t 4-seed
+40	8930329	0.7265	ok	109	exp39: alpha5 3200t 5-seed

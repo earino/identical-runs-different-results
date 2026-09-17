@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	cb8209f	1789524980	baseline
+01	2f3400a	1789525070	feat: time-of-day (dep_hour, tod, is_early) only
+02	000319a	1789525120	sweep: capacity/regularization grid on eval (exploration)
+03	7b1008d	1789525191	sweep3: feature ablations under best config
+04	ea11ffd	1789525209	sweep4: origin/dest encoding variants
+05	89c1937	1789525336	sweep5: freq encodings + reg variants on reduced set
+06	dcdc0b8	1789525360	sweep6: seed variance + bagging/depth-mix ensembles
+07	0881231	1789525394	sweep7: diversity ensemble recipes
+08	e714e8f	1789525463	sweep8: larger ensemble recipes + rank avg
+09	786e39d	1789525550	sweep9: depth/lr diversity extension
+10	ddffb44	1789525624	sweep10: wide depth x lr grids
+11	fd05a50	1789525748	sweep11: depths 1-10 x 4 lrs, + subsample/seed diversity
+12	ebca4fe	1789525881	clean 40-model depth x lr ensemble (single fit)
+13	59fdab0	1789525974	sweep12: 48-model superset + sub-ensemble/logit analysis
+14	1305abe	1789526200	clean 24-model ensemble (depths 1-12 x lr .04/.16)
+15	377f3bc	1789526333	extend ensemble to depths 1-16 (32 models)
+16	4f61ec4	1789526446	sweep13: subset trade-off analysis on d1-16
+17	604fdbf	1789526693	clean 16-model ensemble (d1-16 lr.16) + carrier-airport feature test
+18	5fa38e8	1789527269	sweep15: single-model encoding/regularization probes
+19	fdb502a	1789527321	sweep16: regularization arms across ensemble
+20	16a29fb	1789527444	clean 16-model ensemble, min_child_weight=1, lr 0.16
+21	a85b7d3	1789527649	ensemble mcw=0 (no leaf-weight constraint)
+22	cf702a7	1789527773	sweep18: cheaper mcw0 configs (n=200)
+23	be3842e	1789527860	final: clean 16-model depth-grid ensemble (mcw0, n200)

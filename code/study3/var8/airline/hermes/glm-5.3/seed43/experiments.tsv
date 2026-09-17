@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	791e1d8	0.7141	ok	4	baseline
+2	a2a9ac1	0.7083	ok	2	2000 trees d8 lr0.05 es50 internal val 20k
+3	c3cd303	0.7094	ok	1	d6 lr0.1 es50 2000 trees internal val
+4	62a5024	0.7112	ok	3	150 trees d6 lr0.1 full train
+5	60f107e	0.0000	crash	2	FE: numeric month/dom/dow, hour+minute cyclical, route, log dist
+6	fc0320e	0.0000	crash	2	FE v1: numeric dates, hour cyclical, route, log dist
+7	6aec007	0.7090	ok	2	FE v1: numeric dates, hour cyclical, route, log dist
+8	14a74c3	0.7134	ok	1	add numeric month/dom/dow + hour-of-day cyclical
+9	4f50a19	0.7132	ok	2	FE dates+hour + 60 trees
+10	d0c4bfd	0.7161	ok	2	target encoding carrier/origin/dest, no cats
+11	266ed75	0.7162	ok	2	add route_te O-D interaction
+12	700efdc	0.7155	ok	2	TE + hour_sin/cos cyclical
+13	65e8715	0.7160	ok	2	carrier_hour TE + 60 trees (keep hour_sin/cos)
+14	4957807	0.7081	ok	2	TE + native cats carrier/origin/dest/route
+15	1ea558f	0.7179	ok	2	hyperparams d8 mcw10 n60 from sweep
+16	8f4b3c2	0.7192	ok	2	hour cyclical + TE + d8
+17	4924f40	0.7169	ok	2	month_hour TE interaction
+18	2c36f4c	0.7287	ok	2	route_hour TE interaction
+19	09f27d4	0.7327	ok	2	origin_hour+dest_hour TE, 120 trees
+20	f5a5cae	0.7340	ok	3	smooth50 + 240 trees lr0.07
+21	371f022	0.7386	ok	4	aggregate features: counts, avg dist, diversity, avg dept
+22	5431556	0.7400	ok	4	TE counts + colsample 0.7
+23	e4cf2c4	0.7410	ok	5	carrier_dist TE + lr.05 n480
+24	1fb6332	0.7516	ok	6	15-min TE buckets + counts
+25	382f5dd	0.7534	ok	14	4-model ensemble avg probs
+26	3e7863a	0.7543	ok	26	8-model ensemble
+27	0e79f2c	0.7549	ok	24	recency weights 0.25+0.75*m/12
+28	7e50e7a	0.7551	ok	47	16-member ensemble
+29	4feb098	0.7581	ok	53	+minute_of_hour
+30	9439f50	0.7590	ok	49	+route_moh TE
+31	197859a	0.7598	ok	52	+carrier_m15 TE
+32	3cbc3c5	0.7598	ok	50	colsample 0.6
+33	f8856b9	0.7597	ok	52	+hour_te +dow_te
+34	197859a	0.7598	ok	51	stability re-run of exp31 (no change)
+35	11fdcad	0.7602	ok	52	hier TE blend 0.75/0.25
+36	8ecbac5	0.7604	ok	51	hier blend 0.5/0.5
+37	0ad015f	0.7606	ok	76	24-model ensemble
+38	42ed1a7	0.7610	ok	82	32 members n360 lr.066
+39	628af4c	0.7612	ok	84	subsample .85 cs .6
+40	628af4c	0.7612	ok	85	final stability run of exp37 (no change)

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1609419	0.7141	ok	4	baseline
+2	55f9290	0.7115	ok	3	E2: early stop + refit, bigger model
+3	556ea91	0.6883	ok	7	E3: 600 trees no early stop
+4	cf6a704	0.7101	ok	2	E4: depth6 200 trees
+5	5a9219e	0.7136	ok	2	E5: regularized 100 trees d6
+6	d585d9f	0.7166	ok	2	E6: feature engineering v1
+7	74ea1f1	0.7055	ok	3	E7: target+frequency encodings
+8	49db08b	0.7143	ok	3	E8: OOF target encoding
+9	31f72e3	0.7015	ok	2	E9: route categorical
+10	b4ccf0b	0.7170	ok	3	E10: 300 trees lr 0.05
+11	452a1c7	0.7178	ok	5	E11: 600 trees lr 0.025
+12	722b4c8	0.7183	ok	8	E12: 1000 trees lr 0.015
+13	16f6ec5	0.7182	ok	13	E13: 2000 trees lr 0.01
+14	08ce823	0.7174	ok	12	E14: depth 8
+15	fb9c7f4	0.7183	ok	6	E15: depth 5
+16	5424c6f	0.7173	ok	8	E16: FE v2 temporal+interaction
+17	10165ba	0.7187	ok	31	E17: 5-seed ensemble
+18	8016042	0.7194	ok	29	E18: diverse ensemble
+19	49a3d34	0.7195	ok	56	E19: 8-model ensemble
+20	ec1d962	0.7195	ok	67	E20: per-member diagnostics
+21	939c4eb	0.7221	ok	7	E21: member2 config standalone
+22	3e2d96e	0.7227	ok	7	E22: col 0.5
+23	3b0dc20	0.7239	ok	7	E23: col 0.4
+24	69b3a63	0.7240	ok	8	E24: col 0.3
+25	ab4a8e8	0.7238	ok	6	E25: mcw 20
+26	6a6095e	0.7250	ok	13	E26: longer smoother
+27	1b55656	0.7250	ok	17	E27: 3000 @ 0.005
+28	32227d0	0.7246	ok	51	E28: strong-point ensemble
+29	ad20a11	0.7252	ok	12	E29: sub 1.0
+30	4f70de0	0.7257	ok	12	E30: bynode 0.5
+31	94167ad	0.7247	ok	11	E31: bynode 0.4
+32	bfa83ef	0.7276	ok	15	E32: depth 7
+33	e486cc8	0.7289	ok	18	E33: depth 8
+34	77c0f57	0.7310	ok	27	E34: depth 10
+35	befc093	0.7308	ok	44	E35: depth 12
+36	04433f3	0.7290	ok	27	E36: mcw20 d10
+37	03db64a	0.7306	ok	31	E37: col0.4 d10
+38	bc0a5bd	0.7306	ok	45	E38: 3000@0.005 d10
+39	6cfe548	0.7309	ok	59	E39: 2-seed bag
+40	557e10b	0.7294	ok	22	E40: depth 9

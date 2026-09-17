@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	cf64388	1789537274	baseline
+01	a16e4be	1789537344	numeric FE + carrier/origin/dest cats, depth6, ES50 (no route cats)
+02	26e720f	1789537366	add Hour as categorical
+03	c9ff553	1789537387	lr 0.03, ES 100
+04	2142aff	1789537414	mcw 50 (re-apply, exp8 result kept)
+05	abb99e0	1789537426	subsample/colsample 0.7
+06	34462b1	1789537487	CarrierHour categorical
+07	ffb9580	1789537542	5-seed ensemble
+08	95946aa	1789537588	ensemble depth 7
+09	025560b	1789537630	ensemble depth 8
+10	ac680d6	1789537668	ensemble depth 9
+11	f9363d5	1789537703	ensemble depth 10
+12	b7a9d9b	1789537738	ensemble depth 12
+13	384a230	1789537774	ensemble depth 16
+14	8033cd7	1789537817	ensemble depth 24
+15	81cf83a	1789538051	blend: 5x depth24 + 3x diverse depth12/cs0.5
+16	506a917	1789538121	add lossguide config to blend
+17	0f7131d	1789538550	gamma 0.5
+18	f920be2	1789538663	subsample .8 colsample .6
+19	f336e97	1789538763	subsample .9 colsample .5
+20	c39e8dd	1789538873	subsample 1.0 colsample .4
+21	304afce	1789539090	reg_lambda 4

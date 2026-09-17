@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	934b6f6	1789511459	baseline
+01	eee15a1	1789511492	regularized 300 trees lr0.05 depth5
+02	6490136	1789511527	dep tod + freq encodings
+03	9b307f7	1789511538	5-seed ensemble
+04	6900350	1789511573	congestion count features
+05	201a542	1789511586	shares + carrier-origin/dest-month counts
+06	290a4d0	1789511606	OOF target encoding of pair keys
+07	ec243fc	1789511620	more TE keys
+08	bbc9889	1789511666	freq counts of strong keys
+09	fb12ecb	1789511680	depth4 500 trees with rich features
+10	9bc8b86	1789511738	diverse 8-model ensemble
+11	b8de4b0	1789511770	structural hub features
+12	73a5916	1789511799	finer TE interactions
+13	61e5a6b	1789511825	TE batch3 dow-hour carrier-airport-hour
+14	2492c74	1789511860	ablation drop raw high-card cats
+15	c777e5a	1789511934	800t lr0.04
+16	35d8a3d	1789511977	TE support counts
+17	8721c86	1789512011	mcw50
+18	ef5674d	1789512121	12-model ensemble
+19	7552bfb	1789512180	half-hour TE
+20	4630fe6	1789512235	quarter-hour TE
+21	a2510a3	1789512294	5-min TE
+22	9415fff	1789512365	carrier-route fine time TE
+23	7fa40d7	1789512513	max_bin 512
+24	c7d5402	1789512681	delay propagation adjacent-bucket TE
+25	491e4c2	1789512760	generalized adjacent-bucket propagation

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d0d4093	0.7141	ok	4	baseline
+2	e5e2489	0.7087	ok	6	fe dep-time+route+500 trees
+3	77e2890	0.7083	ok	3	300 trees baseline fe
+4	1b33e56	0.7164	ok	4	early stop eval lr.03 reg
+5	31e966e	0.7169	ok	4	add dep-hour/min/tod
+6	0fe0aa9	0.7107	ok	4	add route categorical
+7	2b151b4	0.7077	ok	4	target enc k50
+8	5a80b48	0.7173	ok	4	depth 4
+9	0157f48	0.7157	ok	5	depth 3
+10	4f3a4bf	0.7173	ok	5	cyclic tod
+11	f0ce189	0.7175	ok	5	freq encoding
+12	99bc9d5	0.7174	ok	6	lr 0.02 depth4
+13	0cf8d47	0.7174	ok	5	depth 5
+14	e384a71	0.7183	ok	16	ensemble depths 3-6
+15	25a63c0	0.7182	ok	18	weekend dowhour distlog
+16	10a6be0	0.7176	ok	16	max_cat_threshold128
+17	034f7d4	0.7185	ok	35	ensemble 8 diverse
+18	8223270	0.7208	ok	52	dep_hour categorical
+19	1e28659	0.7318	ok	101	dep 15min bin cat
+20	3db6c38	0.7309	ok	51	4-model ensemble dep-bin
+21	1b0410e	0.7313	ok	50	8ens double-lr
+22	d642160	0.7233	ok	24	5min bins 4ens
+23	98779e4	0.7294	ok	30	10min bins 4ens
+24	9374107	0.7320	ok	108	dep minute cat
+25	3f42671	0.7320	ok	68	8ens lr1.5x depmin
+26	c8e5b88	0.7324	ok	80	weekend dowhour distbins
+27	b87e21f	0.7273	ok	61	exact minute cat
+28	6cc1523	0.7333	ok	67	max_cat_thr128 depbin
+29	474e7f2	0.7322	ok	63	max_cat_thr256
+30	2e3fab7	0.7334	ok	67	reg_lambda5
+31	2476e1a	0.7334	ok	95	ensemble 11 models
+32	70fec1e	0.7334	ok	72	lossguide 64 leaves
+33	e019117	0.7377	ok	63	carrier x hour
+34	9c9b80c	0.7303	ok	49	origin x hour
+35	3c3d98d	0.7383	ok	77	carrier x 15min bin
+36	82b57c4	0.7247	ok	51	carrier x month
+37	8ecd34d	0.7353	ok	66	dow x hour cat
+38	4febb3c	0.7330	ok	65	carrier x minute bucket
+39	56d43bd	0.7387	ok	82	max_cat_thr96
+40	87c2289	0.7350	ok	72	carrier x dow

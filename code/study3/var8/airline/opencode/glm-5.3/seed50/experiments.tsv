@@ -1,0 +1,31 @@
+n	commit	eval_auc	status	seconds	description
+1	0d2638c	0.7141	ok	4	baseline
+2	a570982	0.7138	ok	7	FE overhaul: dep-time cyclical, doy, route cat, OOF TEs, 400 rounds
+3	0b4d464	0.7494	ok	61	bag5 lossguide512 mcw1 col.8 + dist, minimal features
+4	c9643d7	0.7518	ok	63	bag5 lg512 mcw1 col.8 +dist + reg_alpha 0.5
+5	4077608	0.7517	ok	68	bag5 + colsample_bynode=0.5
+6	26bb41f	0.0000	crash	24	subspace bag: 2 full + 3 feature-dropped members
+7	62251b7	0.7530	ok	65	subspace bag: 2 full + 3 feature-dropped members (fixed col names)
+8	98673a9	0.7530	ok	80	bag6: 3 full + 3 drop members (carrier/dest/dist)
+9	5d02723	0.7518	ok	80	bag6 with pair-drop member replacing one full
+10	5b41271	0.7526	ok	80	bag6 with per-member max_bin 256/512/1024
+11	42615a6	0.7527	ok	84	bag6: month-holdout members + feature-drop members
+12	d0d60c3	0.7526	ok	72	bag6 (3 full + 3 drops) with alpha 0.3
+13	5e639e7	0.7526	ok	75	bag6 (3 full + 3 drops) with alpha 0.7
+14	98d3003	0.7527	ok	78	bag6 + mins_sq quadratic time term
+15	9db859a	0.7533	ok	70	bag6 with colsample_bytree 0.85
+16	42337c6	0.7533	ok	76	rank-average aggregation of bag members
+17	d2879ae	0.7532	ok	92	bag7: 4 full + 3 drop members
+18	90dd44d	0.7534	ok	76	bag6 col.85 with 450 rounds
+19	42fcf45	0.7532	ok	100	bag6 col.85 r450 with max_leaves 576
+20	dd29c3c	0.7528	ok	79	same config, member seeds 11-16
+21	fd8276c	0.7526	ok	79	bag6 col.85 r450 with mcw 2
+22	71288f0	0.7536	ok	90	per-member colsample: fulls 0.85, drops 1.0
+23	2b57bc6	0.7526	ok	96	per-member colsample: fulls 0.9, drops 1.0
+24	2076ab8	0.7536	ok	96	bag6 per-member col; r500
+25	fd4298f	0.7536	ok	78	per-member colsample: fulls 0.82, drops 1.0
+26	efcda51	0.7531	ok	88	bag6 per-member col; max_bin 384
+27	6592f59	0.7527	ok	77	bag6 per-member col; max_leaves 448
+28	5c8a7b1	0.7530	ok	81	bag6 per-member col; eta 0.045
+29	f575ace	0.7532	ok	91	final config, member seeds 21-26
+30	7b0a9fd	0.7531	ok	92	fulls col.85 sub.98, drops col1 sub1

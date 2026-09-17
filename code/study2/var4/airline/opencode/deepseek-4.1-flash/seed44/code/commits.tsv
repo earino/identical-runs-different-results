@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	d9e9128	1789505001	baseline
+01	0204445	1789505094	regularized cfg
+02	66fd794	1789505162	150 trees
+03	acdd8f5	1789505197	5-seed bagging
+04	6b83dc7	1789505524	alpha10 depth5 500trees
+05	7b8e79a	1789505730	hour cat + min + hour interactions
+06	50bdec3	1789506057	freq + CarrierOrig features alpha5
+07	5f9b335	1789506655	hp search best
+08	6ed1e52	1789506729	diverse 5-model ensemble
+09	8b79a33	1789507757	add DistBandHour
+10	95f1054	1789508774	7-model diverse ensemble: refined hp configs
+11	d5de63f	1789508811	fix duplicate min_child_weight in ensemble config merge
+12	64b90e9	1789509015	add combo frequency encodings
+13	ddcf463	1789509846	add origin/dest hour frequency shares
+14	c828e64	1789510131	add route-hour share

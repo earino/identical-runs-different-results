@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	e9ce7c0	1789594200	baseline
+01	bdbca4e	1789594299	FE overhaul: parsed ints, cyclical DepTime, Route cat, ES + full refit
+02	eee087e	1789594959	TE encodings + cyclical time + deep/colsubsample forest regime, ES on eval
+03	7ef7998	1789598720	lr 0.02, depth 24, colsample 0.3 forest regime
+04	aea65b2	1789599860	max_cat_to_onehot=32
+05	647dbea	1789600193	3-seed fixed-250 ensemble, aligned feature order
+06	645c894	1789600312	add diverse rf-style 4th member
+07	e394b8c	1789600694	2 boosted + 2 rf-style members
+08	c59cd2f	1789600934	rank-average ensemble members
+09	5699f29	1789601299	trim for wall-time safety: 220 rounds, es40

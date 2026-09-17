@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	79c4811	1789528915	baseline
+01	5350065	1789528955	boosting capacity: 400 trees, depth 8, lr 0.08, subsample/colsample 0.9
+02	932f71f	1789528964	100 trees, baseline depth6 lr0.1
+03	bc2ba67	1789528983	FE v1: int c-cols, hour/min, cyclical tod, late_night, log_dist
+04	4cb1f9a	1789528990	300 trees with FE v1
+05	b7078a0	1789529006	interaction categoricals: route, hour_dow, carrier_hour
+06	0d605d7	1789529012	drop route cat, keep hour_dow+carrier_hour
+07	92dfa28	1789529019	freq encodings for carrier/origin/dest/route (train-fitted)
+08	d3e765d	1789529035	origin_hour cat + min_child_weight=20
+09	3634cab	1789529042	ablation: mcw20 only, no origin_hour
+10	41304d9	1789529046	200 trees with mcw20
+11	b61a6f9	1789529135	ensemble of 3 xgboost models (seed/depth/lr diversity)
+12	2d4c0e6	1789529146	ensemble of 6 models
+13	00d8597	1789529165	ensemble of 10 models
+14	f6a9e0c	1789529223	ablation: drop tod_sin/cos late_night
+15	a831de9	1789529275	ablation: drop log_dist only
+16	eec199a	1789529397	ensemble of 16 models
+17	ca1cfe3	1789529484	max_bin=512
+18	26b9ae2	1789529525	ensemble of 24 models with regularization diversity
+19	87ec216	1789529708	ablation: drop raw DepTime (redundant with hour/min)

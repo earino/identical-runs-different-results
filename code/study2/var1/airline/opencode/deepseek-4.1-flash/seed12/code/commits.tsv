@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	0401cd9	1789540231	baseline
+01	c1d3e1b	1789540314	feat: time/cyclic features, 100 trees lr0.1
+02	5b40fcb	1789540357	capacity: 400 trees lr0.05 on time features
+03	9fff772	1789540365	depth 8
+04	2406532	1789540374	depth 12
+05	fb0281c	1789540391	depth 16
+06	f0f1328	1789540422	depth 20
+07	4ce5fea	1789540507	800 trees lr0.03 depth20
+08	0ed38ec	1789540812	1200 trees lr0.02
+09	9fb4f20	1789540902	1500 trees lr0.015
+10	08f81f3	1789541022	colsample 0.7
+11	4d1395f	1789541130	colsample 0.5
+12	29b251d	1789542419	max_cat_threshold 256
+13	f47ccac	1789542757	categorical hour

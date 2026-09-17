@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	bf94fed	0.7141	ok	4	baseline
+2	fd24a43	0.7132	ok	4	early stopping + stronger params
+3	a5b2a7d	0.7135	ok	5	feats v1: time-of-day + numeric calendar
+4	90f39dd	0.0000	crash	1	smoothed target encodings + route cat
+5	2ab5663	0.6981	ok	11	smoothed target encodings + route cat (fixed)
+6	9b32970	0.7022	ok	5	route cat + freq encodings, no TE
+7	3f8daf7	0.7160	ok	2	v1 feats, 100 trees d6 lr0.1
+8	ed796e3	0.7166	ok	3	v1 feats, 200 trees d6 lr0.1
+9	8ea391f	0.7161	ok	3	v1 feats, 400 trees d6 lr0.1
+10	dfb981e	0.7079	ok	4	subsample 0.8 colsample 0.8, 400 trees
+11	7b2653e	0.7142	ok	3	min_child_weight=10, 200 trees
+12	eac0da0	0.7164	ok	4	depth 7, 200 trees
+13	4ec7ac4	0.7183	ok	4	lr 0.05, 600 trees d6
+14	de252f5	0.7169	ok	4	lr 0.03, 1000 trees d6
+15	037bd9c	0.7187	ok	5	lr 0.05, 800 trees d6
+16	df34b9a	0.7186	ok	8	lr 0.05, 1200 trees d6
+17	c75539e	0.7187	ok	24	5-seed ensemble
+18	f30b366	0.7223	ok	19	diverse ensemble d4/d6/d8/mcw10
+19	17504d5	0.7236	ok	54	8-member diverse ensemble
+20	f62ee38	0.7209	ok	6	hour categorical, single model
+21	ef27d65	0.7273	ok	57	ensemble + hour categorical
+22	7d8afaf	0.7137	ok	6	Month x DOW interaction
+23	0220ef5	0.7282	ok	112	12-member ensemble
+24	6a17780	0.7284	ok	116	rank average
+25	568f68f	0.7265	ok	59	DOW x hour-bin interaction
+26	1c324a9	0.7209	ok	8	lossguide single
+27	8503ad6	0.7186	ok	68	DART single
+28	7f7166d	0.7255	ok	49	bagged ensemble 8x75pct + 4 full
+29	f190a65	0.7284	ok	8	dep 15min bins single
+30	2047853	0.0000	timeout	121	ensemble + dep_bin15
+31	6e81d5b	0.7355	ok	103	10 members + dep_bin15
+32	7e40ae2	0.7178	ok	9	dep_bin5 single
+33	73974f8	0.7259	ok	10	dep_bin10 single
+34	aeb2a3f	0.7284	ok	9	max_bin 512 single
+35	1a30b97	0.7344	ok	104	member mix swap
+36	d40a891	0.7360	ok	97	11 members
+37	15b22d4	0.7061	ok	9	DOW x bin15 single
+38	596bb67	0.7360	ok	117	12 members v2
+39	ec3bc78	0.7357	ok	92	simplified time features (11-member)
+40	f0fba6d	0.0000	timeout	120	12 members v3

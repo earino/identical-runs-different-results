@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	1815ce6	0.7141	ok	3	baseline
+2	4d17a58	0.7192	ok	3	time features + cyclic + early stopping
+3	58816b8	0.7194	ok	6	lr 0.05 depth 8 more trees
+4	6f91052	0.7091	ok	6	route categorical
+5	2ca71be	0.7089	ok	5	smoothed target encodings carrier/origin/dest/route
+6	dab84df	0.7224	ok	3	carrier/origin/dest TE, no raw cats
+7	1aac39e	0.7282	ok	5	carrier-hour TE + flight count features
+8	5d7e5ca	0.7382	ok	46	5-seed ensemble d10 lr.02
+9	ea7ae09	0.7435	ok	52	origin/dest x hour congestion counts
+10	854d1c2	0.7452	ok	87	3-seed lossguide ensemble
+11	78a84da	0.7482	ok	111	single lg256 lr.01 auc-ES
+12	1899545	0.7471	ok	74	diverse 2-model blend lr.02 auc-ES
+13	5233c78	0.7452	ok	101	ablation drop minute day log_distance
+14	ddd097c	0.7471	ok	96	colsample_bylevel 0.8
+15	455aed3	0.7482	ok	110	gamma 0.05 regularization
+16	e587a8d	0.7479	ok	103	rel congestion share features
+17	3bae128	0.7481	ok	106	max_leaves 224
+18	43c5e6e	0.0000	timeout	121	te_car_h half-hour buckets

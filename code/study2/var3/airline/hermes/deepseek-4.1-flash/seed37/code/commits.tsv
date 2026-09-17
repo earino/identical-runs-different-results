@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	6e081b0	1789536579	baseline
+01	f92c351	1789536640	temporal feature engineering: numeric time-of-day/season features
+02	f954811	1789536698	min_child_weight=50
+03	d770d4c	1789536734	5-seed bagged ensemble, subsample/colsample 0.8
+04	3e6d4eb	1789536750	bagged, 60 trees
+05	dc34bb0	1789536791	traffic frequency features (origin/dest/carrier/route/hour)
+06	4d2429b	1789536879	normalised congestion ratios
+07	64e86d5	1789536889	diverse 8-member ensemble
+08	be27b9b	1789536974	reg_lambda=2
+09	cde008b	1789537005	prune redundant cyclic features
+10	da96d79	1789537022	lr0.05 120 trees (retest on 8-member)
+11	95b4e9d	1789537034	200 trees lr0.05
+12	89ab57c	1789537049	350 trees lr0.05
+13	30f39f0	1789537117	explicit tod interaction products
+14	6db3dc0	1789537192	airport peak-hour features
+15	5b65a1e	1789537246	12-member ensemble
+16	175efb0	1789537286	16-member ensemble
+17	dfdf44e	1789537348	lossguide growth, 96 leaves

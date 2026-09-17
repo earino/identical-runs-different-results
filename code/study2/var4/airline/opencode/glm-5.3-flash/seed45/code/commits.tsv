@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	255c398	1789508140	baseline
+01	1ab4e82	1789508313	restore bagged ensemble 5x30 (best 0.7156)
+02	a84274e	1789508317	diverse 15-member ensemble
+03	1db0d03	1789508348	50-member random-config ensemble
+04	f190b92	1789508370	feature-diverse ensemble: baseline/time/TE member variants
+05	e8c148c	1789508536	greedy ensemble selection via 5-fold OOF preds
+06	db6b703	1789508903	restore DOY harmonics variant1 (best 0.7204)
+07	c74207d	1789508974	holiday window flags in variant 1
+08	cb6d327	1789509038	tilt mix to variant1 + per-variant OOF diagnostics
+09	b046b8e	1789509186	70 candidates, 3-fold selection OOF
+10	a1492a7	1789509335	3-seed averaging of selected members, 60 greedy steps
+11	efb3a40	1789509531	mix 15/85/0 (drop TE members)
+12	e3fa891	1789509668	drop DayofMonth from variant 1
+13	77c560c	1789509726	drop DayofMonth everywhere
+14	64b0b17	1789509784	2nd doy harmonic retry (no DoM regime)

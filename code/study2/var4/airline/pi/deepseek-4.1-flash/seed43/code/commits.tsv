@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	a20bd60	1789502666	baseline
+01	65154c2	1789502746	exp4: depth4 100 trees lr0.1
+02	703db3b	1789502750	exp5: depth3 100 trees
+03	04815ee	1789502757	exp7: depth3 300 trees lr0.05
+04	32d9c86	1789502801	exp13: depth3/4/5 ensemble
+05	d81b819	1789502853	exp18: ensemble colsample 0.8
+06	1c2180f	1789502874	exp20: colsample 0.6
+07	205af1e	1789502892	exp22: seed-bagged ensemble 9 models
+08	49b4d9d	1789502996	exp24: OOF target encodings
+09	ab6414e	1789503014	exp25: TE route/org_hour/carrier_org
+10	36bb3b8	1789503042	exp27: TE smooth20
+11	09d4784	1789503117	exp32: max_bin512
+12	0a33833	1789503165	exp35: ensemble depth4/5/6
+13	ae6b1dd	1789503180	exp36: ensemble depth5/6/7
+14	a9d5a46	1789503222	exp38: ensemble depth4-7
+15	f040d8c	1789503245	exp39: ensemble depth3-7

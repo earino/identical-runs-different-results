@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	2f9f7c2	1789495660	baseline
+01	5cd4dd3	1789495725	feat: engineered time features + route, lr.05 depth10, early stop + full retrain
+02	9987477	1789495894	feat: target+count encoding for route/origin/dest/carrier/hour/date
+03	6bdb91d	1789496512	restore clean v2 features (undo TE contamination)
+04	327dc50	1789496516	feat: 3-model ensemble on clean v2 (seed+subsample/colsample jitter)
+05	3fb8494	1789497938	feat: member-level feature dropout (distance/calendar ablations)
+06	703e156	1789498126	tune: deeper member dropout
+07	a4493cf	1789498445	tune: M3 drops Route too
+08	7820a57	1789498613	feat: 4th member carrier+dest blind

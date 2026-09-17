@@ -1,0 +1,31 @@
+n	commit	unix_time	subject
+00	582bd94	1789534128	baseline
+01	c25e215	1789534166	feat: DepTime/cyclic/route features, depth8, 800 trees, early stop on eval
+02	4054673	1789534177	depth6 lr0.05 mcw20 es100 up to 2000 trees
+03	f8021c4	1789534187	ablation: drop Route categorical
+04	7e34ce1	1789534197	depth 8 (no Route)
+05	81d2f7d	1789534203	depth 10
+06	3340610	1789534210	depth 12
+07	b5905c7	1789534284	restore depth 16 (best)
+08	0477a92	1789534284	lr 0.03, 3000 trees, es200
+09	ed50937	1789534298	native cats for month/dom/dow/hour
+10	52f24b0	1789534319	revert: date/hour native cats (ordinal wins)
+11	d4204b9	1789534320	mcw 50
+12	a932862	1789534330	subsample0.8 colsample0.7
+13	b682cfe	1789534341	subsample0.7 colsample0.6
+14	ef372e7	1789534363	ensemble of 3 xgb models (depth 16/12/20)
+15	0a6678a	1789534396	5-model ensemble (depth 8-24)
+16	39e21c7	1789534626	8-model ensemble
+17	c845d78	1789534707	rank-average ensemble
+18	820f65c	1789534975	single d16 ss0.8 cs0.45 mcw10
+19	afc6ea4	1789534990	cs 0.40
+20	3abefe0	1789535003	ss 0.85 cs 0.45
+21	98b7ab7	1789535017	mcw 5
+22	474e395	1789535031	mcw 1
+23	9b7b576	1789535052	depth 20 mcw1
+24	c35dae6	1789535078	depth 24 mcw1
+25	7352ad1	1789535118	d20 mcw1 cs0.5
+26	9a31def	1789535150	reg_lambda 0.1
+27	1aea854	1789535180	4-seed ensemble of champion d20 mcw1
+28	18a19bc	1789535271	6 seeds, es100
+29	672c35a	1789535471	8 seeds es50

@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	ea744ba	1789492536	baseline
+01	95a535d	1789492725	bagged ensemble of 5 small trees
+02	5849a10	1789492736	hour features on top of bagging
+03	282cfc3	1789492754	bag of 10 + carrier x hour cross
+04	0121c78	1789492765	bag of 20
+05	7caa2bb	1789492838	colsample_bynode in bag members
+06	e78c5f8	1789492852	mixed-depth bag
+07	ad3f199	1789492894	hp-jittered bag
+08	ee8680c	1789493125	OOF-weighted member fusion
+09	5efe21e	1789493223	sharper OOF weights
+10	bc5a0f2	1789493266	60-tree lr0.06 members
+11	913ff77	1789493336	80-tree lr0.055 members
+12	1481f35	1789493421	100-tree lr0.05 members

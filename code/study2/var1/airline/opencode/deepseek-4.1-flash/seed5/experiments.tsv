@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f3709ac	0.7141	ok	3	baseline
+2	e88ea19	0.7169	ok	2	time+cyclic features
+3	2e23a0c	0.7149	ok	4	400 trees lr0.05 depth6
+4	429cc31	0.7090	ok	2	route categorical
+5	1bd6409	0.7183	ok	7	frequency encodings
+6	4d52bee	0.7175	ok	16	OOF target encoding
+7	f3a3c14	0.7227	ok	7	regularized depth5 200t
+8	aa3d508	0.7241	ok	8	regularized depth6 200t
+9	6b0e44b	0.7261	ok	9	regularized depth7 200t
+10	893c48f	0.7269	ok	9	regularized depth8 200t
+11	46f800f	0.7302	ok	10	regularized depth10 200t
+12	321326c	0.7313	ok	12	regularized depth12 200t
+13	8f84d6f	0.7333	ok	15	regularized depth16 200t
+14	824099d	0.7326	ok	15	regularized unlimited depth 200t
+15	7b25656	0.7318	ok	27	500t lr0.03 depth16
+16	bcca6cd	0.7408	ok	19	hour + carrier-hour categorical
+17	29e9579	0.7075	ok	22	dow/month/day hour cat
+18	131c07c	0.7380	ok	20	origin-hour cat
+19	de6ea8b	0.7275	ok	20	dow-hour cat
+20	c82b67f	0.7436	ok	20	route frequency features
+21	c617c52	0.7445	ok	20	carrier-airport freq
+22	89aea84	0.7445	ok	26	more freq combos
+23	650f180	0.7424	ok	17	min_child_weight 30
+24	b91921c	0.7467	ok	20	subsample0.7 colsample0.6
+25	705233b	0.7472	ok	19	colsample0.5
+26	fa990e2	0.7469	ok	33	colsample0.4
+27	71272fc	0.7459	ok	23	300t colsample0.5
+28	19d6a90	0.7507	ok	44	4-seed ensemble
+29	eb08332	0.7516	ok	76	8-seed ensemble
+30	7ef707a	0.7511	ok	80	heterogeneous ensemble
+31	220a513	0.7491	ok	81	month/dow categorical
+32	2103a67	0.7520	ok	87	share ratio features
+33	9dbd9d1	0.7507	ok	88	weekend-hour cat
+34	f5a32f0	0.7534	ok	83	reg_alpha 1.0
+35	352ba87	0.7519	ok	73	reg_alpha 3.0
+36	edd236f	0.7529	ok	82	reg_lambda 3.0
+37	5ebac74	0.7537	ok	102	10-seed ensemble
+38	9007ed2	0.7534	ok	105	colsample_bynode 0.7
+39	bf23c56	0.7512	ok	102	day-of-year seasonality
+40	af1cbf7	0.7531	ok	95	max_cat_threshold 32

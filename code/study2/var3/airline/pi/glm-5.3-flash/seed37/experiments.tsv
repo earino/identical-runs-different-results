@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7bf89c4	0.7141	ok	4	baseline: xgb 30 trees depth6 lr0.1, raw categoricals<=1000 cardinality
+2	2a39d79	0.7023	ok	40	FE v1 + early stopping, random val split
+3	80f0aeb	0.7089	ok	2	FE v1 with baseline model config
+4	a49427f	0.7065	ok	4	early stopping on pseudo-time split
+5	a66c931	0.7132	ok	1	baseline + hour feature
+6	2d835d9	0.7118	ok	2	full-data 100 trees + mild reg
+7	db906ae	0.0000	crash	2	target encoding Origin/Dest/route
+8	45809a7	0.6697	ok	2	target encoding Origin/Dest/route
+9	c8d22bf	0.7129	ok	2	100 trees strong regularization
+10	cc2ab97	0.7146	ok	3	bagging 7x30 trees
+11	3e8aed6	0.7152	ok	6	bagging 25 members
+12	3dfd018	0.7153	ok	12	bagging 60 members
+13	59dc1af	0.7158	ok	13	bagging 60, depth diversity
+14	36e9f46	0.7158	ok	13	bagging depth x subsample diversity
+15	ceccd4d	0.7158	ok	13	bagging + hour
+16	841fede	0.7153	ok	12	bagging depth x max_bin diversity
+17	595f78c	0.7154	ok	12	bag fraction 0.65
+18	45c8c96	0.7159	ok	14	bag fraction 0.9
+19	9fcff48	0.7162	ok	13	bagging depth x lr diversity
+20	a935862	0.7165	ok	17	members with 50 trees
+21	7ff2e48	0.7167	ok	29	100 members
+22	5b25278	0.7165	ok	31	decoupled diversity cycles
+23	8e28162	0.7161	ok	27	mcw diversity
+24	4c5e2e8	0.7162	ok	34	depth diversity with 8
+25	a77bfd1	0.7168	ok	32	rank averaging
+26	75dce7d	0.7170	ok	63	200 members
+27	e26f104	0.7171	ok	65	seed 43 variance probe
+28	1d1bde8	0.7174	ok	61	depth diversity with 4
+29	b780139	0.7182	ok	61	n_estimators diversity
+30	8091606	0.7181	ok	95	300 members
+31	5e5a1bd	0.7183	ok	65	frac 0.9 retest on rich ensemble
+32	3f18380	0.7183	ok	62	per-member frac diversity
+33	8dd767c	0.7186	ok	50	depth window shift down
+34	fcb10b8	0.7174	ok	41	depth window further down
+35	07c1fb9	0.7173	ok	53	lr window down-shift
+36	b60848d	0.7190	ok	73	trees window up-shift
+37	1084eae	0.7191	ok	101	trees window further up
+38	3db6c2d	0.7192	ok	105	hour retest on strong ensemble
+39	0c6f999	0.7192	ok	112	frac 0.95
+40	805316d	0.7191	ok	113	mcw diversity {1,10}

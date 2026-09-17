@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	21563bc	0.7141	ok	3	baseline
+2	1b5a7aa	0.7080	ok	10	fe-v1 + stronger model
+3	c961288	0.7053	ok	5	fe-v1 regularized
+4	baa479a	0.7136	ok	3	baseline feats + reg model
+5	b23b839	0.7124	ok	3	feats: +dephour,tod
+6	ae5ae89	0.7109	ok	4	target encodings v1
+7	10ba119	0.7156	ok	6	ES on eval
+8	27549d9	0.7170	ok	10	seed ensemble x5 ES
+9	108cb23	0.7166	ok	13	TE feats + ES ensemble
+10	e3bd880	0.7173	ok	12	depth 4
+11	d9d3b14	0.7174	ok	11	depth 5
+12	629f2d7	0.7171	ok	10	subsample/colsample 0.6
+13	9e2074b	0.7175	ok	19	10 seeds
+14	969682b	0.7179	ok	24	mixed depth ensemble
+15	fe37d19	0.7173	ok	22	mcw 50
+16	9476b97	0.7177	ok	17	lr 0.1
+17	033604d	0.7176	ok	31	colsample_bynode 0.7
+18	d0e825b	0.7178	ok	30	ES patience 100
+19	4550375	0.7176	ok	23	max_bin 512
+20	0efb65d	0.7174	ok	25	lossguide 64 leaves
+21	be72400	0.7178	ok	48	24 models
+22	baefe13	0.7173	ok	23	iteration window averaging
+23	73c6e2a	0.0000	timeout	120	dart ensemble
+24	579fb76	0.7175	ok	47	hybrid gbtree+dart
+25	72db2c0	0.7191	ok	30	holiday flags
+26	f20b8dc	0.7192	ok	31	more holiday flags
+27	53db069	0.7194	ok	39	holiday dow interactions
+28	3355fdc	0.7205	ok	47	holiday distance feats
+29	6bf5537	0.7198	ok	40	all holiday distances
+30	70b7de5	0.0000	crash	2	drop flags ablation
+31	256ac4b	0.7202	ok	33	drop flags ablation (fixed)
+32	1d3a0ab	0.7206	ok	50	frequency encoding
+33	1dcf46b	0.7204	ok	52	deeper ensemble lr .04
+34	ee9f6be	0.7204	ok	52	closeness interactions
+35	a82fe81	0.7210	ok	50	no dom cat
+36	e1bed1c	0.7174	ok	42	no dow cat
+37	f5a60c8	0.7208	ok	51	month numeric
+38	5f19efa	0.7211	ok	85	20 members
+39	706bc88	0.7211	ok	84	mixed subsample
+40	dd5a1f0	0.7211	ok	104	24 members final

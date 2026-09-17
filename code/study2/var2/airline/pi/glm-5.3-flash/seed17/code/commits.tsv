@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	2f7fb8f	1789500720	baseline
+01	1491a10	1789500760	exp2: 2000 trees lr.05 d8 + early stop, hour categorical + dep_min
+02	ebbcbfb	1789500808	exp5: d10 lr.03 mcw20 col.7 slower
+03	a4855aa	1789500821	exp6: d12 lr.02 mcw30 stronger reg
+04	842a6fd	1789500839	exp7: d14 lr.012 mcw50
+05	281f5b4	1789501901	exp26: drop DayofMonth
+06	b5f0ab8	1789502128	exp31: col.6 mcw30 on clean features
+07	adab01b	1789502196	exp33: col.6 mcw20
+08	d1d685e	1789502229	exp34: col.6 mcw10
+09	3fd7ac8	1789502266	exp35: col.6 mcw5
+10	7381d83	1789502300	exp36: col.6 mcw2
+11	e270b61	1789502336	exp37: col.6 mcw1
+12	d45dab7	1789502559	exp40: subsample 0.8 mcw1

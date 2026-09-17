@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	39ffe8f	1789501236	baseline
+01	5fd5b42	1789501309	exp2: 1500 trees lr0.05 depth6 subsample/colsample 0.8, early stop 50 on eval
+02	5263c9f	1789501321	exp3: DepTime hour+cyclic, Distance log
+03	b3ffe46	1789501395	exp8: lr0.02 8000 trees depth6 es200
+04	115e2f9	1789501432	exp10: 5-seed bag of lr0.02 depth6
+05	d0e1f43	1789501499	exp12: DepMin numeric + day-of-year seasonality sin/cos
+06	856fd09	1789501673	exp16: 5-member colsample-diverse bag
+07	49e9602	1789501940	exp19: 7-member colsample bag

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ee4fa1a	0.7141	ok	4	baseline
+2	54293b4	0.7067	ok	8	feateng v1: ints+cyclical time/route/logdist, 500t lr.06 d8
+3	e5edf8a	0.7184	ok	3	ablation: no Route cat, d6, 400t
+4	3be19a6	0.7173	ok	3	OOF target encoding carrier/origin/dest/route
+5	ac0e807	0.7231	ok	6	d8 600t lr.05 mcw10 cs0.7
+6	d4902d2	0.7256	ok	11	d10 900t lr.035 mcw20 cs0.6
+7	9dbb669	0.7240	ok	14	d12 1200t lr.03 mcw30 cs.55 ss.75
+8	36e4cbb	0.7204	ok	12	inter cats carrier_hour dow_hour
+9	535be78	0.7255	ok	9	freq encoding log-counts
+10	3257f0d	0.7252	ok	12	ensemble d10+d6 mean
+11	e702f54	0.7270	ok	15	d10 1500t lr.02
+12	1cbe453	0.7269	ok	23	d10 2200t lr.015
+13	2af6bcd	0.7274	ok	46	bag 3x d10 seeds
+14	dd86d2d	0.0000	crash	1	bagged lossguided leaves=96
+15	2deb092	0.7300	ok	55	bagged lossguide leaves=96 (typo fix)
+16	b1369fe	0.7302	ok	78	bagged lossguide leaves=160
+17	9178b34	0.7286	ok	82	leaves160 mcw30
+18	e073957	0.7315	ok	78	leaves160 cs0.5
+19	3298234	0.7325	ok	67	leaves160 cs0.4
+20	9ea1b55	0.7316	ok	64	leaves160 cs0.3
+21	8c298ee	0.7315	ok	71	leaves160 cs0.4 ss0.75
+22	73fc119	0.7329	ok	95	2000t lr.015 cs0.4
+23	d541109	0.7329	ok	19	ES probe: optimal rounds at lr.015
+24	34b50ff	0.7329	ok	52	bagged 3x ES on eval
+25	4cb5eec	0.7326	ok	50	ablate cyclical sin/cos
+26	838e517	0.7305	ok	48	ablate all cyclical
+27	c63c1b9	0.7339	ok	102	max_bin 512
+28	d74262f	0.7340	ok	107	max_bin 1024
+29	7c4cfff	0.7337	ok	90	diverse members leaves/mcw/cs
+30	f54d5d3	0.7339	ok	91	ss0.9
+31	5149156	0.7333	ok	116	leaves192
+32	e1a53a7	0.7303	ok	102	dayofyear
+33	34182e1	0.7351	ok	102	reg_alpha 1
+34	a5cdf83	0.7359	ok	98	reg_alpha 2
+35	878fd49	0.7361	ok	99	reg_alpha 4
+36	62a0c78	0.7343	ok	103	reg_alpha 8
+37	62aaebf	0.7355	ok	97	lr 0.0175 alpha4
+38	724e5fa	0.7375	ok	82	gamma=1 alpha4
+39	01e15c5	0.7376	ok	51	gamma=2 alpha4
+40	620d9df	0.7379	ok	62	max_bin 1024 gamma2

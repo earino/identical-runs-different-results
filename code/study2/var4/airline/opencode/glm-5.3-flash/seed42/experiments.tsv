@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	288cf64	0.7141	ok	4	baseline: default xgb, categorical strings, 30 trees
+2	7d5bfd5	0.6966	ok	23	feat eng v1 + ES on internal split
+3	f142794	0.7055	ok	13	drop Route, 2000 trees ES
+4	bd6f829	0.7208	ok	21	n_estimators sweep 30..1600
+5	12b459e	0.7237	ok	14	depth x lr sweep
+6	0d4025c	0.0000	crash	2	TE oof g=50 + freq
+7	56f75aa	0.7226	ok	6	TE oof g=50 + freq
+8	933aefe	0.7239	ok	26	n_est sweep depth8 lr0.05
+9	d333144	0.7282	ok	22	mcw x colsample sweep
+10	2e9d816	0.7316	ok	56	colsample/subsample sweep
+11	ae7aee0	0.7348	ok	51	col 0.25-0.4 x depth 8/10
+12	fd27827	0.7381	ok	55	depth 10/12 x col 0.4/0.5
+13	7970d6c	0.7408	ok	59	depth 14/16 x col 0.4/0.5
+14	09ddc50	0.7415	ok	62	6-member diverse ensemble
+15	f4fc4e4	0.7434	ok	101	strong ensemble + depth 20
+16	73021a4	0.7432	ok	94	4x depth20 bag
+17	f39ca48	0.7419	ok	92	TE Route vs Route+OrgHour+CarHour
+18	58079bc	0.7428	ok	102	depth20 lr n lambda
+19	a0b7927	0.7432	ok	104	5-member mixed ensemble
+20	fcaf5a8	0.7429	ok	96	subsample x max_bin
+21	7fb2bcf	0.7446	ok	112	depth20 sub1 bin512 bag
+22	52d2dba	0.0000	crash	57	feature variants
+23	5f1d340	0.7453	ok	109	feature variants
+24	4f3b56d	0.7503	ok	89	freq packs
+25	99d2168	0.7517	ok	117	4x depth20 on freq features
+26	eb22805	0.7506	ok	92	freq v1/v2/v3
+27	5081743	0.0000	timeout	120	col/lr/n retune
+28	d165e7b	0.0000	timeout	124	5-member ensemble v2
+29	97bd907	0.0000	crash	119	ensemble lr03 anchor
+30	6c816d4	0.7522	ok	118	ensemble lr03 anchor fixed
+31	9894d60	0.0000	crash	2	ratios/dowhour variants
+32	72da1ea	0.7520	ok	94	ratios/dowhour variants fixed
+33	9d5ecca	0.0000	timeout	121	ratios ensemble + agg
+34	b5ebe2a	0.7543	ok	112	3-member ratios ensemble
+35	659c32d	0.7544	ok	113	alt mix ensemble
+36	d88db29	0.0000	timeout	120	lr02 anchor ensemble
+37	5c61d55	0.7543	ok	100	depth-diverse ensemble
+38	0a59ea0	0.7544	ok	105	fullrc/full variants
+39	4f06659	0.0000	timeout	123	final ensemble on full
+40	80e7944	0.7558	ok	84	final 2-member ensemble

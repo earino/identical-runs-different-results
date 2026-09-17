@@ -1,0 +1,156 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 23,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T07:31:51+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s23-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:33:19+00:00",
+  "wall_seconds": 7288.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18193.7,
+  "endpoint_at_end": "ok",
+  "head": "950409b",
+  "n_commits": 14,
+  "n_experiments": 18,
+  "n_ok": 18,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.744,
+  "final_eval_auc": 0.744,
+  "holdout_auc": 0.744343412542,
+  "holdout_ap": 0.7371691585542867,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.029572660805999962,
+  "generalization_gap": -0.00034341254199998783,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7703868,
+    "tokens_in_uncached": 1130172,
+    "tokens_in_cached": 6573696,
+    "tokens_out": 73147,
+    "turns": null,
+    "api_calls": 134,
+    "method": "sum-of-134-events",
+    "cost_usd": 3.6132,
+    "cached_share": 0.853
+  },
+  "cpu_seconds_python": 17508.8,
+  "cpu_seconds_counted": 4402.6,
+  "cpu_seconds_uncounted": 12406.3,
+  "cpu_seconds_exempt": 699.9,
+  "python_processes": 81,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 3349,
+  "fits_counted": 435,
+  "fits_uncounted": 2882,
+  "commits": [
+    {
+      "commit": "17d809f",
+      "message": "baseline"
+    },
+    {
+      "commit": "17ac574",
+      "message": "FE v1 features, baseline model config"
+    },
+    {
+      "commit": "7aca782",
+      "message": "bagged ensemble (4 cfg x 12 seeds), drop Month+DayofMonth"
+    },
+    {
+      "commit": "7d0c92c",
+      "message": "multi-view bagged ensemble (6 feature views x 4 cfg x 4 seeds)"
+    },
+    {
+      "commit": "3a44e85",
+      "message": "Exp 6: 5-view ensemble (md/oh/ch/no_od/fullte) with out-of-fold target encodings"
+    },
+    {
+      "commit": "c5f06a2",
+      "message": "Exp 7: lossguide trees (max_leaves~320) across 5 OOF-TE views, 20 models"
+    },
+    {
+      "commit": "17bc10a",
+      "message": "Exp 8: 4-view lossguide ensemble (base/ot/no_od/fullte), 6 seeds"
+    },
+    {
+      "commit": "158dfe6",
+      "message": "Exp 9: n150/lr0.05 lossguide configs, 5 seeds per view"
+    },
+    {
+      "commit": "41fca22",
+      "message": "Exp 10: n200/lr0.04 lossguide configs, 4 seeds per view"
+    },
+    {
+      "commit": "6f0abd0",
+      "message": "Exp 13: max_bin 512 for lossguide trees"
+    },
+    {
+      "commit": "054f0d5",
+      "message": "Exp 15: leaves 384 at max_bin 512"
+    },
+    {
+      "commit": "feed904",
+      "message": "Exp 16: leaves 448 at max_bin 512"
+    },
+    {
+      "commit": "f25b870",
+      "message": "Exp 17: n150/lr0.05 with leaves 448 at max_bin 512"
+    },
+    {
+      "commit": "8022416",
+      "message": "Exp 18: leaves 512 at n150/lr0.05, max_bin 512"
+    },
+    {
+      "commit": "950409b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16808.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 684.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8022416",
+  "best_commit_eval_auc": 0.744,
+  "best_commit_holdout_auc": 0.744343412542,
+  "best_commit_holdout_ap": 0.7371691585542867,
+  "best_commit_error": null,
+  "finalized_best": true
+}

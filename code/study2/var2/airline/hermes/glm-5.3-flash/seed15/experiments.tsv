@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a54c8b8	0.7141	ok	12	baseline: 30 trees, depth 6, raw categoricals
+2	f68dbfa	0.7121	ok	100	numeric dates, cyclic+banded deptime, freq/shrink encodings, 40 oh, 300x d8
+3	0493d1f	0.7025	ok	9	ablation: same feats, baseline 30xd6, no one-hots
+4	59034e6	0.7132	ok	1	isolate numeric calendar+deptime+dist, no encodings
+5	3979b87	0.7149	ok	5	capacity: 400 trees d8 lr05 subs0.8 col0.8
+6	69659ac	0.7142	ok	16	capacity: 600 trees d10
+7	997ad32	0.7132	ok	9	capacity: 600 trees d8
+8	bc3a0c7	0.7144	ok	6	reg: 400xd8 subs0.9 col0.9
+9	a5e61c0	0.7184	ok	24	5-seed bagging of best 400xd8 config
+10	202196f	0.7080	ok	19	ablation: raw DepTime int + native cats only, 5-seed 400xd8
+11	ac4e4f0	0.7175	ok	23	ablation: drop dist_log
+12	79ee030	0.0000	crash	2	interaction categoricals: route, carrier@origin
+13	6783f9b	0.7030	ok	39	interaction categoricals: route, carrier@origin (fixed)
+14	2458313	0.7179	ok	18	depth 7, 400 trees, 5-seed
+15	afb4b2c	0.7186	ok	29	max_bin=1024
+16	a5c3d71	0.7183	ok	27	cyclic deptime on true minutes-of-day
+17	4ea19e5	0.7221	ok	24	heterogeneous ensemble: depths 6-9, colsample 0.6-0.9
+18	b48a530	0.7234	ok	44	8-member heterogeneous ensemble
+19	9f4e76a	0.7229	ok	72	12-member heterogeneous ensemble
+20	1099cdc	0.7222	ok	39	min_child_weight=5
+21	d1f5d6e	0.7250	ok	55	10-member ensemble: add d10/c0.4 and d5/c0.9 members
+22	3c52da2	0.7256	ok	89	16-member heterogeneous ensemble
+23	644f8fc	0.7255	ok	101	20-member ensemble with bin diversity
+24	21ae7df	0.7254	ok	91	rank-average combining
+25	d7ee983	0.7258	ok	115	20-member: 16 depthwise + 4 lossguide
+26	463d1b7	0.7249	ok	90	deptime mod 2400 wrap feature
+27	f877c11	0.7027	ok	98	dow x dom composite categorical (217 levels)
+28	6c0a11d	0.0000	crash	2	per-member feature-block diversity (16 members)
+29	1f5c676	0.0000	crash	72	per-member feature-block diversity (fixed)
+30	753240e	0.7007	ok	78	per-member feature-block diversity (v3)
+31	e9cd0ff	0.7209	ok	84	per-member early stopping (25% val, ES=40)
+32	6d201d1	0.7255	ok	100	members: 450 trees, lr 0.045
+33	e232384	0.7241	ok	82	per-member 80% row bags
+34	31f9a3d	0.7255	ok	85	per-member gamma diversity
+35	42c2694	0.7255	ok	90	max_bin=2048
+36	f08618d	0.7251	ok	89	16 members: 12 depthwise + 4 lossguide
+37	b188630	0.0000	timeout	121	22 members: 16 depthwise + 6 lossguide
+38	c0bb3d2	0.7248	ok	89	month x time-band composite (48 levels)
+39	03eabdb	0.7258	ok	98	18 members: moderate depth/colspread mix
+40	a1baf28	0.7256	ok	93	colsample_bynode=0.9 (last experiment)

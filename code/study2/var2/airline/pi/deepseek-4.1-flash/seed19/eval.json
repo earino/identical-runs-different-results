@@ -1,0 +1,204 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 19,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:30:59+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s19-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:55:35+00:00",
+  "wall_seconds": 1475.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4108.6,
+  "endpoint_at_end": "ok",
+  "head": "a1eed62",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7577,
+  "final_eval_auc": 0.7577,
+  "holdout_auc": 0.7563015644479999,
+  "holdout_ap": 0.737349190159341,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.041530812711999876,
+  "generalization_gap": 0.0013984355520001435,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3787052,
+    "tokens_in_uncached": 3787052,
+    "tokens_in_cached": 0,
+    "tokens_out": 53058,
+    "turns": null,
+    "api_calls": 99,
+    "method": "sum-of-99-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 4087.3,
+  "cpu_seconds_counted": 3779.8,
+  "cpu_seconds_uncounted": 29.7,
+  "cpu_seconds_exempt": 277.7,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 291,
+  "fits_counted": 274,
+  "fits_uncounted": 5,
+  "commits": [
+    {
+      "commit": "934b6f6",
+      "message": "baseline"
+    },
+    {
+      "commit": "eee15a1",
+      "message": "regularized 300 trees lr0.05 depth5"
+    },
+    {
+      "commit": "6490136",
+      "message": "dep tod + freq encodings"
+    },
+    {
+      "commit": "9b307f7",
+      "message": "5-seed ensemble"
+    },
+    {
+      "commit": "6900350",
+      "message": "congestion count features"
+    },
+    {
+      "commit": "201a542",
+      "message": "shares + carrier-origin/dest-month counts"
+    },
+    {
+      "commit": "290a4d0",
+      "message": "OOF target encoding of pair keys"
+    },
+    {
+      "commit": "ec243fc",
+      "message": "more TE keys"
+    },
+    {
+      "commit": "bbc9889",
+      "message": "freq counts of strong keys"
+    },
+    {
+      "commit": "fb12ecb",
+      "message": "depth4 500 trees with rich features"
+    },
+    {
+      "commit": "9bc8b86",
+      "message": "diverse 8-model ensemble"
+    },
+    {
+      "commit": "b8de4b0",
+      "message": "structural hub features"
+    },
+    {
+      "commit": "73a5916",
+      "message": "finer TE interactions"
+    },
+    {
+      "commit": "61e5a6b",
+      "message": "TE batch3 dow-hour carrier-airport-hour"
+    },
+    {
+      "commit": "2492c74",
+      "message": "ablation drop raw high-card cats"
+    },
+    {
+      "commit": "c777e5a",
+      "message": "800t lr0.04"
+    },
+    {
+      "commit": "35d8a3d",
+      "message": "TE support counts"
+    },
+    {
+      "commit": "8721c86",
+      "message": "mcw50"
+    },
+    {
+      "commit": "ef5674d",
+      "message": "12-model ensemble"
+    },
+    {
+      "commit": "7552bfb",
+      "message": "half-hour TE"
+    },
+    {
+      "commit": "4630fe6",
+      "message": "quarter-hour TE"
+    },
+    {
+      "commit": "a2510a3",
+      "message": "5-min TE"
+    },
+    {
+      "commit": "9415fff",
+      "message": "carrier-route fine time TE"
+    },
+    {
+      "commit": "7fa40d7",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "c7d5402",
+      "message": "delay propagation adjacent-bucket TE"
+    },
+    {
+      "commit": "491e4c2",
+      "message": "generalized adjacent-bucket propagation"
+    },
+    {
+      "commit": "a1eed62",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3809.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 21.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "491e4c2",
+  "best_commit_eval_auc": 0.7577,
+  "best_commit_holdout_auc": 0.7563015644479999,
+  "best_commit_holdout_ap": 0.737349190159341,
+  "best_commit_error": null,
+  "finalized_best": true
+}

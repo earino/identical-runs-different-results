@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	dc3a75b	0.7141	ok	4	baseline
+2	03ca165	0.0000	crash	1	sin/cos hour + 600 trees ES
+3	0f3ace1	0.7192	ok	3	sin/cos hour + 600 trees ES
+4	c2c1704	0.7207	ok	3	lr 0.05 3000 trees
+5	1973e9a	0.7110	ok	3	route interaction
+6	b75a238	0.7205	ok	4	target encoding O/D/C
+7	72d92cc	0.7212	ok	3	min_of_day + te_hour
+8	ed5613a	0.7230	ok	4	depth 8 lr 0.03
+9	54e1122	0.7096	ok	5	interaction target encodings
+10	0eba285	0.7220	ok	5	OOF target encoding
+11	30ca7e1	0.7235	ok	5	OOF simple TEs ablation
+12	9206134	0.7270	ok	5	depth 10
+13	c6efcee	0.7300	ok	8	depth 12 lr 0.02
+14	86f98ac	0.7336	ok	9	depth 14
+15	e9eeddb	0.7352	ok	12	depth 16
+16	8d3218e	0.7362	ok	13	depth 20
+17	b262c4c	0.7366	ok	13	depth 24
+18	54f25f2	0.7261	ok	16	calendar features
+19	297d14f	0.7261	ok	15	clean calendar features
+20	1721f75	0.7396	ok	61	5-model bagged ensemble
+21	13e6627	0.7401	ok	97	8-model ensemble
+22	1a74f04	0.7297	ok	31	mcw25 lambda2
+23	0472b89	0.7459	ok	110	mcw1 lambda0.5
+24	7143d58	0.7457	ok	77	lr 0.03 mcw1
+25	097ab60	0.7451	ok	95	max_bin 128
+26	fcf8891	0.7430	ok	69	depth 16 weak reg
+27	f6c4c6b	0.7358	ok	108	15min-block + month TEs
+28	b5f1a26	0.0000	timeout	121	busyness counts
+29	b104bf8	0.0000	timeout	121	busyness counts v2
+30	555c4b3	0.0000	crash	1	lr 0.04 speed rebalance
+31	c050ddf	0.7459	ok	110	lr 0.04 speed rebalance
+32	d1ab8da	0.7455	ok	62	lr 0.04 real
+33	3a63f50	0.7455	ok	78	esr60 lr0.04
+34	93952ce	0.7460	ok	83	lr0.04 x7 members
+35	9edcb01	0.7464	ok	103	9 members
+36	d31f276	0.0000	timeout	120	11 members
+37	4695948	0.7418	ok	117	sub/col 0.8
+38	1f04456	0.7460	ok	110	depth-diverse 9
+39	6bfe37a	0.0000	timeout	120	10 members
+40	689d29f	0.7486	ok	108	colsample 0.6

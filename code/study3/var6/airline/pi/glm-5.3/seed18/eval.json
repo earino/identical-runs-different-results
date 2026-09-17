@@ -1,0 +1,120 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T22:29:54+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T01:03:30+00:00",
+  "wall_seconds": 9216.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17563.8,
+  "endpoint_at_end": "ok",
+  "head": "87377f0",
+  "n_commits": 5,
+  "n_experiments": 7,
+  "n_ok": 7,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7592,
+  "final_eval_auc": 0.7592,
+  "holdout_auc": 0.759651808378,
+  "holdout_ap": 0.751162542932869,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04488105664199993,
+  "generalization_gap": -0.00045180837799996265,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2773980,
+    "tokens_in_uncached": 2042972,
+    "tokens_in_cached": 731008,
+    "tokens_out": 73866,
+    "turns": null,
+    "api_calls": 76,
+    "method": "sum-of-76-events",
+    "cost_usd": 3.3752,
+    "cached_share": 0.264
+  },
+  "cpu_seconds_python": 17536.6,
+  "cpu_seconds_counted": 1017.1,
+  "cpu_seconds_uncounted": 16321.0,
+  "cpu_seconds_exempt": 198.5,
+  "python_processes": 40,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 797,
+  "fits_counted": 29,
+  "fits_uncounted": 763,
+  "commits": [
+    {
+      "commit": "b831d9f",
+      "message": "baseline"
+    },
+    {
+      "commit": "8275b62",
+      "message": "full-data 5-seed ensemble, deep+coldecorrelated, count features, fixed rounds"
+    },
+    {
+      "commit": "eb2c7be",
+      "message": "d16 mcw1, add h2/h3-block count features"
+    },
+    {
+      "commit": "a9df83d",
+      "message": "fix count maps: store value_counts, not raw keys (counts were all zero)"
+    },
+    {
+      "commit": "54cd430",
+      "message": "d18, colsample 0.35, 150 rounds"
+    },
+    {
+      "commit": "87377f0",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17338.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 27.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "54cd430",
+  "best_commit_eval_auc": 0.7592,
+  "best_commit_holdout_auc": 0.759651808378,
+  "best_commit_holdout_ap": 0.751162542932869,
+  "best_commit_error": null,
+  "finalized_best": true
+}

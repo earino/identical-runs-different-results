@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	290f92d	1789542950	baseline
+01	2d15aae	1789543029	reg-v1: subsample .8 colsample .8 at 30 trees
+02	50a5ca7	1789543093	reg-v4: min_child_weight 20
+03	a712027	1789543102	reg-v6: min_child_weight 20 + gamma 1.0
+04	b39f5a2	1789543173	reg-v10: reg_lambda 10
+05	61852ba	1789543193	ens-v2: 3-seed bag of best config
+06	729b4bc	1789543231	reg-v15: lr 0.15 full config

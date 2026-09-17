@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cb8209f	0.7141	ok	4	baseline
+2	58c3a7c	0.0000	crash	1	depth8 lr0.05 + early stopping, refit
+3	56fc230	0.7120	ok	5	depth8 lr0.05 + early stopping, refit
+4	3fcedc2	0.7114	ok	3	depth6 lr0.1 early stopping, refit
+5	4102539	0.7081	ok	2	feat v1: tod/route/freq
+6	2f3400a	0.7132	ok	1	feat: tod only
+7	fc55ea7	0.0000	crash	1	feat: OOF target encoding
+8	5a1cbaa	0.0000	crash	2	feat: OOF target encoding
+9	41c33b4	0.6950	ok	2	feat: OOF target encoding
+10	000319a	0.7170	ok	11	sweep: depth x rounds x reg
+11	00b3505	0.7170	ok	40	sweep2: shallow/high-reg
+12	7b1008d	0.7175	ok	8	sweep3: feature ablations
+13	ea11ffd	0.0000	timeout	120	sweep4: OD encodings
+14	89c1937	0.7178	ok	13	sweep5: freq/reg variants
+15	dcdc0b8	0.7178	ok	20	sweep6: seed variance + bagging
+16	0881231	0.7198	ok	58	sweep7: diversity ensembles
+17	e714e8f	0.7212	ok	76	sweep8: bigger ensembles
+18	786e39d	0.7238	ok	64	sweep9: diversity extension
+19	ddffb44	0.7264	ok	114	sweep10: wide grids
+20	fd05a50	0.0000	timeout	120	sweep11: very wide grid
+21	ebca4fe	0.7314	ok	65	40-model depth x lr ensemble
+22	59fdab0	0.7350	ok	118	sweep12: superset + sub-ensembles
+23	38872ff	0.7315	ok	76	48-model ensemble (cheap deep)
+24	1305abe	0.7365	ok	50	24-model ensemble d1-12 lr.04/.16
+25	a29d9dd	0.7360	ok	73	36-model ensemble +lr0.08
+26	377f3bc	0.7407	ok	94	32-model ensemble d1-16
+27	4f61ec4	0.7413	ok	110	sweep13: subset analysis
+28	d934e26	0.7414	ok	90	lr .16/.32 x d1-16
+29	604fdbf	0.7413	ok	92	16-model ensemble + hub-structure features
+30	ff45ee1	0.0000	timeout	120	sweep14: member families
+31	575cd7c	0.0000	timeout	120	sweep14b: member families
+32	0f984c7	0.7412	ok	57	d1-16 + lossguide ensemble
+33	927ff25	0.7413	ok	76	16 depthwise + mcw diversity
+34	5fa38e8	0.0000	crash	43	sweep15: encoding/reg probes
+35	fdb502a	0.7468	ok	115	sweep16: regularization arms
+36	16a29fb	0.7467	ok	71	16-model ensemble mcw1
+37	68bf502	0.0000	timeout	120	sweep17: depths 1-20 mcw1
+38	a85b7d3	0.7483	ok	111	16-model ensemble mcw0
+39	cf702a7	0.7487	ok	78	sweep18: mcw0 n200 subsets
+40	be3842e	0.7487	ok	73	final clean ensemble (exp40)

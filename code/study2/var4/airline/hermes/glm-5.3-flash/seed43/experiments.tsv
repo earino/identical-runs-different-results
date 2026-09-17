@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	644c5b3	0.7141	ok	4	baseline
+2	dc7a455	0.7084	ok	6	E2 early stopping depth8
+3	b88c7c0	0.7076	ok	4	E3 depth10
+4	85f8d35	0.7126	ok	4	E4 lr 0.05 depth6
+5	c4345f6	0.7114	ok	3	E5 regularization depth6
+6	93885e6	0.7039	ok	5	E6 depth12
+7	345f26c	0.7093	ok	3	E7 lr0.2
+8	c6677e6	0.7120	ok	4	E8 patience 300
+9	43b800b	0.7105	ok	2	E9 depth7
+10	48ebb15	0.7120	ok	2	E10 lambda 1
+11	7c20cca	0.7107	ok	3	E11 deptime feats
+12	7ae6200	0.0000	crash	2	E12 route interactions
+13	1de9813	0.7039	ok	3	E13 route cats fixed
+14	b46d596	0.7067	ok	3	E14 carrier interactions
+15	ad8bbb5	0.6881	ok	2	E15 carrier-month month-dom
+16	2b32521	0.7060	ok	2	E16 carrier-month only
+17	e2a151c	0.7000	ok	3	E17 carrier-dom
+18	d978efd	0.7107	ok	3	E18 pair freq
+19	77ee2f6	0.7058	ok	3	E19 carrier-origin
+20	acb5da1	0.7186	ok	3	E20 carrier-hour
+21	70d2321	0.7156	ok	5	E21 airport-hour
+22	3b1ab82	0.7012	ok	4	E22 all interactions
+23	3f68446	0.7064	ok	4	E23 airport-month
+24	cbef16d	0.7144	ok	5	E24 origin-dow
+25	dfd06a6	0.7144	ok	5	E25 carrier-dow
+26	dbf7157	0.7144	ok	5	E26 origin-dom
+27	6f3bff6	0.7147	ok	19	E27 carrier-origin-hour
+28	6a56890	0.7144	ok	6	E28 dest-dow
+29	4198496	0.0000	timeout	120	E29 origin-dest-hour
+30	c5cd2d4	0.7091	ok	7	E30 origin-minute
+31	62ff8b4	0.7144	ok	5	E31 origin-hour-dow
+32	ae0bfe1	0.7144	ok	5	E32 carrier-hour-dow
+33	ba9e3a0	0.7144	ok	6	E33 dest-hour-dow
+34	eeea921	0.7144	ok	9	E34 origin-dom-dow
+35	fe3f1f4	0.6888	ok	30	E35 triple date interactions
+36	298995a	0.7148	ok	6	E36 doy weekend hour-dow
+37	38deb6e	0.7133	ok	23	E37 coh+dh dow
+38	afdf42e	0.7052	ok	42	E38 airport-month
+39	1c7bb20	0.7144	ok	24	E39 origin-dow-hour
+40	2a31274	0.7147	ok	4	E40 month-dow airport-dow

@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	3cfed71	1789583118	baseline
+01	c2fc1c8	1789583576	bag of 10 x 30-tree XGB models, bootstrap
+02	e4db8a2	1789583589	bag of 25 x 30-tree XGB models
+03	648843b	1789583607	bag of 60 x 30-tree XGB models
+04	7f42108	1789583649	bag 60: half depth 6, half depth 5
+05	2661b6c	1789583679	bag 75: depth 6/5/4 x colsample 1.0/0.8/0.7
+06	c25cfb0	1789583701	bag 75 diverse + hour/minute/tod features
+07	0323908	1789583955	bag 105: depths 4-8 x colsample, derived features
+08	1aaa129	1789584186	bag 150: proven depth/colsample mix scaled up
+09	04b4cba	1789584287	origin x hour, dest x hour interaction cats
+10	3176dd4	1789584404	add carrier x hour interaction
+11	8f90fe6	1789584732	105 models x 50 trees, hour interactions
+12	aec8f09	1789584816	105 models x 60 trees
+13	9120e77	1789584918	90 models x 70 trees
+14	c85bf8f	1789585013	90 models x 90 trees
+15	6bc2fcf	1789585586	reg_lambda 2.0
+16	cb9ef8b	1789585707	75 models x 110 trees, lambda 2
+17	d184d9d	1789585958	lambda 5, 60 models x 110 trees
+18	0e41c96	1789586061	reg_lambda 8.0
+19	91c6c25	1789586192	reg_lambda 15.0
+20	4f11131	1789586316	reg_lambda 30.0
+21	f9c659f	1789586429	reg_lambda 60.0
+22	9ab24ba	1789586665	add gamma 1.0 on top of lambda 60

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a9234b2	0.7141	ok	4	baseline
+2	0a0a1c8	0.7136	ok	4	hyperparams+early stopping
+3	9d73081	0.7143	ok	3	time features cyclical
+4	0ef90c7	0.0000	crash	2	target encoding
+5	68a2c9a	0.0000	crash	0	target encoding
+6	064a699	0.7078	ok	5	target encoding
+7	c0a47f1	0.7138	ok	4	frequency encoding
+8	7014fde	0.7159	ok	3	shallow regularized
+9	f78eab5	0.7148	ok	5	depth3 mcw30
+10	1878157	0.7150	ok	5	sub 0.7 col 0.7
+11	496dc83	0.7163	ok	7	lr005 d4
+12	7076faf	0.0000	crash	2	seed ensemble 5
+13	212ff74	0.7171	ok	19	seed ensemble 5
+14	57e8bba	0.0000	crash	2	ensemble 10 diverse
+15	4d45d70	0.7178	ok	35	ensemble 10 diverse
+16	699fe59	0.7068	ok	34	cross categoricals
+17	f77c074	0.0000	crash	1	low-card crosses
+18	ae39821	0.7131	ok	39	low-card crosses
+19	d0fa8dd	0.7183	ok	43	gamma+lambda
+20	1b89ae4	0.7181	ok	42	mcw50
+21	b0bffdb	0.7183	ok	79	ensemble 20
+22	6c78ac4	0.7183	ok	42	logit average
+23	29e5370	0.7181	ok	61	lr003 ensemble
+24	150ea52	0.7183	ok	62	lossguide mix
+25	8fb1613	0.7185	ok	39	drop dom cyc
+26	8efa234	0.7186	ok	45	TE m200
+27	113ff8c	0.7185	ok	37	max_bin diversity
+28	df33b95	0.7173	ok	41	tail averaging
+29	38f8478	0.7184	ok	46	mini-forest members
+30	3cd3e98	0.7222	ok	44	drop time cats
+31	50fb5ac	0.7228	ok	41	drop month cyc
+32	bb4f8b7	0.7227	ok	41	drop dow cyc
+33	16626c1	0.7247	ok	58	deptime refinements
+34	b5b7622	0.7242	ok	59	day of year
+35	3a479ff	0.7246	ok	88	ensemble 15
+36	facc7c2	0.7242	ok	62	looser reg
+37	39343ea	0.7245	ok	63	tighter reg
+38	f0a749d	0.7246	ok	74	patience 200
+39	ed8d516	0.7227	ok	33	car_dow retest
+40	e3055d9	0.7229	ok	58	all depth 4

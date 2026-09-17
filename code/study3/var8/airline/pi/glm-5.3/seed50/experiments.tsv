@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	09d2966	0.7141	ok	3	baseline
+2	6e0b9f3	0.6996	ok	12	FE + early stopping
+3	bcb59c2	0.7312	ok	37	bagged ensemble + tuned capacity
+4	825053d	0.7417	ok	39	counts + cyclical + dist extras
+5	0fc4a36	0.7533	ok	100	deep forest mcw0 + maxbin64
+6	aa955a1	0.7572	ok	113	+tod_dev_route
+7	55447d9	0.7599	ok	92	+origin/arrival time deviations
+8	c06ff53	0.7607	ok	99	+route arrival dev + schedule tightness
+9	4359504	0.7612	ok	102	+carrier time deviations
+10	141e03d	0.7596	ok	88	row-bagging per seed
+11	9e77b3d	0.7604	ok	103	cs=0.3 retune
+12	f991aa5	0.7599	ok	100	+unseen value indicators
+13	93c4754	0.0000	timeout	122	6-seed bagging
+14	a345e4c	0.7612	ok	91	final: 5-seed bagging, scaled trees

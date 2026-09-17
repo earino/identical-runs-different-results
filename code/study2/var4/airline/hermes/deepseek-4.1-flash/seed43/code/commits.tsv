@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	e6dac78	1789503195	baseline
+01	204c1f7	1789503254	fe: parse date/time features, route cat, tuned params
+02	d0b6956	1789503297	diag: v1 features with baseline params (30 trees)
+03	7e74063	1789503313	ablate: drop route categorical
+04	c85b3e0	1789503322	capacity test: 300 trees lr0.05 depth6, no ES
+05	f3db574	1789503364	fe v2: raw DepTime + airport/carrier/route frequency counts
+06	dc4e206	1789503430	reg: min_child_weight20 lambda5 subsample0.8 colsample0.7
+07	9ff27be	1789503439	reg+slower lr: 800 trees lr0.02
+08	7f977f9	1789503471	fe: hour categorical + redeye flag
+09	5ced20c	1789503490	fe: 30-min time bucket categorical
+10	58c9b4e	1789503588	fe: 10-min time bucket categorical
+11	d6b7172	1789503709	fe: origin/carrier schedule-bank share features
+12	1a74fb6	1789503766	fe: carrier x tod interaction categorical
+13	3f80f19	1789503876	reg: mcw50 lambda10 colsample0.6
+14	097507a	1789503899	1600 trees lr0.01
+15	d1220f3	1789504067	fe: cumulative bank-position features
+16	b5cdf26	1789504088	ablate: 15-min buckets instead of 10-min
+17	06e59ae	1789504112	capacity: depth7 at current regs
+18	24d3278	1789504137	capacity: depth8 at current regs
+19	e266068	1789504190	capacity: depth10
+20	fa53c9d	1789504313	2400 trees lr0.007 depth10

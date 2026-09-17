@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ea56247	0.7141	ok	3	baseline
+2	2619e0f	0.7134	ok	2	time features + cyclical + logdist
+3	2e7e423	0.7007	ok	7	stronger model capacity
+4	81da80f	0.7070	ok	3	regularized moderate model
+5	75d068a	0.7125	ok	2	more trees only
+6	6583989	0.7161	ok	2	shallower trees
+7	a97a939	0.7154	ok	2	even shallower trees
+8	0614306	0.7159	ok	2	time features with depth4
+9	00c706d	0.7156	ok	2	target encoding added
+10	bc8c992	0.7161	ok	4	5-seed ensemble
+11	02a895c	0.7171	ok	3	heterogeneous ensemble
+12	70d273d	0.7174	ok	4	8-member ensemble
+13	79ee154	0.7174	ok	6	early stopping ensemble
+14	89c19e1	0.7173	ok	3	rank averaging
+15	10297bf	0.7094	ok	6	route + frequency features
+16	95c4dc3	0.7160	ok	5	heavy bagging ensemble
+17	3a10ea5	0.7173	ok	5	14-member ensemble
+18	869d4da	0.7166	ok	4	hour categorical features
+19	b37c0a3	0.7156	ok	2	min_child_weight 25
+20	a818f18	0.7154	ok	7	DART model
+21	80e922a	0.7156	ok	4	hour-of-week feature
+22	2dd281f	0.0000	crash	2	32-member bagged ensemble
+23	a624028	0.7163	ok	10	32-member bagged ensemble (fixed)
+24	38235c6	0.0000	crash	7	caruana ensemble selection
+25	6b9f77b	0.7175	ok	19	caruana ensemble selection (fixed)
+26	e2b023d	0.7175	ok	45	caruana bigger pool
+27	e02db4e	0.7122	ok	11	max_bin 64
+28	b356391	0.7161	ok	18	caruana feature subsets
+29	2fbebea	0.7175	ok	53	caruana 3-split merge
+30	4f96194	0.7176	ok	21	blend two ensembles
+31	6c09fc4	0.7176	ok	31	dart candidates
+32	b600e02	0.7174	ok	20	colsample_bynode
+33	c034e0e	0.0000	crash	7	two caruana runs averaged
+34	f90bbca	0.7176	ok	39	two caruana runs averaged (fixed)
+35	b117dd4	0.7176	ok	23	fast learner candidates
+36	1dc3868	0.7174	ok	22	gamma 0.3
+37	9ca17c5	0.7175	ok	28	60 selection rounds
+38	cbe0130	0.7177	ok	21	val size 0.25
+39	d830031	0.7176	ok	22	val size 0.3
+40	0a1ba59	0.7177	ok	25	50 rounds val 0.25

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	40f3a0f	0.7141	ok	4	baseline
+2	448cb65	0.7054	ok	13	fe v1: time cyc, dist, freq, route cat, depth8 lr.08 es
+3	ff6d03e	0.7088	ok	4	capacity: 1500 trees lr.05 depth6 es
+4	c506238	0.7168	ok	2	regularized d6 lr.03 mcw100 sub.7 col.6 n200
+5	013e3cc	0.7212	ok	3	fe v1 (time cyc dist freq) + regularized model
+6	528e20a	0.7210	ok	3	te: smoothed OOF target enc origin/dest/carrier/route
+7	be92a2f	0.7365	ok	3	congestion: flights at origin per day-hour
+8	1b615be	0.7365	ok	3	congestion counts normalized to train density
+9	d170e1c	0.7439	ok	4	dest-side congestion (+ share day-hour), drop dead code
+10	ae51a10	0.7436	ok	5	congestion v2: win3, route counts, day-position rank
+11	8a8d55e	0.7441	ok	5	depth4 n500 lr.03 mcw100 sub.7 col.6
+12	20db6d0	0.0000	crash	1	cum airport load + carrier-hour congestion
+13	b23f895	0.7452	ok	5	cum airport load + carrier-hour congestion (fix)
+14	9fd8231	0.7454	ok	5	raw DepTime + minute-of-day
+15	bda0d24	0.7480	ok	4	depth8 n250 lr.03 (capacity revisit)
+16	6faf406	0.7499	ok	6	depth10 n300 lr.03
+17	ce5fa2b	0.7505	ok	6	depth12 n300 lr.03
+18	bfa4037	0.7529	ok	7	depth12 mcw30 n300
+19	f0ae75c	0.7543	ok	10	depth12 mcw10 n300
+20	d04f5e9	0.7560	ok	11	depth12 mcw3 n300
+21	fa654a4	0.7559	ok	11	depth12 mcw1 n300
+22	cb9d6ab	0.7533	ok	22	n700 depth12 mcw3 lr.03
+23	41058a5	0.7577	ok	26	3-seed ensemble depth12 mcw3 n300
+24	21ba869	0.7587	ok	36	4-model diverse ensemble
+25	fb3906a	0.7588	ok	38	day volume + carrier cum + origin-carrier bank
+26	9d1ce7c	0.7567	ok	38	day-of-year + doy cyclical
+27	7c6fe36	0.7585	ok	50	6-model ensemble
+28	fdb997d	0.7590	ok	37	ensemble with reg_lambda=5
+29	d3e745f	0.7600	ok	35	diversity: sub.5/col.4 on half the ensemble
+30	114e76d	0.7601	ok	23	all members sub.5 col.4
+31	39932ca	0.7598	ok	48	lossguide max_leaves 512
+32	ea696c8	0.7599	ok	38	6-member diverse ensemble depth 8-16
+33	aad6c48	0.7570	ok	32	row bagging 70% per member
+34	fbb7c42	0.7599	ok	36	rank-normalized congestion counts
+35	30cf684	0.7591	ok	28	airport relative day-load ratio
+36	275088c	0.7610	ok	24	ablation: drop Dest categorical
+37	3a2a821	0.7570	ok	19	ablation: drop Origin categorical
+38	ffd20b3	0.7613	ok	26	TE for dest+route (numeric, OOF)
+39	1d4a1f4	0.7608	ok	26	3-day smoothed congestion
+40	ce4d33e	0.7610	ok	28	TE keys: dest+route+origin+carrier

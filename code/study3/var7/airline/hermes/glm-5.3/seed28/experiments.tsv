@@ -1,0 +1,9 @@
+n	commit	eval_auc	status	seconds	description
+1	d586fd4	0.7141	ok	11	baseline
+2	0d904e9	0.7059	ok	4	te features + hour + early stopping
+3	65a9516	0.7106	ok	9	solid base features + 800 trees
+4	a59ce46	0.7259	ok	7	S1 features + colsample 0.5
+5	dac0898	0.0000	crash	1	carrier x 1h-bin interaction
+6	029b594	0.0000	crash	2	carrier x 1h-bin interaction (fixed order)
+7	4f20f83	0.7364	ok	9	carrier x 1h-bin interaction
+8	2f8a906	0.7413	ok	61	6-model ensemble

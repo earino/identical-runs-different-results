@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	9807230	1789507266	baseline
+01	249c4b1	1789507480	drop Month and DayofMonth
+02	e22d893	1789507496	60 trees on clean features
+03	3c5af32	1789507501	120 trees clean feats
+04	8727258	1789507506	depth7 clean feats
+05	9ad4a2c	1789507511	depth8 clean feats
+06	ff4a049	1789507515	depth9 clean feats
+07	dc2cad5	1789507520	depth10 clean feats
+08	1adeb25	1789507526	depth12 clean feats
+09	2f88da4	1789507533	depth16 clean feats
+10	2dfdc49	1789507564	depth16 300t lr0.05
+11	949cc98	1789507704	ensemble d12/d16/d20 300t
+12	65fcc70	1789508014	ensemble + subsampled diversity member
+13	51f40c4	1789508093	5-model ensemble with diversity

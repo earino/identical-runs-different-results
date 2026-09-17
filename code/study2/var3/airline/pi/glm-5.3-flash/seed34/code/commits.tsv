@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	2f68a48	1789522650	baseline
+01	44edcb4	1789522805	exp2 FE + depth10 lr.05 mcw10 lambda2 colsample.8 ES
+02	7800949	1789522879	internal 2-fold CV grid select over 12 configs
+03	7096691	1789522932	grid v2 around colsample .6
+04	da39b46	1789523189	ensemble of 6 diverse XGB members around CV-selected cfg
+05	33c65f0	1789523445	8-member ensemble, fixed base cfg (no CV), slim grid removed
+06	f64837c	1789523860	12 members, max_bin 512
+07	3d03776	1789523929	recency weighting by month (Dec weight 2x Jan)
+08	61b08e7	1789523993	steeper recency weighting (Dec 3x)
+09	bbed6e3	1789524253	volume count features (origin/dest/route/carrier)
+10	be72036	1789524341	degree features + carrier-origin volume (fix)
+11	78276fc	1789524713	14 members (2 extra seeds)
+12	7557b08	1789524944	CV grid re-check on current features (single model)
+13	c598961	1789525012	12-member bag of d16/n67 cfg
+14	92b05cc	1789525067	CV grid around deep cfg + seed bag of winner
+15	3fb667a	1789525291	bag CV-winner d20/c.35/mcw1, 8 seeds, fixed n=68

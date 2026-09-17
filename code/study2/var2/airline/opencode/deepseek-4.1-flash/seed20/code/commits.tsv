@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	d3760f9	1789516490	baseline
+01	a7783c0	1789516591	400 trees baseline features
+02	c026135	1789517579	add hour, tod, carrier-hour and hour-distance-bin features
+03	80d5522	1789519388	ensemble XGBoost over depths 5/7/9/11
+04	80ced63	1789519604	widen ensemble depth range to 3-13
+05	8379ac6	1789519884	quantile-based distance bins
+06	5baecd8	1789520326	4-model ensemble depths 3/6/9/12 n700
+07	48eb32e	1789520407	add origin/dest frequency counts
+08	a4cb64b	1789520656	one-hot low-cardinality categoricals
+09	cbb3768	1789520827	5-model ensemble depths 2-14 onehot
+10	87b8420	1789520954	4-model ensemble depths 2/6/10/14 onehot
+11	8c72f32	1789521042	4-model ensemble depths 1-16 onehot

@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	00e714c	1789487598	baseline
+01	c28bad5	1789487645	FE v1: cyclic time feats, hour cat, ES+refit, 800x0.05 d8
+02	fef4843	1789487789	reg: mcw5 sub0.8 col0.8 lambda2
+03	b1873ff	1789487818	depth 10 (reg same)
+04	db23a4a	1789487853	depth 12
+05	b7cf134	1789487895	depth 14
+06	da0f1d9	1789487947	depth 16
+07	80fbbb5	1789488000	depth 20
+08	442ad5e	1789488506	3-model ensemble d16/20/24 seeds, 500 rounds, mean proba
+09	b7287fa	1789488597	5-model ensemble d14-22, 400 rounds
+10	6906484	1789489062	ensemble colsample diversity 0.6-1.0
+11	5d4beee	1789489182	350 rounds for runtime headroom
+12	94bb1da	1789489287	6 members, 300 rounds
+13	774193c	1789489770	prune cyclic sin/cos features
+14	9f682d2	1789490454	subsample diversity 0.7-0.9
+15	65b6f57	1789490562	reg_alpha 0.5
+16	8cd5fc2	1789490665	reg_alpha 1.0
+17	bbd5957	1789490764	reg_alpha 2.0

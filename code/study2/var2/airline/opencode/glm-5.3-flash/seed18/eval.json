@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:22:06+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:03:49+00:00",
+  "wall_seconds": 2503.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8393.0,
+  "endpoint_at_end": "ok",
+  "head": "db29ef2",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7524,
+  "final_eval_auc": 0.7524,
+  "holdout_auc": 0.752620288078,
+  "holdout_ap": 0.7425895000214335,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.037849536341999945,
+  "generalization_gap": -0.00022028807800000827,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": "a6f40bd8001vuqiynkotlxkap\",\"reason\":\"tool-calls\",\"snapshot\":\"429fa8645c8895ed2adbc6f5b4d3498e7a928f3a\",\"messageid\":\"msg_0a6f40420001tdu9yqopevguks\",\"sessionid\":",
+  "usage": {
+    "tokens_in": 4673603,
+    "tokens_in_uncached": 27715,
+    "tokens_in_cached": 4645888,
+    "tokens_out": 15245,
+    "turns": null,
+    "api_calls": 120,
+    "method": "sum-of-120-events",
+    "cost_usd": 0.1512,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 7709.8,
+  "cpu_seconds_counted": 7268.3,
+  "cpu_seconds_uncounted": 2.5,
+  "cpu_seconds_exempt": 439.1,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 57,
+  "fits_counted": 54,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "c7f8f3d",
+      "message": "baseline"
+    },
+    {
+      "commit": "6f465cd",
+      "message": "FE v1: int dates, hour/minute cyclical, log dist; 300 trees"
+    },
+    {
+      "commit": "7af3977",
+      "message": "ES + 2000 trees, depth 8, lr 0.05, subsample 0.9"
+    },
+    {
+      "commit": "f9be714",
+      "message": "depth 10"
+    },
+    {
+      "commit": "1aa88d7",
+      "message": "depth 12"
+    },
+    {
+      "commit": "138ecfa",
+      "message": "depth 14"
+    },
+    {
+      "commit": "707188d",
+      "message": "depth 16"
+    },
+    {
+      "commit": "18889fb",
+      "message": "depth 18"
+    },
+    {
+      "commit": "5204398",
+      "message": "depth 20"
+    },
+    {
+      "commit": "c90dca6",
+      "message": "subsample 0.8 colsample 0.7"
+    },
+    {
+      "commit": "e9aa857",
+      "message": "subsample 0.7 colsample 0.6"
+    },
+    {
+      "commit": "b4bc015",
+      "message": "add colsample_bynode 0.7"
+    },
+    {
+      "commit": "f3888ee",
+      "message": "lr 0.03, ES 100, max_depth unlimited"
+    },
+    {
+      "commit": "bc33040",
+      "message": "lr 0.02, ES 200"
+    },
+    {
+      "commit": "dd45904",
+      "message": "lr 0.01, ES 300"
+    },
+    {
+      "commit": "e26f8ae",
+      "message": "count encoding origin/dest/route/carrier (no TE), lr 0.02 probe"
+    },
+    {
+      "commit": "b3c4b80",
+      "message": "holiday window flags"
+    },
+    {
+      "commit": "63db92b",
+      "message": "ES probe lr 0.02 then refit full data"
+    },
+    {
+      "commit": "1412fbe",
+      "message": "30pct val for ES probe"
+    },
+    {
+      "commit": "6b59c24",
+      "message": "colsample_bynode 0.5"
+    },
+    {
+      "commit": "cd551e9",
+      "message": "shared probe + 2-seed full refit ensemble"
+    },
+    {
+      "commit": "0a39409",
+      "message": "member-diverse colsample_bynode 0.5/0.6"
+    },
+    {
+      "commit": "db29ef2",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7270.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 683.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0a39409",
+  "best_commit_eval_auc": 0.7524,
+  "best_commit_holdout_auc": 0.752620288078,
+  "best_commit_holdout_ap": 0.7425895000214335,
+  "best_commit_error": null,
+  "finalized_best": true
+}

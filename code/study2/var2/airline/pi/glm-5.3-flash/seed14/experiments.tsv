@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	73eacf1	0.7141	ok	4	baseline
+2	7515824	0.7101	ok	4	FE v1 + ES on eval
+3	653079e	0.7101	ok	7	ES metric=auc, patience 200
+4	e7297ef	0.7239	ok	9	FE v2 no route, lr.05 d6 ES
+5	82168ff	0.7238	ok	12	depth8 mcw20
+6	e26195b	0.7362	ok	9	FE v3 +carrier_hour
+7	73a7cb1	0.7379	ok	9	d8 mcw20 w/ carrier_hour
+8	bdfdefa	0.7450	ok	29	d12 mcw5 lr.02
+9	7cf54a9	0.7457	ok	26	+cong counts
+10	b58a04c	0.7473	ok	78	3-seed ensemble
+11	2e957ba	0.0000	timeout	124	5-seed ensemble
+12	9e5803e	0.0000	crash	2	3 diverse configs
+13	04899cd	0.7468	ok	65	3 diverse configs
+14	5940637	0.7474	ok	87	max_bin 512
+15	cac9080	0.0000	timeout	122	5 seeds n1500
+16	9273004	0.0000	timeout	123	5 seeds n1200
+17	05a14e1	0.0000	timeout	125	5 seeds prep-hoisted
+18	60069be	0.0000	timeout	123	5 seeds n1000
+19	f4fb9a6	0.7439	ok	83	lossguide ml128
+20	b6dc4a5	0.0000	crash	49	2cat+1ord ensemble
+21	71f6c31	0.0000	crash	1	2cat+1ord ensemble
+22	668e59b	0.7519	ok	87	2cat+1ord ensemble
+23	049f74b	0.7528	ok	112	2cat+2ord

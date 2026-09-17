@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	171a18f	1789618327	baseline
+01	63a322d	1789618505	scale trees + early stopping on internal split
+02	624d28c	1789618757	feature engineering: time-of-day, int dates, route cat
+03	6c07b1f	1789619832	FE time-of-day + regularized shallow ensemble config
+04	08742fa	1789620233	add Hour x Carrier interaction, depth5
+05	e4d7113	1789623470	deep trees d20 lr0.015 col0.4 n300 after HC interaction
+06	28a2e08	1789624086	3-seed ensemble n200 lr0.02
+07	4f844d9	1789625250	add Origin/Dest/Carrier hourly count busyness features
+08	1d84312	1789625507	add origin/dest/carrier total daily volume features
+09	4804fa8	1789625992	max_bin 512
+10	538d2aa	1789626530	depth 24
+11	27cea95	1789628892	colsample 0.35
+12	44ad1e2	1789629379	n220 lr 0.0185

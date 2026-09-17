@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	6b8ba39	1789594245	baseline
+01	df9e9af	1789594469	FE v1 + early stopping (internal 10pct val, 800 rounds, depth 8, lr 0.1)
+02	0190ba6	1789594831	shallow GBM: d4 lr0.03 col0.8 sub0.9 ES on 10pct internal val
+03	7976254	1789594891	hour as 24-level categorical (plus numeric hour/minute)
+04	7e08456	1789595120	3-seed full-data retrain ensemble at ES-selected rounds
+05	c8a0dee	1789596566	carrier x hour joint categorical (the big interaction win)
+06	e9b6204	1789597668	depth retune with carrier_hour: d9 (0.7402)
+07	31c2a57	1789599639	departure-time 30-unit slots as categorical (finer time resolution)
+08	13bd4fb	1789600859	add true-time 15-min slot categorical; retune depth to 8
+09	5bc322f	1789601367	average 5 seed retrains instead of 3
+10	a8f3dfb	1789601667	colsample_bylevel=0.7 for decorrelated trees at depth 8

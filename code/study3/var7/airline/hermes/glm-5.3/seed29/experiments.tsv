@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1476c09	0.7141	ok	4	baseline
+2	d4b45d9	0.6977	ok	7	stronger params
+3	dc80078	0.0000	crash	2	route + time features
+4	130d1c7	0.6967	ok	3	route + time features (fixed dupes)
+5	db5793a	0.7121	ok	2	capacity: 120 trees
+6	48a0c45	0.7177	ok	2	numeric date + time-of-day, 30 trees
+7	96d3310	0.7172	ok	3	150 trees + time features
+8	3b14363	0.7190	ok	3	lr 0.03 x 250 trees
+9	6081cb8	0.7190	ok	4	lr 0.02 x 500 trees
+10	09e923c	0.7237	ok	3	stochastic: subsample+colsample 0.7
+11	958adcb	0.7247	ok	3	sampling 0.5
+12	c25e055	0.7233	ok	3	sampling 0.4
+13	ac2e36c	0.7136	ok	4	route categorical + sampling
+14	ac7687e	0.7201	ok	13	depth4 + sampling
+15	5d131ba	0.7283	ok	3	depth8 + sampling
+16	d7e319e	0.7270	ok	10	sampling 0.6 depth8
+17	0c8e282	0.7284	ok	5	400 trees depth8
+18	1b72876	0.7277	ok	4	frequency features
+19	1b5ee57	0.7275	ok	4	cyclical time encodings
+20	4a59f56	0.7269	ok	4	hour target encoding
+21	2202c3b	0.7288	ok	3	leaf regularization
+22	4a6b2cd	0.7285	ok	3	stronger leaf regularization
+23	ed0ced7	0.7300	ok	6	3-seed bagged ensemble
+24	27c76e0	0.7303	ok	11	6-seed bagged ensemble
+25	b45d99b	0.0000	crash	1	depth-diverse ensemble
+26	6fa549f	0.7310	ok	12	depth-diverse ensemble (fixed)
+27	dae5b1f	0.7311	ok	17	9-model diverse ensemble
+28	3f2f9c3	0.7329	ok	20	day-of-year + hour cat
+29	8a21a3b	0.7329	ok	19	15-min time bins
+30	2bc174d	0.7303	ok	19	doy sin/cos
+31	f24749f	0.7256	ok	21	month x hour interaction
+32	7591b14	0.7364	ok	26	alpha2 + DistPerMin + origin/carrier TE
+33	0f4f3bd	0.7367	ok	21	timebin/dow TE
+34	98eeeb8	0.7666	ok	21	OOF target encodings
+35	e497963	0.7673	ok	23	route OOF TE
+36	017d152	0.7855	ok	22	hour/month/day OOF TE
+37	c189162	0.7394	ok	32	corrected TE framework
+38	f418210	0.7397	ok	53	k10 + lr03x350
+39	4b7232f	0.7397	ok	56	airport fallback TE
+40	a3eeb60	0.7397	ok	63	max_bin 512

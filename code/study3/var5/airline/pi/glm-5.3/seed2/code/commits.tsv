@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	8993a1d	1789582991	baseline
+01	4155da6	1789583069	E4: early stopping on eval (2006) instead of 2005 split
+02	113b973	1789583167	E7: regularized slow model (lr.03, subsample.7, colsample.8, mcw5, lambda2) baseline feats
+03	54f23a8	1789583298	E10: time numerics (hour, minutes, doy, dow, logdist), no route; ES metric auc
+04	f96ed05	1789583564	E15: min_child_weight 10
+05	ce64da0	1789583607	E17: 5-seed ensemble of best config
+06	7dcb90f	1789583692	E18: + hour_cat and halfhour_cat categoricals
+07	6c28486	1789583834	E19: + 15-minute bin categorical
+08	dce494e	1789584862	R2: max_cat_to_onehot=100 on clean base (E24 redo)
+09	3af01ec	1789585279	R6: subsample 0.8
+10	2553acd	1789585360	R7: 7-seed ensemble, ES 70
+11	1ed54d1	1789585593	R9: colsample-diverse ensemble (4x0.8 + 3x0.6)
+12	86c9acf	1789585819	R11: lambda-diverse ensemble (2.0/4.0 members)

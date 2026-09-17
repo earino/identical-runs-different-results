@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	57948ad	1789639360	baseline
+01	8d2328e	1789639444	time features + bigger model + ES
+02	b48ad9b	1789639477	target encodings + counts
+03	2815cda	1789640792	d20 lr0.02 col0.6 mcw1 + time numerics
+04	7c9a67b	1789642073	hour as categorical
+05	f400338	1789642562	15-min departure bucket categorical
+06	6163dff	1789643386	2-model fixed-round ensemble
+07	9defece	1789644377	3-model ensemble
+08	a6d9a69	1789644508	reg_alpha 0.5
+09	3a8d99a	1789644783	drop month/day features
+10	a8dd8cb	1789645045	reg_alpha 1.0

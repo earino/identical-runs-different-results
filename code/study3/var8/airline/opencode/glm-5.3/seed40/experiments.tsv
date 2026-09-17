@@ -1,0 +1,34 @@
+n	commit	eval_auc	status	seconds	description
+1	b1a064f	0.7141	ok	3	baseline
+2	d503738	0.7107	ok	4	capacity: ES + lr0.05 depth8
+3	4b34f9b	0.7135	ok	2	FE: deptime/calendar features
+4	b6fee04	0.7145	ok	3	FE + capacity (ES d6)
+5	fdd54ce	0.0000	crash	1	FE: route + carrier*hour cats
+6	be71340	0.7085	ok	4	FE: route + carrier*hour cats
+7	cf376e1	0.7102	ok	3	FE: smoothed TE features
+8	a0f0662	0.7142	ok	4	regularization sweep
+9	368d244	0.7195	ok	7	CV ensemble (5x d6 lr0.1)
+10	0679b97	0.7174	ok	5	CV ens + mild reg
+11	ee76bab	0.7188	ok	11	CV ens d7 lr0.05
+12	f64bd4b	0.7175	ok	6	ablation: drop cyclic + raw DepTime
+13	f7bacde	0.7202	ok	14	10-fold ensemble
+14	b4c949c	0.7204	ok	14	+ full-data model
+15	fe6d4fd	0.7217	ok	18	FE: hour/origin/dest TE
+16	800b28d	0.6878	ok	15	FE: +4 TE features
+17	4eff884	0.0000	crash	0	2-seed bagged ensemble
+18	dbf8389	0.7218	ok	32	2-seed bagged ensemble
+19	be28008	0.7210	ok	24	day-grouped folds
+20	9735787	0.7219	ok	60	4-seed ensemble
+21	202227d	0.7222	ok	67	TE w=50
+22	1b345cf	0.7222	ok	65	TE w=25
+23	c2d3366	0.7227	ok	49	lr 0.07 (22 models)
+24	36f51c9	0.7226	ok	63	lr 0.05 (22 models)
+25	5602d9e	0.7221	ok	69	FE: arrival-hour TEs
+26	d4d1ef5	0.0000	timeout	120	cs0.4 d24 4-seed ensemble
+27	70dd387	0.7326	ok	95	cs0.4 d16 (12 models)
+28	21da5c3	0.7325	ok	82	10 fold models only, d16 cs0.4
+29	488251e	0.7314	ok	111	20 models d12
+30	f50111b	0.0000	timeout	121	probe-aligned 20-model d16
+31	802ddbc	0.7374	ok	88	20 models d10 aligned
+32	952a356	0.7397	ok	113	20 models d12
+33	226ac0b	0.7405	ok	115	20 models d13

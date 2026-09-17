@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	764a198	1789534965	baseline
+01	968148b	1789535040	feat v1: int dates, deptime cyclic+wrap, log dist; xgb 800 trees lr.05 d8 es50
+02	a517456	1789535195	dep_hour categorical + distance bins (fixed)
+03	292440b	1789535251	lr 0.03, 1600 trees, es 200
+04	bc96661	1789535274	depth 10
+05	8eb2cfe	1789535302	lossguide max_leaves 512
+06	5b6f7c0	1789535417	regularized lossguide: cols 0.6/0.8node lambda5 alpha1
+07	eb898fe	1789535527	lr 0.02, 2400 trees, es 300
+08	854ad78	1789535770	max_bin 512
+09	2f5d4d4	1789535847	origin/dest traffic counts
+10	21686a1	1789535941	carrier median hour/distance features
+11	569464a	1789536316	ensemble 2x (lr.03,1200t) seeds/colsample/subsample
+12	d940832	1789536750	half-hour departure bins
+13	9a635a4	1789536853	15-minute departure bins
+14	d231012	1789537038	origin/dest x hour congestion counts (fixed)
+15	e4ab867	1789537142	max_leaves 768

@@ -1,0 +1,32 @@
+n	commit	eval_auc	status	seconds	description
+1	d37a3da	0.7141	ok	3	baseline
+2	09e519e	0.7036	ok	11	time+route+cyclic, 600 trees d8
+3	8613ed8	0.7093	ok	4	600 trees d6 lr.05 on baseline feats
+4	4644da6	0.7101	ok	2	200 trees lr.1 baseline feats
+5	8a9a013	0.7240	ok	11	lossguide d7 reg, ES
+6	3ac102f	0.7275	ok	14	lossguide d9 leaves127 cs0.3
+7	3ad55f8	0.7294	ok	51	lossguide d12 leaves255 mb128
+8	059f56f	0.7306	ok	11	lossguide d15 leaves511 mb64
+9	8c7f11a	0.7341	ok	19	lossguide d20 leaves511 mb96
+10	159da50	0.7356	ok	15	add TODbin categorical
+11	a244575	0.7376	ok	14	TOD 30-min bins
+12	00ddc78	0.7387	ok	23	retune leaves1023 lr.02 mb128
+13	2b98203	0.7420	ok	80	3-model seed ensemble
+14	a4248e8	0.7474	ok	114	add freq count features
+15	f104c99	0.7470	ok	99	faster ensemble 600/ES25
+16	309c603	0.7476	ok	70	2-model [42,1] faster
+17	49abe42	0.7494	ok	59	pairwise count features
+18	b36ca46	0.7516	ok	49	route-time counts + shares
+19	9df1266	0.7467	ok	34	seasonal/weekly counts + shares
+20	2433ecd	0.7541	ok	39	retune d30 leaves1023 mb256
+21	bf6482c	0.7542	ok	58	4-seed ensemble
+22	b5b1c3e	0.7531	ok	74	OOF target encoding
+23	a6a47d0	0.7536	ok	66	structural network features
+24	7a657ba	0.7524	ok	59	normalized share features
+25	4f0a8db	0.7567	ok	90	estimated arrival time features
+26	b65c8c1	0.7566	ok	83	arrival-bin count features
+27	f09f99e	0.0000	timeout	121	retune leaves2047 cs0.4
+28	e1acebc	0.7567	ok	68	3-seed ensemble
+29	75c0c90	0.7562	ok	55	ArrH + DOMnum + isWE
+30	e59492d	0.7571	ok	92	retune leaves2047 cs0.4 3seed
+31	5c9faa1	0.7566	ok	96	max_cat_threshold 128

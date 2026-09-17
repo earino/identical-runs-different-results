@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	3efb628	1789589056	baseline
+01	4de52d4	1789589251	num calendar/time features, cyclic encodings, early stopping, tuned params
+02	468b3bc	1789589328	deeper trees, lower lr, more sampling regularization
+03	34629da	1789589337	deeper still, lower lr
+04	727c1b5	1789589354	max_depth 12
+05	37f7af0	1789589367	max_depth 14, min_child_weight 2
+06	76f09f7	1789589380	max_depth 16, lr 0.02
+07	7df13b6	1789589406	depth 18, lr 0.015, 1500 trees
+08	5e682e4	1789589441	depth 20, lr 0.012
+09	04b8a13	1789589481	depth 24, lr 0.01, 3000 trees
+10	5c81368	1789589653	lr 0.008 4000 trees, lambda 2, mcw 1
+11	a30ec8d	1789589737	route mean distance + distance vs route deviation
+12	820f32d	1789589907	max_bin 1024
+13	de028da	1789590156	add log flight-frequency counts for origin/dest/carrier
+14	ed71298	1789590456	bagged ensemble of 3 XGB models, varying seed and colsample
+15	41419aa	1789590695	minute-of-day, evening/morning/night flags
+16	a575113	1789590857	hour as native categorical
+17	2ad9c80	1789591114	cap n_est 400, esr 50 for headroom
+18	9511542	1789591221	half-hour DepTime bins as categorical
+19	1c78159	1789591873	half-hour cyclic sin/cos alongside hm_cat

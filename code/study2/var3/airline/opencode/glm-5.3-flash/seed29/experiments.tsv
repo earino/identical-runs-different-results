@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5d4baf2	0.7141	ok	11	baseline
+2	d035d22	0.0000	crash	23	time features + encoding overhaul + calibrated trees
+3	1c002a9	0.6949	ok	22	time features + encoding overhaul + calibrated trees (fix)
+4	c65e67c	0.7141	ok	3	temporal ES split m11-12
+5	44f9270	0.7003	ok	3	TE origin/dest/route/carrier + hour cat
+6	2ccdd70	0.7133	ok	3	hour categorical added
+7	a7e7960	0.0000	crash	1	carrier TE, dow TE, carrier-hour TE
+8	957df4e	0.7104	ok	3	carrier TE, dow TE, carrier-hour TE (fix)
+9	f4a7471	0.0000	crash	2	depth x trees scan, best-by-eval kept
+10	512f2b7	0.7147	ok	5	depth x trees scan, best-by-eval kept (fix)
+11	c2e092b	0.7182	ok	12	fine capacity scan d2-5 x lr x trees
+12	d1b8b78	0.7170	ok	15	low lr 0.02-0.05 x d2-4 x trees
+13	19e5d27	0.7172	ok	18	regularization scan subsample/colsample/mcw/lambda/gamma/maxbin
+14	2a512b0	0.7182	ok	50	8-seed ensemble at winner
+15	24abc36	0.7193	ok	5	heterogeneous depth ensemble 5 members
+16	3c20405	0.7198	ok	9	8-member heterogeneous ensemble
+17	f1d9ac5	0.7223	ok	37	feature variants A/B/C at 8-member ensemble
+18	d255b76	0.7233	ok	39	dep_block variants D/E/F
+19	309301e	0.7234	ok	37	block granularity G/H/J
+20	1bcc3da	0.7235	ok	41	member mixes M1-M4 at block features
+21	0ac5be7	0.7235	ok	44	semantic bagging / week-of-year variants
+22	595f60c	0.7252	ok	34	ES-count / lossguide member variants
+23	71c4881	0.7312	ok	110	ES members d2-8 +/- lossguide
+24	d5896ea	0.0000	timeout	120	ES members at lr 0.03/0.1 added
+25	11c0217	0.0000	timeout	122	ES members lr 0.03/0.1, cached fits
+26	622ee4e	0.7333	ok	78	16 members d x lr grid, hardcoded counts
+27	8cabd88	0.7340	ok	119	d9/d10 ES members vs 16-member ref
+28	4b44628	0.7340	ok	119	18 members + 4 colsample clones, subsets
+29	0aaab90	0.0000	timeout	121	p300 ES swap/add for deep members
+30	143e40c	0.0000	timeout	120	m9-10 ES members subgroup test
+31	c286ad8	0.7319	ok	80	block-month / lr0.02 subgroup screens
+32	1bb240e	0.0000	crash	22	HGB members / rank averaging screens
+33	fbea4db	0.7319	ok	37	HGB members / rank averaging screens (fixed)
+34	09da8d5	0.7347	ok	104	18 XGB + 2 HGB full ensemble
+35	9fd0ce5	0.0000	timeout	123	5-config HGB bench, subset combos
+36	9e8d9f7	0.7352	ok	97	final-form 21-member ensemble
+37	b4aba64	0.0000	timeout	121	HGB expansion ref21 vs 23
+38	8647f3e	0.0000	timeout	123	HGB bench reshuffle combos
+39	19e3df1	0.7355	ok	104	HGB max_features / weighted avg
+40	1aab31d	0.0000	crash	111	HGB l2/max_bins variants

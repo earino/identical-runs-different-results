@@ -1,0 +1,6 @@
+n	commit	unix_time	subject
+00	bb60bdd	1789497914	baseline
+01	612035a	1789498001	baseline FE + deeper boosting, eval early stopping
+02	b372f6b	1789498849	numeric date feats + deep trees (d20 lr.01)
+03	7d04966	1789500549	tuned deep model: d24 lr.005 mcw1 col.6 +minute
+04	3b31c23	1789500784	2-model XGB ensemble d20 lr.01

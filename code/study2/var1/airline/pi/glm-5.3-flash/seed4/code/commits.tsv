@@ -1,0 +1,30 @@
+n	commit	unix_time	subject
+00	fd0a2d6	1789500277	baseline
+01	882084b	1789500350	time features, cats, smoothed TE, early stop + refit (depth8 lr.05)
+02	44b8adb	1789500410	diag: regularization levels + no-TE ablation + small model
+03	e4ade8f	1789500504	diag2: feature-group ablations on small models
+04	99af709	1789500536	diag3: micro-ablations around baseline + sin/cos + seed ensemble (fixed)
+05	889c5ff	1789500573	diag4: shallow depths, lambda, ensembles of small models
+06	479f051	1789500605	diag5: diverse member pool + ensemble combos
+07	f46160f	1789500664	diag6: full-train members, seed averaging, d8 diversity
+08	1bda636	1789500699	diag7: deeper members, interaction cats, subset members
+09	3eca76e	1789500780	diag8: wide lossguide, bagged d8, micro members, weights
+10	9842aba	1789500987	diag9: node-bagging, interaction member, block30 (dart dropped)
+11	dc366e3	1789501066	diag10: node-bagged family + hour_month member
+12	9fe568b	1789501195	diag11: colsample_bynode recipe grid
+13	e55b110	1789501272	diag12: cbn=0.3 family
+14	5e19b6e	1789501367	diag13: 4-fold OOF stacking, tree/linear meta
+15	e548e83	1789501469	diag14: d6c3 seeds/bags/gamma/mcw, rank-mean (fixed)
+16	3c855d4	1789501607	diag15: champion feature variants, rounds sweep (fixed2)
+17	100ef2d	1789501671	diag16: hour_cat family rebuild
+18	c8377ec	1789501812	diag17: block-bin sweep around q4 (fixed)
+19	00a5229	1789501885	diag18: multi-scale bins, minute, dow_block15
+20	a6e3a46	1789501964	diag19: b1530 micro-grid + interaction views
+21	e68c444	1789502220	diag20: rounds + interactions + seeds (fixed R init)
+22	75f5bb2	1789502298	diag21: interaction zoo expansion
+23	13d61ef	1789502527	diag22: interactions wave 2 (fixed helpers)
+24	774b135	1789502751	diag23: seed bags on top recipes (fixed grid)
+25	b53cf9b	1789502877	diag24: long-round carrier-time sweep
+26	0e31c97	1789503020	diag24b: slim prepare, affordable long rounds (fixed)
+27	0daf318	1789503146	diag25: fourth wave origin/carrier-time 800t
+28	1a025db	1789503304	final: clean 23-member block-bin ensemble

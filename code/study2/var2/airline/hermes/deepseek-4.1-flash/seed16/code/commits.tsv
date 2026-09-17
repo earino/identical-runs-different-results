@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	42ecf43	1789499667	baseline
+01	bc1d872	1789499711	time-of-day + ordinal date features
+02	dadc821	1789499727	400 trees depth4 lr0.05
+03	e2dbea6	1789499774	depth6 with strong regularization
+04	fc46c24	1789499800	3-model seed ensemble
+05	a51724b	1789499810	5-model diverse ensemble
+06	4eb6596	1789499848	categorical calendar/hour
+07	1a2b313	1789499883	max_cat_threshold 128
+08	7af2141	1789499984	carrier x hour categorical
+09	621a260	1789500121	8-model diverse ensemble
+10	6e49b13	1789500204	lossguide max_leaves 128
+11	4d82ae9	1789500272	max_leaves 256
+12	3836a2e	1789500377	6-model ensemble at 256 leaves
+13	2550a58	1789500694	colsample_bynode 0.8
+14	9029b46	1789500755	colsample_bynode 0.6
+15	0899e2a	1789500813	colsample_bynode 0.4
+16	e3416c1	1789500969	8-model ensemble with node-sampling diversity

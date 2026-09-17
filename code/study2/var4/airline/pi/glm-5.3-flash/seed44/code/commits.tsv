@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	73d8dd2	1789503294	baseline
+01	23859d5	1789503356	exp5: time-of-day + calendar features, baseline model
+02	bbaf9c4	1789503434	exp11: ensemble of 5 diverse xgb configs, prob averaging
+03	e0da452	1789503442	exp12: 9-member ensemble, more diversity
+04	97cc0cd	1789503467	exp13: interaction categoricals (fixed: train-only levels) + 9-ensemble
+05	7021f13	1789503507	exp17: carrier x dow interaction
+06	0af6f1e	1789503620	exp20b: 15-member ensemble with lossguide members
+07	4885886	1789503784	exp26: logit-averaged ensemble
+08	ba46d18	1789503806	exp27: +2 DART members for diversity
+09	798715d	1789504017	exp29: prune to 10 members (8 gbtree + 2 dart)
+10	1c186e8	1789504089	exp30: stronger DART members (400xlr.4, 250xd4)
+11	2e8f058	1789504686	exp35: prune 2 more gbtree members (8 total: 6 gbtree+2 dart)

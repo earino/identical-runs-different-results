@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	86677d0	1789616729	baseline
+01	a9f364a	1789617633	d6 lr0.05 mcw5 + early stopping
+02	ad1fdae	1789619160	slow regularized profile: d3 lr0.02 mcw20 lambda10 subsample/colsample 0.7
+03	3ea15d5	1789619820	TE v2: carrier/origin/dest/route + hour interactions, under slow profile
+04	6e46f27	1789620014	TE family v3: route_hour, origin/dest x dow/month, counts
+05	e8fa102	1789620807	5-seed ensemble, d4 lambda20 profile
+06	d76d157	1789622583	add dep/calendar numeric + cyclic features to prepare
+07	8fafa3a	1789622683	colsample_bytree 0.5
+08	3585267	1789624010	slot TEs: origin/dest/carrier/route x 30-min slot (48 bins)
+09	cfe5fb1	1789624539	15-min slot TEs, true 10-fold OOF, d5 mcw50 profile
+10	f28519c	1789625302	add 10-min slot TEs (origin/dest/carrier) on top of 15-min
+11	6ebba30	1789625707	d8 mcw200 lambda10 profile
+12	64c8ccb	1789626923	per-model TE fold seeds (decorrelate OOF feature noise)
+13	1cef40f	1789627819	colsample_bytree 0.4
+14	0cad26a	1789629410	extreme colsample 0.08, mcw 20 (decorrelated weak-learner regime)

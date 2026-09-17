@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	eb192b0	1789518971	baseline
+01	aa5d088	1789519045	hpo: depth 4
+02	a099e81	1789519053	hpo: depth4 + 200 trees lr0.05 sub/col0.9
+03	114a983	1789519084	fe: frequency encoding Origin/Dest/carrier/route
+04	79283fd	1789519094	fe: numeric ordinal calendar instead of categorical
+05	406dd93	1789519124	ensemble: seed-average 5 x depth4 model
+06	96788f5	1789519159	fe: group rare categorical levels (min count 100)
+07	e185987	1789519166	hpo: RARE_MIN=300
+08	d54e93b	1789519179	hpo: RARE_MIN=400
+09	50bbb7e	1789519186	hpo: depth5 with rare min400
+10	73a371e	1789519194	hpo: depth6 with rare min400
+11	b3ca12c	1789519202	hpo: depth7 with rare min400
+12	cb09b8a	1789519212	hpo: depth8 with rare min400
+13	453283d	1789519222	hpo: depth10 with rare min400
+14	5166f81	1789519238	hpo: depth12 with rare min400
+15	7575af5	1789519264	hpo: depth16 with rare min400
+16	3f664eb	1789519331	hpo: depth20 rare400, 3 seeds
+17	2fdaa70	1789519549	hpo: rare500 at depth20
+18	97b6f5b	1789519598	hpo: rare800 at depth20
+19	b21f984	1789519702	ensemble: 5 seeds at depth20 rare800

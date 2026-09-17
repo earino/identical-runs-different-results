@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	d537f52	1789621754	baseline
+01	5ab3367	1789622676	FE: cat dates kept, cyclic DepTime, Route; depth6 lr0.1 ES30
+02	526ef8a	1789622706	FE v2 minus Route
+03	c29c823	1789624123	5-model seed bag, 100r d6 lr0.1 sub0.8 col0.8
+04	a4e5a9c	1789624143	10-model seed bag
+05	9915190	1789625274	add doy seasonal features + hour
+06	b1bff42	1789625338	20-model bag
+07	3e87d51	1789625506	temporal ES picks rounds, 20-bag refit
+08	0c9787b	1789625993	max_bin=512 colsample_bynode=0.6
+09	014d883	1789626009	max_bin=1024
+10	c69879c	1789626059	colsample_bynode=0.4
+11	db1e3f8	1789626082	colsample_bynode=0.3
+12	20dc063	1789626102	depth 8 with bynode 0.3
+13	944c964	1789626126	depth 10 with bynode 0.3
+14	085bf08	1789626157	depth 12 with bynode 0.3
+15	5129e39	1789626244	depth 14 with bynode 0.3
+16	97a92d1	1789626344	bynode 0.2 at depth 14

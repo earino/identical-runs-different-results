@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	e0930f6	1789528068	baseline
+01	96fc464	1789528202	diag: lr0.03 3000t early stop on eval, print curve
+02	d4401f5	1789528214	depth 5
+03	e13f595	1789528264	5-seed bagged ensemble
+04	a2a7330	1789528289	hyperparameter-diverse ensemble
+05	44fc68a	1789528318	congestion freq features (origin|hour, carrier|hour)
+06	33ce15c	1789528446	single model + reg_lambda5 probe
+07	b8069c8	1789528463	ordinal calendar features (month/dom/dow/day_of_year/is_weekend)
+08	a94409d	1789528477	5-member bag over ordinal-calendar features
+09	afa8830	1789528517	holiday/peak-week features
+10	afafea8	1789528559	ablation: drop categorical calendar cols, keep ordinals
+11	ff968e3	1789528672	hub share features
+12	6dccca5	1789528825	num_parallel_tree=2
+13	3907d05	1789528883	8-member bag
+14	5225d2d	1789529182	deeper members with stronger mcw
+15	81b0727	1789529261	deeper members d8-10 mcw 30-100
+16	a469ab2	1789529429	bag weighted toward deep regularized members
+17	6030976	1789529615	destination hub/breadth features

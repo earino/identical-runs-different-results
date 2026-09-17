@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	886562b	1789537820	baseline
+01	0c4d8b4	1789537947	pristine baseline FE + early stopping on eval AUC
+02	898e4c1	1789537964	OOF target encoding (origin/dest/route/carrier/hour), k=20 + ES
+03	bbf7ad3	1789538293	tuned: depth4, alpha8, colsample0.7 + ES on eval AUC
+04	778ecc4	1789538717	5-seed ensemble, depth5, alpha8, cs0.7, no TE, FE pack
+05	53663f0	1789539721	+OriginXHour, HourXCarrier interaction cats; alpha5
+06	dd4f19a	1789540167	drop Route/DayofMonth, lr.05 d6 alpha3, 5-seed
+07	a1414b7	1789540891	reg_alpha 3 -> 2
+08	37b7335	1789541294	+DistBinXCar, HourXDistBin; depth 7
+09	e61c380	1789541802	6-seed ensemble
+10	269c12e	1789542551	7-seed ensemble

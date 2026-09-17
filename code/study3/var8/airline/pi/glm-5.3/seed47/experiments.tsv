@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	f953dbd	0.7141	ok	4	baseline
+2	18ccfda	0.0000	crash	1	early stopping, lr .05 depth 8
+3	4a7d65b	0.7137	ok	5	early stopping, lr .05 depth 8
+4	d2da821	0.6995	ok	6	feat: hour/minute + route
+5	9fcab79	0.7205	ok	8	d4 shallow + hourxorigin TE + seed ensemble
+6	3958b58	0.7302	ok	8	TE stack: k25 m50 + k12 m100 od
+7	0ed292e	0.7340	ok	15	TE stack + carrier k12 TE, d5 600r cs.6
+8	2ff2d07	0.7393	ok	18	kernel profile TE features (8), drop Month/DayofMonth
+9	1ec6c28	0.7461	ok	19	arrival profiles + gblinear blend
+10	5b7e1d8	0.7540	ok	79	d16 deep config retune
+11	3755f9a	0.7556	ok	84	route profile
+12	9ced80b	0.7569	ok	81	oc profile
+13	d43c68a	0.7578	ok	83	dc profile + GL_W 0.25
+14	9bde5d7	0.7580	ok	85	d18 config
+15	9a82862	0.7581	ok	114	4th seed at d18-450r

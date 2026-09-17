@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	cdc7906	1789548020	baseline
+01	8c8313f	1789548105	regularized: depth4 lr.05 mcw10 sub.8 col.8 lambda2 300t
+02	596f2f0	1789548128	OOF target+freq encodings (carrier/origin/dest/route)
+03	3d3da94	1789548193	deep heavily-regularized: d6 mcw50 col.6 lam5 alpha1 600t
+04	0b920d2	1789548207	5-seed bagged ensemble
+05	60b89b4	1789548249	add hour/month/dow/origin_hour/dest_hour/carrier_hour encodings
+06	01cc527	1789548382	prune useless encoding keys, generic key spec
+07	af9d7db	1789548417	expand pair-encoding family: *_month, origin_dow, route_hour
+08	b8d70ac	1789548535	route family: route_month, route_dow, route_tod30
+09	16b13b5	1789548758	add route_tod15, origin_tod30, dest_tod30
+10	fe191be	1789548869	deviation features between fine and coarse slot encodings
+11	bc9b8b3	1789549086	schedule-share ratio features
+12	33b131a	1789549429	prune 4 redundant keys (origin/dest_month, origin/route_dow)
+13	19c6795	1789549482	diverse ensemble: depths 5/6/7 x 2 seeds
+14	7add21a	1789549651	9-model ensemble (3 configs x 3 seeds)
+15	172097c	1789549924	distance-bucket encodings (distb, distb_tod30)
+16	a3e4b93	1789550025	calendar features: doy, holiday windows, dow ordinal
+17	9a711d5	1789550579	stronger regularization: lambda20 gamma1
+18	2d4a638	1789550746	clock-face features: minute-of-hour, round-5 flag
+19	7e371d6	1789550835	finer clock-face flags: round10/15/30
+20	691f319	1789551025	cyclic minute-of-hour features + minute bucket
+21	402f30d	1789551118	min_10 + daily-cycle cyclic features
+22	173ed76	1789551312	minute-of-hour target encoding (minhr)

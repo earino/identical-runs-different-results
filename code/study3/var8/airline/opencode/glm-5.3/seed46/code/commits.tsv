@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	a5090b7	1789648509	baseline
+01	b877a9f	1789648576	FE: time-of-day (hour/mins/sin/cos) + numeric month/dom/dow, ES frame
+02	092b3c2	1789648618	OOF smoothed TE for carrier/origin/dest/route
+03	14374f7	1789648651	FE: seasonality, log_dist, freq features, DepTime wrap fix
+04	4062690	1789648694	ensemble of 8 XGB (seed+depth varied), ES each
+05	afa1d76	1789648811	ensemble members with subsample/colsample 0.7 (reapply)
+06	db7e49b	1789648841	ablation: drop all target encodings
+07	d5110b6	1789648874	16-member ensemble, depth 4-8, varied sampling
+08	66ca44d	1789649974	stronger bagging: subsample/colsample 0.5
+09	7643af4	1789650187	colsample_bynode 0.7
+10	53866d5	1789650312	m10 within-hour bucket feature
+11	7661640	1789650374	gamma 0.5
+12	16cd226	1789650435	two-family ensemble (8 aggressive + 8 gentle)
+13	331a2f0	1789650615	third family: deep d9/10 heavy reg
+14	6e3c217	1789650691	rebalance: 6 A + 4 gentle + 6 deep
+15	5608d8a	1789650755	final mix: 6 A + 2 gentle + 8 deep

@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	886562b	0.7141	ok	1	baseline
+2	abb734d	0.0000	crash	1	FE v1 + 300 trees
+3	7de0735	0.0000	crash	1	FE v1 + 300 trees (fix)
+4	9151557	0.7063	ok	4	FE v1 + 300 trees (fix2)
+5	87f1c05	0.0000	crash	1	ablation: baseline model + new FE, dates cat
+6	2aac70e	0.7057	ok	2	ablation: baseline model + new FE, dates cat (fix)
+7	68f3ab6	0.7023	ok	3	baseline FE, 300 trees
+8	50a560a	0.7008	ok	2	baseline FE, 100 trees
+9	19156d4	0.7061	ok	3	early stop on eval 2006
+10	85180e8	0.7061	ok	4	early stop on AUC
+11	0c4d8b4	0.7143	ok	3	pristine FE + ES on eval AUC
+12	898e4c1	0.7045	ok	44	OOF target encoding k=20
+13	bbf7ad3	0.7203	ok	9	depth4 alpha8 cs0.7 ES
+14	778ecc4	0.7264	ok	28	5-seed ensemble d5
+15	53663f0	0.7396	ok	36	interaction cats OXH+HXC alpha5
+16	dd4f19a	0.7441	ok	60	lr.05 d6 a3 drops 5-seed
+17	a1414b7	0.7453	ok	69	alpha2
+18	37b7335	0.7495	ok	73	distbin interactions d7
+19	e61c380	0.7496	ok	88	6-seed ensemble
+20	634f5cf	0.0000	crash	88	logit averaging
+21	62d5323	0.7496	ok	88	logit averaging (fix)
+22	269c12e	0.7497	ok	103	7-seed ensemble
+23	0afaf66	0.7497	ok	110	depth-diverse ensemble

@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	716cdb0	1789524242	baseline
+01	18cc203	1789524280	model: shallower+regularized (d4, 500 trees, lr.05, subsample)
+02	b1ffabd	1789524286	feat: time-of-day derived features
+03	0b79c40	1789524332	model: one-hot low-card categoricals (max_cat_to_onehot=16)
+04	ed3499a	1789524341	model: internal early stopping (90/10 split)
+05	b3fd561	1789524351	model: ensemble of 6 xgb (depths 3-5, 2 seeds), early stopping
+06	75bd13d	1789524404	feat: day-of-year
+07	f040635	1789524457	model: one-hot all categoricals (max_cat_to_onehot=500)
+08	114ab17	1789524556	model: deeper ensemble depths 4-7
+09	8a7fa11	1789524620	model: ensemble depths 5-8
+10	a26d470	1789524700	model: ensemble depths 6-9
+11	e4cf0c0	1789524781	model: per-model early-stop split seeds
+12	866a3d1	1789524856	model: 8 diverse seeds/depths
+13	9b67a0d	1789525088	feat: dep_hour as one-hot categorical
+14	168a36f	1789525167	feat: 15-min departure bucket one-hot
+15	0bf4aee	1789525506	model: min_child_weight=2
+16	ee99caa	1789525594	model: min_child_weight=1
+17	6b281b0	1789525775	model: reg_lambda=0.3
+18	21ba577	1789525953	model: ensemble depths 7-10
+19	63d26d9	1789526056	model: ensemble depths 8-11
+20	c88121f	1789526166	model: ensemble depths 9-12
+21	47a4b27	1789526273	feat: carrier x hour interaction one-hot

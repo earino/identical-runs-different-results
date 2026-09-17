@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	9e748a3	1789494437	baseline
+01	6b9fc14	1789494484	time decomposition features, baseline capacity
+02	d366829	1789494501	add freq encodings for carrier/origin/dest
+03	0ac0904	1789494535	regularized 200-tree model: subsample/colsample/min_child_weight
+04	9ba0ebf	1789494541	deeper 500-tree model
+05	8655b3e	1789494549	1000 trees depth7 lr.02
+06	495667c	1789494572	add day-of-year and airport/carrier-hour density features
+07	4c0d984	1789494591	depth 8
+08	8e7ec34	1789494612	depth 10
+09	2a6ed32	1789494641	depth 12
+10	da5b172	1789494685	depth 16
+11	5e2f817	1789495476	depth16 mcw1, drop train-auc diagnostic
+12	2753d7d	1789495987	add normalized hourly density ratios
+13	f655e97	1789496341	colsample_bytree 0.6
+14	690ec74	1789496431	colsample_bytree 0.4
+15	a9880e6	1789496774	depth 18 colsample0.4
+16	9cda93b	1789497055	colsample 0.35
+17	8ddf3f7	1789497145	colsample 0.3

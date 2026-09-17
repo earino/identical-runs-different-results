@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	e81d6b2	1789514896	baseline
+01	62d4f24	1789514996	te+freq+time features, bigger xgb
+02	0eff49e	1789515034	more TE interactions + route stats + 800x8 lr.04
+03	d0c3b5a	1789515129	exp2 feats + origin_hour_te, 800x8 lr.04
+04	5be648c	1789515152	1000x10 lr.03 mcw10
+05	ee06242	1789515165	1200x12 lr.02
+06	669758c	1789515185	1500x14 lr.015 cs.7
+07	3f73be8	1789515217	origin|month dest|month dep_min TEs
+08	5a52093	1789516674	F: drop overfit TEs, keep hour/route/carrier TE
+09	340dce6	1789516706	higher TE smoothing for high-card keys
+10	15de72b	1789516734	drop calendar int feats
+11	d396a7b	1789516809	3-model diverse ensemble
+12	8637d67	1789516871	early stopping on eval
+13	9b24dee	1789517142	add deptime_raw
+14	b6604e3	1789517301	5-seed bagging
+15	d4995ca	1789517625	rank-average ensemble
+16	5f7ae11	1789520013	TE support counts
+17	a94d175	1789520124	TE_SMOOTH_HI 100
+18	93ee75a	1789520242	mcw 5

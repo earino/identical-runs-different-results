@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	4239283	1789649346	baseline
+01	b9599e3	1789649460	exp6: 200 trees + subsample/colsample/reg
+02	9c428d8	1789649607	exp7: depth 4, 100 trees (diag: shallow generalizes)
+03	86224ac	1789649659	exp8: d4 n300 lr.05 sub.8 col.8
+04	fea26bb	1789649763	exp9: seasonal sin/cos day-of-year
+05	69f5c12	1789649796	exp10: DepHour as 24-level categorical
+06	b836a7a	1789649835	exp11: 600 trees lr.025
+07	1455c30	1789649879	exp12: 3-seed ensemble
+08	90bfa1f	1789650005	exp13: depth 5 ensemble
+09	54b0e93	1789650254	exp14: heterogeneous feat-drop ensemble x5
+10	e2c9c30	1789650380	exp15: route/origin/dest count encodings
+11	800234b	1789650479	exp16: DepMinutes + 15-min buckets
+12	dbd6e9b	1789650594	exp17: schedule-pressure count features
+13	3ffbe46	1789650866	exp18: depth 6
+14	c0567ca	1789651025	exp19: two-variant feature ensemble
+15	61a834c	1789651325	exp20: depth 8
+16	64d8bd7	1789651992	exp21: depth10 + linear recency weights
+17	913ce2b	1789654059	exp23: mixed recency ramps per model
+18	a54d582	1789655155	exp27: 6th model without freq features

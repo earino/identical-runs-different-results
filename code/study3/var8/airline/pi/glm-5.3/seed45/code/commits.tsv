@@ -1,0 +1,7 @@
+n	commit	unix_time	subject
+00	28f0ee1	1789601544	baseline
+01	99241dd	1789602394	fourier hour terms + minute, shallow d3 n600 lambda10 col0.9
+02	ee35032	1789603445	lossguide leaves20 col0.5 n2000, fourier k=1..8
+03	e7f035f	1789604101	diverse 5-model xgb ensemble, averaged
+04	b360437	1789613051	diverse 10-model xgb ensemble (n2000/2500, leaves 12-28, col 0.3-0.7)
+05	5bf7306	1789614412	reg_lambda 10 -> 6 across all 10 ensemble members

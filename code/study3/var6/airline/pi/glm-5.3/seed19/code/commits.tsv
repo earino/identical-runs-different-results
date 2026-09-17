@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	f7a2074	1789652388	baseline
+01	7ae6f92	1789652425	FE: hour/tod/cyclical + Route cat + log_dist; 1000 trees lr.05 d8 ES
+02	517f404	1789652621	OOF target encoding incl Origin/Dest/Carrier x hour; ES fold + refit
+03	77a0658	1789652757	add RHour/OCarrier/OHourBin TEs, K=30
+04	798aa47	1789653087	sub.8/col.8; tree count via 5-fold mean val curve
+05	2395e9e	1789653099	fix: eval_metric in constructor (trivial crash fix)
+06	0a0bf14	1789653219	add traffic count features (Origin, Route, OriginHour, DestHour)
+07	4818593	1789653223	fix quote typo
+08	cd86b8e	1789653384	ensemble: 3 TE-seed models + 1 rawcat model, CV-curve tree counts
+09	27e6ef6	1789654473	drop month/day-of-month feats everywhere; 3 TE + 2 raw (d8,d6) members
+10	dce8d15	1789655078	add within-hour block TEs (Min10, Min5)
+11	420daa2	1789655189	hard-code tree counts at CV-curve plateau (simplification, -60% runtime)
+12	20c3306	1789655367	add cnt_CHour, cnt_RouteHour traffic counts
+13	bd79eee	1789655732	add Origin/Dest/Route x 30min traffic counts
+14	128c838	1789655973	add 30-min-granularity TEs (Origin/Dest/Route x Tod30, OriginMin10)
+15	d08e9ce	1789656266	add RouteTod20 TE
+16	7e3f9e2	1789657745	recency-weighted TE members; hybrid member (cats+key TEs, d6) replaces raw d6
+17	ca49ae4	1789657774	fix DataFrame truth-value bug in member fit
+18	c69b7a7	1789658076	add OriginTod20/CarrierTod20/OCHour TEs + am/pm mixture-of-experts member

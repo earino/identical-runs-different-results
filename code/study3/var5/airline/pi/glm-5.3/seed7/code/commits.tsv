@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	59bc2e2	1789606299	baseline
+01	f74ee7c	1789606972	fe: time-of-day + route categorical, depth-8 ES model
+02	4ad189b	1789607962	drop route memorization; depth4 lr0.05 n200 + time features
+03	91ccdbe	1789608068	add day-of-year seasonality (doy, sin, cos)
+04	e5581bd	1789608998	mcw10 + 5-model colsample bagging
+05	7bca714	1789610462	stack: n160, reg_alpha1, evening weight 2, origin time-ECDF
+06	76c10b9	1789610712	add destination time-ECDF
+07	1149a26	1789610853	carrier ECDF + carrier/origin meta + dist_x_hour; mcw20
+08	ffb8f87	1789611109	depth5 n120 mcw40 (deeper + stronger leaf reg)
+09	9b53a75	1789611634	drop Month categorical (year-specific); add minute_of_hour
+10	dff5b29	1789612034	schedule-density features: org/dst/carrier/orgcarrier window counts
+11	8c3127f	1789612360	depth7 mcw60 (density features support more capacity)
+12	d9947fe	1789612768	asymmetric before/after schedule-density features
+13	126c372	1789613057	n_estimators 160 at d7
+14	4651aac	1789613602	drop car_meandist/org_ncarr/car_dens/car_time_ecdf; evening w thr 15
+15	d937c16	1789615732	route schedule-bank density (30/60 windows)
+16	5f8c132	1789616379	simplify: keep only before-side densities (symmetric/after redundant)
+17	20998c9	1789619235	fast group loops; add exponential-decay queue features

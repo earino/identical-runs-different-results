@@ -1,0 +1,22 @@
+n	commit	eval_auc	status	seconds	description
+1	f3d0ce0	0.7141	ok	4	baseline
+2	397d906	0.7142	ok	2	exp2: many trees + early stopping
+3	a674845	0.0000	crash	1	exp3: numeric time features + route
+4	81d7beb	0.7091	ok	3	exp4: numeric time features + route (fix)
+5	41c01aa	0.7142	ok	2	exp5: DepTime decomp only
+6	a916740	0.7064	ok	3	exp6: DepTime decomp + route cat
+7	9fef43d	0.7149	ok	3	exp7: + subsample/colsample/min_child/lambda
+8	25039d5	0.7143	ok	3	exp8: smoothed TE for high-card cats
+9	40d7d36	0.7248	ok	6	exp9: tuned params + month feats
+10	2458f21	0.7246	ok	5	exp10: drop raw DepTime
+11	26e4332	0.0000	crash	2	exp11: + hm/hour_cat/traffic
+12	1e227b4	0.0000	crash	1	exp12: hm/hour_cat/traffic fixed
+13	7be322c	0.7278	ok	8	exp12: hm/hour_cat/traffic fixed v2
+14	9a1dfdc	0.7301	ok	8	exp14: d9 a4 mcw3
+15	b25f535	0.7399	ok	10	exp15: numeric dates + route_vol
+16	2cf39fe	0.7410	ok	33	exp16: 4-seed ensemble
+17	a6e3bb2	0.7454	ok	32	exp17: drop month signal entirely
+18	959b48f	0.7523	ok	88	exp18: lossguide 1536 leaves
+19	d02a11b	0.0000	timeout	120	exp19: carrier/origin x hour cats
+20	8139436	0.7543	ok	98	exp19: interact cats + 3 seeds
+21	8139436	0.7543	ok	99	

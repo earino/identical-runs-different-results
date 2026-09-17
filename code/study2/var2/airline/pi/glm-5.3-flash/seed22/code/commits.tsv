@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	2394343	1789524237	baseline
+01	be3260d	1789524289	exp3: 600 trees lr0.05 depth6
+02	190ed7e	1789524327	restore baseline content (0.7141)
+03	a88ed3b	1789524495	exp26: 5-config diversity ensemble
+04	93e48e1	1789524562	exp32: + lossguide member
+05	261d738	1789524571	exp33: + second lossguide member
+06	d8c6504	1789524616	exp37: colsample_bynode=0.8 all members
+07	7708c8c	1789524626	exp38: colsample_bynode=0.7

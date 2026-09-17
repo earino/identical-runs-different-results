@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9c21b38	0.7141	ok	4	baseline
+2	63cd2e5	0.0000	crash	1	feateng v1 + early stopping refit
+3	f7a3df4	0.7074	ok	19	feateng v1 + early stopping refit
+4	6105fde	0.7104	ok	4	clean feats + ES refit d6
+5	b98b04a	0.7110	ok	3	baseline feats + ES refit
+6	e25a58a	0.7166	ok	2	5-seed bag ensemble baseline cfg
+7	160d177	0.7167	ok	4	10-seed bag
+8	02d5b96	0.7167	ok	3	hetero ensemble d5-8
+9	bf3e3b1	0.0000	crash	1	TE features + 5-bag
+10	fb3d59a	0.7066	ok	3	TE features + 5-bag
+11	2e1d93c	0.7153	ok	3	feature-view diversity bag
+12	94e3371	0.7169	ok	3	bag mcw20
+13	896fd99	0.7170	ok	5	bag lr.05 x100 mcw20
+14	703ffa6	0.7138	ok	3	single deep d10
+15	9e6fab6	0.7147	ok	5	bag colsample1.0
+16	4bb8e3c	0.7140	ok	5	rare-capped Route cat
+17	21809cc	0.7183	ok	14	hp search 12 cfgs + bag winner
+18	24f49b4	0.7201	ok	22	hp search v2 d8-10
+19	4e23569	0.7204	ok	41	hp search v3
+20	79585e8	0.7213	ok	62	hp search v4
+21	dc1ebf6	0.7201	ok	80	hp search v5 + 7-bag
+22	cfab3f0	0.7213	ok	39	9-bag hardcoded winner
+23	ad8272a	0.7196	ok	28	pocket blend deep+shallow
+24	5e5647f	0.7212	ok	67	lossguide leaves256
+25	77b5202	0.7209	ok	35	max_bin 128
+26	b767b54	0.7233	ok	41	hour+minute+late_night extras
+27	f59e7b5	0.7245	ok	42	numeric date extras
+28	2345982	0.7250	ok	44	origin/dest freq
+29	c68ed11	0.7246	ok	46	carrier+route freq
+30	203c262	0.7243	ok	22	5-fold bag
+31	04d6f61	0.7244	ok	50	hour_dow cross
+32	c677115	0.7243	ok	47	cyclicals at winner cfg
+33	1f3fe4e	0.7239	ok	68	n600 probe
+34	eabb2dc	0.7231	ok	45	col0.7 probe
+35	18885d7	0.7219	ok	43	drop minute
+36	b10d523	0.7248	ok	45	dist*hour
+37	aa16a08	0.7247	ok	41	lambda3 probe
+38	fde7a05	0.7250	ok	43	rank-mean aggregation
+39	b69d662	0.7254	ok	45	sub0.85 probe
+40	9d1ae55	0.7257	ok	45	sub0.9 probe

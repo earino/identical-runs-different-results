@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 41,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T19:16:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s41-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:04:31+00:00",
+  "wall_seconds": 2898.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7614.4,
+  "endpoint_at_end": "ok",
+  "head": "3165701",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 0,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7599,
+  "final_eval_auc": 0.7599,
+  "holdout_auc": 0.760126903822,
+  "holdout_ap": 0.7479695473137279,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04535615208599997,
+  "generalization_gap": -0.0002269038219999686,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4176698,
+    "tokens_in_uncached": 303162,
+    "tokens_in_cached": 3873536,
+    "tokens_out": 12362,
+    "turns": null,
+    "api_calls": 132,
+    "method": "sum-of-132-events",
+    "cost_usd": 1.4859,
+    "cached_share": 0.927
+  },
+  "cpu_seconds_python": 7426.3,
+  "cpu_seconds_counted": 7082.7,
+  "cpu_seconds_uncounted": 3.6,
+  "cpu_seconds_exempt": 340.0,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 44,
+  "fits_counted": 43,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "80c116f",
+      "message": "baseline"
+    },
+    {
+      "commit": "1974232",
+      "message": "feat: time-of-day + numeric calendar features"
+    },
+    {
+      "commit": "ec49d45",
+      "message": "feat: 2000 trees + early stopping on eval"
+    },
+    {
+      "commit": "c9ffc8a",
+      "message": "tune: depth 10"
+    },
+    {
+      "commit": "0c2664e",
+      "message": "tune: depth 14"
+    },
+    {
+      "commit": "9be780f",
+      "message": "tune: lr 0.05 es 100"
+    },
+    {
+      "commit": "1e62635",
+      "message": "tune: subsample+colsample 0.7"
+    },
+    {
+      "commit": "276f40f",
+      "message": "tune: subsample+colsample 0.5"
+    },
+    {
+      "commit": "6784434",
+      "message": "tune: lr 0.03 es 200"
+    },
+    {
+      "commit": "308794f",
+      "message": "tune: lr 0.02 es 300"
+    },
+    {
+      "commit": "d40cdeb",
+      "message": "tune: lr 0.01 es 400"
+    },
+    {
+      "commit": "f237171",
+      "message": "tune: depth 16 at lr 0.01"
+    },
+    {
+      "commit": "669d3df",
+      "message": "tune: depth 20 at lr 0.01"
+    },
+    {
+      "commit": "a2d4595",
+      "message": "tune: depth 24 at lr 0.01"
+    },
+    {
+      "commit": "f6ccc87",
+      "message": "feat: frequency + relative-distance route stats"
+    },
+    {
+      "commit": "ee4e359",
+      "message": "feat: origin-hour and dest-hour congestion counts"
+    },
+    {
+      "commit": "c49761d",
+      "message": "tune: lr 0.007 es 250"
+    },
+    {
+      "commit": "8c7e809",
+      "message": "feat: categorical hour"
+    },
+    {
+      "commit": "dd7b79b",
+      "message": "feat: second-harmonic tod"
+    },
+    {
+      "commit": "a2b592b",
+      "message": "feat: third-harmonic tod"
+    },
+    {
+      "commit": "3165701",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7086.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 188.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a2b592b",
+  "best_commit_eval_auc": 0.7599,
+  "best_commit_holdout_auc": 0.760126903822,
+  "best_commit_holdout_ap": 0.7479695473137279,
+  "best_commit_error": null,
+  "finalized_best": true
+}

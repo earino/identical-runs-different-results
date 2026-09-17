@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f6912ff	0.7141	ok	4	baseline
+2	c660dce	0.0000	crash	2	FE: numeric dates+time cycle+logDist, 200 trees
+3	42b9957	0.7173	ok	2	FE: numeric dates+time cycle+logDist, 200 trees
+4	c986cb3	0.7108	ok	7	TE carrier/origin/dest/route alpha=20
+5	ee55e4c	0.7177	ok	3	OOF TE 5-fold carrier/origin/dest/route
+6	2eadfe5	0.7177	ok	7	capacity depth10 600t lr.06 sub.8
+7	95241e3	0.7259	ok	4	OOF TE + origin_hour/dest_hour interactions
+8	cd3f9da	0.7272	ok	4	TE + carrier_hour, origin_dow
+9	af50e84	0.7316	ok	4	TE 30-min time blocks
+10	d25365d	0.7309	ok	6	capacity depth8 400t with rich TE feats
+11	2997cb6	0.7327	ok	4	TE 15-min time blocks
+12	ae3553d	0.7307	ok	5	TE + origin_month, month_block
+13	ff72fd2	0.7321	ok	5	TE alpha=10
+14	6c0a83b	0.7318	ok	5	TE + dow_block
+15	7467346	0.7344	ok	6	3-seed ensemble sub/col .8
+16	1537bee	0.7347	ok	7	5-seed ensemble
+17	5caf188	0.7350	ok	9	diverse 5-member ensemble
+18	a6f7fae	0.7387	ok	9	count features origin/dest/route
+19	6762135	0.7393	ok	9	counts: origin_block, carrier
+20	dfc2dce	0.7398	ok	13	400 trees lr .05 ensemble
+21	bdd840d	0.7404	ok	23	800 trees lr .03 ensemble
+22	e40dee4	0.7405	ok	22	TE alpha=30
+23	adcd44e	0.7416	ok	30	multi-scale TE blocks 15/30/60
+24	93825d0	0.7332	ok	32	dist x hour TE, date volume count
+25	a8c322a	0.7421	ok	44	7-member ensemble
+26	e6f9ec5	0.7414	ok	36	regularized members mcw5 gamma.5 lambda3
+27	3ded6c6	0.7392	ok	45	doy sin/cos seasonality
+28	61420c6	0.7427	ok	53	kernel TE profiles sigma=2
+29	e91f236	0.7431	ok	52	kernel TE sigma=4
+30	0e04d41	0.7463	ok	52	route kernel TE
+31	87d77c4	0.7465	ok	55	route kernel alpha=30
+32	7bcbecf	0.7438	ok	55	route kernel sigma=6
+33	65b9a31	0.7464	ok	59	9-member ensemble
+34	8233695	0.7502	ok	55	kernel 10-min blocks
+35	647773d	0.7506	ok	51	kernel 5-min blocks sigma8
+36	67de384	0.7465	ok	50	kernel sigma=12
+37	88f3034	0.7506	ok	62	1000 trees lr .02
+38	950d7d4	0.7504	ok	53	origin_block count 5-min
+39	167d82e	0.7509	ok	60	route kernel 30-min window
+40	82d7348	0.7512	ok	54	all kernels 30-min window

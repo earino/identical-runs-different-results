@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	bdebb51	0.7141	ok	3	baseline
+2	99e464a	0.7089	ok	9	2000 trees lr .05 early stop
+3	bdebb51	0.7141	ok	1	temp
+4	8e6d007	0.7133	ok	2	dep hour minute cyclical
+5	45a5e92	0.7083	ok	3	300 trees
+6	284392b	0.7056	ok	1	add route categorical
+7	edc71ca	0.7165	ok	4	regularized depth4 lr.03 500
+8	a7c3b53	0.7178	ok	3	reg + dep time features
+9	76a3a83	0.7044	ok	4	reg + time + route
+10	b904dfe	0.7178	ok	4	depth5 reg time
+11	57b8f8c	0.7182	ok	7	lr.015 1500 mcw20 lam10
+12	97feece	0.7184	ok	14	lr.01 3000 mcw30 lam20
+13	f7db6d6	0.7193	ok	14	freq features
+14	2b55a4b	0.7195	ok	40	3-seed ensemble
+15	ef3ebe8	0.7183	ok	43	OOF target encoding
+16	b1375d8	0.7195	ok	33	diverse depth ensemble
+17	978677f	0.7188	ok	41	carrier-route freq
+18	3d8156b	0.7206	ok	43	calendar features
+19	b0511a2	0.7197	ok	44	yearly cyclical
+20	8c54b14	0.7186	ok	85	lossguide leaves63
+21	88578b2	0.7204	ok	45	holiday features
+22	28e1a72	0.7229	ok	43	origin-hour congestion
+23	9641a56	0.7240	ok	45	more congestion features
+24	6498cde	0.7235	ok	44	route-hour carrier-origin-hour
+25	78190c4	0.7245	ok	47	dest-day and ratios
+26	391e984	0.7250	ok	46	carrier hour/day freq
+27	02dc6e0	0.7251	ok	53	depth5 congestion
+28	3c61004	0.7274	ok	63	prev/next hour congestion
+29	a409def	0.7288	ok	61	extended congestion windows
+30	c7ed77d	0.7293	ok	69	origin3 carrier1 neighbors
+31	8b0e8d9	0.7426	ok	72	route neighbors dest pm2
+32	3d3cec2	0.7427	ok	78	route ratio/day/crh
+33	6e20f82	0.7428	ok	75	route pm2 neighbors
+34	1e4ab2f	0.7432	ok	62	depth6 lr.015 2000
+35	100158c	0.7448	ok	47	depth8 lr.02 1000
+36	ba192c9	0.7448	ok	33	depth10 lr.03 600
+37	bf6c4cc	0.7446	ok	81	depth8 lr.015 1500
+38	6a3b054	0.7447	ok	39	diverse ensemble
+39	a07659f	0.7447	ok	84	bank structure ndest
+40	499a3a6	0.7440	ok	54	depth8 relaxed reg

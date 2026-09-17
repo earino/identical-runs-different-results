@@ -1,0 +1,132 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 26,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T07:42:36+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s26-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T07:57:22+00:00",
+  "wall_seconds": 886.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 1707.6,
+  "endpoint_at_end": "ok",
+  "head": "f8a21b8",
+  "n_commits": 8,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7177,
+  "final_eval_auc": 0.7177,
+  "holdout_auc": 0.7181957604120001,
+  "holdout_ap": 0.7075877430371997,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.003425008676000041,
+  "generalization_gap": -0.0004957604120000569,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4474916,
+    "tokens_in_uncached": 29604,
+    "tokens_in_cached": 4445312,
+    "tokens_out": 50765,
+    "turns": null,
+    "api_calls": 132,
+    "method": "sum-of-132-events",
+    "cost_usd": 0.1632,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 1704.9,
+  "cpu_seconds_counted": 1622.5,
+  "cpu_seconds_uncounted": 1.8,
+  "cpu_seconds_exempt": 80.5,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1398,
+  "fits_counted": 1334,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "ea56247",
+      "message": "baseline"
+    },
+    {
+      "commit": "6583989",
+      "message": "model: 60 trees depth 4"
+    },
+    {
+      "commit": "bc8c992",
+      "message": "ensemble: 5-seed average depth4/60trees"
+    },
+    {
+      "commit": "02a895c",
+      "message": "ensemble: heterogeneous 4-model avg (d4/d6/d4-lr.05/d5)"
+    },
+    {
+      "commit": "70d273d",
+      "message": "ensemble: expand to 8 heterogeneous members"
+    },
+    {
+      "commit": "6b9f77b",
+      "message": "ensemble: Caruana greedy selection on internal val"
+    },
+    {
+      "commit": "4f96194",
+      "message": "blend: caruana selection + fixed8 ensemble"
+    },
+    {
+      "commit": "cbe0130",
+      "message": "caruana: val_size 0.25"
+    },
+    {
+      "commit": "f8a21b8",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1624.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 2.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "cbe0130",
+  "best_commit_eval_auc": 0.7177,
+  "best_commit_holdout_auc": 0.7181957604120001,
+  "best_commit_holdout_ap": 0.7075877430371997,
+  "best_commit_error": null,
+  "finalized_best": true
+}

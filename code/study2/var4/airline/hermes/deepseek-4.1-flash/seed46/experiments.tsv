@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	23d0ecb	0.7141	ok	4	baseline
+2	415a7b6	0.7080	ok	3	tod feats + route cats + early stop
+3	ed8680e	0.7119	ok	3	n_est=300 lr=0.05
+4	6b74f25	0.7134	ok	1	tod + calendar numerics
+5	f971c11	0.7236	ok	7	OOF target encoding
+6	e7584a9	0.7227	ok	11	600 trees lr=0.04
+7	bf984d3	0.7244	ok	8	extra TE dow/hour interactions
+8	13d8a3c	0.7257	ok	17	3-seed ensemble
+9	f66145a	0.7231	ok	26	depth 8 mcw 20
+10	53fac5c	0.7267	ok	35	6-model depth-diverse ensemble
+11	bc70fe3	0.7247	ok	36	seasonal TE keys
+12	fd6f82e	0.7267	ok	41	structural network features
+13	64d0927	0.0000	crash	2	sharp TE variants
+14	a367d2f	0.7267	ok	34	sharp TE variants (index fix)
+15	f1b1cef	0.7284	ok	58	12-model diverse bag
+16	de1c38a	0.7361	ok	26	no raw cats, TE only
+17	db89e69	0.7326	ok	30	seasonal TE keys v2
+18	676a1a8	0.7360	ok	27	tod/dist bin TE + dep_tod
+19	de1c38a	0.7361	ok	27	--help
+20	b2a08a3	0.7343	ok	27	10-fold OOF TE
+21	9e6405e	0.7360	ok	26	SMOOTH=50
+22	b6cd5f6	0.7360	ok	29	TE delta features
+23	a655b42	0.7336	ok	47	low-card cats back
+24	73db903	0.7365	ok	38	1000 trees lr=0.02
+25	f1014e7	0.7366	ok	70	12 models, 1000 trees lr=0.02
+26	61efe9f	0.7368	ok	69	2000 trees lr=0.01
+27	78fefaa	0.7364	ok	64	mcw30 lambda5
+28	2d04e2a	0.7334	ok	53	no count features
+29	5cbb6ce	0.7374	ok	78	origin/dest carrier keys
+30	3bff054	0.7368	ok	78	hierarchical TE backoff
+31	3d85989	0.7368	ok	77	route_carrier + hub-bank keys
+32	ebf170b	0.7377	ok	78	subsample 0.7
+33	e69805f	0.7378	ok	106	8-model bag
+34	5f45739	0.7383	ok	83	network structure features
+35	e5971ab	0.7383	ok	83	more structure features
+36	6eb69c2	0.7379	ok	86	finer hour interactions
+37	39b2816	0.7381	ok	85	2-hour bin keys
+38	f1b5798	0.7382	ok	76	min_child_weight 20
+39	1731e2a	0.7376	ok	83	origin/dest hour-dow keys
+40	6d9a0af	0.7381	ok	101	final: 8-model bag

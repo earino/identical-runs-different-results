@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e8a9787	0.7141	ok	3	baseline
+2	b084586	0.7091	ok	4	stronger GBM params
+3	fd310fa	0.7083	ok	2	300 trees
+4	bc45b39	0.7063	ok	2	derived time+route features
+5	ea68674	0.7174	ok	2	shallower more regularized
+6	5e0295e	0.7170	ok	3	400 trees lr0.03 depth4
+7	84233b4	0.7167	ok	1	depth3 300 trees
+8	a0425a3	0.7166	ok	1	min_child_weight 20
+9	4af54f6	0.7181	ok	2	time features only
+10	8c236b8	0.7181	ok	2	frequency features
+11	01be8ad	0.7174	ok	2	target encoding
+12	97d0a2d	0.7166	ok	2	subsample colsample 0.8
+13	06150e1	0.7170	ok	2	reg_lambda 5
+14	7fd7057	0.7165	ok	2	lossguide max_leaves 15
+15	4610f41	0.7185	ok	2	220 trees depth4
+16	4f3cbea	0.7184	ok	2	320 trees depth4
+17	2407798	0.7186	ok	2	mcw1
+18	6dab428	0.7191	ok	3	300 trees mcw1
+19	104dfd7	0.7183	ok	2	420 trees mcw1
+20	41dcd69	0.7186	ok	2	subsample 0.9
+21	4278b3d	0.7188	ok	2	reg_lambda 3
+22	04af4a3	0.7199	ok	2	doy hour cyclical
+23	0436e39	0.7177	ok	2	annual cyclical
+24	9ac3dac	0.7199	ok	2	numeric dow dom
+25	a5a77cc	0.7197	ok	3	depth5
+26	a57ebe2	0.7200	ok	3	lr0.04 380
+27	a7e2890	0.7215	ok	9	5-model ensemble
+28	0a4af13	0.7215	ok	11	8-model ensemble
+29	03f8d67	0.7216	ok	14	10-model seed-bagged
+30	c0f0f22	0.7046	ok	25	ensemble + route cat
+31	8755451	0.7218	ok	18	ensemble cat diversity
+32	b472cb4	0.7305	ok	20	carrier_hour cat
+33	b19359b	0.7246	ok	41	origin/dest x hour
+34	9bd0924	0.7255	ok	23	carrier_dow + carrier_month
+35	56ae8dd	0.7280	ok	26	origin/dest tod bins
+36	ddc44dc	0.7336	ok	28	bumped trees ensemble
+37	28822ca	0.7355	ok	35	bump trees 2
+38	0fc521e	0.7364	ok	44	bump trees 3
+39	68ee401	0.7366	ok	55	bump trees 4
+40	934bd5c	0.7366	ok	68	bump trees 5

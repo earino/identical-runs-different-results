@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	3765ac9	1789536262	baseline
+01	8220f6b	1789537080	engineered calendar/time feats + regularized XGB seed ensemble
+02	5c1ca2e	1789538753	interaction feats: drop Month/DOM, add carrier_hour & origin_hour
+03	84140b6	1789539125	deeper trees d9 + stronger regularization
+04	27c999b	1789539611	add colsample_bynode=0.6
+05	d189032	1789540188	add 30-min carrier/origin time-bin interactions
+06	612f877	1789540392	origin time-bin 15min, carrier 30min
+07	478505d	1789540586	add estimated arrival-time features
+08	de2162c	1789540814	add arrival-hour categorical
+09	c4d1ba8	1789541114	min_child_weight 30
+10	fc45f8b	1789541352	n_estimators 1500

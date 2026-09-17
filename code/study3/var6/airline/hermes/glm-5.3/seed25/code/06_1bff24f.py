@@ -1,0 +1,92 @@
+"""XGBoost binary classifier. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- features -----------------------------------------------------------------
+# raw string columns are re-encoded numerically in prepare(); only these stay categorical
+cat_cols = ["UniqueCarrier", "Origin", "Dest"]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in cat_cols}
+feature_cols = ["DepTime", "Distance"] + cat_cols + ["Month", "DayofMonth", "DayOfWeek"]
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = df[feature_cols].copy()
+    # numeric time features from DepTime (hhmm)
+    dt = X["DepTime"].astype(int)
+    hour = dt // 100
+    minute = dt % 100
+    dep_min = hour * 60 + minute                      # minutes since midnight
+    X["DepTime_min"] = dep_min
+    X["DepTime_h"] = hour
+    X["DepTime_blk30"] = dep_min // 30                # 48 blocks of 30 minutes
+    X["sin_t"] = np.sin(2 * np.pi * dep_min / 1440.0)
+    X["cos_t"] = np.cos(2 * np.pi * dep_min / 1440.0)
+    X["night"] = (dep_min < 6 * 60).astype(int)       # red-eye / very early flights
+    # numeric calendar features from c-<n> strings (raw c-strings dropped as categoricals)
+    for col, name in (("Month", "mon"), ("DayofMonth", "dom"), ("DayOfWeek", "dow")):
+        X[name] = X[col].str.slice(2).astype(int)
+    X["sin_mon"] = np.sin(2 * np.pi * X["mon"] / 12.0)
+    X["cos_mon"] = np.cos(2 * np.pi * X["mon"] / 12.0)
+    X["sin_dow"] = np.sin(2 * np.pi * X["dow"] / 7.0)
+    X["cos_dow"] = np.cos(2 * np.pi * X["dow"] / 7.0)
+    X = X.drop(columns=["Month", "DayofMonth", "DayOfWeek"])  # raw c-strings: numeric versions kept
+    for c in cat_cols:
+        X[c] = pd.Categorical(X[c], categories=cat_levels[c])  # unseen levels -> NaN
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+model = xgb.XGBClassifier(
+    n_estimators=300,
+    max_depth=12,
+    learning_rate=0.05,
+    subsample=0.7,
+    colsample_bytree=0.4,
+    min_child_weight=20,
+    reg_lambda=10.0,
+    tree_method="hist",
+    enable_categorical=True,
+    random_state=SEED,
+    n_jobs=N_JOBS,
+)
+
+t0 = time.time()
+model.fit(prepare(train), to_y(train))
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prepare(df))[:, 1]
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

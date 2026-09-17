@@ -1,0 +1,9 @@
+n	commit	eval_auc	status	seconds	description
+1	3cfed71	0.7141	ok	4	baseline
+2	82852e0	0.7068	ok	49	time+route features, internal early stopping
+3	8bd6f17	0.7206	ok	2	time features + shallow regularized trees
+4	e0380b6	0.7221	ok	7	bag10 + recency weighting
+5	b29b905	0.7233	ok	8	depth-diverse bag
+6	d6e3777	0.7243	ok	7	minute-of-hour feature
+7	f5769fb	0.7255	ok	11	bag rounds 250
+8	9959073	0.7285	ok	13	rare-airport pooling floor=300

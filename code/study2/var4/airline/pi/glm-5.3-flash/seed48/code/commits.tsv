@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	95f9b2a	1789519260	baseline
+01	34ec2ec	1789519296	exp2: 2000 trees, lr0.05, depth8, early stopping on internal 10pct split
+02	09b96ea	1789519308	exp3: learning-curve diagnostic, depth6 lr0.05, AUC at checkpoints
+03	089a621	1789519340	exp4: hyperparameter sweep, refit best on full train
+04	2c8ae30	1789519363	exp5: time/date features (hour, cyclic, redeye, doy, weekend)
+05	6e46359	1789519408	exp7: route cat + carrier_hour interaction + route_cnt + log distance
+06	9eb50c0	1789519418	exp8: ablate - only route_cnt + dist_log added to exp5
+07	6406ba9	1789519433	exp9: bagging 8 members, row 0.8 / col 0.7 subsampling
+08	91eecf9	1789519439	exp10: 16 members, row .75 col .65, 150 trees lr .08
+09	36ccec9	1789519457	exp11: ensemble member config sweep, final=best@10 members
+10	69b2060	1789519490	exp12: mixed-depth/lr 12-member ensemble vs pure d5 control
+11	c4b139b	1789519507	exp13: + carrier_hour categorical only
+12	a95f225	1789519526	exp14: + dow_hour, month_hour cats, origin/dest counts
+13	83efdc8	1789519549	exp15: ablate - keep counts only, drop dow_hour/month_hour
+14	d9ba052	1789519591	exp17: minute + qblock cat + holiday flag
+15	2674f05	1789519612	exp18: + mod numeric, 16-member ensemble
+16	78941d7	1789519637	exp19: drop mod, keep 16-member ensemble
+17	a2e29c4	1789519663	exp20: 24 members, diversified row/col fractions
+18	e43030d	1789519910	exp28: 48 members, two seed streams
+19	a3b831b	1789519936	exp29: members 150 trees lr .08/.1
+20	ceea88b	1789519973	exp30: members 250 trees lr .06/.08
+21	f21f5b3	1789520027	exp31: members 400 trees lr .04/.055
+22	70b9200	1789520179	exp33: deeper member mix d5/6/7 at lr .04
+23	5276716	1789520285	exp34: d6/7/8 members, 300 trees
+24	416eb7d	1789520487	exp36: colsample_bynode=0.8
+25	1a13e11	1789520841	exp40: 40 members (24+16), time-safe variant of best

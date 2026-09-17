@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	07d66d3	0.7141	ok	4	baseline
+2	ebf6af5	0.7192	ok	3	numeric time features + early stopping
+3	38eb8ef	0.7090	ok	3	route pair + cyclic hour
+4	9ca6238	0.0000	crash	1	target encodings route/origin/dest/carrier/hour
+5	be20a0e	0.7186	ok	4	target encodings route/origin/dest/carrier/hour (fixed)
+6	6f1f344	0.7326	ok	10	regularized deep config d12 alpha5
+7	e0f6e9a	0.7345	ok	49	5-seed bagged ensemble
+8	69fb104	0.7347	ok	48	te_oh feature, drop te_route
+9	f24c33c	0.7408	ok	56	counts + te_dh + te_dep15, drop md TEs
+10	3a40483	0.7428	ok	100	retune d16 lr.02 s.6c.6
+11	115fb99	0.7442	ok	81	te_o15
+12	81229f0	0.7455	ok	73	density counts oh/o15/dh
+13	7aea447	0.0000	timeout	121	AUC early stopping
+14	e7adaf9	0.7455	ok	63	AUC ES, 4 seeds d14
+15	6bfab63	0.7477	ok	88	AUC ES 3 seeds d16
+16	d1e37dd	0.7470	ok	96	te_d15
+17	6220606	0.7474	ok	84	drop te_hour_te (simplification)
+18	7d2d769	0.7472	ok	102	colsample_bynode 0.8

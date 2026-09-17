@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3cfed71	0.7141	ok	3	baseline
+2	816e390	0.7055	ok	5	all cats + derived time features + bigger model
+3	2eb6c3f	0.7134	ok	3	cyclical hour/minute/tod only
+4	4572a5f	0.7090	ok	2	early stopping to tune tree count
+5	91d5d34	0.7141	ok	3	tree count sweep
+6	a9d82fa	0.7127	ok	2	derived time features at fixed 30 trees
+7	011b6c1	0.7056	ok	2	route Origin+Dest interaction
+8	8574a00	0.7138	ok	2	lr 0.05 x 60 trees
+9	c2fc1c8	0.7144	ok	4	bagging 10 models
+10	e4db8a2	0.7152	ok	7	bagging 25 models
+11	648843b	0.7155	ok	15	bagging 60 models
+12	7f42108	0.7158	ok	15	depth-diverse bag 60
+13	2661b6c	0.7160	ok	16	depth+colsample diverse bag
+14	c25cfb0	0.7165	ok	17	diverse bag + derived time features
+15	0323908	0.7173	ok	26	bag 105 diverse depths
+16	3ecca7f	0.7172	ok	36	bag 147 with lr diversity
+17	21614ce	0.7163	ok	37	shallow depth-3 bag
+18	1aaa129	0.7174	ok	37	bag 150 proven mix
+19	153e602	0.7173	ok	41	cyclical tod encoding
+20	04b4cba	0.7201	ok	73	origin/dest x hour interactions
+21	3176dd4	0.7209	ok	77	carrier x hour interaction
+22	0ae0b33	0.7196	ok	101	dow interactions
+23	3893268	0.7147	ok	85	month interactions, bag 120
+24	8f90fe6	0.7236	ok	80	50 trees per member
+25	aec8f09	0.7244	ok	94	60 trees per member
+26	9120e77	0.7251	ok	92	90 models x 70 trees
+27	c85bf8f	0.7260	ok	113	90 models x 90 trees
+28	10aebe9	0.7190	ok	115	route target encoding
+29	b4b4e12	0.7260	ok	115	hub volume features
+30	3583884	0.7259	ok	106	min_child_weight 5
+31	6bc2fcf	0.7278	ok	117	reg_lambda 2.0
+32	cb9ef8b	0.7284	ok	117	75 models x 110 trees
+33	c7fbbfe	0.0000	timeout	120	reg_lambda 5.0
+34	d184d9d	0.7311	ok	99	lambda 5, 60 models
+35	0e41c96	0.7324	ok	102	lambda 8
+36	91c6c25	0.7338	ok	105	lambda 15
+37	4f11131	0.7344	ok	107	lambda 30
+38	f9c659f	0.7346	ok	109	lambda 60
+39	5f9835d	0.0000	timeout	121	50 models x 150 trees lambda 60
+40	9ab24ba	0.7347	ok	102	gamma 1.0

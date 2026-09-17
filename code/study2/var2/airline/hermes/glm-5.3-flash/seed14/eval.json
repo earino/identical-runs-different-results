@@ -1,0 +1,148 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 14,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T15:42:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s14-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T16:21:22+00:00",
+  "wall_seconds": 2362.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7650.5,
+  "endpoint_at_end": "ok",
+  "head": "fbc3354",
+  "n_commits": 12,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 5,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7279,
+  "final_eval_auc": 0.7279,
+  "holdout_auc": 0.7289102172799999,
+  "holdout_ap": 0.7182085247477012,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.014139465543999918,
+  "generalization_gap": -0.0010102172799999476,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5264473,
+    "tokens_in_uncached": 51161,
+    "tokens_in_cached": 5213312,
+    "tokens_out": 38925,
+    "turns": null,
+    "api_calls": 112,
+    "method": "cumulative-max",
+    "cost_usd": 0.1835,
+    "cached_share": 0.99
+  },
+  "cpu_seconds_python": 7561.9,
+  "cpu_seconds_counted": 7089.7,
+  "cpu_seconds_uncounted": 4.3,
+  "cpu_seconds_exempt": 467.9,
+  "python_processes": 83,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1149,
+  "fits_counted": 1099,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "73eacf1",
+      "message": "baseline"
+    },
+    {
+      "commit": "43b7968",
+      "message": "exp4: engineered feats, 150 trees depth6 no route"
+    },
+    {
+      "commit": "a7f18d6",
+      "message": "exp7: frequency encodings carrier/origin/dest/route"
+    },
+    {
+      "commit": "768ccba",
+      "message": "exp11: 10-seed ensemble of exp4 config"
+    },
+    {
+      "commit": "691d509",
+      "message": "exp12: 30-seed ensemble, subsample/colsample 0.7"
+    },
+    {
+      "commit": "078c8d1",
+      "message": "exp16: drop Month/Dom/Dow cats, keep carrier/origin/dest"
+    },
+    {
+      "commit": "f78012c",
+      "message": "exp21: depth8 + stronger regularization (mcw20 gamma2)"
+    },
+    {
+      "commit": "f8683cb",
+      "message": "exp24: depth8 reg, lr0.05 x 300 trees"
+    },
+    {
+      "commit": "f5d9748",
+      "message": "exp27: drop sin features ablation"
+    },
+    {
+      "commit": "db05990",
+      "message": "exp30: 50 seeds on exp27 config"
+    },
+    {
+      "commit": "076e02a",
+      "message": "exp31: subsample/colsample 0.5"
+    },
+    {
+      "commit": "22cafeb",
+      "message": "exp36: repair to exp31 config"
+    },
+    {
+      "commit": "fbc3354",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7094.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 88.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "076e02a",
+  "best_commit_eval_auc": 0.7279,
+  "best_commit_holdout_auc": 0.7289102172799999,
+  "best_commit_holdout_ap": 0.7182085247477012,
+  "best_commit_error": null,
+  "finalized_best": false
+}

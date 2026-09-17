@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 31,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:17:55+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s31-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:44:37+00:00",
+  "wall_seconds": 5202.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17566.9,
+  "endpoint_at_end": "ok",
+  "head": "a7423b1",
+  "n_commits": 19,
+  "n_experiments": 28,
+  "n_ok": 19,
+  "n_crash": 6,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7534,
+  "final_eval_auc": 0.7534,
+  "holdout_auc": 0.753205363642,
+  "holdout_ap": 0.7445613387095803,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03843461190599995,
+  "generalization_gap": 0.0001946363579999888,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8354864,
+    "tokens_in_uncached": 141296,
+    "tokens_in_cached": 8213568,
+    "tokens_out": 58753,
+    "turns": null,
+    "api_calls": 160,
+    "method": "sum-of-160-events",
+    "cost_usd": 0.297,
+    "cached_share": 0.983
+  },
+  "cpu_seconds_python": 17048.7,
+  "cpu_seconds_counted": 6760.5,
+  "cpu_seconds_uncounted": 9757.6,
+  "cpu_seconds_exempt": 530.5,
+  "python_processes": 75,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 377,
+  "fits_counted": 123,
+  "fits_uncounted": 249,
+  "commits": [
+    {
+      "commit": "b92c9ba",
+      "message": "baseline"
+    },
+    {
+      "commit": "d17ddd0",
+      "message": "route+hour categoricals, d10 lr.05 ES"
+    },
+    {
+      "commit": "b7611dc",
+      "message": "minimal cats DOW/carrier/OD + DepTime/Distance, d10 cs.5 rl30 ES"
+    },
+    {
+      "commit": "dbaa87f",
+      "message": "5-member seed/jitter ensemble"
+    },
+    {
+      "commit": "f6bb28d",
+      "message": "8-member ensemble: d12/lr.05 + d11/lr.03/mcw10 x 4 seeds"
+    },
+    {
+      "commit": "a1bda79",
+      "message": "ensemble + minute features (float+cyclic)"
+    },
+    {
+      "commit": "29100d7",
+      "message": "9-member ensemble: 3 recipes incl d12/lr.03, minute feats"
+    },
+    {
+      "commit": "ee33aab",
+      "message": "6-member ensemble with congestion counts, capped trees"
+    },
+    {
+      "commit": "3d8d62f",
+      "message": "3 depth recipes (d11/d12/d13) x 2 seeds with congestion feats"
+    },
+    {
+      "commit": "c8b88b6",
+      "message": "slot30 congestion + d12/d13/d14 recipes"
+    },
+    {
+      "commit": "48f7ed9",
+      "message": "mcw5 recipes, ES100"
+    },
+    {
+      "commit": "a4d99fc",
+      "message": "4-member lean ensemble"
+    },
+    {
+      "commit": "f0c7806",
+      "message": "6-member with cs.45/ss.8 diversity"
+    },
+    {
+      "commit": "89ff3f8",
+      "message": "fix duplicate subsample kwarg; 6-member diversity"
+    },
+    {
+      "commit": "9cbefa3",
+      "message": "fix indentation in member loop"
+    },
+    {
+      "commit": "0afc098",
+      "message": "rl20+alpha1+mcw3 regularization combo"
+    },
+    {
+      "commit": "12ae43e",
+      "message": "remove hardcoded reg_lambda from base"
+    },
+    {
+      "commit": "eb6025f",
+      "message": "4 members rl20 alpha1 recipes"
+    },
+    {
+      "commit": "cf3f52a",
+      "message": "5 members d15 ES80"
+    },
+    {
+      "commit": "a7423b1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16518.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 518.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b3ead5c",
+  "best_commit_eval_auc": 0.7534,
+  "best_commit_holdout_auc": 0.753205363642,
+  "best_commit_holdout_ap": 0.7445613387095803,
+  "best_commit_error": null,
+  "finalized_best": false
+}

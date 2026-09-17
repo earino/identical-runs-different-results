@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 36,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:57:04+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s36-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T08:49:00+00:00",
+  "wall_seconds": 6715.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12839.9,
+  "endpoint_at_end": "ok",
+  "head": "d810d29",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 33,
+  "n_crash": 2,
+  "n_timeout": 5,
+  "best_eval_auc": 0.7588,
+  "final_eval_auc": 0.7588,
+  "holdout_auc": 0.7589018696659999,
+  "holdout_ap": 0.7475390690689082,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04413111792999991,
+  "generalization_gap": -0.00010186966599989855,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7351068,
+    "tokens_in_uncached": 963164,
+    "tokens_in_cached": 6387904,
+    "tokens_out": 62145,
+    "turns": null,
+    "api_calls": 160,
+    "method": "sum-of-160-events",
+    "cost_usd": 3.2827,
+    "cached_share": 0.869
+  },
+  "cpu_seconds_python": 12806.1,
+  "cpu_seconds_counted": 12291.2,
+  "cpu_seconds_uncounted": 4.8,
+  "cpu_seconds_exempt": 510.1,
+  "python_processes": 47,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 123,
+  "fits_counted": 119,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "f3a9a56",
+      "message": "baseline"
+    },
+    {
+      "commit": "b6e6594",
+      "message": "FE v1: hour/minute + cyclical encodings, numeric dates, early-stopped depth-8 ensemble"
+    },
+    {
+      "commit": "e4af000",
+      "message": "capacity upgrade: lr 0.05, depth 10, ES 60, less regularization"
+    },
+    {
+      "commit": "9299782",
+      "message": "more capacity: lr0.03 depth12 ES80 cap2500"
+    },
+    {
+      "commit": "0432688",
+      "message": "congestion count features: origin/dest x hour, route, carrier x hour"
+    },
+    {
+      "commit": "6678524",
+      "message": "extend congestion family: marginals, route x hour, dow, 30-min slots, share ratios"
+    },
+    {
+      "commit": "52a5702",
+      "message": "retune for wider feature set: lr0.02 mcw1 colsample0.75"
+    },
+    {
+      "commit": "2e3476c",
+      "message": "seasonal schedule structure: origin/route/carrier x month counts, 15-min slots, route distance deviation"
+    },
+    {
+      "commit": "e998294",
+      "message": "3-fold bagged ensemble with per-fold early stopping"
+    },
+    {
+      "commit": "466f223",
+      "message": "depth 14, ES 60 cap 1500"
+    },
+    {
+      "commit": "9e4dfc6",
+      "message": "depth 16, ES 50 cap 1200"
+    },
+    {
+      "commit": "5d8ed9f",
+      "message": "depth 18, ES 40 cap 1000"
+    },
+    {
+      "commit": "ad8cc28",
+      "message": "colsample_bytree 0.6"
+    },
+    {
+      "commit": "4b364a6",
+      "message": "lr 0.03 + 4-fold bagging"
+    },
+    {
+      "commit": "18b229e",
+      "message": "carrier footprint at origin/dest + share"
+    },
+    {
+      "commit": "322f69f",
+      "message": "airline presence on route: cnt_carrier_route, n carriers, share"
+    },
+    {
+      "commit": "8248c9a",
+      "message": "subsample 0.75"
+    },
+    {
+      "commit": "f983012",
+      "message": "depth 20, ES 20 cap 600"
+    },
+    {
+      "commit": "19cdc80",
+      "message": "depth 24, cap 500"
+    },
+    {
+      "commit": "1db43eb",
+      "message": "colsample_bytree 0.55, cap 400"
+    },
+    {
+      "commit": "d810d29",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 12296.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 33.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1db43eb",
+  "best_commit_eval_auc": 0.7588,
+  "best_commit_holdout_auc": 0.7589018696659999,
+  "best_commit_holdout_ap": 0.7475390690689082,
+  "best_commit_error": null,
+  "finalized_best": true
+}

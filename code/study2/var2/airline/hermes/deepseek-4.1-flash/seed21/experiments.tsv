@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6db92ac	0.7141	ok	3	baseline
+2	3b1d1d0	0.7111	ok	4	1000+ trees lr0.05 early stop
+3	6e705aa	0.7228	ok	3	time+calendar features, depth 3
+4	eec59c9	0.7256	ok	3	TE airport x hour
+5	c58f517	0.7315	ok	4	TE airport x 30min bucket
+6	6377037	0.7328	ok	3	TE carrier x 30min bucket
+7	0fbeeb3	0.7333	ok	3	TE bucket 15min
+8	f4a86c3	0.7385	ok	4	TE carrier x origin x 15min
+9	79ed6e0	0.7426	ok	4	TE carrier x dest x 15min
+10	87ff46e	0.7510	ok	5	TE flight-slot (carrier x route x 15min)
+11	342de1c	0.7519	ok	5	colsample 0.5
+12	492715f	0.7532	ok	15	seed-bagged ensemble of 8
+13	0ad7799	0.7539	ok	14	TE nfold 3
+14	9f7eb23	0.7572	ok	16	co/cod TE also at 30min
+15	b19c2b4	0.7585	ok	15	TE nfold 2
+16	ce9c46a	0.7589	ok	19	depth 4
+17	fb35000	0.7589	ok	18	add rd_time + o_dow_time keys
+18	f047709	0.7610	ok	24	bag + plain-feature members
+19	3e2d0ab	0.7613	ok	33	4 plain members depth 4-8
+20	8fbb16f	0.7615	ok	40	bag 12 TE + 4 plain
+21	4301ff5	0.7610	ok	40	TE subspace diversity per member
+22	d14a858	0.7620	ok	22	300 trees/member
+23	bb2f452	0.7613	ok	25	traffic volume shares
+24	37d4964	0.7621	ok	22	plain members weight 1.5
+25	959e063	0.7586	ok	46	XGBoost stack over member OOF predictions
+26	76d01a0	0.7619	ok	22	TE members depth 3/4/5 mixed
+27	9342990	0.7602	ok	47	early stopping per member
+28	c365198	0.7610	ok	13	150 trees/member
+29	7b4f29a	0.7621	ok	27	bag 16 + 4 plain
+30	8d7c8df	0.7618	ok	22	min_child_weight 20
+31	90108a6	0.7633	ok	24	L1 regularisation
+32	fb86aea	0.7656	ok	22	L1 regularisation alpha=5
+33	d782af1	0.7645	ok	20	L1 alpha=15
+34	7e533ba	0.7655	ok	22	L1 alpha=8
+35	b6a3ba4	0.7660	ok	24	depth 5 + L1 alpha 5
+36	768b1dc	0.7660	ok	29	depth 6 + L1 alpha 5
+37	1d8afb3	0.7642	ok	24	drop redundant columns
+38	2a33061	0.7655	ok	18	200 trees/member + L1 depth5
+39	3838ff4	0.7658	ok	26	reg_lambda 5 with reg_alpha 5
+40	6d4e1f1	0.7660	ok	26	member colsample 0.4/0.5/0.6

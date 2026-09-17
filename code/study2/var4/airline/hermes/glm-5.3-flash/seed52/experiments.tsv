@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d657d03	0.7141	ok	4	baseline
+2	e4094ed	0.7007	ok	8	exp2: bigger model 600 trees lr.05 depth8
+3	870a9e8	0.7077	ok	4	exp3: 600 trees lr.05 depth6 subsample.8
+4	9d6e7da	0.7018	ok	15	exp4: 1000 trees lr.03 depth9
+5	e257d28	0.6965	ok	7	exp5: depth10 minchild5 lambda2 400 trees
+6	76c712b	0.6902	ok	8	exp6: 2000 trees lr.1 depth4
+7	3f00b9c	0.0000	crash	2	exp7: time features + numeric month/day/dow + logdist
+8	72141be	0.7186	ok	2	exp7: time features + numeric date cols + logdist
+9	ba92f71	0.7207	ok	7	exp9: early stopping chrono split lr.05 depth8
+10	433ddc6	0.7218	ok	16	exp10: lr.02 4000 trees depth8
+11	3199a9d	0.7264	ok	31	exp11: TE carrier/origin/dest/route + full-train refit
+12	fbf2cd5	0.0000	crash	1	exp12: conditional TE origin/route-month, origin-hour
+13	f63536d	0.6272	ok	3	exp12: conditional TE origin/route-month, origin-hour
+14	ddb00d1	0.7214	ok	6	exp14: OOF TE + refit on full train
+15	6b8eda2	0.0000	crash	1	exp15: + OriginHour TE
+16	5116fbd	0.0000	crash	1	exp15: + OriginHour TE
+17	fda16ed	0.7248	ok	45	exp15: + OriginHour TE
+18	04a1981	0.7268	ok	80	exp18: 4-model seed bag
+19	ec96d4a	0.7208	ok	66	exp19: doy cyclical + summer x hour
+20	1cedb59	0.7266	ok	83	exp20: traffic counts origin/dest/route
+21	f250145	0.7263	ok	63	exp21: day-of-week TE
+22	a343363	0.7246	ok	77	exp22: depth7
+23	13c4607	0.7267	ok	77	exp23: depth9 sub.9 col.9
+24	13f5815	0.7267	ok	83	exp24: lambda2 mcw3
+25	41a7dec	0.0000	timeout	120	exp25: bag of 8
+26	f9b3298	0.0000	crash	12	exp26: lr.03 bag6
+27	4909ab4	0.7269	ok	85	exp26: lr.03 bag6
+28	aea197e	0.7278	ok	76	exp28: distbucket x hour TE
+29	b792ef5	0.7285	ok	80	exp29: carrier x hour TE
+30	46a959c	0.7264	ok	75	exp30: month x hour TE
+31	a825899	0.7279	ok	64	exp31: dow x hour TE
+32	2defeb8	0.7286	ok	89	exp32: 1.15x trees refit
+33	7be545c	0.7288	ok	91	exp33: half-hour slot TE
+34	61d2a39	0.6834	ok	6	exp34: route x hour TE
+35	71bd7a1	0.7293	ok	91	exp35: diversified bag
+36	2b42309	0.7289	ok	119	exp36: bag8 diversified lr.035
+37	0ae35a8	0.7291	ok	83	exp37: DistHour alpha30
+38	8cec992	0.7286	ok	73	exp38: depth-mixed bag
+39	72e268a	0.7290	ok	92	exp39: CarrierHour alpha30
+40	71bd7a1	0.7293	ok	88	

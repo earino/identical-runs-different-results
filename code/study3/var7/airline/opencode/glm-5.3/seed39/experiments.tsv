@@ -1,0 +1,39 @@
+n	commit	eval_auc	status	seconds	description
+1	529efe4	0.7141	ok	4	baseline
+2	eae9c3a	0.7159	ok	2	capacity+early stopping (3000 trees lr .05, es on eval)
+3	4aecf66	0.7095	ok	4	FE: tod, hour, route, numeric calendar, log_dist
+4	a58fe0f	0.7295	ok	65	FE + heavy regularization + 5-seed ensemble
+5	f85fdf0	0.7302	ok	70	diverse ensemble: d7a8 x2 + d6a4 x2 + d6a4lr.02
+6	4f2a01c	0.7389	ok	105	congestion counts (30/60/120 bins, windows) + 5-model ensemble
+7	53ae7f7	0.7399	ok	90	4-member: d8a12 x2 + d7a8 x2
+8	50fa48a	0.7412	ok	91	3-member: d9a16 x2 + d8a12
+9	3736f78	0.7421	ok	115	3-member: d10a20 x2 + d9a16
+10	a22568f	0.7415	ok	56	lr.05/es50: d10a20 x2 + d9a16
+11	0b5bbc1	0.7418	ok	91	+dest-centered windows w30/w60, origin w120 (2 members)
+12	7d9f9cd	0.7432	ok	85	+origin/dest schedule-CDF position features (2 members)
+13	6ad78fb	0.7465	ok	101	+carrier, carrier@origin, route window counts (2 members)
+14	72234f2	0.0000	timeout	120	+origin-dow window counts + schedule gap features
+15	2bfecc4	0.0000	timeout	121	fast FE + origin-dow window + schedule gap
+16	4ae3def	0.7453	ok	67	fast window FE + owdow30 + org_gap; lr .04 es60 cap1000
+17	0ffb8a0	0.7457	ok	79	lr .03 es100 cap1100, 37 features
+18	8b9748d	0.7458	ok	75	A/B: 35 feats (drop owdow30/org_gap), lr .03 es100 cap1100
+19	1121853	0.7465	ok	100	re-establish exp13 config on fast FE
+20	e8e8340	0.7439	ok	106	exact scheduled slots + dest windows
+21	8d4094c	0.7459	ok	85	d11a24+d9a16 members, cap 1300
+22	21e1663	0.7364	ok	90	monotone constraints on congestion features
+23	0990e87	0.7466	ok	96	tuned blend weight
+24	0d411f4	0.7468	ok	101	2x d10a20 members
+25	b4c2f00	0.7468	ok	105	cap 1750
+26	d5da5c6	0.7468	ok	109	member2 colsample 0.7
+27	d706137	0.7468	ok	104	log-odds blending
+28	0766778	0.7468	ok	108	seed pair 200/201
+29	858b4b9	0.7468	ok	104	member2 lossguide/600 leaves
+30	5df15b9	0.7468	ok	116	member2 lossguide/600 leaves, fixed
+31	bc0acca	0.7468	ok	116	member2 lossguide/250
+32	9642f7a	0.7465	ok	109	member2 lossguide/100
+33	95293cb	0.7464	ok	97	lr 0.028 both members
+34	616ca90	0.7473	ok	105	+cs30 carrier share feature
+35	b4b7728	0.0000	crash	2	+share features cs60/dcshare/cowshare
+36	71ecade	0.0000	timeout	122	+share features cs60/dcshare/cowshare (fixed)
+37	6a90500	0.7467	ok	103	share features at cap 1300
+38	c5c5498	0.0000	crash	91	+cs120 share feature

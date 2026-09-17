@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	7a86663	1789509040	baseline
+01	52d01b8	1789509118	exp5: FE v1 without Route, baseline model
+02	98a0333	1789509194	exp7: hour TEs + DepHour, ES refit model
+03	0dd2718	1789509227	exp9: add OriginxHour and CarrierxHour TE (M=100)
+04	c7ed8bd	1789509778	exp19: 6 members lr0.04 max_bin128 ES50, xgb.train
+05	542b0b2	1789509972	exp21: TE-smoothing-diverse ensemble
+06	da118e5	1789510173	exp23: VALID_FRAC 0.3 + member diagnostics
+07	9ac3869	1789510275	exp24: max_bin 256
+08	9fcabe9	1789510376	exp25: swap weakest member for d8 mcw1
+09	d2f26ba	1789511873	exp28: VALID_FRAC 0.4 (restore best)
+10	c1548d2	1789511873	exp38: swap d10 member for d8 seed clone

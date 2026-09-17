@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	fe505ca	0.7141	ok	3	baseline
+2	20cb6e7	0.7134	ok	2	eng time+date feats, log dist
+3	b5d0b16	0.7021	ok	5	capacity 500x8 lr.05
+4	a5fc460	0.7159	ok	2	reg shallow 300x4
+5	5e9d5b2	0.7155	ok	3	depth3 600 trees
+6	f529b53	0.7065	ok	3	te+freq encodings
+7	40809fe	0.7166	ok	2	freq encodings
+8	656fb45	0.7162	ok	3	cyclical tod feats
+9	bd5ed20	0.7169	ok	7	4-seed ensemble
+10	ff33faf	0.7192	ok	11	depth6 heavy reg
+11	bdd1f55	0.7183	ok	18	depth8 heavier reg
+12	e983882	0.7184	ok	14	depth6 stronger reg
+13	ea0a4aa	0.7195	ok	11	doy seasonal feats
+14	ccbc47f	0.7199	ok	13	connectivity+share feats
+15	3a6a621	0.7171	ok	20	early stopping internal split
+16	0b546ee	0.7162	ok	22	800 trees
+17	5af88a3	0.7206	ok	9	250 trees
+18	8df494f	0.7197	ok	6	150 trees
+19	19ece41	0.7167	ok	8	one-hot cats
+20	cd8ef30	0.7206	ok	13	diverse ensemble 6 models
+21	a702462	0.7206	ok	16	8-seed ensemble
+22	d1c10fc	0.7195	ok	8	stronger reg @250
+23	882e265	0.7202	ok	10	UNK category fallback
+24	eed444c	0.7209	ok	9	seasonal h2 + hour + logdist
+25	0069fea	0.0000	crash	1	hour/tod categoricals
+26	f5d485e	0.7219	ok	9	hour/tod categoricals (fixed)
+27	8974041	0.7256	ok	9	dow_hour/carrier_hour interactions
+28	e682e4a	0.7305	ok	16	origin/dest x hour + inter freqs
+29	536a29e	0.7300	ok	41	route_hour, origin_dow, dest_dow
+30	7925a72	0.7279	ok	20	route + carrier_origin cats
+31	5cb28ea	0.7331	ok	24	400 trees re-probe
+32	e183ec9	0.7343	ok	33	600 trees re-probe
+33	b8cc905	0.7342	ok	50	900 trees re-probe
+34	1dd9dcf	0.7139	ok	43	month interactions
+35	baadc1b	0.7323	ok	30	stronger reg @600
+36	6fb2a90	0.7340	ok	33	holiday flags
+37	6b84cbb	0.7362	ok	32	dist band x hour
+38	d379a1a	0.7372	ok	37	finer dist bands
+39	65f2fa7	0.7366	ok	36	carrier_dow, dist_dow
+40	2207b13	0.7371	ok	34	125-mile dist bands

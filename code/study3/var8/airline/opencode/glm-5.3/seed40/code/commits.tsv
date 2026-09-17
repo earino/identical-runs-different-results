@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	b1a064f	1789582829	baseline
+01	b6fee04	1789582880	FE deptime/calendar + ES depth6 lr0.1
+02	368d244	1789582956	5-fold CV ensemble with per-fold early stopping
+03	f7bacde	1789583016	10-fold ensemble
+04	b4c949c	1789583054	add full-data model with mean ES iters
+05	fe6d4fd	1789583096	TE: hour, origin x 3h, dest x 3h (smoothed)
+06	dbf8389	1789583253	seed bagging: 2 seeds x 10 folds + 2 full-data models
+07	9735787	1789583376	4-seed bagged ensemble (44 models)
+08	202227d	1789583504	TE weight 50 for OriginHour/DestHour
+09	c2d3366	1789583652	lr 0.07 ES40, 2 seeds
+10	36f51c9	1789583770	lr 0.05 ES50, 2 seeds
+11	70dd387	1789587554	RF-style: cs0.4 d16, 1 seed x 10 folds + 2 full
+12	802ddbc	1789588170	cs0.4 d10, 2 seeds x 10 folds, aligned features
+13	952a356	1789588280	cs0.4 d12, 2 seeds x 10 folds
+14	226ac0b	1789588504	cs0.4 d13, 2 seeds x 10 folds

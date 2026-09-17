@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	94767bd	0.7141	ok	3	baseline
+2	fd7d038	0.7154	ok	8	numeric time features + depth8 lr0.05 600 trees
+3	d42befb	0.6971	ok	14	route Origin_Dest categorical
+4	7addfd2	0.7103	ok	10	target encoding (route, origin-hour, dest-hour)
+5	a2940e4	0.7100	ok	31	early stopping lr0.02 subsample0.8
+6	b745c9c	0.7148	ok	20	capacity probe 1500@0.03 full fit
+7	56ed41d	0.7197	ok	10	colsample 0.7 + 800 trees
+8	df813f3	0.7236	ok	15	lr0.03/1200 + colsample 0.7
+9	bdfc1c3	0.7246	ok	14	lr0.03/1200 + bylevel0.7 + L1=1
+10	d5b6ec5	0.7347	ok	19	hour_cat + oh cat + counts
+11	da4fffa	0.7367	ok	76	4-seed/colsample ensemble
+12	7a74430	0.7373	ok	112	ens4 lr0.02/1800
+13	38fe00d	0.7404	ok	116	ens4 + carrier@hour cat

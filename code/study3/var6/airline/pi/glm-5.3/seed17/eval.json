@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 17,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T21:11:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s17-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T22:27:21+00:00",
+  "wall_seconds": 4569.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6365.8,
+  "endpoint_at_end": "ok",
+  "head": "5d5eee2",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7512,
+  "final_eval_auc": 0.7512,
+  "holdout_auc": 0.7506316358279999,
+  "holdout_ap": 0.7433476205095078,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.035860884091999834,
+  "generalization_gap": 0.0005683641720001242,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7229510,
+    "tokens_in_uncached": 1262022,
+    "tokens_in_cached": 5967488,
+    "tokens_out": 66874,
+    "turns": null,
+    "api_calls": 149,
+    "method": "sum-of-149-events",
+    "cost_usd": 3.6126,
+    "cached_share": 0.825
+  },
+  "cpu_seconds_python": 6333.5,
+  "cpu_seconds_counted": 5646.4,
+  "cpu_seconds_uncounted": 3.1,
+  "cpu_seconds_exempt": 683.9,
+  "python_processes": 47,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 499,
+  "fits_counted": 451,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "7763aef",
+      "message": "baseline"
+    },
+    {
+      "commit": "d492094",
+      "message": "FE without route categorical, 30 trees"
+    },
+    {
+      "commit": "626de21",
+      "message": "100 trees"
+    },
+    {
+      "commit": "fe6fcdd",
+      "message": "depth 8, 200 trees, subsample/colsample 0.8, mcw 10"
+    },
+    {
+      "commit": "97c6759",
+      "message": "ensemble of 3 XGB configs, seed-averaged"
+    },
+    {
+      "commit": "00ebf59",
+      "message": "6-config diverse ensemble"
+    },
+    {
+      "commit": "9210e75",
+      "message": "12-member seed-bagged ensemble"
+    },
+    {
+      "commit": "832a2c1",
+      "message": "phase-aligned day cycle features (anchor 5am)"
+    },
+    {
+      "commit": "918b288",
+      "message": "schedule volume features (no target)"
+    },
+    {
+      "commit": "0413388",
+      "message": "finer volume features: carrier-hour, hour-block volumes, shares"
+    },
+    {
+      "commit": "7dbf245",
+      "message": "arrival congestion features: est arrival time, dest arrival volume, rel position"
+    },
+    {
+      "commit": "f5480ab",
+      "message": "windowed congestion density +-60min, arrival cyclical"
+    },
+    {
+      "commit": "1c2b76b",
+      "message": "asymmetric + wider congestion windows, intensity shares"
+    },
+    {
+      "commit": "53eed16",
+      "message": "refactor: fast windowed densities, prepare once per predict"
+    },
+    {
+      "commit": "da4b1c2",
+      "message": "incoming aircraft supply + same-carrier bank congestion"
+    },
+    {
+      "commit": "08bc689",
+      "message": "16-member ensemble (8 configs x 2 seeds)"
+    },
+    {
+      "commit": "acf985b",
+      "message": "24-member ensemble (8 configs x 3 seeds)"
+    },
+    {
+      "commit": "f09a956",
+      "message": "ablate native carrier/origin/dest categoricals"
+    },
+    {
+      "commit": "499ef27",
+      "message": "fine 30-min windows + forward arrivals at dest"
+    },
+    {
+      "commit": "7a12e48",
+      "message": "15-min windows, fine incoming, asymmetric broad"
+    },
+    {
+      "commit": "5d5eee2",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5649.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 32.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "7a12e48",
+  "best_commit_eval_auc": 0.7512,
+  "best_commit_holdout_auc": 0.7506316358279999,
+  "best_commit_holdout_ap": 0.7433476205095078,
+  "best_commit_error": null,
+  "finalized_best": true
+}

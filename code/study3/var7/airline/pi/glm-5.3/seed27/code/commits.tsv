@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	946c1e4	1789583291	baseline
+01	3a8deae	1789583412	FE: minute-of-day + cyclical, numeric date parts, log dist, route cat
+02	34fd750	1789583941	target-encoding features (hour/route/origin/dest/carrier/date + org_hour,car_hour,min30), lr 0.05
+03	d7581f2	1789583987	target-encoding features (hour/route/origin/dest/carrier/date + org_hour,car_hour,min30), lr 0.05 [fix te col bug]
+04	2a790d0	1789584319	out-of-fold target encodings for the training matrix
+05	dc92042	1789584523	lossguide 64 leaves + finer 15-min time TE
+06	fa2463c	1789584848	route/origin/dest/carrier x time-granularity TEs (min15/min30)
+07	e8ceb50	1789585214	log-count companions for all TE keys + hour_month TE
+08	386c8b6	1789585329	org_min15 TE
+09	2623e56	1789585347	5-member jittered XGB ensemble
+10	6dc3bd5	1789585536	ensemble diversity via per-member dropped feature groups
+11	9cfc083	1789586131	8-member subset-diverse ensemble
+12	c4f6ed7	1789586455	minute-of-hour + carrier/origin/dest x dist-bucket interaction TEs
+13	02ae709	1789587349	3-fold OOF target encodings
+14	6ec5fdc	1789587638	2-fold OOF target encodings

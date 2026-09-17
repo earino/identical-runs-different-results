@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	e1abf17	1789538149	baseline
+01	0f6cf4f	1789538267	time features: hour/minute/cyclic tod, numeric calendar
+02	8a92855	1789538660	deep trees d13 + colsample0.4 + lambda20
+03	b8eaf88	1789539333	hour x carrier interaction categorical
+04	9fb2107	1789539553	add hour x origin interaction, 500 trees
+05	b62a211	1789539979	3-model xgboost ensemble (d13 cs.4 / d16 / d13 cs.3)
+06	fba8be8	1789540019	6-model ensemble
+07	19c4e68	1789540302	8-member ensemble (+lossguide, +gamma)
+08	1f3fb21	1789540591	ensemble encoding diversity: one-hot low-card, tighter cat threshold
+09	ae183ed	1789540843	ensemble feature-view diversity (2 members on reduced views)
+10	a074023	1789541252	L1 regularization member
+11	e7c4148	1789541338	max_delta_step=1 all members
+12	6b6d004	1789541759	L1 regularization on all members
+13	aab2d47	1789542695	min_child_weight 15
+14	12c8de6	1789542795	min_child_weight 10
+15	672e25f	1789542929	min_child_weight 6 with 350 trees on lr.05 members
+16	f8b3e63	1789543046	min_child_weight 3, lr.03 member 600 trees
+17	bc4364c	1789543173	seed stability check (+1000)
+18	86a3cd7	1789543413	final: tidy train.py (behaviour identical to experiment 39)

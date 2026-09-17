@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d6ef39d	0.7141	ok	4	baseline
+2	0b51fcf	0.7154	ok	4	ordinal codes + DepTime decomposition + 300 trees
+3	6261ec8	0.7149	ok	4	target+count encodings for carrier/origin/dest/route
+4	ab2d33a	0.0000	crash	22	capacity: depth8/lr0.05 with early-stopped rounds
+5	fc3586e	0.0000	crash	2	capacity: depth8/lr0.05 with early-stopped rounds
+6	ddaf155	0.7226	ok	23	capacity: depth8/lr0.05 with early-stopped rounds
+7	54fb8a4	0.7226	ok	36	count/congestion features (origin/dest/carrier x time bucket, route)
+8	41f8696	0.7261	ok	44	capacity: depth12/lr0.03/min_child_weight10
+9	294020e	0.7282	ok	38	max_cat_threshold=256 for origin/dest partition splits
+10	8445f4f	0.7279	ok	36	max_cat_threshold=512
+11	866a743	0.7100	ok	76	Route (origin_dest) as categorical feature
+12	7205363	0.7275	ok	65	eta=0.02 depth12
+13	5537564	0.7296	ok	81	3-seed bagged ensemble
+14	a8aaa64	0.0000	timeout	123	max_bin=512 finer numeric splits
+15	f21eab0	0.7318	ok	54	stronger regularization: subsample/colsample 0.6, mcw20, lambda5
+16	4d6ad6f	0.7315	ok	36	stronger still: colsample0.4 subsample0.5 mcw40 lambda10
+17	48f72f4	0.7327	ok	74	eta=0.02 with winning regularization
+18	4095a3f	0.7325	ok	61	max_depth=16 at winning regularization
+19	09c6aa0	0.0000	timeout	130	L1 regularization alpha=1
+20	0dcb059	0.7324	ok	59	max_cat_to_onehot=8 (+ runtime guard)
+21	5f09bdd	0.7327	ok	70	rank-average pooling of 3-seed bag
+22	b6b9815	0.7320	ok	111	diverse ensemble: deep eta0.02 + shallow eta0.05
+23	d8865f1	0.7316	ok	73	gamma=1.0 min_split_loss
+24	ee78e25	0.7321	ok	90	colsample_bynode=0.7
+25	ebe9566	0.7327	ok	117	lossguide grow_policy, max_leaves=512
+26	a640e34	0.7235	ok	90	ablation: remove cyclic time + log-distance features
+27	a531a92	0.7306	ok	72	cyclic calendar features + is_weekend
+28	7b3217c	0.7323	ok	70	per-member diversity: varied colsample/subsample across seeds
+29	d059564	0.7317	ok	100	round selection averaged over 2 validation splits
+30	74a065c	0.7338	ok	65	rounds shrunk to 85% of the validation optimum
+31	19a16ee	0.7346	ok	58	rounds shrunk to 70% of validation optimum
+32	422f171	0.7351	ok	58	rounds shrunk to 55% of validation optimum
+33	8c566aa	0.7354	ok	40	rounds shrunk to 40% of validation optimum
+34	411dee1	0.7356	ok	35	rounds shrunk to 30% of validation optimum
+35	bc1f796	0.7353	ok	26	rounds shrunk to 20% of validation optimum
+36	707d76f	0.7357	ok	49	6-member seed bag (was 3) at best stopping point
+37	086220b	0.7384	ok	67	min_child_weight=10 at the early-stopped regime
+38	258bfbc	0.7398	ok	63	min_child_weight=5
+39	c1eceda	0.7406	ok	91	min_child_weight=2
+40	c9beb93	0.7411	ok	95	min_child_weight=1 (default)

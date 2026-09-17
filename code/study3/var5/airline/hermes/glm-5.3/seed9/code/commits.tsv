@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	ae6e945	1789652621	baseline
+01	4f3e50c	1789652870	feat: 600 trees lr .05 with early stopping, baseline features
+02	ddf1488	1789652889	feat: add DepHour/DepMin numeric features
+03	bcae9b0	1789652926	feat: 5-model seed ensemble with subsample/colsample
+04	70829f5	1789652946	feat: 10-model ensemble
+05	bb81605	1789653038	feat: lr .03 n2000 es100 ensemble
+06	b09c61d	1789653092	feat: depth 8 ensemble
+07	fb59d3e	1789653162	feat: depth 10 ensemble
+08	a1344f8	1789653242	feat: depth 12 ensemble
+09	99c46a2	1789654684	feat: depth 13 es50
+10	d67736a	1789654859	feat: reg_alpha 0.5
+11	cc10188	1789654980	feat: reg_alpha 1.0
+12	e9af3d0	1789655091	feat: reg_alpha 2.0
+13	dc2a9dd	1789655195	feat: reg_alpha 4.0
+14	a508a11	1789656035	feat: subsample 0.9

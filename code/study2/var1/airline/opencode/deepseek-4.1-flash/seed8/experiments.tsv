@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7c5265c	0.7141	ok	4	baseline
+2	2278b19	0.7204	ok	56	engineered time/cyclical features + tuned xgb + early stop
+3	3b65648	0.7147	ok	99	add route categorical + freq
+4	2a51568	0.7181	ok	72	out-of-fold smoothed target encoding
+5	e603932	0.7202	ok	81	depth6 lr0.02 reg
+6	f6e6e3c	0.7148	ok	44	time-detail features + importance log
+7	95c6013	0.7254	ok	15	early stop on eval
+8	5a37ac7	0.7253	ok	6	fixed 541 trees control
+9	8061da5	0.7273	ok	17	depth8
+10	7d7bc32	0.7278	ok	18	depth9
+11	0af2fd7	0.7305	ok	14	depth11
+12	a0aea80	0.7357	ok	13	depth16
+13	6054b12	0.7364	ok	17	unlimited depth
+14	5f100b9	0.7384	ok	20	unlimited depth lr0.02
+15	79c4edf	0.7391	ok	32	unlimited depth lr0.01
+16	c6662b9	0.7399	ok	59	unlimited depth lr0.005
+17	fd72187	0.7401	ok	91	unlimited depth lr0.003
+18	e955955	0.7308	ok	40	mcw20
+19	4e6dfa9	0.0000	timeout	123	mcw1
+20	9e8ba22	0.7294	ok	104	lossguide max_leaves64
+21	bad9cce	0.7413	ok	57	is_next_day feature
+22	16a1ec1	0.7355	ok	74	day_of_year cyclical
+23	024e980	0.7453	ok	56	subsample0.7 colsample0.6
+24	32880a6	0.7451	ok	48	subsample0.6 colsample0.5
+25	b4e41c3	0.7433	ok	58	reg_lambda5
+26	ce05544	0.7417	ok	58	DepTime frequency
+27	9f071bd	0.7451	ok	66	route frequency
+28	b3db4b7	0.7459	ok	62	max_bin512
+29	c2e131a	0.7461	ok	70	max_bin1024
+30	fc0524c	0.7454	ok	58	colsample_bylevel0.6
+31	41b7fec	0.7459	ok	65	gamma1
+32	85b3c1f	0.7462	ok	112	2-model ensemble lr0.008
+33	37199d4	0.7479	ok	72	mcw3
+34	c92001d	0.7472	ok	78	mcw4
+35	3ceb413	0.7495	ok	92	mcw3 colsample0.5
+36	87d7371	0.7481	ok	73	mcw3 colsample0.5 subsample0.6
+37	c2caf40	0.7500	ok	78	colsample0.45
+38	9373cc7	0.7504	ok	86	colsample0.4
+39	b466ec4	0.7498	ok	82	colsample0.35
+40	156d284	0.7504	ok	109	lr0.004 at best config

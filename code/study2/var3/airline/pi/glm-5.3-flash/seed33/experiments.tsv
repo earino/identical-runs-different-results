@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	619fefe	0.7141	ok	4	baseline
+2	ef9421f	0.7112	ok	6	scale up trees + early stopping
+3	8c57bff	0.7136	ok	4	depth 6 with ES
+4	63e30d1	0.7011	ok	11	FE: route pair + calendar/time features
+5	c109a4d	0.7146	ok	5	calendar/time features only (no route)
+6	72c5114	0.7141	ok	5	smoothed target encoding carrier/origin/dest
+7	c17c27d	0.7181	ok	4	strong regularization depth5/mcw20/gamma1/lambda5
+8	df044bc	0.7187	ok	5	stronger reg depth4/mcw50/gamma2/lambda10
+9	7da133e	0.0000	crash	0	even stronger reg + subsampling
+10	b11b1dc	0.7155	ok	8	even stronger reg + subsampling (fixed)
+11	6c1abf4	0.7182	ok	4	depth4/mcw50/gamma2/lambda10 + subsample .8 colsample .8
+12	43382b6	0.7181	ok	6	lr 0.03 with longer ES patience
+13	d745eef	0.0000	crash	3	ensemble 6x depth/seed diverse reg models
+14	ba00918	0.7187	ok	22	ensemble 6x depth/seed diverse reg models (fixed)
+15	18acc5c	0.7255	ok	8	carrier x hour crossed categorical
+16	f805575	0.7170	ok	28	airport x hour crossed categoricals
+17	99d92cd	0.0000	crash	1	dow x hour + carrier x dow crossings
+18	39888f8	0.7243	ok	8	dow x hour + carrier x dow crossings (fixed)
+19	2f355ab	0.7240	ok	12	lighter reg mcw30/gamma1/lambda5 with carrier_hour
+20	12f3aad	0.7216	ok	12	max_bin 64
+21	cac2e57	0.7235	ok	10	drop TE simplification
+22	3eff0ba	0.7234	ok	11	distance - carrier median distance
+23	e667665	0.7241	ok	11	log-frequency encoding
+24	11dda54	0.7243	ok	10	depth5 mcw50 gamma2 lambda10 + carrier_hour
+25	5460e45	0.0000	crash	1	route TE m=100
+26	7bec7fd	0.7202	ok	8	route TE m=100 (fixed)
+27	d77634d	0.7260	ok	20	2-model ensemble depth4+6
+28	eac2791	0.7264	ok	29	3-model ensemble depth 4/5/6
+29	157ec4b	0.7261	ok	52	5-model ensemble
+30	96919c6	0.7264	ok	33	3-model ensemble with colsample diversity
+31	1aae49a	0.7269	ok	23	ES patience 50
+32	0871432	0.7270	ok	24	ES patience 25
+33	418d0f1	0.7273	ok	23	ES val split 0.2
+34	11effd2	0.7247	ok	21	drop doy/weekend/redeye
+35	9af209a	0.7270	ok	18	lr 0.08 patience 25
+36	db8312b	0.7275	ok	21	mcw 40
+37	c199d89	0.7274	ok	20	gamma 1.5
+38	0387c3b	0.7270	ok	23	reg_lambda 8
+39	e442b3a	0.7267	ok	23	subsample 0.85
+40	db8312b	0.7275	ok	19	stability re-run of best config (mcw40)

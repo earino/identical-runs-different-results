@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	28f0ee1	0.7141	ok	4	baseline
+2	80f0fc9	0.7106	ok	3	hyperparams: depth8 lr0.05 early stopping on val split
+3	683e875	0.7066	ok	3	FE: hour/cyclic encodings + route, 200 trees d6
+4	43efac9	0.7103	ok	1	FE + baseline 30-tree model
+5	7d2eaa6	0.7132	ok	2	FE v2: raw cats + hour features, no Route, 30 trees
+6	fce0745	0.7026	ok	2	TE: route/origin/dest/carrier/hour, 30 trees
+7	99241dd	0.7204	ok	3	fourier hour + minute features, shallow regularized model
+8	ee35032	0.7331	ok	9	lossguide lg20 col0.5 n2000 fourier8
+9	e7f035f	0.7355	ok	41	diverse 5-model ensemble
+10	e7f035f+dirty	0.7357	ok	71	
+11	e7f035f+dirty	0.7360	ok	89	
+12	e7f035f+dirty	0.7357	ok	104	
+13	b360437	0.7360	ok	87	10-model diverse ensemble
+14	0da258a	0.7359	ok	97	11 members, one no-minute feature view
+15	bd8bb91	0.7356	ok	82	20 members n1000 lr0.08
+16	5bf7306	0.7363	ok	89	lambda=6 ensemble

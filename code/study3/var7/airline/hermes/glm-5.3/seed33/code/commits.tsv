@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	9c2714b	1789646311	baseline
+01	0ec2569	1789646429	300 trees fixed
+02	3f24ffa	1789646454	numeric+cyclical time features
+03	06de87e	1789646735	depth-1..7 ensemble, lr .05, 300 trees
+04	30d15a3	1789646814	time + schedule-density features
+05	cc834a2	1789646924	sched30 + dow-hour counts
+06	8d53a08	1789647235	route counts+means, drop time/dowh (simplify)
+07	c55d56f	1789648591	depth range 1-10
+08	081fdcd	1789649973	colsample 0.3, ne600 lr0.03
+09	af123c6	1789650108	20 members cs 0.2+0.3
+10	646d28f	1789650386	month-recency sample weights
+11	6385492	1789650569	15-min block counts
+12	b8b802b	1789650870	restore best (5-min counts) after accidental revert
+13	b71a063	1789650884	flight-identity counts
+14	6a8a01c	1789651081	log distance

@@ -1,0 +1,204 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 36,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:46:38+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s36-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T04:26:41+00:00",
+  "wall_seconds": 2403.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7420.2,
+  "endpoint_at_end": "ok",
+  "head": "e85c6e1",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 31,
+  "n_crash": 5,
+  "n_timeout": 4,
+  "best_eval_auc": 0.9833,
+  "final_eval_auc": 0.9833,
+  "holdout_auc": 0.785453706774,
+  "holdout_ap": 0.7842002798100869,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.07068295503799993,
+  "generalization_gap": 0.197846293226,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6652569,
+    "tokens_in_uncached": 48601,
+    "tokens_in_cached": 6603968,
+    "tokens_out": 67993,
+    "turns": null,
+    "api_calls": 135,
+    "method": "cumulative-max",
+    "cost_usd": 0.2394,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 7239.8,
+  "cpu_seconds_counted": 6825.5,
+  "cpu_seconds_uncounted": 22.7,
+  "cpu_seconds_exempt": 391.5,
+  "python_processes": 56,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 280,
+  "fits_counted": 267,
+  "fits_uncounted": 2,
+  "commits": [
+    {
+      "commit": "8adf6be",
+      "message": "baseline"
+    },
+    {
+      "commit": "c2715ff",
+      "message": "E3: dep_minute linear + hh_block categorical, same E2 params"
+    },
+    {
+      "commit": "a97a197",
+      "message": "E3b: dep_minute linear + hh_block categorical, fixed cat_levels fit"
+    },
+    {
+      "commit": "70b62bb",
+      "message": "E4: dom_bin cycle, carrier_hh, route cat, carrier freq+rank"
+    },
+    {
+      "commit": "c7c58ef",
+      "message": "E4b: dom_num string fix; dom_bin, carrier_hh, route cat, carrier freq/rank"
+    },
+    {
+      "commit": "20d60cd",
+      "message": "E4c: carrier_hh level-fit fix"
+    },
+    {
+      "commit": "cc03a5c",
+      "message": "E4d: drop max_cat_to_onehot (invalid 0 in xgb 3.4)"
+    },
+    {
+      "commit": "2c30336",
+      "message": "E5: native cat partitioning max_cat_threshold=2000, raw dom strings, drop E4 extras"
+    },
+    {
+      "commit": "3625fcf",
+      "message": "E5b: hh_block level fit fix"
+    },
+    {
+      "commit": "100b68c",
+      "message": "E6: E3b + route Origin>Dest categorical"
+    },
+    {
+      "commit": "3412d45",
+      "message": "E7: E3b re-land (0.7165 best)"
+    },
+    {
+      "commit": "f573e64",
+      "message": "E8: canonical feature order + colsample 1.0 (order-invariant)"
+    },
+    {
+      "commit": "bb8527f",
+      "message": "E9: E3b config restored exactly (canonical order, colsample 0.8)"
+    },
+    {
+      "commit": "14018c5",
+      "message": "E10: 5-fold ES CV ensemble, no refit"
+    },
+    {
+      "commit": "a163897",
+      "message": "E14: 10-seed bag"
+    },
+    {
+      "commit": "8920ea8",
+      "message": "E15: raw DepTime categorical (1219 levels) replaces hh_block"
+    },
+    {
+      "commit": "f8285c1",
+      "message": "E16: E11 restore (5-seed bag, best 0.7170)"
+    },
+    {
+      "commit": "cc6c78a",
+      "message": "E17: + max_leaves=32"
+    },
+    {
+      "commit": "fa4d454",
+      "message": "E18: lossguide max_leaves 64"
+    },
+    {
+      "commit": "d96bb62",
+      "message": "E19: lossguide max_leaves 128"
+    },
+    {
+      "commit": "471c2a2",
+      "message": "E20: hetero bag (3 lossguide + 2 depthwise)"
+    },
+    {
+      "commit": "bcf4e4b",
+      "message": "E22: pooled train+eval, 3-seed bag, ES cap 700"
+    },
+    {
+      "commit": "5c8436e",
+      "message": "E23: pooled, 5-seed bag, lr 0.08 cap 500"
+    },
+    {
+      "commit": "ce98c80",
+      "message": "E25: pooled, lossguide 128 leaves, lr 0.08 cap 500"
+    },
+    {
+      "commit": "c8f9041",
+      "message": "E30: pooled, 6-seed 128-leaf bag"
+    },
+    {
+      "commit": "ed27683",
+      "message": "E31: pooled, 256 leaves"
+    },
+    {
+      "commit": "e85c6e1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6848.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 180.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ed27683",
+  "best_commit_eval_auc": 0.9833,
+  "best_commit_holdout_auc": 0.785453706774,
+  "best_commit_holdout_ap": 0.7842002798100869,
+  "best_commit_error": null,
+  "finalized_best": true
+}

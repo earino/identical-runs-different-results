@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	ea56247	1789544556	baseline
+01	6583989	1789544622	model: 60 trees depth 4
+02	bc8c992	1789544662	ensemble: 5-seed average depth4/60trees
+03	02a895c	1789544670	ensemble: heterogeneous 4-model avg (d4/d6/d4-lr.05/d5)
+04	70d273d	1789544677	ensemble: expand to 8 heterogeneous members
+05	6b9f77b	1789544858	ensemble: Caruana greedy selection on internal val
+06	4f96194	1789545064	blend: caruana selection + fixed8 ensemble
+07	cbe0130	1789545329	caruana: val_size 0.25

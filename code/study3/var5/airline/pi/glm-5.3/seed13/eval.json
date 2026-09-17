@@ -1,0 +1,168 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 13,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T09:20:40+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s13-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T10:54:40+00:00",
+  "wall_seconds": 5640.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17883.0,
+  "endpoint_at_end": "ok",
+  "head": "fb22ac1",
+  "n_commits": 17,
+  "n_experiments": 33,
+  "n_ok": 30,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7267,
+  "final_eval_auc": 0.7261,
+  "holdout_auc": 0.726839268878,
+  "holdout_ap": 0.7180500886035195,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.012068517141999968,
+  "generalization_gap": -0.0007392688780000212,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10941198,
+    "tokens_in_uncached": 92174,
+    "tokens_in_cached": 10849024,
+    "tokens_out": 133231,
+    "turns": null,
+    "api_calls": 157,
+    "method": "sum-of-157-events",
+    "cost_usd": 3.536,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 17848.2,
+  "cpu_seconds_counted": 9333.1,
+  "cpu_seconds_uncounted": 8147.8,
+  "cpu_seconds_exempt": 367.3,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 639,
+  "fits_counted": 306,
+  "fits_uncounted": 322,
+  "commits": [
+    {
+      "commit": "039f2b4",
+      "message": "baseline"
+    },
+    {
+      "commit": "46c6ed6",
+      "message": "feat: hour/cyclical/route features + early stopping"
+    },
+    {
+      "commit": "e6bfd9c",
+      "message": "feat: hour features, ES on eval auc, no route cat"
+    },
+    {
+      "commit": "7126fc8",
+      "message": "feat: smoothed target encodings (route/origin/dest/carrier/hour)"
+    },
+    {
+      "commit": "c2d81e0",
+      "message": "feat: day-of-year features, lr 0.03"
+    },
+    {
+      "commit": "cb2645b",
+      "message": "feat: 5-seed ensemble"
+    },
+    {
+      "commit": "5ebe945",
+      "message": "fix: remove duplicate random_state in PARAMS"
+    },
+    {
+      "commit": "54a080f",
+      "message": "feat: 12-member diverse ensemble (depth/lr grid x 2 seeds)"
+    },
+    {
+      "commit": "0e12cda",
+      "message": "fix: remove duplicate max_depth/learning_rate from base params"
+    },
+    {
+      "commit": "012f608",
+      "message": "feat: multi-view ensemble blend (full + no-date x2 + no-carrier + no-airport)"
+    },
+    {
+      "commit": "a9ab483",
+      "message": "feat: add HistGradientBoosting view (3 seeds) at weight 0.15"
+    },
+    {
+      "commit": "de85c1a",
+      "message": "feat: hyperparameter-diverse B view (d5/d6/d7 + lr0.02)"
+    },
+    {
+      "commit": "e645a05",
+      "message": "feat: add RandomForest view (w=0.08), drop slow A lr0.02 member"
+    },
+    {
+      "commit": "9677b10",
+      "message": "feat: HGB view max_iter 400 -> 600"
+    },
+    {
+      "commit": "a806f34",
+      "message": "fix: XGBoost-only multi-view blend (remove HGB/RF - contract requires XGBoost learners only)"
+    },
+    {
+      "commit": "5f8e899",
+      "message": "simplification: drop A lr=0.05 members (A6 -> A4)"
+    },
+    {
+      "commit": "3fad1fc",
+      "message": "feat: reg_lambda=2 on A view (targeted drift regularization)"
+    },
+    {
+      "commit": "fb22ac1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17480.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 34.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9677b10",
+  "best_commit_eval_auc": 0.7267,
+  "best_commit_holdout_auc": 0.727375148358,
+  "best_commit_holdout_ap": 0.7188662749245204,
+  "best_commit_error": null,
+  "finalized_best": false
+}

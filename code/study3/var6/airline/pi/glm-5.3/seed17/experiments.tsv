@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7763aef	0.7141	ok	3	baseline
+2	db8d7a3	0.0000	crash	1	early stopping + more trees
+3	1cec6b6	0.7093	ok	3	early stopping + more trees (fixed)
+4	173493f	0.0000	crash	1	FE: dep time features + route
+5	1e5f06a	0.7046	ok	4	FE: dep time features + route (fixed)
+6	e46a77f	0.7087	ok	2	FE + 30 trees (isolate FE effect)
+7	d492094	0.7187	ok	2	FE minus route (ablation)
+8	626de21	0.7198	ok	2	FE minus route + 100 trees
+9	8cd48e9	0.7114	ok	2	target encoding features
+10	fe6fcdd	0.7205	ok	3	bigger model + regularization
+11	f4dfed5	0.7201	ok	3	time-split early stopping, lr 0.05
+12	97c6759	0.7265	ok	8	3-model ensemble
+13	00ebf59	0.7291	ok	16	6-config ensemble
+14	71ee9c9	0.7284	ok	17	FE: doy + harmonics + hour blocks
+15	8d0797b	0.7288	ok	76	ensemble + dart members
+16	9210e75	0.7295	ok	32	6 configs x 2 seeds
+17	1054115	0.7281	ok	32	interaction TE, heavy smoothing
+18	832a2c1	0.7316	ok	31	aligned tod features
+19	5b818d9	0.7306	ok	33	monotone constraint on depmin_shift
+20	0a087ed	0.7311	ok	46	18-member ensemble
+21	918b288	0.7340	ok	37	volume/congestion features
+22	0413388	0.7365	ok	40	volume features v2
+23	7dbf245	0.7381	ok	42	arrival-time congestion features
+24	f5480ab	0.7408	ok	55	smooth congestion densities
+25	1c2b76b	0.7432	ok	77	congestion windows v2
+26	53eed16	0.7431	ok	44	perf refactor, same features
+27	da4b1c2	0.7439	ok	46	inbound aircraft + carrier bank
+28	1e03f3c	0.7409	ok	52	dow + month schedule deviations
+29	08bc689	0.7443	ok	63	16-member ensemble
+30	0bdaf64	0.7443	ok	61	route congestion + dest outbound queue
+31	acf985b	0.7444	ok	92	24-member ensemble
+32	f50949e	0.7424	ok	90	regularization bump
+33	c214415	0.7440	ok	94	rank averaging
+34	f09a956	0.7491	ok	63	drop native categoricals
+35	d603c52	0.7464	ok	66	carrier volume identity features
+36	22ce051	0.7491	ok	83	32-member ensemble
+37	499ef27	0.7506	ok	64	fine congestion windows
+38	7a12e48	0.7512	ok	72	more congestion window variants
+39	d38d388	0.0000	crash	2	queue sharpness features
+40	7754dc3	0.7485	ok	74	queue sharpness features (fixed)

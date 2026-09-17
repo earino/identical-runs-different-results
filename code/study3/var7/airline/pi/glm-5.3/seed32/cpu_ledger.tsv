@@ -1,0 +1,9 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789602917	39	3.587	uncounted	exit	2.9	0	-c
+1789602929	62	2.728	counted	exit	1.3	1	train.py
+1789603049	108	0.034	counted	exit	0.0	0	train.py
+1789603137	141	0.064	counted	exit	0.0	0	train.py
+1789603144	175	5.385	counted	exit	2.0	1	train.py
+1789603448	221	5.200	counted	exit	1.9	1	train.py
+1789603693	261	4.799	counted	exit	1.8	1	train.py
+1789604165	302	1.787	counted	exit	1.1	0	train.py

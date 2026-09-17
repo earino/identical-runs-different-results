@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	19ccee4	0.7141	ok	3	baseline
+2	eebbd6a	0.0000	crash	1	fe: time/calendar + route cat + freq enc; 2000 trees lr.05 es
+3	9575d81	0.7071	ok	25	fe: time/calendar + route cat + freq enc; 2000 trees lr.05 es
+4	631b3ce	0.7094	ok	2	features only, baseline hyperparams (30t d6 lr.1)
+5	8c079a5	0.7176	ok	2	fe: time+calendar numerics, cats (no route/freq), baseline model
+6	fb494d8	0.7222	ok	2	200t lr.05 d6 mcw5 sub.9 col.8 on best fe
+7	460cb9b	0.7234	ok	3	depth 8 (200t lr.05) on best fe
+8	1e3934e	0.7234	ok	3	depth 8 re-apply on best fe
+9	367241f	0.7266	ok	4	depth 10 (200t lr.05) on best fe
+10	39333ba	0.7265	ok	8	depth 12 / 300t lr.05
+11	5713010	0.7274	ok	9	te: smoothed target encodings carrier/origin/dest/hour (d10,200t)
+12	edaf1fc	0.7267	ok	10	te: + dest_hour, route (d10,200t)
+13	a2ad0b2	0.7255	ok	8	fe: + DayOfYear, IsWeekend (d10,200t, TE)
+14	a49bcd9	0.7260	ok	11	400t d10 lr.05 with TE
+15	511267a	0.7287	ok	11	grow_policy=lossguide max_leaves=256 (200t lr.05)
+16	e09219b	0.7303	ok	17	lossguide max_leaves=512 (200t lr.05)
+17	f810902	0.7307	ok	21	lossguide max_leaves=1024 (200t lr.05)
+18	c800fd2	0.7266	ok	17	min_child_weight=20 @1024 leaves
+19	de1457b	0.7297	ok	29	te: + month_hour, dow_hour @1024 leaves
+20	61efd98	0.7306	ok	23	10-fold OOF target encodings @1024 leaves
+21	ee4b446	0.7332	ok	57	3-seed bagged ensemble @1024 leaves
+22	1cb31eb	0.7356	ok	41	heterogeneous ensemble: lg1024 + d12 + lg512
+23	e400794	0.7377	ok	63	4-model ensemble (+lg2048 lr.06 col.5)
+24	01f153f	0.7407	ok	62	5-model ensemble: +d12x300t col.9 numeric-only
+25	2d1123f	0.7413	ok	67	7-model ensemble (+lg512x120 lr.08, +d8 x200t)
+26	0e84601	0.7428	ok	74	fe: + traffic volume counts on 7-model ensemble
+27	2b628b7	0.0000	crash	5	fe: + hour cyclic, route volume count
+28	773c485	0.7453	ok	75	fe: + hour cyclic, route volume count (retry)
+29	530ee3a	0.7437	ok	84	fe: + dest_hour/origin_dow/carrier_route volume
+30	817b69a	0.7459	ok	81	fe: + route share, origin-hour share
+31	291599d	0.7448	ok	77	row bagging 85% per ensemble member
+32	5f0f076	0.7458	ok	84	DART member (rate_drop .1) in ensemble
+33	344e8fe	0.7467	ok	78	recency weights (linear by month)
+34	f71f046	0.7450	ok	70	recency weights exponential 0.85^(12-m)
+35	f72ec9b	0.7469	ok	84	te: + carrier-origin, carrier-dest
+36	b1d61e8	0.7460	ok	86	8-model ensemble (+d6x300t member)
+37	a9887dc	0.7477	ok	86	max_cat_threshold=128 (all members)
+38	20cd329	0.7478	ok	88	max_cat_threshold=256 (all members)
+39	1c2207d	0.7483	ok	110	strengthen member6: lg1024x250 lr.045
+40	c8cdf0d	0.7482	ok	103	trim member3 (runtime headroom)

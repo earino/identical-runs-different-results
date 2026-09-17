@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:46:41+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:09:37+00:00",
+  "wall_seconds": 1375.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2962.1,
+  "endpoint_at_end": "ok",
+  "head": "da5e92a",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7529,
+  "final_eval_auc": 0.7529,
+  "holdout_auc": 0.7539260476880001,
+  "holdout_ap": 0.7429779066807967,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03915529595200007,
+  "generalization_gap": -0.0010260476880000757,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6473844,
+    "tokens_in_uncached": 6473844,
+    "tokens_in_cached": 0,
+    "tokens_out": 29120,
+    "turns": null,
+    "api_calls": 137,
+    "method": "sum-of-137-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 2757.3,
+  "cpu_seconds_counted": 2457.8,
+  "cpu_seconds_uncounted": 14.8,
+  "cpu_seconds_exempt": 284.7,
+  "python_processes": 57,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 247,
+  "fits_counted": 233,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "cb58ddd",
+      "message": "baseline"
+    },
+    {
+      "commit": "8c618b2",
+      "message": "shallow 250 trees d4 lr.05 mcw5"
+    },
+    {
+      "commit": "83c3d45",
+      "message": "5-seed ensemble of best config"
+    },
+    {
+      "commit": "2af8a03",
+      "message": "diversified ensemble 3 configs x 2 seeds"
+    },
+    {
+      "commit": "3c9533a",
+      "message": "add stable (origin/dest/carrier x hour) target encodings"
+    },
+    {
+      "commit": "94a7416",
+      "message": "add dist_hour and carrier_dow target encodings"
+    },
+    {
+      "commit": "1003f9c",
+      "message": "add carrier_origin_hour TE"
+    },
+    {
+      "commit": "f1d2ddb",
+      "message": "add carrier_dest_hour TE"
+    },
+    {
+      "commit": "829c6ed",
+      "message": "add distance-bucket hour triples"
+    },
+    {
+      "commit": "d9237da",
+      "message": "add carrier x airport x distb x hour quads"
+    },
+    {
+      "commit": "6477015",
+      "message": "add minute-bucket and carrier-hour-dow TEs"
+    },
+    {
+      "commit": "34296f7",
+      "message": "add more mb/db interactions"
+    },
+    {
+      "commit": "c6b7aa9",
+      "message": "add airport x h x mb x db and carrier h mb dow"
+    },
+    {
+      "commit": "241d1b9",
+      "message": "add depth6 config to ensemble with TE features"
+    },
+    {
+      "commit": "1362bb6",
+      "message": "add depth8 regularized config"
+    },
+    {
+      "commit": "1498bc0",
+      "message": "add depth10 heavily regularized config"
+    },
+    {
+      "commit": "eab343d",
+      "message": "add lossguide max_leaves config"
+    },
+    {
+      "commit": "e222c97",
+      "message": "add frequency/count encodings for TE keys"
+    },
+    {
+      "commit": "d9bf9b4",
+      "message": "add base volume encodings"
+    },
+    {
+      "commit": "538c113",
+      "message": "add 5-minute bucket interactions"
+    },
+    {
+      "commit": "da5e92a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2472.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 204.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "538c113",
+  "best_commit_eval_auc": 0.7529,
+  "best_commit_holdout_auc": 0.7539260476880001,
+  "best_commit_holdout_ap": 0.7429779066807967,
+  "best_commit_error": null,
+  "finalized_best": true
+}

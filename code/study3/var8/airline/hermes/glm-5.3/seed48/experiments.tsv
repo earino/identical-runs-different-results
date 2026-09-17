@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	957a916	0.7141	ok	1	baseline
+2	df45c94	0.7114	ok	5	scale trees + early stopping (val from train)
+3	7f2799c	0.0000	crash	2	shallow trees, route, cyclical time, TE features
+4	578460b	0.6971	ok	5	shallow trees, route, cyclical time, TE features
+5	23734e5	0.7174	ok	3	depth3 lr0.03 800 trees + cyclical time feats
+6	9df63ed	0.7224	ok	55	depth ensemble 2..10, 800 trees each
+7	56c582f	0.7353	ok	108	depth ensemble 2..16 cs=0.4, 400 trees
+8	ddabe0d	0.0000	timeout	121	deep ensemble d20..28 step2, cs=0.4
+9	1918b7e	0.7438	ok	89	deep ensemble d20..28, cs0.4, lr.06, 200 trees
+10	7ae72bc	0.7439	ok	101	deep ens + max_bin 512
+11	c0d2279	0.7440	ok	97	7 deep members d16..28, ne150, lr.08
+12	37a6c28	0.7414	ok	104	colsample 0.45
+13	de9a376	0.7440	ok	98	colsample 0.35
+14	5b804e9	0.7436	ok	105	depths 18..30 instead of 16..28
+15	3e638c5	0.7435	ok	97	cs cycle 0.3..0.5 across 7 members

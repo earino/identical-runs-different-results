@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	f7a2074	1789652388	baseline
+01	b53bca6	1789652481	numeric dates + early stopping
+02	43d8e6f	1789652564	deeper trees depth=8, looser regularization
+03	4764a1e	1789652577	depth=10
+04	a809dc9	1789652587	depth=12
+05	84222ce	1789652608	depth=14
+06	be52193	1789652623	depth=16
+07	98d099f	1789652667	depth=18
+08	d5d90b3	1789652690	lr=0.03 patience 200
+09	bdc8c52	1789652766	hour + minute_of_day only
+10	f53d8eb	1789652790	TE on hour/carrier/origin/dest
+11	761e387	1789652931	5-bag seed ensemble
+12	e5f629f	1789653233	flight frequency count features
+13	c87a380	1789653689	airport-hour volume features
+14	e63e44d	1789654054	6 bags
+15	e64f0a2	1789654283	colsample 0.6
+16	90a28b7	1789654390	colsample 0.5
+17	3abb3c3	1789654493	colsample 0.4
+18	b52a027	1789654593	colsample 0.3
+19	c582f0b	1789654692	subsample 0.8
+20	b4168cf	1789655225	depth 20 at cs=0.3

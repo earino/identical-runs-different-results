@@ -1,0 +1,204 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 8,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:14:05+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s8-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:55:15+00:00",
+  "wall_seconds": 2470.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7787.5,
+  "endpoint_at_end": "ok",
+  "head": "d4084f7",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.748,
+  "final_eval_auc": 0.748,
+  "holdout_auc": 0.7493263163799999,
+  "holdout_ap": 0.7386964041954662,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03455556464399989,
+  "generalization_gap": -0.0013263163799999145,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7951829,
+    "tokens_in_uncached": 35093,
+    "tokens_in_cached": 7916736,
+    "tokens_out": 32252,
+    "turns": null,
+    "api_calls": 151,
+    "method": "sum-of-151-events",
+    "cost_usd": 0.2589,
+    "cached_share": 0.996
+  },
+  "cpu_seconds_python": 7474.7,
+  "cpu_seconds_counted": 7091.3,
+  "cpu_seconds_uncounted": 3.9,
+  "cpu_seconds_exempt": 379.5,
+  "python_processes": 45,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 929,
+  "fits_counted": 917,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "af3d486",
+      "message": "baseline"
+    },
+    {
+      "commit": "5ec1351",
+      "message": "regularized depth6 + early stop + refit"
+    },
+    {
+      "commit": "39d53a9",
+      "message": "target encodings: origin/dest/route/carrier/car-hour/org-hour + counts"
+    },
+    {
+      "commit": "c7012d9",
+      "message": "TE v2: leak-free probe (maps fit on tr-part only)"
+    },
+    {
+      "commit": "39d7042",
+      "message": "diagnostic sweep: AUC vs n_estimators"
+    },
+    {
+      "commit": "a230e2d",
+      "message": "grid depth x n, subsample 0.8"
+    },
+    {
+      "commit": "2430d65",
+      "message": "bagged ensemble: 8x (d4 n80 sub8 col8) averaged"
+    },
+    {
+      "commit": "2bb0bfe",
+      "message": "ensemble member grid (4 configs x 8 seeds)"
+    },
+    {
+      "commit": "4102924",
+      "message": "ablation: drop DayofMonth/Month variants"
+    },
+    {
+      "commit": "3d2041e",
+      "message": "capacity re-grid on trimmed features + K16 test"
+    },
+    {
+      "commit": "2d3b623",
+      "message": "deeper capacity grid d5/d6 + K32"
+    },
+    {
+      "commit": "4e83e72",
+      "message": "TE retry on trimmed set + sincos variant"
+    },
+    {
+      "commit": "2c49ea8",
+      "message": "K curve + dow sincos + hour bin + reg variants"
+    },
+    {
+      "commit": "683c171",
+      "message": "ablations: route cat, -dist, -origin, -dest"
+    },
+    {
+      "commit": "4da045d",
+      "message": "lr/capacity/mcw sweep on sincos base"
+    },
+    {
+      "commit": "a55c480",
+      "message": "depth8 + n variants at d7"
+    },
+    {
+      "commit": "81e9358",
+      "message": "d9/d10 + d8 n variants (explicit cfgs)"
+    },
+    {
+      "commit": "784ed7f",
+      "message": "d12 + d10 n variants"
+    },
+    {
+      "commit": "a68490c",
+      "message": "d14/d16 test"
+    },
+    {
+      "commit": "89d20c5",
+      "message": "d16 n120 K8 single config"
+    },
+    {
+      "commit": "13c3195",
+      "message": "d18 n100 K8"
+    },
+    {
+      "commit": "7855efb",
+      "message": "cumulative seed prints; d20 n100"
+    },
+    {
+      "commit": "93beb82",
+      "message": "d18 subsample0.9 K6"
+    },
+    {
+      "commit": "57b5b74",
+      "message": "d18 subsample0.95 K6"
+    },
+    {
+      "commit": "ef3d472",
+      "message": "d18 subsample1.0 K6"
+    },
+    {
+      "commit": "47be798",
+      "message": "max_bin 512 at d18 sub1.0"
+    },
+    {
+      "commit": "d4084f7",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7095.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 312.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "47be798",
+  "best_commit_eval_auc": 0.748,
+  "best_commit_holdout_auc": 0.7493263163799999,
+  "best_commit_holdout_ap": 0.7386964041954662,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,31 @@
+{
+  "description": "US domestic flights. Predict whether a flight's departure is delayed by 15+ minutes (dep_delayed_15min = Y/N). Columns: Month, DayofMonth, DayOfWeek (as c-<n> strings), DepTime (scheduled departure, hhmm as integer), UniqueCarrier, Origin, Dest, Distance (miles). Classes are balanced. train.csv is from 2005, eval.csv from 2006 (time-separated).",
+  "target": "dep_delayed_15min",
+  "positive_label": "Y",
+  "id_columns": [],
+  "split": "train=2005-slice1-100k, eval=2006-slice1-100k, holdout=2006-slice2-1m (szilard/xgboost-autoresearch scenario 2)",
+  "source": "Data Expo 2009 airline on-time data, Harvard Dataverse doi:10.7910/DVN/HG7NV7",
+  "experiment_timeout_hint_seconds": 120,
+  "name": "airline",
+  "columns": [
+    "Month",
+    "DayofMonth",
+    "DayOfWeek",
+    "DepTime",
+    "UniqueCarrier",
+    "Origin",
+    "Dest",
+    "Distance",
+    "dep_delayed_15min"
+  ],
+  "rows": {
+    "train": 100000,
+    "eval": 100000,
+    "holdout": 1000000
+  },
+  "positive_rate": {
+    "train": 0.5,
+    "eval": 0.5,
+    "holdout": 0.5
+  }
+}

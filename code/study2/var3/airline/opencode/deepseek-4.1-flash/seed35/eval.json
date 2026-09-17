@@ -1,0 +1,148 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 35,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:53:20+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s35-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:07:07+00:00",
+  "wall_seconds": 827.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2138.0,
+  "endpoint_at_end": "ok",
+  "head": "7cc86a5",
+  "n_commits": 12,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7209,
+  "final_eval_auc": 0.7209,
+  "holdout_auc": 0.7215341838279999,
+  "holdout_ap": 0.7104163766553178,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.006763432091999921,
+  "generalization_gap": -0.0006341838279999568,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5415590,
+    "tokens_in_uncached": 5415590,
+    "tokens_in_cached": 0,
+    "tokens_out": 18263,
+    "turns": null,
+    "api_calls": 136,
+    "method": "sum-of-136-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 1958.4,
+  "cpu_seconds_counted": 1880.5,
+  "cpu_seconds_uncounted": 2.4,
+  "cpu_seconds_exempt": 75.6,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 211,
+  "fits_counted": 203,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "9665640",
+      "message": "baseline"
+    },
+    {
+      "commit": "ac11cee",
+      "message": "regularized 300 trees depth5"
+    },
+    {
+      "commit": "0c4587f",
+      "message": "OOF target encoding for carrier/origin/dest"
+    },
+    {
+      "commit": "3596f29",
+      "message": "ensemble of 5 xgboost models (depths/seeds)"
+    },
+    {
+      "commit": "424276a",
+      "message": "TE smooth50 cv10"
+    },
+    {
+      "commit": "ffa9836",
+      "message": "stronger regularization ensemble"
+    },
+    {
+      "commit": "c8b0925",
+      "message": "lossguide max_leaves48 max_bin128"
+    },
+    {
+      "commit": "5f56935",
+      "message": "8-model ensemble"
+    },
+    {
+      "commit": "be3218a",
+      "message": "gamma+alpha regularization"
+    },
+    {
+      "commit": "23c6c11",
+      "message": "stronger gamma/alpha/lambda"
+    },
+    {
+      "commit": "2c40197",
+      "message": "dep features under strong reg"
+    },
+    {
+      "commit": "e2215f5",
+      "message": "min_child_weight10"
+    },
+    {
+      "commit": "7cc86a5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1882.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 179.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e2215f5",
+  "best_commit_eval_auc": 0.7209,
+  "best_commit_holdout_auc": 0.7215341838279999,
+  "best_commit_holdout_ap": 0.7104163766553178,
+  "best_commit_error": null,
+  "finalized_best": true
+}

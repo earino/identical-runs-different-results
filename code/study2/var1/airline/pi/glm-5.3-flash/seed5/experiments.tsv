@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	e130baa	0.7141	ok	4	baseline
+2	841748a	0.7084	ok	4	feat eng + early stop, depth9 lr.05
+3	bf1f53d	0.7066	ok	11	fixed 600 trees depth9 lr.05 same features
+4	23fa1c8	0.7222	ok	3	d6 lr.03 n350 slim features
+5	6f2bb66	0.0000	crash	1	OOF TE carrier/origin/dest + hour combos
+6	656edb8	0.7237	ok	4	OOF TE carrier/origin/dest + hour combos (fix)
+7	a994729	0.7252	ok	4	TE route + dow-hour added
+8	6f8892a	0.7250	ok	6	n600 + carrier-dow TE
+9	9483f4c	0.7255	ok	8	3-seed ensemble
+10	25e47a7	0.7273	ok	13	diverse-3 ensemble
+11	4a00b76	0.7291	ok	23	diverse-5 + dest-hour/origin-dow TE
+12	40cdd3a	0.7296	ok	37	8-member ensemble
+13	430306d	0.7302	ok	42	avg-10 with subset members
+14	c1a76b4	0.7306	ok	53	12-member ensemble
+15	9151406	0.7305	ok	56	volume features
+16	f02db66	0.7323	ok	57	volume features (key fix)
+17	376304e	0.7329	ok	78	16-member ensemble
+18	c6118f0	0.0000	timeout	120	16 members x2 trees
+19	af6d2d6	0.7338	ok	109	16 members x1.5 trees
+20	21ff413	0.7341	ok	119	mixed TE seeds + asymmetric tree scaling

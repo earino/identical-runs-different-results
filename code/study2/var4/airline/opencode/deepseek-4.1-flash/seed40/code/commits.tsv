@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	a599bdc	1789489310	baseline
+01	152d500	1789489455	depth4 100t + train AUC diag
+02	b28561e	1789489459	depth3 200t
+03	39c9684	1789489519	ensemble of 5 diverse shallow models
+04	b777bb9	1789489529	ensemble of 10 diverse shallow models
+05	a6e8471	1789489546	ensemble + origin-hour congestion feature
+06	3056f46	1789489622	ensemble + lossguide members
+07	c346c2f	1789489853	add carrier-hour congestion
+08	950ebf2	1789489914	add dest-hour on best
+09	3cd802d	1789489939	add carrier-origin count

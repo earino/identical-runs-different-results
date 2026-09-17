@@ -1,0 +1,142 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 30,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T21:30:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s30-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T23:47:44+00:00",
+  "wall_seconds": 8264.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17921.5,
+  "endpoint_at_end": "ok",
+  "head": "32be489",
+  "n_commits": 10,
+  "n_experiments": 20,
+  "n_ok": 17,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.755,
+  "final_eval_auc": 0.755,
+  "holdout_auc": 0.755678448686,
+  "holdout_ap": 0.7460293868697954,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04090769694999996,
+  "generalization_gap": -0.0006784486859999772,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7890895,
+    "tokens_in_uncached": 1935119,
+    "tokens_in_cached": 5955776,
+    "tokens_out": 96685,
+    "turns": null,
+    "api_calls": 139,
+    "method": "sum-of-139-events",
+    "cost_usd": 4.6831,
+    "cached_share": 0.755
+  },
+  "cpu_seconds_python": 17878.9,
+  "cpu_seconds_counted": 5712.8,
+  "cpu_seconds_uncounted": 11726.3,
+  "cpu_seconds_exempt": 439.8,
+  "python_processes": 73,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 249,
+  "fits_counted": 65,
+  "fits_uncounted": 180,
+  "commits": [
+    {
+      "commit": "e9ce7c0",
+      "message": "baseline"
+    },
+    {
+      "commit": "bdbca4e",
+      "message": "FE overhaul: parsed ints, cyclical DepTime, Route cat, ES + full refit"
+    },
+    {
+      "commit": "eee087e",
+      "message": "TE encodings + cyclical time + deep/colsubsample forest regime, ES on eval"
+    },
+    {
+      "commit": "7ef7998",
+      "message": "lr 0.02, depth 24, colsample 0.3 forest regime"
+    },
+    {
+      "commit": "aea65b2",
+      "message": "max_cat_to_onehot=32"
+    },
+    {
+      "commit": "647dbea",
+      "message": "3-seed fixed-250 ensemble, aligned feature order"
+    },
+    {
+      "commit": "645c894",
+      "message": "add diverse rf-style 4th member"
+    },
+    {
+      "commit": "e394b8c",
+      "message": "2 boosted + 2 rf-style members"
+    },
+    {
+      "commit": "c59cd2f",
+      "message": "rank-average ensemble members"
+    },
+    {
+      "commit": "5699f29",
+      "message": "trim for wall-time safety: 220 rounds, es40"
+    },
+    {
+      "commit": "32be489",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17439.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 42.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "5699f29",
+  "best_commit_eval_auc": 0.755,
+  "best_commit_holdout_auc": 0.755678448686,
+  "best_commit_holdout_ap": 0.7460293868697954,
+  "best_commit_error": null,
+  "finalized_best": true
+}

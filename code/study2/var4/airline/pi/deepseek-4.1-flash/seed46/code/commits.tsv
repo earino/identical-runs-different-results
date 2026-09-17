@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	e8cfd5f	1789512917	baseline
+01	2c9a919	1789512977	model: internal-val early stopping + refit on full train
+02	9c56641	1789513035	feat: dep hour/min/minutes with ES model
+03	a682d2b	1789513067	feat: airport/carrier frequency encodings
+04	61f241a	1789513097	model: 5-member diverse XGB ensemble
+05	77ddf0c	1789513181	model: 10-member diverse ensemble
+06	3a36726	1789513261	feat: hour-level congestion counts
+07	a44ea3c	1789513336	feat: route freq + hour fractions + origin dow-hour
+08	ee43a61	1789513420	feat: 30-min congestion + route-hour + dest dow-hour
+09	c194813	1789513536	feat: 15-min bins, carrier-hub-hour, origin seasonal volume
+10	7c5d6cf	1789513913	perf: single shared tree budget, one fit per member
+11	5431d76	1789513974	model: 14 members with shared budget
+12	42db6b0	1789514068	feat: peak-hour congestion ratios
+13	051f991	1789514174	feat: smoothed congestion windows only
+14	9f5ecee	1789514360	feat: carrier hub-size and hub-share features
+15	44ab29c	1789515084	model: faster lr=0.10 shared across members
+16	e682673	1789515135	model: 24-member ensemble
+17	d53bcac	1789515216	model: 32-member ensemble
+18	c155c2f	1789515327	feat: lagged (previous-hour) congestion
+19	834f386	1789515434	feat: next-hour congestion
+20	d902178	1789515537	feat: 30-min lead/lag congestion
+21	a504f8d	1789516026	model: 40-member ensemble

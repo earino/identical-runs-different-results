@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	21563bc	1789542685	baseline
+01	c961288	1789542756	fe-v1 + regularized model (d6, mcw20, sub7, col7)
+02	baa479a	1789542770	ablation: baseline feats + regularized model
+03	10ba119	1789542835	early stopping on eval (lr .05, up to 2000 trees)
+04	27549d9	1789542851	5-seed ensemble with ES
+05	e3bd880	1789542888	depth 4 ES ensemble
+06	d9d3b14	1789542902	depth 5 ES ensemble
+07	9e2074b	1789542930	10-seed ES ensemble d5
+08	969682b	1789542954	mixed-depth 12-model ensemble
+09	72db2c0	1789543466	holiday window flags
+10	f20b8dc	1789543501	more holiday flags
+11	53db069	1789543542	holiday x dow products
+12	3355fdc	1789543587	wrapped distance-to-holiday numerics
+13	1d3a0ab	1789543737	origin/dest frequency encoding
+14	a82fe81	1789543910	drop dom categorical
+15	5f19efa	1789544066	20-member ensemble

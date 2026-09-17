@@ -1,0 +1,6 @@
+n	commit	unix_time	subject
+00	92329fa	1789501925	baseline
+01	9604f86	1789502056	fixed 500 trees lr.05 d8, no ES, fit on all train
+02	d663592	1789502177	featpack v1: tod decomposition, calendar numeric+cyclic, dist transforms; 100t lr.05 d6
+03	2478679	1789502456	carhour interaction + d8 320t lr.05
+04	91f0e26	1789502978	carsl30 + doy + 5-seed ensemble d9 lr.03 700t

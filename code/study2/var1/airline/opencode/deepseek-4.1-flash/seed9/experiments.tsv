@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	24603f5	0.7141	ok	3	baseline
+2	72dee1d	0.7079	ok	6	features+stronger model
+3	3d80c80	0.7098	ok	4	capacity only
+4	bbffa44	0.7175	ok	2	features no-route
+5	f5922db	0.7089	ok	2	route categorical
+6	98a05be	0.7191	ok	2	100 trees
+7	703d99c	0.7139	ok	3	250 trees
+8	f7080a7	0.7199	ok	2	depth 5
+9	89ce795	0.7213	ok	2	depth 4
+10	75a2895	0.7204	ok	2	depth 3
+11	3dfe721	0.7194	ok	2	regularization
+12	7cae41d	0.7210	ok	2	lower lr more trees
+13	ce7770d	0.0000	crash	1	frequency features
+14	c82deab	0.7210	ok	2	frequency features (fix)
+15	f4de5f4	0.7209	ok	2	target encoding
+16	9193e92	0.7216	ok	3	seed ensemble
+17	431a193	0.7223	ok	5	diverse ensemble
+18	e931a78	0.7225	ok	6	15-model ensemble
+19	8b1d839	0.7205	ok	8	cyclic features
+20	0b9ec36	0.7112	ok	8	monotone tod
+21	1bb7fdc	0.7224	ok	14	ensemble lower lr
+22	16b0f55	0.7228	ok	9	hour categorical
+23	e1ecd85	0.7260	ok	10	tod_bin categorical
+24	d9ba622	0.7261	ok	9	tod_bin 15min
+25	e48c088	0.7297	ok	10	carrier_hour
+26	53e3bca	0.7261	ok	14	origin_hour
+27	ff8fa66	0.7219	ok	14	dest_hour
+28	81fb6a4	0.7307	ok	11	dow_hour
+29	f56e73b	0.7256	ok	13	month_hour
+30	3df0702	0.7301	ok	13	carrier_dow
+31	24c82a7	0.7287	ok	13	carrier_tod
+32	b0a2d34	0.7235	ok	12	dow_tod
+33	696a118	0.7321	ok	11	ensemble depths 2-6
+34	fddd0ec	0.7321	ok	16	25-model ensemble
+35	819c044	0.7369	ok	29	ensemble depths 2-8
+36	a527b66	0.7400	ok	40	ensemble depths 2-10
+37	f544268	0.7417	ok	68	ensemble depths 2-12
+38	dc8368c	0.7423	ok	74	ensemble depths 2-13
+39	5610ba3	0.7426	ok	94	ensemble depths 2-14
+40	0d4665f	0.0000	timeout	121	ensemble depths 2-15

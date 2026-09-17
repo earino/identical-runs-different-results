@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	30fc807	0.7141	ok	3	baseline
+2	2763af5	0.7036	ok	1	hour/minute + route
+3	ca6fbfb	0.7127	ok	1	hour/minute only
+4	c98bd1c	0.7078	ok	3	n_estimators=400
+5	a51ccd3	0.7123	ok	4	early stopping lr=0.05
+6	2c7bad5	0.7141	ok	2	seed variance diagnostic
+7	acf0e5c	0.7165	ok	1	depth4 regularized
+8	32c68f6	0.7166	ok	2	reg + hour/minute
+9	e2b8aad	0.7169	ok	2	frequency encodings
+10	da1c24d	0.7041	ok	2	target encodings
+11	8c9a059	0.7173	ok	4	bagged ensemble x5
+12	be0c2b1	0.7177	ok	5	ensemble depth5
+13	2ef26f6	0.7175	ok	6	ensemble depth6
+14	a10ec4f	0.7177	ok	9	ensemble n300
+15	e48d145	0.7172	ok	5	drop raw DepTime
+16	fd89022	0.7213	ok	5	drop Month
+17	47b481c	0.7221	ok	5	drop DayofMonth
+18	1e9afd7	0.7190	ok	5	drop DayOfWeek
+19	7c6fec4	0.7219	ok	4	drop freq encodings
+20	38aeaf7	0.7208	ok	4	depth4 newfeat
+21	2ca5e16	0.7190	ok	4	drop Origin/Dest cats
+22	bc018f1	0.7220	ok	4	add is_weekend
+23	d29e50b	0.7223	ok	5	reg_lambda=5
+24	55a9177	0.7221	ok	4	max_cat_threshold=16
+25	e2cb9dd	0.7224	ok	8	ensemble x10
+26	f6d4fc5	0.7221	ok	8	subsample/colsample 0.7
+27	2daca72	0.7234	ok	11	n250
+28	7a24e6c	0.7236	ok	18	n400
+29	88e05f9	0.7229	ok	26	n600
+30	6bf1c13	0.7244	ok	22	depth6 n400
+31	bd53565	0.7256	ok	29	depth7 n400
+32	86856f8	0.7270	ok	34	depth8 n400
+33	aadb586	0.7294	ok	51	depth10 n400
+34	169b899	0.7308	ok	80	depth12 n400
+35	fe20c31	0.7359	ok	53	depth14 n200
+36	5bb532e	0.7379	ok	47	depth16 n150
+37	56c2720	0.7386	ok	40	depth18 n120
+38	2a698de	0.7390	ok	30	depth20 n100
+39	79ea963	0.7371	ok	83	depth20 n200
+40	1b4c631	0.7388	ok	25	depth0 n80

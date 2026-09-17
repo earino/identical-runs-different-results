@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	632fbe4	1789596646	baseline
+01	7641339	1789596966	add numeric time/date/distance features
+02	ba8eb54	1789597054	100 trees lr 0.05
+03	fc0b2b5	1789597068	200 trees depth8 regularization
+04	d694618	1789597695	add minute-of-day feature
+05	30ed256	1789597842	5-seed ensemble
+06	1d7fa29	1789598260	heterogeneous 5-model ensemble
+07	bda1ef5	1789598397	carrier x hour interaction categorical
+08	8aff323	1789598967	carrier x 30min slot interaction
+09	f21b5b7	1789599143	10-model diverse ensemble
+10	cbb4f75	1789599252	14-model ensemble with lossguide members
+11	e3599c3	1789599632	route count/distance aggregates
+12	85c09fb	1789599719	numeric month/dom/dow + seasonal sin/cos
+13	5a938aa	1789600102	route departure-time deviation feature
+14	b1e0c7e	1789600465	colsample_bynode 0.8 on all members
+15	9cde4e4	1789600551	250 trees
+16	fa66bff	1789600665	300 trees
+17	91ad200	1789601017	350 trees
+18	80c0088	1789601277	drop depth-11 member, 13 models
+19	5472e42	1789601408	380 trees

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	429bb52	0.7141	ok	1	baseline
+2	4f20e9f	0.0000	crash	5	exp2: scale up 500 trees depth8 ES+refit
+3	9e60850	0.7091	ok	12	exp2: scale up 500 trees depth8 ES+refit
+4	4ae041a	0.7125	ok	3	exp4: depth6 lr0.1 max100 ES+refit
+5	404ad3e	0.7133	ok	2	exp5: baseline + time features
+6	b44a82b	0.0000	crash	1	exp6: + smoothed TE carrier/origin/dest
+7	8e3b95e	0.7137	ok	1	exp6: + smoothed TE carrier/origin/dest
+8	8815581	0.7174	ok	4	exp8: regularized 300 trees on TE feats
+9	6edc425	0.0000	crash	1	exp9: + interaction TEs
+10	6a85283	0.7117	ok	5	exp9: + interaction TEs
+11	02c8ad9	0.7187	ok	5	exp10: stronger regularization
+12	3ee8e98	0.7154	ok	9	exp11: d8 800t strong reg
+13	3431ecf	0.7188	ok	4	exp12: OOF target encoding
+14	c4878e1	0.7195	ok	18	exp13: 5-seed ensemble
+15	c69e046	0.7193	ok	27	exp14: lr0.02 800t ensemble
+16	b113bfb	0.0000	crash	4	exp15: diversity ensemble
+17	022ee50	0.7203	ok	18	exp15: diversity ensemble
+18	0a59d48	0.7203	ok	31	exp16: 10-model diversity ensemble
+19	9d45b98	0.7205	ok	16	exp17: TE k 50/200/200
+20	16ab321	0.0000	crash	1	exp18: + hour TE
+21	174516d	0.7198	ok	15	exp18: + hour TE
+22	a89437d	0.7201	ok	16	exp19: max_bin 64
+23	a060fba	0.7200	ok	17	exp20: + low-card date TEs
+24	f5abcb6	0.0000	crash	2	exp21: TE-only airports
+25	6c4fab8	0.7166	ok	14	exp21: TE-only airports
+26	5f2ac60	0.7162	ok	47	exp22: self-training pseudo-labels
+27	ae740d6	0.7205	ok	16	exp23: rank averaging
+28	68a0444	0.7207	ok	18	exp24: per-member OOF-TE variants
+29	6ae4e1f	0.7219	ok	17	exp25: colsample_bynode 0.7
+30	5b8cfe2	0.7232	ok	16	exp26: colsample_bynode 0.5
+31	b9253fe	0.7246	ok	17	exp27: colsample_bynode 0.35
+32	fab4b5f	0.7246	ok	15	exp28: colsample_bynode 0.2
+33	5e47056	0.7250	ok	17	exp29: 800 trees member1
+34	fc530b7	0.7239	ok	32	exp30: covariate-shift weighting
+35	0efc88e	0.7225	ok	19	exp31: no bytree, bynode only
+36	445d28f	0.7246	ok	18	exp32: lower subsample
+37	22bbbe7	0.7251	ok	25	exp33: 7 members
+38	b8c49ff	0.7252	ok	26	exp34: depth8 member
+39	d7d161e	0.7255	ok	29	exp35: 8 members
+40	fe1e0d6	0.7252	ok	31	exp36: 9 members

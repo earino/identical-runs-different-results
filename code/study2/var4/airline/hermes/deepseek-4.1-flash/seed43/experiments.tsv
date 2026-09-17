@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e6dac78	0.7141	ok	4	baseline
+2	204c1f7	0.7040	ok	30	fe v1 + tuned params (depth7 lr0.05 ES)
+3	d0b6956	0.7061	ok	2	diag: v1 features + baseline params
+4	7e74063	0.7131	ok	2	ablate: v1 features minus route
+5	c85b3e0	0.7152	ok	4	capacity: 300 trees lr0.05 d6 no ES
+6	f9678fb	0.7150	ok	7	capacity: 800 trees lr0.03 d6
+7	f3db574	0.7158	ok	4	fe v2: raw DepTime + freq-count features
+8	cfe85ad	0.7145	ok	5	fe v3: OOF target encoding
+9	dc4e206	0.7177	ok	4	regularization sweep
+10	9ff27be	0.7186	ok	7	800 trees lr0.02 with reg
+11	f85d843	0.7177	ok	9	depth5 1500 trees lr0.02
+12	7f977f9	0.7232	ok	6	fe: hour categorical + redeye flag
+13	5ced20c	0.7312	ok	8	fe: tod_30 categorical
+14	58c9b4e	0.7329	ok	7	fe: tod_10 categorical
+15	8f875c1	0.7180	ok	9	fe: DepTime categorical (1341 levels)
+16	7df7f80	0.7286	ok	8	fe: tod_5 categorical
+17	c064938	0.0000	crash	1	fe: bank-share features
+18	d6b7172	0.7356	ok	8	fe: bank-share features (fix)
+19	6a15efa	0.7344	ok	9	fe: +dest/route bank shares
+20	957bba5	0.0000	crash	1	fe: carrier_tod categorical
+21	1a74fb6	0.7409	ok	8	fe: carrier_tod categorical (fix)
+22	af4ce7a	0.7408	ok	9	fe: origin_todc interaction
+23	2444ad4	0.7362	ok	9	fe: dow_tod interaction
+24	c90f032	0.7364	ok	9	fe: carrier_origin interaction
+25	bf3aca5	0.7301	ok	9	fe: month_tod interaction
+26	3f80f19	0.7410	ok	9	stronger regularization
+27	097507a	0.7416	ok	15	1600 trees lr0.01
+28	6b83a2e	0.7410	ok	37	3-model xgb ensemble
+29	1453bb7	0.7416	ok	37	3-seed seed-averaged ensemble
+30	d1220f3	0.7420	ok	16	fe: cumulative bank position
+31	b5cdf26	0.7421	ok	15	tod_15 (96 buckets)
+32	06e59ae	0.7445	ok	19	depth7 1600 trees
+33	24d3278	0.7452	ok	21	depth8 1600 trees
+34	7bb6230	0.7441	ok	21	depth8 mcw100 lambda20
+35	e266068	0.7462	ok	33	depth10 1600 trees
+36	9534e58	0.7463	ok	35	depth12 1600 trees
+37	3f8555d	0.7458	ok	27	depth10 subsample0.7 colsample0.5
+38	fa53c9d	0.7465	ok	40	2400 trees lr0.007 depth10
+39	5dd61fc	0.7464	ok	59	2-config ensemble d10+d8
+40	ae712f5	0.7457	ok	40	simplify: drop redundant time feats

@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	fe8098e	0.7141	ok	4	baseline
+2	ba3b2b7	0.0000	crash	1	fe v1: parsed dates, cyclical time, route cat, flags, stronger params
+3	4c73a30	0.6989	ok	9	fe v1: parsed dates, cyclical time, route cat, flags, stronger params
+4	3c762c2	0.7219	ok	4	numeric dates + hour/minute, cat airports, 600t lr.05 d6 cs.7
+5	4c3e6f9	0.0000	crash	1	entity x hour + dow x hour interaction cats, 3-model blend
+6	478b6dc	0.7322	ok	18	entity x hour + dow x hour interaction cats, 3-model blend
+7	8efde55	0.7352	ok	66	lr.02-.03 deep d8 3-model blend
+8	892a3e0	0.7350	ok	68	add Month x DayOfWeek interaction cat to blend
+9	c145b71	0.7456	ok	52	regularized d8 blend: plain + alpha3 + alpha2/lam5
+10	e0dc811	0.7506	ok	43	alpha-spectrum blend: 0.3 / 3+gamma / 10
+11	eec7575	0.0000	crash	36	5-member alpha-spectrum blend (+seed variant, alpha15)
+12	11f3d03	0.7514	ok	77	5-member alpha-spectrum blend (+seed variant, alpha15)
+13	73a2dd7	0.7581	ok	68	4-member: 2 full-view (a10,a15) + 2 airport-view (a0.5,a1)
+14	e437017	0.0000	crash	1	6-member ensemble: 3 full-view + 3 airport-view, alpha spread
+15	fb36843	0.7586	ok	96	6-member ensemble: 3 full-view + 3 airport-view, alpha spread
+16	1687240	0.7589	ok	94	5-member: a20, ap03, apd10, dowview, a20-slow

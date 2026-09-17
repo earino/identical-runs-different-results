@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	a5ace67	0.7141	ok	4	baseline
+2	d95717f	0.7059	ok	6	FE v1: deptime parsing, sin/cos, route categorical, bigger model
+3	dc6bf28	0.7492	ok	42	deep bagged xgb ensemble d20 cs.4 + deptime FE
+4	ccdb194	0.7537	ok	61	add airport traffic/hub features, d24
+5	136adee	0.7567	ok	103	cs.35, max_bin 512, recency weighting
+6	2cf0e0b	0.7567	ok	64	drop max_bin 512 to keep runtime safe
+7	0c2d2d3	0.7572	ok	72	subsample 0.9
+8	22429c5	0.7579	ok	56	8 members (ensemble saturated; inference safety)
+9	19e7112	0.7585	ok	61	ramp amplitude diversity across members
+10	9a2c475	0.7540	ok	80	colsample_bynode 0.6
+11	b393ec1	0.7577	ok	79	10 members with ramp diversity
+12	1b267d5	0.7584	ok	67	max_bin diversity 256/512 across members
+13	bcc6927	0.7585	ok	64	per-member lr/rounds diversity
+14	27f927c	0.7585	ok	64	3-axis diversity: ramp x lr/rounds x max_bin

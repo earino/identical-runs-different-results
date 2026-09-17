@@ -1,0 +1,136 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 50,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T08:24:05+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s50-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:57:32+00:00",
+  "wall_seconds": 5607.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17703.1,
+  "endpoint_at_end": "ok",
+  "head": "9ca994a",
+  "n_commits": 9,
+  "n_experiments": 14,
+  "n_ok": 13,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7612,
+  "final_eval_auc": 0.7612,
+  "holdout_auc": 0.761655087818,
+  "holdout_ap": 0.7513813515399115,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04688433608199993,
+  "generalization_gap": -0.0004550878179999662,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6144068,
+    "tokens_in_uncached": 564036,
+    "tokens_in_cached": 5580032,
+    "tokens_out": 67877,
+    "turns": null,
+    "api_calls": 84,
+    "method": "sum-of-84-events",
+    "cost_usd": 2.5391,
+    "cached_share": 0.908
+  },
+  "cpu_seconds_python": 17681.9,
+  "cpu_seconds_counted": 4089.5,
+  "cpu_seconds_uncounted": 13138.4,
+  "cpu_seconds_exempt": 454.0,
+  "python_processes": 38,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 432,
+  "fits_counted": 57,
+  "fits_uncounted": 371,
+  "commits": [
+    {
+      "commit": "09d2966",
+      "message": "baseline"
+    },
+    {
+      "commit": "bcb59c2",
+      "message": "5-seed bagged ensemble, d12, cs0.3, fixed 400 trees, lean FE"
+    },
+    {
+      "commit": "825053d",
+      "message": "FE: counts (route/origin/dest/carrier), sin/cos tod, log_dist, red_eye"
+    },
+    {
+      "commit": "0fc4a36",
+      "message": "RF-style: d24 mcw0 maxbin64 cs0.25, 200 trees lr0.09, 5 seeds"
+    },
+    {
+      "commit": "aa955a1",
+      "message": "FE: tod_dev_route (deviation from route's typical departure time)"
+    },
+    {
+      "commit": "55447d9",
+      "message": "FE: tod_dev_origin, arr_dev_dest (arrival bank deviation); 4 seeds for time margin"
+    },
+    {
+      "commit": "c06ff53",
+      "message": "FE: arr_dev_route, tod_std_route (schedule tightness)"
+    },
+    {
+      "commit": "4359504",
+      "message": "FE: carrier-level departure/arrival time deviations"
+    },
+    {
+      "commit": "a345e4c",
+      "message": "5 seeds x 150 trees lr0.12 (same boost, one more bag)"
+    },
+    {
+      "commit": "9ca994a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17227.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 21.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "4359504",
+  "best_commit_eval_auc": 0.7612,
+  "best_commit_holdout_auc": 0.761688154946,
+  "best_commit_holdout_ap": 0.7513704375782111,
+  "best_commit_error": null,
+  "finalized_best": false
+}

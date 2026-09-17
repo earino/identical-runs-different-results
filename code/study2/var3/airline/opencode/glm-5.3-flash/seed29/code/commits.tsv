@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	5d4baf2	1789497593	baseline
+01	1c002a9	1789497699	exp2: time features, ordinal/one-hot encoding, adaptive tree budget
+02	c65e67c	1789497744	exp4: temporal-split early stopping (2005 m11-12 as val)
+03	512f2b7	1789497887	exp9: depth x trees landscape scan
+04	c2e092b	1789497910	exp11: depth x lr x trees fine scan
+05	24abc36	1789498059	exp15: heterogeneous depth ensemble
+06	3c20405	1789498086	exp16: extended 8-member ensemble
+07	f1d9ac5	1789498108	exp17: feature variants at winning ensemble
+08	d255b76	1789498169	exp18: dep_block refinements (15min, dow x block, A+C)
+09	309301e	1789498223	exp19: block granularity sweep 5/10/15min + multi-scale
+10	1bcc3da	1789498283	exp20: member-mix scan (deeper, subsample-diverse, dart)
+11	0ac5be7	1789498347	exp21: semantic bagging + week-of-year cat
+12	595f60c	1789498413	exp22: ES-count members + lossguide members
+13	71c4881	1789498475	exp23: broader ES-member ensemble (d2-8, ES lossguide)
+14	622ee4e	1789498875	exp26: 16-member hardcoded ES-count ensemble
+15	8cabd88	1789499016	exp27: extend depth grid with d9/d10 ES members
+16	09da8d5	1789500054	exp34: full 18 XGB + 2 HGB ensemble confirm
+17	9e8d9f7	1789500326	exp36: final-form 18 XGB + 3 HGB ensemble
+18	19e3df1	1789500767	exp39: HGB max_features diversity + weighted combos

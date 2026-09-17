@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e0930f6	0.7141	ok	4	baseline
+2	012e953	0.7080	ok	4	time feats + freq enc + route cat, d7/250
+3	96b3c88	0.7134	ok	3	capacity 400t lr.05 d6
+4	5448441	0.5000	ok	1	TE origin,dest,carrier,route,hour,oXc
+5	386a910	0.5986	ok	2	TE fix: origin,dest,carrier,route,hour,oXc
+6	0ca7f68	0.7127	ok	2	time feats only, baseline model
+7	96fc464	0.7169	ok	3	diag: lr0.03 early-stop curve
+8	d4401f5	0.7171	ok	4	depth5 lr.03 es
+9	f463be2	0.7167	ok	4	depth8 lr.03 es
+10	a6638ad	0.7102	ok	4	route categorical d5
+11	e13f595	0.7179	ok	17	5-seed ensemble d5
+12	a2a7330	0.7183	ok	15	diverse 5-member ensemble
+13	44fc68a	0.7194	ok	17	congestion freq feats + diverse ensemble
+14	f5bce20	0.7185	ok	17	freq family + diverse ensemble
+15	1e2dd68	0.7192	ok	18	add origin/carrier size freq
+16	1632455	0.7194	ok	30	8-member ensemble
+17	33ce15c	0.7177	ok	5	single model reg_lambda5 + congestion feats
+18	b8069c8	0.7207	ok	7	ordinal calendar feats, single model
+19	a94409d	0.7211	ok	27	5-member bag + ordinal calendar
+20	afa8830	0.7214	ok	32	holiday + peak-week features
+21	afafea8	0.7231	ok	20	ablation: no categorical month/dom/dow
+22	798af57	0.7108	ok	20	ablation: no Origin/Dest cats
+23	c397a0f	0.7220	ok	22	shallow regularized bag d4/5
+24	ff968e3	0.7235	ok	26	hub share features
+25	b00e5f2	0.7230	ok	28	network/distance profile feats
+26	c06b7f7	0.7219	ok	26	doy/dow sin/cos
+27	bd05196	0.7231	ok	26	one-hot low-card cats
+28	6dccca5	0.7237	ok	42	parallel trees x2 (boosted forest)
+29	3907d05	0.7241	ok	80	8-member bag + parallel trees
+30	380152d	0.7235	ok	77	dow congestion freqs
+31	88bfb63	0.7240	ok	81	colsample_bynode 0.5
+32	5225d2d	0.7247	ok	76	deep members (6-8, mcw up to 40)
+33	81b0727	0.7249	ok	78	deeper members d8-10 mcw30-100
+34	b81e212	0.7248	ok	69	d12 members mcw150-200
+35	a469ab2	0.7250	ok	73	deep-heavy bag
+36	3529dfb	0.7249	ok	88	10-member bag
+37	6030976	0.7253	ok	77	dest hub + breadth feats
+38	9771eef	0.7248	ok	77	airport breadth feats
+39	669e5e4	0.7249	ok	75	route carrier count
+40	ee879a9	0.7244	ok	83	stronger row subsampling

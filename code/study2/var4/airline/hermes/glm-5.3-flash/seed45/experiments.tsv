@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a975667	0.7141	ok	4	baseline as provided
+2	355e7a8	0.0000	crash	1	FE + smoothed OOF target encodings + early stopping
+3	d4d3fcb	0.7184	ok	7	FE + smoothed OOF target encodings + early stopping (map fix)
+4	3dbc969	0.0000	crash	2	freq encodings + slower LR/deeper + ES150
+5	7e00e7d	0.0000	crash	1	freq encodings + slower LR/deeper + ES150 (fix)
+6	c18de9c	0.0000	crash	1	freq encodings + slower LR/deeper + ES150 (fix2)
+7	61ca68f	0.7207	ok	98	freq encodings + slower LR/deeper + ES150 (fix3)
+8	38d74a2	0.7149	ok	12	seasonal TE interactions (Origin/Dest x month, dow)
+9	d07f287	0.7155	ok	9	ablation: remove noisiest TE Route|dep_h
+10	10c9e0f	0.0000	crash	1	add dow / dep_h|dow / dom TEs
+11	eb6d61b	0.7201	ok	107	add dow / dep_h|dow / dom TEs (fix)
+12	cd206c5	0.7205	ok	34	3-seed XGB ensemble
+13	fd5c4c2	0.7184	ok	11	add carrier-origin TE
+14	1cff483	0.7164	ok	10	haul bins + carrier x haul TE
+15	5903a2a	0.7197	ok	10	TE smoothing 100->50
+16	87e02b2	0.7205	ok	10	TE smoothing 100->200
+17	52b5678	0.0000	crash	19	CV-ES iteration selection, train on 100% data
+18	80379af	0.7184	ok	11	CV-ES iteration selection, train on 100% data (fix)
+19	bf2c6f2	0.7170	ok	10	capacity: depth 9 + min_child_weight 5
+20	7c18bf2	0.7202	ok	10	capacity: depth 6
+21	3c09b04	0.7217	ok	11	regularization: reg_lambda 3.0
+22	003827a	0.7227	ok	11	regularization: reg_lambda 6.0
+23	faef002	0.7243	ok	12	regularization: reg_lambda 12.0
+24	bc9ae8d	0.7263	ok	16	regularization: reg_lambda 24.0
+25	6725010	0.7271	ok	15	regularization: reg_lambda 48.0
+26	0c02983	0.7278	ok	18	regularization: reg_lambda 96.0
+27	8df0bc3	0.7285	ok	18	regularization: reg_lambda 192.0
+28	14c3048	0.7292	ok	21	regularization: reg_lambda 384.0
+29	0d2d045	0.7292	ok	15	regularization: reg_lambda 768.0
+30	205049e	0.7283	ok	12	lr 0.05 at reg_lambda 384
+31	cd92d34	0.7286	ok	19	lr 0.02 at reg_lambda 384
+32	27c55ca	0.7319	ok	20	colsample_bytree 0.6 at lambda 384
+33	9ae6986	0.7358	ok	28	colsample_bytree 0.4 at lambda 384
+34	075a642	0.7371	ok	25	colsample_bytree 0.3 at lambda 384
+35	2eebd23	0.7393	ok	46	colsample_bytree 0.2 at lambda 384
+36	f518499	0.7379	ok	47	colsample_bytree 0.15 at lambda 384
+37	1ba1042	0.7381	ok	49	reg_lambda 768 at colsample 0.2
+38	7ce3965	0.7391	ok	46	subsample 0.7 at colsample 0.2 lambda 384
+39	886f534	0.7390	ok	79	2-seed ensemble at best config
+40	2bd9665	0.7385	ok	35	depth 8 at colsample 0.2 lambda 384

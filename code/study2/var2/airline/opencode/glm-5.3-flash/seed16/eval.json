@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 16,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:09:51+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s16-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:03:58+00:00",
+  "wall_seconds": 3246.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11088.7,
+  "endpoint_at_end": "ok",
+  "head": "021b1b3",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 32,
+  "n_crash": 2,
+  "n_timeout": 6,
+  "best_eval_auc": 0.7316,
+  "final_eval_auc": 0.7316,
+  "holdout_auc": 0.73227017865,
+  "holdout_ap": 0.7153566678482766,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01749942691399997,
+  "generalization_gap": -0.000670178649999964,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3228663,
+    "tokens_in_uncached": 23543,
+    "tokens_in_cached": 3205120,
+    "tokens_out": 17566,
+    "turns": null,
+    "api_calls": 81,
+    "method": "sum-of-81-events",
+    "cost_usd": 0.1085,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 10868.7,
+  "cpu_seconds_counted": 10578.6,
+  "cpu_seconds_uncounted": 2.8,
+  "cpu_seconds_exempt": 287.3,
+  "python_processes": 78,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 74,
+  "fits_counted": 73,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "9d14f3a",
+      "message": "baseline"
+    },
+    {
+      "commit": "dc64f7e",
+      "message": "exp2: 600 trees lr.05 depth8 early stopping on 10% valid"
+    },
+    {
+      "commit": "7c8686a",
+      "message": "exp3: depth10 lr.1 1000 trees mcw5 subs.8 + es60 on 20% valid"
+    },
+    {
+      "commit": "d43dafa",
+      "message": "exp4: depth6 lr.1 1000 trees mcw5 subs.8 es60"
+    },
+    {
+      "commit": "bca1ac1",
+      "message": "exp5: depth6 lr.1 1000 trees es60 no subsampling"
+    },
+    {
+      "commit": "19ce391",
+      "message": "exp6: sweep depth x ntrees on eval+valid2005"
+    },
+    {
+      "commit": "90d9d69",
+      "message": "exp7b: time feats + cat combos (route, x hour), cats fit on train"
+    },
+    {
+      "commit": "5fcd053",
+      "message": "exp9: grid depth{4,5,6} x n{60,120,250} on combo features"
+    },
+    {
+      "commit": "c1d83a9",
+      "message": "exp10: lr.05 depth{5,6,7} x n{400,800}"
+    },
+    {
+      "commit": "be12a90",
+      "message": "exp13: depth7 lr.05 n1600 single config"
+    },
+    {
+      "commit": "c2f9cac",
+      "message": "exp16: n3200 max_bin128 depth7"
+    },
+    {
+      "commit": "92d1881",
+      "message": "exp21: n4400 max_bin64 depth7"
+    },
+    {
+      "commit": "48f829d",
+      "message": "exp31: colsample_bynode 0.9"
+    },
+    {
+      "commit": "15701c1",
+      "message": "exp33: colsample_bynode 0.8"
+    },
+    {
+      "commit": "ab3d340",
+      "message": "exp34: colsample_bynode 0.7"
+    },
+    {
+      "commit": "351ada8",
+      "message": "exp35: colsample_bynode 0.6"
+    },
+    {
+      "commit": "3518378",
+      "message": "exp36: colsample_bynode 0.5"
+    },
+    {
+      "commit": "07b1cbd",
+      "message": "exp37: colsample_bynode 0.4"
+    },
+    {
+      "commit": "a7fcd52",
+      "message": "exp38: colsample_bynode 0.3"
+    },
+    {
+      "commit": "021b1b3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10581.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 220.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a7fcd52",
+  "best_commit_eval_auc": 0.7316,
+  "best_commit_holdout_auc": 0.73227017865,
+  "best_commit_holdout_ap": 0.7153566678482766,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	9b845d8	1789539560	baseline
+01	0732e1a	1789539602	add deptime hour/min/cyclical + logdist on top of baseline cats
+02	a757097	1789539646	100 trees lr.1 d6
+03	6cece79	1789539650	200 trees
+04	ad3a0d7	1789539702	d5 200t
+05	44a8835	1789539739	diverse 5-model ensemble (fix)
+06	ce9ad7a	1789539760	freq encodings + hour_cat
+07	ca4006c	1789539771	300 trees w/ freq feats
+08	175f362	1789539824	carrier x hour pair cat
+09	000eee1	1789539943	carrier x 30min slot
+10	781416d	1789539981	plain slot30 cat
+11	9a5e42d	1789540064	12-model ensemble
+12	530fa5b	1789540322	350 trees

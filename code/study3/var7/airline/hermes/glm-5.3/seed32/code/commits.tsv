@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	94767bd	1789605934	baseline
+01	fd7d038	1789607556	numeric time/calendar features, more trees, lower lr
+02	56ed41d	1789609506	colsample_bytree 0.7, 800 trees
+03	df813f3	1789609966	lr 0.03, 1200 trees
+04	bdfc1c3	1789610194	bylevel 0.7 + L1 1
+05	d5b6ec5	1789610471	hour_cat + origin@hour cat + congestion counts
+06	da4fffa	1789611230	4-model colsample ensemble
+07	7a74430	1789611967	lr 0.02, 1800 trees in ensemble
+08	38fe00d	1789612475	carrier@hour categorical

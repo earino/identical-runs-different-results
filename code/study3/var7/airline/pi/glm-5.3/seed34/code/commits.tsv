@@ -1,0 +1,5 @@
+n	commit	unix_time	subject
+00	46f1417	1789614720	baseline
+01	1a46823	1789615600	numeric calendar + hour features + ES-on-eval, depth6
+02	e93d0ec	1789617524	deep d14 + L1 reg alpha1 + onehot hour
+03	ea648d7	1789618341	3-seed ensemble d14 lr03 alpha1

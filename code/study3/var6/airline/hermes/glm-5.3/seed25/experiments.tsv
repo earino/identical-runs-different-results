@@ -1,0 +1,36 @@
+n	commit	eval_auc	status	seconds	description
+1	23b6548	0.7141	ok	3	baseline
+2	4b14c76	0.7126	ok	5	time-of-day + cyc feats, 400 trees
+3	4f1bee7	0.7082	ok	2	early stopping 80/20, up to 2000 trees
+4	844df7d	0.7144	ok	2	time/cyc feats, 30 trees
+5	5b1be45	0.7146	ok	4	regularized 300 trees lr.05
+6	4aeed94	0.7136	ok	5	OOF target encodings carrier/origin/dest/route x hour
+7	753c2b5	0.0000	crash	1	numeric calendar, depth 8
+8	f6ef336	0.7232	ok	4	numeric calendar + drop c-strings, depth 8 (fix)
+9	dbc3ba9	0.7236	ok	4	strong reg mcw20 lam10 ss.7
+10	1bff24f	0.7308	ok	5	depth12 cs0.4
+11	fc58776	0.7321	ok	8	cs0.3 n500 lr.04
+12	10a64d9	0.7331	ok	18	3-seed ensemble
+13	c4b69c0	0.7341	ok	22	max_bin 1024
+14	339be08	0.7375	ok	24	traffic count features
+15	6ea9f1c	0.7426	ok	29	rich counts v2
+16	16ccaf1	0.7469	ok	32	blk30 counts v3
+17	525b074	0.7492	ok	49	cs0.2 5-seed ensemble
+18	d03af10	0.7551	ok	78	b15 counts
+19	41f9a7d	0.7565	ok	62	depth14 ss0.8
+20	18c1fd4	0.0000	crash	2	schedule/calendar flags
+21	54bd8fb	0.7575	ok	72	schedule/calendar flags (fix)
+22	2e3e597	0.7610	ok	112	recency weights 1.25^m
+23	3220449	0.7612	ok	57	3x400 runtime trim
+24	4c60159	0.7625	ok	69	mcw10
+25	6f011fc	0.7598	ok	69	smoothed b15 counts
+26	2162490	0.7623	ok	83	lr.03 n500
+27	593e575	0.7576	ok	74	smoothed target rates
+28	f6dba4d	0.7615	ok	64	cs_bylevel 0.7
+29	fdcc685	0.7617	ok	57	diverse 3-model bag
+30	7feb198	0.7621	ok	58	recency 1.15^m
+31	7930a9f	0.7623	ok	71	ss0.9
+32	f5fdfe2	0.7620	ok	67	incoming traffic at origin
+33	ae7bb79	0.7618	ok	74	n450 gamma.05
+34	0061140	0.7626	ok	109	5-seed final config
+35	0e5f129	0.7622	ok	93	5-seed 350t lr.045

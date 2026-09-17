@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	06b3d0c	1789538057	baseline
+01	c56f549	1789538116	regularized: 300 trees depth5 lr0.05
+02	b9ca777	1789538125	feat: dep time decomposition + cyclical + log distance
+03	d6563dd	1789538142	feat: frequency encodings for origin/dest/carrier
+04	d627624	1789538163	prune: drop raw DepTime/Distance/DayofMonth (keep derived)
+05	c997e48	1789538167	fix: guard pruned cat col in prepare
+06	e264d33	1789538176	tune: depth6 400 trees lr0.04 mcw15 colsample0.7
+07	f40add1	1789538183	tune: depth7 mcw25 colsample0.6 lambda3
+08	90f8ee1	1789538191	tune: depth8 mcw40 colsample0.5 lambda5
+09	aff598d	1789538199	tune: depth10 mcw60 lambda8 alpha3
+10	1ce73b5	1789538210	tune: depth12 mcw80 lambda10 alpha5
+11	bee4a25	1789538293	ensemble: 3 xgboost models (depth 11/12/13, seeds)
+12	3ff2297	1789538529	feat: route frequency encoding
+13	e074688	1789538562	feat: origin/dest/carrier-hour frequency
+14	a28c1bf	1789538633	feat: normalized hour-share congestion ratios
+15	c3ced28	1789538724	feat: hour-relative concentration ratios
+16	223580d	1789538761	feat: hour lift (observed/expected)
+17	f54e60a	1789538843	ensemble: 4 models depth 10-13
+18	b05ea65	1789538912	feat: dep hour categorical
+19	86094b0	1789538989	feat: origin-dest congestion differences
+20	2720d18	1789539107	feat: route competition (carrier count, dominance)
+21	b221aed	1789539228	feat: distance relative to hub/carrier mean
+22	ce80733	1789539288	feat: arrival-side relative distance

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2351589	0.7141	ok	4	baseline
+2	d6b4f4e	0.7057	ok	2	FE v1: deptime cyclical+hour+late-night, log dist, route
+3	110f38a	0.7057	ok	2	FE v2: cyclical deptime+hour+late-night+route, no log-dist
+4	bf89b95	0.7145	ok	2	FE v3: time features only
+5	236f0c1	0.7059	ok	1	FE v4: route + raw DepTime + late_night + distance
+6	ca13c7f	0.7080	ok	7	capacity: 500r lr0.05 depth8
+7	b2bea31	0.7141	ok	3	ES on random 1/6 val, 2000r lr0.05 depth6
+8	860e1dc	0.7137	ok	2	hour categorical + traffic counts
+9	f41a70d	0.7145	ok	2	40r depth8 lr0.1
+10	e0793ad	0.7145	ok	2	colsample_bytree 0.7
+11	0a23e12	0.7145	ok	2	max_depth 10
+12	2fac922	0.7145	ok	1	min_child_weight 10
+13	2c3e1e9	0.7145	ok	2	reg_lambda 5
+14	906ce10	0.7145	ok	1	learning_rate 0.15
+15	8f3a93b	0.7145	ok	2	gamma 5
+16	7b16bdc	0.7145	ok	2	subsample 0.7
+17	32216f0	0.7145	ok	2	gamma 1
+18	53c58d0	0.7145	ok	2	max_depth 5
+19	a853e48	0.7145	ok	1	subsample 0.85
+20	f5cd1a5	0.7145	ok	1	subsample 0.9
+21	e7fd95a	0.7145	ok	2	reg_lambda 3
+22	0ac6213	0.7145	ok	2	colsample 0.8
+23	b8f74c4	0.7145	ok	2	max_depth 4
+24	e9e369b	0.7145	ok	2	min_child_weight 5
+25	aedc64a	0.7145	ok	2	learning_rate 0.07
+26	224d9b8	0.7145	ok	1	max_depth 7
+27	b1b28fc	0.7145	ok	2	learning_rate 0.2
+28	f7e739b	0.7145	ok	1	reg_alpha 1
+29	d6b6bb9	0.7145	ok	2	n_estimators 50
+30	18e97c3	0.7145	ok	2	n_estimators 40
+31	604e54f	0.7145	ok	1	subsample 0.8
+32	6b89107	0.7145	ok	1	colsample 0.9
+33	7d597fa	0.7145	ok	2	max_depth 9
+34	002238c	0.7145	ok	1	learning_rate 0.05, 60 rounds
+35	8ad8c73	0.7145	ok	2	n_estimators 25
+36	2fc2dc7	0.7145	ok	2	subsample 0.95
+37	80280dd	0.7145	ok	1	reg_lambda 2
+38	a112979	0.7145	ok	2	n_estimators 35
+39	f0e618e	0.7145	ok	1	gamma 0.5
+40	b09280b	0.7145	ok	2	colsample_bynode 0.8

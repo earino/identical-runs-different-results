@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6fa2b0e	0.7141	ok	4	baseline
+2	6092633	0.7150	ok	2	time-of-day features from DepTime
+3	7b2679e	0.7057	ok	1	route + DayofMonth categorical
+4	0c56067	0.7166	ok	4	600 trees lr0.05 early stopping
+5	685aa12	0.7025	ok	3	route categorical with long model
+6	e667e28	0.0000	crash	2	OOF target encoding
+7	0e263f2	0.7015	ok	3	OOF target encoding
+8	a3b8ba2	0.7015	ok	3	TE without route key
+9	8c6bb84	0.7092	ok	5	TE carrier/origin/dest fixed
+10	8416d60	0.7079	ok	7	depth8 mcw5 sub0.9 col0.9
+11	cc81a19	0.7169	ok	8	lr0.03 n1200
+12	d1a83ed	0.7274	ok	8	carrier x hour interaction
+13	815ace2	0.7123	ok	9	origin/dest x hour interactions
+14	1e7efb1	0.7151	ok	9	carrier x month, carrier x dayofweek
+15	b17108a	0.7246	ok	9	DayofMonth cat + log distance
+16	40fa401	0.7274	ok	23	3-seed ensemble
+17	80da251	0.7373	ok	37	5-fold CV bagging ensemble
+18	e7ab83c	0.7377	ok	70	10-fold bagging
+19	7597b4d	0.7270	ok	53	bag members: lr0.05 sub0.8 col0.8
+20	9881f77	0.7377	ok	67	early stopping patience 100
+21	c986ad7	0.7347	ok	54	bag members depth 5
+22	47e1df2	0.7376	ok	71	frequency encoding
+23	3388ea7	0.7391	ok	68	max_cat_threshold=32
+24	b1f27e2	0.7377	ok	67	max_cat_threshold=64
+25	9f958bf	0.0000	timeout	121	2x10-fold bagging lr0.05
+26	b97c4bb	0.7392	ok	71	max_bin=512
+27	349b910	0.7392	ok	84	lossguide max_leaves=64
+28	43de632	0.7426	ok	67	2x10-fold lr0.1 members
+29	605c696	0.7426	ok	100	3x10-fold lr0.1 members
+30	0ef12b6	0.7426	ok	65	lr0.1 members patience 100
+31	a0d318f	0.7429	ok	67	dep_hour categorical
+32	9fd1c52	0.0000	timeout	121	hetero members lr 0.1/0.05
+33	910d8e3	0.7345	ok	73	month x dayofweek interaction
+34	9e47734	0.7411	ok	69	blend bag + full-data model
+35	74a00ca	0.7411	ok	63	members min_child_weight=10
+36	b076ac5	0.7412	ok	67	drop sin/cos
+37	6622427	0.7447	ok	73	30-min slot categorical
+38	8bb6714	0.7443	ok	79	carrier x slot30 interaction
+39	6dd1577	0.7462	ok	76	15-min slot categorical
+40	6fe5b44	0.7384	ok	101	carrier x slot15 + dep_slot10

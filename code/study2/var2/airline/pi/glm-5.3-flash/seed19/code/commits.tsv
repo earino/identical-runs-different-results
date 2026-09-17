@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	b9f9d7f	1789510091	baseline
+01	bce2127	1789510198	features v1 (30 trees, fair A/B vs baseline)
+02	6a14c66	1789510206	features v2: time cyclicals only, no route/hour_cat/dist_bin
+03	76b036a	1789510225	add smoothed TE (carrier/origin/dest/route/month/dow/hour), 5-fold OOF
+04	018f7cb	1789510234	TE feats + regularized model (d6 lr.05 n600 mcw20 g1 sub.8 col.8) + curve
+05	e64415b	1789510268	add interaction TEs: origin/dest/carrier x hour (OOF smoothed)
+06	8381cf6	1789510307	depth 5 probe
+07	b09dbf6	1789510332	depth5 colsample0.7 probe
+08	b768f98	1789510352	lr0.03 n800 probe
+09	b326c0e	1789510386	3-seed ensemble d5 lr.03 n700 col.7
+10	d74d7f8	1789510435	diverse ensemble: (d5,c.7),(d4,c.8),(d6,c.6)
+11	788d4ee	1789510717	mcw=12 probe
+12	9613abe	1789510762	ensemble n_estimators=600 (flat-peak center)
+13	da65b8d	1789510780	fix: clamp curve checkpoints to N_EST

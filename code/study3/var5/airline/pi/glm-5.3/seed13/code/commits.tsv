@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	039f2b4	1789636840	baseline
+01	46c6ed6	1789636932	feat: hour/cyclical/route features + early stopping
+02	e6bfd9c	1789636982	feat: hour features, ES on eval auc, no route cat
+03	7126fc8	1789637017	feat: smoothed target encodings (route/origin/dest/carrier/hour)
+04	c2d81e0	1789637200	feat: day-of-year features, lr 0.03
+05	cb2645b	1789637303	feat: 5-seed ensemble
+06	5ebe945	1789637307	fix: remove duplicate random_state in PARAMS
+07	54a080f	1789638057	feat: 12-member diverse ensemble (depth/lr grid x 2 seeds)
+08	0e12cda	1789638062	fix: remove duplicate max_depth/learning_rate from base params
+09	012f608	1789638665	feat: multi-view ensemble blend (full + no-date x2 + no-carrier + no-airport)
+10	a9ab483	1789639300	feat: add HistGradientBoosting view (3 seeds) at weight 0.15
+11	de85c1a	1789640112	feat: hyperparameter-diverse B view (d5/d6/d7 + lr0.02)
+12	e645a05	1789640249	feat: add RandomForest view (w=0.08), drop slow A lr0.02 member
+13	9677b10	1789640381	feat: HGB view max_iter 400 -> 600
+14	a806f34	1789640518	fix: XGBoost-only multi-view blend (remove HGB/RF - contract requires XGBoost learners only)
+15	5f8e899	1789641036	simplification: drop A lr=0.05 members (A6 -> A4)
+16	3fad1fc	1789641409	feat: reg_lambda=2 on A view (targeted drift regularization)

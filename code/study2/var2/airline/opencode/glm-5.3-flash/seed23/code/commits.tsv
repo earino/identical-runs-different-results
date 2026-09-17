@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	fbdc565	1789534808	baseline
+01	15a5e47	1789534842	FE: DepTime hour/min, int dates, Route; model 300 trees depth 8
+02	8610aa0	1789534854	cat dates + hour/min, no route, 300x d6
+03	736639e	1789534863	baseline features + 300x d6 defaults
+04	1106194	1789535341	CarrierHour interaction + 800 trees d5 lr0.04
+05	883afbc	1789535521	5-model diverse ensemble (cbl05/alpha1/600x6/300x6/cbl03)
+06	a6579d4	1789535656	6-model ensemble with deep cbl members
+07	3c3ed17	1789535937	11-member multi-view ensemble (main/hourcat/te/route)
+08	6e7d62f	1789536517	add cslot30 view member, unify seeds
+09	7239cc8	1789536661	add cslot15 members (14-model ensemble)
+10	d817d6f	1789536862	add slotmain/slotmain30 members (16-model ensemble)
+11	a2dafc9	1789537217	add orighour member (17-model ensemble)
+12	e0718e3	1789537391	add origslot15/desthour/destslot15 members (20-model ensemble)
+13	5419fe8	1789538345	combined train+eval training, 8-member OOF06-selected blend
+14	1f1e826	1789539159	stronger 800-tree base learners (strong8)
+15	3c784dd	1789539356	1200-tree bases for cslot30/main/te
+16	9b8d5fa	1789539751	slotmain30 to 1200 trees (all-1200 config)

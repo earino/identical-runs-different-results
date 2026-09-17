@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	5fb0c3d	1789638876	baseline
+01	1f7aca8	1789638933	engineered time features
+02	27803a0	1789638987	regularization package
+03	c9ef3be	1789639034	stronger regularization
+04	dffba3f	1789639084	depth5 colsample 0.5
+05	31dad99	1789639115	3-member seed/colsample ensemble
+06	d0f8619	1789639133	5-member ensemble
+07	0639b88	1789639164	congestion counts, fixed cos_hour, dropped dead column
+08	c884855	1789639190	finer congestion: 15min slots, hour load, dow counts
+09	dbb80a5	1789639211	route-slot count, schedule shares
+10	0f33a96	1789639256	row-bagged members
+11	59ae8cd	1789639271	8 members
+12	cdd271c	1789639456	recency-weighted training
+13	16448e1	1789639553	carrier-airport rotation counts
+14	e68444d	1789639577	carrier-route-slot counts
+15	ce69216	1789639667	drop hour/dow congestion noise
+16	8ecdfc0	1789639695	lossguide members
+17	1e4047b	1789639923	inbound bank pressure

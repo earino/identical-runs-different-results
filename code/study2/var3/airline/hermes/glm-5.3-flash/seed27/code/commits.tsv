@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	81de627	1789487132	baseline
+01	e134364	1789487189	cyclical deptime, cat train via DMatrix, depth10 lr.05 ES50
+02	a49f5f9	1789487246	target encodings (oof) + counts + deptime cyclical, depth8 ES100
+03	f0355ba	1789487266	regularize: depth6 mcw20 sub.7 col.7
+04	a63a992	1789487283	more TE interactions: dest_hour, carrier_hour, dtblock
+05	ca6d7f1	1789487336	eta .03 mcw50
+06	2b51f4c	1789487368	bagged ensemble 6 seeds x 90/10 ES
+07	a3758a2	1789487569	diverse-config ensemble: 6 bags varied depth/col/mcw
+08	dc59f84	1789487819	congestion features: flights per origin/dest-day
+09	685fdc5	1789487897	expand congestion: cong_day, cong_ohb, cong_c
+10	52ad19c	1789488061	TE origin_hb, hour_x_congday
+11	5da2a4c	1789488333	8 diverse bags
+12	78fbe33	1789488484	deeper bags: base depth 8
+13	5c3b622	1789489237	cong_och, cong_chb (carrier congestion)
+14	ba74c47	1789489719	12 diverse bags
+15	c31a031	1789491239	12 bags, subsample .8, round cap 2400

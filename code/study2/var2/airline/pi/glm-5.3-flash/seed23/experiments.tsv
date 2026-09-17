@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6708b16	0.7141	ok	5	baseline
+2	9c875de	0.0000	crash	7	exp2: FE v1 + bigger model early stopping
+3	77c6b5a	0.7204	ok	11	exp2: FE v1 + bigger model early stopping
+4	67f5c7b	0.7091	ok	26	exp4: route + TE features (OOF)
+5	63dcbf2	0.7181	ok	51	exp5: lower lr, more trees
+6	79b3a06	0.7192	ok	9	exp6: depth 6
+7	0857849	0.7154	ok	17	exp7: discrete codes as categoricals
+8	95a2ef0	0.7196	ok	21	exp8: interaction categoricals
+9	bc4f443	0.7199	ok	11	exp9: stronger leaf regularization
+10	0ee47dd	0.7203	ok	15	exp10: colsample_bynode
+11	8b3f579	0.7221	ok	36	exp11: 5-seed ensemble
+12	9774150	0.7241	ok	55	exp12: depth-diverse ensemble
+13	35048a7	0.7242	ok	78	exp13: 9-model ensemble
+14	0b57a83	0.7253	ok	66	exp14: add lossguide diversity
+15	546e556	0.7259	ok	109	exp15: add deep-narrow config
+16	1cce95b	0.0000	timeout	122	exp16: drop minute/bad_time + member diag
+17	057cf22	0.7245	ok	89	exp17: reallocated ensemble
+18	cfbca05	0.0000	crash	38	exp18: regularized member variant
+19	0468b11	0.0000	crash	46	exp18: regularized member variant
+20	cc0109f	0.7246	ok	77	exp18: regularized member variant
+21	ea54898	0.0000	timeout	123	exp21: dt5 feature + member diag
+22	908f66b	0.7258	ok	110	exp22: dt5 feature in ensemble
+23	9f9b336	0.7267	ok	111	exp23: E15 + dt5
+24	f2e4bed	0.0000	timeout	121	exp24: count encodings
+25	1cc42f4	0.0000	timeout	120	exp25: DMatrix refactor (expect ~0.7267)
+26	6b058ed	0.7250	ok	85	exp26: cheap 5-config ensemble
+27	698fe85	0.7268	ok	108	exp27: d12@600 rounds
+28	c1b2fa4	0.7243	ok	97	exp28: max_bin=64
+29	713fe68	0.0000	crash	1	exp29: carrier-hour TE
+30	ea56a83	0.7271	ok	102	exp29: carrier-hour TE
+31	3401069	0.7272	ok	109	exp31: dow-hour + carrier-dow TE
+32	520c60f	0.7274	ok	105	exp32: origin-hour TE
+33	b61cb9f	0.7169	ok	120	exp33: month-dom TE + dist residual
+34	3816555	0.7271	ok	118	exp34: 12 members
+35	683ac83	0.7271	ok	113	exp35: logit-mean combiner
+36	ea3d5e1	0.0000	timeout	122	exp36: 3rd lossguide seed
+37	b07646d	0.7278	ok	112	exp37: route count encoding
+38	ed3218c	0.7277	ok	105	exp38: d10@600
+39	8e4d4fe	0.7278	ok	114	exp39: heavier TE smoothing
+40	975e1db	0.7276	ok	111	exp40: 11 members

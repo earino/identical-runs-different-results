@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	de7e900	0.7141	ok	3	baseline
+2	11dca5c	0.7083	ok	3	more trees 300
+3	7f73d71	0.7132	ok	2	time features dep_min/hour
+4	a8216fc	0.7159	ok	7	regularized + early stopping + time feats
+5	4373155	0.7093	ok	5	route categorical
+6	43e16c7	0.7148	ok	8	frequency encodings
+7	1c660eb	0.7162	ok	7	max_depth 4
+8	fee40d7	0.7154	ok	6	max_depth 3
+9	0b7c05a	0.7170	ok	6	early stop on eval
+10	f97d3d9	0.7170	ok	13	lr 0.01
+11	1697ed9	0.7163	ok	5	min_child_weight 20
+12	c5c9c97	0.7170	ok	6	target encoding
+13	ea7a400	0.7171	ok	21	5-seed ensemble
+14	1f1dec5	0.7174	ok	21	heterogeneous ensemble
+15	77a8524	0.7251	ok	56	carrier x hour
+16	ff708b8	0.7251	ok	41	no refit iteration_range
+17	b6f3604	0.7190	ok	23	origin x hour
+18	acff787	0.7129	ok	16	carrier_month + carrier_dow
+19	7b6f6e8	0.7265	ok	61	colsample 0.5
+20	771113a	0.7232	ok	33	colsample 0.3
+21	3633025	0.7161	ok	19	carrier x origin
+22	095137e	0.7267	ok	84	7-model ensemble
+23	0b31298	0.7327	ok	75	carrier x 30min
+24	b6e8933	0.7204	ok	27	carrier x 15min
+25	aa2100a	0.7315	ok	93	lr 0.02
+26	b4fddd4	0.7326	ok	50	lr 0.05
+27	4645182	0.7307	ok	65	subsample 0.6
+28	cf2a0db	0.7350	ok	85	deeper ensemble
+29	89904e4	0.7344	ok	65	even deeper
+30	4431cae	0.7342	ok	70	mcw 10
+31	ce6515e	0.7370	ok	87	dep_minute
+32	cf6e39a	0.7150	ok	21	carrier x minute
+33	40bf213	0.7360	ok	83	drop raw DepTime
+34	75483f6	0.7370	ok	85	gamma 1.0
+35	8d676c6	0.7383	ok	54	max_cat_threshold 256
+36	70d2374	0.7160	ok	17	max_cat_threshold 1024
+37	b0a00b6	0.7410	ok	53	max_cat_to_onehot 32
+38	57cd772	0.7356	ok	106	max_cat_to_onehot 300
+39	787d96b	0.7412	ok	58	reg_lambda 5
+40	3b91a8f	0.7411	ok	82	10-model ensemble

@@ -1,0 +1,204 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 8,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T02:56:09+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s8-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T05:00:15+00:00",
+  "wall_seconds": 7445.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12492.1,
+  "endpoint_at_end": "ok",
+  "head": "ddcadc5",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7352,
+  "final_eval_auc": 0.7352,
+  "holdout_auc": 0.7359526388580001,
+  "holdout_ap": 0.7236944114905308,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.021181887122000087,
+  "generalization_gap": -0.0007526388580001431,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3916188,
+    "tokens_in_uncached": 2174044,
+    "tokens_in_cached": 1742144,
+    "tokens_out": 73360,
+    "turns": null,
+    "api_calls": 104,
+    "method": "sum-of-104-events",
+    "cost_usd": 3.8194,
+    "cached_share": 0.445
+  },
+  "cpu_seconds_python": 12458.4,
+  "cpu_seconds_counted": 8776.8,
+  "cpu_seconds_uncounted": 3376.0,
+  "cpu_seconds_exempt": 305.7,
+  "python_processes": 81,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 366,
+  "fits_counted": 282,
+  "fits_uncounted": 77,
+  "commits": [
+    {
+      "commit": "30ce436",
+      "message": "baseline"
+    },
+    {
+      "commit": "f65f043",
+      "message": "early stopping, 3000 trees, depth 8, subsample/colsample"
+    },
+    {
+      "commit": "4260591",
+      "message": "fix iloc for val split"
+    },
+    {
+      "commit": "e7587bf",
+      "message": "300 trees depth 8, no early stopping"
+    },
+    {
+      "commit": "6952b04",
+      "message": "feature engineering: parsed ints, hour/min, route categorical"
+    },
+    {
+      "commit": "4c7b565",
+      "message": "drop route categorical"
+    },
+    {
+      "commit": "6dc43f0",
+      "message": "add OOF smoothed target encodings (carrier/origin/dest/route/hour)"
+    },
+    {
+      "commit": "9331a6b",
+      "message": "fix ndarray map"
+    },
+    {
+      "commit": "a1def79",
+      "message": "capacity: 400 trees depth 7, subsample 0.8/0.8"
+    },
+    {
+      "commit": "1dedd14",
+      "message": "bag of 5 xgb seeds"
+    },
+    {
+      "commit": "8fe8781",
+      "message": "diversified bag: 8 models, depth cycle, colsample spread"
+    },
+    {
+      "commit": "36a8c64",
+      "message": "interaction TEs: carrier/origin/dest/route x hour"
+    },
+    {
+      "commit": "1ddf800",
+      "message": "congestion count features"
+    },
+    {
+      "commit": "fd69fe7",
+      "message": "bag 14 models"
+    },
+    {
+      "commit": "690579d",
+      "message": "carrier x origin/dest TEs"
+    },
+    {
+      "commit": "bb92fcf",
+      "message": "drop plain TEs, keep interactions"
+    },
+    {
+      "commit": "2039cbb",
+      "message": "lr 0.05, 800 trees, 10 models"
+    },
+    {
+      "commit": "81f7a49",
+      "message": "calendar: doy + dow interaction TEs"
+    },
+    {
+      "commit": "39a9b72",
+      "message": "TE smoothing 40"
+    },
+    {
+      "commit": "73a4c9b",
+      "message": "blend: 1 dart + 7 gbtree models"
+    },
+    {
+      "commit": "a476bf8",
+      "message": "dart rate_drop 0.25"
+    },
+    {
+      "commit": "4930065",
+      "message": "dart 350 trees lr .09, 6 gbtree"
+    },
+    {
+      "commit": "bbe5506",
+      "message": "two small darts (150@.18) + 5 gbtree"
+    },
+    {
+      "commit": "7f0f4c8",
+      "message": "weighted blend: darts get weight 2"
+    },
+    {
+      "commit": "f7cda31",
+      "message": "weighted dart blend (actually applied)"
+    },
+    {
+      "commit": "655661a",
+      "message": "dart depth 8"
+    },
+    {
+      "commit": "ddcadc5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 12152.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 33.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "655661a",
+  "best_commit_eval_auc": 0.7352,
+  "best_commit_holdout_auc": 0.7359526388580001,
+  "best_commit_holdout_ap": 0.7236944114905308,
+  "best_commit_error": null,
+  "finalized_best": true
+}

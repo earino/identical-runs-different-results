@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c6f4f97	0.7141	ok	10	baseline
+2	301214a	0.7164	ok	6	c-n parse + time-of-day + 300 trees lr.08 early stop
+3	5103efd	0.7172	ok	3	add OOF target encodings carrier/origin/dest/route
+4	59c30e5	0.7144	ok	16	capacity: 3000 trees lr0.03 early stop 50
+5	dc56e14	0.7178	ok	3	regularize: depth5 mcw20 lambda5
+6	cbb3fd5	0.0000	crash	3	add frequency/volume features
+7	d06b4c7	0.7194	ok	3	add frequency/volume features (fix)
+8	e9ea6db	0.7251	ok	16	full-data 9-model ensemble, no early stop
+9	0f484ed	0.7245	ok	29	capacity 600 trees lr0.05 full-data ensemble
+10	18f8404	0.7242	ok	33	24-model diverse ensemble (depth4/5/6)
+11	e8c278a	0.7235	ok	16	airport/carrier x time-bucket target encodings
+12	0480c7a	0.7234	ok	13	ablation: no target encoding
+13	67707ba	0.7241	ok	15	9 seeds of single best config
+14	e270089	0.7249	ok	12	ablation: no raw Origin/Dest categoricals
+15	e739f30	0.7251	ok	17	structural descriptors + schedule shares
+16	4c8f6c5	0.7246	ok	16	monotone constraint on tod
+17	5d37a8b	0.7232	ok	16	drop route TE (thin keys)
+18	2bbf9f7	0.7248	ok	14	TE smoothing 20
+19	76e877f	0.7247	ok	38	24-model ensemble, 3 variants x 8 seeds
+20	32bf308	0.7216	ok	16	day-of-year seasonality features
+21	2933bcc	0.7240	ok	16	ablation: drop Month/DayofMonth
+22	95c31ea	0.7238	ok	12	shallower ensemble members
+23	50a9154	0.7248	ok	17	covariate-shift importance weighting
+24	ba86b73	0.0000	timeout	120	DART booster
+25	7c4f669	0.7245	ok	16	undirected city-pair TE
+26	76196fb	0.7251	ok	15	stochastic members 0.65
+27	f56023d	0.7276	ok	18	hour categorical feature
+28	6d62be0	0.7369	ok	18	30-min tod bucket categorical
+29	208308d	0.7385	ok	18	15-min tod bucket categorical
+30	9ce4485	0.7322	ok	18	5-min tod bucket categorical
+31	64d4a77	0.7374	ok	17	max_cat_to_onehot=32
+32	e61b25f	0.7372	ok	18	10-min tod bucket categorical
+33	07b27ea	0.7372	ok	19	distance quantile bins categorical
+34	ba96790	0.7332	ok	20	calendar categoricals
+35	080c5cf	0.7426	ok	19	carrier x hour categorical
+36	77eaee1	0.7449	ok	19	carrier x 30min bucket interaction
+37	e16faa9	0.7417	ok	17	carrier x 15min bucket interaction
+38	bc78bba	0.7416	ok	22	origin/dest x 6h-bucket categoricals
+39	a70c62c	0.7439	ok	20	max_cat_threshold=128
+40	e4ca418	0.7453	ok	18	ablation: drop numeric tod/tod_sin/tod_cos

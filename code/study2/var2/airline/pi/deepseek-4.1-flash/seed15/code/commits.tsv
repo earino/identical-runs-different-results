@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	e8a9787	1789492763	baseline
+01	ea68674	1789492819	depth4 150trees lr0.05 mcw5
+02	4af54f6	1789492841	add dep_hour/dep_min/is_weekend
+03	4610f41	1789492892	220 trees
+04	2407798	1789492906	mcw1 220 trees
+05	6dab428	1789492909	300 trees mcw1
+06	04af4a3	1789492935	doy + hour cyclical features
+07	a57ebe2	1789492956	lr0.04 380 trees
+08	a7e2890	1789492965	ensemble of 5 diverse XGBoost models
+09	03f8d67	1789492995	seed-bag ensemble 10 models
+10	8755451	1789493048	ensemble + categorical-handling diversity
+11	b472cb4	1789493073	carrier x hour categorical
+12	ddc44dc	1789493214	bump ensemble tree counts
+13	28822ca	1789493245	bump trees again
+14	0fc521e	1789493282	bump trees 3
+15	68ee401	1789493329	bump trees 4

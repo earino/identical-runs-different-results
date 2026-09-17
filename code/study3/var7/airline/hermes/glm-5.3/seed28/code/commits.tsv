@@ -1,0 +1,6 @@
+n	commit	unix_time	subject
+00	d586fd4	1789589988	baseline
+01	0d904e9	1789590082	target-encoded features, hour/season cyclicals, early stopping, tuned params
+02	a59ce46	1789590797	solid features + colsample 0.5
+03	4f20f83	1789591282	carrier x hour-of-day interaction categorical
+04	2f8a906	1789591506	6-model xgboost ensemble (seed/colsample/depth variation)

@@ -1,0 +1,156 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 36,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:38:10+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s36-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:46:08+00:00",
+  "wall_seconds": 477.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 493.8,
+  "endpoint_at_end": "ok",
+  "head": "ce4b629",
+  "n_commits": 14,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7209,
+  "final_eval_auc": 0.7209,
+  "holdout_auc": 0.722021335912,
+  "holdout_ap": 0.713925084242906,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.007250584175999997,
+  "generalization_gap": -0.0011213359120000321,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4648759,
+    "tokens_in_uncached": 27703,
+    "tokens_in_cached": 4621056,
+    "tokens_out": 35974,
+    "turns": null,
+    "api_calls": 141,
+    "method": "sum-of-141-events",
+    "cost_usd": 0.1608,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 518.7,
+  "cpu_seconds_counted": 463.5,
+  "cpu_seconds_uncounted": 3.1,
+  "cpu_seconds_exempt": 52.1,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 65,
+  "fits_counted": 60,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "c3f7ee2",
+      "message": "baseline"
+    },
+    {
+      "commit": "426f5eb",
+      "message": "depth 5, 30 trees"
+    },
+    {
+      "commit": "c3916b9",
+      "message": "d5 60 trees"
+    },
+    {
+      "commit": "7e66ba5",
+      "message": "d4 100 trees"
+    },
+    {
+      "commit": "74ee18f",
+      "message": "d3 200 trees"
+    },
+    {
+      "commit": "d1eb659",
+      "message": "d3 400t lr.05"
+    },
+    {
+      "commit": "08befdd",
+      "message": "FE v1 (no route) at d3/400/lr.05"
+    },
+    {
+      "commit": "4514c95",
+      "message": "TE origin/dest/carrier/hour on top of FE d3/400"
+    },
+    {
+      "commit": "df61c62",
+      "message": "holiday peak flag"
+    },
+    {
+      "commit": "7c31f7c",
+      "message": "lr.03 600t d3"
+    },
+    {
+      "commit": "03f4ca3",
+      "message": "d4 600t lr.03"
+    },
+    {
+      "commit": "6f4a909",
+      "message": "d5 600t lr.03"
+    },
+    {
+      "commit": "ac80e6a",
+      "message": "3-config ensemble"
+    },
+    {
+      "commit": "0bcdfde",
+      "message": "5-member ensemble"
+    },
+    {
+      "commit": "ce4b629",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 466.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -24.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0bcdfde",
+  "best_commit_eval_auc": 0.7209,
+  "best_commit_holdout_auc": 0.722021335912,
+  "best_commit_holdout_ap": 0.713925084242906,
+  "best_commit_error": null,
+  "finalized_best": true
+}

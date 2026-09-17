@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	5569d4e	0.7141	ok	4	baseline
+2	947d8a6	0.7112	ok	4	capacity 500 trees lr0.05 depth7
+3	083847f	0.7125	ok	2	deptime features
+4	1cd20c7	0.7118	ok	5	early stopping probe depth6 lr0.05
+5	c82d76a	0.7250	ok	2	carrier_hour + tuned model
+6	d1d6a89	0.7378	ok	15	doy + deep trees d10 n600
+7	f302244	0.7399	ok	14	reg_lambda 50
+8	bbdcd3b	0.7424	ok	43	4-model diverse ensemble
+9	4e87565	0.7443	ok	48	carrier_dist interaction
+10	8e3b1a6	0.7495	ok	77	origin_hour + hour_dist
+11	4fe0218	0.0000	crash	2	drop raw Month/DayofMonth
+12	115dd80	0.7500	ok	71	drop raw Month/DayofMonth

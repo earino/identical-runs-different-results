@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	f048e86	1789514138	baseline
+01	075d129	1789514240	bigger model + early stopping + time features
+02	2b8a6f0	1789514256	depth4 lr0.03
+03	e7fede9	1789514516	depth6 regularized
+04	187b5d0	1789514538	depth8 regularized
+05	0386424	1789514559	depth10 regularized
+06	1793ec7	1789514579	depth12 regularized
+07	2d41d9d	1789514623	depth12 lr0.01
+08	c844a59	1789514881	heavier colsample
+09	97f302d	1789515325	alpha 0.5
+10	aa488ca	1789515376	carrier x hour cat
+11	ec42c5f	1789515391	carrier x hour cat (fix)
+12	7b26827	1789515447	origin x hour cat
+13	93730dd	1789515669	heavier sampling on compound feats
+14	761ec21	1789515858	depth14 with compounds
+15	e942658	1789515937	depth16 with compounds

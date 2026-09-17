@@ -1,0 +1,120 @@
+"""XGBoost binary classifier. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import KFold
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+y_all = (train[TARGET] == POSITIVE).astype(int).to_numpy()
+
+# --- target-encoding tables (fit on train ONLY; used by prepare on any frame) ---
+P0 = float(y_all.mean())
+
+
+def te_table(keys: pd.Series, y: np.ndarray, k: int) -> pd.Series:
+    g = pd.DataFrame({"k": keys.to_numpy(), "y": y}).groupby("k")["y"].agg(["sum", "count"])
+    return (g["sum"] + k * P0) / (g["count"] + k)
+
+
+def _keys(df: pd.DataFrame) -> pd.DataFrame:
+    K = pd.DataFrame(index=df.index)
+    K["hour"] = df["DepTime"].astype(int) // 100
+    K["dow"] = df["DayOfWeek"].astype(str).str.replace("c-", "", regex=False).astype(int)
+    K["hd"] = K["hour"].astype(str) + "_" + K["dow"].astype(str)
+    return K
+
+
+K_train = _keys(train)
+TE = {
+    "origin": (train["Origin"].astype(str), 50),
+    "hd": (K_train["hd"], 200),
+}
+te_tables = {c: te_table(keys, y_all, k) for c, (keys, k) in TE.items()}
+
+# out-of-fold TE values for the training rows themselves (prevents TE leakage)
+OOF = {f"te_{c}": np.zeros(len(train)) for c in TE}
+kf = KFold(n_splits=5, shuffle=True, random_state=SEED)
+for trn_idx, val_idx in kf.split(train):
+    y_trn = y_all[trn_idx]
+    for c, (keys, k) in TE.items():
+        tbl = te_table(keys.iloc[trn_idx], y_trn, k)
+        OOF[f"te_{c}"][val_idx] = keys.iloc[val_idx].map(tbl).fillna(P0).to_numpy()
+
+# --- features -----------------------------------------------------------------
+CAT_COLS = ["UniqueCarrier", "Origin", "Dest"]
+cat_levels = {c: pd.Index(sorted(train[c].astype(str).dropna().unique())) for c in CAT_COLS}
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows.
+    X = pd.DataFrame(index=df.index)
+    X["month"] = df["Month"].astype(str).str.replace("c-", "", regex=False).astype(int)
+    X["day"] = df["DayofMonth"].astype(str).str.replace("c-", "", regex=False).astype(int)
+    X["dow"] = df["DayOfWeek"].astype(str).str.replace("c-", "", regex=False).astype(int)
+    dep = df["DepTime"].astype(int)
+    X["dep_time"] = dep
+    X["dep_hour"] = dep // 100
+    X["minute_of_day"] = dep // 100 * 60 + dep % 100
+    X["distance"] = df["Distance"].astype(float)
+    K = _keys(df)
+    X["te_origin"] = df["Origin"].astype(str).map(te_tables["origin"]).fillna(P0).to_numpy()
+    X["te_hd"] = K["hd"].map(te_tables["hd"]).fillna(P0).to_numpy()
+    for c in CAT_COLS:
+        X[c] = pd.Categorical(df[c].astype(str), categories=cat_levels[c])  # unseen levels -> NaN
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+X_all = prepare(train)
+# replace in-sample TE with the honest out-of-fold values for training rows only
+for c in TE:
+    X_all[f"te_{c}"] = OOF[f"te_{c}"]
+
+model = xgb.XGBClassifier(
+    n_estimators=100,
+    max_depth=6,
+    learning_rate=0.03,
+    tree_method="hist",
+    enable_categorical=True,
+    min_child_weight=10,
+    colsample_bytree=0.5,
+    max_bin=512,
+    random_state=SEED,
+    n_jobs=N_JOBS,
+)
+
+t0 = time.time()
+model.fit(X_all, y_all, verbose=False)
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    return model.predict_proba(prepare(df))[:, 1]
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

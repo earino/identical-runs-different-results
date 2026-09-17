@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	92e18e0	0.7141	ok	5	baseline
+2	f159253	0.7134	ok	5	800 trees lr0.03
+3	226a1df	0.7145	ok	2	time-of-day features
+4	f1c6416	0.7057	ok	1	add route categorical
+5	056938f	0.7143	ok	2	depth=4
+6	a25b992	0.7158	ok	14	cv model selection
+7	b8ef92e	0.7175	ok	16	oof target encoding
+8	9109207	0.7198	ok	18	more TE keys
+9	0b7a34c	0.7207	ok	18	count features
+10	11afa2f	0.7208	ok	20	more TE keys 2
+11	d5fb1be	0.7212	ok	23	top3 ensemble
+12	55a314e	0.7224	ok	60	wider candidate grid
+13	60fa77a	0.7130	ok	57	date TE
+14	023e497	0.7228	ok	72	seed bagging top2
+15	f3babb1	0.7226	ok	74	carrier_hour TE
+16	19459f3	0.7231	ok	67	ablate weak TE keys
+17	fb8c96b	0.7229	ok	61	TE smooth 50
+18	476ed47	0.7227	ok	67	10-fold OOF
+19	c1c7071	0.7229	ok	75	top3 x 3 seeds
+20	3d816d9	0.7232	ok	66	drop Month TE
+21	dd49b80	0.7230	ok	64	drop carrier TE
+22	0bec368	0.7229	ok	70	undirected route TE
+23	0b5a6f7	0.0000	timeout	120	more diverse candidates
+24	ce88ddf	0.0000	crash	2	global hour TE
+25	2db0341	0.7228	ok	67	global hour TE (fixed)
+26	54903e0	0.7222	ok	45	fixed diverse ensemble
+27	fb97718	0.0000	crash	1	drop native Month
+28	089a2c2	0.7265	ok	64	drop native Month (fixed)
+29	b9daa07	0.7250	ok	63	drop native UniqueCarrier
+30	c07d3bc	0.7289	ok	61	drop native DayofMonth
+31	d508c72	0.7281	ok	58	drop carrier TE
+32	6b06266	0.7280	ok	57	drop DayOfWeek TE
+33	1a747ac	0.7291	ok	72	top2 x 5 seeds
+34	d06690c	0.7272	ok	63	drop sin/cos/weekend
+35	5b29a64	0.7252	ok	75	Month TE (no native)
+36	6d93144	0.7299	ok	74	retune candidates
+37	b861535	0.7299	ok	82	top3 x 4 seeds
+38	e1313f1	0.7301	ok	76	arrival time feats
+39	3c96a7d	0.7307	ok	78	arr_hour TE
+40	6253efd	0.7306	ok	80	cnt_origin_hour

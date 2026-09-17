@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	5485af8	0.7141	ok	3	baseline
+2	e5eab05	0.7125	ok	4	exp2: bigger model + ES internal split
+3	5bf08ee	0.0000	crash	0	exp3: FE v1 + baseline model
+4	420c0d4	0.7049	ok	1	exp3: FE v1 + baseline model
+5	20a342d	0.7132	ok	2	exp4: FE v1 minus Route, 100 trees
+6	0208892	0.7163	ok	2	exp5: d4 recipe on baseline features
+7	3d9961e	0.7168	ok	9	exp6: 7-seed bagged ensemble
+8	c303db8	0.7250	ok	14	exp7: hourcat alpha10 d8 5-seed bag
+9	d73f9ef	0.7271	ok	22	exp8: tod feats + route cat on d10 a10
+10	da0cfff	0.7303	ok	74	exp9: d14 a10 sub.85 bag
+11	3173e10	0.7283	ok	86	exp10: doy/holiday/dow-tod features
+12	ff8c866	0.7256	ok	24	exp11: lossguide max_leaves 48
+13	56280a6	0.7308	ok	82	exp12: max_bin 512
+14	916a63b	0.7305	ok	89	exp13: depth diversity ensemble
+15	12080ac	0.7310	ok	69	exp14: colsample_bylevel 0.8
+16	c088fad	0.7255	ok	15	exp15: max_leaves 63
+17	6910389	0.7310	ok	95	exp16: n400 lr.03
+18	43ed8ee	0.7308	ok	72	exp17: subsample 0.9
+19	67b23d0	0.7317	ok	91	exp18: alpha diversity a6/a10
+20	a36d87a	0.0000	timeout	121	exp19: alpha mix 6/8/10 9 models
+21	fd77db8	0.7125	ok	100	exp20: single alpha8 5-seed
+22	22dab4a	0.7314	ok	81	exp20: single alpha8 5-seed (fixed)
+23	a0fb4ee	0.7351	ok	101	exp21: minute feature
+24	ebe5076	0.7356	ok	92	exp22: single alpha6 5-seed
+25	39d13b8	0.7348	ok	115	exp23: single alpha4 5-seed
+26	a8649bb	0.7354	ok	107	exp24: max_bin 1024

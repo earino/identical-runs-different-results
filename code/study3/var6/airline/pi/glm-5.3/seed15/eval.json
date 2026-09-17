@@ -1,0 +1,216 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 15,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:25:18+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s15-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T19:33:01+00:00",
+  "wall_seconds": 4063.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9278.9,
+  "endpoint_at_end": "ok",
+  "head": "e0f06ed",
+  "n_commits": 29,
+  "n_experiments": 40,
+  "n_ok": 32,
+  "n_crash": 6,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7527,
+  "final_eval_auc": 0.7527,
+  "holdout_auc": 0.753063695444,
+  "holdout_ap": 0.7425216228748377,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03829294370799996,
+  "generalization_gap": -0.00036369544399994513,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10640303,
+    "tokens_in_uncached": 273519,
+    "tokens_in_cached": 10366784,
+    "tokens_out": 106623,
+    "turns": null,
+    "api_calls": 160,
+    "method": "sum-of-160-events",
+    "cost_usd": 3.5474,
+    "cached_share": 0.974
+  },
+  "cpu_seconds_python": 9240.8,
+  "cpu_seconds_counted": 8730.1,
+  "cpu_seconds_uncounted": 3.2,
+  "cpu_seconds_exempt": 507.4,
+  "python_processes": 47,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 364,
+  "fits_counted": 352,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "3cfed71",
+      "message": "baseline"
+    },
+    {
+      "commit": "8369dee",
+      "message": "FE v1: hour/minute, route pair, int dates, log dist; xgb.train with internal early stopping, depth 8"
+    },
+    {
+      "commit": "53a23a1",
+      "message": "diagnostic: eval AUC vs rounds on 80% model"
+    },
+    {
+      "commit": "ac8da6e",
+      "message": "FE ablation: 6 variants x rounds grid, in-code best selection"
+    },
+    {
+      "commit": "7514c47",
+      "message": "fix route KeyError in ablation"
+    },
+    {
+      "commit": "e690220",
+      "message": "fix route levels lookup"
+    },
+    {
+      "commit": "b56bbc4",
+      "message": "reg grid around int_dates+hour FE"
+    },
+    {
+      "commit": "a4b6dae",
+      "message": "shallow + randomized grid, lr 0.05 variant"
+    },
+    {
+      "commit": "cc27c36",
+      "message": "TE feature ablation: single/time/inter/route groups, EB smoothing"
+    },
+    {
+      "commit": "a6c17ac",
+      "message": "combine TE-single with model config grid"
+    },
+    {
+      "commit": "419b00a",
+      "message": "7-member seed/config ensemble with TE features"
+    },
+    {
+      "commit": "05dd804",
+      "message": "12-member diverse ensemble, lr 0.03-0.1, FE groups"
+    },
+    {
+      "commit": "d11e776",
+      "message": "fix dmatrix cache key"
+    },
+    {
+      "commit": "b43bde2",
+      "message": "curated 10-member slow-learner ensemble with time/vol FE diversity"
+    },
+    {
+      "commit": "0f3b4d5",
+      "message": "members at peak rounds (500), +month TE, +time-decay weight member"
+    },
+    {
+      "commit": "55723e6",
+      "message": "fix curve range beyond model rounds"
+    },
+    {
+      "commit": "4f7c5f3",
+      "message": "ensemble v3: d7 seeds, decay-weight variants, no te_month, lr02@1000"
+    },
+    {
+      "commit": "4ea4167",
+      "message": "fix d7 curve range"
+    },
+    {
+      "commit": "9954144",
+      "message": "ensemble v4: +dart, m20 TE, colsample 0.4 diversity"
+    },
+    {
+      "commit": "408184b",
+      "message": "cs 0.3-0.5 x seeds, m20+cs04, wlin+cs04, dart+cs04"
+    },
+    {
+      "commit": "a141a9c",
+      "message": "ensemble v5: 13 cs04-family members, depth/sub/lr diversity"
+    },
+    {
+      "commit": "fde95c0",
+      "message": "ensemble v6: d8+cs04+sub08 family, depth 7-9, lr02 curve"
+    },
+    {
+      "commit": "ae11830",
+      "message": "ensemble v7: depth 9-12 with cs04, sub10 variants"
+    },
+    {
+      "commit": "8a3b80c",
+      "message": "deep-short v2: 8 members d14-18 @100-150 rounds"
+    },
+    {
+      "commit": "f8d1574",
+      "message": "deep v3: lr x rounds scan at d16-20"
+    },
+    {
+      "commit": "ed79056",
+      "message": "ensemble v8: d18 family x9 members @100"
+    },
+    {
+      "commit": "4c0475c",
+      "message": "ensemble v9: 10 deep members, mixed FE groups"
+    },
+    {
+      "commit": "20e233d",
+      "message": "ensemble v11: 11 members, best seeds + d16 cs045"
+    },
+    {
+      "commit": "437c725",
+      "message": "minute-of-day feature members (mod group) x2"
+    },
+    {
+      "commit": "e0f06ed",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8733.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 38.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "437c725",
+  "best_commit_eval_auc": 0.7527,
+  "best_commit_holdout_auc": 0.753063695444,
+  "best_commit_holdout_ap": 0.7425216228748377,
+  "best_commit_error": null,
+  "finalized_best": true
+}

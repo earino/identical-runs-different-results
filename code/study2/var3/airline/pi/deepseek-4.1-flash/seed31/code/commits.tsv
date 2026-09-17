@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	ff6299e	1789507202	baseline
+01	bf83df9	1789508453	drop Month/DayofMonth, origin_hour interaction, deep regularized XGB
+02	fab08f3	1789510867	depth 20
+03	c8cd794	1789511060	max_cat_threshold 128
+04	8a2f01c	1789512268	raw DepTime + minute_of_day
+05	2955753	1789512361	add dep_minute_of_hour
+06	c584727	1789512569	origin_slot30 n600
+07	f1015cb	1789512767	origin_slot15 n400

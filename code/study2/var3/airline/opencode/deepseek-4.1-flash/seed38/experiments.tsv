@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	d9a3461	0.7141	ok	4	baseline
+2	2c4cfd0	0.7095	ok	2	feat: time/distance/route/cyclic
+3	39bcfb8	0.7119	ok	3	300 trees lr0.05
+4	bcf79e7	0.7167	ok	9	bagged ensemble n30 depths5/6/7
+5	33c5953	0.7173	ok	11	ensemble + cyclical time/month
+6	8f09c9b	0.7285	ok	70	deep ensemble depth18-22 n20
+7	2b4f266	0.7298	ok	85	RF mode num_parallel_tree=600
+8	92fa21d	0.7352	ok	96	RF npar600 ss0.9 cs0.5
+9	f786f1a	0.7354	ok	79	two forests 300+300 diverse
+10	415246f	0.7332	ok	101	three forests 250x3
+11	9de88cb	0.7125	ok	114	forests colsample_bynode
+12	58e50c4	0.7349	ok	90	two forests 350x2
+13	97f3487	0.7319	ok	86	forests + boosted deep
+14	e731b57	0.7258	ok	84	forest pair + target encoding
+15	27e569f	0.7333	ok	82	four forests 150x4

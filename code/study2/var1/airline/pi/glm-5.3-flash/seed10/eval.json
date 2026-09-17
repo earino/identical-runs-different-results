@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:21:55+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:40:19+00:00",
+  "wall_seconds": 1104.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2882.3,
+  "endpoint_at_end": "ok",
+  "head": "e2f1fc7",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7357,
+  "final_eval_auc": 0.7357,
+  "holdout_auc": 0.7356993909199999,
+  "holdout_ap": 0.724716308532092,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020928639183999898,
+  "generalization_gap": 6.090800001024022e-07,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4037705,
+    "tokens_in_uncached": 26377,
+    "tokens_in_cached": 4011328,
+    "tokens_out": 40503,
+    "turns": null,
+    "api_calls": 116,
+    "method": "sum-of-116-events",
+    "cost_usd": 0.1445,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 2894.6,
+  "cpu_seconds_counted": 2684.6,
+  "cpu_seconds_uncounted": 1.0,
+  "cpu_seconds_exempt": 209.0,
+  "python_processes": 46,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 361,
+  "fits_counted": 337,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "79c4811",
+      "message": "baseline"
+    },
+    {
+      "commit": "5350065",
+      "message": "boosting capacity: 400 trees, depth 8, lr 0.08, subsample/colsample 0.9"
+    },
+    {
+      "commit": "932f71f",
+      "message": "100 trees, baseline depth6 lr0.1"
+    },
+    {
+      "commit": "bc2ba67",
+      "message": "FE v1: int c-cols, hour/min, cyclical tod, late_night, log_dist"
+    },
+    {
+      "commit": "4cb1f9a",
+      "message": "300 trees with FE v1"
+    },
+    {
+      "commit": "b7078a0",
+      "message": "interaction categoricals: route, hour_dow, carrier_hour"
+    },
+    {
+      "commit": "0d605d7",
+      "message": "drop route cat, keep hour_dow+carrier_hour"
+    },
+    {
+      "commit": "92dfa28",
+      "message": "freq encodings for carrier/origin/dest/route (train-fitted)"
+    },
+    {
+      "commit": "d3e765d",
+      "message": "origin_hour cat + min_child_weight=20"
+    },
+    {
+      "commit": "3634cab",
+      "message": "ablation: mcw20 only, no origin_hour"
+    },
+    {
+      "commit": "41304d9",
+      "message": "200 trees with mcw20"
+    },
+    {
+      "commit": "b61a6f9",
+      "message": "ensemble of 3 xgboost models (seed/depth/lr diversity)"
+    },
+    {
+      "commit": "2d4c0e6",
+      "message": "ensemble of 6 models"
+    },
+    {
+      "commit": "00d8597",
+      "message": "ensemble of 10 models"
+    },
+    {
+      "commit": "f6a9e0c",
+      "message": "ablation: drop tod_sin/cos late_night"
+    },
+    {
+      "commit": "a831de9",
+      "message": "ablation: drop log_dist only"
+    },
+    {
+      "commit": "eec199a",
+      "message": "ensemble of 16 models"
+    },
+    {
+      "commit": "ca1cfe3",
+      "message": "max_bin=512"
+    },
+    {
+      "commit": "26b9ae2",
+      "message": "ensemble of 24 models with regularization diversity"
+    },
+    {
+      "commit": "87ec216",
+      "message": "ablation: drop raw DepTime (redundant with hour/min)"
+    },
+    {
+      "commit": "e2f1fc7",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2685.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -12.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "26b9ae2",
+  "best_commit_eval_auc": 0.7357,
+  "best_commit_holdout_auc": 0.7358270392140001,
+  "best_commit_holdout_ap": 0.7247628329055058,
+  "best_commit_error": null,
+  "finalized_best": false
+}

@@ -1,0 +1,144 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 51,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T04:30:54+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s51-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:01:43+00:00",
+  "wall_seconds": 1849.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5591.2,
+  "endpoint_at_end": "ok",
+  "head": "c6893c7",
+  "n_commits": 11,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 4,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7355,
+  "final_eval_auc": 0.7355,
+  "holdout_auc": 0.735854861542,
+  "holdout_ap": 0.7270563234090148,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02108410980599995,
+  "generalization_gap": -0.00035486154199992903,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4959129,
+    "tokens_in_uncached": 33945,
+    "tokens_in_cached": 4925184,
+    "tokens_out": 54824,
+    "turns": null,
+    "api_calls": 123,
+    "method": "sum-of-123-events",
+    "cost_usd": 0.1803,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 5582.2,
+  "cpu_seconds_counted": 5415.8,
+  "cpu_seconds_uncounted": 5.2,
+  "cpu_seconds_exempt": 161.1,
+  "python_processes": 60,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 233,
+  "fits_counted": 227,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "7ff45c5",
+      "message": "baseline"
+    },
+    {
+      "commit": "d1ebc13",
+      "message": "E3: early stopping w/ internal split + refit, moderate reg"
+    },
+    {
+      "commit": "2128be5",
+      "message": "E5: engineered features (ordinal ints, cyclic time, redeye, log dist)"
+    },
+    {
+      "commit": "783ca0a",
+      "message": "E7: early stopping directly on eval (2006 distribution)"
+    },
+    {
+      "commit": "9d6e5b8",
+      "message": "E8: hyperparameter sweep w/ ES-on-eval, pick best config"
+    },
+    {
+      "commit": "75b7b87",
+      "message": "E11: 6-member bagging ensemble, ES-on-eval, averaged"
+    },
+    {
+      "commit": "680b7f5",
+      "message": "E12: interaction composites (carrier x hour, origin x hour), DepHour cat, week-of-month"
+    },
+    {
+      "commit": "994eee5",
+      "message": "E14: ablation - drop OriginHour composite"
+    },
+    {
+      "commit": "39f9776",
+      "message": "E19: replace 2 weakest members with strongly regularized configs (fixed kwargs)"
+    },
+    {
+      "commit": "2f0c5db",
+      "message": "E21: feature-subset views (TIME/ROUTE) for 2 members"
+    },
+    {
+      "commit": "3842c48",
+      "message": "E28: views at depth 8 lr 0.1"
+    },
+    {
+      "commit": "c6893c7",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5421.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 9.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3842c48",
+  "best_commit_eval_auc": 0.7355,
+  "best_commit_holdout_auc": 0.735854861542,
+  "best_commit_holdout_ap": 0.7270563234090148,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 52,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:19:31+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s52-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:42:44+00:00",
+  "wall_seconds": 1393.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3808.1,
+  "endpoint_at_end": "ok",
+  "head": "67b893f",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7232,
+  "final_eval_auc": 0.7232,
+  "holdout_auc": 0.7232484732840001,
+  "holdout_ap": 0.7138950661727034,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.008477721548000083,
+  "generalization_gap": -4.847328400015005e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4150443,
+    "tokens_in_uncached": 4150443,
+    "tokens_in_cached": 0,
+    "tokens_out": 20791,
+    "turns": null,
+    "api_calls": 107,
+    "method": "sum-of-107-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3660.6,
+  "cpu_seconds_counted": 3183.7,
+  "cpu_seconds_uncounted": 87.2,
+  "cpu_seconds_exempt": 389.8,
+  "python_processes": 60,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 278,
+  "fits_counted": 254,
+  "fits_uncounted": 12,
+  "commits": [
+    {
+      "commit": "d120550",
+      "message": "baseline"
+    },
+    {
+      "commit": "95d814a",
+      "message": "depth4 60 trees"
+    },
+    {
+      "commit": "98a84cd",
+      "message": "depth4 200 trees lr.05"
+    },
+    {
+      "commit": "e456217",
+      "message": "depth4 400 trees lr.03"
+    },
+    {
+      "commit": "d4182d5",
+      "message": "add hour/tod cyclic only"
+    },
+    {
+      "commit": "9af63f6",
+      "message": "seed-averaged ensemble of 6 depth4 models"
+    },
+    {
+      "commit": "ada4c48",
+      "message": "add day-of-year cyclic"
+    },
+    {
+      "commit": "0c04095",
+      "message": "add frequency encodings"
+    },
+    {
+      "commit": "05a8ecf",
+      "message": "add holiday-distance feature"
+    },
+    {
+      "commit": "88d913c",
+      "message": "mixed-depth ensemble"
+    },
+    {
+      "commit": "4775ce5",
+      "message": "network features: route carriers, carrier airport share"
+    },
+    {
+      "commit": "cae84df",
+      "message": "diverse 12-model ensemble"
+    },
+    {
+      "commit": "f58f58e",
+      "message": "stronger regularization"
+    },
+    {
+      "commit": "63280b4",
+      "message": "stronger reg 20/5/3"
+    },
+    {
+      "commit": "b1e3b7d",
+      "message": "700 trees lr.02 with reg"
+    },
+    {
+      "commit": "0c8184b",
+      "message": "higher min_child_weight"
+    },
+    {
+      "commit": "0cabb38",
+      "message": "deeper ensemble depth+1"
+    },
+    {
+      "commit": "a5fe2ea",
+      "message": "deeper still depth+1"
+    },
+    {
+      "commit": "1554161",
+      "message": "depth+1 v3"
+    },
+    {
+      "commit": "35b30ec",
+      "message": "depth+1 v4"
+    },
+    {
+      "commit": "7bb1549",
+      "message": "depth+1 v5"
+    },
+    {
+      "commit": "6c95584",
+      "message": "depth+1 v6"
+    },
+    {
+      "commit": "67b893f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3270.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 147.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "6c95584",
+  "best_commit_eval_auc": 0.7232,
+  "best_commit_holdout_auc": 0.7232484732840001,
+  "best_commit_holdout_ap": 0.7138950661727034,
+  "best_commit_error": null,
+  "finalized_best": true
+}

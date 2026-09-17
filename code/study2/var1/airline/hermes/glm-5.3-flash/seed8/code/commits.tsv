@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	59bb0d4	1789521999	baseline
+01	2e870b3	1789522079	numeric features + cyclical dep time, 600 trees depth 8
+02	6bf3a3e	1789522106	fix: remap cats to train levels (unseen->NaN)
+03	1e55382	1789522111	fix: remap cats to train levels (unseen->NaN)
+04	c912e44	1789522198	dep_hour/minute, native cats (unseen-level crash reproduced on eval; reload fixed it)
+05	bb62101	1789522278	int-coded cats, drop cyclical (native cats hurt: 0.697 vs 0.718 offline)
+06	089c5fd	1789523296	hp tune via LOMO: d6 lr.05 n1500 ss.9 cs.9

@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	3765ac9	0.7141	ok	4	baseline
+2	264d0ac	0.6999	ok	7	capacity: 600 trees depth8 lr0.05
+3	fec7478	0.7057	ok	1	features: hour, minute, time_frac, Route cat
+4	60e4953	0.7127	ok	1	features: dep hour/min/time_frac
+5	64dff28	0.7133	ok	2	target enc Origin/Dest/Carrier/Route
+6	8220f6b	0.7241	ok	29	calendar/time feats + 3-seed ensemble d6 mcw20 rl20
+7	ab6f4ab	0.7239	ok	45	diverse 5-model regularized ensemble
+8	5c1ca2e	0.7413	ok	39	drop Month/DOM + carrier_hour + origin_hour + d7 cs0.5
+9	84140b6	0.7424	ok	50	d9 mcw50 rl50 cs0.5 3-seed
+10	27c999b	0.7462	ok	47	colsample_bynode 0.6
+11	827afbe	0.0000	crash	1	carrier/origin 30-min time-bin interactions
+12	d189032	0.7468	ok	61	carrier/origin 30-min time-bin interactions
+13	612f877	0.7469	ok	69	carrier 30min + origin 15min bins
+14	478505d	0.7479	ok	73	estimated arrival-time features
+15	de2162c	0.7492	ok	77	arrival-hour categorical
+16	c4d1ba8	0.7497	ok	80	min_child_weight 30
+17	fc45f8b	0.7499	ok	102	n_estimators 1500

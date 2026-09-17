@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	c91d924	1789527043	baseline
+01	477b5b7	1789527095	exp2: 2000 trees + early stopping (internal 20% split), lr .05, depth 8, subsample/colsample .8
+02	b7134b5	1789527136	exp3: time features (deptime cyclical/hour, month/dow numeric+cyclical, weekend, log distance), eval_metric=auc
+03	f2fa41f	1789527237	exp6: lr 0.03
+04	af87ac0	1789527285	exp7: dep hour as native categorical
+05	b1e8859	1789527365	exp9: 30-min time bins categorical
+06	a6857fe	1789527629	exp15: 2-seed ensemble
+07	ec1571a	1789528263	exp22: depth-diverse ensemble (8+6)
+08	827c055	1789528335	exp23: 3-member ensemble depths 8/6/5
+09	f0641d3	1789528412	exp24: 4-member ensemble depths 8/6/5/4
+10	5389b6a	1789528625	exp26: 5-member ensemble depths 8/6/5/4/3
+11	8d28f90	1789529180	exp31: reg_lambda 10
+12	aa64d7a	1789529637	exp35: ES cap 1200 + patience 100
+13	679c0d4	1789529793	exp37: month recency weighting 1+0.5*(m-1)/11
+14	2e99380	1789529873	exp38: recency weight strength 1.0

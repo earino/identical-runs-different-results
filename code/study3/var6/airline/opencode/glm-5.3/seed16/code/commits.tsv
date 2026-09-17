@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	49fe7ea	1789588218	baseline
+01	dd30007	1789588320	hour + smoothed TE carrier/origin/dest/route
+02	04967be	1789588685	mixed encoding + hour, 200@4 lr.05 mcw5 col.8 bin512
+03	7aabb3f	1789589403	route_hour cat + recency weights + 500@4 col.6
+04	f54b830	1789590002	lr.03 ne800 single model
+05	a8c0255	1789591196	colsample_bynode 0.5
+06	fc170d1	1789593820	origin_hour cat + d10 + bynode 0.3

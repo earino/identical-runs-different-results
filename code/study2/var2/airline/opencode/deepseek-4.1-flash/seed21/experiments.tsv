@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d499b0f	0.7141	ok	4	baseline
+2	ca89dda	0.0000	crash	3	stronger base: time+route feats, es
+3	4b16a3d	0.7080	ok	4	stronger base: time+route feats, es
+4	4885ff0	0.7143	ok	2	baseline + time feats (30 trees)
+5	12fcfd9	0.7145	ok	2	120 trees
+6	a4c696c	0.7138	ok	3	400 trees
+7	8c5a6e2	0.6976	ok	3	route cat
+8	7271845	0.7105	ok	3	depth 8
+9	69ba925	0.7137	ok	2	depth 5
+10	a6c35fc	0.7113	ok	2	target encoding (carrier/origin/dest/route)
+11	1a4d95a	0.7145	ok	3	3-seed ensemble 120 trees
+12	ce2b9e6	0.7158	ok	3	lr .05, 300 trees, ss/cs .8, mcw5
+13	54c6786	0.7166	ok	5	lr .03, 600 trees, mcw10, lam2
+14	89ae9e1	0.7192	ok	7	lr .02, 1000 trees, mcw20, lam3
+15	5f289f3	0.7204	ok	12	lr .01, 2000 trees, mcw30, lam5
+16	53741fa	0.7208	ok	18	lr .007, 3000 trees, mcw40, lam8
+17	99ef2f9	0.7219	ok	26	lr .005, 5000 trees, mcw50, lam10
+18	34e6405	0.7213	ok	42	lr .003, 8000 trees, mcw80, lam15
+19	ed95938	0.7220	ok	28	count encodings origin/dest/carrier/route
+20	935ded1	0.7129	ok	38	counts + route categorical
+21	73912e6	0.7227	ok	26	cs.3 mcw100 lam20
+22	9ca6809	0.7217	ok	25	cs.25 mcw150 lam30
+23	b71832e	0.7220	ok	28	subsample .6
+24	d347d91	0.7224	ok	76	ensemble depth5/6/7 diverse
+25	ba38ee7	0.7229	ok	77	3-seed ensemble of best config
+26	a416e4e	0.7214	ok	75	weekend+doy+badtime feats
+27	e08d9a8	0.7135	ok	90	carrier x origin/dest categoricals
+28	8e2d865	0.7245	ok	75	drop Month (year-shift)
+29	fed55f6	0.7269	ok	64	drop Month+DayofMonth
+30	64b4755	0.7237	ok	63	drop all calendar
+31	3d967b6	0.7246	ok	61	ablation: no count feats
+32	d8283df	0.7285	ok	72	retune mcw50 cs.4 lam10
+33	3d74ae2	0.7285	ok	75	retune mcw25 cs.5 lam5
+34	f69c263	0.7305	ok	86	depth 7 new feats
+35	51d3318	0.7319	ok	96	depth 8
+36	6c7c3aa	0.7329	ok	79	depth9 3500 trees
+37	2d5b2e1	0.7338	ok	78	depth10 3000 trees
+38	a3ea3e6	0.7344	ok	74	depth11 2500 trees
+39	295cfde	0.7347	ok	64	depth12 2000 trees
+40	414cb81	0.7350	ok	64	depth13 1800 trees

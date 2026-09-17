@@ -1,0 +1,204 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 48,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:41:00+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s48-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:10:41+00:00",
+  "wall_seconds": 1781.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5450.5,
+  "endpoint_at_end": "ok",
+  "head": "e3e59dd",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7459,
+  "final_eval_auc": 0.7459,
+  "holdout_auc": 0.746019416622,
+  "holdout_ap": 0.736212909809559,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.031248664885999977,
+  "generalization_gap": -0.00011941662199999037,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4092292,
+    "tokens_in_uncached": 27908,
+    "tokens_in_cached": 4064384,
+    "tokens_out": 53970,
+    "turns": null,
+    "api_calls": 101,
+    "method": "sum-of-101-events",
+    "cost_usd": 0.1531,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 5429.2,
+  "cpu_seconds_counted": 5030.0,
+  "cpu_seconds_uncounted": 3.0,
+  "cpu_seconds_exempt": 396.1,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1214,
+  "fits_counted": 1174,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "95f9b2a",
+      "message": "baseline"
+    },
+    {
+      "commit": "34ec2ec",
+      "message": "exp2: 2000 trees, lr0.05, depth8, early stopping on internal 10pct split"
+    },
+    {
+      "commit": "09b96ea",
+      "message": "exp3: learning-curve diagnostic, depth6 lr0.05, AUC at checkpoints"
+    },
+    {
+      "commit": "089a621",
+      "message": "exp4: hyperparameter sweep, refit best on full train"
+    },
+    {
+      "commit": "2c8ae30",
+      "message": "exp5: time/date features (hour, cyclic, redeye, doy, weekend)"
+    },
+    {
+      "commit": "6e46359",
+      "message": "exp7: route cat + carrier_hour interaction + route_cnt + log distance"
+    },
+    {
+      "commit": "9eb50c0",
+      "message": "exp8: ablate - only route_cnt + dist_log added to exp5"
+    },
+    {
+      "commit": "6406ba9",
+      "message": "exp9: bagging 8 members, row 0.8 / col 0.7 subsampling"
+    },
+    {
+      "commit": "91eecf9",
+      "message": "exp10: 16 members, row .75 col .65, 150 trees lr .08"
+    },
+    {
+      "commit": "36ccec9",
+      "message": "exp11: ensemble member config sweep, final=best@10 members"
+    },
+    {
+      "commit": "69b2060",
+      "message": "exp12: mixed-depth/lr 12-member ensemble vs pure d5 control"
+    },
+    {
+      "commit": "c4b139b",
+      "message": "exp13: + carrier_hour categorical only"
+    },
+    {
+      "commit": "a95f225",
+      "message": "exp14: + dow_hour, month_hour cats, origin/dest counts"
+    },
+    {
+      "commit": "83efdc8",
+      "message": "exp15: ablate - keep counts only, drop dow_hour/month_hour"
+    },
+    {
+      "commit": "d9ba052",
+      "message": "exp17: minute + qblock cat + holiday flag"
+    },
+    {
+      "commit": "2674f05",
+      "message": "exp18: + mod numeric, 16-member ensemble"
+    },
+    {
+      "commit": "78941d7",
+      "message": "exp19: drop mod, keep 16-member ensemble"
+    },
+    {
+      "commit": "a2e29c4",
+      "message": "exp20: 24 members, diversified row/col fractions"
+    },
+    {
+      "commit": "e43030d",
+      "message": "exp28: 48 members, two seed streams"
+    },
+    {
+      "commit": "a3b831b",
+      "message": "exp29: members 150 trees lr .08/.1"
+    },
+    {
+      "commit": "ceea88b",
+      "message": "exp30: members 250 trees lr .06/.08"
+    },
+    {
+      "commit": "f21f5b3",
+      "message": "exp31: members 400 trees lr .04/.055"
+    },
+    {
+      "commit": "70b9200",
+      "message": "exp33: deeper member mix d5/6/7 at lr .04"
+    },
+    {
+      "commit": "5276716",
+      "message": "exp34: d6/7/8 members, 300 trees"
+    },
+    {
+      "commit": "416eb7d",
+      "message": "exp36: colsample_bynode=0.8"
+    },
+    {
+      "commit": "1a13e11",
+      "message": "exp40: 40 members (24+16), time-safe variant of best"
+    },
+    {
+      "commit": "e3e59dd",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5033.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 21.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1a13e11",
+  "best_commit_eval_auc": 0.7459,
+  "best_commit_holdout_auc": 0.746019416622,
+  "best_commit_holdout_ap": 0.736212909809559,
+  "best_commit_error": null,
+  "finalized_best": true
+}

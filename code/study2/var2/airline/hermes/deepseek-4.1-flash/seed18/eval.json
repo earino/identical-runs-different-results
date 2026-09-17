@@ -1,0 +1,172 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:00:29+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:47:31+00:00",
+  "wall_seconds": 2821.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7908.6,
+  "endpoint_at_end": "ok",
+  "head": "b3effae",
+  "n_commits": 18,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.748,
+  "final_eval_auc": 0.748,
+  "holdout_auc": 0.74932203146,
+  "holdout_ap": 0.7382494609859703,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03455127972399996,
+  "generalization_gap": -0.0013220314599999838,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 13894668,
+    "tokens_in_uncached": 13894668,
+    "tokens_in_cached": 0,
+    "tokens_out": 72796,
+    "turns": null,
+    "api_calls": 165,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 7698.8,
+  "cpu_seconds_counted": 7333.4,
+  "cpu_seconds_uncounted": 1.1,
+  "cpu_seconds_exempt": 364.3,
+  "python_processes": 50,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 244,
+  "fits_counted": 228,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "534e9c2",
+      "message": "baseline"
+    },
+    {
+      "commit": "f52d25e",
+      "message": "model capacity + dep-time fe, no route cat"
+    },
+    {
+      "commit": "43ed48b",
+      "message": "capacity sweep: 1500 trees lr0.02"
+    },
+    {
+      "commit": "6d0cbb7",
+      "message": "deeper: d9 1200@0.03"
+    },
+    {
+      "commit": "6298f74",
+      "message": "schedule-structure features: freq + hub share + origin-hour share"
+    },
+    {
+      "commit": "6490ff2",
+      "message": "ensemble of 3 xgb variants"
+    },
+    {
+      "commit": "cc243f7",
+      "message": "cumulative origin-hour congestion feature"
+    },
+    {
+      "commit": "dca3848",
+      "message": "ensemble of 6 diverse xgb variants"
+    },
+    {
+      "commit": "02f7391",
+      "message": "ensemble of 8 cheaper variants (600 trees each)"
+    },
+    {
+      "commit": "ad3cc30",
+      "message": "diagnostic: ensemble feature importances"
+    },
+    {
+      "commit": "f758a6b",
+      "message": "fix swapped hub-share lookup keys (co_share_* were constant 0)"
+    },
+    {
+      "commit": "c1a544b",
+      "message": "ablation: drop raw Month feature"
+    },
+    {
+      "commit": "116c6c5",
+      "message": "ablation: drop DayofMonth feature too"
+    },
+    {
+      "commit": "bce7505",
+      "message": "add dest-hour share and carrier-origin-hour share"
+    },
+    {
+      "commit": "71cf3ac",
+      "message": "add cumulative dest-hour congestion feature (restore exp#28, eval 0.7429)"
+    },
+    {
+      "commit": "b64eee3",
+      "message": "test: drop native origin/dest categoricals (keep numeric surrogates)"
+    },
+    {
+      "commit": "1ceffb6",
+      "message": "add route-share-of-origin feature"
+    },
+    {
+      "commit": "e816c1c",
+      "message": "cleanup: drop diagnostics and dead code (no feature change)"
+    },
+    {
+      "commit": "b3effae",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7334.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 209.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1ceffb6",
+  "best_commit_eval_auc": 0.748,
+  "best_commit_holdout_auc": 0.74932203146,
+  "best_commit_holdout_ap": 0.7382494609859703,
+  "best_commit_error": null,
+  "finalized_best": false
+}

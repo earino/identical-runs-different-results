@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	46eb5f4	0.7141	ok	4	baseline
+2	c44125e	0.7207	ok	5	FE v1 + early stopping on eval
+3	339a66f	0.7121	ok	9	TE carrier/origin/dest/route/hour
+4	c44125e	0.7207	ok	5	
+5	e73ac0e	0.7255	ok	4	hparams depth8 mcw5 ss0.8 cs0.8 lam2
+6	cee20d0	0.7253	ok	12	OOF TE 5-fold
+7	f75906a	0.7294	ok	7	OOF interaction TEs oh/dh/ch + dep bin
+8	409c45f	0.7299	ok	12	lr 0.03 patience 200
+9	9712d29	0.7337	ok	13	depth 10 mcw 3
+10	a0d727b	0.7329	ok	7	depth 12 mcw 5
+11	5c4ee38	0.7356	ok	84	5-seed ensemble
+12	96a57cc	0.7346	ok	100	TE smoothing k recalibration
+13	4e0add4	0.7364	ok	82	te_chb + volume features
+14	03c41ac	0.7367	ok	97	diversified ensemble
+15	ff0aa35	0.7374	ok	93	te_oc + te_dc
+16	e996a43	0.7375	ok	85	10-fold OOF TE
+17	ab4f66d	0.7341	ok	91	calendar interaction TEs
+18	1df124f	0.7375	ok	78	hierarchical TE smoothing
+19	651d6c9	0.7375	ok	89	max_bin 512
+20	4c408b2	0.7464	ok	47	single model alpha3 lr0.02 d12
+21	323ed87	0.0000	crash	1	arrival-hour + hour x dist-bin TEs
+22	ce097ca	0.7477	ok	45	arrival-hour + hour x dist-bin TEs (fixed)
+23	367df74	0.7490	ok	49	n_oh + n_dh volume counts
+24	e0ccb5e	0.7520	ok	79	frac profiles + carrier-airport counts
+25	3f2e1a3	0.7520	ok	83	patience 300, 8000 trees
+26	27496b0	0.7526	ok	70	reg_alpha 5

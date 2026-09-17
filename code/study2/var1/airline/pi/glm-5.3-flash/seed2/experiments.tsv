@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4be9a44	0.7141	ok	1	baseline: 30 trees, depth 6, native categoricals
+2	8685f0e	0.7111	ok	6	early stopping + refit on full train, depth8 lr0.05
+3	d2d0a9b	0.7144	ok	4	early stopping + refit, depth6 lr0.05
+4	886b047	0.7143	ok	8	feat v1: hour/cyclic time, numeric dates, log distance
+5	eb5a6fb	0.7150	ok	5	feat v2: frequency encodings carrier/origin/dest/route
+6	734e7fc	0.7050	ok	18	feat v3: cross-fit target encodings (carrier/origin/dest/route)
+7	3ce528d	0.7140	ok	17	CV grid: depth 6-12, mcw 1-20, colsample
+8	4c78541	0.7142	ok	14	probe: depth sweep 5-9, n=250, eval AUC per config
+9	7056b97	0.7163	ok	12	probe: shallow depths 3-5 x n trees
+10	afcd07b	0.7160	ok	9	probe: depth2/d3 variants, subsample/mcw
+11	b632760	0.7166	ok	8	ensemble of 5 XGB (seeds/depths), prob average
+12	3bf47ac	0.7166	ok	14	probe: hour_cat, daypart, maxbin512, lossguide
+13	0542e0b	0.0000	crash	2	probe2: month cyc/route_cat/carorg_freq + blend
+14	7de3f4d	0.0000	crash	11	probe2 fixed: month cyc/route_cat/carorg_freq + blend
+15	49cf836	0.0000	crash	2	probe2 fix2: month cyc/route_cat/carorg_freq + blend
+16	c1fd09c	0.7172	ok	24	probe2 fix3: month cyc/route_cat/carorg_freq + blend
+17	c7b903c	0.7197	ok	14	7-model diverse ensemble + blend weights
+18	3d14897	0.7197	ok	36	probe deep-regularized singles
+19	3cbbe25	0.7197	ok	38	probe deeper-regularized d10-16
+20	fdb2b1a	0.7197	ok	45	probe: refine deep-reg config
+21	c499eaa	0.7197	ok	44	probe: alpha/lambda grid
+22	6846aee	0.7258	ok	34	ensemble v2: deep-regularized members
+23	40453ba	0.7254	ok	38	probe: pairwise freq features + model variants
+24	d256088	0.7249	ok	46	ensemble v3: 9 members, bootstrap+bin diversity
+25	cc92eb1	0.0000	timeout	120	probe: diversity axes on strong config
+26	1e004c0	0.7256	ok	49	ensemble v4: 9 strong members uniform
+27	17a5072	0.7256	ok	53	OOF stacking vs uniform
+28	1060fc9	0.0000	crash	2	probe: ablations and neighbors of best config
+29	b39d097	0.0000	crash	35	probe: ablations and neighbors (fixed)
+30	b7ae7a3	0.7258	ok	52	probe: ablations and neighbors (fix2)
+31	af23f7c	0.7261	ok	67	grand ensemble 12 members
+32	ef7906d	0.7250	ok	38	probe: interaction categoricals
+33	1a1a809	0.7262	ok	88	grand ensemble 16 members
+34	969b386	0.7264	ok	92	averaging method comparison (16 members)
+35	dffd7e7	0.7264	ok	94	weight templates on 16 members
+36	1fa279d	0.7266	ok	94	ensemble v5: strong-member swap
+37	36629c7	0.7266	ok	99	ensemble v6: lr03 n700 + maxbin diversity
+38	768507c	0.7261	ok	93	final clean ensemble (equals v5 models + linq weights)
+39	86e370e	0.7266	ok	94	v5 dead-code cleanup
+40	9ee0aac	0.7266	ok	95	final blend cleanup (uniform vs aucw)

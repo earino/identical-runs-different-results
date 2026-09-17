@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	00e714c	0.7141	ok	2	baseline: 30 trees depth6 lr0.1 raw categoricals
+2	806af11	0.0000	crash	1	FE time feats + route, ES refit, depth8 lr.05
+3	7723414	0.7144	ok	57	FE time feats + route, ES refit, depth8 lr.05
+4	a142ea2	0.7135	ok	43	smoothed target encodings fit on train
+5	9a47024	0.7126	ok	18	depth6 lr0.1 stronger regularization ES+refit
+6	58d67c0	0.7139	ok	4	month-based season-shift ES split
+7	76e936c	0.0000	crash	1	congestion freq features + origin-hour TE + doy
+8	af13d8a	0.7113	ok	27	congestion freq features + origin-hour TE + doy
+9	f6c2c36	0.7188	ok	37	3-model diverse ensemble
+10	18e0bb1	0.7207	ok	51	4-member ensemble with heavy-bagging member
+11	83caf40	0.7214	ok	63	5-member ensemble with depth12
+12	00513a4	0.7206	ok	64	6-member ensemble with shallow member
+13	77e2925	0.7214	ok	61	5-member rank-averaged ensemble
+14	22f07b6	0.7218	ok	97	6-member with long low-lr member
+15	218f7be	0.7218	ok	112	diagnostics pass: per-member solo AUC
+16	680476a	0.7228	ok	116	deep-heavy ensemble: depth6 out, depth12-777 in
+17	1d58064	0.7234	ok	83	5 members, no diagnostics
+18	f1e7964	0.7229	ok	99	6 members incl target-encoded view
+19	ef8db36	0.7237	ok	97	6 members: depth12 seed-bagged
+20	baaf5e8	0.7240	ok	103	max_bin 512 global
+21	5f00326	0.7237	ok	110	7 members incl lossguide
+22	cb03a16	0.7245	ok	107	recency-weighted training
+23	563c84a	0.7247	ok	110	recency ramp 0.08
+24	a277791	0.7246	ok	115	recency ramp 0.15
+25	0d8082f	0.7246	ok	113	colsample_bynode decorrelation
+26	ec9f681	0.0000	crash	2	15-min departure slots
+27	006830c	0.0000	timeout	122	15-min departure slots
+28	d6b5e7d	0.7250	ok	109	numeric dep_slot
+29	c6849c8	0.7250	ok	110	cat_smooth 50
+30	fa62843	0.7247	ok	101	feature ablation: 3 redundant drops
+31	5330671	0.0000	timeout	120	member trained on recent months only
+32	b290e0f	0.7251	ok	115	recent-months member, trimmed ensemble
+33	04ad43b	0.7236	ok	110	depth12 msw25 regularization
+34	bc6431f	0.0000	crash	82	route-dropped member
+35	293ccea	0.7272	ok	114	route-dropped member
+36	f2be0f2	0.7274	ok	110	route-view member swap
+37	009035b	0.7270	ok	114	coarse-time constrained member
+38	7559e86	0.7266	ok	113	time-free constrained member
+39	742878f	0.7285	ok	115	second route-dropped member
+40	2753f81	0.0000	timeout	122	third route-dropped member

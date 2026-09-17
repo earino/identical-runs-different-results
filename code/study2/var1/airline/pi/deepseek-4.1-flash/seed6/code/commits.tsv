@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	e288b84	1789514624	baseline
+01	a136864	1789514677	depth4 150 trees
+02	3eafe25	1789514687	feat: DepTime hour/minute/tod cyclical + logdist
+03	62ea194	1789514722	depth5 150 trees
+04	aa94aeb	1789514753	ensemble: 8 models depths 4/5/6 seeds
+05	2372e56	1789514769	drop raw DepTime, keep derived time feats
+06	34f2e97	1789514783	feat: carrier-hour and dow-hour interactions
+07	38ce5a8	1789514866	ensemble depths 5-8
+08	0a4516b	1789514929	ensemble 12 members depths 5-8
+09	72b2c49	1789515012	feat: top-50 origin x hour
+10	1e91623	1789515088	top-25 origin x hour
+11	a9a0cc2	1789515137	feat: dest-top hour + origin-top carrier
+12	ac7f05e	1789515163	ensemble 250 trees per member
+13	129f8d8	1789515272	feat: top route + carrier x distbin
+14	863da06	1789515322	feat: dest carrier + distbin hour
+15	4d867e2	1789515382	feat: airport-top x distbin
+16	64e9213	1789515661	regularize members mcw2 lambda3

@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	b16d203	0.7141	ok	4	baseline: 30 trees depth6 lr0.1 categorical
+2	3bb8d16	0.7042	ok	8	exp2: 600 trees d9 lr.06 tuned hp + dephour/cyclical time feats
+3	3bc48a1	0.7134	ok	1	exp3: add dephour (minutes since midnight) + cyclical sin/cos, baseline hp
+4	ea897ba	0.7061	ok	3	exp4: 400 trees lr.08 d6 + subsample/colsample/mcw/lambda regularization
+5	e3b7e76	0.7102	ok	28	exp5: 3000 trees lr.05 d8 colsample.7 maxbin512 (from internal 80/20 val)
+6	e3b7e76	0.7102	ok	29	exp6: same config as exp5 but fit on FULL train 100k (restore-from-kernel state)
+7	09c7d6c	0.7115	ok	10	exp7: 2000 trees lr.05 d6 colsample.7 full-train (balance capacity vs shift)
+8	525d831	0.7140	ok	7	exp8: 2000 trees lr.05 d4 cs.7 full-train (shallow = more shift-robust)
+9	af2abcf	0.7155	ok	2	exp9: 30 trees d5 mcw10 (regularized shallow)
+10	49501d5	0.7188	ok	2	exp10: drop Month (2005 seasonality hurts transfer), 100t d5 mcw10
+11	5455e3a	0.7205	ok	3	exp11: 700t d4 lr.01 mcw10 no-Month
+12	49c5a61	0.7210	ok	3	exp12: also drop DayOfMonth (700t d4 lr.01 mcw10)
+13	259f591	0.7214	ok	3	exp13: max_bin 2048 (finer DepTime/Distance splits)
+14	ddd5bcb	0.7241	ok	3	exp14: DepTime*Distance + minute feats, lr.02 (0.7241 probed)
+15	86dfe07	0.7522	ok	22	exp15: slot15 cat + d12 mcw5 cs.7 lam3 alpha1 (probed 0.7516)
+16	056a825	0.7549	ok	63	exp16: 1000t d16 lr.01 (0.7548 probed)

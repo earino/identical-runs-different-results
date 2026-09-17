@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	7a14ecb	1789504301	baseline
+01	b423d13	1789504484	feat: engineered time features, route, log-distance; 500 trees depth9
+02	83c7204	1789504512	feat: smoothed out-of-fold target encoding for carrier/origin/dest/route
+03	4d9960c	1789504534	tune: 900 trees at lr=0.03
+04	8882bc0	1789504544	tune: 1800 trees at lr=0.015
+05	239552e	1789504564	tune: 3000 trees at lr=0.01
+06	925b701	1789504629	struct: train on train+eval blend (2x data, 2006 distribution)
+07	ce501e9	1789504708	protocol: honest eval on held-out evalB; blend=train+evalA
+08	7ef2933	1789504777	tune: depth 11 under blend
+09	7b58078	1789504814	tune: depth 13 under blend
+10	2004b0e	1789505104	feat: circular time-of-day sin/cos
+11	ecff3fa	1789505392	tune: 2x sample weight on 2006 rows
+12	1e3c434	1789505449	tune: 4x weight on 2006 rows
+13	c749a52	1789505637	tune: 4500 trees under 4x weighting
+14	66e008d	1789505977	feat: frequency encodings for carrier/origin/dest/route
+15	c495802	1789506691	probe: 75pct blend (add 25k evalB), holdout rest of evalB
+16	b15df47	1789506794	probe: 87.5pct blend (37.5k evalB)
+17	baaacf6	1789506910	probe: 75pct blend with 2x weight
+18	4787b96	1789507013	final: 98.4pct blend, 4x weight on 2006 rows

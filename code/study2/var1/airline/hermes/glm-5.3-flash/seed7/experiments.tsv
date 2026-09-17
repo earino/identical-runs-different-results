@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	23bc6d6	0.7141	ok	4	baseline
+2	63c2a98	0.7143	ok	1	deptime hour/cyclical + log distance
+3	faba060	0.7008	ok	25	big model: 2k rounds lr.05 depth8 + early stop (train metric)
+4	7f6b07f	0.7167	ok	8	ES on 20% holdout + refit, 2k rounds lr.05 depth8
+5	ab18b9a	0.7117	ok	16	OOF target encoding carrier/origin/dest/route
+6	18b7964	0.7180	ok	9	interaction cats: route, carrier x hour, origin x hour
+7	4232a66	0.7203	ok	9	more interaction cats: dest x hour, dow x hour
+8	23ccc07	0.7197	ok	9	dist bucket cat
+9	380eb90	0.7220	ok	16	depth10 lr0.03
+10	b5d9b09	0.7235	ok	21	depth12 lr0.02
+11	47f028a	0.7235	ok	31	depth14 lr0.015
+12	cc76dd1	0.7237	ok	63	5-fold median best_iter
+13	d92350e	0.7232	ok	23	ES on AUC metric
+14	d17efdc	0.7241	ok	21	dom bucket cat
+15	085b42a	0.7206	ok	21	month x hour + dep period cats
+16	2c0ad26	0.7235	ok	24	days-to-holiday feature
+17	98845cd	0.7201	ok	30	lossguide max_leaves=128
+18	1b85684	0.7230	ok	24	2h-block origin/dest x hour cats
+19	0f9aff6	0.7247	ok	20	subsample .7 colsample .5
+20	973efcc	0.7253	ok	27	subsample .6 colsample .4
+21	73df5eb	0.7283	ok	36	subsample .5 colsample .3
+22	972c655	0.7299	ok	43	subsample .4 colsample .2
+23	6db1f84	0.7266	ok	45	subsample .3 colsample .15
+24	ee174e8	0.7284	ok	25	min_child_weight 20
+25	35bc7f7	0.7315	ok	42	reg_lambda 10
+26	7c4cecc	0.7308	ok	60	reg_lambda 30
+27	2ac6e73	0.7311	ok	57	reg_lambda 20
+28	140ccdd	0.7304	ok	40	depth10 (with sub.4 cs.2 lam10)
+29	3f22c76	0.7323	ok	45	depth14 (with sub.4 cs.2 lam10)
+30	2489685	0.7325	ok	54	depth16 (with sub.4 cs.2 lam10)
+31	75685b0	0.7334	ok	55	depth18
+32	3e3256e	0.7339	ok	44	depth20
+33	ef8c9fc	0.7342	ok	47	depth24
+34	a0ac726	0.7336	ok	50	depth28
+35	a937d39	0.7348	ok	102	3-seed bag ensemble
+36	6febb99	0.7319	ok	82	retry month x hour + dep_period under heavy reg
+37	51129b0	0.7338	ok	93	lam 15 with depth24 bag
+38	579856f	0.7337	ok	85	mcw 10
+39	d902795	0.0000	timeout	120	lr 0.01 (2x rounds via ES)
+40	8047958	0.7338	ok	90	sub .45 cs .25 (bag)

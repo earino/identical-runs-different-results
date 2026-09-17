@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	946c1e4	0.7141	ok	3	baseline
+2	f44ebfc	0.0000	crash	4	FE calendar/time/route + early stopping
+3	a2b667b	0.7058	ok	4	FE calendar/time/route + early stopping (fixed cat levels)
+4	3124b45	0.6931	ok	6	FE + plain 400 trees lr0.1 d6
+5	39a0b79	0.7547	ok	30	FE + deep trees, heavy colsample, slow lr
+6	9f578ac	0.7644	ok	80	lean dups + minute + 3-seed ensemble
+7	dfef3db	0.7643	ok	81	3-seed ensemble, colsample mix members
+8	a6df1b8	0.7646	ok	99	4 members x 180t vs 3 x 200t
+9	137b926	0.7649	ok	89	max_bin diversity members
+10	71e4894	0.7648	ok	90	colsample+max_bin diversity members
+11	9887be6	0.7643	ok	94	sqrtdist third scale
+12	e843e25	0.7621	ok	93	raw + log count encodings
+13	a4494aa	0.7650	ok	101	4-member max_bin diversity, 170t

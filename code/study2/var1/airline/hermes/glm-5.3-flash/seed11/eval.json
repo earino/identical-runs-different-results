@@ -1,0 +1,184 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 11,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:06:04+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s11-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:23:27+00:00",
+  "wall_seconds": 1043.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2009.0,
+  "endpoint_at_end": "ok",
+  "head": "ad82189",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7219,
+  "final_eval_auc": 0.7219,
+  "holdout_auc": 0.72335584216,
+  "holdout_ap": 0.7130080257644529,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.00858509042400002,
+  "generalization_gap": -0.0014558421600000537,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7564427,
+    "tokens_in_uncached": 64971,
+    "tokens_in_cached": 7499456,
+    "tokens_out": 58724,
+    "turns": null,
+    "api_calls": 140,
+    "method": "cumulative-max",
+    "cost_usd": 0.2641,
+    "cached_share": 0.991
+  },
+  "cpu_seconds_python": 1937.8,
+  "cpu_seconds_counted": 1825.8,
+  "cpu_seconds_uncounted": 5.7,
+  "cpu_seconds_exempt": 106.4,
+  "python_processes": 55,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1048,
+  "fits_counted": 1006,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "84eb0f3",
+      "message": "baseline"
+    },
+    {
+      "commit": "4609d72",
+      "message": "stronger model: dep_hour cyclic feats, 800x0.05 d8, early stopping on time split"
+    },
+    {
+      "commit": "2ae4ef4",
+      "message": "add early_stopping_rounds=50 on time-ordered val"
+    },
+    {
+      "commit": "6050528",
+      "message": "ablation: baseline features + strong model + early stop, add diagnostics"
+    },
+    {
+      "commit": "dc9714e",
+      "message": "full-data fit, fixed 200 trees lr.05 d8 subsample"
+    },
+    {
+      "commit": "43a0153",
+      "message": "d6 400x0.05 subsample .9 full data"
+    },
+    {
+      "commit": "75eea06",
+      "message": "internal 4-fold CV grid over 8 model configs"
+    },
+    {
+      "commit": "af1083f",
+      "message": "dep_delay_rate target encoding (OOF-validated), 200x0.05 d6"
+    },
+    {
+      "commit": "12277d3",
+      "message": "dep_hour feature (minutes + red-eye semantics), 200x0.05 d6"
+    },
+    {
+      "commit": "31ff89a",
+      "message": "regularized baseline: 30x0.1 d6 mcw20 gamma1, drop dep_hour"
+    },
+    {
+      "commit": "6bda92c",
+      "message": "seed+subsample bag of 5 xgb models, 30x0.1 d6"
+    },
+    {
+      "commit": "c8dfb78",
+      "message": "bag of 10, colsample .8"
+    },
+    {
+      "commit": "8ec8b85",
+      "message": "heterogeneous bag of 12 (mixed depth/lr)"
+    },
+    {
+      "commit": "91e58a5",
+      "message": "hetero bag 16 (8 configs x 2 seeds, depth 4-8)"
+    },
+    {
+      "commit": "6c86ece",
+      "message": "hetero bag 16 + smoothed ddr target encoding"
+    },
+    {
+      "commit": "9449b85",
+      "message": "logit averaging for the 16-member bag"
+    },
+    {
+      "commit": "a372007",
+      "message": "bag 32 (8 cfg x 4 seeds), prob mean"
+    },
+    {
+      "commit": "f59af1d",
+      "message": "bag 36: add depth-3 and depth-10 families"
+    },
+    {
+      "commit": "bcacc49",
+      "message": "ablation: drop raw DayofMonth category, keep ddr_DayofMonth"
+    },
+    {
+      "commit": "e143ab1",
+      "message": "also drop raw Month, keep ddr_Month"
+    },
+    {
+      "commit": "b6fb581",
+      "message": "add depth-12 families to the bag (42 members)"
+    },
+    {
+      "commit": "ad82189",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1831.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 71.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b6fb581",
+  "best_commit_eval_auc": 0.7219,
+  "best_commit_holdout_auc": 0.72335584216,
+  "best_commit_holdout_ap": 0.7130080257644529,
+  "best_commit_error": null,
+  "finalized_best": true
+}

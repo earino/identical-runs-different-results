@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	80cbc6b	1789494026	baseline
+01	1a31506	1789494118	time-of-day + cyclic calendar features, deeper boosted model (fixed unseen categories)
+02	78bbd04	1789494159	airport/carrier traffic-volume features
+03	a7bc327	1789494195	airport/carrier x hour traffic counts
+04	0c3b670	1789494203	hour-share ratios (count / airport total)
+05	fc32eb0	1789494219	stronger regularization
+06	b56895d	1789494277	lr 0.05 with 2000 trees under regularization
+07	206fc24	1789494397	3-model XGBoost bag (seed + sampling perturbation)
+08	3edefbe	1789494451	bag on full training data, fixed 900 trees
+09	9c5a227	1789494485	carrier-at-airport dominance features
+10	b8f6812	1789494521	estimated arrival-time features
+11	12d320e	1789494618	5-member diverse bag
+12	bf603b8	1789494674	destination traffic at arrival hour + block time
+13	76a11c8	1789494881	prune duplicate/dead features
+14	2466b29	1789494940	7-member bag with rate/shape diversity
+15	205c4b3	1789495225	ablation: drop calendar cyclic encodings
+16	57e0983	1789495390	ablation: drop Month
+17	846f8e8	1789495534	8-member bag

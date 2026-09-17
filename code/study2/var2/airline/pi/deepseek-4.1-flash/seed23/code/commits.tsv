@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	d33ab73	1789537953	baseline
+01	2cdea0e	1789538045	regularized: depth4 300trees reg_lambda5
+02	dc02550	1789538059	regularized + time decomposition
+03	2d624da	1789538076	add stable frequency/count features
+04	4df768a	1789538088	more interaction count features
+05	9bc3be4	1789538098	depth5 600 trees more reg
+06	c6bab19	1789538105	depth6 heavy reg
+07	caf9df5	1789538113	depth7 very heavy reg
+08	ce64b77	1789538122	depth8 extreme reg
+09	9269853	1789538333	ratio/share congestion features
+10	0c0e6be	1789538346	dest/carrier hour share
+11	38b3587	1789538389	lossguide max_leaves256
+12	46bf444	1789538532	holiday/seasonality flags
+13	312710b	1789538617	lossguide mcw75 lambda40
+14	7c6bebb	1789538643	lossguide mcw40 lambda20
+15	6f97d3f	1789538675	lossguide mcw20 lambda10
+16	b8c7e28	1789538709	lossguide mcw10 lambda5
+17	985176c	1789538741	lossguide mcw5 lambda2
+18	f3a0408	1789538774	lossguide 512 leaves mcw5 lambda2

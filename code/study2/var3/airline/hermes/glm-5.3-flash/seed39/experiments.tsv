@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2637a58	0.7141	ok	2	baseline: 30 trees depth6 lr0.1 categorical native
+2	ff06071	0.7136	ok	4	feat v1 + 600 trees depth8 ES
+3	af57424	0.7154	ok	6	feat v1 + eval-as-ES 2000 trees
+4	5bb7f10	0.7139	ok	8	depth10 mcw10
+5	de243f2	0.7145	ok	9	depth12 mcw50
+6	4f9717d	0.0000	crash	2	OOF target encoding 9 features
+7	bb67e02	0.7087	ok	11	OOF target encoding 9 features (retry)
+8	e1dc1c5	0.0000	crash	2	cat interaction features
+9	87e9872	0.7083	ok	18	cat interaction features (retry)
+10	eab2281	0.7154	ok	6	ablation: no freq features
+11	0ba0edf	0.7162	ok	10	lr 0.02 more trees
+12	6f8cd7a	0.7159	ok	12	lr 0.015
+13	33e2b05	0.7165	ok	11	sub 0.8 col 0.8
+14	027b14e	0.7184	ok	10	sub 0.7 col 0.7
+15	849cc83	0.7216	ok	14	sub 0.6 col 0.6
+16	e10ef9d	0.7225	ok	12	sub 0.5 col 0.5
+17	7f9c22d	0.7221	ok	12	sub 0.4
+18	87cc083	0.7249	ok	18	reg_lambda 10
+19	a00611c	0.7239	ok	18	reg_lambda 50
+20	fc3da04	0.7237	ok	13	mcw 20
+21	344c4eb	0.7251	ok	56	seed ensemble x4
+22	3b9bdb1	0.7271	ok	59	ensemble depth10
+23	6823089	0.7288	ok	73	ensemble depth12
+24	0e3b22f	0.7301	ok	86	ensemble depth14
+25	48a2412	0.7304	ok	91	ensemble depth16
+26	4bb96aa	0.7306	ok	97	ensemble depth18
+27	761b187	0.7299	ok	82	hetero ensemble depths 12-18
+28	cdfebae	0.0000	timeout	123	ensemble lr 0.015
+29	e9ce854	0.7310	ok	97	x3 depth20 lr0.015
+30	319451d	0.7312	ok	96	x3 depth22
+31	bb9f69b	0.7310	ok	92	x3 depth24
+32	a0e114b	0.7291	ok	104	x3 depth22 reg_lambda 25
+33	e9c5e11	0.7330	ok	96	x3 depth22 sub0.4
+34	befd7be	0.7308	ok	81	x3 depth22 sub0.3
+35	4d5c7ac	0.7375	ok	95	x3 depth22 col0.3
+36	de16759	0.7384	ok	97	x3 depth22 col0.2
+37	c45cd31	0.7370	ok	106	x3 depth22 col0.15
+38	9b2268d	0.7378	ok	118	col bynode 0.8
+39	de16759	0.7384	ok	96	--help
+40	e91a506	0.7368	ok	87	x3 depth22 mcw10

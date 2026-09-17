@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	76dddd8	0.7141	ok	4	baseline
+2	49e6d8e	0.7099	ok	7	feat eng, 600 trees lr.05
+3	5439614	0.7119	ok	4	baseline 500 trees lr.05
+4	4428621	0.7127	ok	2	baseline + hour/minute
+5	2db09bf	0.7056	ok	2	baseline + route
+6	3424407	0.7156	ok	1	drop calendar feats
+7	aa41da6	0.7177	ok	2	150 trees reduced feats
+8	78982fd	0.7214	ok	3	400 trees reduced feats
+9	84ee844	0.7255	ok	5	1000 trees reduced feats
+10	c82bfe7	0.7275	ok	11	2000 trees reduced feats
+11	6813a26	0.7272	ok	20	4000 trees reduced feats
+12	c2947a7	0.7366	ok	21	depth 9, 2000 trees
+13	a88819a	0.7388	ok	32	depth 12, 2000 trees
+14	dc9ab24	0.7396	ok	56	depth 16, 2000 trees
+15	57bb79e	0.7411	ok	44	depth 20, 1000 trees
+16	0e1daf3	0.7398	ok	76	depth 20, 2000 trees
+17	f7e28ca	0.7424	ok	32	depth 24, 500 trees
+18	8e9aaa4	0.7425	ok	27	depth 30, 300 trees
+19	fff162a	0.7062	ok	23	add back DOW/DOM, drop Month
+20	940e7ed	0.7249	ok	6	depth30 + reg (mcw20, lambda5, sub/col .8)
+21	e318bb7	0.7410	ok	49	full depth, 600 trees
+22	7616062	0.7353	ok	27	deep + hour/minute
+23	3ceac30	0.7420	ok	29	max_cat_threshold=256
+24	b831259	0.7425	ok	79	3-seed ensemble depth30/300
+25	add9249	0.6942	ok	13	drop Origin/Dest
+26	dd07b5e	0.7426	ok	29	target enc origin/dest/carrier
+27	a03ec15	0.7411	ok	11	lossguide max_leaves=512
+28	bff42c0	0.6949	ok	45	replace DepTime with dep_hour
+29	c857fa4	0.7292	ok	27	add numeric dow/dom
+30	37d1ddb	0.7409	ok	28	max_cat_to_onehot=32 (carrier one-hot)
+31	49f0d07	0.7428	ok	30	add hour_te + origin/dest freq
+32	ac86a9b	0.7351	ok	34	subsample=0.8
+33	3dbd28c	0.7373	ok	31	route_te k=100
+34	da71dc3	0.7431	ok	52	lr=0.05, 500 trees depth30
+35	e06e5fd	0.7436	ok	82	lr=0.03, 800 trees depth30
+36	0a52fb4	0.7437	ok	100	lr=0.025, 1000 trees depth30
+37	4de302a	0.7451	ok	80	max_bin=512, lr.03, 800 trees
+38	24b3257	0.7453	ok	78	max_bin=1024, lr.03, 700 trees
+39	4f50597	0.7454	ok	84	max_bin=1024, lr.03, 800 trees
+40	d79d989	0.7457	ok	85	max_bin=2048, lr.03, 800 trees

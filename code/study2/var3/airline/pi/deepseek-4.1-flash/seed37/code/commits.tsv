@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	f52d7a3	1789535321	baseline
+01	51b73b1	1789535395	regularized shallow many trees
+02	05ef5a0	1789535411	depth5 lr.03 600t mcw10 sub.8 col.8 lam2
+03	c81a758	1789535417	depth6 lr.03 400t reg
+04	c7d8030	1789535426	add dephour depmin isweekend
+05	e1fb247	1789535439	add dayofyear
+06	4fa12a1	1789535468	ensemble depth 5/6/7
+07	bfe13a4	1789535517	6-model seed-averaged ensemble
+08	1ea4b3e	1789535615	12-model seed-averaged ensemble (4 seeds x 3 depths)
+09	32e9dfa	1789535697	12-ensemble mcw15 sub.7 col.7
+10	ad69294	1789535996	hour interaction features
+11	4758122	1789536035	15-model ensemble depths 4-8
+12	2d1bdcc	1789536204	hour ramp features
+13	f2246bf	1789536329	lighter regularization mcw5 lam1

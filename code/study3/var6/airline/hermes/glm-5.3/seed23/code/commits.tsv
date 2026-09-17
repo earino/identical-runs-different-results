@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	fb9ce67	1789630605	baseline
+01	591579a	1789630996	ES on 20% tail holdout, lr 0.05, depth 6
+02	20d676f	1789631868	OOF TE of cat x hour/dow interactions + cyclic time feats
+03	b582efd	1789632464	one-hot date columns
+04	750375a	1789632694	30-min TE bins + one-hot airports
+05	9570c44	1789632849	20-min TE bins
+06	f5c2b9d	1789633243	mixed 20/15/20-min TE bins
+07	70d9689	1789633263	depth 4
+08	65d0101	1789633477	distance-bin x time/dow TEs
+09	d332f34	1789633503	carrier x origin/dest TEs
+10	9f61698	1789633817	multi-resolution route TEs (60min + plain)
+11	ef011d2	1789634049	plain-key TEs (origin/dest/carrier/dist)
+12	5cd1ed2	1789634200	4-model fold-varied TE ensemble
+13	9369980	1789634508	6-member fold-varied ensemble with row subsampling
+14	ddd4e68	1789635296	heterogeneous 6-member ensemble
+15	6d21947	1789636058	5-member homogeneous deep ensemble (d6, lr.03, cs.6, ss.85)
+16	abefd6c	1789636717	smoothing 35
+17	f31d783	1789637191	7 members, drop dow-interaction TE keys
+18	dd022c2	1789639711	3-member d12/cs0.3 deep ensemble

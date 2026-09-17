@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	769318f	0.7141	ok	4	baseline
+2	3183c60	0.7150	ok	2	FE v1: hour/dow/mon cyc + dist_log
+3	769318f+dirty	0.7150	ok	2	FE v1 retry (verify)
+4	9e52d55	0.7129	ok	4	capacity: lr 0.05 + early stopping (3000 rounds)
+5	980d1a7	0.7153	ok	4	shallow+regularized trees (d4, mcw50, subsample)
+6	fa693be	0.6745	ok	4	target encoding: route, route-hour, carrier-hour (m=20)
+7	c729875	0.0000	crash	1	simplify: drop raw m/d/w, cats + TE only
+8	413a3ef	0.6747	ok	4	simplify retry: drop raw m/d/dow
+9	0d08bd7	0.7015	ok	5	route+hour cats, freq encodings
+10	177ba4d	0.7145	ok	3	depth 3 (shallower)
+11	a11da01	0.7167	ok	7	slow lr 0.02 x1200 rounds
+12	f9e1305	0.7167	ok	13	slower lr 0.01 x2500
+13	629acb4	0.7169	ok	7	min_child_weight 20
+14	b408eae	0.7172	ok	17	3-seed bagged ensemble
+15	e724533	0.7172	ok	28	5-seed bagged ensemble
+16	43407a1	0.7176	ok	18	minofday, dist*hour interaction
+17	f4c0b17	0.7182	ok	18	seasonality: doy cyclic + weekend
+18	9b1676c	0.7180	ok	18	recency weights: later 2005 months upweighted
+19	b1ba4c2	0.7182	ok	18	carrier x hour cat, origin x blk cat
+20	5a73c28	0.7182	ok	20	20-bin dep-time banks
+21	bf3b592	0.7164	ok	28	depth 5 @ lr 0.02
+22	e0c33a9	0.7176	ok	18	subsample 0.8 colsample 0.8
+23	0ba5872	0.7184	ok	19	max_bin=1024 for finer time splits
+24	ac5b809	0.7177	ok	19	monotone +1 on minofday and hour
+25	2c38c97	0.7175	ok	19	drop doy/seasonality (month shift)
+26	dbd5bed	0.7178	ok	34	5 diverse xgb variants bagged
+27	457cc93	0.7201	ok	20	o/d hourly schedule volume (within-frame)
+28	363d8f4	0.7201	ok	19	train-fit o/d/carrier hour volume
+29	bae4b3f	0.7202	ok	33	5-seed bag of vol config
+30	84c0e50	0.7209	ok	35	o/d rel volume (airport-size normalized)
+31	95a769b	0.7131	ok	39	heavy-smoothed TE (m=500/1000) as numeric
+32	7cc5752	0.7213	ok	36	c_rel_vol + o/d rel x hour
+33	984e54b	0.7215	ok	36	hour x weekend interaction
+34	ebdb0b7	0.7275	ok	40	dt_bank categorical (40 bins)
+35	921970c	0.7304	ok	38	dt_bank 80 bins
+36	ce85166	0.7290	ok	40	dt_bank 160 bins
+37	088c873	0.7303	ok	37	o/d vol banks (20 quantiles)
+38	d0459d6	0.7337	ok	51	depth 5 retry (with dt_bank)
+39	0a264ad	0.7352	ok	62	depth 6 (with dt_bank)
+40	073cadd	0.7359	ok	87	depth 7 (with dt_bank)

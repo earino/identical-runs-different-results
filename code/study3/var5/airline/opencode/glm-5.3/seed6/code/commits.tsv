@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	1d98632	1789604139	baseline
+01	8699e67	1789607099	capacity/regularization scan on baseline features
+02	a889f75	1789607544	OOF target-encoded route numeric
+03	11c3032	1789607813	add hour-of-day categorical
+04	e3f7934	1789610138	early stopping calibrated on eval (2006), lr 0.03 depth 4
+05	ed84d96	1789610214	colsample/seed ensemble, ES on eval
+06	9555468	1789610279	colsample sweep 0.3/0.4/0.5, ship best group ensemble
+07	d07ba5d	1789610456	depth scan 4/6/8 at cs=0.5
+08	2377ea5	1789610624	depth/cs 2D exploration around d8 cs0.5
+09	bf31985	1789611016	4-seed ensemble d18 cs0.3
+10	f335eaa	1789611141	candidate re-scan under deep regime
+11	0a815aa	1789611264	dep_min vs dep_min+ohc, 3 seeds
+12	d655a68	1789611377	5-seed ensemble dep_min+ohc
+13	c5be694	1789611475	candidate scan: dest_hour_count, carrier_hour_te, dep sincos
+14	668e2b7	1789611600	stack dest_hour_count + carrier_hour_te + sincos, 4 seeds
+15	eec67ca	1789611897	candidate scan: carrier_hour_count, origin/dest hour TE
+16	08290d9	1789612019	6-seed core+chc ensemble
+17	5035cd3	1789612452	stack deep ensemble with shallow members
+18	cbcb143	1789612714	lr 0.02, 5-seed ensemble

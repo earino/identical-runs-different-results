@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	e2bf235	1789497750	baseline
+01	fa86951	1789497844	exp2: time/calendar features, dep%2400, big early-stopped model
+02	124c3c8	1789497969	exp7: Route categorical on top of exp2
+03	b73bb98	1789498023	exp9: exact hhmm, cyclical hour, traffic counts
+04	7321f10	1789498055	exp10: pool eval rows into training, pooled-CV selection
+05	a074eaf	1789498098	exp11: 5-fold OOF selection on pooled data, depth9 lr.03
+06	9a7fdfd	1789498280	exp13: hhmm, cyclical hour, traffic counts (pooled)
+07	b14dda2	1789498374	exp14: hour x dow/month, carrier x hour joint categoricals
+08	0011c78	1789498673	exp18: 3-seed bag at chosen iterations
+09	113f7aa	1789498924	exp20: 3-fold OOF selection + 3-seed final bag
+10	7444d53	1789499016	exp21: 90/10 ES probe calibrates final bag size
+11	74bac6a	1789499271	exp24: origin x hour joint categorical
+12	5e22efd	1789499406	exp26: simplify - probe-only selection, drop OOF
+13	f2baaa0	1789499493	exp27: dest x hour joint categorical
+14	b5634cc	1789499722	exp29: origin-hour / dest-hour congestion counts
+15	11a1760	1789500126	exp32: colsample_bylevel 0.7
+16	f8f05c8	1789500231	exp33: colsample_bylevel 0.5
+17	2db6a26	1789500319	exp34: colsample_bylevel 0.3
+18	054fda1	1789500398	exp35: colsample_bylevel 0.2

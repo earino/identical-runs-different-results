@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	f9e1101	1789544344	baseline
+01	d115ba8	1789544432	ordinal date cols
+02	f7d0c7e	1789544438	dep_min + dep_hour
+03	6b6b5c9	1789544444	frequency features
+04	8706861	1789544457	moderate capacity
+05	e956d0d	1789544464	drop raw DepTime
+06	787995f	1789544470	cyclical encodings
+07	ad0513f	1789544510	5-seed ensemble
+08	195ba4e	1789544524	diverse ensemble
+09	c4ea1e2	1789544538	interaction freq features
+10	6787b18	1789544607	deep regularized ensemble
+11	e301600	1789544644	deeper ensemble 8-10
+12	6bf5114	1789544664	deeper ensemble 10-14
+13	66ed3b8	1789544760	lossguide ensemble
+14	c2ef59b	1789544880	large leaf ensemble
+15	ea7e474	1789545088	leaves 256-512 ensemble
+16	d6e79c9	1789547342	lossguide mcw1 large-leaves ensemble
+17	85fe553	1789549341	alpha1 + 3-model lossguide ensemble

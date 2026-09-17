@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	94d3a4a	1789511547	baseline
+01	52cb45b	1789511614	v2: time-of-day/calendar FE + cyclic encodings + early stopping
+02	0eeaa82	1789511623	v3: depth10 lr0.05 mcw5 colsample0.7
+03	b00aa5d	1789511682	v4: OOF target encoding Origin/Dest/Carrier/route + counts
+04	834b4bf	1789511718	v6: counts-only (drop TE), ES on AUC
+05	eac9225	1789511772	v7: time-split ES (val=Oct-Dec05) on AUC, no counts
+06	0020fbe	1789511801	v8: fixed 300 trees (no ES)
+07	a7b0db7	1789511828	v10: depth 12
+08	e697ac3	1789511839	v11: depth 14
+09	61a4b8a	1789511851	v12: depth 16
+10	a241269	1789511927	v17: max_bin 512
+11	ae89839	1789511968	v19: lr 0.03, 500 trees, depth 16, max_bin 512
+12	1949fae	1789511995	v20: lr 0.02, 800 trees
+13	4f83b57	1789512033	v21: lr 0.01, 1500 trees
+14	4ce2dd6	1789512342	v25: subsample 0.9
+15	258c330	1789512895	v34: colsample_bytree 0.6
+16	922a5ab	1789512960	v35: colsample_bytree 0.5
+17	45db69f	1789513016	v36: colsample_bytree 0.4
+18	f26b111	1789513177	v39: depth 18, colsample 0.4
+19	c408e5c	1789513242	v40: depth 20, colsample 0.4

@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	ef9ddfa	1789604853	baseline
+01	f366c1c	1789611297	bagged deep XGB ensemble (d28 mcw.1 cs.5 ss.8 n25 x10, hour/minute FE)
+02	ab01985	1789612047	drop Month/DayofMonth (calendar noise hurts under year shift)
+03	96b38a3	1789612278	cyclic sin/cos of minute-of-day
+04	9bc4d0d	1789612604	diverse-config 10-member ensemble (d24-32, mb256-1024, n25-40)
+05	6cffce4	1789613198	cs0.6 + lower lr + more rounds (n40 lr.06 / n30 lr.08 mix, 8 members)
+06	6e3a29e	1789613720	8x (n50 d20 lr.05 cs.6) members
+07	dafb014	1789614040	TTA: average predictions over DepTime +-3min
+08	fa95494	1789614312	6 members + wider TTA (-5,-3,0,3,5)

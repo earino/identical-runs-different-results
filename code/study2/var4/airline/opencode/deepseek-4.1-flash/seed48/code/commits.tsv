@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	963b7e6	1789521264	baseline
+01	fcc2054	1789521331	model: regularize (mcw10, lambda5, subsample, colsample), 60 trees
+02	0bf585a	1789521336	model: depth5, 80 trees, lr0.08
+03	e20d51d	1789521346	FE: calendar ordinals + dep_hour
+04	59e5a01	1789521361	FE: dep_minute, day-of-year, is_weekend
+05	1c42909	1789521367	model: 220 trees lr0.03 mcw20 lambda10 colsample0.6
+06	d25b5a9	1789521372	model: 400 trees lr0.02 mcw30 lambda20 colsample0.5
+07	a438ca0	1789521381	FE: route/airport/carrier frequency features
+08	2f4ca2e	1789521387	model: depth6 with strong reg
+09	4acf420	1789521392	model: depth7 with strong reg
+10	0426198	1789521397	model: depth8 with strong reg
+11	462954f	1789521403	model: depth10 with strong reg
+12	aff7f4c	1789521409	model: depth12 with strong reg
+13	6e9e82b	1789521418	model: depth15 with strong reg
+14	3dde532	1789521461	FE: focused smoothed target encoding carrier/origin/dest
+15	35404e0	1789521560	model: depth20
+16	4fae4d5	1789521681	model: add reg_alpha=5
+17	00298ba	1789521697	model: lambda10 alpha5
+18	9ce9f87	1789521705	model: lambda5 alpha5
+19	8a70eb4	1789521723	model: mcw20 lambda5 alpha5

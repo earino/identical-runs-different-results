@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	77373d0	0.7141	ok	3	baseline
+2	a32a48f	0.7102	ok	7	feat: time decomposition + route cat, 500 trees depth8
+3	74507de	0.7160	ok	3	feat: time-of-day decomposition, 200 trees depth6
+4	42c2823	0.7121	ok	5	tune: 600 trees depth6 lr0.05
+5	a8c11c2	0.7162	ok	3	feat: cyclical departure time sin/cos
+6	6eff30b	0.7171	ok	3	feat: frequency encodings for carrier/origin/dest/route
+7	3171b2b	0.7070	ok	2	feat: smoothed target encoding carrier/origin/dest/route
+8	4813fc0	0.7170	ok	4	tune: depth7 300 trees mcw10
+9	e64dd93	0.7189	ok	8	ens: 5-seed XGBoost ensemble
+10	2aa0aee	0.7194	ok	7	feat: day-of-year seasonality sin/cos
+11	77b9c3b	0.7216	ok	9	feat: origin/carrier-hour congestion frequency
+12	9add69a	0.7217	ok	8	feat: dest-hour congestion frequency
+13	c6934e9	0.7222	ok	12	ens: 8 diverse XGBoost models
+14	8bc84b4	0.7074	ok	17	feat: route categorical (high card)
+15	a3ce2f0	0.7227	ok	13	feat: route-hour congestion frequency
+16	80a3bdd	0.7229	ok	20	tune: lr0.03 350 trees ensemble
+17	87cafdf	0.7243	ok	22	feat: origin/route hour traffic share ratios
+18	b23820a	0.7240	ok	23	feat: carrier/dest hour share ratios
+19	5a8ad7e	0.7242	ok	21	feat: origin n_dest + carrier n_route
+20	6b51d73	0.7242	ok	22	tune: stronger regularization gamma/lambda/mcw
+21	846476f	0.0000	timeout	120	model: DART booster ensemble
+22	5af3ee2	0.7244	ok	22	feat: US holiday indicator
+23	4c412da	0.7247	ok	44	ens: 16 diverse XGBoost models
+24	774fdd8	0.7247	ok	44	ens: rank-average instead of prob-average
+25	5371b1c	0.7247	ok	44	feat: carrier-route frequency and share
+26	14a5415	0.7249	ok	54	tune: lr0.025 450 trees (16 models)
+27	2222893	0.7267	ok	59	feat: hour as categorical variable
+28	53ccfc0	0.7311	ok	57	feat: 15-min departure bucket categorical
+29	731b0ca	0.7169	ok	63	feat: exact-minute categorical (1440 levels)
+30	3703e61	0.7273	ok	57	feat: 5-min departure bucket categorical
+31	9e204e4	0.7294	ok	54	feat: 30-min departure bucket categorical
+32	57d2286	0.7312	ok	61	feat: distance bucket categorical
+33	8ab4dd8	0.7293	ok	63	feat: week-of-year bucket categorical
+34	a32c18f	0.7316	ok	93	ens: 24 diverse XGBoost models
+35	cdaa196	0.7317	ok	91	feat: US holiday indicator (24-model ensemble)
+36	f4dfef5	0.7316	ok	89	ablation: drop minute + dep sin/cos
+37	21a7d0d	0.7296	ok	92	feat: 15-min bucket x weekend interaction
+38	73266a7	0.7289	ok	77	tune: max_cat_threshold=32
+39	3b95ebd	0.7317	ok	89	feat: hour x weekend interaction (48 levels)
+40	2d61548	0.7329	ok	84	tune: max_cat_to_onehot=32

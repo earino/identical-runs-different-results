@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 43,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T19:20:37+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s43-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:09:12+00:00",
+  "wall_seconds": 2915.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9683.0,
+  "endpoint_at_end": "ok",
+  "head": "b0f4f08",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7271,
+  "final_eval_auc": 0.7271,
+  "holdout_auc": 0.7283249863460001,
+  "holdout_ap": 0.7216663825405241,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.013554234610000049,
+  "generalization_gap": -0.001224986346000101,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8852200,
+    "tokens_in_uncached": 45672,
+    "tokens_in_cached": 8806528,
+    "tokens_out": 31116,
+    "turns": null,
+    "api_calls": 146,
+    "method": "sum-of-146-events",
+    "cost_usd": 0.2866,
+    "cached_share": 0.995
+  },
+  "cpu_seconds_python": 9427.8,
+  "cpu_seconds_counted": 9071.4,
+  "cpu_seconds_uncounted": 2.3,
+  "cpu_seconds_exempt": 354.1,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1390,
+  "fits_counted": 1340,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "fb79117",
+      "message": "baseline"
+    },
+    {
+      "commit": "97099b4",
+      "message": "baseline feats + time feats + route, modest params, ES on train val"
+    },
+    {
+      "commit": "0050809",
+      "message": "drop route, keep time feats, baseline-ish params"
+    },
+    {
+      "commit": "5792378",
+      "message": "ES on eval set (2006 proxy) instead of train val split"
+    },
+    {
+      "commit": "a7a456c",
+      "message": "two-stage: ES on eval then refit on full train"
+    },
+    {
+      "commit": "5a1e861",
+      "message": "lr.05 depth8 mcw10 sub.8 col.8 ES50"
+    },
+    {
+      "commit": "b52c00a",
+      "message": "5-member diverse ensemble, each ES-on-eval + refit full"
+    },
+    {
+      "commit": "8999cb8",
+      "message": "10 diverse full-data members"
+    },
+    {
+      "commit": "44bc35b",
+      "message": "16 diverse members"
+    },
+    {
+      "commit": "62e1806",
+      "message": "16 members + 8 OOF TE groups"
+    },
+    {
+      "commit": "3762113",
+      "message": "12 TE groups"
+    },
+    {
+      "commit": "cf9a1c7",
+      "message": "24 members, 12 TE groups"
+    },
+    {
+      "commit": "cab8d2a",
+      "message": "feature-subset members: every 3rd on base-only cols"
+    },
+    {
+      "commit": "309f414",
+      "message": "OOF 5-fold linear stacking (6 configs)"
+    },
+    {
+      "commit": "74aeebb",
+      "message": "10-config NNLS stack around col0.5 winner"
+    },
+    {
+      "commit": "d19c4bf",
+      "message": "8-config stack, 4-fold OOF"
+    },
+    {
+      "commit": "6d6d912",
+      "message": "colsample grid of winner config, NNLS stack"
+    },
+    {
+      "commit": "57bf306",
+      "message": "10 configs seed-replicated col 0.4-0.55, 3-fold OOF"
+    },
+    {
+      "commit": "b43093a",
+      "message": "blend stack+mean 50/50"
+    },
+    {
+      "commit": "7959075",
+      "message": "add d9/d10 configs to col grid"
+    },
+    {
+      "commit": "b0f4f08",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9073.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 255.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "7959075",
+  "best_commit_eval_auc": 0.7271,
+  "best_commit_holdout_auc": 0.7283249863460001,
+  "best_commit_holdout_ap": 0.7216663825405241,
+  "best_commit_error": null,
+  "finalized_best": true
+}

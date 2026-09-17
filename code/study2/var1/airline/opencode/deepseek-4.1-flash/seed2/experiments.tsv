@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	d501584	0.7141	ok	4	baseline
+2	432a196	0.7153	ok	2	capacity 800t lr.05 d7 es
+3	3fcfa37	0.7053	ok	5	time+route features
+4	494df68	0.7134	ok	4	time features only
+5	2eac965	0.7206	ok	3	d4 lr.02 n250 time feats
+6	5d0ece7	0.7217	ok	7	ensemble d3-7 lr.02 n250
+7	b9ca845	0.7219	ok	8	calendar features
+8	33daf22	0.7356	ok	36	ensemble d3+d20
+9	0076da3	0.7428	ok	35	d2,d3 + deep d32 cs.6
+10	9c9847d	0.7436	ok	62	d2,d3,d20,d32 cs.6
+11	6c36fc5	0.7408	ok	63	cyclical hour/month
+12	c4432fe	0.7412	ok	69	interaction features
+13	d362bbc	0.7432	ok	96	add d64 member
+14	08aaef4	0.7407	ok	56	early stopping
+15	530571c	0.7434	ok	97	seed-bag d32
+16	541c1c0	0.7435	ok	64	logit averaging
+17	926a92a	0.7421	ok	60	deep subsample .9
+18	8c9dced	0.7427	ok	66	max_cat_threshold 128
+19	f0776a8	0.7418	ok	65	holiday feature
+20	36c359c	0.7451	ok	64	dep_hour categorical
+21	ebd03c8	0.7364	ok	68	month/dow categorical
+22	8d3e40c	0.7436	ok	66	hour cat+numeric
+23	bd9729f	0.7482	ok	66	half-hour categorical
+24	928924e	0.7500	ok	67	15-min categorical
+25	5f7a2fe	0.7447	ok	72	5-min categorical
+26	1d934ec	0.7486	ok	69	10-min categorical

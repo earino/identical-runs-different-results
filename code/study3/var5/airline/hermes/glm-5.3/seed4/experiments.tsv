@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	632fbe4	0.7141	ok	3	baseline
+2	7641339	0.7147	ok	2	numeric features: hour, minute, sin/cos time, log distance
+3	480fa6a	0.7136	ok	3	early stopping, 2000 trees, lr 0.1
+4	d12ae56	0.7059	ok	2	route pair Origin_Dest categorical
+5	ba8eb54	0.7157	ok	3	100 trees lr 0.05 (no early stopping)
+6	fc0b2b5	0.7158	ok	5	200 trees depth8, subsample0.8 colsample0.8 mcw5 lambda2
+7	3cfa2e9	0.7151	ok	4	numeric month/dom/dow (fix all-NaN bug)
+8	ea6fa2b	0.7132	ok	5	feature rework: minute-of-day sin/cos, fixed numeric dates
+9	d694618	0.7172	ok	5	add f_minOfDay continuous clock
+10	eae4981	0.7166	ok	5	block15/block30 time features
+11	30ed256	0.7193	ok	18	5-model seed ensemble (mean probs)
+12	89999a9	0.7187	ok	18	smoothed target encodings (m=20) + seed ensemble
+13	b810ad9	0.7191	ok	48	ensemble with 600 trees lr 0.02
+14	1d7fa29	0.7219	ok	19	diverse hyperparam ensemble (depth 6-10)
+15	ef45215	0.0000	crash	1	carrier_hour interaction categorical
+16	bda1ef5	0.7338	ok	20	carrier_hour interaction categorical (fix dtype crash)
+17	f455624	0.7320	ok	28	origin_hour + dest_hour interactions
+18	0bb244f	0.7312	ok	19	congestion: flights per airport-hour and hour
+19	8aff323	0.7385	ok	20	carrier x 30-min slot categorical
+20	ff29949	0.7348	ok	29	carrier_slot15 + origin_slot30
+21	f21b5b7	0.7392	ok	41	10-model hyperparam-diverse ensemble
+22	cbb4f75	0.7397	ok	61	14 models: add 4 lossguide grow_policy members
+23	4e2bdf1	0.7389	ok	104	ensemble + 3 DART members
+24	e3599c3	0.7399	ok	69	route count, avg distance, std distance features
+25	85c09fb	0.7400	ok	74	numeric dates + seasonal encodings
+26	3e5ba3c	0.7387	ok	78	prune redundant time features; 300 trees lr .04
+27	055a2f7	0.7399	ok	72	rank averaging across 14 members
+28	5a938aa	0.7402	ok	73	circular route time deviation
+29	7ab24e5	0.7401	ok	74	f_dist_dev: distance minus route mean
+30	5dcdc60	0.7336	ok	77	carrier_dow + hour_dow interactions
+31	b1e0c7e	0.7404	ok	77	colsample_bynode=0.8 for diversity
+32	9cde4e4	0.7421	ok	88	250 trees per member
+33	fa66bff	0.7431	ok	101	300 trees per member
+34	2c900a6	0.7418	ok	105	lr 0.04, 300 trees
+35	4d87f9b	0.7425	ok	106	smoothed TE of carrier x slot30 (m=50)
+36	91ad200	0.7437	ok	118	350 trees per member
+37	4e3d930	0.0000	timeout	120	400 trees per member
+38	80c0088	0.7437	ok	108	13 members (drop deepest)
+39	5472e42	0.7440	ok	115	380 trees, 13 members
+40	c5de373	0.0000	timeout	120	reg_alpha=0.5 L1 on all members

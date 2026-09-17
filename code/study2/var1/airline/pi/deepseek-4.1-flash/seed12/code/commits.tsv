@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	c0d7916	1789540126	baseline
+01	bb643e7	1789540196	depth 4, 30 trees
+02	42efcb9	1789540202	depth 4, 100 trees
+03	f99e60c	1789540214	add hour/minute/tod features
+04	bb85946	1789540233	depth4 150 trees
+05	28b529d	1789540284	lr.05 300 trees depth4
+06	8d4af4e	1789540384	diverse-depth ensemble
+07	e618799	1789540405	expanded ensemble 6 members
+08	eba2172	1789540434	3-member diverse ensemble
+09	552f70b	1789540465	5-member diverse ensemble incl deep reg
+10	903b9fe	1789540483	add doy + is_weekend
+11	9efbc1e	1789540590	add bagged members
+12	356a635	1789540633	drop month/dom cat, keep doy
+13	9f6902b	1789540777	greedy diverse ensemble
+14	dcc0991	1789540840	bagged config-level ensemble

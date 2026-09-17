@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	963b7e6	0.7141	ok	4	baseline
+2	a13ee5e	0.7090	ok	1	FE v1
+3	a6c50d7	0.7102	ok	5	capacity 400x7
+4	35875b9	0.7126	ok	2	dep hour/min add
+5	6bf9c1c	0.7062	ok	2	target encoding
+6	963b7e6	0.7141	ok	2	baseline repeat (noise check)
+7	fcc2054	0.7162	ok	1	regularized model
+8	0bf585a	0.7164	ok	2	depth5 reg
+9	e20d51d	0.7204	ok	2	calendar ordinals + hour
+10	ce822ca	0.7104	ok	2	route categorical
+11	59e5a01	0.7211	ok	3	minute+doy+weekend
+12	1c42909	0.7223	ok	2	lower lr stronger reg
+13	d25b5a9	0.7228	ok	3	even lower lr/reg
+14	a438ca0	0.7235	ok	3	frequency features
+15	2f4ca2e	0.7250	ok	4	depth6 strong reg
+16	4acf420	0.7271	ok	4	depth7 strong reg
+17	0426198	0.7281	ok	4	depth8 strong reg
+18	462954f	0.7295	ok	5	depth10 strong reg
+19	aff7f4c	0.7303	ok	7	depth12 strong reg
+20	6e9e82b	0.7306	ok	7	depth15 strong reg
+21	21fe158	0.7295	ok	15	800 trees depth15
+22	3dde532	0.7320	ok	8	focused TE
+23	5fd7910	0.7229	ok	8	TE hour combos + route
+24	ac4b337	0.7262	ok	10	colsample0.8
+25	3e983ef	0.7319	ok	32	5-seed ensemble
+26	2dc195f	0.7298	ok	7	stronger mcw/lambda
+27	bbd999f	0.7313	ok	7	cat split limits
+28	35404e0	0.7321	ok	7	depth20
+29	cd6a0f2	0.0000	crash	1	temporal TE
+30	8f604cb	0.0000	crash	2	temporal TE fixed
+31	972380e	0.7295	ok	8	temporal TE fixed2
+32	3814780	0.0000	crash	2	lossguide
+33	9bdea8a	0.7320	ok	14	lossguide
+34	2ec3cdc	0.7263	ok	10	drop raw DepTime
+35	4fae4d5	0.7325	ok	7	reg_alpha5
+36	5225922	0.7302	ok	7	reg_alpha10
+37	00298ba	0.7330	ok	7	lambda10 alpha5
+38	9ce9f87	0.7341	ok	7	lambda5 alpha5
+39	a9972b3	0.7339	ok	7	lambda2 alpha5
+40	8a70eb4	0.7352	ok	7	mcw20 lambda5 alpha5

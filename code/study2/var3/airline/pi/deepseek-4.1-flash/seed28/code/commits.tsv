@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	047c3e3	1789494019	baseline
+01	803e123	1789494102	time features, no route cat, tuned xgb
+02	9ae558d	1789494146	deeper slower xgb depth8 lr0.03
+03	55fd837	1789494158	depth10
+04	4163d7d	1789494172	depth12
+05	70f44ac	1789494188	depth14
+06	d2924f9	1789494205	depth16
+07	9185826	1789494223	depth18
+08	089870a	1789494387	5-fold bagged xgb depth18
+09	eed582c	1789494534	ablate month features
+10	b3b620b	1789494602	ablate dom
+11	d1e7cf8	1789494669	depth22 no calendar
+12	7efddcc	1789494743	depth30 no calendar
+13	cca6e6c	1789495169	rare airport bucketization
+14	5103904	1789495251	rare threshold 300
+15	02c11e6	1789495402	add airport frequency features
+16	aaf2cb3	1789495563	7-fold depth24
+17	407cdcb	1789496275	map unseen categories to RARE bucket
+18	1584feb	1789496513	colsample 0.7
+19	25274e9	1789496733	colsample 0.6
+20	edaf24b	1789496847	colsample 0.5

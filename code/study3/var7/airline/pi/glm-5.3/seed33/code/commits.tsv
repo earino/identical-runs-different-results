@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	3edf617	1789606388	baseline
+01	1f03564	1789606944	FE: time features (Hour/Minute/DepTimeFrac), no route, baseline model
+02	7fcc20a	1789607259	capacity: 1500 trees lr0.1, early stopping on internal 20% split, baseline features
+03	6f2e64c	1789607530	sweep n_estimators on eval, keep best model
+04	d876ece	1789607740	FE v3: smoothed target encodings (hour/carrier/origin/dest/route) + Hour numeric, sweep capacity
+05	ee6e972	1789607920	hyperparameter sweep with per-round eval AUC curves
+06	ee1d120	1789608001	shallow-tree hyperparam refinement sweep
+07	14336ce	1789608764	ensemble: average 8 structurally diverse XGB models (top sweep configs + bagged seeds)
+08	5350eb7	1789609462	FE variants: hour-cat, hour-num, drop origin/dest at d4-lr05
+09	e42ff18	1789610010	hour-cat features, extended-round lr scan
+10	2dca442	1789610140	hourcat: deeper scan + 7-member ensemble
+11	495c869	1789610278	interaction categorical variants: route, hour x carrier/dow/month
+12	5d71213	1789610551	hourcarrier capacity extension + 4-member ensemble
+13	f292236	1789610771	lr 0.025/0.03 long scans + 3-member ensemble
+14	818ad53	1789611059	variants: recency weights, log-dist, drop day-of-month/month
+15	fdb712b	1789611180	longer rounds: no-dom / no-month / recency combos
+16	482c5d5	1789611287	pruned features: 4-member long ensemble
+17	e4e8bf2	1789611397	subsample-seed diversity members + marginal ensemble value
+18	60a891f	1789611529	6-member ensemble: d7 + more bagged seeds + rank/prob compare
+19	7e84634	1789611783	d8/d7 anchors + bagged members (trimmed to fit 120s)
+20	1f7e1ef	1789612127	member upgrades: recency-weighted anchor, sub0.92 quality bagged
+21	b1f2600	1789612418	best-member assembly: d8 anchors x3 weightings + lossguide + bagged
+22	0792527	1789612536	greedy forward ensemble selection over 7 members
+23	b604647	1789612808	wide 8-member greedy pool with seed pairs
+24	75d5d22	1789612933	lean production candidate: fixed greedy-4 ensemble, no monitoring
+25	3391f96	1789613278	recency-weighted bagged members

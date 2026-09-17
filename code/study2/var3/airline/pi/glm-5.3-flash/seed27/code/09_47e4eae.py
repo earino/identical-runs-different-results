@@ -1,0 +1,144 @@
+"""Airline delay XGBoost classifier. ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- encoders fitted on TRAIN only --------------------------------------------
+CAT_COLS = ["UniqueCarrier", "Origin", "Dest"]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in CAT_COLS}
+y_full = (train[TARGET] == POSITIVE).astype(int)
+PRIOR = y_full.mean()
+TE_SMOOTH = 30.0
+
+
+def _te_map(keys: pd.Series) -> dict:
+    """Smoothed target-encoding map: (sum + prior*m) / (count + m)."""
+    g = pd.DataFrame({"k": keys.values, "y": y_full.values}).groupby("k")["y"].agg(["sum", "count"])
+    return ((g["sum"] + PRIOR * TE_SMOOTH) / (g["count"] + TE_SMOOTH)).to_dict()
+
+
+def _cnt_map(keys: pd.Series) -> dict:
+    return keys.value_counts().to_dict()
+
+
+TE_MAPS = {
+    "Origin": _te_map(train["Origin"]),
+    "Dest": _te_map(train["Dest"]),
+    "UniqueCarrier": _te_map(train["UniqueCarrier"]),
+}
+CNT_MAPS = {
+    "Origin": _cnt_map(train["Origin"]),
+    "Dest": _cnt_map(train["Dest"]),
+}
+# target-free aggregates from train features only
+AVG_DIST = {
+    "carrier": train.groupby("UniqueCarrier")["Distance"].mean().to_dict(),
+    "origin": train.groupby("Origin")["Distance"].mean().to_dict(),
+    "dest": train.groupby("Dest")["Distance"].mean().to_dict(),
+}
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows.
+    X = pd.DataFrame(index=df.index)
+    # calendar features: c-<n> strings -> ints
+    X["month"] = df["Month"].str[2:].astype(int)
+    X["dom"] = df["DayofMonth"].str[2:].astype(int)
+    X["dow"] = df["DayOfWeek"].str[2:].astype(int)
+    # scheduled departure time
+    dep = df["DepTime"]
+    X["deptime"] = dep
+    X["hour"] = dep // 100
+    minutes = (dep // 100) * 60 + dep % 100
+    ang = 2 * np.pi * minutes / 1440.0
+    X["dep_sin"] = np.sin(ang)
+    X["dep_cos"] = np.cos(ang)
+    # distance
+    X["distance"] = df["Distance"]
+    X["dist_log"] = np.log1p(df["Distance"])
+    # native categoricals
+    for c in CAT_COLS:
+        X[c] = pd.Categorical(df[c], categories=cat_levels[c])
+    # target encodings (maps fitted on train only)
+    for key, series in [("Origin", df["Origin"]), ("Dest", df["Dest"]),
+                        ("UniqueCarrier", df["UniqueCarrier"])]:
+        X["te_" + key] = series.map(TE_MAPS[key]).astype(float)
+        X["te_" + key] = X["te_" + key].fillna(PRIOR)
+    for key, series in [("Origin", df["Origin"]), ("Dest", df["Dest"])]:
+        X["cnt_" + key] = series.map(CNT_MAPS[key]).astype(float)
+        X["cnt_" + key] = X["cnt_" + key].fillna(0)
+    # safe aggregates + flags
+    X["avg_dist_carrier"] = df["UniqueCarrier"].map(AVG_DIST["carrier"]).astype(float).fillna(df["Distance"])
+    X["avg_dist_origin"] = df["Origin"].map(AVG_DIST["origin"]).astype(float).fillna(df["Distance"])
+    X["avg_dist_dest"] = df["Dest"].map(AVG_DIST["dest"]).astype(float).fillna(df["Distance"])
+    X["dist_vs_carrier_avg"] = X["distance"] / X["avg_dist_carrier"]
+    X["weekend"] = (X["dow"] >= 6).astype(int)
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+# ES runs never stopped before the 1200-tree cap in prior experiments, so member tree
+# counts are fixed at the equivalent scales of best_it=1200.
+SPECS = [  # (depth, n_trees, colsample_bytree)
+    (6, 1560, 0.8),
+    (7, 1440, 0.8),
+    (8, 1320, 0.8),
+    (8, 1320, 0.6),
+    (9, 1200, 0.8),
+    (10, 1080, 0.8),
+]
+models = []
+t0 = time.time()
+for s, (d, n_trees, cs) in enumerate(SPECS):
+    m = xgb.XGBClassifier(
+        n_estimators=n_trees,
+        learning_rate=0.05,
+        max_depth=d,
+        subsample=0.85,
+        colsample_bytree=cs,
+        tree_method="hist",
+        max_bin=512,
+        enable_categorical=True,
+        random_state=SEED + s * 1000,
+        n_jobs=N_JOBS,
+    )
+    m.fit(prepare(train), to_y(train))
+    models.append(m)
+print(f"Bag refit x{len(SPECS)}: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    # logit-mean pooling across ensemble members
+    Ps = [m.predict_proba(prepare(df))[:, 1] for m in models]
+    logits = [np.log(p) - np.log1p(-p) for p in np.clip(Ps, 1e-9, 1 - 1e-9)]
+    return 1.0 / (1.0 + np.exp(-np.mean(logits, axis=0)))
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a934d37	0.7141	ok	4	baseline
+2	8109606	0.7119	ok	4	500 trees lr0.05
+3	b6bf6e4	0.7173	ok	2	deptime parts + freq enc
+4	e194dc2	0.7168	ok	3	300 trees lr0.05
+5	d77078d	0.7211	ok	2	depth4 100trees reg
+6	8d77fa9	0.7184	ok	2	depth3 200trees reg
+7	5149fa4	0.7208	ok	3	depth4 300trees lr0.03
+8	105298e	0.7036	ok	2	add route categorical
+9	7b0974b	0.7201	ok	2	target enc origin/dest/carrier
+10	d269e63	0.7198	ok	2	calendar + cyclical features
+11	43f0f4c	0.7195	ok	1	min_child_weight 30
+12	4f5adf8	0.7211	ok	2	colsample 0.6
+13	f4fb65d	0.7215	ok	3	seed ensemble 4
+14	db9357c	0.7224	ok	3	lossguide 31 leaves
+15	b2ae5b9	0.7219	ok	3	lossguide 15 leaves
+16	304df39	0.7238	ok	4	lossguide 63 leaves
+17	45e1cd9	0.7244	ok	4	lossguide 127 leaves
+18	726a679	0.7270	ok	6	lossguide 255 leaves
+19	90c595f	0.7287	ok	10	lossguide 511 leaves
+20	0b292d0	0.7280	ok	13	lossguide 1023 leaves
+21	0f4ccbe	0.7302	ok	30	ensemble 511 leaves 4 seeds
+22	aa1540d	0.7279	ok	13	lossguide 767 leaves
+23	b254fb0	0.7295	ok	15	511 leaves lr0.025 400t
+24	fca8ffa	0.7307	ok	75	ensemble 511 lr0.025 4seeds
+25	3880620	0.7274	ok	21	511 mcw20 single
+26	8558e59	0.7301	ok	21	511 mcw5 single
+27	9ed6c34	0.7321	ok	74	ensemble 511 mcw5 4seeds
+28	5aa0d44	0.7295	ok	16	511 mcw2 single
+29	0892770	0.7303	ok	20	511 mcw5 lambda5 single
+30	70cfb10	0.7366	ok	14	511 mcw5 col0.6 single
+31	aad6a51	0.7401	ok	15	511 mcw5 col0.4 single
+32	0b3234d	0.7362	ok	14	511 mcw5 col0.25 single
+33	d8603cd	0.7384	ok	13	511 mcw5 col0.5 single
+34	91eb688	0.7411	ok	57	ensemble 511 mcw5 col0.4 4seeds
+35	e4efaed	0.7376	ok	16	col0.4 sub0.6 single
+36	a7f6001	0.7409	ok	12	mcw5 col0.4 single
+37	a166d63	0.7418	ok	63	ensemble mcw5 col0.4 4seeds
+38	43f676b	0.7420	ok	23	1023 leaves col0.4 single
+39	2a37e00	0.7438	ok	76	ensemble 1023 col0.4 3seeds
+40	53fa759	0.7438	ok	101	ensemble 1023 col0.4 4seeds

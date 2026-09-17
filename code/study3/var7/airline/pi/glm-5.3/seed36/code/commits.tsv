@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	f3a9a56	1789628224	baseline
+01	b6e6594	1789628636	FE v1: hour/minute + cyclical encodings, numeric dates, early-stopped depth-8 ensemble
+02	e4af000	1789629362	capacity upgrade: lr 0.05, depth 10, ES 60, less regularization
+03	9299782	1789629453	more capacity: lr0.03 depth12 ES80 cap2500
+04	0432688	1789629650	congestion count features: origin/dest x hour, route, carrier x hour
+05	6678524	1789629766	extend congestion family: marginals, route x hour, dow, 30-min slots, share ratios
+06	52a5702	1789629886	retune for wider feature set: lr0.02 mcw1 colsample0.75
+07	2e3476c	1789630574	seasonal schedule structure: origin/route/carrier x month counts, 15-min slots, route distance deviation
+08	e998294	1789630741	3-fold bagged ensemble with per-fold early stopping
+09	466f223	1789631649	depth 14, ES 60 cap 1500
+10	9e4dfc6	1789631773	depth 16, ES 50 cap 1200
+11	5d8ed9f	1789632041	depth 18, ES 40 cap 1000
+12	ad8cc28	1789632355	colsample_bytree 0.6
+13	4b364a6	1789632577	lr 0.03 + 4-fold bagging
+14	18b229e	1789633208	carrier footprint at origin/dest + share
+15	322f69f	1789633457	airline presence on route: cnt_carrier_route, n carriers, share
+16	8248c9a	1789633708	subsample 0.75
+17	f983012	1789633826	depth 20, ES 20 cap 600
+18	19cdc80	1789633940	depth 24, cap 500
+19	1db43eb	1789634561	colsample_bytree 0.55, cap 400

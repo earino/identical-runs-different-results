@@ -1,0 +1,184 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 2,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T16:55:19+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s2-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T17:34:02+00:00",
+  "wall_seconds": 2323.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6442.5,
+  "endpoint_at_end": "ok",
+  "head": "3dc23cd",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 5,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7266,
+  "final_eval_auc": 0.7266,
+  "holdout_auc": 0.7269412587619999,
+  "holdout_ap": 0.7165478498001007,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.012170507025999866,
+  "generalization_gap": -0.00034125876199986305,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8849257,
+    "tokens_in_uncached": 70185,
+    "tokens_in_cached": 8779072,
+    "tokens_out": 94723,
+    "turns": null,
+    "api_calls": 161,
+    "method": "sum-of-161-events",
+    "cost_usd": 0.3213,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 6405.6,
+  "cpu_seconds_counted": 5998.3,
+  "cpu_seconds_uncounted": 4.0,
+  "cpu_seconds_exempt": 403.2,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 344,
+  "fits_counted": 328,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "4be9a44",
+      "message": "baseline"
+    },
+    {
+      "commit": "d2d0a9b",
+      "message": "early stopping + refit, depth6 lr0.05"
+    },
+    {
+      "commit": "eb5a6fb",
+      "message": "feat v2: frequency encodings carrier/origin/dest/route"
+    },
+    {
+      "commit": "7056b97",
+      "message": "probe: shallow depths 3-5, tree counts"
+    },
+    {
+      "commit": "afcd07b",
+      "message": "probe: depth 2, tree counts, light reg"
+    },
+    {
+      "commit": "b632760",
+      "message": "seed/param ensemble of 5 shallow XGB models"
+    },
+    {
+      "commit": "c1fd09c",
+      "message": "probe round2: month cyc, route_cat(string), carorg_freq, blend (fix3)"
+    },
+    {
+      "commit": "c7b903c",
+      "message": "diverse 7-model ensemble with weight probe"
+    },
+    {
+      "commit": "3d14897",
+      "message": "probe deep-regularized singles on top of ensemble"
+    },
+    {
+      "commit": "3cbbe25",
+      "message": "probe deeper: d10-16, mcw 100-300, col 0.4-0.5"
+    },
+    {
+      "commit": "fdb2b1a",
+      "message": "probe: refine around d12 mcw100 col0.5 lambda10"
+    },
+    {
+      "commit": "c499eaa",
+      "message": "probe: alpha/lambda grid around 0.7249 config"
+    },
+    {
+      "commit": "6846aee",
+      "message": "ensemble v2: 6 deep-reg + 1 shallow, weight probe"
+    },
+    {
+      "commit": "1e004c0",
+      "message": "ensemble v4: 9 strong deep-reg members, uniform"
+    },
+    {
+      "commit": "b7ae7a3",
+      "message": "probe: ablations and neighbors (fix2)"
+    },
+    {
+      "commit": "af23f7c",
+      "message": "grand ensemble: 12 deep-reg members, prob vs rank avg"
+    },
+    {
+      "commit": "1a1a809",
+      "message": "grand ensemble: 16 members"
+    },
+    {
+      "commit": "969b386",
+      "message": "16-member ensemble: averaging method comparison"
+    },
+    {
+      "commit": "1fa279d",
+      "message": "ensemble v5: swap weak members for strong-region clones"
+    },
+    {
+      "commit": "86e370e",
+      "message": "v5 minus dead duplicate ENSEMBLE block (no-op cleanup)"
+    },
+    {
+      "commit": "9ee0aac",
+      "message": "final blend: uniform vs quality-weighted only, drop buggy rank/logit paths"
+    },
+    {
+      "commit": "3dc23cd",
+      "message": "FINAL.md: research summary, final eval AUC 0.7266"
+    }
+  ],
+  "cpu_seconds_budgeted": 6002.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 36.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1fa279d",
+  "best_commit_eval_auc": 0.7266,
+  "best_commit_holdout_auc": 0.7269412587619999,
+  "best_commit_holdout_ap": 0.7165478498001007,
+  "best_commit_error": null,
+  "finalized_best": false
+}

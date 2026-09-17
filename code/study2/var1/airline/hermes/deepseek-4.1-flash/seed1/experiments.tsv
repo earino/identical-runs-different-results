@@ -1,0 +1,9 @@
+n	commit	eval_auc	status	seconds	description
+1	ddd13a4	0.7141	ok	4	baseline
+2	fbedd0c	0.7179	ok	4	exp2 DepTime hour/min + numeric date, 300 trees
+3	897e6c0	0.7134	ok	8	exp3 depth7 lr0.03 early-stop
+4	b8969ba	0.7164	ok	4	exp4 depth4 lr0.05 early-stop
+5	010cce7	0.7002	ok	4	exp5 route cat + tod
+6	3d5cead	0.7157	ok	3	exp6 OOF target encoding
+7	3532258	0.7182	ok	4	exp7 frequency features
+8	0d43d45	0.7182	ok	11	exp8 5-seed ensemble

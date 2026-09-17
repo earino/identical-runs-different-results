@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	43c6bfc	0.7141	ok	11	baseline
+2	d9eb99a	0.7139	ok	5	es+params: 2000 trees lr.05 d8 sub/col .8, ES on 20pct, refit
+3	c25ccbc	0.7232	ok	40	fe1: date ints, deptime parts+cyclic, distlog, freq enc
+4	e268ecc	0.7193	ok	66	te: smoothed TE origin/dest/carrier/route + oof overlay
+5	f34baa8	0.7202	ok	57	te ablation: origin/dest only, m=30
+6	f985d3c	0.7199	ok	49	reg: depth6 lr.03 mcw5, 6000 tree cap
+7	9cfe5b5	0.7206	ok	58	depth8 lr.05 cap 4000 (es cap was binding)
+8	5c7498a	0.7229	ok	42	fe2: route freq + deptime anomaly flags
+9	36f85e3	0.7184	ok	90	ensemble 4 members diverse seed/sub/col
+10	9e28b07	0.7247	ok	80	3 members shared ES iter, full refits
+11	c4241fe	0.7255	ok	106	4 members depth 7/8/8/9 shared iter full refits
+12	dd7294f	0.7280	ok	105	fe3: hubness + routedistdev + routefreq, 4-member ens
+13	3bea45a	0.0000	timeout	120	maxbin512 3 members d8/8/9
+14	be3151d	0.0000	timeout	120	5 members lr.06 shared iter full refits
+15	4ecbf3b	0.0000	crash	1	fe4: coarse TE + meandist + congestion, 4-member ens
+16	13697c8	0.7253	ok	114	fe4: coarse TE + meandist + congestion, 4-member ens
+17	cd5d520	0.0000	timeout	121	fe5: meandist + congestion on fe3 config
+18	6474ac4	0.0000	timeout	120	fe5: meandist + congestion (fast), fe3 config
+19	066f4d7	0.0000	timeout	120	fe5 meandist+congest es cap 1600
+20	b3907a1	0.0000	timeout	120	fe5 meandist+congest, xgb.train refactor
+21	babf42c	0.7249	ok	64	fe5 single model probe (vs 0.7232 fe1 single)
+22	b83eea0	0.0000	timeout	121	fe5 4-member ens lr.06
+23	3de8d4e	0.7267	ok	118	fe5 4-member ens lr.07
+24	24c7de7	0.0000	timeout	122	fe5 3-member ens d8/8/7 lr.05
+25	12f2935	0.0000	timeout	121	fe5 4-ens lr.05 hardcoded 1932 trees
+26	c83640d	0.7268	ok	110	fe3 4-ens hardcoded 1779 (reproduce 0.7280 faster)
+27	732b45b	0.7280	ok	89	fe3 4-ens hardcoded 1413 (true ES count)
+28	8e77f55	0.7275	ok	114	5-member ens (adds d8 seed99)
+29	094624d	0.7280	ok	88	colsample_bynode 0.8 diversity on m2/m3
+30	163f7ea	0.7280	ok	97	fe6: 3 congestion count features
+31	e551114	0.7288	ok	100	member4 depth 10
+32	ca92580	0.7291	ok	108	member4 depth 11
+33	9469607	0.7295	ok	113	member4 depth 12
+34	81555fd	0.0000	crash	2	per-member tree counts from ES
+35	93668c6	0.7292	ok	107	per-member tree counts from ES (fixed)
+36	2333c1a	0.7302	ok	88	member4 d12 gamma=1
+37	89fb997	0.7305	ok	85	member4 depth13 gamma1
+38	18c896c	0.7315	ok	80	member4 depth15 gamma2
+39	9647b82	0.7317	ok	77	member4 depth17 gamma3
+40	c073d0d	0.7332	ok	86	second deep member d12 gamma1 (final exp)

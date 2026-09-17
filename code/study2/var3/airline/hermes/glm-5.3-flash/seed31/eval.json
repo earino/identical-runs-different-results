@@ -1,0 +1,168 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 31,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:27:41+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s31-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:13:10+00:00",
+  "wall_seconds": 2728.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7129.8,
+  "endpoint_at_end": "ok",
+  "head": "e1f0e1f",
+  "n_commits": 17,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7438,
+  "final_eval_auc": 0.7438,
+  "holdout_auc": 0.745232004684,
+  "holdout_ap": 0.7321392718064395,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03046125294799995,
+  "generalization_gap": -0.0014320046839999545,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7922039,
+    "tokens_in_uncached": 65079,
+    "tokens_in_cached": 7856960,
+    "tokens_out": 62408,
+    "turns": null,
+    "api_calls": 161,
+    "method": "cumulative-max",
+    "cost_usd": 0.2767,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 6848.9,
+  "cpu_seconds_counted": 5018.9,
+  "cpu_seconds_uncounted": 563.3,
+  "cpu_seconds_exempt": 1266.7,
+  "python_processes": 56,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 99,
+  "fits_counted": 71,
+  "fits_uncounted": 10,
+  "commits": [
+    {
+      "commit": "2aade82",
+      "message": "baseline"
+    },
+    {
+      "commit": "0f2e808",
+      "message": "feat: numeric month/dow, dep-time hour/minute + cyclical, log-distance"
+    },
+    {
+      "commit": "48b1380",
+      "message": "scale-up: 4000 rounds, ES-80 on probe, xgb3 predict ravel"
+    },
+    {
+      "commit": "d82111c",
+      "message": "sweep: full-100k depth6 lr05, AUC at round checkpoints 30..600"
+    },
+    {
+      "commit": "1a31767",
+      "message": "capacity: depth 8, checkpoints to 800"
+    },
+    {
+      "commit": "b10decf",
+      "message": "lock: depth8 lr05 200 rounds (sweep peak)"
+    },
+    {
+      "commit": "018f876",
+      "message": "lr sweep: eta 0.1 depth8, checkpoints 50..400"
+    },
+    {
+      "commit": "5d57d09",
+      "message": "lr sweep: eta 0.02 depth8, checkpoints to 800"
+    },
+    {
+      "commit": "c864d73",
+      "message": "reg sweep: subsample/colsample 0.7"
+    },
+    {
+      "commit": "2d36064",
+      "message": "reg sweep: subsample/colsample 0.6, to 1200 rounds"
+    },
+    {
+      "commit": "d6e0508",
+      "message": "lock: depth16 lr02 0.6/0.6, 200 rounds"
+    },
+    {
+      "commit": "28c750d",
+      "message": "ensemble: 3-seed bag of best config"
+    },
+    {
+      "commit": "98c29d3",
+      "message": "ensemble: 6-seed bag"
+    },
+    {
+      "commit": "d4522c6",
+      "message": "bag with depth 18 members"
+    },
+    {
+      "commit": "257bcbd",
+      "message": "ensemble: mixed-depth bag (3x d18 + 3x d16)"
+    },
+    {
+      "commit": "b7340ef",
+      "message": "fix contract: objective binary:logistic so predict returns probabilities"
+    },
+    {
+      "commit": "9fa806b",
+      "message": "fix contract: clip squared-loss margins to [0,1] in predict_proba"
+    },
+    {
+      "commit": "e1f0e1f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5582.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 280.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "257bcbd",
+  "best_commit_eval_auc": 0.7438,
+  "best_commit_holdout_auc": 0.745232032068,
+  "best_commit_holdout_ap": 0.7321681021549429,
+  "best_commit_error": null,
+  "finalized_best": false
+}

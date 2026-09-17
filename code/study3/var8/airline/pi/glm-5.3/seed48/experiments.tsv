@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5073808	0.7141	ok	4	baseline
+2	a7c3610	0.7093	ok	4	capacity + early stopping
+3	e83a53a	0.7158	ok	22	diag depth x rounds sweep
+4	0a0e7e5	0.7045	ok	5	FE: time/date features + route
+5	7219475	0.7181	ok	9	FE group ablation
+6	a5f7b48	0.7185	ok	14	regularization sweep
+7	a15d9d3	0.7225	ok	6	target encoding (simple/inter)
+8	8a0039d	0.7303	ok	13	more interaction TEs, m sweep
+9	84e3a55	0.7305	ok	21	hour_route variants
+10	6eeb58e	0.7310	ok	26	hyperparam retune w/ TE features
+11	b46656e	0.0000	crash	13	hier TE + flight TE + counts
+12	af66403	0.7334	ok	17	hier TE + flight TE + counts (bugfix)
+13	d7f6c74	0.7355	ok	25	flight TE variants
+14	510940b	0.0000	crash	13	TE combos + hyper recheck
+15	5d08a41	0.7389	ok	31	TE combos + hyper recheck (bugfix)
+16	d798519	0.0000	crash	8	hour TE variants
+17	e792a97	0.7391	ok	26	hour TE variants (bugfix)
+18	1553c4e	0.0000	crash	5	ensembling exploration
+19	b024d02	0.0000	crash	39	ensembling exploration (bugfix)
+20	cd9c995	0.0000	crash	38	ensembling exploration (bugfix2)
+21	fc61a65	0.7415	ok	43	ensembling exploration (bugfix3)
+22	4a22d5e	0.0000	crash	7	multi-view ensembles
+23	886c278	0.7441	ok	25	multi-view ensembles (bugfix)
+24	a4f7823	0.7457	ok	30	4-view ensemble tuning
+25	23dc082	0.0000	crash	1	view zoo growth + pruning
+26	4a1dc23	0.7458	ok	42	view zoo growth + pruning (bugfix)
+27	16b6ac8	0.7458	ok	64	booster-diversity members
+28	2ddc67a	0.0000	crash	21	more view diversity
+29	0053bb5	0.7458	ok	52	more view diversity (bugfix)
+30	461b248	0.7459	ok	50	spec-subset members
+31	10e357b	0.7463	ok	51	longer members
+32	404a76e	0.0000	timeout	120	round budget grid
+33	838c8b0	0.0000	crash	9	8-view ens lr0.03 r1200
+34	9272230	0.7471	ok	23	8-view ens lr0.03 r1200 (bugfix)
+35	fe41078	0.7474	ok	27	8-view ens lr0.03 r1600
+36	f8a8b4a	0.7474	ok	31	8-view ens lr0.025 r2000
+37	506b50b	0.7471	ok	33	8-view ens colsample 1.0
+38	345d63c	0.7481	ok	101	d5 + subsample members at long rounds
+39	66b01be	0.7485	ok	80	16-member depth ladder
+40	1169f3f	0.7485	ok	104	19-member ladder with d7

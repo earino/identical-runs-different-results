@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	ae511d4	1789600110	baseline
+01	a755e83	1789600475	exp6: regularization package (subsample/colsample/mcw/lambda, 150 trees)
+02	9e7d2c8	1789600527	exp10: 3-seed ensemble of reg model
+03	66e8d92	1789600537	exp11: 6-seed ensemble
+04	b558e23	1789600546	exp12: 12-seed ensemble
+05	cc63a44	1789600709	exp18: 24-seed ensemble
+06	cb6c6fc	1789600732	exp19: origin/dest hour congestion counts
+07	ce2a960	1789600780	exp21: add carrier-hour volume and marginal origin/dest volume
+08	e5d7710	1789600870	exp25: 24 seeds on congestion v2
+09	2be9ed1	1789600900	exp26: rank-average ensemble
+10	216674d	1789601012	exp29: blend depthwise + lossguide ensembles
+11	cf56f13	1789601137	exp32: depthwise family colsample 0.5
+12	6b4debc	1789601166	exp33: colsample .4 + mcw20 lambda1
+13	bafa195	1789601194	exp34: cs .35 mcw15 lambda.5
+14	2e8f496	1789601222	exp35: cs .3/.5 mcw10 lambda.3
+15	d964f58	1789601251	exp36: cs .25/.4 mcw5 lambda.2 ss .65
+16	1b63d8a	1789601352	exp39: third family d6 cs.2

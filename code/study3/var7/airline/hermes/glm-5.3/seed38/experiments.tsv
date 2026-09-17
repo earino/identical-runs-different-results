@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5fb0c3d	0.7141	ok	4	baseline
+2	0391dbc	0.7070	ok	5	600 trees
+3	1f7aca8	0.7174	ok	4	engineered time features
+4	555dbe4	0.0000	crash	2	target+count encodings for carrier/origin/dest/route/hour
+5	cd5e49f	0.7173	ok	3	target+count encodings (fixed)
+6	27803a0	0.7230	ok	3	regularization: depth5 lr0.07 subsample colsample min_child reg
+7	12cf79d	0.7186	ok	13	early stopping lr=0.03, 20% tail validation split
+8	c9ef3be	0.7241	ok	2	stronger reg: depth4 subsample0.7 min_child10 alpha2 lambda10
+9	08aba96	0.7129	ok	3	route + airport-hour target encodings, dist ratio
+10	25739ea	0.7212	ok	3	max_depth=3
+11	dffba3f	0.7266	ok	3	depth5 + colsample_bytree 0.5
+12	e1d4b53	0.7260	ok	4	500 trees, colsample 0.5
+13	31dad99	0.7281	ok	7	3-member XGB ensemble (seed + colsample variety)
+14	d0f8619	0.7282	ok	11	5-member ensemble, varied depth+colsample
+15	0639b88	0.7311	ok	10	congestion counts + cos_hour fix
+16	c884855	0.7359	ok	12	15min slot + hour + dow congestion counts
+17	dbb80a5	0.7377	ok	13	route x 15min slot count + airport schedule shares
+18	9caba5c	0.7377	ok	13	minutes-from-midnight + day-of-year proxy
+19	0f33a96	0.7381	ok	11	row-bagged ensemble members (85% rows)
+20	59ae8cd	0.7382	ok	17	8-member row-bagged ensemble
+21	9034330	0.7373	ok	18	carrier x slot congestion + slot position
+22	8594137	0.7380	ok	19	shrunk congestion estimates + log1p counts
+23	16a40f4	0.7377	ok	17	airport slot CDF (cumulative traffic share)
+24	3f8366a	0.7380	ok	30	lr 0.035, 600 trees per member
+25	ac94a49	0.7379	ok	12	lr 0.12, 200 trees per member
+26	cdd271c	0.7384	ok	16	recency sample weights (later months upweighted)
+27	0693c5e	0.7384	ok	17	steeper recency weights + Aug-Oct-only member
+28	1eb5f2a	0.7383	ok	18	rank-averaged ensemble predictions
+29	16448e1	0.7411	ok	17	carrier x airport x slot rotation counts
+30	e68444d	0.7417	ok	17	carrier x route x slot + cod counts
+31	91473d4	0.7414	ok	20	5-min carrier rotation counts + prev-slot arrivals
+32	992e2db	0.7417	ok	15	rotation counts relative to carrier-airport daily mean
+33	ce69216	0.7418	ok	18	ablation: drop hour_cnt, odow, ddow
+34	8ecdfc0	0.7420	ok	23	+2 lossguide (leaf-wise) members
+35	73ec2cc	0.7419	ok	25	complete cyclic pairs (cos_month, cos_dom)
+36	c2d9f93	0.7418	ok	23	Dist_bin x Hour interaction feature
+37	815bdd2	0.7418	ok	23	subsample .75, min_child 15, lambda 15
+38	75b2134	0.7415	ok	24	sqrt-transformed base congestion counts
+39	406a020	0.7420	ok	30	12-member ensemble of winning config
+40	1e4047b	0.7429	ok	24	origin bank pressure (slots 2-6 before departure)

@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	a86ced2	1789516560	baseline
+01	2807141	1789516618	FE v1: time-of-day, cyclical, route cat, distance bins; 600 trees depth 8
+02	67f39e1	1789516642	FE v1 with smaller model: 150 trees depth 6 lr 0.1 mch 10
+03	0778568	1789516651	ablate route category
+04	a7e0d72	1789516682	early stopping on random 85/15 split + refit on full train
+05	dd48ecc	1789516742	OOF smoothed target encoding + count features
+06	42aab33	1789516766	TE + cap trees at 400
+07	5767933	1789516782	cap trees at 250
+08	ec5ce7e	1789516795	cap trees at 150
+09	5fa67f1	1789516822	3-seed ensemble, cap 200
+10	ed6a887	1789516852	5-model ensemble, depths 5/6/8
+11	62fe6ab	1789516901	add origin-hour/dest-hour traffic counts
+12	59ba404	1789516945	add te_dest_hour
+13	6483cf5	1789517068	subsample/colsample 0.7
+14	f05ec11	1789517117	7-model ensemble
+15	aaf0d7e	1789517256	30-min granularity for time TE keys
+16	220afc6	1789517325	15-min granularity for all time TE keys
+17	0f3d9f9	1789517619	add 2 no-TE view models to ensemble
+18	3ef3f06	1789517787	add exact deptime TE
+19	572b0b5	1789518042	ES val 25% + DepTime >=2400 normalize
+20	5aa6624	1789518195	add lossguide members to ensemble
+21	80c942d	1789518482	swap 2 hist for lossguide 32/128

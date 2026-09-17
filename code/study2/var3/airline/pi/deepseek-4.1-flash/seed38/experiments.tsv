@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b2b581d	0.7141	ok	2	baseline
+2	582dde3	0.7098	ok	5	capacity: 500 trees lr0.05 subsample
+3	13fa245	0.7034	ok	2	fe: dep time parts + cyclic + route categorical
+4	e67a0c6	0.7125	ok	2	fe: dep time hour/min/cyclic only
+5	662457c	0.7125	ok	2	capacity: 100 trees lr0.1
+6	8e7f84c	0.7150	ok	2	capacity: depth 4
+7	2fe474f	0.7119	ok	2	capacity: depth 3
+8	d2c6f74	0.7125	ok	2	depth4 + 100 trees
+9	22bc6b7	0.7171	ok	2	depth4 + 150 trees lr0.05
+10	dca7397	0.7169	ok	3	depth4 + 400 trees lr0.03
+11	63d1b32	0.7168	ok	2	depth4/150 + subsample+colsample 0.8
+12	c957e7b	0.7167	ok	2	depth4/150 + mcw10 lambda5
+13	f63b34d	0.7176	ok	3	ensemble depth 3,4,5 avg
+14	444ab31	0.7191	ok	3	ensemble + ordinal parse, DepTime->hour/min
+15	3ea399f	0.7199	ok	4	ensemble + dep_minutes/day_of_year/weekend
+16	5ce8536	0.7198	ok	4	ensemble + frequency encodings
+17	c0c9993	0.7115	ok	5	ensemble+fe + Route categorical
+18	22622a3	0.7195	ok	5	ensemble 6 models: depths x2 seeds, subsample 0.8
+19	02cc015	0.7181	ok	4	ensemble+fe + cyclic time encodings
+20	12601ae	0.7198	ok	4	ensemble per-depth capacity 300/150/100
+21	668f6f6	0.7196	ok	5	ensemble RF-like: 300 trees, sub0.7 col0.5 mcw5
+22	df01bf6	0.7196	ok	4	ensemble+fe + OOF smoothed target encoding
+23	0b6e08a	0.7198	ok	4	ensemble+fe + keep raw DepTime
+24	f396e97	0.0000	crash	2	simplify: drop redundant calendar cols
+25	70ca20d	0.7199	ok	3	simplify: drop redundant calendar cols
+26	8013d5e	0.7159	ok	21	ensemble + dart booster
+27	cdd951e	0.7195	ok	4	ensemble + one-hot UniqueCarrier
+28	581d703	0.7203	ok	3	ensemble+fe + airport-hour congestion
+29	a9e2a81	0.7187	ok	3	ensemble+fe + route/carrier-hour counts
+30	73455af	0.7115	ok	3	ensemble+fe + airport-day congestion
+31	8e5f029	0.7225	ok	3	ensemble+fe + congestion hour fractions
+32	1a85122	0.7218	ok	4	ensemble+fe + route/carrier hour fractions
+33	e06fe77	0.7223	ok	4	ensemble+fe + both-ends congestion product
+34	1280a25	0.7231	ok	5	ensemble 250 trees on enriched features
+35	acb71a0	0.7230	ok	6	ensemble 400 trees
+36	db1cd27	0.7231	ok	5	ensemble depths 4,5,6 @250 trees
+37	e8e0c8a	0.7239	ok	4	ensemble+fe + smoothed +-1h congestion windows
+38	cf733d4	0.7248	ok	5	ensemble+fe + window congestion fractions
+39	2e292e7	0.7248	ok	5	ensemble+fe + wider +-2h window
+40	95bcc82	0.7247	ok	4	ensemble+fe + peak-normalized congestion profile

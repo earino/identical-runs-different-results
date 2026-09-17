@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	5e23e7b	0.7141	ok	4	baseline
+2	240de22	0.7142	ok	2	500 trees depth6 ES30
+3	25ff1fd	0.7175	ok	3	hour/min + OOF target encoding
+4	7d24711	0.7219	ok	5	TE x hour interactions
+5	49edab3	0.7360	ok	5	TE route-hour + origin/dest-bucket
+6	4850746	0.7408	ok	6	TE route x 30min bucket
+7	406a63c	0.7451	ok	15	tuned d3 + col/bynode sampling
+8	582cbd9	0.7435	ok	15	10-fold OOF TE
+9	62765c8	0.7477	ok	13	TE x 15-min slots
+10	4ea51ec	0.7483	ok	44	5-seed bagging
+11	757cf70	0.7493	ok	57	numeric transforms + col0.5
+12	98e9ac6	0.7502	ok	45	d4 + bynode0.5
+13	f83cff5	0.7515	ok	51	count features for sparse TEs
+14	ce18024	0.0000	timeout	120	counts on all keys (train+eval unlabeled)
+15	7c6d315	0.7681	ok	81	bag3 capped, counts all keys
+16	9833223	0.7687	ok	79	mcw2 + ES150

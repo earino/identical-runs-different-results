@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	80cbc6b	0.7141	ok	3	baseline
+2	2c9e87b	0.0000	crash	3	time features + cyclic calendar + 300 trees
+3	1a31506	0.7201	ok	4	time features + cyclic calendar + 300 trees
+4	9cad771	0.7175	ok	12	lr 0.05 + 2000 trees, es 50
+5	c0e7f05	0.0000	crash	2	add Route categorical
+6	cd4c8d9	0.7044	ok	5	add Route categorical
+7	78bbd04	0.7206	ok	5	traffic-volume freq features
+8	88280bc	0.7193	ok	4	depth 6 regularization check
+9	0ce561d	0.0000	crash	1	OOF target encoding airports+carrier
+10	ccd871d	0.7199	ok	6	OOF target encoding airports+carrier
+11	a7bc327	0.7221	ok	6	airport-hour traffic counts
+12	0c3b670	0.7250	ok	5	hour-share ratio features
+13	8aef595	0.7245	ok	6	route volume features
+14	fc32eb0	0.7251	ok	6	regularization mcw30 col0.7 lambda2
+15	b82297d	0.7237	ok	5	day-of-year cyclic + weekend
+16	b56895d	0.7279	ok	10	lr0.05 2000 trees regularized
+17	1428944	0.7274	ok	29	lr0.025 5000 trees
+18	e07637f	0.7271	ok	13	depth 8
+19	495f626	0.7253	ok	16	mcw60 lambda4
+20	206fc24	0.7291	ok	46	3-model bag ensemble
+21	3edefbe	0.7310	ok	25	full-data bag, 900 trees
+22	9b4f29a	0.0000	crash	1	carrier origin dominance
+23	9c5a227	0.7315	ok	31	carrier origin dominance
+24	b8f6812	0.7335	ok	31	arrival-time proxy features
+25	d29e3c8	0.7324	ok	58	1600 trees per member
+26	12d320e	0.7338	ok	53	5-member diverse bag
+27	bf603b8	0.7352	ok	54	dest traffic at arrival hour
+28	e6d2b5c	0.7262	ok	60	slot congestion features
+29	27064c5	0.7351	ok	59	logit-averaged ensemble
+30	76a11c8	0.7353	ok	56	pruned duplicate features
+31	2466b29	0.7355	ok	85	7-member diverse bag
+32	0640f7d	0.7353	ok	87	airport descriptor features
+33	9a86d1b	0.7354	ok	85	max_bin 512
+34	205c4b3	0.7369	ok	84	ablation drop calendar cyclics
+35	0ca5c6b	0.7352	ok	71	ablation drop DayofMonth
+36	57e0983	0.7374	ok	70	ablation drop Month
+37	913ed89	0.7339	ok	66	ablation drop DayOfWeek
+38	846f8e8	0.7377	ok	84	8-member bag
+39	0e88a1d	0.0000	crash	2	3-hour congestion windows
+40	387d834	0.7375	ok	86	3-hour congestion windows

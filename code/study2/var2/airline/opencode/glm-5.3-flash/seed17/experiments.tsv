@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	bba7499	0.7141	ok	3	baseline
+2	fb8ea1b	0.7083	ok	3	300 trees
+3	5074fd6	0.7094	ok	2	early stopping on 20pct train val split
+4	7e90541	0.7051	ok	4	early stopping with auc metric
+5	fb91032	0.7063	ok	2	FE v1: int dates, dep hour/min, route cat
+6	13e075b	0.7060	ok	3	regularized: subs/col 0.8 mcw10 g1 l5 300t
+7	bbebb0e	0.7150	ok	2	depth 4, 30 trees
+8	a1de6e6	0.7119	ok	1	depth 3, 30 trees
+9	fe798b1	0.7158	ok	1	depth 4, 100 trees
+10	71b5000	0.7126	ok	2	depth 4, 300 trees
+11	f343293	0.7047	ok	2	FE v1 + depth4/100t
+12	98c72cb	0.7174	ok	2	FE no-route: int dates + hour/min, depth4/100t
+13	c09cd64	0.7176	ok	2	dep_hour categorical added
+14	857bea9	0.0000	crash	2	smoothed TE: carrier/origin/dest/route
+15	603a8c8	0.7090	ok	1	smoothed TE: carrier/origin/dest/route
+16	0b7bfd1	0.7174	ok	4	5-seed ensemble depth4/100t
+17	7c60ad1	0.7180	ok	2	lr 0.05, 200 trees, depth4
+18	ab5f591	0.7191	ok	3	lr 0.03, 400 trees, depth4
+19	e720646	0.7189	ok	3	lr 0.02, 600 trees, depth4
+20	5848b07	0.7202	ok	4	colsample 0.7, lr 0.03, 600 trees
+21	4189394	0.7210	ok	4	colsample 0.5, 800 trees
+22	8dc2a6f	0.7214	ok	4	colsample 0.3, 1200 trees
+23	6d3c858	0.7189	ok	5	colsample 0.2, 1600 trees
+24	d6a7a9a	0.7208	ok	5	colsample_bynode 0.5, 1200 trees
+25	f2819d6	0.7194	ok	6	subsample 0.8 + colsample 0.3, 1500 trees
+26	d3c8336	0.7218	ok	5	depth 5, colsample 0.3, 1200 trees
+27	17e4137	0.7222	ok	7	depth 6, colsample 0.3, 1200 trees
+28	5f07efa	0.7214	ok	8	depth 7, colsample 0.3, 1200 trees
+29	caa9357	0.7231	ok	9	lr 0.02, 1800 trees, depth6 cs0.3
+30	25dd28d	0.7228	ok	12	lr 0.015, 2400 trees
+31	e9c716e	0.0000	crash	2	dow x hour interaction
+32	6a9dcb9	0.7237	ok	10	dow x hour interaction
+33	a4ab167	0.7307	ok	11	carrier x hour interaction
+34	c402de1	0.7286	ok	12	carrier x dow interaction
+35	18ed2c3	0.7339	ok	12	colsample 0.4 richer features
+36	912e24b	0.7330	ok	11	colsample 0.5 richer features
+37	5def275	0.7226	ok	13	carrier x dow x hour 3-way
+38	a25ee48	0.7336	ok	14	lr 0.015, 2400 trees, cs 0.4
+39	1b7eeab	0.7335	ok	12	depth 7, cs 0.4
+40	5f63783	0.7329	ok	9	min_child_weight 10

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	f9af331	1789500036	baseline
+01	e98fd75	1789500079	model: early stopping on internal split, depth 8, lr 0.05, subsample/colsample, refit on full train
+02	5c169df	1789500090	features: parse DepTime to dep_min/hour/minute, c-N strings to ints
+03	84cd564	1789500181	model: depth 10, lr 0.03, 5000 trees, ES 200
+04	dd96079	1789500199	model: depth 12, lr 0.02, mcw 3
+05	4f3d056	1789500228	model: depth 14, lr 0.015
+06	92ad594	1789500267	model: depth 16, lr 0.01
+07	1915b21	1789500329	model: depth 18
+08	29a9b31	1789500682	ensemble: 2x depth18 bagging (seed 42 cols0.8 + seed 7 cols0.6), fixed 523 trees
+09	c78398b	1789500866	model: max_bin=512
+10	72ef033	1789500944	model: depth 20 bag
+11	e808d07	1789501237	model: max_bin=1024
+12	cf0d2dd	1789501328	ensemble: member2 cols0.5 subs0.7
+13	a0fabe2	1789501740	model: max_bin=2048
+14	b2b01ba	1789502189	ensemble: member A subsample 1.0
+15	0cee0e3	1789502660	ensemble: member A depth 22

@@ -1,0 +1,128 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 11,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T07:19:28+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s11-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:14:07+00:00",
+  "wall_seconds": 6879.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18756.0,
+  "endpoint_at_end": "ok",
+  "head": "0002d12",
+  "n_commits": 7,
+  "n_experiments": 7,
+  "n_ok": 7,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7467,
+  "final_eval_auc": 0.7467,
+  "holdout_auc": 0.7486469464680001,
+  "holdout_ap": 0.7388681859609281,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.0338761947320001,
+  "generalization_gap": -0.001946946468000088,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2302329,
+    "tokens_in_uncached": 887353,
+    "tokens_in_cached": 1414976,
+    "tokens_out": 52295,
+    "turns": null,
+    "api_calls": 76,
+    "method": "sum-of-76-events",
+    "cost_usd": 1.8403,
+    "cached_share": 0.615
+  },
+  "cpu_seconds_python": 18734.1,
+  "cpu_seconds_counted": 839.7,
+  "cpu_seconds_uncounted": 17181.5,
+  "cpu_seconds_exempt": 713.0,
+  "python_processes": 35,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 1,
+  "fits_total": 430,
+  "fits_counted": 19,
+  "fits_uncounted": 401,
+  "commits": [
+    {
+      "commit": "9c1a7e8",
+      "message": "baseline"
+    },
+    {
+      "commit": "861a5c7",
+      "message": "feat: hour/minute, numeric month/day/dow, log distance, Route pair"
+    },
+    {
+      "commit": "04ab23d",
+      "message": "feat: hour/minute + hour-as-categorical; lr.02 x800 cols0.6"
+    },
+    {
+      "commit": "1eb3fd2",
+      "message": "carrier x hour categorical, airport-hour counts, 5-seed d8 ensemble"
+    },
+    {
+      "commit": "41a4819",
+      "message": "add 30-min DepTime slot categorical"
+    },
+    {
+      "commit": "f6f38d8",
+      "message": "hub shares + heterogeneous 5-model ensemble"
+    },
+    {
+      "commit": "c6d21dc",
+      "message": "final: airport-hour schedule shares + reg_lambda=2 (validated 0.7480, CONTRACT OK)"
+    },
+    {
+      "commit": "0002d12",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18021.2,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 21.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f6f38d8",
+  "best_commit_eval_auc": 0.7467,
+  "best_commit_holdout_auc": 0.7472214898380001,
+  "best_commit_holdout_ap": 0.7370443588341584,
+  "best_commit_error": null,
+  "finalized_best": false
+}

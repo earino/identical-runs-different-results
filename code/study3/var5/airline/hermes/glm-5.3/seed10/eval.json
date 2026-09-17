@@ -1,0 +1,200 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:37:35+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T07:51:11+00:00",
+  "wall_seconds": 4416.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2152.3,
+  "endpoint_at_end": "ok",
+  "head": "213722c",
+  "n_commits": 25,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7527,
+  "final_eval_auc": 0.7527,
+  "holdout_auc": 0.7535895298699999,
+  "holdout_ap": 0.7379141431933993,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03881877813399992,
+  "generalization_gap": -0.0008895298699999055,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4651010,
+    "tokens_in_uncached": 855170,
+    "tokens_in_cached": 3795840,
+    "tokens_out": 34565,
+    "turns": null,
+    "api_calls": 112,
+    "method": "cumulative-max",
+    "cost_usd": 2.3362,
+    "cached_share": 0.816
+  },
+  "cpu_seconds_python": 2069.1,
+  "cpu_seconds_counted": 1988.5,
+  "cpu_seconds_uncounted": 3.2,
+  "cpu_seconds_exempt": 77.4,
+  "python_processes": 51,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 74,
+  "fits_counted": 71,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "1a46e0c",
+      "message": "baseline"
+    },
+    {
+      "commit": "18a104d",
+      "message": "hour features + cyclical + early stopping 500 trees"
+    },
+    {
+      "commit": "ab41a59",
+      "message": "OOF target encoding carrier/origin/dest"
+    },
+    {
+      "commit": "0b0077b",
+      "message": "TE: route + carrier/origin/dest x hour interactions"
+    },
+    {
+      "commit": "bfc985a",
+      "message": "lr 0.05, 3000 trees, es 100"
+    },
+    {
+      "commit": "aec76e4",
+      "message": "more TE interactions + calendar TEs + log dist"
+    },
+    {
+      "commit": "5fc6594",
+      "message": "min_child_weight 1"
+    },
+    {
+      "commit": "6131285",
+      "message": "lr 0.03 4000 trees"
+    },
+    {
+      "commit": "4d006d0",
+      "message": "time buckets t10/t15/t30 + doy + dist buckets"
+    },
+    {
+      "commit": "c6e7057",
+      "message": "t30-granularity TE interactions"
+    },
+    {
+      "commit": "d030664",
+      "message": "t15 TE interactions"
+    },
+    {
+      "commit": "6def87a",
+      "message": "t10 TE interactions"
+    },
+    {
+      "commit": "236083a",
+      "message": "te smoothing 50"
+    },
+    {
+      "commit": "76f7f22",
+      "message": "te smoothing 100"
+    },
+    {
+      "commit": "5b58a44",
+      "message": "te smoothing 200"
+    },
+    {
+      "commit": "25399c1",
+      "message": "te smoothing 400"
+    },
+    {
+      "commit": "7f32bd9",
+      "message": "te smoothing 600"
+    },
+    {
+      "commit": "bda1c54",
+      "message": "2-model logit ensemble: TE model + raw-cat model"
+    },
+    {
+      "commit": "bbfc2b1",
+      "message": "ensemble weights 65/35"
+    },
+    {
+      "commit": "933ff96",
+      "message": "ensemble weights 60/40"
+    },
+    {
+      "commit": "7300fee",
+      "message": "3-model ensemble: TE + raw-cat + TE-only views"
+    },
+    {
+      "commit": "db81ec8",
+      "message": "time-decay sample weights on model B"
+    },
+    {
+      "commit": "289f875",
+      "message": "time-decay weights on all models"
+    },
+    {
+      "commit": "60d2717",
+      "message": "time-decay 0.35-1.0"
+    },
+    {
+      "commit": "9b3a840",
+      "message": "final weight tweak 40/35/25"
+    },
+    {
+      "commit": "213722c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1991.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 83.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9b3a840",
+  "best_commit_eval_auc": 0.7527,
+  "best_commit_holdout_auc": 0.7535895298699999,
+  "best_commit_holdout_ap": 0.7379141431933993,
+  "best_commit_error": null,
+  "finalized_best": true
+}

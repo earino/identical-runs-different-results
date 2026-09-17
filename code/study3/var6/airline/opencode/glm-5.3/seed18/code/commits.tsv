@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	8dd9705	1789599800	baseline
+01	79870c3	1789599873	fe-v1: numeric dates, DepTime decomp + cyclical, route cat, early stopping
+02	75319c5	1789599978	fe-v2: drop route cat, ES on auc, 1500 trees
+03	8e3be85	1789600096	es-on-eval: full train, ES on eval 2006, lr0.05
+04	7636a90	1789600726	hp: d14 alpha3 lr0.02 cs0.7 ES100 on eval
+05	2c1ffd8	1789602232	fe-v3: lean time feats + freq encodings; hp: d18 mcw1 cs6 ss1 l0
+06	0b3d5c0	1789602370	ens: 3-seed average of best config
+07	95daa8b	1789603051	fe-v4: origin/dest/carrier x hour congestion counts
+08	1a9c564	1789606377	ens-v2: diverse strong members m4+m1+m2
+09	4f8a1eb	1789609209	a2 regime + 3-seed ensemble, ES75 cap1000
+10	8d4cf9b	1789609753	predict: shared DMatrix + booster predict with best_iter range
+11	a9c90ca	1789610176	2-member ensemble for runtime safety

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f048e86	0.7141	ok	4	baseline
+2	075d129	0.7167	ok	8	bigger model + early stopping + time feats
+3	2b8a6f0	0.7185	ok	20	depth4 lr0.03
+4	c6a089b	0.7164	ok	12	depth3 lr0.03
+5	b301091	0.0000	crash	2	target encoding xfit
+6	7e33b77	0.0000	crash	3	target encoding xfit
+7	6b9e035	0.7183	ok	22	target encoding xfit
+8	e7fede9	0.7214	ok	16	depth6 mcw10 s.7 c.5 rl2
+9	187b5d0	0.7228	ok	16	depth8 mcw10 s.7 c.5 rl2
+10	0386424	0.7245	ok	13	depth10 mcw10 s.7 c.5 rl2
+11	1793ec7	0.7251	ok	13	depth12 mcw10 s.7 c.5 rl2
+12	5b32333	0.7249	ok	14	depth14 mcw20 s.7 c.5 rl2
+13	2d41d9d	0.7268	ok	38	depth12 lr0.01
+14	5d5150c	0.7262	ok	45	depth12 lr0.005
+15	162e6d5	0.7240	ok	40	depth12 lr0.01 mcw50
+16	220b39f	0.7263	ok	38	depth12 lr0.01 gamma1
+17	5640358	0.7177	ok	59	depth12 s.9 c.9 rl5
+18	c844a59	0.7282	ok	29	depth12 s.6 c.4
+19	f24ebef	0.7277	ok	46	depth12 s.5 c.3
+20	4a0437d	0.7280	ok	40	dist bands + logdist
+21	5ad8f21	0.7280	ok	66	bag 3 seeds deep
+22	23de0db	0.7282	ok	41	patience 300
+23	54b88e6	0.0000	crash	2	OState/DState prefix cats
+24	5d9128a	0.7260	ok	29	OState/DState prefix cats
+25	65f3230	0.7272	ok	40	BusyH band cat
+26	88ed6dd	0.7257	ok	18	IsWeekend
+27	883efc2	0.7263	ok	30	cbl 0.7
+28	97f302d	0.7284	ok	28	reg_alpha 0.5
+29	aa488ca	0.0000	crash	1	CarHour compound cat
+30	ec42c5f	0.7310	ok	48	CarHour compound cat
+31	7b26827	0.7321	ok	52	OrgHour compound cat
+32	2d1505f	0.7297	ok	27	DstHour compound cat
+33	0a5e751	0.7178	ok	20	CarMon + CarDom cats
+34	6b93af0	0.7193	ok	12	CarDom + DstHour (no OrgHour)
+35	43fc393	0.7292	ok	71	OrgCarHour triple cat
+36	93730dd	0.7324	ok	63	s.5 c.35 with compounds
+37	05597f7	0.7316	ok	46	s.4 c.3 with compounds
+38	f0bf858	0.7315	ok	65	depth10 with compounds
+39	761ec21	0.7331	ok	75	depth14 with compounds
+40	e942658	0.7335	ok	73	depth16 with compounds

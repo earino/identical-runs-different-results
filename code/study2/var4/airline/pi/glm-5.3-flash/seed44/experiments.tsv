@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	73d8dd2	0.7141	ok	3	baseline
+2	92d9bf7	0.7120	ok	4	bigger model + early stopping
+3	4948d9c	0.6906	ok	6	500 trees lr .1 depth 8
+4	4005b56	0.7129	ok	2	100 trees depth 6 subsampled
+5	23859d5	0.7178	ok	6	tod + calendar features
+6	af8e489	0.7076	ok	2	smoothed target encodings
+7	ac095e2	0.7179	ok	9	OOF target encodings
+8	03d0d46	0.7177	ok	2	frequency encodings
+9	f7c15fb	0.7174	ok	1	hour cat + daypart bins
+10	6f1a99c	0.7175	ok	2	60 trees subsample .9
+11	bbaf9c4	0.7226	ok	3	5-model ensemble
+12	e0da452	0.7230	ok	5	9-member ensemble
+13	cee9cc7	0.0000	crash	6	interaction categoricals + 9-ensemble
+14	97cc0cd	0.7272	ok	7	interaction categoricals + 9-ensemble
+15	55455d1	0.7224	ok	8	route categorical + 9-ensemble
+16	ea9c7f0	0.7219	ok	7	month x hour interaction
+17	7021f13	0.7276	ok	7	carrier x dow interaction
+18	36c2d3c	0.0000	crash	2	origin x daypart
+19	a8614a5	0.7275	ok	8	origin x daypart
+20	4f4464a	0.0000	crash	1	15-member ensemble
+21	0af6f1e	0.7307	ok	13	15-member ensemble
+22	7240fe7	0.7290	ok	21	30-member ensemble
+23	15ff435	0.7303	ok	17	19 heterogeneous members
+24	949c02c	0.7269	ok	35	bootstrap-averaged ensemble
+25	489c189	0.7303	ok	18	dest x hour interaction
+26	4885886	0.7308	ok	14	logit-averaged ensemble
+27	ba46d18	0.7329	ok	68	ensemble + DART members
+28	81d6283	0.0000	timeout	120	4 DART members
+29	798715d	0.7341	ok	67	pruned 10-member ensemble
+30	1c186e8	0.7356	ok	101	stronger DART members
+31	532c783	0.7355	ok	97	8-member ensemble
+32	562c95a	0.7307	ok	105	origin x dow interaction
+33	b3e103c	0.7290	ok	98	pruned base features
+34	e4232a6	0.0000	timeout	120	gbtree->small DART swap
+35	2e8f058	0.7361	ok	98	8 members (6 gbtree + 2 dart)
+36	56ae06c	0.7359	ok	98	7-member ensemble
+37	06b3a96	0.7358	ok	97	2nd harmonic + dow cyclic
+38	ef28990	0.7361	ok	99	DART-weighted logit average
+39	db19cc1	0.7347	ok	91	7 members (5 gbtree + 2 dart)
+40	0a02793	0.7364	ok	111	capacity shift to DART

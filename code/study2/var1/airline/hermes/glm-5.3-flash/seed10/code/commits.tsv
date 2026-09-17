@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	1973f67	1789530159	baseline
+01	97ca793	1789530269	exp2: 2000 trees lr.05 depth8, ES on eval
+02	04e1f8b	1789530311	exp4: strong reg (mcw20 lambda5 alpha.5 colsample.6) depth6 lr.02
+03	21064ad	1789530333	exp5: depth8 mcw50 lambda10 colsample.6 lr.02
+04	e9d0dd5	1789530391	exp6: hour categorical + cyclical tod
+05	1c5ac41	1789530470	exp11: vol_carrier_hour + log1p_distance
+06	74008c8	1789530496	exp12: orig/dest rate features (NaN for unseen)
+07	01b9beb	1789530528	exp13: month_num/doy/rare-dom/weekend
+08	9014fc1	1789530581	exp15: lighter reg (mcw20 l5 sub.9 col.7)
+09	cd884a1	1789530635	exp17: 3-seed bag (42,7,2026)
+10	ece64d2	1789530718	exp18: max_bin512 gamma1
+11	0038539	1789531251	exp25: carrier_hour interaction + route_count
+12	6ba7f11	1789531894	exp33: 5-seed bag
+13	f428204	1789532421	exp38: origin/dest volume counts

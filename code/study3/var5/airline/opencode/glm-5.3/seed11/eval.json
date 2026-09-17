@@ -1,0 +1,180 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 11,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T07:47:57+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s11-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:14:42+00:00",
+  "wall_seconds": 5205.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11562.1,
+  "endpoint_at_end": "ok",
+  "head": "ab34217",
+  "n_commits": 20,
+  "n_experiments": 37,
+  "n_ok": 29,
+  "n_crash": 2,
+  "n_timeout": 6,
+  "best_eval_auc": 0.7415,
+  "final_eval_auc": 0.7415,
+  "holdout_auc": 0.742533957884,
+  "holdout_ap": 0.7329348438482088,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027763206147999986,
+  "generalization_gap": -0.0010339578839999586,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8333949,
+    "tokens_in_uncached": 701565,
+    "tokens_in_cached": 7632384,
+    "tokens_out": 38769,
+    "turns": null,
+    "api_calls": 158,
+    "method": "sum-of-158-events",
+    "cost_usd": 3.1372,
+    "cached_share": 0.916
+  },
+  "cpu_seconds_python": 11031.3,
+  "cpu_seconds_counted": 10529.5,
+  "cpu_seconds_uncounted": 3.7,
+  "cpu_seconds_exempt": 498.2,
+  "python_processes": 39,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 138,
+  "fits_counted": 135,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "cb7cc0c",
+      "message": "baseline"
+    },
+    {
+      "commit": "e8edd27",
+      "message": "FE round 1: numeric date parts, DepTime hour/min cyclical encodings"
+    },
+    {
+      "commit": "0e8a898",
+      "message": "hyperparams: 1500 trees lr .05 depth 8, early stopping on internal 90/10 split"
+    },
+    {
+      "commit": "4e5c334",
+      "message": "fix: iloc positional indexing for internal split"
+    },
+    {
+      "commit": "6ad21f4",
+      "message": "exploration: fixed 1200-tree model, sweep eval AUC vs iterations"
+    },
+    {
+      "commit": "31da8d5",
+      "message": "reg probe: depth 6 mcw 10, sweep to find peak"
+    },
+    {
+      "commit": "62d4050",
+      "message": "ensemble: 7-seed bagged XGB at peak config (d8 mcw5 200 trees)"
+    },
+    {
+      "commit": "a05ed50",
+      "message": "heterogeneous 10-member ensemble, full-train members, rotated params"
+    },
+    {
+      "commit": "1a05430",
+      "message": "ensemble v2: concentrate on deep/low-mcw region, probe depth 10-11"
+    },
+    {
+      "commit": "2dfd13a",
+      "message": "probe deeper: d10-13 ensemble, lr .03, mcw 2-3"
+    },
+    {
+      "commit": "83b655a",
+      "message": "probe d14-16"
+    },
+    {
+      "commit": "fb54174",
+      "message": "d16 members: lr .015-.03 sweep, bin512, lambda2 variants, time-guarded"
+    },
+    {
+      "commit": "fa6a874",
+      "message": "sweet-spot lr .015-.02 members, 7 configs, guard 80s"
+    },
+    {
+      "commit": "0489b22",
+      "message": "DMatrix reuse for member/eval predicts; strong lr .015-.02 member set, guard 70s"
+    },
+    {
+      "commit": "1272275",
+      "message": "full-data members (subsample=1.0), colsample diversity, n380"
+    },
+    {
+      "commit": "b4fe39d",
+      "message": "mixed ensemble: 2 strong d16 + mid d14/15 diversity members"
+    },
+    {
+      "commit": "bd1bc4e",
+      "message": "dynamic time guard; probe d18 and max_bin=64 members"
+    },
+    {
+      "commit": "0d48bd4",
+      "message": "depth 20 members (n280-320 lr .015-.02)"
+    },
+    {
+      "commit": "b5a3446",
+      "message": "depth 22-24 members"
+    },
+    {
+      "commit": "491cfba",
+      "message": "d22 refinement: lr.015 n320, mcw1 probe"
+    },
+    {
+      "commit": "ab34217",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10533.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 530.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "491cfba",
+  "best_commit_eval_auc": 0.7415,
+  "best_commit_holdout_auc": 0.742533957884,
+  "best_commit_holdout_ap": 0.7329348438482088,
+  "best_commit_error": null,
+  "finalized_best": true
+}

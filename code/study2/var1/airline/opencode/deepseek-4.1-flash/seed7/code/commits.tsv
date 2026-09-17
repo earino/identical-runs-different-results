@@ -1,0 +1,26 @@
+n	commit	unix_time	subject
+00	47da0b2	1789519750	baseline
+01	aece648	1789519911	tune: depth4 60 trees
+02	4886b0a	1789519994	feat: OOF target encoding of carrier/origin/dest/route
+03	eb47956	1789520015	ens: 8-model depth/seed ensemble with TE
+04	0c7e006	1789520029	feat: hour categorical + minute, ensemble
+05	40ecdb5	1789520069	ens: 12 diverse models depth2-7
+06	e89aee4	1789520092	ens: 20 models 4 seeds
+07	8519894	1789520119	ablate: no target encoding
+08	3afd438	1789520149	feat: congestion count features, clean rewrite
+09	47aac91	1789520167	feat: additional congestion count features
+10	1bd3543	1789520188	feat: 3-way congestion count features
+11	456ff7b	1789520212	feat: more count features
+12	e4dfa62	1789520275	feat: half-hour congestion counts
+13	58a6817	1789520303	feat: quarter-hour and half-hour interaction counts
+14	e7021f4	1789520333	feat: 10-min and exact-time counts, quarter interactions
+15	33af8cd	1789520376	feat: rolling bank congestion counts
+16	50b35ad	1789520413	feat: more bank windows incl route
+17	1e7efeb	1789520451	feat: dow banks and more windows
+18	ab76667	1789520496	feat: inbound arrival banks at origin
+19	a54dad9	1789520535	feat: derived congestion ratios
+20	ea9ad83	1789520619	tune: min_child_weight 3
+21	51ae947	1789520659	tune: higher colsample/subsample
+22	8c0920c	1789520709	feat: OOF target encoding on time-conditioned keys
+23	1bf3ead	1789520719	fix: _cnt_key base keys
+24	385a901	1789520792	feat: expand TE keys

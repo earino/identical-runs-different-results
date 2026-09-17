@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9e748a3	0.7141	ok	4	baseline
+2	997b8de	0.6987	ok	5	time+route+freq, 300 trees
+3	6b9fc14	0.7165	ok	2	time features only, 30 trees
+4	19d8164	0.7090	ok	2	route + freq encodings, 30 trees
+5	d366829	0.7174	ok	2	freq encodings only, 30 trees
+6	c3be602	0.0000	crash	2	route frequency, 30 trees
+7	a32e285	0.7165	ok	1	route frequency, 30 trees (fix)
+8	0ac0904	0.7218	ok	3	reg 200 trees lr.05
+9	9ba0ebf	0.7245	ok	5	500 trees depth7 lr.03
+10	8655b3e	0.7252	ok	12	1000 trees depth7 lr.02
+11	495667c	0.7268	ok	15	doy + hour density feats, 1000 trees
+12	4c0d984	0.7288	ok	19	depth8 1000 trees
+13	8e7ec34	0.7313	ok	27	depth10 1000 trees
+14	2a6ed32	0.7336	ok	40	depth12 1000 trees
+15	da5b172	0.7349	ok	74	depth16 1000 trees
+16	c593c6e	0.7354	ok	115	ensemble 3x depth14 600
+17	f6899fb	0.0000	crash	1	interaction categoricals depth14
+18	c33baa6	0.7342	ok	52	interaction categoricals depth14
+19	49933ac	0.7341	ok	86	target encoding depth16
+20	bd018ab	0.7388	ok	116	depth16 mcw1
+21	e52d991	0.7382	ok	93	reg_lambda0 mcw1 depth16
+22	3165862	0.7314	ok	108	full subsample depth16 mcw1
+23	5e2f817	0.7388	ok	99	re-confirm best (diagnostic removed)
+24	8a895ff	0.7390	ok	111	ensemble 3x depth16 mcw1 400
+25	fa762a4	0.7386	ok	83	max_bin512 depth16 mcw1
+26	2910d75	0.7138	ok	76	route + carrier-airport cats
+27	8dbe675	0.7331	ok	87	ablation no freq features
+28	2753d7d	0.7413	ok	109	hourly density ratios
+29	5bd08e0	0.7348	ok	101	more density ratios
+30	cebe51a	0.7412	ok	107	route fractions
+31	f655e97	0.7453	ok	88	colsample 0.6
+32	690ec74	0.7477	ok	79	colsample 0.4
+33	5b25ecb	0.7459	ok	61	colsample 0.2
+34	73b61f9	0.7475	ok	110	1500 trees colsample0.4
+35	a96cb6d	0.7458	ok	78	subsample 0.6 colsample 0.4
+36	a9880e6	0.7478	ok	92	depth18 colsample0.4
+37	c6ec532	0.7450	ok	86	global time load feats
+38	3b6be62	0.7469	ok	75	ensemble 3x depth14 cs0.4
+39	9cda93b	0.7481	ok	88	colsample 0.35
+40	8ddf3f7	0.7483	ok	79	colsample 0.3 depth18

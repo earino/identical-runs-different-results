@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5844e42	0.7141	ok	3	baseline
+2	2613c03	0.7070	ok	3	fe v1: time parts, cyclical, route, early stopping
+3	fc733a2	0.7110	ok	4	model tune: lr0.05 depth6 + early stopping, baseline fe
+4	3747d6b	0.7198	ok	31	diag sweep: 4 feature sets x 4 model capacities
+5	e936e38	0.7200	ok	4	fe numeric calendar+time+cyclical, 800t lr.03 reg
+6	5977125	0.7289	ok	27	diag sweep: frequency/traffic count + carrier-hour features
+7	ee71eff	0.7288	ok	6	fe: carrier-hour cat + traffic counts
+8	45f0d24	0.7288	ok	71	diag sweep: origin/dest-hour, carrier-origin, route-hour cats
+9	ed615f8	0.7305	ok	58	diag sweep: hyperparameter grid on best fe
+10	45bd510	0.7307	ok	74	diag sweep: smoothed out-of-fold target encoding
+11	6794333	0.7314	ok	76	diag sweep: raw deptime, cyclical v2, route aggregates, share
+12	28482c2	0.7312	ok	18	fe: carrier-origin share, dist x hour; 2000t lr.01
+13	fe72f20	0.7320	timeout	120	diag sweep: seed bagging size
+14	5867d14	0.7320	ok	32	model: 3-model seed bag on best fe
+15	59dd6f3	0.7319	ok	74	diag sweep: max_bin, alpha, lossguide, mcw
+16	e4c8e7c	0.7333	ok	65	diag sweep: congestion-share, structural, temporal ablation
+17	3ab965b	0.7333	ok	67	diag sweep: calendar cyclical ablation
+18	9185fce	0.7335	ok	30	fe: drop cyclical encodings, keep 3-model bag
+19	e1ae051	0.7336	ok	87	diag sweep: bag size 1/3/5
+20	622fc45	0.0000	crash	38	diag sweep: categorical split params, rare bucketing
+21	fab1d03	0.7337	ok	30	diag sweep: rare-level bucketing
+22	4c043e1	0.7337	ok	69	diag sweep: interaction cats w/ rare bucketing
+23	8d93fb6	0.7341	ok	31	fe: rare-level bucketing, bag of 3
+24	ab190a0	0.0000	crash	11	diag sweep: feature ablation
+25	5bd2eea	0.7337	ok	65	diag sweep: feature ablation fixed
+26	03e6105	0.7342	ok	51	diag sweep: windowed congestion, global peaks
+27	ae53e95	0.7342	ok	70	diag sweep: peak counts isolated, min_count
+28	e89b18f	0.7346	ok	86	diag sweep: random hyperparameter search
+29	800d763	0.7348	ok	62	model: depth7 lr.01 2500t bag of 3
+30	2c2cb26	0.7346	ok	92	diag: multi-seed robustness d7 vs d6
+31	35a8ff2	0.7420	ok	108	diag sweep: peak/minute/structural features at d7
+32	ff5d73c	0.7421	ok	90	diag: isolate DepMinute / log_distance
+33	315df23	0.7416	ok	64	fe: DepMinute added, bag of 3
+34	a7591ca	0.7419	ok	87	diag sweep: minute structure, minofday redundancy
+35	09b4d7a	0.7421	ok	68	fe: add log_distance, bag of 3
+36	5fb3f7a	0.7422	ok	95	diag sweep: dual-scale features
+37	a7407bd	0.7422	ok	85	diag sweep: mcw/colsample at d7
+38	5853259	0.7428	ok	61	model: colsample 0.4 bag of 3
+39	34c6c0f	0.7427	ok	82	diag sweep: mcw/subsample/lambda at col0.4
+40	fa51943	0.7432	ok	64	model: final mcw10 + col0.4 bag of 3

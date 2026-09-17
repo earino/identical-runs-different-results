@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	221e832	1789494605	baseline
+01	c4c0d8e	1789494673	capacity: 600 trees, depth 8, lr 0.05, subsample/colsample 0.8
+02	dc17fe5	1789494909	target encodings (OOF) + share-of-flights features; depth6 600 trees
+03	12a9ec7	1789495184	target stats + traffic-share encodings over 33 keys; depth7 800 trees
+04	2e628f4	1789495526	3-seed ensemble of the depth7/800-tree model
+05	36ecb83	1789496001	marginal+conditional traffic shares (route/airport/day x time), 3-seed ensemble
+06	15f00c9	1789496804	3-fold OOF target stats (noisier encodings regularise the year shift)
+07	38e3cf5	1789497220	ensemble over independent OOF fold seeds and model seeds
+08	28d8317	1789497717	6-member ensemble: 3 OOF fold seeds x 2 model seeds

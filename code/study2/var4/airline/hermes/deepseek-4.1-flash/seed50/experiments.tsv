@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	575354e	0.7141	ok	3	baseline
+2	02813e5	0.7143	ok	6	time features + stronger boosting
+3	9ccdd4a	0.7163	ok	18	bigger capacity: d8 lr0.03 4000 trees
+4	97c322d	0.7105	ok	40	route categorical + frequency features
+5	d7d937a	0.7141	ok	22	frequency count features only (no route cat)
+6	8e13c38	0.7125	ok	58	lr 0.015 8000 trees
+7	787598c	0.7117	ok	24	heavier regularization d6 mcw30 lam5
+8	e264913	0.7193	ok	32	probe rounds then refit on full train
+9	44a00b4	0.7205	ok	64	3-seed bagged ensemble
+10	ba5ec0f	0.7205	ok	83	4-seed bag
+11	a9cbcb5	0.7230	ok	49	round scale 0.7
+12	f15cfee	0.7248	ok	37	round scale 0.5
+13	bba727b	0.7260	ok	30	round scale 0.35
+14	3fb2e91	0.7266	ok	27	round scale 0.25
+15	4e5f35c	0.7266	ok	23	round scale 0.15
+16	9908e65	0.7234	ok	35	depth 6 at scale 0.25
+17	e11e2e7	0.7293	ok	33	depth 10 at scale 0.25
+18	2b8f28f	0.7314	ok	43	depth 12 at scale 0.25
+19	0a2acb6	0.7325	ok	46	depth 14 at scale 0.25
+20	3e32ae3	0.7339	ok	34	depth 18 at scale 0.25
+21	7b77ce2	0.7344	ok	46	unlimited depth at scale 0.25
+22	409fb3a	0.7354	ok	72	6-seed bag
+23	ae5d6d5	0.7271	ok	51	mcw 50 unlimited depth
+24	15b8754	0.7340	ok	100	round scale 0.4 unlimited depth
+25	168a131	0.7266	ok	74	colsample 1.0
+26	309265d	0.7413	ok	57	colsample 0.5
+27	f37c073	0.7363	ok	40	colsample 0.3
+28	41deafe	0.7376	ok	50	subsample 0.5
+29	3e5109a	0.7293	ok	74	colsample_bynode 0.5
+30	b13631c	0.7414	ok	86	10-seed bag
+31	85aad14	0.7405	ok	91	smoothed target encoding for carrier/origin/dest
+32	c93c35d	0.7470	ok	107	conjunction cats: carrier_hour, origin_hour
+33	6cdeef0	0.7434	ok	82	dest_hour + 4-seed bag
+34	0dcff9f	0.7466	ok	82	4-seed bag, no dest_hour
+35	94568d9	0.7470	ok	79	freeze round count, drop probe
+36	367bfb3	0.7406	ok	120	add route categorical
+37	7c333ea	0.7471	ok	77	diverse ensemble members
+38	fd31393	0.7470	ok	104	max_cat_threshold 16
+39	15fd87e	0.7437	ok	59	12 members x 66 rounds
+40	51d417f	0.7476	ok	94	rounds 170

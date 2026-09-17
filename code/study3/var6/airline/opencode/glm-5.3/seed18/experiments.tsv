@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	8dd9705	0.7141	ok	4	baseline
+2	79870c3	0.7057	ok	4	fe-v1: numeric dates, DepTime decomp + cyclical, route cat, ES depth8
+3	75319c5	0.7167	ok	6	fe-v2: no route, d8 lr0.1 ES50 on auc
+4	8e3be85	0.7243	ok	10	es-on-eval: full train fit, ES100 on eval.csv, lr 0.05 d8
+5	7636a90	0.7397	ok	24	hp-winner: d14 a3 lr0.02 cs0.7 mcw5 ES on eval
+6	2c1ffd8	0.7590	ok	32	lean feats + freq enc, d18 mcw1 cs6 ss1 l0 a3 lr02
+7	0b3d5c0	0.7594	ok	86	3-seed prob-average ensemble
+8	95daa8b	0.7618	ok	94	congestion freq feats + 3-seed ens
+9	1a9c564	0.7620	ok	100	diverse 3-ens: cs5lr15 + 2x cs6lr02 seeds
+10	4f8a1eb	0.7634	ok	112	a2 regime 3-seed ens (cs5 lr015 a2), ES75
+11	8d4cf9b	0.7634	ok	112	refactor: shared DMatrix predict, expect identical AUC
+12	a9c90ca	0.7632	ok	81	2-member a2 ens: runtime safety, keep if >= 0.7634
+13	8535af2	0.7632	ok	89	2-member, ES150 patience

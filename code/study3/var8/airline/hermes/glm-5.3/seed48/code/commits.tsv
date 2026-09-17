@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	957a916	1789627867	baseline
+01	23734e5	1789629929	shallow trees + cyclical dep-time features
+02	9df63ed	1789630810	depth-ensemble 2..10
+03	56c582f	1789632472	depth 2..16 ensemble with colsample 0.4
+04	1918b7e	1789634514	deep ens d20-28 cs0.4 lr.06 ne200
+05	7ae72bc	1789634754	max_bin=512
+06	c0d2279	1789635431	7 members d16-28 ne150 lr.08

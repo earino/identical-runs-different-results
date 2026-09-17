@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	f3d0ce0	1789646966	baseline
+01	74453da	1789647103	additive FE: keep raw DepTime, add hour and msm
+02	c356502	1789647194	capacity for drift: 60 trees depth4 lr0.05, baseline features
+03	4b15d97	1789647325	2-member ensemble: full cols + colsample0.7, hour feature
+04	5ba235c	1789647839	x12 depth/colsample ensemble, nest150, max_bin512
+05	9f4f5bb	1789647971	add minute-of-hour feature to x12 ensemble
+06	459b070	1789648296	nest250 in x12 ensemble
+07	beb3118	1789648514	nest500 in x12 ensemble
+08	1e5f23e	1789648721	nest700 in x12 ensemble
+09	846e581	1789649285	24 members at nest700
+10	9d47107	1789650433	add logdist and night features
+11	6e708d0	1789651374	cyclic sin/cos time-of-day features
+12	a5cea41	1789651790	2nd harmonic of cyclic time
+13	648f9cc	1789652123	3rd and 4th time harmonics
+14	f839dd1	1789652391	5th and 6th time harmonics
+15	12c6e1b	1789652667	7th and 8th time harmonics
+16	fa468b0	1789653469	x12 members at nest1100
+17	80d55cd	1789654407	deep member set (d5-8) at nest1100

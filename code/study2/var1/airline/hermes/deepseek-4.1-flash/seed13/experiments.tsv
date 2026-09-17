@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f677fb1	0.7141	ok	2	baseline
+2	7e5007b	0.7040	ok	11	stronger xgb: 800 trees lr.03 depth8 subsample
+3	e7ccf1b	0.7104	ok	4	depth6 lr.05 400 trees subsample/colsample .9 mcw4
+4	dd564b4	0.7319	ok	7	time feats + carrier_x_hour cat + 1200t lr.03 d4
+5	c0255ad	0.7367	ok	23	depth6 colsample_bylevel.8 800t lr.03
+6	48388da	0.7385	ok	12	depth8 colsample_bylevel.7 800t lr.03
+7	8935f93	0.7400	ok	35	ensemble3: d8cbl.7 + d6 + lossguide127
+8	f550082	0.7435	ok	46	ensemble4: d8cbl.7, d10cbl.6, d8alpha, d4x2000
+9	7f40ea6	0.7436	ok	41	ensemble5 500t: d8a,d9cbl.65,d4x1400,d8a2,d10
+10	c5639f0	0.7417	ok	47	max_cat_threshold=256
+11	60eb754	0.7407	ok	44	grid-offset5, on_grid5/15, is_night features
+12	962d978	0.0000	timeout	121	DART booster (rate_drop .1) for all members
+13	f34a76f	0.7431	ok	61	ensemble8 members (500t lr.04)
+14	88eff46	0.0000	timeout	120	DART ensemble x4, 250t lr.08
+15	bebe54d	0.7432	ok	37	ablation: drop integer mon/dom features
+16	d87e031	0.7439	ok	40	reg_lambda=3.0 for all members
+17	7b660f2	0.7439	ok	41	gamma=0.5 for all members
+18	cbe9ff7	0.7389	ok	42	subsample=0.8 for all members
+19	fee5b02	0.7440	ok	51	ensemble6: add second seed of d9cbl.65 member
+20	450e64f	0.7460	ok	53	ensemble7: +target-encoded feature-view member
+21	8b110d2	0.7471	ok	61	ensemble9: 3 members on TE view
+22	ffd98ad	0.7485	ok	60	TE view: +carrier_origin, origin_hour, carrier_dow
+23	85bb3d0	0.7486	ok	63	TE view: +dest_hour, route_dow, carrier_route
+24	3295980	0.7488	ok	70	ensemble11: 5 members on TE view
+25	31d9f3b	0.7485	ok	68	target-encoding smoothing k=20
+26	490c475	0.7491	ok	67	target-encoding smoothing k=500
+27	879fbfc	0.7490	ok	71	target-encoding smoothing k=2000
+28	7ebde4c	0.7492	ok	68	OOF target encoding with 10 folds
+29	5258d40	0.7489	ok	74	ensemble13: +2 members on sharper TE view (k=50)
+30	e71078e	0.7493	ok	77	TE-view members at 800t lr.03 (native unchanged)
+31	ddb9ff3	0.7469	ok	53	3 native + 5 TE members
+32	474b935	0.7492	ok	85	6 native + 6 TE members
+33	083ed86	0.7490	ok	94	native members also get the TE columns
+34	a644f90	0.7496	ok	83	OOF target encoding, 20 folds
+35	d7aba9c	0.7495	ok	81	TE keys: +dest_dow, +carrier_dest
+36	b85d67c	0.7487	ok	79	OOF target encoding, 40 folds
+37	f39a97d	0.7496	ok	77	TE members min_child_weight=5
+38	256758f	0.7479	ok	81	reg_alpha=1.0 globally
+39	8f11796	0.7497	ok	90	add 7th native member (d10 seed 244)
+40	f83a103	0.7498	ok	92	add 6th TE member (seed 51)

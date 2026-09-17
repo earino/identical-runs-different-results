@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	7ed959d	0.7141	ok	4	baseline
+2	5cae00c	0.7082	ok	3	feat time/route + 2000 trees lr.03 depth7 ES
+3	e9beebc	0.7137	ok	5	time feats no route depth6 lr.05 ES
+4	6fa8588	0.7178	ok	2	depth5 n300 fixed full-data
+5	16b17df	0.7179	ok	3	calendar/seasonality feats depth5 n300
+6	f0f44df	0.7209	ok	3	colsample.4 lr.03 n500
+7	143e9dd	0.7296	ok	49	depth12 alpha3 5seed ensemble
+8	a27ec70	0.7369	ok	51	traffic freq features
+9	c39c731	0.7391	ok	57	route/carrier-hour counts
+10	7883dfa	0.7460	ok	62	30min origin/route bucket counts
+11	db8ca09	0.7468	ok	57	add dest/carrier 30min bucket counts
+12	488b7dc	0.7485	ok	89	max_depth15
+13	e28ae67	0.7585	ok	95	adjacent buckets + diversity + shares
+14	b89710a	0.7633	ok	109	congestion +-2 buckets, dest/carrier adj
+15	35c3480	0.7645	ok	92	ob/rb +-3, db/cb +-2, 4 seeds
+16	026eeea	0.7649	ok	103	ob/rb +-4, db/cb +-3
+17	fdae9a4	0.7660	ok	81	colsample 0.3
+18	fc8582c	0.7660	ok	79	diverse ensemble
+19	0972afb	0.7622	ok	88	cumulative congestion
+20	1454586	0.7664	ok	87	carrier-origin/dest frequencies

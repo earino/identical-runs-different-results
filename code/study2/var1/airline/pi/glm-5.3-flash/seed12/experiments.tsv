@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ae59b68	0.7141	ok	3	baseline
+2	b44e988	0.7100	ok	3	exp2: bigger model + ES on train val split
+3	123fbe8	0.6993	ok	5	exp3: FE v1
+4	41fe1fb	0.7083	ok	3	exp4: 300 trees baseline FE
+5	262d92a	0.7059	ok	1	exp5: FE v1, 30 trees
+6	4181835	0.7141	ok	2	exp6: +DepTime_min
+7	123fee1	0.7124	ok	10	exp7: reg mini-grid depth/mcw/subsample
+8	fd90192	0.7156	ok	3	exp8: ES on eval
+9	05fb428	0.0000	crash	1	exp9: target encoding
+10	99844eb	0.7067	ok	4	exp9: target encoding (fixed)
+11	0469caa	0.7141	ok	4	exp10: OOF TE
+12	12ba451	0.7166	ok	7	exp11: 5-seed ensemble
+13	84102dc	0.7174	ok	10	exp12: diverse ensemble
+14	18aa711	0.7182	ok	17	exp13: 10-model ensemble
+15	d02741a	0.7134	ok	13	exp14: interaction features single
+16	1e0878e	0.7183	ok	29	exp15: 16-model ensemble
+17	7bc5271	0.0000	crash	29	exp16: dart members
+18	83e90a1	0.7184	ok	32	exp16: dart members (fixed)
+19	659c54b	0.0000	crash	2	exp17: feature bagging
+20	9b2465a	0.0000	crash	2	exp17: feature bagging (fixed)
+21	e245f0c	0.7182	ok	29	exp17: feature bagging (fixed2)
+22	50df7a3	0.7182	ok	33	exp18: lossguide members
+23	f27eea2	0.0000	crash	1	exp19: bootstrap bagging
+24	a2be03a	0.7181	ok	27	exp19: bootstrap bagging (fixed)
+25	9fe5ec3	0.7174	ok	45	exp20: scan + top-K ensemble
+26	bfad5dd	0.7185	ok	61	exp21: 26-member ensemble
+27	2fcee61	0.7184	ok	64	exp22: rank average
+28	3875dfc	0.0000	timeout	120	exp23: one-hot members
+29	afde294	0.7185	ok	62	exp24: TE blend members
+30	d943195	0.0000	crash	73	exp25: doy + diagnostics
+31	5a4a357	0.7206	ok	75	exp25: doy + diagnostics (fixed)
+32	10b0b7f	0.7210	ok	65	exp26: rebalanced ensemble
+33	e687cb5	0.7176	ok	73	exp27: dow/week x hour
+34	10407f3	0.7211	ok	93	exp28: 32-member ensemble
+35	2ad45b2	0.7211	ok	99	exp29: hour cat
+36	ce86654	0.7211	ok	106	exp30: no dart, 34 members
+37	beb3dc3	0.7211	ok	99	exp31: 34 members w/ dart
+38	9675cc4	0.7211	ok	99	exp32: logit average
+39	784ddc7	0.0000	crash	93	exp33: weighted average
+40	df8c5c2	0.7211	ok	92	exp34: weighted average (fixed)

@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	d501584	1789493859	baseline
+01	432a196	1789493883	capacity: 800 trees lr0.05 depth7 early-stop
+02	494df68	1789493907	features: time-of-day and cyclical, no route
+03	2eac965	1789494098	d4 lr0.02 250t, time features, native cats
+04	5d0ece7	1789494193	ensemble depths 3-7
+05	b9ca845	1789494641	add calendar features doy weekend dow cyclic
+06	33daf22	1789496487	shallow+deep ensemble d3 d20
+07	0076da3	1789497111	ensemble d2,d3 + deep d32 cs0.6 weighted
+08	9c9847d	1789497176	add second deep member d20 cs0.6
+09	36c359c	1789499379	dep_hour categorical
+10	bd9729f	1789499594	half-hour categorical
+11	928924e	1789499665	15-min categorical

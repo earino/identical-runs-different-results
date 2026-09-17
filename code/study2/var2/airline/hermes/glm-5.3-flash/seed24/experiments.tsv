@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6052b13	0.7141	ok	4	baseline
+2	e724798	0.7167	ok	2	exp2: time-of-day + numeric calendar features
+3	4e469e0	0.7249	ok	4	exp3: early stopping, lower lr, regularization
+4	8801681	0.7170	ok	6	exp4: route + dist bucket + carrier x hour interactions
+5	1b476e3	0.7238	ok	7	exp5: OOF smoothed target encoding
+6	9610fd6	0.7144	ok	4	exp6: TE + native interactions combined
+7	5eebb11	0.7288	ok	7	exp7: capacity up, colsample down
+8	21591ee	0.7299	ok	10	exp8: capacity up another notch
+9	4af621f	0.7321	ok	8	exp9: push capacity to depth 12 + gamma
+10	9073cfd	0.7305	ok	9	exp10: one more capacity notch
+11	16ea102	0.7291	ok	10	exp11: shallow+many-trees corner
+12	827ddc0	0.7310	ok	8	exp12: time-based early stopping split
+13	1ac033d	0.7291	ok	7	exp13: heavier subsampling
+14	6d4a087	0.7312	ok	8	exp14: leaf-constrained depth-12 trees
+15	cb6a9fa	0.7327	ok	13	exp15: more trees lower lr at depth12
+16	7cfd0ea	0.7324	ok	14	exp16: push trees to 3000
+17	310473c	0.0000	crash	13	exp17: 2-model seed bag
+18	97d7b58	0.7324	ok	24	exp17: 2-model seed bag (fixed)
+19	5025dd2	0.7299	ok	11	exp19: hour x dow interaction + extra feats
+20	17f4ab3	0.7324	ok	16	exp20: relax regularization slightly
+21	0eaedfe	0.7307	ok	13	exp21: subsample down, lr up
+22	20dc7ac	0.7331	ok	11	exp22: stronger L2 + more trees
+23	b95a54f	0.7331	ok	12	exp23: lambda 15 + 3000 trees
+24	50c6618	0.7302	ok	16	exp24: cyclical calendar encodings
+25	b249f22	0.7326	ok	14	exp25: depth 11 colsample 0.3
+26	83b99ad	0.0000	crash	2	exp26: frequent-route categorical
+27	db274d4	0.7300	ok	26	exp26: frequent-route categorical (fixed)
+28	9b778d4	0.0000	crash	2	exp28: carrier x hour interaction
+29	5ddb0c7	0.7349	ok	14	exp28: carrier x hour interaction (fixed)
+30	690407b	0.7363	ok	19	exp30: airport x hour interactions
+31	294e39b	0.7341	ok	15	exp31: airport x hour lower freq threshold
+32	11a5372	0.7309	ok	16	exp32: carrier x dow interaction
+33	849e1a5	0.7276	ok	21	exp33: triple interaction carrier-hour-dow
+34	7ab4bff	0.7371	ok	17	exp34: retune reg under new features
+35	309a958	0.7373	ok	17	exp35: reg fine-tune around best
+36	a198cc3	0.7381	ok	18	exp36: depth 13
+37	e22e781	0.7376	ok	18	exp37: depth 14 minchild 30
+38	1837765	0.7425	ok	26	exp38: half-hour time buckets for carrier interaction
+39	1dc4c35	0.7425	ok	26	exp39: half-hour airport interactions
+40	42e784a	0.7432	ok	25	exp41: subsample 0.9 final

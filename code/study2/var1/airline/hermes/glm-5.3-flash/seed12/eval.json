@@ -1,0 +1,168 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 12,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:28:07+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s12-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T07:03:30+00:00",
+  "wall_seconds": 2122.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6584.7,
+  "endpoint_at_end": "ok",
+  "head": "67ba1c8",
+  "n_commits": 17,
+  "n_experiments": 40,
+  "n_ok": 31,
+  "n_crash": 5,
+  "n_timeout": 4,
+  "best_eval_auc": 0.7458,
+  "final_eval_auc": 0.7458,
+  "holdout_auc": 0.7461150353699999,
+  "holdout_ap": 0.7375823267924071,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03134428363399988,
+  "generalization_gap": -0.00031503536999988313,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8059937,
+    "tokens_in_uncached": 62433,
+    "tokens_in_cached": 7997504,
+    "tokens_out": 31789,
+    "turns": null,
+    "api_calls": 162,
+    "method": "cumulative-max",
+    "cost_usd": 0.2652,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 6526.9,
+  "cpu_seconds_counted": 6099.3,
+  "cpu_seconds_uncounted": 0.5,
+  "cpu_seconds_exempt": 427.1,
+  "python_processes": 50,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 147,
+  "fits_counted": 138,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "76579fd",
+      "message": "baseline"
+    },
+    {
+      "commit": "d788312",
+      "message": "time features: hour/min cyclical, month/dow numeric+cyclical, tod bin, log distance"
+    },
+    {
+      "commit": "afc62f1",
+      "message": "800 rounds lr0.05 depth8, early stopping on 15% val split, subsample/colsample 0.9"
+    },
+    {
+      "commit": "8689365",
+      "message": "smoothed target encoding (OOF for train) for carrier/origin/dest/route/originhour + route count"
+    },
+    {
+      "commit": "f385309",
+      "message": "refit final model on full train with best_iter from early stopping"
+    },
+    {
+      "commit": "e3766a4",
+      "message": "add DestTOD + CarrierHour TE features"
+    },
+    {
+      "commit": "f472439",
+      "message": "add Hour and CarrierDist-bin TE features"
+    },
+    {
+      "commit": "9f844d8",
+      "message": "lower lr 0.03, 2000 rounds, es 100, lambda 1"
+    },
+    {
+      "commit": "71b0a0a",
+      "message": "add RouteHour + CarrierTOD TE features"
+    },
+    {
+      "commit": "9657465",
+      "message": "bag of 3 seeds, averaged"
+    },
+    {
+      "commit": "19eca67",
+      "message": "add DestHour TE feature"
+    },
+    {
+      "commit": "dbabfc5",
+      "message": "add OriginTOD TE feature"
+    },
+    {
+      "commit": "35665cd",
+      "message": "add DistBin TE feature"
+    },
+    {
+      "commit": "29fe398",
+      "message": "bag of 6 seeds"
+    },
+    {
+      "commit": "81a9992",
+      "message": "bag of 8 seeds"
+    },
+    {
+      "commit": "416deb4",
+      "message": "lr 0.025 with 8-bag"
+    },
+    {
+      "commit": "b1538e2",
+      "message": "cache prepare() across bag members in predict_proba"
+    },
+    {
+      "commit": "67ba1c8",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6099.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 57.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "416deb4",
+  "best_commit_eval_auc": 0.7458,
+  "best_commit_holdout_auc": 0.7461150353699999,
+  "best_commit_holdout_ap": 0.7375823267924071,
+  "best_commit_error": null,
+  "finalized_best": false
+}

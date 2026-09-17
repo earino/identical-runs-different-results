@@ -1,0 +1,25 @@
+n	commit	eval_auc	status	seconds	description
+1	ac8428a	0.7141	ok	5	baseline: XGB 30 trees depth6 lr0.1 native categorical
+2	8767451	0.7031	ok	2	FE v1: date/time parsing + cyclicals + route cat, 100 trees
+3	77ebe69	0.7089	ok	2	ablation: FE v1 with baseline 30-tree params
+4	fb2f2ee	0.7069	ok	3	union FE + capacity push: 1000 trees lr.05 depth8 subs.8 colsample.8 ES50
+5	f78367e	0.7095	ok	5	baseline feats + capacity: 2000 trees lr.03 depth6 ES100
+6	787a66a	0.7126	ok	3	baseline feats, depth4 n300 lr.1 no subsampling
+7	b2cac4e	0.7168	ok	1	n60 d5 lr.12 + doy numeric
+8	3d7cbb9	0.7168	ok	3	5-seed ensemble n60 d5 lr.12 + doy
+9	500b57a	0.0000	crash	1	n150 d4 lr.08 + doy + domnum + dt10cat
+10	e4e8a44	0.7218	ok	2	n150 d4 lr.08 + doy + domnum + dt10cat
+11	ed11c0d	0.7382	ok	32	n300 d16 lr.03 lam10 alpha.5
+12	5ea8ada	0.0000	crash	2	dt15cat + OOF TE + d16 ss.8 cs.9
+13	3c37164	0.7424	ok	36	dt15cat + OOF TE + d16 ss.8 cs.9
+14	f2e0b6f	0.7437	ok	94	3-seed avg n300 d16 ss.8 cs.9 + TE
+15	dee1bb0	0.7442	ok	74	lr-mix 3x d14 ensemble + TE + dt15
+16	d29ebe6	0.7404	ok	87	pseudo-label confident eval rows, 2-member retrain
+17	0fd595f	0.7442	ok	93	3x lr-mix d14 + d16 n200 4th member
+18	54cb7bc	0.7442	ok	72	log-odds averaging
+19	50fbc68	0.7442	ok	82	lr-mix 3x d14 n340
+20	cd50e23	0.7442	ok	74	lr-mix 3x d14 ss.85
+21	3f18575	0.7440	ok	72	TE smoothing m=15
+22	f3d5e21	0.7442	ok	72	tight lr-mix .025/.03/.035
+23	742641f	0.7438	ok	72	lr-mix with seed diversity
+24	dee1bb0	0.0000	crash	30	budget check

@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	4be9a44	1789491319	baseline
+01	d2d0a9b	1789491369	early stopping + refit, depth6 lr0.05
+02	eb5a6fb	1789491404	feat v2: frequency encodings carrier/origin/dest/route
+03	7056b97	1789491514	probe: shallow depths 3-5, tree counts
+04	afcd07b	1789491531	probe: depth 2, tree counts, light reg
+05	b632760	1789491558	seed/param ensemble of 5 shallow XGB models
+06	c1fd09c	1789491639	probe round2: month cyc, route_cat(string), carorg_freq, blend (fix3)
+07	c7b903c	1789491678	diverse 7-model ensemble with weight probe
+08	3d14897	1789491702	probe deep-regularized singles on top of ensemble
+09	3cbbe25	1789491745	probe deeper: d10-16, mcw 100-300, col 0.4-0.5
+10	fdb2b1a	1789491789	probe: refine around d12 mcw100 col0.5 lambda10
+11	c499eaa	1789491840	probe: alpha/lambda grid around 0.7249 config
+12	6846aee	1789491896	ensemble v2: 6 deep-reg + 1 shallow, weight probe
+13	1e004c0	1789492248	ensemble v4: 9 strong deep-reg members, uniform
+14	b7ae7a3	1789492446	probe: ablations and neighbors (fix2)
+15	af23f7c	1789492514	grand ensemble: 12 deep-reg members, prob vs rank avg
+16	1a1a809	1789492653	grand ensemble: 16 members
+17	969b386	1789492752	16-member ensemble: averaging method comparison
+18	1fa279d	1789492963	ensemble v5: swap weak members for strong-region clones
+19	86e370e	1789493321	v5 minus dead duplicate ENSEMBLE block (no-op cleanup)
+20	9ee0aac	1789493428	final blend: uniform vs quality-weighted only, drop buggy rank/logit paths

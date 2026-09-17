@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	8993a1d	1789582991	baseline
+01	f931fec	1789583049	new features + bigger model: 300 trees depth 8 subsample/colsample 0.8
+02	a1d3fac	1789583549	hour x carrier interaction + 3-seed ensemble lr.02/900
+03	d705337	1789583851	diverse 9-member ensemble: 3 configs x 3 seeds
+04	1d67ba3	1789584722	15/30-min time-bin x carrier interactions, 6-member ensemble
+05	1d5539d	1789585237	sin/cos time-of-day + colsample_bynode 0.5
+06	a1453a4	1789585667	L1 alpha 0.5 + lambda 10 in ensemble members
+07	733f839	1789586326	granularity-diverse members + time-jitter augmentation, 4-member ensemble
+08	2445445	1789586841	operational-day shifted time/dow features
+09	30672ba	1789587698	deep d10 member (250 trees) + day-of-year/month-cyclic features
+10	120a68f	1789588091	deep-only ensemble: 3 seeds x (250/10 + 400/10)
+11	1e46e0b	1789588191	8-member deep ensemble (4 seeds x 2 configs), cached augmentation per binset

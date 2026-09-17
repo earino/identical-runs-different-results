@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9d14f3a	0.7141	ok	4	baseline
+2	dc64f7e	0.7104	ok	4	exp2: capacity: 600 trees lr.05 depth8 + early stop
+3	7c8686a	0.7076	ok	3	exp3: depth10 lr.1 1000 trees mcw5 subs.8
+4	d43dafa	0.7104	ok	2	exp4: depth6 lr.1 1000 trees mcw5 subs.8 es60
+5	bca1ac1	0.7094	ok	2	exp5: depth6 lr.1 es60 no subsampling
+6	19ce391	0.7160	ok	12	exp6: sweep depth x ntrees
+7	2674071	0.0000	crash	2	exp7: time feats + cat combos
+8	90d9d69	0.7162	ok	2	exp7b: time feats + cat combos
+9	d35423a	0.0000	crash	1	exp8: smoothed TE
+10	f366d75	0.7148	ok	3	exp8: smoothed TE
+11	5fcd053	0.7178	ok	26	exp9: depth x n grid on combo features
+12	c1d83a9	0.7195	ok	94	exp10: lr.05 more trees
+13	ec3800a	0.0000	timeout	120	exp11: deeper more trees
+14	c2cb722	0.0000	timeout	120	exp12: depth7 n2400
+15	be12a90	0.7214	ok	48	exp13: depth7 n1600 clean
+16	396bef8	0.7134	ok	106	exp14: subsample/colsample screen
+17	f3da14d	0.7114	ok	61	exp15: origin/dest x month
+18	c2f9cac	0.7233	ok	88	exp16: n3200 max_bin128
+19	96029be	0.7235	ok	105	exp17: n4000
+20	dbb466d	0.7210	ok	48	exp18: carrier x dayofweek
+21	5c7d93e	0.7186	ok	51	exp19: OOF TE
+22	b1b97aa	0.7240	timeout	120	exp20: mb64 n4800
+23	92d1881	0.7240	ok	112	exp21: mb64 n4400
+24	a5b4fda	0.7237	ok	116	exp22: lr .04
+25	67b334f	0.0000	timeout	120	exp23: ablate time feats
+26	d27bc09	0.0000	timeout	125	exp24: depth8 n4000 mb64
+27	82b0f07	0.7177	ok	66	exp25: lossguide
+28	d87995f	0.7238	ok	86	exp26: cat threshold 64
+29	58801b7	0.7239	ok	103	exp27: n4000 cat64
+30	6f620f2	0.7239	ok	116	exp28: freq features n4400
+31	1a976f5	0.7213	ok	102	exp29: 2-model ensemble
+32	608d5d0	0.0000	timeout	120	exp30: mb32 n6000
+33	48f829d	0.7242	ok	103	exp31: colsample_bynode .9
+34	6ef678b	0.7242	ok	113	exp32: n4800 bynode .9
+35	15701c1	0.7243	ok	104	exp33: bynode .8
+36	ab3d340	0.7247	ok	93	exp34: bynode .7
+37	351ada8	0.7258	ok	84	exp35: bynode .6
+38	3518378	0.7274	ok	78	exp36: bynode .5
+39	07b1cbd	0.7287	ok	77	exp37: bynode .4
+40	a7fcd52	0.7316	ok	65	exp38: bynode .3

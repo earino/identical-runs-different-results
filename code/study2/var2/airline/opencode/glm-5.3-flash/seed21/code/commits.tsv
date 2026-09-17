@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	a9234b2	1789519610	baseline
+01	9d73081	1789519670	time features: cyclical month/dom/dow/deptime, log dist
+02	7014fde	1789519723	shallow regularized: depth4 mcw20 sub.8 col.8
+03	496dc83	1789519748	lr 0.05, 2000 trees, patience 100
+04	212ff74	1789519764	5-model ensemble: seeds x depth 4/5, prob averaging
+05	4d45d70	1789519792	10-model diverse ensemble
+06	d0fa8dd	1789519939	gamma 1, lambda 10
+07	8fb1613	1789520326	ablation: drop dom cyclical
+08	3cd3e98	1789520578	ablation: drop time categoricals, keep numeric+cyclical
+09	50fb5ac	1789520630	ablation: drop month sin/cos, keep Month_n
+10	16626c1	1789520722	DepTime wrap fix + dep_minute

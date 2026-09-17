@@ -1,0 +1,196 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 21,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:16:59+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s21-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:05:51+00:00",
+  "wall_seconds": 2932.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8900.8,
+  "endpoint_at_end": "ok",
+  "head": "1145588",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 1,
+  "n_timeout": 4,
+  "best_eval_auc": 0.7603,
+  "final_eval_auc": 0.7603,
+  "holdout_auc": 0.7605702691439999,
+  "holdout_ap": 0.7493433005387349,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04579951740799992,
+  "generalization_gap": -0.00027026914399996826,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6716234,
+    "tokens_in_uncached": 6716234,
+    "tokens_in_cached": 0,
+    "tokens_out": 81683,
+    "turns": null,
+    "api_calls": 117,
+    "method": "sum-of-117-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 8909.4,
+  "cpu_seconds_counted": 8504.7,
+  "cpu_seconds_uncounted": 1.6,
+  "cpu_seconds_exempt": 403.0,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 218,
+  "fits_counted": 213,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "da82276",
+      "message": "baseline"
+    },
+    {
+      "commit": "5fa8f65",
+      "message": "feature-set ablation A-E at fixed 150 trees"
+    },
+    {
+      "commit": "bd73d84",
+      "message": "sweep lr x depth x trees on B_time"
+    },
+    {
+      "commit": "4529096",
+      "message": "add train-fitted frequency/count features"
+    },
+    {
+      "commit": "7171059",
+      "message": "ablate categorical column subsets"
+    },
+    {
+      "commit": "1de618b",
+      "message": "network/structural feature additions"
+    },
+    {
+      "commit": "c0a290f",
+      "message": "5-model diverse XGBoost ensemble"
+    },
+    {
+      "commit": "6ff0b31",
+      "message": "seed-stability of strong depth5 colsample0.6 config"
+    },
+    {
+      "commit": "6146200",
+      "message": "sweep depth x colsample x lr around strong config"
+    },
+    {
+      "commit": "06c49e7",
+      "message": "extend trees to 1600, depth 7, lr 0.03-0.05"
+    },
+    {
+      "commit": "01b883d",
+      "message": "extend trees to 3200 depth 7-8"
+    },
+    {
+      "commit": "c95ce00",
+      "message": "probe depth 10-11 low colsample"
+    },
+    {
+      "commit": "61fc6e7",
+      "message": "probe depth 12-13"
+    },
+    {
+      "commit": "09c6199",
+      "message": "probe depth 14-16"
+    },
+    {
+      "commit": "e14473b",
+      "message": "probe depth 18-20"
+    },
+    {
+      "commit": "e01ea44",
+      "message": "diverse-depth ensemble"
+    },
+    {
+      "commit": "be519b1",
+      "message": "probe depth 24-32"
+    },
+    {
+      "commit": "d1c3fe9",
+      "message": "6-seed ensemble of depth20, reuse P"
+    },
+    {
+      "commit": "bf35405",
+      "message": "diverse hyperparameter ensemble"
+    },
+    {
+      "commit": "e21103e",
+      "message": "combined lossguide+depthwise ensemble"
+    },
+    {
+      "commit": "2846db0",
+      "message": "final ensemble with strongest diverse configs"
+    },
+    {
+      "commit": "27aa03a",
+      "message": "leaner 4-model ensemble with max_bin member"
+    },
+    {
+      "commit": "e553278",
+      "message": "5-model max_bin ensemble"
+    },
+    {
+      "commit": "e04af20",
+      "message": "final refined 5-model ensemble"
+    },
+    {
+      "commit": "1145588",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8506.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -8.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e04af20",
+  "best_commit_eval_auc": 0.7603,
+  "best_commit_holdout_auc": 0.7605702691439999,
+  "best_commit_holdout_ap": 0.7493433005387349,
+  "best_commit_error": null,
+  "finalized_best": true
+}

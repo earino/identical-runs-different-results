@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	aabe1d2	0.7141	ok	4	baseline
+2	8c13742	0.7132	ok	2	time-of-day + cyclical calendar feats
+3	9d36500	0.7036	ok	6	capacity: 600 trees depth7 lr0.05
+4	05dfdef	0.7125	ok	2	capacity: 100 trees depth6 lr0.1
+5	612af61	0.7150	ok	1	depth4 30 trees
+6	5fceef0	0.7154	ok	1	depth3 60 trees
+7	7ddbb43	0.7131	ok	2	depth2 200 trees
+8	10fc30c	0.7157	ok	2	time numeric feats depth3
+9	6c481a6	0.7157	ok	2	frequency encodings origin/dest/route/carrier
+10	276ef4c	0.7020	ok	2	target encodings origin/dest/route/carrier
+11	ec59315	0.7161	ok	2	depth3 150 trees lr0.05
+12	66a5194	0.7153	ok	2	sub/col 0.8 on depth3 150 lr0.05
+13	2eb3216	0.7161	ok	2	recency weighting month
+14	bb7fb7b	0.7156	ok	2	add cyclical tod/month/dow
+15	ac2cbb2	0.7154	ok	4	5x bagged seeds sub/col0.8
+16	c609869	0.7166	ok	3	depth3 400 trees lr0.03
+17	8aaca5d	0.7170	ok	4	depth3 800 trees lr0.02
+18	e5309b8	0.7171	ok	5	depth3 1600 trees lr0.01
+19	79ac0ef	0.7172	ok	4	depth4 600 trees lr0.02
+20	8620e8a	0.7170	ok	6	depth4 1200 trees lr0.01
+21	4aac446	0.7174	ok	5	congestion origin/dest-hour carrier-dow route freq
+22	2ab32ee	0.7181	ok	9	ensemble depths 3,4,5
+23	fb7cf04	0.7184	ok	12	ensemble depths 2,3,4,5,6
+24	e4b9782	0.7188	ok	19	ensemble depths 1-8
+25	7e9e0e1	0.7188	ok	28	ensemble depths 1-12
+26	9c7c0f5	0.7187	ok	19	logit averaging depth1-8 ensemble
+27	21bc1b3	0.7188	ok	19	ensemble min_child_weight 10
+28	9abbc5c	0.7190	ok	38	ensemble plus bagged sub/col members
+29	feb885f	0.7190	ok	119	ensemble + DART members
+30	4232a2f	0.7214	ok	49	numeric calendar ablation
+31	ccf822f	0.7214	ok	46	day-of-year/dom cyclical feats
+32	4b2d5b3	0.7213	ok	51	drop raw DepTime
+33	7f6f4ef	0.7218	ok	54	carrier-hour, route-carrier freq, log dist
+34	a9a8d2a	0.7217	ok	85	24-model ensemble
+35	3d7b295	0.7125	ok	56	origin/dest day volume
+36	2e3bb7f	0.7231	ok	55	origin/dest hour share features
+37	abe11cb	0.7228	ok	66	carrier-hour/route share feats
+38	a6a43db	0.7237	ok	65	L2/L1 regularization on ensemble
+39	87f869d	0.7241	ok	58	stronger L2/L1 regularization
+40	60b4b1c	0.7236	ok	55	strongest L2/L1 regularization

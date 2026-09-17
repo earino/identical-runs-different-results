@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	a761a49	1789545484	baseline
+01	0551d8e	1789545528	feat v1: cyclical dep time, parsed date cols, log distance
+02	16da476	1789545691	seed bagging: 3-model mean
+03	2386adf	1789545707	5-model diverse ensemble
+04	fc341e1	1789545851	add 2 lr-0.03 members (800 trees)
+05	33e25e0	1789545909	add 2 subsample-0.6/colsample-0.5 members
+06	dae037d	1789545945	grow ensemble to 13 members
+07	acab247	1789546560	reg_alpha=1.0 on all ensemble members
+08	53bfb97	1789546618	reg_alpha=3.0

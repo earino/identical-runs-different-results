@@ -1,0 +1,160 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 33,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:58:31+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s33-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T13:28:36+00:00",
+  "wall_seconds": 5405.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17636.7,
+  "endpoint_at_end": "ok",
+  "head": "16652f2",
+  "n_commits": 15,
+  "n_experiments": 27,
+  "n_ok": 26,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7414,
+  "final_eval_auc": 0.7414,
+  "holdout_auc": 0.742026838418,
+  "holdout_ap": 0.7319453673291925,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02725608668199997,
+  "generalization_gap": -0.0006268384180000419,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10662410,
+    "tokens_in_uncached": 256586,
+    "tokens_in_cached": 10405824,
+    "tokens_out": 63780,
+    "turns": null,
+    "api_calls": 169,
+    "method": "cumulative-max",
+    "cost_usd": 3.3454,
+    "cached_share": 0.976
+  },
+  "cpu_seconds_python": 17517.6,
+  "cpu_seconds_counted": 5564.4,
+  "cpu_seconds_uncounted": 11580.7,
+  "cpu_seconds_exempt": 372.5,
+  "python_processes": 55,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1374,
+  "fits_counted": 372,
+  "fits_uncounted": 982,
+  "commits": [
+    {
+      "commit": "9c2714b",
+      "message": "baseline"
+    },
+    {
+      "commit": "0ec2569",
+      "message": "300 trees fixed"
+    },
+    {
+      "commit": "3f24ffa",
+      "message": "numeric+cyclical time features"
+    },
+    {
+      "commit": "06de87e",
+      "message": "depth-1..7 ensemble, lr .05, 300 trees"
+    },
+    {
+      "commit": "30d15a3",
+      "message": "time + schedule-density features"
+    },
+    {
+      "commit": "cc834a2",
+      "message": "sched30 + dow-hour counts"
+    },
+    {
+      "commit": "8d53a08",
+      "message": "route counts+means, drop time/dowh (simplify)"
+    },
+    {
+      "commit": "c55d56f",
+      "message": "depth range 1-10"
+    },
+    {
+      "commit": "081fdcd",
+      "message": "colsample 0.3, ne600 lr0.03"
+    },
+    {
+      "commit": "af123c6",
+      "message": "20 members cs 0.2+0.3"
+    },
+    {
+      "commit": "646d28f",
+      "message": "month-recency sample weights"
+    },
+    {
+      "commit": "6385492",
+      "message": "15-min block counts"
+    },
+    {
+      "commit": "b8b802b",
+      "message": "restore best (5-min counts) after accidental revert"
+    },
+    {
+      "commit": "b71a063",
+      "message": "flight-identity counts"
+    },
+    {
+      "commit": "6a8a01c",
+      "message": "log distance"
+    },
+    {
+      "commit": "16652f2",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17145.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 119.1,
+  "best_commit_dirty_rows_excluded": 1,
+  "best_commit": "6a8a01c",
+  "best_commit_eval_auc": 0.7414,
+  "best_commit_holdout_auc": 0.742026838418,
+  "best_commit_holdout_ap": 0.7319453673291925,
+  "best_commit_error": null,
+  "finalized_best": true
+}

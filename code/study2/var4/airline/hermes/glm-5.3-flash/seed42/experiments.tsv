@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2e4d29f	0.7141	ok	5	baseline
+2	b146fa9	0.0000	crash	1	features+tuned xgb ES
+3	1ada98c	0.7193	ok	5	features+tuned xgb ES
+4	a25cf1c	0.7191	ok	30	clean rewrite + OOF diagnostic
+5	19f905b	0.7176	ok	93	TE carrier/origin/dest/route
+6	9d2689b	0.7149	ok	25	colsample_bytree 0.9
+7	c55b29a	0.7188	ok	37	max_depth 9
+8	99e1bf5	0.7182	ok	29	max_depth 7
+9	3125ccc	0.7179	ok	41	dep_bucket + airport freq
+10	bb8f5cb	0.7191	ok	22	early_stopping_rounds 50
+11	723cb00	0.7207	ok	34	2-seed blend
+12	47e71b1	0.7187	ok	30	deep+shallow blend
+13	9c9fdd0	0.7206	ok	39	3-seed blend
+14	df2f527	0.7201	ok	35	learning_rate 0.07
+15	4fdaff3	0.7201	ok	42	learning_rate 0.04
+16	c281125	0.7207	ok	34	deep+shallow blend retry
+17	171235b	0.0000	crash	1	route + odpair cats
+18	2e0cb7d	0.7113	timeout	120	route + odpair cats
+19	6375b6e	0.7134	ok	9	route cat + 2-seed blend
+20	3ee08f6	0.7234	ok	74	depth11 lr0.03 blend
+21	4f3bb39	0.7274	timeout	120	depth16 lr0.02 blend
+22	c54d06e	0.7274	timeout	122	d16 lr0.02 cap1200
+23	71c0592	0.7274	ok	85	d16 cap1200 flush
+24	c289c30	0.7308	ok	67	d16 colsample 0.6
+25	1c06307	0.7351	ok	34	d16 colsample 0.5
+26	45fb476	0.7406	ok	31	d16 colsample 0.4
+27	0fe8df8	0.7397	ok	40	d16 colsample 0.3
+28	65d7882	0.7417	ok	33	d16 cs0.4 sub0.9
+29	dda4e73	0.7436	ok	41	d20 cs0.4 sub0.9
+30	8f7aa48	0.7435	ok	60	d24 lr0.015
+31	3e7c405	0.7376	ok	48	d20 mcw15 gamma0
+32	a662134	0.7437	ok	64	d20 3-seed blend
+33	f45e2ee	0.7428	ok	116	d20 5-seed blend
+34	a8f2085	0.0000	timeout	123	slot/harmonic features
+35	c1f2f6f	0.7394	ok	89	dep_slot feature
+36	5606606	0.7413	ok	77	3+1 diverse blend
+37	4c18ff5	0.7431	ok	90	4-seed d20 blend
+38	d28e967	0.7437	ok	72	ES 150
+39	ac4ae1f	0.7436	ok	78	2+2 blend
+40	8ed3fe4	0.7429	ok	83	d20 cs0.35 final exp

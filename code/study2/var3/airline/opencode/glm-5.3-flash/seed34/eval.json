@@ -1,0 +1,196 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 34,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T01:53:55+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s34-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:18:22+00:00",
+  "wall_seconds": 1467.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3934.4,
+  "endpoint_at_end": "ok",
+  "head": "c58f8ea",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7512,
+  "final_eval_auc": 0.7512,
+  "holdout_auc": 0.7525451461740001,
+  "holdout_ap": 0.7429102021077845,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.037774394438000125,
+  "generalization_gap": -0.001345146174000167,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4789688,
+    "tokens_in_uncached": 27064,
+    "tokens_in_cached": 4762624,
+    "tokens_out": 21718,
+    "turns": null,
+    "api_calls": 124,
+    "method": "sum-of-124-events",
+    "cost_usd": 0.1578,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 3726.2,
+  "cpu_seconds_counted": 3521.1,
+  "cpu_seconds_uncounted": 1.4,
+  "cpu_seconds_exempt": 203.7,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 182,
+  "fits_counted": 175,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "f6912ff",
+      "message": "baseline"
+    },
+    {
+      "commit": "42b9957",
+      "message": "numeric date parsing, hour/minute, cyclical time, logDist; 200 trees"
+    },
+    {
+      "commit": "ee55e4c",
+      "message": "OOF target encoding (5-fold) carrier/origin/dest/route"
+    },
+    {
+      "commit": "95241e3",
+      "message": "OOF interaction TE: origin x hour, dest x hour"
+    },
+    {
+      "commit": "cd3f9da",
+      "message": "add carrier_hour and origin_dow OOF TE"
+    },
+    {
+      "commit": "af50e84",
+      "message": "TE time blocks 30min instead of hours"
+    },
+    {
+      "commit": "2997cb6",
+      "message": "TE time blocks 15min"
+    },
+    {
+      "commit": "7467346",
+      "message": "3-seed xgb ensemble with subsampling"
+    },
+    {
+      "commit": "1537bee",
+      "message": "5-seed ensemble"
+    },
+    {
+      "commit": "5caf188",
+      "message": "diverse ensemble: mixed depth/subsample members"
+    },
+    {
+      "commit": "a6f7fae",
+      "message": "add log count features origin/dest/route"
+    },
+    {
+      "commit": "6762135",
+      "message": "add origin_block congestion count, carrier count"
+    },
+    {
+      "commit": "dfc2dce",
+      "message": "ensemble members: 400 trees, lr .05"
+    },
+    {
+      "commit": "bdd840d",
+      "message": "ensemble: 800 trees, lr .03"
+    },
+    {
+      "commit": "adcd44e",
+      "message": "multi-scale TE 15/30/60min blocks for origin/dest/carrier"
+    },
+    {
+      "commit": "a8c322a",
+      "message": "7-member diverse ensemble"
+    },
+    {
+      "commit": "61420c6",
+      "message": "kernel-smoothed time-profile TE (OOF)"
+    },
+    {
+      "commit": "e91f236",
+      "message": "kernel sigma 4"
+    },
+    {
+      "commit": "0e04d41",
+      "message": "route x time kernel profile alpha50"
+    },
+    {
+      "commit": "87d77c4",
+      "message": "route kernel alpha 30"
+    },
+    {
+      "commit": "8233695",
+      "message": "kernel blocks 10min NB=144"
+    },
+    {
+      "commit": "647773d",
+      "message": "kernel blocks 5min sigma8"
+    },
+    {
+      "commit": "167d82e",
+      "message": "route kernel sigma 6 (30min) at 5-min blocks"
+    },
+    {
+      "commit": "82d7348",
+      "message": "all kernels sigma 6 (30-min)"
+    },
+    {
+      "commit": "c58f8ea",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3522.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 208.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "82d7348",
+  "best_commit_eval_auc": 0.7512,
+  "best_commit_holdout_auc": 0.7525451461740001,
+  "best_commit_holdout_ap": 0.7429102021077845,
+  "best_commit_error": null,
+  "finalized_best": true
+}

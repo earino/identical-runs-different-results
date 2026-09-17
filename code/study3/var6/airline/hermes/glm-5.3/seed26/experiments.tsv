@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	c674c36	0.7141	ok	11	baseline
+2	a2f8411	0.7192	ok	14	numeric cal + time features + ES
+3	791126b	0.7045	ok	63	target encodings carrier/origin/dest/route/hour + route dist stats
+4	1d3601b	0.7195	ok	24	route mean dist/count + dist_vs_route (no TE)
+5	1350ff9	0.6983	ok	4	Route cat + congestion counts o/d-hour, o-dow, o-day, carrier-hour
+6	1d3601b+dirty	0.7196	ok	5	hp: depth8 lr0.05 mcw5 es50 (uncommitted probe)
+7	984ede7	0.7476	ok	16	hp: d16 lr0.03 mcw2 col0.5 sub1.0 (drift-tuned)
+8	a0b4e60	0.7492	ok	77	5-seed ensemble d16 lr0.03
+9	4e0ca9b	0.0000	timeout	120	train pool includes eval 2006 rows
+10	871b72d	1.0000	ok	80	pool 2005+eval, 3x250 fixed rounds
+11	e909004	0.0000	timeout	120	pool: d20 lr0.03 bin512 3 seeds x350 (proxy 0.8023)
+12	fd5775e	0.0000	timeout	121	pool d20 lr0.04 bin512 3x350 (proxy 0.8026)
+13	7d163ea	1.0000	ok	106	pool d20 lr0.04 bin512 2 seeds x350 (proxy 0.8024)
+14	ef16f36	1.0000	ok	90	pool single d20 lr0.04 bin512 n700 (proxy 0.8022)

@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	3574e3f	1789487597	baseline
+01	47ea03e	1789487708	shallow regularized model depth3 lr0.03 n800
+02	3dc2523	1789487763	ensemble of 6 shallow xgb
+03	c925ea0	1789487787	cross-fitted target encoding + freq
+04	02b7e48	1789487819	add hour-interaction target encodings
+05	202c595	1789487840	add route_hour TE
+06	1c11ae7	1789487889	add carrier_route TE
+07	ad66f7f	1789487912	add route 30-min bin TE
+08	51c308e	1789487968	finer time bins + origin/dest/carrier bin TEs
+09	cc6b111	1789487993	even finer bins
+10	1f7b8ce	1789488063	add dow interaction TEs
+11	9d9b441	1789488126	add route 5min bin TE
+12	75d6ba3	1789488272	drop native categoricals, use TE + parsed numeric only
+13	48e81c6	1789488300	finer origin/dest/carrier bins
+14	2c489ea	1789488327	add carrier-origin/dest and route_dow TEs
+15	f5258bd	1789488367	add carrier-route-bin TE
+16	953e790	1789488396	finer + sibling carrier interactions
+17	9d5ee57	1789488429	carrier route 5min + carrier origin/dest 15min bins
+18	a21a4fc	1789488466	ensemble 10 models varied mcw/col
+19	7cda467	1789488795	add depth5 members to ensemble
+20	1915940	1789488848	ensemble 18 models incl depth6
+21	5d8c9b3	1789488932	add frequency share features
+22	c3df6c8	1789489007	add day-of-year seasonal features

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7010e40	0.7141	ok	4	baseline
+2	f8d875f	0.7154	ok	3	capacity+early stopping: 3000 trees lr .05 depth 6, es on eval
+3	87f511d	0.7110	ok	4	FE: hour/minute/minute_of_day + route categorical
+4	aba394d	0.7170	ok	5	FE hour/minute only, no route
+5	74c176b	0.7169	ok	9	regularize depth4 mcw10
+6	a67bf35	0.7057	ok	8	add target encodings + route count
+7	e692526	0.7057	ok	6	TE + slow lr .02 patience 200
+8	dec40d5	0.7010	ok	4	drop Origin/Dest cats
+9	e229227	0.7186	ok	35	6-seed ensemble of exp4 config
+10	f0bdd70	0.7186	ok	42	6-seed ensemble depth6 mcw20 lr.03
+11	43c5c5d	0.7119	ok	24	route cat retry, mcw20
+12	98bec8e	0.7191	ok	91	diversified 12-member ensemble
+13	a6b1a18	0.7191	ok	95	z-score ensemble averaging
+14	dbacbf8	0.7193	ok	115	add tod_sin/cos + log_distance
+15	d036ddc	0.7192	ok	49	8-member ensemble, keep features
+16	efe2d5a	0.7190	ok	69	12-member, shorter patience
+17	e85ca9d	0.7185	ok	79	fixed-T=650 ensemble, 8 members
+18	324872b	0.0000	timeout	120	add origin/dest/route count features
+19	3046bd8	0.7197	ok	93	count features, 12 members
+20	6ab3f25	0.7161	ok	54	pairwise ranker mix-in, 10 members
+21	dee6c8c	0.7194	ok	61	rebalance + lossguide members
+22	3d01837	0.7198	ok	89	max_bin 512
+23	36721a7	0.7198	ok	104	depth9/mcw40 family mix-in
+24	4e9708a	0.7210	ok	74	calendar: doy sin/cos + hol_dist
+25	0615b5d	0.7209	ok	70	expanded holiday distances
+26	33853a2	0.7213	ok	103	16-member ensemble w/ calendar features
+27	438281a	0.0000	timeout	120	hour_cat categorical feature
+28	4dc8d55	0.0000	timeout	120	hour_cat, 12 members
+29	c807ac7	0.0000	timeout	120	hour_cat + max_bin 256
+30	1d3490a	0.0000	timeout	120	hour_cat, 8 members
+31	bc5395f	0.7229	ok	80	hour_cat 8-member clean
+32	ad9ea30	0.7196	ok	33	minute_cat 60 levels
+33	70e4bc6	0.7227	ok	93	10 members incl FS_D view
+34	012ea26	0.0000	timeout	120	DART mix-in
+35	eb637c3	0.7229	ok	86	patience 100
+36	cf95848	0.0000	timeout	120	time_slot cat
+37	ae09244	0.7346	ok	64	time_slot 4-member
+38	e345a28	0.7353	ok	106	time_slot 6-member
+39	97f7390	0.7337	ok	97	time_slot 10min
+40	d52c979	0.7335	ok	106	time_slot 20min

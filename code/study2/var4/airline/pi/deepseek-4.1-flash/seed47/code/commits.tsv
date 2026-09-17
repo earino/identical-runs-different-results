@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	123cddd	1789517399	baseline
+01	737a95c	1789517449	depth4 100 trees
+02	a4dd4dc	1789517460	depth3 200 trees
+03	078a8e1	1789517491	OOF target encoding of categoricals
+04	18e54d3	1789517572	TE + calendar cyclical features
+05	e92d366	1789517587	calendar + dep_minutes/hour
+06	8233e5c	1789517608	composite-key target encoding
+07	1457410	1789517626	add DestHour TE
+08	e11c675	1789517634	add RouteHour TE
+09	5ffbcaf	1789517644	add RouteDow TE
+10	b3c7af8	1789517662	add RouteTime30 TE
+11	d2eebe8	1789517672	add RouteTime15 TE
+12	2f6fedb	1789517704	add RouteTime5 TE
+13	b42d1e0	1789517732	add Origin/Dest Time15 TE
+14	fdedae8	1789517749	add CarrierTime15/30 TE
+15	ef04d5e	1789517765	add Origin/Dest Time5 TE
+16	0624155	1789517813	add RouteTime1 TE

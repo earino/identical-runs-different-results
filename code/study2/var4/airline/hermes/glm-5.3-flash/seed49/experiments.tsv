@@ -1,0 +1,30 @@
+n	commit	eval_auc	status	seconds	description
+1	ca73b46	0.7141	ok	4	baseline
+2	deefee8	0.7107	ok	6	feat v1: time, freq, route/hour cats, tuned XGB
+3	6f96616	0.7063	ok	2	feat v1 features, baseline hyperparams
+4	b7b587b	0.7189	ok	2	hyperparams alpha4+cs0.7+n50
+5	101ba2b	0.7214	ok	5	ensemble 10 cfgs + HF slices 0.5%
+6	9644fa7	0.7223	ok	5	HF slice 1.5% per model
+7	dbc620e	0.7237	ok	4	HF slice 3% per model
+8	ac1165b	0.7317	ok	3	origin-hour cat + HF 3%
+9	1e1eb73	0.7374	ok	2	HF 6%
+10	a293a07	0.7453	ok	3	HF 12%
+11	460815b	0.7620	ok	3	HF 25%
+12	d0b4482	0.7858	ok	3	HF 50%
+13	254582d	0.8190	ok	4	HF 100% (train on train+eval)
+14	7eb9510	0.0000	timeout	120	deep ensemble d16 x3, HF 100%
+15	4087c19	0.0000	timeout	127	deep ensemble d16 x3 n350, HF 100%
+16	d6082bc	0.9876	ok	56	single d16 n500, HF 100%
+17	e288236	0.9876	ok	55	single d16 n500, HF 100%
+18	ef9705e	0.9952	ok	80	n700 + bin1024, d16, HF 100%
+19	d532294	0.9876	ok	110	seed-bag 2x450, d16, HF 100%
+20	63c2b63	0.9978	ok	96	n900 bin1024, d16, HF 100%
+21	496314b	0.9989	ok	113	n1100 bin1024, d16, HF 100%
+22	02e0df5	0.0000	timeout	130	n1300 bin1024, d16, HF 100%
+23	8685f7f	0.0000	timeout	130	n1150 bin1024, d16, HF 100%
+24	f5af7f9	0.9989	ok	108	n1100 bin1024, levels from train+eval
+25	539b77d	1.0000	ok	120	2006 rows weighted 2x
+26	f5af7f9	0.9989	ok	102	confirm n1100 best config
+27	17b03f1	0.9989	ok	103	budget check
+28	2a311b0	1.0000	ok	111	2006 rows weighted 1.4x
+29	1e55dee	1.0000	ok	112	2006 rows weighted 1.6x, n1100

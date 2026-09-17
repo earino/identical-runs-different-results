@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	da85654	0.7141	ok	4	baseline
+2	66809a4	0.0000	crash	4	feat eng v1: cyclic time, hour, route, dist stats
+3	096325d	0.0000	crash	1	feat eng v1: cyclic time, hour, route, dist stats
+4	7d2f05e	0.6995	ok	5	feat eng v1: cyclic time, hour, route, dist stats
+5	6639ac1	0.7089	ok	2	new features + baseline hyperparams
+6	57cc2a0	0.7078	ok	2	restructured features, baseline params
+7	c6ef6dc	0.0000	crash	1	clean layout re-run
+8	ff51ae0	0.7078	ok	1	clean layout + finalize fix
+9	c1b4f47	0.7073	ok	4	n_estimators=500
+10	6f896d1	0.7086	ok	1	baseline+ additive time features
+11	44eca97	0.7141	ok	2	baseline restore + diagnostics
+12	e416cae	0.7061	ok	2	DepTime categorical
+13	1f10eba	0.7128	ok	2	regularized: n100, subsample+colsample 0.8
+14	b8dce69	0.7131	ok	1	n_estimators=60
+15	79c8988	0.7150	ok	2	max_depth=4
+16	8ca90a9	0.7161	ok	2	depth=4 n=60
+17	3a72ba3	0.7172	ok	2	lr=0.05 n=120
+18	1f6becd	0.7172	ok	5	seed bagging 10x
+19	41fb869	0.7178	ok	4	diverse 6-model ensemble
+20	c6583f4	0.7209	ok	3	monotone DepTime
+21	2735f17	0.7220	ok	5	9-model mixed mono/unconstr ensemble
+22	95d6bac	0.7227	ok	9	20-member dual-view ensemble
+23	737cf63	0.7225	ok	9	20-member + Distance monotone
+24	37657ed	0.7240	ok	19	40-member 4-view ensemble
+25	a738fc1	0.7244	ok	23	50-member 5-view ensemble
+26	c9f3f67	0.7299	ok	29	60-member 6-view ensemble (+rhr)
+27	678c4e0	0.7334	ok	39	70-member 7-view (+chr+rhr)
+28	3a4529c	0.7346	ok	41	80-member 8-view (+triple norms)
+29	6de0289	0.7403	ok	46	90-member 9-view (+quint)
+30	0319e72	0.7412	ok	51	100-member 10-view (+rhq)
+31	10294bd	0.7411	ok	60	110-member union view (quint+rhq)
+32	93eb63c	0.7416	ok	57	110-member 11-view (+ote)
+33	bf3c532	0.0000	crash	1	drop raw base view
+34	1f8938a	0.7387	ok	53	drop raw base view (fixed)
+35	93eb63c	0.7416	ok	56	budget check
+36	56093f7	0.7376	ok	64	120-member 12-view (+oterhq)
+37	93eb63c	0.7416	ok	58	budget check 2
+38	93eb63c	0.7416	ok	56	budget check 3
+39	410a01d	0.0000	crash	2	120-member 12-view (+dhrhq)
+40	dacbedb	0.0000	crash	8	12-view dhrhq (fixed)

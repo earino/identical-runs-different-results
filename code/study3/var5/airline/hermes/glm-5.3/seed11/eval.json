@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 11,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T07:52:01+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s11-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T09:14:17+00:00",
+  "wall_seconds": 4935.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12560.2,
+  "endpoint_at_end": "ok",
+  "head": "036d042",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 1,
+  "n_timeout": 4,
+  "best_eval_auc": 0.7506,
+  "final_eval_auc": 0.7506,
+  "holdout_auc": 0.751278536342,
+  "holdout_ap": 0.7377422848459586,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.036507784606000016,
+  "generalization_gap": -0.0006785363419999912,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6256183,
+    "tokens_in_uncached": 735927,
+    "tokens_in_cached": 5520256,
+    "tokens_out": 65115,
+    "turns": null,
+    "api_calls": 114,
+    "method": "cumulative-max",
+    "cost_usd": 2.7521,
+    "cached_share": 0.882
+  },
+  "cpu_seconds_python": 12478.5,
+  "cpu_seconds_counted": 11969.1,
+  "cpu_seconds_uncounted": 1.1,
+  "cpu_seconds_exempt": 508.3,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 106,
+  "fits_counted": 103,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "eefb276",
+      "message": "baseline"
+    },
+    {
+      "commit": "78bb0cd",
+      "message": "cyclical calendar + dep-time features, 300 trees"
+    },
+    {
+      "commit": "10820c7",
+      "message": "hyperparams: depth8 lr0.05 600 trees subsample0.8"
+    },
+    {
+      "commit": "305057c",
+      "message": "depth10, 1000 rounds"
+    },
+    {
+      "commit": "c426643",
+      "message": "ensemble of 3 XGBs (depth 8/10/12), avg probs"
+    },
+    {
+      "commit": "38dd138",
+      "message": "frequency encoding carrier/origin/dest/route on ensemble"
+    },
+    {
+      "commit": "863a2db",
+      "message": "airport-hour congestion counts"
+    },
+    {
+      "commit": "5ca7fdb",
+      "message": "richer congestion features: OriginDOW, OriginHourDOW, CarrierHour, OriginHM"
+    },
+    {
+      "commit": "a15c600",
+      "message": "queue features: +-1h dep/arr rolling counts, relative congestion"
+    },
+    {
+      "commit": "2e60518",
+      "message": "OriginMonthHour, RouteHour, CarrierRoute congestion counts"
+    },
+    {
+      "commit": "a7279a1",
+      "message": "DestHourDOW + CarrierDOW counts"
+    },
+    {
+      "commit": "1813851",
+      "message": "multi-scale queue windows 30m/1h/2h + exact bucket"
+    },
+    {
+      "commit": "32815e0",
+      "message": "3 XGBs with colsample 0.5-0.6 for diversity"
+    },
+    {
+      "commit": "96a2f97",
+      "message": "min_child_weight 1 with colsample diversity"
+    },
+    {
+      "commit": "404395f",
+      "message": "queue x hour interaction features"
+    },
+    {
+      "commit": "d7d2da9",
+      "message": "volume/distance x hour interactions"
+    },
+    {
+      "commit": "2fb623e",
+      "message": "CarrierOriginHour + MonthOriginHour counts"
+    },
+    {
+      "commit": "42368c8",
+      "message": "queue vs hour-typical ratios"
+    },
+    {
+      "commit": "4f8b24e",
+      "message": "ratio features for 30m and 2h windows"
+    },
+    {
+      "commit": "036d042",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 11970.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 81.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "4f8b24e",
+  "best_commit_eval_auc": 0.7506,
+  "best_commit_holdout_auc": 0.751278536342,
+  "best_commit_holdout_ap": 0.7377422848459586,
+  "best_commit_error": null,
+  "finalized_best": true
+}

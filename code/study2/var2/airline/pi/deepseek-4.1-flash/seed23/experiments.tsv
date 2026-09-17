@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d33ab73	0.7141	ok	11	baseline
+2	2008e4b	0.7026	ok	12	time feats + route cat + 500 trees
+3	80717ad	0.7127	ok	1	time features only, baseline model
+4	131253e	0.7112	ok	3	400 trees lr0.05 baseline feats
+5	2cdea0e	0.7158	ok	3	regularized depth4 300 trees
+6	5873cfc	0.7004	ok	2	drop Origin/Dest
+7	dc02550	0.7174	ok	2	regularized + time feats
+8	2d624da	0.7186	ok	2	freq/count features
+9	4df768a	0.7191	ok	3	more interaction counts
+10	9bc3be4	0.7204	ok	4	depth5 600trees reg10
+11	c6bab19	0.7219	ok	5	depth6 heavy reg
+12	caf9df5	0.7246	ok	7	depth7 very heavy reg
+13	ce64b77	0.7256	ok	8	depth8 extreme reg
+14	ece1b3c	0.7226	ok	8	depth10 extreme reg
+15	4467bba	0.7247	ok	16	depth8 2000 trees lr0.02
+16	2da25b6	0.7207	ok	7	depth8 mcw300
+17	95680bf	0.7254	ok	8	depth8 lambda150
+18	138a86e	0.7226	ok	9	depth8 colsample0.5
+19	8732a7b	0.7241	ok	6	depth8 gamma5
+20	7976a73	0.7251	ok	9	OOF target encoding
+21	fe154bc	0.7227	ok	28	4-model ensemble
+22	bb8ac5b	0.7252	ok	28	homogeneous depth8 ensemble
+23	9269853	0.7272	ok	9	ratio share features
+24	0c0e6be	0.7278	ok	9	dest/carrier hour share
+25	85b6fcf	0.7274	ok	10	hub competition features
+26	0436935	0.7273	ok	8	max_cat_threshold 32
+27	38b3587	0.7297	ok	15	lossguide 256 leaves
+28	f6428e2	0.7297	ok	15	lossguide 512 leaves
+29	3f12dd9	0.7297	ok	15	lossguide 128 leaves
+30	aa1a08e	0.7290	ok	28	lossguide 2000trees lr0.02
+31	46bf444	0.7307	ok	16	holiday seasonality flags
+32	311d9cc	0.7278	ok	16	day of year cyclic
+33	ade612d	0.7287	ok	16	origin dow/month congestion
+34	48d7551	0.7307	ok	14	lossguide 512 holiday feats
+35	312710b	0.7342	ok	23	lossguide mcw75 lambda40
+36	7c6bebb	0.7370	ok	29	lossguide mcw40 lambda20
+37	6f97d3f	0.7377	ok	30	lossguide mcw20 lambda10
+38	b8c7e28	0.7391	ok	30	lossguide mcw10 lambda5
+39	985176c	0.7398	ok	28	lossguide mcw5 lambda2
+40	f3a0408	0.7426	ok	48	lossguide 512 leaves low reg

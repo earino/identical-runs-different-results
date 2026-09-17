@@ -1,0 +1,156 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 40,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T12:35:08+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s40-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T14:09:32+00:00",
+  "wall_seconds": 5663.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17915.2,
+  "endpoint_at_end": "ok",
+  "head": "27c6efd",
+  "n_commits": 14,
+  "n_experiments": 39,
+  "n_ok": 37,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7552,
+  "final_eval_auc": 0.7552,
+  "holdout_auc": null,
+  "holdout_ap": null,
+  "holdout_error": "scorer failed (exit 1):   File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/sklearn.py\", line 1508, in predict\n    predts = self.get_booster().inplace_predict(\n        data=X,\n    ...<4 lines>...\n        validate_features=validate_features,\n    )\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 2718, in inplace_predict\n    _check_call(\n    ~~~~~~~~~~~^\n        _LIB.XGBoosterPredictFromColumnar(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<7 lines>...\n        )\n        ^\n    )\n    ^\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/_c_api.py\", line 190, in _check_call\n    raise XGBoostError(py_str(_LIB.XGBGetLastError()))\nxgboost._c_api.XGBoostError: [14:11:03] /__w/xgboost/xgboost/src/data/../data/cat_container.h:29: Found a category not in the training set for the 4th (0-based) column: `29`\nStack trace:\n  [bt] (0) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x21ec5c) [0x779d0f81ec5c]\n  [bt] (1) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x58ea60) [0x779d0fb8ea60]\n  [bt] (2) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x58eb01) [0x779d0fb8eb01]\n  [bt] (3) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x5afbdc) [0x779d0fbafbdc]\n  [bt] (4) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x813caf) [0x779d0fe13caf]\n  [bt] (5) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x8347d5) [0x779d0fe347d5]\n  [bt] (6) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x83aef4) [0x779d0fe3aef4]\n  [bt] (7) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x83b1db) [0x779d0fe3b1db]\n  [bt] (8) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x844922) [0x779d0fe44922]",
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": null,
+  "generalization_gap": null,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5878023,
+    "tokens_in_uncached": 270407,
+    "tokens_in_cached": 5607616,
+    "tokens_out": 65627,
+    "turns": null,
+    "api_calls": 81,
+    "method": "sum-of-81-events",
+    "cost_usd": 2.1253,
+    "cached_share": 0.954
+  },
+  "cpu_seconds_python": 17886.0,
+  "cpu_seconds_counted": 7932.5,
+  "cpu_seconds_uncounted": 9218.9,
+  "cpu_seconds_exempt": 734.7,
+  "python_processes": 98,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 336,
+  "fits_counted": 130,
+  "fits_uncounted": 195,
+  "commits": [
+    {
+      "commit": "160b374",
+      "message": "baseline"
+    },
+    {
+      "commit": "dfb5b38",
+      "message": "numeric parsing, hour/minute, route cat, early stopping"
+    },
+    {
+      "commit": "a678349",
+      "message": "hour categorical, subsampled shallow ensemble, 480 trees lr .05"
+    },
+    {
+      "commit": "69b5590",
+      "message": "car_hour interaction, deep (d16) 5-seed ensemble"
+    },
+    {
+      "commit": "57685bf",
+      "message": "origin_hour rare-lumped interaction; 3-seed ensemble"
+    },
+    {
+      "commit": "5c611a2",
+      "message": "drop day-of-month"
+    },
+    {
+      "commit": "e01fedd",
+      "message": "lump car_hour levels <50"
+    },
+    {
+      "commit": "32c37c1",
+      "message": "n_estimators 200"
+    },
+    {
+      "commit": "406e71b",
+      "message": "n_estimators 150"
+    },
+    {
+      "commit": "f615b38",
+      "message": "depth 20 at n150"
+    },
+    {
+      "commit": "c998f17",
+      "message": "n120 at depth 20"
+    },
+    {
+      "commit": "07b9f13",
+      "message": "5 seeds at n120 d20"
+    },
+    {
+      "commit": "1a9b148",
+      "message": "origin_hour >= 50"
+    },
+    {
+      "commit": "ba80f91",
+      "message": "6 seeds"
+    },
+    {
+      "commit": "27c6efd",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17151.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 29.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ba80f91",
+  "best_commit_eval_auc": 0.7552,
+  "best_commit_holdout_auc": null,
+  "best_commit_holdout_ap": null,
+  "best_commit_error": "scorer failed (exit 1):   File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/sklearn.py\", line 1508, in predict\n    predts = self.get_booster().inplace_predict(\n        data=X,\n    ...<4 lines>...\n        validate_features=validate_features,\n    )\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 569, in inner_f\n    return func(**kwargs)\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/core.py\", line 2718, in inplace_predict\n    _check_call(\n    ~~~~~~~~~~~^\n        _LIB.XGBoosterPredictFromColumnar(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<7 lines>...\n        )\n        ^\n    )\n    ^\n  File \"/app/.venv/lib/python3.13/site-packages/xgboost/_c_api.py\", line 190, in _check_call\n    raise XGBoostError(py_str(_LIB.XGBGetLastError()))\nxgboost._c_api.XGBoostError: [15:35:24] /__w/xgboost/xgboost/src/data/../data/cat_container.h:29: Found a category not in the training set for the 4th (0-based) column: `29`\nStack trace:\n  [bt] (0) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x21ec5c) [0x71e06541ec5c]\n  [bt] (1) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x58ea60) [0x71e06578ea60]\n  [bt] (2) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x58eb01) [0x71e06578eb01]\n  [bt] (3) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x5afbdc) [0x71e0657afbdc]\n  [bt] (4) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x813caf) [0x71e065a13caf]\n  [bt] (5) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x8347d5) [0x71e065a347d5]\n  [bt] (6) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x83aef4) [0x71e065a3aef4]\n  [bt] (7) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x83b1db) [0x71e065a3b1db]\n  [bt] (8) /app/.venv/lib/python3.13/site-packages/xgboost/lib/libxgboost.so(+0x844922) [0x71e065a44922]",
+  "finalized_best": true
+}

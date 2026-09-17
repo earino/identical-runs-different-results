@@ -1,0 +1,178 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 52,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:30:34+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s52-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T12:30:42+00:00",
+  "wall_seconds": 3607.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11314.1,
+  "endpoint_at_end": "ok",
+  "head": "7025c9d",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.744,
+  "final_eval_auc": 0.744,
+  "holdout_auc": 0.74573906199,
+  "holdout_ap": 0.7367239668714911,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03096831025399993,
+  "generalization_gap": -0.001739061989999957,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6705837,
+    "tokens_in_uncached": 95661,
+    "tokens_in_cached": 6610176,
+    "tokens_out": 43348,
+    "turns": null,
+    "api_calls": 146,
+    "method": "cumulative-max",
+    "cost_usd": 2.0433,
+    "cached_share": 0.986
+  },
+  "cpu_seconds_python": 11092.4,
+  "cpu_seconds_counted": 10702.0,
+  "cpu_seconds_uncounted": 6.1,
+  "cpu_seconds_exempt": 384.2,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 338,
+  "fits_counted": 328,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "d84ddc2",
+      "message": "baseline"
+    },
+    {
+      "commit": "08cafbe",
+      "message": "feat: time features + target encoding + 300 trees w/ early stopping"
+    },
+    {
+      "commit": "3926619",
+      "message": "feat: route TE only, no colsample drop, 800 trees lr=0.05"
+    },
+    {
+      "commit": "cd13746",
+      "message": "feat: OOF target encoding (5-fold) for cat cols + route interaction"
+    },
+    {
+      "commit": "b4a5794",
+      "message": "feat: capacity bump depth8 lr0.05 1500 trees"
+    },
+    {
+      "commit": "eb70b7d",
+      "message": "feat: 5-seed bagged ensemble"
+    },
+    {
+      "commit": "8882e15",
+      "message": "feat: 10-seed bag"
+    },
+    {
+      "commit": "412117a",
+      "message": "feat: hour categorical + distance bins"
+    },
+    {
+      "commit": "af1c231",
+      "message": "feat: 15-min time-of-day categorical"
+    },
+    {
+      "commit": "2c648f7",
+      "message": "feat: schedule-density features (origin/dest x hour counts)"
+    },
+    {
+      "commit": "2dd5cfa",
+      "message": "tune: colsample 0.7"
+    },
+    {
+      "commit": "63c6a77",
+      "message": "feat: hyperparameter-diverse bag"
+    },
+    {
+      "commit": "4394568",
+      "message": "feat: route distance deviation + log dist"
+    },
+    {
+      "commit": "41458d7",
+      "message": "feat: OOF hour-interaction TEs with high smoothing"
+    },
+    {
+      "commit": "0900c02",
+      "message": "tune: reg_lambda 2"
+    },
+    {
+      "commit": "0a0f1db",
+      "message": "feat: origin/dest qhour queue counts"
+    },
+    {
+      "commit": "e51fcf0",
+      "message": "feat: airport slot-share congestion features"
+    },
+    {
+      "commit": "dd225d2",
+      "message": "feat: hour-granularity slot share"
+    },
+    {
+      "commit": "54daa71",
+      "message": "feat: carrier hour share"
+    },
+    {
+      "commit": "7025c9d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10708.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 221.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "54daa71",
+  "best_commit_eval_auc": 0.744,
+  "best_commit_holdout_auc": 0.74573906199,
+  "best_commit_holdout_ap": 0.7367239668714911,
+  "best_commit_error": null,
+  "finalized_best": true
+}

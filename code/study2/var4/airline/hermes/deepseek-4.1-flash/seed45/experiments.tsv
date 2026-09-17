@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4e0ca89	0.7141	ok	4	baseline
+2	4ab729e	0.7175	ok	2	time features: parse c-N ordinals, dep_min/cyclical hour
+3	de3839a	0.7121	ok	21	capacity: depth 7, lr .05, 90/10 early stopping
+4	5b65f21	0.7173	ok	3	target+freq encodings carrier/origin/dest/route
+5	165a525	0.7188	ok	3	capacity 100 trees depth6 lr.1 sub/col .8
+6	179d458	0.7182	ok	6	capacity 400 trees lr.05 mcw10 lambda2
+7	64b7f53	0.7188	ok	5	shallow regularized depth5 500 trees mcw20 lambda3
+8	44ded93	0.7206	ok	7	seed-bagged ensemble of 5 xgboost models
+9	c2a813a	0.0000	crash	1	compound target encodings carrier/origin/dest x hour, carrier_route
+10	1026959	0.7236	ok	8	compound target encodings carrier/origin/dest x hour, carrier_route
+11	99001e4	0.7292	ok	11	add route_hour, carrier/origin/dest x dow encodings
+12	29fd17d	0.7326	ok	10	add dow_hour, carrier_x_origin/dest, carrier_route_hour encodings + freqs
+13	1ee3514	0.7327	ok	14	add route_dow, origin/dest_dow_hour keys; freq for all keys
+14	cf68d05	0.7326	ok	25	capacity retune: 250 trees lr.06
+15	aac6650	0.7330	ok	21	10-seed bag
+16	70cff9d	0.7307	ok	22	month as categorical + month target encoding
+17	b3df8ca	0.7332	ok	25	relative traffic share ratios + freq for all compound keys
+18	7ea76f3	0.7351	ok	36	ensemble diversity: 16 members over depth/colsample
+19	6694e5c	0.7356	ok	62	20 diverse members incl. lr/rounds variation
+20	0c6f487	0.7350	ok	61	3-way compound keys: carrier x origin/dest/dow x hour, route_dow
+21	21d3c6f	0.7348	ok	52	ablation: drop month cyclical features
+22	cf90bcc	0.7357	ok	64	multi-resolution target encodings (sharp + shrunk views)
+23	c21eae8	0.7358	ok	58	10-fold OOF target encodings
+24	dcd79ee	0.7366	ok	95	30-member wide ensemble
+25	1205f1c	0.7367	ok	94	reverse-direction route encodings
+26	7c8573a	0.7370	ok	65	row-subsampled members (70% each)
+27	41a750a	0.7370	ok	69	36-member ensemble (12 configs x 3 seeds)
+28	9ab499b	0.0000	timeout	120	DART booster ensemble (8 members)
+29	d85e00f	0.7372	ok	74	calendar-position features: dom, dow, weekend flag
+30	d7cc90f	0.7394	ok	51	ablation: drop raw Origin/Dest categoricals
+31	59408dc	0.7395	ok	41	ablation: also drop raw UniqueCarrier categorical
+32	2afe14c	0.7394	ok	55	45-member ensemble on the cleaner feature set
+33	f316748	0.7398	ok	42	hub/competition ratios + schedule-structure counts
+34	541a71d	0.7401	ok	42	heavier target-encoding smoothing (k x3)
+35	69cde5b	0.7399	ok	40	even heavier smoothing (k x9)
+36	2ca7a34	0.7399	ok	59	45-member ensemble on smoothed encodings
+37	5e76215	0.7401	ok	42	reverse-route encodings retest
+38	c259792	0.7402	ok	45	member row-subsample fraction 0.8
+39	298d903	0.7407	ok	54	add very deep members (depth 10/12)
+40	41b4615	0.0000	timeout	120	more deep members (depth 10-14)

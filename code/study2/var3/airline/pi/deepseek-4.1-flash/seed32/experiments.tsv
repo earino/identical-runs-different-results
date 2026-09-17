@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	287f3bd	0.7141	ok	5	baseline
+2	de243fe	0.7136	ok	4	stronger model lr0.05 depth7 early stopping
+3	60ff3e0	0.7126	ok	1	add dep_hour dep_minute
+4	64737e0	0.7072	ok	4	300 trees depth6 + time features
+5	46daeb1	0.0000	crash	1	target encoding + regularized d5 model
+6	030cdb0	0.7114	ok	18	target encoding + regularized d5 model (fix Carrier key)
+7	f7d1f72	0.7197	ok	3	verified TE pipeline fixed 200 trees
+8	405273d	0.7331	ok	6	RouteHour+CarrierOrigin TE, d7 lr0.02 600 trees
+9	86d5f07	0.7408	ok	9	add CarrierRouteHour TE + count encodings
+10	523ef7a	0.7441	ok	12	colsample0.25 subsample0.8 1400 trees
+11	7387819	0.7452	ok	11	fold3 alpha1000 + DestHour/CarrierOriginHour TE
+12	dfd9e1d	0.7455	ok	51	5-model XGBoost ensemble varied colsample
+13	a1dd50a	0.7466	ok	55	add DowHour and CarrierDow TE
+14	7f498e4	0.7474	ok	52	alpha2000 mcw20 ensemble

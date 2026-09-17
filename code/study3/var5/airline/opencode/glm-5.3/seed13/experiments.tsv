@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	4802df8	0.7141	ok	4	baseline
+2	5267eaa	0.7090	ok	3	es+more trees
+3	539489c	0.7170	ok	1	time features
+4	81ad35b	0.7066	ok	2	route feature
+5	70a6464	0.7180	ok	3	es on eval
+6	f26cac8	0.7078	ok	4	TE+FE encodings
+7	3ba7840	0.7162	ok	3	depth 8
+8	1f7427a	0.7208	ok	3	depth 4
+9	2edda3e	0.7199	ok	3	depth 3
+10	a790691	0.7211	ok	4	lr 0.05
+11	4ae1c39	0.7208	ok	20	bagged ensemble
+12	a0df181	0.7163	ok	5	TE hour/dow/month
+13	6a3609d	0.6424	ok	4	rank:pairwise
+14	0763da7	0.7201	ok	4	depth 5
+15	c01631a	0.7208	ok	4	mcw 10
+16	efab7b7	0.7212	ok	4	op_day_min
+17	b88ef30	0.7216	ok	6	importance weighting
+18	9c7b377	0.7041	ok	5	drop origin/dest
+19	b2dc7be	0.7208	ok	5	minimal time feats
+20	42d0d86	0.7216	ok	7	es 80
+21	b1b2cca	0.7226	ok	10	diverse ensemble
+22	dcfb65a	0.7230	ok	13	5-member ensemble
+23	de49351	0.7230	ok	18	8-member feat-diverse
+24	8a1d33b	0.7230	ok	13	weight-diverse ensemble
+25	4c872a4	0.7233	ok	23	one-hot hour
+26	5a2842a	0.7231	ok	25	max_bin 1024
+27	802e1c9	0.7232	ok	33	one-hot month/dow
+28	bacf9b2	0.0000	crash	0	lossguide member
+29	0adcdc8	0.7225	ok	26	lossguide member
+30	f76a9d8	0.7226	ok	23	no weighting
+31	ae6074a	0.7239	ok	25	colsample_bynode
+32	2ea6b03	0.7247	ok	25	csbn 0.6
+33	36ddada	0.7252	ok	28	csbn 0.4
+34	9587d38	0.7266	ok	34	csbn 0.25
+35	e15f104	0.7247	ok	31	csbn 0.15
+36	375d76d	0.7282	ok	24	deeper members
+37	10ede73	0.7309	ok	23	even deeper
+38	3dd620a	0.7351	ok	31	depth ladder 4
+39	3ff579c	0.7370	ok	47	depth ladder 5
+40	ee4f344	0.7376	ok	53	depth ladder 6

@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	e2f19f3	1789535066	baseline
+01	5306148	1789535172	bagged ensemble of 8 x 100-tree models
+02	3f5ffe5	1789535182	ensemble + dep hour/min + traffic count features
+03	5605898	1789535211	diverse ensemble: 20 models varying depth/subsample/colsample
+04	f30ee7b	1789535281	ensemble: 220 trees lr0.035 per model
+05	13d5a99	1789535311	ensemble: 450 trees lr0.02 per model
+06	6f0a5a2	1789535444	add carrier-origin and hour-interaction count features
+07	42d8557	1789535502	more composite counts: dest/route-hour, carrier-route
+08	e4d0a02	1789535579	add dow/month interaction counts
+09	6137b12	1789535651	OOF target encoding of interaction keys
+10	b75e1f3	1789535738	expand TE keys with dest_hour, carrier_route, dow interactions
+11	3bf07c8	1789536345	3-way interaction TEs
+12	59b3ca7	1789536427	more 3-way interaction TEs
+13	4bf512f	1789536516	add 2 more interaction TEs
+14	24fdbcf	1789536824	stronger regularization: mcw 10-25, lambda 4-10
+15	0b79591	1789536909	even stronger regularization
+16	a8c7966	1789536991	add counts for every TE key
+17	c7bc9b8	1789537391	lower colsample for many TE features
+18	2994345	1789537474	even lower colsample 0.2-0.4

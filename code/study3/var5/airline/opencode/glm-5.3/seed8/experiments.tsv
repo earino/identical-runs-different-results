@@ -1,0 +1,12 @@
+n	commit	eval_auc	status	seconds	description
+1	073e0c3	0.7141	ok	2	baseline
+2	e878a97	0.6948	ok	5	FE: time-of-day + route + 300 trees
+3	606e54d	0.7228	ok	23	OHall + drop Month/DayofMonth + bagg5
+4	6b0606e	0.7512	ok	39	d24 + te_qh + distfeats + OHall, bagg3
+5	4b4736d	0.7532	ok	65	hour one-hot, bagg5
+6	dd52125	0.7535	ok	90	bagg7 (7-seed ensemble)
+7	d33c374	0.7536	ok	93	7-member config-diverse ensemble (colsample x maxbin jitter)
+8	d2d74ae	0.7536	ok	94	7-member jitter over col/bin/depth/trees/sub
+9	028d2b5	0.7543	ok	101	minute-of-hour feature added
+10	9757fee	0.7560	ok	112	dst_cnt destination-volume feature
+11	98379c1	0.7569	ok	119	route_cnt origin-dest pair volume feature

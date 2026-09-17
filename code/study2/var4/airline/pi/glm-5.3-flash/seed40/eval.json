@@ -1,0 +1,196 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 40,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T15:45:58+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s40-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T16:18:59+00:00",
+  "wall_seconds": 1980.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5025.0,
+  "endpoint_at_end": "ok",
+  "head": "7821ccc",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7268,
+  "final_eval_auc": 0.7268,
+  "holdout_auc": 0.72678318724,
+  "holdout_ap": 0.7169844806585738,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.012012435503999996,
+  "generalization_gap": 1.681275999998455e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7077840,
+    "tokens_in_uncached": 83344,
+    "tokens_in_cached": 6994496,
+    "tokens_out": 97919,
+    "turns": null,
+    "api_calls": 126,
+    "method": "sum-of-126-events",
+    "cost_usd": 0.2713,
+    "cached_share": 0.988
+  },
+  "cpu_seconds_python": 5066.4,
+  "cpu_seconds_counted": 4356.8,
+  "cpu_seconds_uncounted": 4.6,
+  "cpu_seconds_exempt": 705.1,
+  "python_processes": 101,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 813,
+  "fits_counted": 709,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "cc7bec8",
+      "message": "baseline"
+    },
+    {
+      "commit": "fc4dbdb",
+      "message": "feat engineering: time cycles, route, freq encodings; ES + refit"
+    },
+    {
+      "commit": "3dcdca9",
+      "message": "no-ES mini-grid over complexity on v2 features"
+    },
+    {
+      "commit": "6ba14b5",
+      "message": "additive feature-group ablation at baseline complexity"
+    },
+    {
+      "commit": "03e8a1e",
+      "message": "hp grid on raw+time features"
+    },
+    {
+      "commit": "fc97a01",
+      "message": "shallow-tree grid d3-5"
+    },
+    {
+      "commit": "3f461af",
+      "message": "rate encodings + interaction cats (fix str cast)"
+    },
+    {
+      "commit": "f22cb8b",
+      "message": "lr/n sweep + regularization variants (full data)"
+    },
+    {
+      "commit": "ed14e4b",
+      "message": "fold-bag + config blends"
+    },
+    {
+      "commit": "3b58fbf",
+      "message": "greedy diverse blend (8 candidates, cap 6)"
+    },
+    {
+      "commit": "735add7",
+      "message": "expanded blend pool (fix fit loop)"
+    },
+    {
+      "commit": "1bc2e9b",
+      "message": "colsample/subsample diversity pool, greedy cap 10"
+    },
+    {
+      "commit": "f1ea3d7",
+      "message": "numeric product interactions (PROD) in pool"
+    },
+    {
+      "commit": "cec462e",
+      "message": "DART members + greedy threshold 2e-4"
+    },
+    {
+      "commit": "1034732",
+      "message": "rank vs prob blend comparison"
+    },
+    {
+      "commit": "5b7e56f",
+      "message": "holiday flags + hour rates + heavy pair rates variants"
+    },
+    {
+      "commit": "e8078ce",
+      "message": "fold-bagged blend + dt5 + recency weights"
+    },
+    {
+      "commit": "bec3ab5",
+      "message": "feature pruning on cs3bp + fb4 with pruned member (fix)"
+    },
+    {
+      "commit": "cd4c972",
+      "message": "OOF stacking: LR/XGB meta over 4 member foldbags"
+    },
+    {
+      "commit": "2ab3afa",
+      "message": "clean final: 4-member full-data equal blend"
+    },
+    {
+      "commit": "2896137",
+      "message": "member-variant swap grid + weight ascent"
+    },
+    {
+      "commit": "b9785a8",
+      "message": "3-seed averaged members + weight ascent"
+    },
+    {
+      "commit": "f74f746",
+      "message": "5th member candidates + per-member predict_proba grouping (fix)"
+    },
+    {
+      "commit": "c063ddd",
+      "message": "5-seed averaging + wide ascent with zero weights"
+    },
+    {
+      "commit": "7821ccc",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4361.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -41.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c063ddd",
+  "best_commit_eval_auc": 0.7268,
+  "best_commit_holdout_auc": 0.72678318724,
+  "best_commit_holdout_ap": 0.7169844806585738,
+  "best_commit_error": null,
+  "finalized_best": true
+}

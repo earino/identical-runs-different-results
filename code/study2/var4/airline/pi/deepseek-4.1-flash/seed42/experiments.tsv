@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a84db70	0.7141	ok	4	baseline
+2	3d73025	0.7025	ok	7	time feats + route + stronger model
+3	a5b385f	0.7127	ok	2	add dep_hour/dep_min only
+4	3b2629c	0.7056	ok	2	route feature only
+5	6a5d62e	0.7151	ok	3	more trees lower lr
+6	56a3a4a	0.7148	ok	3	depth5 600 trees
+7	c6687a4	0.7155	ok	6	800 trees lr0.03
+8	27877c0	0.7146	ok	5	normalized DepTime feats
+9	55f7fa7	0.7134	ok	4	ablate time feats at 800 trees
+10	4376001	0.7168	ok	6	normalized hour no dep_mins
+11	28010b8	0.7158	ok	7	depth7 800 trees
+12	dfb325c	0.7139	ok	6	regularized
+13	9d564c0	0.7164	ok	9	1500 trees lr0.02
+14	7390b5f	0.7168	ok	22	5-seed ensemble
+15	95910d5	0.7157	ok	5	max_bin 1024
+16	d82a70d	0.7196	ok	5	dep_hour categorical
+17	944df11	0.7123	ok	6	dep_min categorical too
+18	6b3d53c	0.7339	ok	5	carrier x hour categorical
+19	8053c2f	0.7284	ok	8	origin x hour categorical
+20	7da53b2	0.7239	ok	7	carrier x dow/month
+21	abace50	0.7347	ok	9	depth7 with carrier_hour
+22	87d10c7	0.7349	ok	18	1800 trees lr0.02 depth7
+23	83f05dd	0.7243	ok	19	dow_hour month_hour
+24	1e68f54	0.7363	ok	19	depth8 n1200 lr0.03
+25	6a78e8d	0.7363	ok	36	depth10
+26	1ff884d	0.7345	ok	21	OOF smoothed target encoding
+27	d26778c	0.7354	ok	15	min_child_weight5
+28	47ab510	0.7326	ok	18	subsample0.8
+29	5329c85	0.7361	ok	26	depth9
+30	91d063a	0.0000	crash	1	freq + weekend feats
+31	b02d17e	0.7356	ok	19	freq + weekend feats
+32	33d9eb9	0.7325	ok	21	max_cat_threshold256
+33	c2a9739	0.7395	ok	50	depth ensemble 6/8/10
+34	c2e02a5	0.7396	ok	72	6-member depth ensemble
+35	5a1d5af	0.7392	ok	79	10-member ensemble n600 lr0.04
+36	170fb8e	0.7360	ok	63	ensemble with bagging
+37	926b076	0.7397	ok	97	8-member ensemble
+38	3d17ff3	0.7368	ok	19	half-hour categorical
+39	ad8ad97	0.7412	ok	100	8-member ensemble + time30
+40	8b82e6c	0.7425	ok	98	15-min categorical

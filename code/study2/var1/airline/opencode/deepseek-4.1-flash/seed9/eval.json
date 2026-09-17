@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 9,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:00:51+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s9-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:18:20+00:00",
+  "wall_seconds": 1049.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2817.9,
+  "endpoint_at_end": "ok",
+  "head": "5f88f6e",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7426,
+  "final_eval_auc": 0.7426,
+  "holdout_auc": 0.7429800826119999,
+  "holdout_ap": 0.7314369719811706,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02820933087599986,
+  "generalization_gap": -0.0003800826119998435,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5289973,
+    "tokens_in_uncached": 5289973,
+    "tokens_in_cached": 0,
+    "tokens_out": 20837,
+    "turns": null,
+    "api_calls": 136,
+    "method": "sum-of-136-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 2677.4,
+  "cpu_seconds_counted": 2281.5,
+  "cpu_seconds_uncounted": 5.0,
+  "cpu_seconds_exempt": 390.9,
+  "python_processes": 46,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 531,
+  "fits_counted": 491,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "24603f5",
+      "message": "baseline"
+    },
+    {
+      "commit": "bbffa44",
+      "message": "features: numeric calendar + time-of-day, 30 trees"
+    },
+    {
+      "commit": "98a05be",
+      "message": "100 trees"
+    },
+    {
+      "commit": "f7080a7",
+      "message": "depth5 100 trees"
+    },
+    {
+      "commit": "89ce795",
+      "message": "depth4 100 trees"
+    },
+    {
+      "commit": "9193e92",
+      "message": "5-seed XGBoost bagging ensemble"
+    },
+    {
+      "commit": "431a193",
+      "message": "diverse depth ensemble"
+    },
+    {
+      "commit": "e931a78",
+      "message": "15-model depth ensemble"
+    },
+    {
+      "commit": "16b0f55",
+      "message": "hour as categorical"
+    },
+    {
+      "commit": "e1ecd85",
+      "message": "add 30-min tod categorical"
+    },
+    {
+      "commit": "d9ba622",
+      "message": "15-min tod categorical"
+    },
+    {
+      "commit": "e48c088",
+      "message": "carrier x hour categorical"
+    },
+    {
+      "commit": "81fb6a4",
+      "message": "dow x hour categorical"
+    },
+    {
+      "commit": "696a118",
+      "message": "ensemble depths 2-6"
+    },
+    {
+      "commit": "819c044",
+      "message": "ensemble depths 2-8"
+    },
+    {
+      "commit": "a527b66",
+      "message": "ensemble depths 2-10"
+    },
+    {
+      "commit": "f544268",
+      "message": "ensemble depths 2-12"
+    },
+    {
+      "commit": "dc8368c",
+      "message": "ensemble depths 2-13"
+    },
+    {
+      "commit": "5610ba3",
+      "message": "ensemble depths 2-14"
+    },
+    {
+      "commit": "5f88f6e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2286.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 140.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "5610ba3",
+  "best_commit_eval_auc": 0.7426,
+  "best_commit_holdout_auc": 0.7429800826119999,
+  "best_commit_holdout_ap": 0.7314369719811706,
+  "best_commit_error": null,
+  "finalized_best": true
+}

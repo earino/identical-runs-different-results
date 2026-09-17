@@ -1,0 +1,56 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789646318	97	0.068	uncounted	exit	0.0	0	-c
+1789646318	99	0.046	uncounted	exit	0.0	0	-c
+1789646318	101	0.070	uncounted	exit	0.0	0	-m --version
+1789646318	103	0.067	uncounted	exit	0.0	0	-c
+1789646351	184	4.818	counted	exit	3.3	1	train.py
+1789646385	220	1.475	uncounted	exit	0.8	0	-c
+1789646395	274	0.065	uncounted	exit	0.0	0	-c
+1789646395	276	0.069	uncounted	exit	0.0	0	-c
+1789646396	278	0.054	uncounted	exit	0.0	0	-c
+1789646402	333	4.182	counted	exit	1.7	1	train.py
+1789646432	462	8.794	counted	exit	2.8	1	train.py
+1789646457	564	10.116	counted	exit	3.3	1	train.py
+1789646521	631	122.543	uncounted	exit	32.7	24	scan.py cap
+1789646563	706	114.482	uncounted	exit	30.7	24	scan.py cap
+1789646586	781	54.558	uncounted	exit	16.1	14	scan.py feat
+1789646616	855	60.921	uncounted	exit	16.4	10	scan.py reg
+1789646631	867	54.468	uncounted	exit	14.3	12	scan.py ens
+1789646700	942	235.245	uncounted	exit	59.9	45	scan.py ens2
+1789646744	1018	34.253	counted	exit	9.3	7	train.py
+1789646804	1208	187.947	uncounted	exit	48.6	35	scan.py feat2
+1789646826	1284	42.537	counted	exit	11.7	7	train.py
+1789646894	1474	196.726	uncounted	exit	51.3	35	scan.py feat3
+1789646937	1617	45.552	counted	exit	12.8	7	train.py
+1789647054	1824	130.860	uncounted	exit	35.1	21	scan.py feat4
+1789647155	1951	351.130	uncounted	exit	92.7	56	scan.py feat4
+1789647223	2026	218.210	uncounted	exit	58.0	35	scan.py feat5
+1789647247	2102	40.958	counted	exit	11.5	7	train.py
+1789647372	2188	457.242	uncounted	exit	117.0	65	scan.py hp1
+1789647798	2263	1603.047	uncounted	term	420.0	63	scan.py hp2
+1789648578	2297	2973.944	uncounted	exit	776.5	113	scan.py hp2
+1789648620	2444	111.196	counted	exit	29.6	10	train.py
+1789648964	2636	1237.137	uncounted	exit	322.5	80	scan.py feat6
+1789649149	2933	645.941	uncounted	exit	166.8	60	scan.py ens3
+1789649409	3018	973.093	uncounted	exit	249.4	100	scan.py ens4
+1789649708	3107	1130.155	uncounted	exit	290.2	100	scan.py ens5
+1789649962	3199	831.097	uncounted	exit	212.8	90	scan.py ens6
+1789650018	3303	170.209	counted	exit	45.0	10	train.py
+1789650067	3406	167.973	counted	exit	44.5	10	train.py
+1789650192	3520	316.998	counted	exit	83.3	20	train.py
+1789650283	3623	318.968	counted	exit	82.7	20	train.py
+1789650371	3739	316.338	counted	exit	82.4	20	train.py
+1789650379	3853	2.202	counted	exit	1.5	0	train.py
+1789650472	3963	328.117	counted	exit	85.7	20	train.py
+1789650557	4066	305.992	counted	exit	80.7	20	train.py
+1789650651	4232	315.021	counted	exit	82.0	20	train.py
+1789650750	4439	335.073	counted	exit	87.4	20	train.py
+1789650843	4594	330.700	counted	exit	85.9	20	train.py
+1789650972	4925	336.728	counted	exit	87.9	20	train.py
+1789651071	5080	346.115	counted	exit	91.3	20	train.py
+1789651171	5205	345.486	counted	exit	89.5	20	train.py
+1789651260	5308	317.576	counted	exit	82.9	20	train.py
+1789651359	5474	345.864	counted	exit	90.3	20	train.py
+1789651457	5640	338.273	counted	exit	87.7	30	train.py
+1789651586	5688	372.518	exempt	exit	98.4	20	validate.py
+1789651693	5809	324.340	counted	exit	84.5	20	train.py

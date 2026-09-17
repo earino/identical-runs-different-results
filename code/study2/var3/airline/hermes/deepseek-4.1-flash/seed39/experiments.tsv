@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	76f6878	0.7141	ok	4	baseline
+2	a18339f	0.7179	ok	2	tod+calendar numerics, log dist
+3	0881ad7	0.7199	ok	5	500 trees depth7 lr0.05 subsample
+4	16c77f7	0.7063	ok	6	route categorical (origin_dest)
+5	b9e6914	0.7196	ok	5	OOF target+count encodings origin/dest/carrier
+6	7536d8c	0.7180	ok	12	2000 trees lr0.03 (underfit check)
+7	d5936f1	0.7177	ok	5	depth5 mcw10 lambda2 800 trees
+8	4ac6510	0.6867	ok	5	is_weekend + month*day categorical
+9	440173b	0.7259	ok	5	departure-hour categorical + is_weekend
+10	c8e7bc6	0.7145	ok	5	month/dow/dom categoricals too
+11	c300ff7	0.7350	ok	5	30-min departure bucket categorical
+12	ef4ca08	0.7358	ok	5	15-min departure bucket categorical
+13	f9f596c	0.7264	ok	5	5-min departure bucket categorical
+14	918630e	0.7334	ok	10	depth8 900 trees with new features
+15	ea0217d	0.7391	ok	13	3-model bagged ensemble (seeds/subsample)
+16	e803db8	0.0000	crash	1	5-model bag, depth diversity
+17	193f722	0.7401	ok	20	5-model bag, depth diversity
+18	00c5091	0.0000	crash	1	7-model bag, hyperparameter diversity
+19	228afed	0.7406	ok	27	7-model bag, hyperparameter diversity
+20	97edf69	0.7411	ok	36	max_cat_threshold=128
+21	8d21468	0.7414	ok	36	holiday-period flag
+22	36ad0f2	0.0000	crash	1	lossguide growth, 255 leaves
+23	66367a0	0.7433	ok	120	lossguide growth, 255 leaves
+24	a5e7d82	0.7425	ok	25	bag + 2 bounded lossguide members
+25	80a87b3	0.7430	ok	32	3 lossguide(127 leaves, depth10) + 3 depthwise
+26	a37be2f	0.7432	ok	36	one lossguide member at 255 leaves
+27	01b6f9e	0.7410	ok	30	10-min buckets (144 levels)
+28	c70aca5	0.7416	ok	58	ablation: drop hour+30min buckets
+29	3909688	0.7430	ok	26	subsample/colsample 0.6 for all members
+30	68516b8	0.7432	ok	37	max_cat_to_onehot=16
+31	334e96d	0.7434	ok	37	max_bin=512
+32	ea0fd84	0.7417	ok	38	early stopping per member (10% val split)
+33	ba0f633	0.7475	ok	45	estimated arrival-time features
+34	df94cce	0.7473	ok	51	arrival 30-min bucket + overnight + duration bucket
+35	b39ba01	0.7475	ok	39	ablation: drop arrival sin/cos
+36	9e66553	0.7477	ok	55	8-member bag
+37	cea2b18	0.7441	ok	59	extra 10-min arrival bucket
+38	a966e0f	0.7478	ok	61	30-min arrival bucket on top of 15-min
+39	3600251	0.7479	ok	64	min_child_weight=3
+40	72f739f	0.7476	ok	66	min_child_weight=2

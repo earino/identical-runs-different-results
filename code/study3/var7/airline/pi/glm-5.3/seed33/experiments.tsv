@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3edf617	0.7141	ok	4	baseline
+2	da004e1	0.7062	ok	2	FE v1: hour/min/route features, same model
+3	1f03564	0.7131	ok	2	FE v2: time feats only, no route
+4	7fcc20a	0.7085	ok	2	capacity: early stopping, baseline features
+5	6f2e64c	0.7141	ok	9	sweep n_estimators 20-500, lr .1 d6
+6	d876ece	0.7014	ok	4	TE features + hour numeric
+7	f1a825b	0.0000	crash	1	hyperparam sweep d/lr/sub/col/mcw/lambda
+8	ee6e972	0.7165	ok	33	hyperparam sweep d/lr/sub/col/mcw/lambda (fixed)
+9	ee1d120	0.7174	ok	29	refine shallow sweet spot
+10	8b77cc9	0.7087	ok	20	additive TE features at d4-lr05
+11	14336ce	0.7187	ok	31	8-model XGB ensemble, prob average
+12	8d64ff8	0.7182	ok	58	15-member ensemble
+13	5350eb7	0.7189	ok	26	FE variant comparison
+14	e42ff18	0.7207	ok	53	hourcat + lr scan to 800 rounds
+15	2dca442	0.7238	ok	91	hourcat deeper scan + ensemble
+16	495c869	0.7292	ok	76	cat interaction variants
+17	dc299f3	0.0000	crash	1	hourcarrier extended rounds
+18	5d71213	0.7336	ok	99	hourcarrier extended rounds (fixed dup levels)
+19	f292236	0.7345	ok	106	long low-lr hourcarrier
+20	8c6c510	0.7298	ok	66	carrier interaction variants
+21	818ad53	0.7340	ok	75	recency/ablation variants
+22	fdb712b	0.7355	ok	82	ablation combos at 2400 rounds
+23	482c5d5	0.7377	ok	96	ensemble on pruned feature set
+24	e4e8bf2	0.7396	ok	118	5-member ensemble with bagged seeds
+25	60a891f	0.7406	ok	106	6-member ensemble, rank vs prob
+26	e8eb133	0.0000	timeout	120	d7/d8 anchors + bagged
+27	7e84634	0.7420	ok	91	d7/d8 anchors + bagged (trimmed)
+28	fa672c7	0.0000	timeout	121	expand ensemble: d8 anchors + 6 bagged
+29	5aec493	0.7419	ok	72	d8+d6 anchors, 7 bagged, cached eval
+30	1f7e1ef	0.7424	ok	100	recency anchor + sub92 members
+31	56d8231	0.0000	timeout	120	anchor hunt d9/d8-lr04/lossguide
+32	b1f2600	0.7430	ok	97	assemble best members
+33	0792527	0.7432	ok	108	greedy ensemble selection
+34	24bfc93	0.7432	ok	99	two-stage lr decay anchor
+35	b604647	0.7434	ok	105	wide greedy pool
+36	75d5d22	0.7434	ok	34	lean fixed 4-member ensemble
+37	e3111ba	0.7430	ok	89	anchor reg variants lam2/mcw2
+38	4f8b7e4	0.7434	ok	99	ablation variants deptime/distance
+39	3391f96	0.7437	ok	34	recency weights on bagged members
+40	302e039	0.7429	ok	34	5th member sub92 recency

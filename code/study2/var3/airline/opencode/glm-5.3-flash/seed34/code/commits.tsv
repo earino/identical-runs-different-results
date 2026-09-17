@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	f6912ff	1789523635	baseline
+01	42b9957	1789523693	numeric date parsing, hour/minute, cyclical time, logDist; 200 trees
+02	ee55e4c	1789523734	OOF target encoding (5-fold) carrier/origin/dest/route
+03	95241e3	1789523766	OOF interaction TE: origin x hour, dest x hour
+04	cd3f9da	1789523774	add carrier_hour and origin_dow OOF TE
+05	af50e84	1789523783	TE time blocks 30min instead of hours
+06	2997cb6	1789523803	TE time blocks 15min
+07	7467346	1789523844	3-seed xgb ensemble with subsampling
+08	1537bee	1789523854	5-seed ensemble
+09	5caf188	1789523876	diverse ensemble: mixed depth/subsample members
+10	a6f7fae	1789523895	add log count features origin/dest/route
+11	6762135	1789523912	add origin_block congestion count, carrier count
+12	dfc2dce	1789523926	ensemble members: 400 trees, lr .05
+13	bdd840d	1789523942	ensemble: 800 trees, lr .03
+14	adcd44e	1789524004	multi-scale TE 15/30/60min blocks for origin/dest/carrier
+15	a8c322a	1789524085	7-member diverse ensemble
+16	61420c6	1789524257	kernel-smoothed time-profile TE (OOF)
+17	e91f236	1789524311	kernel sigma 4
+18	0e04d41	1789524377	route x time kernel profile alpha50
+19	87d77c4	1789524432	route kernel alpha 30
+20	8233695	1789524619	kernel blocks 10min NB=144
+21	647773d	1789524676	kernel blocks 5min sigma8
+22	167d82e	1789524917	route kernel sigma 6 (30min) at 5-min blocks
+23	82d7348	1789524979	all kernels sigma 6 (30-min)

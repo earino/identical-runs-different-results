@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	5ea88a9	1789639994	baseline
+01	c490d9c	1789640034	feat v1: time-of-day, cyclic dates, log distance, route, hour_cat, early stopping
+02	54cc427	1789640049	regularized: depth6 lr0.05 mcw10 subsamp0.7 lambda3
+03	6c81ae0	1789640206	good features (no route) + ES on auc, depth5 lr.05 ss/cs.8 lam2
+04	cb52ff5	1789641302	deep trees + strong L1: depth10 alpha8 lam2 lr.05 ES150
+05	8093508	1789641680	depth24 alpha1: deep trees + light L1 plateau ~0.743
+06	7b7db0d	1789641882	add structural count features (origin/dest/route/carrier activity)
+07	caebc7a	1789642417	colsample 0.4, subsample 1.0 at depth24
+08	78f601d	1789642453	4-member ensemble: depth 20/24 x cs 0.35/0.40, ES(auc,60)
+09	af67aa2	1789642851	congestion features: origin/dest/carrier x hour counts + hourly concentration
+10	e58c470	1789643068	5 members: add cs0.30 d22, patience 50 cap 350
+11	310187c	1789643274	subsample jitter in 2 members, cap 280 patience 40
+12	8cf255e	1789643526	6 members: wider depth/cs/lr diversity, patience 30
+13	814f139	1789643840	swap member 6 for max_bin=128 histogram diversity

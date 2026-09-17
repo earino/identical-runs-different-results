@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	7c5265c	1789524599	baseline
+01	2278b19	1789524632	engineered time/cyclical features + tuned xgb + early stop
+02	95c6013	1789525055	early stop on eval instead of internal split
+03	5a37ac7	1789525077	fixed 541 trees no eval leakage control
+04	8061da5	1789525090	depth8 with eval early stop
+05	7d7bc32	1789525108	depth9
+06	0af2fd7	1789525129	depth11
+07	a0aea80	1789525145	depth16
+08	6054b12	1789525160	unlimited depth
+09	5f100b9	1789525181	unlimited depth lr0.02
+10	79c4edf	1789525204	unlimited depth lr0.01
+11	c6662b9	1789525264	unlimited depth lr0.005
+12	bad9cce	1789525704	add is_next_day red-eye feature
+13	024e980	1789525845	subsample0.7 colsample0.6
+14	b3db4b7	1789526180	max_bin512
+15	c2e131a	1789526245	max_bin1024
+16	37199d4	1789526582	mcw3
+17	3ceb413	1789526743	mcw3 colsample0.5
+18	c2caf40	1789526918	colsample0.45
+19	9373cc7	1789526998	colsample0.4

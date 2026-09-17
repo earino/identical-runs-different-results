@@ -1,0 +1,180 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 2,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:04:16+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s2-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T21:07:14+00:00",
+  "wall_seconds": 3779.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11394.3,
+  "endpoint_at_end": "ok",
+  "head": "f90480e",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 1,
+  "n_timeout": 4,
+  "best_eval_auc": 0.7519,
+  "final_eval_auc": 0.7519,
+  "holdout_auc": 0.752242817524,
+  "holdout_ap": 0.740982889622791,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.037472065788,
+  "generalization_gap": -0.0003428175240000053,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 2585556,
+    "tokens_in_uncached": 339668,
+    "tokens_in_cached": 2245888,
+    "tokens_out": 30196,
+    "turns": null,
+    "api_calls": 83,
+    "method": "cumulative-max",
+    "cost_usd": 1.1923,
+    "cached_share": 0.869
+  },
+  "cpu_seconds_python": 11315.9,
+  "cpu_seconds_counted": 10831.5,
+  "cpu_seconds_uncounted": 3.4,
+  "cpu_seconds_exempt": 481.0,
+  "python_processes": 65,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 76,
+  "fits_counted": 73,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "3efb628",
+      "message": "baseline"
+    },
+    {
+      "commit": "4de52d4",
+      "message": "num calendar/time features, cyclic encodings, early stopping, tuned params"
+    },
+    {
+      "commit": "468b3bc",
+      "message": "deeper trees, lower lr, more sampling regularization"
+    },
+    {
+      "commit": "34629da",
+      "message": "deeper still, lower lr"
+    },
+    {
+      "commit": "727c1b5",
+      "message": "max_depth 12"
+    },
+    {
+      "commit": "37f7af0",
+      "message": "max_depth 14, min_child_weight 2"
+    },
+    {
+      "commit": "76f09f7",
+      "message": "max_depth 16, lr 0.02"
+    },
+    {
+      "commit": "7df13b6",
+      "message": "depth 18, lr 0.015, 1500 trees"
+    },
+    {
+      "commit": "5e682e4",
+      "message": "depth 20, lr 0.012"
+    },
+    {
+      "commit": "04b8a13",
+      "message": "depth 24, lr 0.01, 3000 trees"
+    },
+    {
+      "commit": "5c81368",
+      "message": "lr 0.008 4000 trees, lambda 2, mcw 1"
+    },
+    {
+      "commit": "a30ec8d",
+      "message": "route mean distance + distance vs route deviation"
+    },
+    {
+      "commit": "820f32d",
+      "message": "max_bin 1024"
+    },
+    {
+      "commit": "de028da",
+      "message": "add log flight-frequency counts for origin/dest/carrier"
+    },
+    {
+      "commit": "ed71298",
+      "message": "bagged ensemble of 3 XGB models, varying seed and colsample"
+    },
+    {
+      "commit": "41419aa",
+      "message": "minute-of-day, evening/morning/night flags"
+    },
+    {
+      "commit": "a575113",
+      "message": "hour as native categorical"
+    },
+    {
+      "commit": "2ad9c80",
+      "message": "cap n_est 400, esr 50 for headroom"
+    },
+    {
+      "commit": "9511542",
+      "message": "half-hour DepTime bins as categorical"
+    },
+    {
+      "commit": "1c78159",
+      "message": "half-hour cyclic sin/cos alongside hm_cat"
+    },
+    {
+      "commit": "f90480e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10834.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 78.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1c78159",
+  "best_commit_eval_auc": 0.7519,
+  "best_commit_holdout_auc": 0.752242817524,
+  "best_commit_holdout_ap": 0.740982889622791,
+  "best_commit_error": null,
+  "finalized_best": true
+}

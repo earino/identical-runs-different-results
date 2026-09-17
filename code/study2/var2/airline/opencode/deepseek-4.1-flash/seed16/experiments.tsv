@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	793638e	0.7141	ok	4	baseline
+2	0991551	0.7031	ok	5	more capacity 600 trees
+3	aaa6a43	0.7110	ok	4	early stopping + regularization
+4	de2b557	0.7127	ok	2	DepTime hour/minute features
+5	88653e4	0.7231	ok	2	freq encoding route hour depth10
+6	9057abd	0.7308	ok	3	airport-hour traffic freq
+7	fea0e6f	0.0000	crash	1	target encode Origin/Dest
+8	6e47dfc	0.7342	ok	3	target encode Origin/Dest (fix)
+9	dae811a	0.7409	ok	9	lr0.02 1200 trees
+10	d4e68b5	0.7408	ok	24	3-seed ensemble
+11	6fe6b2a	0.7447	ok	36	sqerr ensemble
+12	3b2331a	0.7466	ok	52	5-seed cs0.6 mono-hour
+13	55c1c2f	0.7472	ok	51	ordinal low-card
+14	b204d54	0.7498	ok	42	airport-hour share
+15	9ea7c67	0.7514	ok	61	carrier-origin shares
+16	77d80bc	0.7527	ok	66	carrier-hour shares
+17	ea20019	0.7526	ok	68	calendar flags
+18	0d67ed2	0.7527	ok	91	7-seed ensemble
+19	cc7337f	0.0000	crash	2	feature-bagged ensemble
+20	7145669	0.0000	crash	2	feature-bagged ensemble (fix)
+21	19db2b9	0.7575	ok	53	feature-bagged ensemble (fix2)
+22	2986e7e	0.7570	ok	91	8-seed bagged
+23	d88b1c6	0.7570	ok	58	subsample 0.8 bagged
+24	73af335	0.7576	ok	77	1600 rounds bagged
+25	de1c325	0.7578	ok	105	depth 11 bagged
+26	4e02d71	0.7570	ok	107	subsample 0.75 bagged

@@ -1,0 +1,26 @@
+n	commit	unix_time	subject
+00	3cfed71	1789583118	baseline
+01	76a87a7	1789583250	fixed 500 trees lr0.05 d6, full train
+02	cb5bab4	1789583303	FE: numeric+cyc time features, route cat, log dist, subsample 0.8
+03	9f356a4	1789583375	ablation: exp4 features with baseline model config
+04	f070166	1789583389	ablation: drop Route, keep numeric+cyc features, baseline config
+05	ae6bcc7	1789583678	bagged ensemble: 5 models, seeds 0-4, subsample 0.75, 40 trees
+06	28d942d	1789583687	ensemble 12 members, colsample 0.8, subsample grid 0.60-0.85
+07	a16b604	1789583700	ensemble members: 80 trees, depth 7
+08	a9d2359	1789583714	ensemble members: 150 trees, depth 8
+09	3379c33	1789583957	24 members x 150 trees d8
+10	2d3d3d0	1789584003	24 members, depth grid 6/7/8/9
+11	b9c81a8	1789584229	add log-count features Origin/Dest/Route
+12	9a28309	1789584288	members lr 0.07 x 220 trees
+13	bb98bd9	1789584357	regularization diversity grid mcw/lam/colsample
+14	ca74b61	1789584429	congestion counts: OriginHour/DestHour/CarrierHour
+15	468b32c	1789584506	schedule-structure counts: OriginDow/DestDow/CarrierOrigin/CarrierDest/CarrierDow
+16	d94a83d	1789584581	32 members
+17	d064cbd	1789584586	fix DEP index overflow; 32 members
+18	bcf6da5	1789584899	noise probe: same config, seeds +100
+19	b7842ab	1789584996	30-min bucket congestion counts OriginB30/DestB30
+20	5cc526b	1789585094	15-min buckets Origin/Dest + CarrierB30
+21	a718e6f	1789585201	CarrierB15 + Origin/Dest B10 buckets
+22	1a1bdde	1789585692	feature-group policies across members (no-cat / no-count / no-congestion)
+23	2bda948	1789585792	40 members, 5 policies incl time+congestion-only
+24	b69673a	1789585935	42 members, 6 policies incl cyc-free view

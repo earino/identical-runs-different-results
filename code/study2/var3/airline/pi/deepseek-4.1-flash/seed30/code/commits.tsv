@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	5123c36	1789501513	baseline
+01	ae7dab9	1789501552	time/distance features + early stopping
+02	ac71c25	1789503093	drop unstable calendar feats; deep colsample-0.4 xgb
+03	c04adea	1789503902	origin-hour count, carrier-hour cat, red-eye
+04	6215bdd	1789505019	ensemble of 4 deep diverse xgb configs
+05	66c809b	1789505582	add dist/time ratio + dest-hour congestion
+06	91494b8	1789505645	expand ensemble to 6 diverse configs
+07	0639d7e	1789506410	reg_alpha=1.0 in ensemble base

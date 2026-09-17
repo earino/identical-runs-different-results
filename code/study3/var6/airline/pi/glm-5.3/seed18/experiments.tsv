@@ -1,0 +1,8 @@
+n	commit	eval_auc	status	seconds	description
+1	b831d9f	0.7141	ok	3	baseline
+2	c469f37	0.7081	ok	2	bigger model + early stopping on internal 80/20 split
+3	8275b62	0.7417	ok	27	5-seed deep ensemble + volume counts + sin/cos, fixed 250 rounds
+4	eb2c7be	0.7464	ok	59	d16/mcw1 + 9 count feats (ALL + routeh2)
+5	a9df83d	0.7567	ok	66	fix broken count features (were constant 0)
+6	54cd430	0.7592	ok	63	d18/cs.35/ne150 deep ensemble
+7	4d641ae	0.7590	ok	64	7-seed ensemble, same recipe

@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	77373d0	1789546886	baseline
+01	74507de	1789546927	feat: time-of-day decomposition, 200 trees depth6
+02	a8c11c2	1789546948	feat: cyclical departure time
+03	6eff30b	1789546956	feat: frequency encodings
+04	e64dd93	1789546984	ens: 5-seed XGBoost ensemble
+05	2aa0aee	1789546999	feat: day-of-year seasonality
+06	77b9c3b	1789547011	feat: origin/carrier-hour congestion freq
+07	9add69a	1789547024	feat: dest-hour congestion freq
+08	c6934e9	1789547038	ens: 8 diverse XGBoost models
+09	a3ce2f0	1789547081	feat: route-hour congestion freq
+10	80a3bdd	1789547098	tune: lr0.03 350 trees
+11	87cafdf	1789547125	feat: hour traffic share ratios
+12	4c412da	1789547395	ens: 16 diverse models
+13	14a5415	1789547547	tune: lr0.025 450 trees
+14	2222893	1789547609	feat: hour as categorical
+15	53ccfc0	1789547671	feat: 15-min time bucket categorical
+16	57d2286	1789547913	feat: distance bucket categorical
+17	a32c18f	1789548052	ens: 24 diverse models
+18	cdaa196	1789548151	feat: holiday indicator on strong feature set
+19	f4dfef5	1789548247	ablation: drop minute and dep trig features
+20	3b95ebd	1789548520	feat: hour x weekend interaction
+21	2d61548	1789548617	tune: max_cat_to_onehot=32

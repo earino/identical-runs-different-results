@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	5485af8	1789524570	baseline
+01	20a342d	1789524641	exp4: FE v1 without Route, 100 trees
+02	0208892	1789524858	exp5: d4 lr.04 sub.8 col.8 n300 on baseline features
+03	3d9961e	1789524866	exp6: 7-seed bagged ensemble of d4 recipe
+04	c303db8	1789525593	exp7: hour-cat + alpha10 + d8 + 5-seed bag
+05	d73f9ef	1789525992	exp8: +tod feats +route on deep-sparse recipe
+06	da0cfff	1789527401	exp9: d14 a10 sub.85
+07	56280a6	1789527612	exp12: max_bin 512
+08	12080ac	1789527795	exp14: colsample_bylevel 0.8
+09	310c05f	1789528492	restore best: alpha-mix 6-model ensemble (as exp18)
+10	a0fb4ee	1789528492	exp21: +Minute numeric
+11	ebe5076	1789529122	exp22: single a6 5-seed

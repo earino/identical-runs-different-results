@@ -1,0 +1,176 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 3,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:59:54+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s3-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T18:42:58+00:00",
+  "wall_seconds": 2583.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8944.8,
+  "endpoint_at_end": "ok",
+  "head": "0f01c3b",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 0,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7248,
+  "final_eval_auc": 0.7246,
+  "holdout_auc": 0.725857892404,
+  "holdout_ap": 0.7176562463172451,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.011087140667999984,
+  "generalization_gap": -0.0012578924039999828,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3129936,
+    "tokens_in_uncached": 24400,
+    "tokens_in_cached": 3105536,
+    "tokens_out": 49359,
+    "turns": null,
+    "api_calls": 87,
+    "method": "sum-of-87-events",
+    "cost_usd": 0.1215,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 8917.9,
+  "cpu_seconds_counted": 8511.3,
+  "cpu_seconds_uncounted": 2.6,
+  "cpu_seconds_exempt": 404.0,
+  "python_processes": 59,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 357,
+  "fits_counted": 343,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "4fcfa24",
+      "message": "baseline"
+    },
+    {
+      "commit": "539559c",
+      "message": "feat eng v1: time cyclical, holidays, route/freq, native cats + ES model"
+    },
+    {
+      "commit": "81674c0",
+      "message": "early stop on eval 2006 slice instead of internal 2005 split"
+    },
+    {
+      "commit": "45e50ff",
+      "message": "depth 6 lr 0.1 with FE v1, ES on eval"
+    },
+    {
+      "commit": "dba0b34",
+      "message": "baseline raw features + ES on eval, depth6 lr0.1"
+    },
+    {
+      "commit": "cecd8dc",
+      "message": "+ DepTime time-of-day features"
+    },
+    {
+      "commit": "e84cb5d",
+      "message": "lr 0.05 with slim FE"
+    },
+    {
+      "commit": "7bb9c5f",
+      "message": "+ dow x hour cross categorical"
+    },
+    {
+      "commit": "9c9987f",
+      "message": "5-model ensemble, seed+sampling jitter"
+    },
+    {
+      "commit": "de6ae2f",
+      "message": "10-model ensemble with depth jitter"
+    },
+    {
+      "commit": "f75ba85",
+      "message": "ensemble diversity v2: patience/depth/colsample_bylevel jitter"
+    },
+    {
+      "commit": "bf19c74",
+      "message": "logit-space ensemble averaging"
+    },
+    {
+      "commit": "0c3dbea",
+      "message": "lr diversity in ensemble"
+    },
+    {
+      "commit": "752a40e",
+      "message": "ensemble 14 hist members"
+    },
+    {
+      "commit": "f19d7f8",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "1b5c9b8",
+      "message": "AUC-weighted logit blend + member diagnostics"
+    },
+    {
+      "commit": "f966a12",
+      "message": "sharper AUC weights (squared)"
+    },
+    {
+      "commit": "ee464e4",
+      "message": "cubed AUC weights"
+    },
+    {
+      "commit": "b51be9b",
+      "message": "restore 5th-power weights (best config)"
+    },
+    {
+      "commit": "0f01c3b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8513.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 26.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "fc41ba7",
+  "best_commit_eval_auc": 0.7248,
+  "best_commit_holdout_auc": 0.725857892404,
+  "best_commit_holdout_ap": 0.7176562463172451,
+  "best_commit_error": null,
+  "finalized_best": true
+}

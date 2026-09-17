@@ -1,0 +1,158 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 3,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T19:23:18+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s3-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T20:42:17+00:00",
+  "wall_seconds": 4739.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 15158.1,
+  "endpoint_at_end": "ok",
+  "head": "3c8cad2",
+  "n_commits": 14,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7393,
+  "final_eval_auc": 0.7393,
+  "holdout_auc": 0.739529933516,
+  "holdout_ap": 0.7318466506964296,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.024759181780000028,
+  "generalization_gap": -0.0002299335160000915,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9918159,
+    "tokens_in_uncached": 9918159,
+    "tokens_in_cached": 0,
+    "tokens_out": 71723,
+    "turns": null,
+    "api_calls": 135,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 14908.1,
+  "cpu_seconds_counted": 10643.3,
+  "cpu_seconds_uncounted": 3806.1,
+  "cpu_seconds_exempt": 458.7,
+  "python_processes": 60,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1424,
+  "fits_counted": 1028,
+  "fits_uncounted": 360,
+  "commits": [
+    {
+      "commit": "38dd8e6",
+      "message": "baseline"
+    },
+    {
+      "commit": "674de5d",
+      "message": "features: carrier x hour interaction, route/carrier frequency, log distance, cyclical tod"
+    },
+    {
+      "commit": "33dfc7d",
+      "message": "ensemble: 5-seed bag of depth-4 model"
+    },
+    {
+      "commit": "bdb7275",
+      "message": "ensemble: 12 members across 4 configs incl node-subsampled"
+    },
+    {
+      "commit": "2a66d69",
+      "message": "ensemble: 16 members with random 70% feature subspaces"
+    },
+    {
+      "commit": "104fd5f",
+      "message": "ensemble: 24 members (3 seeds x 2 subspace draws per config)"
+    },
+    {
+      "commit": "b54f819",
+      "message": "ensemble: alternate categorical encoding per member"
+    },
+    {
+      "commit": "81a2601",
+      "message": "ensemble: random subspace size per member (8..all cols)"
+    },
+    {
+      "commit": "1d9d126",
+      "message": "ensemble: 36 members (3 subspace draws per config/seed)"
+    },
+    {
+      "commit": "f6a9b7f",
+      "message": "ensemble: per-member regularization jitter"
+    },
+    {
+      "commit": "e16eae8",
+      "message": "ensemble: broad hyperparameter jitter per member"
+    },
+    {
+      "commit": "f3aec0f",
+      "message": "ensemble: wider hyperparameter jitter (depth 2-8, alpha/lambda, lr)"
+    },
+    {
+      "commit": "70d6ab7",
+      "message": "ensemble: wider jitter envelope + cat threshold jitter"
+    },
+    {
+      "commit": "7605145",
+      "message": "aggregation: logit-space mean"
+    },
+    {
+      "commit": "3c8cad2",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 14449.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 250.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "7605145",
+  "best_commit_eval_auc": 0.7393,
+  "best_commit_holdout_auc": 0.739529933516,
+  "best_commit_holdout_ap": 0.7318466506964296,
+  "best_commit_error": null,
+  "finalized_best": true
+}

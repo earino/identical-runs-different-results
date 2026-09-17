@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	2637a58	1789542327	baseline
+01	af57424	1789542444	feat v1 (keep FE) + eval-as-ES-set 2000 trees lr.03 depth8 mcw5
+02	eab2281	1789542558	ablation: drop freq features, keep baseline params
+03	0ba0edf	1789542575	lr 0.02 n3000 ES250
+04	33e2b05	1789542604	subsample 0.8 colsample 0.8
+05	027b14e	1789542618	subsample 0.7 colsample 0.7
+06	849cc83	1789542631	subsample 0.6 colsample 0.6
+07	e10ef9d	1789542648	subsample 0.5 colsample 0.5
+08	87cc083	1789542679	reg_lambda 10
+09	344c4eb	1789542747	seed ensemble of 4 regularized models
+10	3b9bdb1	1789542810	ensemble depth10
+11	6823089	1789542872	ensemble depth12
+12	0e3b22f	1789542948	ensemble depth14
+13	48a2412	1789543037	ensemble depth16
+14	4bb96aa	1789543131	ensemble depth18
+15	e9ce854	1789543457	ensemble x3 depth20 lr0.015
+16	319451d	1789543560	x3 depth22
+17	e9c5e11	1789543865	x3 depth22 sub0.4 col0.4
+18	4d5c7ac	1789544052	x3 depth22 col0.3
+19	de16759	1789544151	x3 depth22 col0.2

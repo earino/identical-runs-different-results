@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	72c407f	1789520849	baseline
+01	3311655	1789520894	engineer: hour/tod cyclical, route, calendar features
+02	644c718	1789520930	raw cats + time-of-day features (no route)
+03	d64959d	1789520940	100 trees lr0.05
+04	fa30247	1789520944	200 trees lr0.05
+05	1c0ef2b	1789520948	400 trees lr0.05
+06	1c218dd	1789520953	800 trees lr0.05
+07	ba8ee52	1789521063	lr0.03 1500 trees
+08	e6ed65c	1789521074	lr0.02 2500 trees
+09	f7a6928	1789521090	lr0.01 5000 trees
+10	b52ac02	1789521258	colsample 0.8
+11	d352600	1789521285	colsample 0.6
+12	599bef3	1789521311	colsample 0.4
+13	4a2e1fb	1789521335	colsample 0.3
+14	a837899	1789521510	depth7 colsample0.3
+15	5a9550b	1789521540	depth8 colsample0.3
+16	5fd5022	1789521748	3-seed ensemble x4000 trees depth8
+17	11ab200	1789521856	4-seed ensemble x3000 depth8

@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	e7b6dda	1789518184	baseline
+01	862c46e	1789518235	v3: more trees, lower lr (capacity test)
+02	eb6e2bd	1789518860	v4: freq features, hour cat, depth5, 5-seed xgb ensemble
+03	75ddbd2	1789520808	v5: deep trees d11 n1100 lam10 3-seed ensemble
+04	96e215e	1789521070	v7: depth13 n1000
+05	e2c3eb2	1789521166	v8: depth16 n800
+06	67deb73	1789521253	v9: depth20 n600
+07	9147953	1789521433	v11: extra congestion freq features + est arrival tod
+08	5aacd2d	1789521532	v12: route-hour, carrier-dest, origin/dest-month freq
+09	3595084	1789521783	v14: subsample/colsample 0.8
+10	a403b90	1789521881	v15: subsample/colsample 0.7
+11	27b99a7	1789521973	v16: subsample/colsample 0.6
+12	ba83e69	1789522135	v18: depth24 n500 ss/cs0.6
+13	bcf0d2a	1789522211	v19: depth32 n400
+14	f9aa8ec	1789522339	v21: reg_lambda5
+15	5bba76a	1789522412	v22: reg_lambda2
+16	6a39aba	1789522494	v23: reg_lambda0.5
+17	986b4e6	1789522774	v26: gamma0.5

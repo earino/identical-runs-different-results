@@ -1,0 +1,29 @@
+n	commit	eval_auc	status	seconds	description
+1	4239283	0.7141	ok	4	baseline
+2	a67da2a	0.7082	ok	3	exp2: 200 trees depth 8
+3	dcfcf1a	0.0000	crash	1	exp3: route + deptime features
+4	75ce29f	0.7050	ok	2	exp3 fix: route + deptime features
+5	6dc0be8	0.7124	ok	2	exp5: deptime features only
+6	b9599e3	0.7099	ok	2	exp6: sampling+regularization, 200 trees
+7	9c428d8	0.7158	ok	1	exp7: depth4 x100
+8	86224ac	0.7167	ok	2	exp8: d4 300trees lr.05 sampling
+9	fea26bb	0.7168	ok	3	exp9: seasonal cyclic features
+10	69f5c12	0.7183	ok	3	exp10: DepHour categorical
+11	b836a7a	0.7186	ok	3	exp11: n600 lr.025
+12	1455c30	0.7191	ok	8	exp12: 3-seed ensemble
+13	90bfa1f	0.7194	ok	11	exp13: depth5
+14	54b0e93	0.7202	ok	15	exp14: feat-drop 5-model ensemble
+15	e2c9c30	0.7207	ok	15	exp15: freq encodings
+16	800234b	0.7292	ok	18	exp16: minutes since midnight + 15min buckets
+17	dbd6e9b	0.7329	ok	19	exp17: origin-block congestion counts
+18	3ffbe46	0.7353	ok	25	exp18: depth6 with new features
+19	c0567ca	0.7393	ok	24	exp19: v0/v1 variant mix ensemble
+20	61a834c	0.7416	ok	42	exp20: depth8
+21	64d8bd7	0.7438	ok	82	exp21: d10 + recency ramp
+22	8d80f48	0.7436	ok	103	exp22: 6-model ensemble
+23	913ce2b	0.7440	ok	84	exp23: mixed recency ramps
+24	643b824	0.0000	crash	71	exp24: +d6 depth diversity model
+25	8af1f1e	0.7440	ok	87	exp24 fix: d6 6th model
+26	0243cb6	0.7437	ok	88	exp26: all-steep recency ramp
+27	a54d582	0.7441	ok	106	exp27: 6-model freq-free member
+28	a54d582	0.0000	crash	20	budget probe

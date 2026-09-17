@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	711bf0a	1789525201	baseline
+01	c983efb	1789525272	30 trees depth4
+02	014204f	1789525276	80 trees depth4
+03	6e7a2bb	1789525367	generic OOF target encoding incl carrier/origin x hour
+04	2d47324	1789525382	250 trees depth4 lr0.04 subsample0.8 TE feats
+05	e25fee6	1789525419	250/0.04 + colsample0.7 mcw10
+06	8b4560b	1789525438	add dest_hour TE
+07	6d25b8e	1789525446	add route_hour TE
+08	1f5afbe	1789525454	add route_month TE
+09	a2b986d	1789525488	add carrier_origin and carrier_dest TE
+10	e65d8c3	1789525496	500 trees lr0.03
+11	755320d	1789525509	colsample0.6 mcw20 500/0.03
+12	cdddd32	1789525515	colsample0.5 mcw30
+13	b84271d	1789525522	colsample0.4 mcw50
+14	1776526	1789525534	add TE support counts
+15	a1984cc	1789525551	3-seed XGB ensemble
+16	c9f7d7c	1789525658	add count-ratio and day-of-year features
+17	6a41c4c	1789525686	5-seed ensemble

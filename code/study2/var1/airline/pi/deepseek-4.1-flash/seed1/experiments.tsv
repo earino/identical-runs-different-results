@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3574e3f	0.7141	ok	4	baseline
+2	576e66e	0.7032	ok	6	n500 d8 lr0.05 sub/col0.8 mcw5
+3	e0330a8	0.7127	ok	2	DepTime hour/minute/red-eye features
+4	2871ebb	0.7115	ok	6	diag: eval AUC vs rounds lr0.05
+5	b9ce483	0.7093	ok	28	diag: grid depth/mcw/lr0.03 early-stop
+6	47ea03e	0.7165	ok	4	depth3 lr0.03 n800 sub0.9 mcw5
+7	145a0dd	0.7168	ok	17	diag: depth 2/3/4 x rounds
+8	af142d7	0.7085	ok	3	route/time/weekend features, depth4 n200
+9	3dc2523	0.7168	ok	13	ensemble 6x shallow xgb varied colsample/depth
+10	c925ea0	0.7168	ok	15	OOF target encoding Origin/Dest/Carrier/route + freq
+11	02b7e48	0.7208	ok	16	TE incl Origin/Dest/Carrier x hour
+12	202c595	0.7285	ok	15	add route x hour target encoding
+13	3fd9993	0.7282	ok	17	add route x dow and route x month TE
+14	1c11ae7	0.7286	ok	15	add carrier x route target encoding
+15	ad66f7f	0.7386	ok	17	add route x 30min-bin target encoding
+16	51c308e	0.7464	ok	20	route 15min bin + origin/dest/carrier 30min bin TEs
+17	cc6b111	0.7479	ok	20	route 10min + origin/dest/carrier 15min bin TEs
+18	4efc484	0.7473	ok	19	target encoding smoothing 5
+19	225b6c8	0.7478	ok	20	target encoding smoothing 50
+20	1f7b8ce	0.7487	ok	23	add hour/origin/dest/carrier x day-of-week TEs
+21	9d9b441	0.7490	ok	23	add route x 5min bin target encoding
+22	bea312e	0.7482	ok	30	diag: capacity sweep with rich TE features
+23	7e98b38	0.7481	ok	25	add hour/origin/dest/carrier/route x month TEs
+24	c3592c8	0.7489	ok	21	add route x day-of-week x time-bin TE
+25	75d6ba3	0.7516	ok	20	ablation: no native categoricals, TE+numeric only
+26	48e81c6	0.7519	ok	22	add origin/dest/carrier 10min and 5min bin TEs
+27	2c489ea	0.7524	ok	24	add carrier x origin/dest and route x dow TEs
+28	f5258bd	0.7577	ok	23	add carrier x route x time-bin TE
+29	953e790	0.7584	ok	26	add carrier-route-bin15 + carrier-origin/dest-bin TEs
+30	9d5ee57	0.7586	ok	26	add carrier-route-bin5 + carrier-origin/dest-bin15 TEs
+31	a21a4fc	0.7587	ok	41	ensemble 10 diverse shallow models
+32	41e4710	0.7587	ok	42	add carrier-route-dow + route-dow-bin TEs
+33	e08526f	0.7576	ok	45	10-fold out-of-fold target encoding
+34	d30bcd6	0.7586	ok	43	add carrier-route-hour + carrier-route-bin-dow TEs
+35	eeaa1f8	0.7583	ok	42	target encoding smoothing 100
+36	3a3c0b5	0.7228	ok	46	add fine-minus-parent excess TE features
+37	7cda467	0.7590	ok	47	ensemble 13 incl depth-5 models
+38	1915940	0.7592	ok	51	ensemble 18 diverse models depth4-6
+39	5d8c9b3	0.7593	ok	60	add carrier route/origin/dest frequency share features
+40	c3df6c8	0.7594	ok	59	add day-of-year + cyclic seasonal + weekend features

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	b6bc214	0.7141	ok	11	baseline
+2	6dfa66c	0.0000	crash	2	FE v1: time features + route + early stopping
+3	b86c7f6	0.7050	ok	4	FE v1: time features + route + early stopping
+4	33e24ed	0.7097	ok	7	diag: route vs no-route ablation
+5	595df62	0.7184	ok	18	capacity/regularization sweep (6 configs)
+6	f8e3b45	0.0000	crash	16	reg sweep around d4 winner
+7	0ee7b1c	0.7184	ok	21	reg sweep around d4 winner (fixed)
+8	ceed4ec	0.0000	crash	1	TE features (carrier/origin/dest/route) + DayOfYear
+9	e76f7e7	0.7183	ok	18	TE features + DayOfYear (fixed)
+10	a98719e	0.7193	ok	38	seed bagging (5-model ensembles)
+11	aa2f699	0.7199	ok	69	structural time features bagged
+12	98b1b57	0.7206	ok	73	monotone constraints, cv-bag
+13	f9a770e	0.7208	ok	92	cvbag 5 vs 10, with/without monotone
+14	c916875	0.7265	ok	101	structural feature screen (cvbag5)
+15	a819de4	0.0000	timeout	120	carrier/airport interaction cats screen
+16	53d8470	0.7265	ok	44	production config: cvbag10 + CarrierHour
+17	e4fe841	0.7266	ok	82	d/mcw sweep, refit best at cvbag10
+18	5832c7e	0.7266	ok	85	airport x carrier interactions
+19	6720cb3	0.7266	ok	62	full-data refit bag
+20	f01899a	0.7320	ok	75	congestion rate features (origin/dest/route x hour)
+21	c4f1230	0.7429	ok	90	congestion variants screen
+22	bd4dad7	0.7501	ok	77	rolling +/-15min congestion vs 30min bins
+23	8a28720	0.8027	ok	81	backward/forward multi-scale congestion
+24	454e6a9	0.0000	timeout	120	back90/120 windows + day queue position
+25	59c9c8b	0.8076	ok	45	production: congestion+daypos cvbag10
+26	427e9f1	0.8170	ok	103	spacing gaps + carrier queue features
+27	8c67950	0.8168	ok	91	depth/colsample re-tune
+28	b134854	0.8210	ok	86	queue v2 screen
+29	e680cff	0.8243	ok	102	dest-side queue + misc screen
+30	ca7d476	0.0000	crash	60	fwd/dow screen + prune probe + col08
+31	dd4c2b8	0.8246	ok	94	fwd/dow screen + prune probe + col08 (fixed)
+32	5b83900	0.0000	timeout	121	lean prune + lr0.02 screen
+33	a0dbf1d	0.8256	ok	100	extra features + subsample screen
+34	f64c062	0.8260	ok	105	sub09 + d5/d6 ensemble screen
+35	8940a89	0.8259	ok	105	sub1.0 / col0.8 / both screen
+36	d90a671	0.8261	ok	86	final production cvbag10
+37	237f108	0.0000	timeout	120	mcw60/150 + lambda2 screen
+38	2789983	0.8255	ok	101	esr50/esr80 screen
+39	8a2e484	0.8279	ok	117	carrier x airport queue features
+40	c578125	0.8282	ok	90	final production

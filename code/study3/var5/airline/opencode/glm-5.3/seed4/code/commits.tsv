@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	5327eb7	1789596570	baseline
+01	fb9f6b8	1789596930	FE numeric dates + hour/mins + log_dist, no route, no sin/cos; 30 trees
+02	85613a6	1789596961	60 trees
+03	df1bce5	1789597048	bagged ensemble 5x60 trees, 80% row samples
+04	7e4e7cf	1789597070	10-model bag
+05	bcf668a	1789597085	colsample 0.7 per member
+06	d5800cc	1789597105	colsample 0.5 per member
+07	7b7367a	1789597121	member capacity 100 trees, colsample 0.5
+08	3ae686b	1789597130	15 members
+09	3d4abce	1789597634	depth 8, 60 trees per member
+10	367dbff	1789597655	depth 10
+11	6530a49	1789597679	depth 12
+12	342c830	1789597704	depth 14
+13	f3f0e91	1789597943	depth 16
+14	a61c57e	1789598065	depth 18
+15	4c59b4f	1789598162	depth 20
+16	51c2942	1789598243	20 members at d20
+17	721681b	1789598340	30 rounds per member at d20
+18	80ddaff	1789598473	30 members
+19	687dfd5	1789598942	depth 22
+20	a47e425	1789599452	freq encoding origin/dest/route
+21	e6683d5	1789599625	36 members x 25 rounds
+22	2b99126	1789599837	depth 24

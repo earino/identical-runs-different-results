@@ -1,0 +1,5 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789607152	108	0.044	uncounted	exit	0.0	0	-c
+1789607152	110	0.066	uncounted	exit	0.0	0	-c
+1789607152	112	0.050	uncounted	exit	0.0	0	-m --version
+1789607152	114	0.032	uncounted	exit	0.0	0	-c

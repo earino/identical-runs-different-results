@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	81de627	1789487132	baseline
+01	ab3825f	1789487373	add carrier_hour interaction, eval early stopping depth4
+02	0bec317	1789488650	ensemble 4x lossguide 192 leaves fixed 600
+03	f91e967	1789490347	ensemble lr0.02 900 rounds
+04	90fbb40	1789491555	all3-numeric calendar + ensemble L384 lr.015
+05	d3f9ad9	1789491868	ensemble L768 lr.015 400 rounds
+06	cee7250	1789492017	3-model ensemble for runtime safety

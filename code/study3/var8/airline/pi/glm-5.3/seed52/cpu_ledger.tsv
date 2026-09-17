@@ -1,0 +1,79 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789640727	54	4.952	counted	exit	3.6	1	train.py
+1789640735	79	1.535	uncounted	exit	0.8	0	-c
+1789640753	108	12.817	counted	exit	3.9	1	train.py
+1789640779	152	32.975	counted	exit	9.0	1	train.py
+1789640790	194	12.789	counted	exit	3.8	1	train.py
+1789640800	232	13.366	counted	exit	4.1	1	train.py
+1789640824	273	44.253	counted	exit	12.0	1	train.py
+1789640838	303	1.750	uncounted	exit	1.0	0	/tmp/explore.py
+1789640843	314	0.033	uncounted	exit	0.0	0	/tmp/explore2.py
+1789640846	318	2.049	uncounted	exit	1.3	0	/tmp/explore2.py
+1789640862	328	0.031	uncounted	exit	0.0	0	/tmp/patch7.py
+1789640869	345	23.540	counted	exit	7.1	1	train.py
+1789640903	387	41.018	counted	exit	11.5	1	train.py
+1789640921	429	46.591	counted	exit	13.1	1	train.py
+1789640931	471	23.987	counted	exit	7.3	1	train.py
+1789640942	501	0.034	uncounted	exit	0.0	0	/tmp/patch11.py
+1789641026	518	316.783	counted	exit	83.5	5	train.py
+1789641041	544	0.032	uncounted	exit	0.0	0	/tmp/patch12.py
+1789641140	561	372.189	counted	exit	99.5	5	train.py
+1789641152	589	0.033	uncounted	exit	0.0	0	/tmp/patch13.py
+1789641233	606	308.957	counted	exit	81.0	5	train.py
+1789641260	633	0.041	uncounted	exit	0.0	0	/tmp/patch14.py
+1789641357	650	361.444	counted	exit	97.1	5	train.py
+1789641363	676	0.033	uncounted	exit	0.0	0	/tmp/patch15.py
+1789641456	693	350.913	counted	exit	92.7	5	train.py
+1789641545	734	320.967	counted	exit	85.5	5	train.py
+1789641549	760	0.038	uncounted	exit	0.0	0	/tmp/patch17.py
+1789641640	777	340.909	counted	exit	91.6	5	train.py
+1789641652	804	0.035	uncounted	exit	0.0	0	/tmp/patch18.py
+1789641730	821	299.660	counted	exit	78.0	5	train.py
+1789641822	864	339.194	counted	exit	88.6	5	train.py
+1789641865	902	63.667	uncounted	exit	18.3	2	/tmp/scratch.py base lr02 rank
+1789641870	917	1.441	uncounted	exit	0.7	0	/tmp/scratch.py lr02 rank
+1789641874	926	3.487	uncounted	exit	2.7	0	/tmp/scratch.py lr02 rank
+1789641919	936	131.302	uncounted	exit	43.3	2	/tmp/scratch.py lr02 rank
+1789641960	949	137.673	uncounted	exit	37.6	2	/tmp/scratch.py lr015 lr01 lam4
+1789642038	962	273.633	uncounted	exit	71.9	3	/tmp/scratch.py reg_alpha=0.5 reg_alpha=2.0 reg_alpha=5.0
+1789642094	974	208.173	uncounted	exit	54.8	2	/tmp/scratch.py reg_alpha=10.0 reg_alpha=20.0
+1789642167	986	267.497	uncounted	exit	70.1	3	/tmp/scratch.py reg_alpha=4.0 reg_alpha=6.0 reg_alpha=7.0
+1789642226	998	213.826	uncounted	exit	57.1	2	/tmp/scratch.py reg_alpha=3.0 reg_alpha=3.5
+1789642310	1012	300.327	uncounted	exit	79.3	3	/tmp/scratch.py a4lr02 a4lam0 a4ss07
+1789642392	1024	303.916	uncounted	exit	80.0	3	/tmp/scratch.py a4ss09 a4mcw5 a4cs09
+1789642509	1037	444.924	uncounted	term	115.0	2	/tmp/scratch.py a4lr02d8 a4lr02d12 a4lr02d14
+1789642611	1050	354.840	uncounted	exit	93.7	2	/tmp/scratch.py a4lr015 a5lr02d12
+1789642703	1062	342.189	uncounted	exit	90.3	2	/tmp/scratch.py a3lr02d12 a6lr02d12
+1789642801	1076	347.943	uncounted	exit	91.2	2	/tmp/scratch.py a3lr02d11 a3lr02d12s7
+1789642901	1089	356.128	uncounted	exit	94.0	2	/tmp/scratch.py a3lr02d12lam4 a3lr02d12cs07
+1789642981	1101	291.840	uncounted	exit	77.3	2	/tmp/scratch.py a3lr02d12mcw5 a3lr02d12ss09
+1789642985	1114	0.037	uncounted	exit	0.0	0	/tmp/patch20.py
+1789643032	1131	174.049	counted	exit	46.5	1	train.py
+1789643154	1157	443.308	uncounted	term	115.0	2	/tmp/ablate.py
+1789643332	1170	657.186	uncounted	exit	171.6	5	/tmp/ens.py
+1789643520	1183	676.305	uncounted	exit	173.9	3	/tmp/feat2.py
+1789643526	1196	0.031	uncounted	exit	0.0	0	/tmp/patch21.py
+1789643527	1213	1.570	counted	exit	0.8	0	train.py
+1789643531	1237	0.031	uncounted	exit	0.0	0	/tmp/fix21.py
+1789643531	1239	0.034	uncounted	exit	0.0	0	-c
+1789643576	1256	164.941	counted	exit	45.2	1	train.py
+1789643741	1282	614.463	uncounted	exit	159.8	3	/tmp/feat3.py
+1789643798	1295	178.339	uncounted	exit	47.8	1	/tmp/feat4.py
+1789643980	1308	625.072	uncounted	exit	166.7	4	/tmp/ksweep.py
+1789644092	1321	389.182	uncounted	exit	102.6	2	/tmp/misc.py
+1789644274	1335	695.410	uncounted	term	180.0	3	/tmp/misc.py colsample
+1789644277	1347	4.240	uncounted	exit	3.5	0	/dev/fd/63
+1789644333	1357	191.747	uncounted	exit	52.4	1	/tmp/cong.py
+1789644486	1370	558.197	uncounted	exit	145.3	3	/tmp/cal2.py
+1789644644	1383	587.837	uncounted	exit	152.4	3	/tmp/vol.py
+1789644649	1396	0.038	uncounted	exit	0.0	0	/tmp/patch23.py
+1789644698	1413	176.273	counted	exit	48.9	1	train.py
+1789644817	1439	432.082	uncounted	exit	113.6	2	/tmp/vol2.py
+1789644949	1452	482.837	uncounted	exit	125.8	2	/tmp/vol3.py
+1789644954	1465	0.034	uncounted	exit	0.0	0	/tmp/patch24.py
+1789645033	1482	299.253	counted	exit	78.9	1	train.py
+1789645228	1508	720.526	uncounted	exit	187.9	3	/tmp/vol4.py
+1789645443	1521	793.565	uncounted	exit	204.6	3	/tmp/kernel.py
+1789645536	1553	316.886	counted	exit	83.2	1	train.py
+1789645611	1595	255.167	counted	exit	69.6	1	train.py
+1789645692	1622	287.470	exempt	exit	77.1	1	validate.py

@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	63247d3	1789586433	baseline
+01	ee6d1cc	1789586476	scale to 800 rounds with early stopping on eval
+02	b21f30d	1789586498	hour/minute features + route interaction
+03	b6dc2a8	1789586773	target encodings + d10 lr0.03 ss0.8 cs0.8, ES on eval
+04	b0396ef	1789586848	restore raw origin/dest/carrier categoricals alongside TEs
+05	fcdfd26	1789586869	average 6 seed-ensemble xgb models
+06	2818455	1789586934	cross-fitted 5-fold TE + cached matrices
+07	37c1c48	1789587218	depth 12
+08	c0c6969	1789587281	depth 14
+09	4a2d998	1789587352	depth 16
+10	b6ace4f	1789587457	ss/cs 0.7 at d16
+11	b560ba6	1789587645	volume count features
+12	af0bef3	1789588193	max_bin 192
+13	c0df443	1789588291	ES on 50k eval subsample
+14	78a6ec9	1789588659	depth 18
+15	781e812	1789588758	depth 20
+16	c5819d0	1789589224	drop calendar features explicitly (NaN-bug behavior was better)
+17	f800a41	1789589342	recency weights: upweight late-2005 training rows
+18	ad5603b	1789589461	recency weights 0.2/mo
+19	829ec8f	1789589874	patience 60 only (keep max_bin 192)
+20	f3a7cb9	1789589996	congestion counts: route/origin/dest x hour

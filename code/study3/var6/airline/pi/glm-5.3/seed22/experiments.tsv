@@ -1,0 +1,26 @@
+n	commit	eval_auc	status	seconds	description
+1	171a18f	0.7141	ok	3	baseline
+2	63a322d	0.7084	ok	3	scale trees, es on internal 10pct split
+3	624d28c	0.7062	ok	3	FE: hour/min/sincos, int dates, Route cat, depth6
+4	6c07b1f	0.7218	ok	4	FE + depth4 lr0.03 mcw10 subs0.8 col0.6
+5	08742fa	0.7293	ok	4	HourCarrier interaction, depth5
+6	e4d7113	0.7541	ok	36	tuned deep regime: d20 lr.015 col0.4 n300
+7	28a2e08	0.7542	ok	68	3-seed ensemble n200 lr.02 d20 col0.4
+8	4f844d9	0.7570	ok	74	ens3 + OC/DC/CC hourly count features
+9	1d84312	0.7573	ok	79	ens3 + O/D/C total volume features
+10	90c4e8d	0.7402	ok	109	colsample_bynode=0.4
+11	4804fa8	0.7575	ok	91	max_bin=512
+12	cf2d41c	0.7567	ok	95	col0.45 with 18 features
+13	538d2aa	0.7582	ok	106	d24
+14	6bfcef1	0.7581	ok	112	d28
+15	f58944f	0.7573	ok	60	gamma=1.0 at d24
+16	827e0ea	0.7578	ok	94	d24, max_bin 256
+17	e8f385b	0.7579	ok	93	reg_alpha=0.5
+18	41be10b	0.7499	ok	94	drop sincos (simpler)
+19	b67a83a	0.7554	ok	117	weekly sincos (dow*1440+mins)
+20	10f35c9	0.7502	ok	114	OH/DH TE k=150
+21	27cea95	0.7585	ok	97	col0.35 at d24
+22	d8c2062	0.7582	ok	96	col0.30 at d24
+23	44ad1e2	0.7588	ok	109	n220/lr0.0185 col0.35 d24
+24	9e1a697	0.7588	ok	111	d26 n220 col0.35
+25	d575408	0.0000	timeout	125	n230/lr0.0177 col0.35 d24

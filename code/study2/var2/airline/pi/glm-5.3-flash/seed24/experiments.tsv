@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ee95d12	0.7141	ok	3	baseline
+2	0358ff8	0.7215	ok	6	FE v1 + bigger model
+3	dcc162d	0.7161	ok	7	target+freq encodings
+4	22bd178	0.7168	ok	7	TE route only
+5	c9af762	0.0000	crash	6	early stopping
+6	6620c58	0.7220	ok	8	early stopping
+7	3c45489	0.7265	ok	8	depth 10
+8	309e7b3	0.7302	ok	9	depth 12
+9	255c91f	0.7379	ok	15	depth 16
+10	9350b67	0.7389	ok	18	depth 20
+11	6c07821	0.7396	ok	20	depth 24
+12	ef04092	0.7305	ok	19	lossguide 1024 leaves
+13	d9232c8	0.7257	ok	11	mcw 20
+14	e59ac81	0.0000	crash	11	3-model ensemble
+15	8d37902	0.7430	ok	53	3-model ensemble
+16	177471d	0.7395	ok	54	doy + hub freq
+17	a4509ad	0.7385	ok	62	OOF TE
+18	e885ffa	0.7438	ok	84	4 members, lr diversity
+19	d28ab3a	0.7438	ok	84	rank averaging
+20	4ea3563	0.7455	ok	107	5 members
+21	558918a	0.0000	timeout	120	ES metric auc
+22	fa421ac	0.7411	timeout	120	AUC-ES 4 members
+23	b125569	0.7389	ok	62	ES-only members
+24	cc2e4cd	0.7464	ok	107	recency weights
+25	dff441d	0.7468	ok	112	recency stronger
+26	60b34bb	0.7463	ok	119	6 members cheap ES
+27	1eec5e5	0.0000	timeout	124	member diagnostics
+28	aaf6714	0.0000	timeout	122	low-cs member set
+29	48265da	0.0000	timeout	121	low-cs v2
+30	5637abf	0.7480	timeout	120	low-cs prepare once
+31	f729bb9	0.7477	ok	119	low-cs trimmed
+32	3d3ef4d	0.7477	ok	112	fixed-round member
+33	7dc821c	0.7359	ok	111	bynode sampling
+34	bb8f094	0.7478	ok	105	6 members v2
+35	1654f29	0.7484	ok	119	max_bin 512
+36	c4413db	0.7484	ok	85	all fixed rounds
+37	c242fac	0.7487	ok	101	7 members
+38	e9d3cd2	0.7485	ok	110	8 members
+39	68b9d3e	0.7486	ok	117	max_bin 768
+40	27a1b43	0.7489	ok	101	recency 2.5

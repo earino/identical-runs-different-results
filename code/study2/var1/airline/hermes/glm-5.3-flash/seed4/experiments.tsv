@@ -1,0 +1,28 @@
+n	commit	eval_auc	status	seconds	description
+1	9cf9dca	0.7141	ok	4	baseline
+2	1a6920f	0.7141	ok	16	2000 trees lr .05 depth8 subsample ES refit
+3	c3ce07a	0.7062	ok	9	target encodings + time features
+4	09b7ab7	0.7116	ok	8	time features only, no TE
+5	fbfc986	0.7450	ok	44	featB d16 n300 lr.05 bag5
+6	f9db5a3	0.7480	ok	47	h30both bins
+7	98aa89d	0.7503	ok	56	counts + distbin features
+8	01289c0	0.7521	ok	76	mcw 5
+9	ff3e66d	0.7510	ok	102	diverse 3cfg x 3seed
+10	c85cd9f	0.7521	ok	77	subsample 0.9
+11	2bb053f	0.7521	ok	106	bag 7 seeds
+12	44ad052	0.7432	ok	82	carrier x dayofweek
+13	33faa15	0.7442	ok	94	dest x h30
+14	61b7608	0.7511	ok	76	drop raw DepTime
+15	bbfb6e5	0.7524	ok	98	n400 lr.0375
+16	a323267	0.7525	ok	105	max_bin 512
+17	fa2848b	0.0000	timeout	126	n500 lr.03
+18	468c31d	0.7520	ok	62	bag3
+19	0d10aa0	0.7518	ok	110	minofday feature
+20	b2ba753	0.0000	timeout	126	colsample_bynode 0.5
+21	5f92b47	0.7421	ok	79	drop Origin/Dest cats
+22	783e0fa	0.7509	ok	107	month/dow as numeric
+23	e8403dd	0.7520	ok	86	gamma 1.0
+24	4a088b8	0.7527	ok	93	colsample 0.3
+25	eb072d3	0.0000	timeout	123	temporal bagging 300/350/400
+26	11a6482	0.7512	ok	94	drop tsin/tcos (ablation)
+27	8aeb36e	0.7529	ok	106	n450 lr.0333

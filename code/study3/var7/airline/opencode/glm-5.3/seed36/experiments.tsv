@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	8e8e579	0.7141	ok	4	baseline
+2	2f5e717	0.7119	ok	3	early stopping + bigger model
+3	5a9245e	0.7066	ok	5	FE v1: DepTime parse, cyclic, route cat
+4	daa0d6c	0.7087	ok	3	FE v1 features, simple 30-tree config
+5	0d9c0eb	0.7137	ok	2	baseline + DepTime hour/frac/cyc features
+6	d0b038c	0.7101	ok	3	200 trees, depth 6, lr 0.1
+7	eb39a42	0.7158	ok	2	smooth regularized model: d4 lr.05 100t mcw5 lam5
+8	1f9973c	0.7158	ok	1	smooth model + DepTime hour features
+9	5322d69	0.7158	ok	2	OOF target encoding carrier/origin/dest k=100
+10	abd9130	0.7168	ok	3	5-seed bagged ensemble, smooth config
+11	12d474a	0.7103	ok	5	ensemble + route Origin_Dest categorical
+12	f6a5bd3	0.7169	ok	7	diverse ensemble 3 configs x 3 seeds
+13	263be69	0.7172	ok	8	diverse ensemble + density count features
+14	993bdf5	0.7168	ok	8	add hour_cat categorical
+15	b235c93	0.7173	ok	9	interaction TE: carrier@hour, origin@hour k=100 OOF
+16	4dc4e4e	0.7190	ok	9	add dest@hour interaction TE
+17	2263a08	0.0000	crash	1	add origin@dow, dest@dow, carrier@dow TEs
+18	9a1c5d0	0.7195	ok	11	add origin@dow, dest@dow, carrier@dow TEs (fixed)
+19	7be195c	0.7179	ok	12	add origin@month, dest@month, carrier@month TEs
+20	8b43fc5	0.7202	ok	15	16-model ensemble (4 cfgs x 4 seeds, +d6 mcw20)
+21	cdb92f7	0.7201	ok	17	TE smoothing k=50 (less shrinkage)
+22	5f0409f	0.7203	ok	16	TE smoothing k=200 (more shrinkage)
+23	701fc46	0.7217	ok	26	2x n_estimators in all configs
+24	758f118	0.7219	ok	37	1.5x more trees again
+25	c906387	0.7208	ok	39	hierarchical 2-level TE (group -> entity marginal)
+26	5dbac49	0.7232	ok	41	add dest@estimated-arrival-hour TE
+27	d05791d	0.7235	ok	39	add origin@(dep_hour-1) TE
+28	e194e21	0.7238	ok	43	add te_carrier_arrhour + cnt_Dest_arrhour + cnt_Origin_prehour
+29	1f3fdd7	0.7234	ok	63	trees x1.5 again (450/675/675/540)
+30	7644acb	0.0000	crash	3	monotone increasing constraint on DepTime
+31	96d83f4	0.7225	ok	41	monotone increasing constraint on DepTime (dict form)
+32	771837b	0.7238	ok	43	arrival estimate: 400 mph + 30 min taxi
+33	88d14eb	0.7242	ok	43	TE shrinkage k=100 with full feature stack
+34	690b817	0.7242	ok	70	6 seeds per config -> 24 models
+35	a1d2a11	0.7241	ok	53	5th config: d2 lr.08 600t (20 models)
+36	b0e57a2	0.7240	ok	43	TE shrinkage k=50
+37	8f941d8	0.7263	ok	43	add day_of_year numeric feature
+38	12c1f44	0.7255	ok	43	add doy sin/cos cyclic features
+39	82d04b0	0.7263	ok	49	max_bin=512 (finer continuous splits)
+40	db40ab5	0.7230	ok	48	te_hour + te_season (5-day) target curves

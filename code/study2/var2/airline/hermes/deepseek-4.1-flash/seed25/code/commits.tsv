@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	0d9add1	1789543953	baseline
+01	5d4689a	1789544012	regularization on baseline params
+02	899b1b8	1789544028	clock-time features replace raw DepTime
+03	406bbb0	1789544104	monotone constraint on departure time
+04	356911b	1789544125	calendar ordinals + holiday/weekend flags
+05	9638eb1	1789544140	holiday proximity + peak day flags
+06	412ff24	1789544170	lambda 5->50
+07	0f198c4	1789544178	colsample 0.8->0.5
+08	8b7d1d1	1789544253	bag of 8 diverse regularized models
+09	cb98678	1789544298	max_cat_threshold 16
+10	0956886	1789544372	prune raw c-code calendar cols
+11	0eaec7f	1789544429	drop monotone constraint
+12	cc557f5	1789544469	n_estimators 200->350
+13	de7f7f6	1789544493	n_estimators 350->600
+14	bee3a65	1789544617	prune holiday_prox/peak_day
+15	2428107	1789544656	estimated arrival-time features
+16	bc39571	1789544693	block time + overnight arrival flag
+17	3677dad	1789544736	lr0.03 1200 trees

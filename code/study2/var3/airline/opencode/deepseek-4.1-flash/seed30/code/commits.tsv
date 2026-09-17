@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	aabe1d2	1789501860	baseline
+01	612af61	1789501935	shallower depth4
+02	5fceef0	1789501939	depth3 60 trees
+03	10fc30c	1789501952	time numeric features on depth3
+04	ec59315	1789502013	depth3 150t lr0.05
+05	c609869	1789502085	depth3 400t lr0.03
+06	8aaca5d	1789502092	depth3 800t lr0.02
+07	e5309b8	1789502101	depth3 1600t lr0.01
+08	79ac0ef	1789502110	depth4 600t lr0.02
+09	4aac446	1789502154	airport-hour congestion features
+10	2ab32ee	1789502173	depth-diverse ensemble 3/4/5
+11	fb7cf04	1789502186	ensemble depths 2-6
+12	e4b9782	1789502201	ensemble depths 1-8
+13	9abbc5c	1789502348	ensemble + bagged diverse members
+14	4232a2f	1789502560	numeric calendar instead of categorical
+15	7f6f4ef	1789502736	carrier-hour route-carrier freq, log distance
+16	2e3bb7f	1789502963	normalized airport-hour congestion shares
+17	a6a43db	1789503096	reg_lambda5 reg_alpha0.5
+18	87f869d	1789503164	reg_lambda20 reg_alpha2

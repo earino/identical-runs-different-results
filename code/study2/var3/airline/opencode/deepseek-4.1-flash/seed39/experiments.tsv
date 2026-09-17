@@ -1,0 +1,35 @@
+n	commit	eval_auc	status	seconds	description
+1	f9e1101	0.7141	ok	4	baseline
+2	4ff69ea	0.7110	ok	4	n500 lr0.03 depth7
+3	47d4ded	0.7134	ok	1	dep time features
+4	a4e0c4d	0.7137	ok	3	n300 lr.05 depth6 mcw5 sub.8 col.8
+5	0d99e99	0.7135	ok	2	time+freq features, baseline model
+6	d115ba8	0.7161	ok	2	Month/Day ordinal not categorical
+7	f7d0c7e	0.7172	ok	1	add dep_min/hour to ordinal base
+8	6b6b5c9	0.7175	ok	2	add freq encodings
+9	a844724	0.7088	ok	2	route as native categorical
+10	8706861	0.7185	ok	2	n200 lr.05 depth6 reg
+11	e956d0d	0.7204	ok	3	drop redundant raw DepTime
+12	787995f	0.7212	ok	2	sin/cos dep+month
+13	54a3752	0.7199	ok	2	smoothed target encodings
+14	6de7b0f	0.7208	ok	4	n500 lr0.03 depth6
+15	b3ad59c	0.7194	ok	2	dow cyc, weekend, doy, logdist
+16	ad0513f	0.7218	ok	6	5-seed bagging
+17	195ba4e	0.7228	ok	7	diverse param ensemble
+18	c4ea1e2	0.7241	ok	8	carrier_route + origin_hour freq
+19	6a312e3	0.7219	ok	8	dest/carrier/route + hour freq
+20	d660811	0.7217	ok	8	day_of_year features
+21	6787b18	0.7254	ok	13	deep+reg ensemble
+22	e301600	0.7267	ok	17	depth8-10 ensemble
+23	6bf5114	0.7272	ok	22	depth10-14 ensemble
+24	a676c35	0.7267	ok	24	extra congestion on deep ens
+25	66ed3b8	0.7288	ok	48	lossguide mix
+26	c2ef59b	0.7289	ok	69	leaves 256-2048
+27	ea7e474	0.7293	ok	62	focused leaves ensemble
+28	879ee3c	0.0000	timeout	120	route categorical retry
+29	d6e79c9	0.7436	ok	87	large-leaf mcw1 ensemble
+30	bc1524a	0.7433	ok	103	ml4096 n250 lr.02 + ml1024
+31	bf40d07	0.7436	ok	106	max_bin 2048
+32	f2d75d9	0.7407	ok	112	OOF route TE
+33	3927d7c	0.7431	ok	95	ablate origin/dest/carrier freq
+34	85fe553	0.0000	crash	81	E1 alpha1 ensemble

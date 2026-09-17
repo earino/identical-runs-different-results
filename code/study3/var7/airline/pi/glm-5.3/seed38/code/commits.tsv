@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	a75cc54	1789637378	baseline
+01	fc56fa0	1789637427	FE bundle: numeric dates, DepTime hour/min+cyclic, Route cat, deeper model w/ early stopping
+02	b1a5ec4	1789638440	FE: numeric dates, hour feats + hour categorical; 5-seed ens of d16 alpha1 sub.8 col.7 trees
+03	67ea25b	1789639097	add QHourC + CarrierHour categoricals; 3-seed ens n300 lr.04
+04	c450593	1789641020	reg_alpha 1.0 -> 0.5 (alpha sweep: 0.3-0.5 best)
+05	3abc76e	1789641689	3x350 trees lr.035
+06	6e00562	1789642356	homogeneous d18 ens3 n300 lr.037
+07	65d570f	1789642568	subsample 0.8 -> 0.75 at d18

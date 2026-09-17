@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	059a1f3	1789499142	baseline
+01	c2e273e	1789499170	time features, numeric calendar, more trees
+02	975d03d	1789499262	4-model xgboost ensemble depths 5-8
+03	5d08839	1789499322	7-model ensemble depths 4-9
+04	688c09b	1789499378	congestion/frequency count features
+05	fecea6c	1789499423	carrier-hour counts and congestion ratios
+06	7a1dc7e	1789499666	add lossguide configs to ensemble
+07	3d94221	1789499738	more lossguide configs
+08	cb67495	1789499868	composite hour target encoding
+09	7452af8	1789499988	more composite target encodings
+10	32d6d70	1789500112	scale trees 0.6 for headroom
+11	48d8346	1789500325	add 3 lossguide configs to ensemble
+12	531265d	1789500426	absolute departure minutes + next-day flag
+13	f34308d	1789500748	add reg_lambda/alpha regularization
+14	967d7c9	1789500832	stronger regularization
+15	2f96030	1789500923	even stronger regularization
+16	30c0f31	1789501499	drop cyclic encodings ablation
+17	af4b9d4	1789501673	reduce colsample 25%
+18	276569f	1789501988	add two lossguide configs
+19	5e2a5f1	1789502081	tree scale 0.7 with strong reg

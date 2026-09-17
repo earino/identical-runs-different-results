@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2aade82	0.7141	ok	4	baseline
+2	0f2e808	0.7164	ok	2	feat: numeric month/dow, dep-time hour/minute + cyclical, log-distance
+3	8eb4657	0.0000	crash	11	scale-up: DMatrix+hist, 1200 rounds depth8 lr05, 20k time-respecting probe
+4	a591eb9	0.0000	crash	15	scale-up: DMatrix+hist, 1200 rounds depth8 lr05, ES-80 on time-respecting probe
+5	48b1380	0.7048	ok	22	scale-up: 4000 rounds, ES-80 on probe, xgb3 predict ravel
+6	d82111c	0.7218	ok	6	sweep: full-100k depth6 lr05, AUC at round checkpoints 30..600
+7	8d6f644	0.7079	ok	9	interactions: route pair + carrier x 2h-departure-block categoricals
+8	d88a5d7	0.7196	ok	7	ablation: drop route, keep carrier_x_hb
+9	479ca88	0.7117	ok	7	target encoding: smoothed priors for 9 cat keys (m=20)
+10	1a31767	0.7207	ok	11	capacity: depth 8, checkpoints to 800
+11	b10decf	0.7244	ok	3	lock: depth8 lr05 200 rounds (sweep peak)
+12	018f876	0.7158	ok	6	lr sweep: eta 0.1 depth8, checkpoints 50..400
+13	5d57d09	0.7279	ok	11	lr sweep: eta 0.02 depth8, checkpoints to 800
+14	6153860	0.7232	ok	34	rounds sweep: eta 0.02 depth8 to 2400 rounds
+15	c864d73	0.7289	ok	9	reg sweep: subsample/colsample 0.7
+16	2d36064	0.7269	ok	15	reg sweep: subsample/colsample 0.6, to 1200 rounds
+17	b556f39	0.7283	ok	11	reg sweep: subsample/colsample 0.5
+18	fdfd18a	0.7266	ok	15	reg: mcw 20, lambda 3
+19	ed894f4	0.7263	ok	15	reg: mcw 1, lambda 0.5
+20	6e0a337	0.7262	ok	12	capacity: depth 7, checkpoint scan
+21	2f35a7c	0.7270	ok	22	capacity: depth 9, checkpoint scan
+22	a3bae6a	0.7277	ok	28	capacity: depth 10, checkpoint scan
+23	5fae2f6	0.7277	ok	50	capacity: depth 12, checkpoint scan
+24	82d1f37	0.7290	ok	78	capacity: depth 14, checkpoint scan
+25	eba19f1	0.7302	ok	111	capacity: depth 16, checkpoint scan
+26	11a3241	0.7302	ok	107	depth16: fine round sweep 100..800
+27	d6e0508	0.7390	ok	17	lock: depth16 lr02 0.6/0.6, 200 rounds
+28	8d35bbf	0.7374	ok	11	depth16 reg: mcw 20, lambda 3
+29	db53316	0.7387	ok	21	depth16 reg: mcw 1, lambda 0.5
+30	4b903bd	0.7364	ok	15	depth16: colsample 0.75
+31	44ddd47	0.7370	ok	15	depth16: subsample 0.5
+32	b1bcfe0	0.7278	ok	5	structure: lossguide max_leaves 128 (vs depth16)
+33	28c750d	0.7421	ok	40	ensemble: 3-seed bag of best config
+34	98c29d3	0.7433	ok	90	ensemble: 6-seed bag
+35	610d09b	0.0000	crash	1	features: low-card calendar/hour as categoricals too
+36	c9cab17	0.7327	ok	120	features: low-card calendar/hour as extra categoricals
+37	2f4e73f	0.7434	ok	86	ensemble: hp-diverse bag (colsample 0.5/0.6/0.7)
+38	d4522c6	0.7437	ok	117	bag with depth 18 members
+39	257bcbd	0.7438	ok	107	ensemble: mixed-depth bag (3x d18 + 3x d16)
+40	ad5da8e	0.7438	ok	119	ensemble: 4x d18 + 2x d16 bag

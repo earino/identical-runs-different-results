@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	8248728	1789618919	baseline
+01	7915190	1789619578	feat: hour-of-day, calendar ints, route interaction, 400 trees
+02	de71796	1789621332	feat: OOF target-encoded hour interactions (orig/dest/carrier x hour) + 9-seed bag, shallow trees
+03	a161c49	1789621649	feat: add te_routehour (route x hour congestion), d6 lr.08
+04	a1ad796	1789621996	feat: route x 30min TE + traffic volume features
+05	d2a9a31	1789622418	feat: route15/origin30/dest30 TEs; ss.8 cs.5
+06	c4b212a	1789622688	feat: carrier-route-hour and carrier-route-30min TEs
+07	4e51c99	1789623518	feat: dest/orig volume counts, n200 lr.06
+08	8bb8927	1789624520	feat: TE difference features + lossguide max_leaves64
+09	ab8dbac	1789625349	feat: two-family ensemble (6 full + 3 stable-only), cs.4 lambda20
+10	b8c4259	1789626438	feat: same-day origin/dest traffic-density features (within-df, rank-pct)
+11	3df7b83	1789627060	feat: carrier-day/hour density + day-hour load
+12	5b5cac7	1789628298	feat: hour-share-of-day density (schedule peakedness)
+13	2203a33	1789628954	feat: bump capacity to 300 trees x 96 leaves (lr .05)
+14	5f9d0d7	1789629433	perf: float32 feature matrix for lower peak memory

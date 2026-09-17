@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	968791d	1789619351	baseline
+01	e86e94a	1789619940	capacity + early stopping
+02	d237c22	1789620150	FE round1: dep-time decomposition + route + numeric calendars
+03	a63ba53	1789620187	FE + fixed capacity 300x lr.05 depth6 subsample
+04	b548b1c	1789620214	FE round1 + exact baseline model config
+05	0c1a2b2	1789620328	FE round1 minus route
+06	06648b5	1789621275	TE + 300 rounds lr 0.05
+07	c439d83	1789621574	interaction TEs origin/dest/carrier x hour
+08	aaace4b	1789621816	600 rounds lr 0.03
+09	601a172	1789621952	finer te_dep5 + dow x hour interaction TE
+10	6b7ee38	1789622203	5-seed bagged ensemble ss/cs 0.8
+11	a0a8e35	1789622301	10-seed ensemble
+12	a171a12	1789622425	ensemble depth 7
+13	0596401	1789622623	8-seed ensemble depth 8
+14	2c65fc4	1789622783	8-seed ensemble depth 9
+15	e42f44b	1789623129	trim redundant features
+16	e2bedd0	1789623518	6-seed depth10 450 rounds lr0.04
+17	4b23801	1789625435	per-member OOF fold seeds for TE decorrelation
+18	f3ff1e7	1789625551	7 members colsample 0.65
+19	73ed99c	1789625669	8 members
+20	e29ab6d	1789625812	te_dep exact-minute + print importances
+21	501bfc7	1789626328	coarse 2h interaction TEs origin/dest/carrier
+22	f364b2e	1789626514	randomized hyperparam jitter across members

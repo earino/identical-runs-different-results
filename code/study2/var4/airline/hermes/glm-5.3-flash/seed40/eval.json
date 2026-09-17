@@ -1,0 +1,156 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 40,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T15:46:01+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s40-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T16:30:44+00:00",
+  "wall_seconds": 2682.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8170.1,
+  "endpoint_at_end": "ok",
+  "head": "af1f8b5",
+  "n_commits": 14,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7465,
+  "final_eval_auc": 0.7465,
+  "holdout_auc": 0.747278223446,
+  "holdout_ap": 0.7333949175543772,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03250747171000001,
+  "generalization_gap": -0.0007782234459999815,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8371270,
+    "tokens_in_uncached": 75334,
+    "tokens_in_cached": 8295936,
+    "tokens_out": 46111,
+    "turns": null,
+    "api_calls": 159,
+    "method": "cumulative-max",
+    "cost_usd": 0.2832,
+    "cached_share": 0.991
+  },
+  "cpu_seconds_python": 7973.5,
+  "cpu_seconds_counted": 7750.1,
+  "cpu_seconds_uncounted": 0.2,
+  "cpu_seconds_exempt": 223.2,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 159,
+  "fits_counted": 157,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "26c960a",
+      "message": "baseline"
+    },
+    {
+      "commit": "07b9635",
+      "message": "exp2: deptime parse + cyclical + numeric calendar + fixed cats"
+    },
+    {
+      "commit": "1a46f20",
+      "message": "exp3: hour + dow as categoricals"
+    },
+    {
+      "commit": "047f048",
+      "message": "exp4: smoothed target encoding Origin/Dest/Carrier (train-fit)"
+    },
+    {
+      "commit": "9379350",
+      "message": "exp10: deeper regularized (d11 lr0.02 mcw20)"
+    },
+    {
+      "commit": "1be75c1",
+      "message": "exp11: 800 rounds"
+    },
+    {
+      "commit": "6070f8b",
+      "message": "exp16: add 5-fold CV harness"
+    },
+    {
+      "commit": "65991b0",
+      "message": "exp21: time-ordered CV harness"
+    },
+    {
+      "commit": "e076e76",
+      "message": "exp22: drop Month (year-shift hypothesis)"
+    },
+    {
+      "commit": "0a18309",
+      "message": "exp29: 2-model ensemble deep+shallow"
+    },
+    {
+      "commit": "2d9b67d",
+      "message": "exp31: tod-cat 96 + dom-cat on ensemble"
+    },
+    {
+      "commit": "03bfd71",
+      "message": "exp37: remove CV from timed path"
+    },
+    {
+      "commit": "0e558c7",
+      "message": "exp39: depth 12 base member"
+    },
+    {
+      "commit": "d7639df",
+      "message": "exp40: depth 14 second member"
+    },
+    {
+      "commit": "af1f8b5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7750.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 196.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "d7639df",
+  "best_commit_eval_auc": 0.7465,
+  "best_commit_holdout_auc": 0.747278223446,
+  "best_commit_holdout_ap": 0.7333949175543772,
+  "best_commit_error": null,
+  "finalized_best": true
+}

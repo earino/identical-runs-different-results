@@ -1,0 +1,8 @@
+n	commit	eval_auc	status	seconds	description
+1	9c1a7e8	0.7141	ok	4	baseline
+2	fa1b50c	0.6877	ok	4	hp tuning + early stopping
+3	861a5c7	0.7089	ok	3	feature engineering, baseline model
+4	04ab23d	0.7253	ok	6	hour features + low-lr colsample model
+5	1eb3fd2	0.7426	ok	67	carrier-hour interaction + seed ensemble
+6	41a4819	0.7443	ok	67	t30 slot categorical + 5-seed ensemble
+7	f6f38d8	0.7467	ok	77	hub shares + mixed ensemble

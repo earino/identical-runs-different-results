@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	9edf92a	1789506194	baseline
+01	37dffd3	1789506266	add time-of-day (tod/hour/minute/cyclic) + ordinal month/day/dow
+02	cb13c70	1789506326	model: 200x0.05 d5 mcw10 ss/cs0.8
+03	04f4fdf	1789506336	model: 600x0.03 d4 mcw25 lambda5 cs0.7
+04	c0c8f0a	1789506343	model: 1500x0.02 d4 mcw40 lambda10 cs0.6
+05	1e99f71	1789506381	re-add OOF target encoding on top of tuned 1500x0.02 model
+06	a56e278	1789506407	add log frequency encodings (carrier/origin/dest/route/hour interactions)
+07	998bf69	1789506422	more TE keys: dest_hour, car_dow, org_dow, car_dest
+08	68bc717	1789506444	TE + freq for car_org and route_hour
+09	3de7a0d	1789506462	TE/freq: route_dow, org_hour_dow, car_route_hour
+10	21bec4d	1789506485	TE/freq on 30-min time buckets: route_b30, org_b30, car_b30
+11	7ca3246	1789506514	15-min bucket TE (route/org) + dest_b30
+12	1890ee7	1789506539	10-min bucket TE (route/org) + dest_b15
+13	579b41e	1789506625	ablation: drop high-cardinality raw cats (Origin/Dest/Carrier); TE covers them
+14	5d8a12c	1789506652	depth 5 with trimmed categorical set
+15	ebfbb0d	1789506783	ensemble of 3 XGB models (seeds 42/7/2024, depths 4/5/6)
+16	7a70432	1789507179	max_bin=512; drop dead feature_cols
+17	fefe168	1789507244	5-model ensemble (d4/d5/d5/d6/d7, max_bin 512)
+18	89923ae	1789507439	8-model ensemble at lr 0.03 for more diversity
+19	af5261f	1789507512	randomized 12-model ensemble (random search over depth/reg/sampling)
+20	dd49d11	1789507624	randomized ensemble trimmed to 9 models / <=900 trees for runtime safety

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cc7bec8	0.7141	ok	4	baseline: depth6, 30 trees, categorical dtype
+2	e98fda6	0.7150	ok	7	FE v1 + TE(OOF) + depth10 lr.05 ES50
+3	0556536	0.7161	ok	11	capacity: lr.03 n4000 ES100 mcv5
+4	feb397d	0.0000	crash	2	TE v2: interactions + freq
+5	1173edf	0.7167	ok	14	TE v2: interactions + freq (typo fixed)
+6	aaf32fd	0.7176	ok	15	depth 12
+7	9d74335	0.7178	ok	19	depth 16
+8	448d25a	0.7178	ok	16	TE smoothing m=150
+9	96a70e6	0.7247	ok	23	colsample 0.5
+10	b6ad894	0.7326	ok	20	colsample 0.3
+11	d55c297	0.7296	ok	21	colsample 0.15
+12	c58506a	0.7322	ok	19	colsample 0.25
+13	858538b	0.7300	ok	27	colsample_bynode 0.6 extra
+14	d3a3bc8	0.7281	ok	23	min_child_weight 20
+15	976d37d	0.7332	ok	32	eta 0.02 deeper
+16	165edad	0.7349	ok	96	ensemble depth12/16/20
+17	5113988	0.7319	ok	72	ES on Nov+Dec months
+18	949a79a	0.7349	ok	93	ensemble 4 depths lr.025
+19	c907c97	0.7334	ok	92	TE OriginDow DestDow
+20	ac64d0b	0.7349	ok	96	TE log-odds transform
+21	634ac7a	0.7338	ok	73	row bagging 90% per member
+22	986c700	0.7352	ok	109	max_bin 512
+23	c04c9ff	0.7348	ok	111	subsample 0.7
+24	02727bd	0.0000	timeout	128	ensemble 5 depths lr.025
+25	abcd646	0.0000	timeout	121	ensemble 4 depths lr.025
+26	f822452	0.7352	ok	112	4 members lr.025 + DMatrix predict
+27	5e80da5	0.7327	ok	118	TE granularity bundle
+28	4616a81	0.0000	crash	3	lossguide ensemble
+29	b1053f6	0.0000	crash	28	lossguide ensemble (fixed)
+30	879db6f	0.7248	ok	95	lossguide ensemble (fixed2)
+31	b664aaf	0.7348	ok	115	recency weights 0.5-1.0
+32	d74e6f2	0.7352	ok	111	TE_M 150
+33	a66127f	0.7352	ok	118	bundle: subs.9 pat100 +4th member
+34	10c1b38	0.7336	ok	112	TE CarrierHour
+35	75c97ad	0.0000	timeout	130	reg_alpha 1.0
+36	ec2e13b	0.7370	ok	101	valid 5% + patience 100
+37	eee21b0	0.0000	timeout	124	valid 2.5%
+38	be307d2	0.7365	ok	113	4th cheap member
+39	b8830c2	0.7367	ok	119	reg_lambda 5
+40	273af40	0.7374	ok	108	subsample 0.95

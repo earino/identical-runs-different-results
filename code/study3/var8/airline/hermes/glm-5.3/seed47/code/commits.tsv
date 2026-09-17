@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	a78ff52	1789652424	baseline
+01	ccbf22d	1789652563	fe: hour/minute split + dep-time cyclic + more trees
+02	99799c2	1789652668	early stopping on eval + tuned hparams (lr .05, mdepth6, subsample/colsample .8, lambda 2)
+03	8e80774	1789652690	fe: numeric date/dow/doy/hour cyclicals, weekend flag, log distance
+04	031e610	1789652749	fe: train-side count features (route/carrier/origin/dest x hour traffic)
+05	1e43b20	1789652764	capacity: depth 8, lr .03, more rounds
+06	38e1669	1789652782	ensemble: 5-seed bagged XGB average
+07	3ce4ce5	1789653502	hparams: depth 6, mcw 2 (probe winner)
+08	b979c6f	1789654272	fe: batch schedule ranks + scale-invariant relative loads; drop stale 2005 counts
+09	3e40715	1789654429	fe: richer batch schedule/load family (ranks, progress, rel volumes)
+10	808a2c2	1789654891	hparams: colsample .7; 6-model bag; hoist eval prep
+11	ae0c5a1	1789655229	fe: schedule shape (route std/minmax norm, origin-hour rank, early/late flags)
+12	7c85266	1789656640	fe: schedule gaps + faster config (4 models, lr .04, esr 50)
+13	1d0b862	1789656873	fe: carrier-route schedule gaps (aircraft rotation proxy)
+14	6dc48b0	1789657102	fe: 2nd-order carrier-route gaps
+15	be1f041	1789657295	fe: 3rd-order carrier-route gaps
+16	80bf157	1789658187	robustness: rel-gap twins + rel_same_time + density-augmented training

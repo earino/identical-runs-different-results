@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	af3d486	0.7141	ok	4	baseline
+2	9c3f1ca	0.7111	ok	6	early stopping + bigger model, refit
+3	6f2e338	0.0000	crash	2	regularized depth6 + early stop + refit
+4	5ec1351	0.7144	ok	4	regularized depth6 + early stop + refit (fix import)
+5	2028d25	0.7141	ok	15	time-of-day features
+6	83642d1	0.7107	ok	20	time features + stronger regularization
+7	39d53a9	0.7021	ok	7	target encodings + counts
+8	c7012d9	0.6957	ok	17	TE v2 leak-free
+9	285d4d6	0.7053	ok	10	TE stable keys only
+10	39d7042	0.7141	ok	10	sweep n_estimators
+11	a230e2d	0.7157	ok	4	grid depth x n
+12	51620e7	0.7151	ok	6	time features at d4n80
+13	28edf62	0.7044	ok	2	stable interaction TEs
+14	2430d65	0.7168	ok	4	bagged ensemble 8 seeds
+15	2bb0bfe	0.7169	ok	17	tune ensemble members
+16	f7aa00f	0.7169	ok	15	counts + distance stats
+17	4102924	0.7202	ok	18	feature ablations
+18	3d2041e	0.7213	ok	34	re-grid capacity trimmed
+19	2d3b623	0.7223	ok	78	deeper grid + K32
+20	fbad39a	0.7222	ok	99	diverse ensemble members
+21	4e83e72	0.7237	ok	27	TE retry trimmed
+22	2c49ea8	0.7237	ok	54	K curve, dow cyc, reg grid
+23	683c171	0.7237	ok	34	structural ablations
+24	4da045d	0.7262	ok	46	lr capacity sweep
+25	a55c480	0.7290	ok	40	depth curve continuation
+26	81e9358	0.7342	ok	72	depth curve d9 d10
+27	784ed7f	0.7385	ok	95	depth 12 test
+28	a68490c	0.7429	timeout	120	depth 14 16 test
+29	89d20c5	0.7429	ok	97	d16 K8
+30	13c3195	0.7449	ok	102	d18 test
+31	7855efb	0.7449	ok	104	d20 test
+32	467bf83	0.7449	ok	92	d20 test real
+33	6b4ffcd	0.7332	ok	93	col1.0 at d18
+34	f5460cf	0.7438	ok	62	gamma at d18
+35	93beb82	0.7460	ok	85	sub0.9 at d18
+36	57b5b74	0.7470	ok	83	sub0.95 at d18
+37	ef3d472	0.7473	ok	83	sub1.0 at d18
+38	9849589	0.7467	ok	96	n120 at d18 sub1.0
+39	701cdf4	0.7412	ok	56	drop Dest
+40	47be798	0.7480	ok	95	max_bin 512

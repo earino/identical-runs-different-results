@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e4b2493	0.7141	ok	4	baseline
+2	12f081c	0.7073	ok	13	numtime+route+earlystop
+3	2579929	0.7467	ok	82	deep-tree bagged ensemble d16 cs0.5
+4	9124c5b	0.0000	crash	1	add hour_dow+hour_carrier+doy
+5	1577223	0.0000	timeout	122	add hour_dow+hour_carrier+doy (fixed)
+6	af4ecc5	0.7399	ok	79	hour_dow interaction, 10 members r130
+7	a18e7cb	0.7484	ok	92	d18 r130 n12
+8	b047801	0.7501	ok	101	d22 r110 n12
+9	057d159	0.7423	ok	33	lossguide ml384 r100 n10
+10	0b2a07b	0.7485	ok	87	mixed d22 + lossguide ensemble
+11	0a788b4	0.7509	ok	103	d26 r95 n12
+12	d7b2ae9	0.7471	ok	112	d26 + colsample_bynode 0.4
+13	2b8fed4	0.7510	timeout	120	d26 r95 max_bin512
+14	40bef7f	0.7513	ok	83	d32 r90 n10
+15	e8efd22	0.7517	ok	89	d40 r80 n12
+16	d9a28e9	0.7510	ok	87	d40 r80 n12 cs0.4
+17	a6ac72e	0.7510	ok	99	mixed d40+d24 ensemble
+18	de230f4	0.7521	ok	74	d60 r65 n12
+19	c78817a	0.7521	ok	72	max_depth=0 r60 n12
+20	ff3e783	0.7522	ok	119	d60 r65 n18
+21	2fea7b0	0.7516	ok	71	drop-one-month bagging
+22	9bcecce	0.7558	ok	84	volume features + hour_cat
+23	d67369a	0.7574	ok	92	extended volume features
+24	08c3843	0.7563	ok	99	more volume features
+25	ad158e5	0.7578	ok	69	d60 r45 n12
+26	cc8b4eb	0.7576	ok	95	d60 r45 n16
+27	312e59e	0.7585	ok	77	recency-weighted rows
+28	4d6ba68	0.7588	ok	90	recency ramp 2.0x Dec
+29	09e4f94	0.7591	ok	98	recency ramp 3.0x Dec
+30	2e2bbaa	0.7588	ok	110	recency ramp 5.0x Dec
+31	135cfa1	0.7581	ok	71	mCW=2
+32	23722a6	0.7583	ok	89	ss=0.7
+33	41d541c	0.7591	ok	96	logit averaging
+34	48ddbb6	0.7593	ok	81	d60 r35 n12
+35	c6c6517	0.7595	ok	73	d60 r30 n12
+36	246ec89	0.7592	ok	58	d60 r22 n12
+37	9c6dbbb	0.7597	ok	120	d60 r30 n20
+38	4d313f9	0.7594	ok	86	d60 r30 n14
+39	6bf3857	0.7590	ok	70	bagged ramp strengths 0.5/1.5/2.0/2.5
+40	c74f207	0.7589	ok	77	recency ramp 2.5, r30

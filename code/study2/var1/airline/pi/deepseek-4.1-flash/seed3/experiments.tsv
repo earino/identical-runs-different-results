@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	bb60bdd	0.7141	ok	2	baseline
+2	ecba576	0.7032	ok	28	FE v1: time parts, cyclic, route cats, early stopping
+3	612035a	0.7169	ok	4	baseline FE + deeper boosting, eval early stopping
+4	0580b5d	0.7162	ok	6	add time-of-day + log distance features
+5	b372f6b	0.7458	ok	34	numeric date feats + deep trees (d20 lr.01)
+6	7d04966	0.7556	ok	82	tuned deep model: d24 lr.005 mcw1 col.6 +minute
+7	b3f4bc0	0.0000	timeout	122	3-model XGB ensemble (diverse depth/colsample/seeds)
+8	3b31c23	0.7560	ok	92	2-model XGB ensemble d20 lr.01
+9	3271d95	0.7552	ok	78	3-model ensemble, early stop on eval subset
+10	2df7491	0.0000	timeout	128	mixed ensemble d20+d24, subset early stop
+11	739d1b2	0.7536	ok	104	3-member ensemble + shallow diverse member
+12	50d7c2e	0.7560	ok	91	ensemble d20 lr.01 + d24 lr.01
+13	9241b4d	0.7543	ok	83	3-member moderate-depth ensemble full ES
+14	5cc6408	0.0000	timeout	122	3x deep d20 ensemble, 70k eval subset ES
+15	0548818	0.7552	ok	89	2-member d20 ensemble col.6/col.4
+16	afd0353	0.7557	ok	81	exp8 recipe with different seeds (robustness check)
+17	21d3fa3	0.0000	timeout	127	3x deep ensemble max_bin128
+18	009eefa	0.0000	timeout	126	ensemble with min_child_weight=0

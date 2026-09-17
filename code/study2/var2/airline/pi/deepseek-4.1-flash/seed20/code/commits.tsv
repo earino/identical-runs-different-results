@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	9dc14e3	1789515580	baseline
+01	5cc198c	1789515657	early stopping on internal val + refit full
+02	3bde684	1789515662	fe: DepTime hour/min/tod
+03	7b0d433	1789515699	model: depth8 lr.03 mcw20 lambda5
+04	c8aad09	1789515704	model: depth10 lr.02 mcw40 lambda10
+05	0bc7535	1789515919	ensemble: 5x100-tree seeds
+06	0f2adeb	1789515929	ensemble: 10 seeds
+07	44a2689	1789515947	ensemble: 5 diverse configs x2 seeds
+08	aaebdb5	1789516006	ensemble: 8 configs incl lr diversity
+09	536d3d9	1789516134	fe: origin/dest/carrier x hour congestion counts
+10	984df30	1789516156	fe: route-hour count + hour fractions
+11	b7dcc47	1789516181	fe: route/dow counts + prev-hour congestion
+12	c59a316	1789516209	fe: 15min-bin congestion + route/dow/day counts
+13	a5930ba	1789516274	fe: congestion fractions + 2h windows
+14	ad32304	1789516387	probe: 300 trees with rich features
+15	1277e1d	1789516402	probe: 600 trees
+16	56b96df	1789516470	ensemble: diverse 600-tree configs
+17	211f5e6	1789516624	fe: carrier-route, month-traffic, route-2h counts
+18	afc9b40	1789516834	fe: adjacent-window congestion

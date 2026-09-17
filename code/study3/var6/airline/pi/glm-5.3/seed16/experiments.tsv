@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cdfcd94	0.7141	ok	3	baseline
+2	5d3a035	0.7063	ok	4	FE v1: tod features + route cat + big model with early stopping
+3	8a6539e	0.7140	ok	11	600 trees fixed, lr 0.1, no early stopping
+4	98bc7f3	0.7114	ok	11	ES on eval: find true optimal tree count for 2006
+5	d76076b	0.7180	ok	51	ES on eval, metric=AUC, 3000-tree budget
+6	2305fa8	0.7166	ok	76	TE v1: smoothed target encodings K=25
+7	84185fd	0.0000	crash	2	OOF TE v1: 6 features, leak-free
+8	020054d	0.7205	ok	50	OOF TE v1 fixed: 6 leak-free TE features
+9	b3f7f0b	0.7300	ok	38	TE v2: +dest_hour, route_hour, origin_todq
+10	bdd57b3	0.7308	ok	39	TE v3: hierarchical parent shrinkage + todq variants
+11	1a2af69	0.7294	ok	28	min_child_weight=10 for year-transfer robustness
+12	d706dbc	0.7305	ok	26	max_depth=10
+13	8fe29c2	0.7303	ok	18	TE v4: calendar interactions + lower K
+14	d5bc918	0.7309	ok	35	TE v5: + dow_hour and month_hour only, moderate K
+15	b4be315	0.7351	ok	84	ensemble v1: 3 diverse members, mean
+16	24efa88	0.7352	ok	111	ensemble v2: 4 members
+17	dce1ab9	0.7346	ok	54	ensemble v3: 6 members lr 0.1
+18	d3c82d9	0.7365	ok	117	ensemble v4: mixed lr 2+4
+19	95c2212	0.7348	ok	46	ensemble v5: same 6 members, max_bin=64 for speed
+20	e8a2c2d	0.7356	ok	92	ensemble v6: 2 anchors + 6 fast members
+21	7cbf081	0.7341	ok	96	TE v6: seasonal month-window variants
+22	dc4e4b5	0.0000	timeout	120	ensemble v7: 2 anchors + 5 fast, patience 200
+23	52b3fbd	0.7359	ok	104	ensemble v8: 3 anchors + 4 fast
+24	96501f1	0.7365	ok	115	TE engine refactor: int codes, verify identical AUC faster
+25	7e317bd	0.7059	ok	28	TE v7: leave-one-out encodings
+26	f723f4c	0.7367	ok	104	TE v8: 3-fold OOF noise level
+27	fa620b4	0.7366	ok	116	TE v9: 2-fold OOF noise level
+28	928edaa	0.0000	timeout	120	ensemble v9: 2 anchors + 5 fast (7 members)
+29	f23c056	0.7370	ok	97	TE v10: dow x todq (15-min) encoding
+30	7cdab4a	0.7372	ok	101	TE v11: month x todq encoding
+31	b5e3e10	0.7352	ok	102	TE v12: month x dow encoding
+32	ab2580b	0.7370	ok	119	TE v13: origin/carrier x dow encodings
+33	3d70b96	0.7366	ok	110	ensemble v10: + cheap d8 fast member
+34	3ee9da3	0.7374	ok	101	ensemble v11: rank averaging
+35	693fc59	0.7374	ok	105	ensemble v12: extended d10 anchor patience
+36	007c605	0.7367	ok	110	ensemble v13: lossguide member
+37	6a55c89	0.7375	ok	102	ensemble v14: AUC-weighted rank average
+38	00674fb	0.7367	ok	81	TE v14: origin x 10-min tod
+39	bf75655	0.7373	ok	93	ensemble v15: stronger d8 anchor
+40	ce15595	0.7376	ok	101	ensemble v16: weighting tau 0.005

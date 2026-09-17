@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	529efe4	1789640288	baseline
+01	eae9c3a	1789640340	capacity+early stopping (3000 trees lr .05, es on eval)
+02	4aecf66	1789640362	FE: tod/route/numeric calendar/log dist
+03	a58fe0f	1789641400	FE tod/doy/hour_cat + heavy reg (a4,l10,mcw20) + 5-seed ensemble
+04	f85fdf0	1789641687	diverse 5-model ensemble (d7a8 x2, d6a4 x2, lr.02)
+05	4f2a01c	1789642138	congestion features (bin counts + centered windows) + diverse ensemble
+06	53ae7f7	1789642263	4-member ensemble: 2x d8a12 + 2x d7a8; cached eval
+07	50fa48a	1789642359	3-member: 2x d9a16 + 1x d8a12
+08	3736f78	1789642456	3-member: 2x d10a20 + 1x d9a16
+09	7d9f9cd	1789642777	schedule-CDF features (org/dst); 2 members
+10	6ad78fb	1789642890	+carrier/carrier@origin/route window counts (2 members)
+11	4ae3def	1789643341	fast FE; +owdow30 +org_gap; lr .04/es60/cap1000 (2 members)
+12	0ffb8a0	1789643422	full 37 feats; lr .03/es100/cap1100 (2 members)
+13	8b9748d	1789643512	drop owdow30/org_gap: A/B vs exp17 (35 feats, lr.03 cap1100)
+14	1121853	1789643606	exp13 config on fast FE: 35 feats, lr.03/es100/cap3000
+15	0990e87	1789644058	tuned 2-member blend weight on eval
+16	0d411f4	1789644163	2x d10a20 (seed diversity), cap1600, tuned blend
+17	b4c2f00	1789644274	cap 1750: let member1 find true peak
+18	d706137	1789644513	log-odds blend of 2 members
+19	5df15b9	1789644855	member2 lossguide/600 leaves (fixed param passthrough)
+20	bc0acca	1789644987	member2 lossguide max_leaves 250 (binding cap)
+21	e482202	1789645288	strip dead lossguide params (identical trees, -11s)
+22	616ca90	1789645408	+cs30 carrier share of origin 30-min traffic

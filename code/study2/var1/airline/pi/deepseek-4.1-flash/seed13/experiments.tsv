@@ -1,0 +1,22 @@
+n	commit	eval_auc	status	seconds	description
+1	4f6828d	0.7141	ok	4	baseline
+2	ea0874f	0.7033	ok	8	engineered features + 500 trees lr.05 depth7
+3	2842182	0.7077	ok	5	600 trees lr.05 depth6 raw features
+4	0f0c5a5	0.7220	ok	3	time+freq features, 250 trees depth5 cs.6
+5	5762736	0.7239	ok	3	add F_Org_Hour, cs.4
+6	882d3fb	0.7374	ok	89	deep-tree 5-model ensemble
+7	e1d4c4b	0.7401	ok	85	4-model deep ensemble lr.03 n400 depth16-28
+8	06e8707	0.7419	ok	80	add F_UC_Hour+F_Dst_Hour to deep ensemble
+9	7844a39	0.7462	ok	80	add F_Route_Hour congestion
+10	0d16219	0.7458	ok	90	5-model ensemble + lossguide member
+11	10e1196	0.0000	timeout	121	mcw0 onehot64 cs.4 ensemble
+12	15549b5	0.0000	timeout	121	3-model mcw0 oh64 lr.05 n250 d16/22/28
+13	8f31b2c	0.7519	ok	58	3-model mcw1 oh64 lr.05 n250 d14/20/26
+14	e99b5a4	0.0000	crash	9	4-model ensemble varied cs/onehot
+15	b0ddd57	0.7519	ok	74	4-model ensemble varied cs/onehot (fixed)
+16	7a7713d	0.7531	ok	81	mixed mcw1/mcw0 3-model ensemble
+17	a61935b	0.7542	ok	83	add HourCat+RoundDep
+18	ab14571	0.7545	ok	105	4-model two-mcw0 n200 ensemble
+19	3bdc369	0.7555	ok	114	add hour-share features
+20	2d704c1	0.0000	timeout	124	add sh_Dst_Hour + route shares
+21	4f0bf7c	0.7555	ok	105	faster 3-model two-mcw0 + shares

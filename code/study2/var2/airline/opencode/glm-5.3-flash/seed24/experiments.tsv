@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9b845d8	0.7141	ok	4	baseline
+2	17b952e	0.7093	ok	2	feat v1: parsed dates, deptime cyclical, logdist, route
+3	0732e1a	0.7144	ok	1	baseline cats + deptime cyclical + logdist
+4	9cbfa03	0.7103	ok	14	capacity: lr .05 depth 8, early stop + refit
+5	aa8473b	0.7118	ok	4	moderate: d6 lr.05 500t subsample.9
+6	a757097	0.7164	ok	2	100 trees lr .1
+7	6cece79	0.7175	ok	2	200 trees
+8	f06b0e5	0.7158	ok	3	300 trees
+9	e48c071	0.7115	ok	3	oof TE origin/dest/carrier/route/hour
+10	061dad1	0.7175	ok	3	400t lr.05 mcw10 no subsample
+11	245d262	0.7134	ok	2	depth 7, 200 trees
+12	ad3a0d7	0.7184	ok	2	depth 5, 200 trees
+13	beb242f	0.7184	ok	2	depth 4, 200 trees
+14	01b0b16	0.7165	ok	3	d5 400 trees lr .1
+15	0a394d5	0.7184	ok	5	5-seed bag d5 200t
+16	af21145	0.0000	crash	1	diverse ensemble d5/d6 subsample/colsample jitter
+17	44a8835	0.7189	ok	6	diverse ensemble d5/d6 subsample/colsample jitter
+18	ce9ad7a	0.7220	ok	7	freq origin/dest/route + hour_cat on ensemble
+19	ca4006c	0.7224	ok	10	300 trees with freq features
+20	5e176b1	0.7217	ok	12	400 trees with freq features
+21	626c431	0.7229	ok	13	8-model diverse ensemble 300t
+22	175f362	0.7356	ok	10	carrier x hour pair categorical
+23	f417672	0.7316	ok	14	origin x hour pair categorical
+24	cdcc61b	0.7314	ok	11	carrier x dow pair categorical
+25	1172e2e	0.7351	ok	13	400 trees with carrier_hour
+26	c8f918a	0.7351	ok	10	oof TE of carrier_hour added
+27	52a7111	0.7355	ok	15	8-model ensemble with carrier_hour
+28	000eee1	0.7422	ok	11	carrier x 30min slot added
+29	3cc2331	0.7398	ok	11	carrier x 15min slot
+30	781416d	0.7423	ok	12	plain 30min slot categorical added
+31	3a689b0	0.7339	ok	11	dow x slot30 pair categorical
+32	707a4ff	0.7422	ok	19	lr .05 600 trees
+33	0e3184b	0.7418	ok	12	raw deptime numeric restored
+34	9a5e42d	0.7429	ok	25	12-model ensemble
+35	55e7df8	0.7427	ok	85	add 2 dart members to ensemble
+36	f1a7b83	0.7426	ok	34	distance quantile bins
+37	dba1740	0.7426	ok	24	freq of carrier x slot30 cells
+38	c941c80	0.7429	ok	28	16-model ensemble
+39	9b9c9a3	0.7426	ok	23	gamma 1.0 on bag
+40	530fa5b	0.7432	ok	27	350 trees final probe

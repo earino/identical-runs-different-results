@@ -1,0 +1,107 @@
+"""XGBoost binary classifier. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+RAW_CAT = ["UniqueCarrier", "Origin", "Dest"]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in RAW_CAT}
+
+# frequency encodings fit on training data only
+origin_freq = train["Origin"].value_counts(normalize=True)
+dest_freq = train["Dest"].value_counts(normalize=True)
+carrier_freq = train["UniqueCarrier"].value_counts(normalize=True)
+route_tr = train["Origin"].astype(str) + "_" + train["Dest"].astype(str)
+route_freq = route_tr.value_counts(normalize=True)
+
+
+def _cnum(s):
+    return pd.to_numeric(s.astype(str).str.replace("c-", "", regex=False), errors="coerce")
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows.
+    X = pd.DataFrame(index=df.index)
+    dt = pd.to_numeric(df["DepTime"], errors="coerce")
+    hour = (dt // 100).clip(0, 23)
+    minute = (dt % 100).clip(0, 59)
+    X["dep_hour"] = hour
+    X["dep_min"] = minute
+    X["dep_minofday"] = hour * 60 + minute
+    X["Distance"] = pd.to_numeric(df["Distance"], errors="coerce")
+    X["Month"] = _cnum(df["Month"])
+    X["DayofMonth"] = _cnum(df["DayofMonth"])
+    X["DayOfWeek"] = _cnum(df["DayOfWeek"])
+    for c in RAW_CAT:
+        X[c] = pd.Categorical(df[c], categories=cat_levels[c])
+    route = df["Origin"].astype(str) + "_" + df["Dest"].astype(str)
+    X["origin_freq"] = df["Origin"].map(origin_freq).fillna(0.0)
+    X["dest_freq"] = df["Dest"].map(dest_freq).fillna(0.0)
+    X["carrier_freq"] = df["UniqueCarrier"].map(carrier_freq).fillna(0.0)
+    X["route_freq"] = route.map(route_freq).fillna(0.0)
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+SEEDS = [42]
+
+
+def make_model(seed: int) -> xgb.XGBClassifier:
+    return xgb.XGBClassifier(
+        n_estimators=400,
+        max_depth=0,
+        grow_policy="lossguide",
+        max_leaves=511,
+        learning_rate=0.025,
+        min_child_weight=10,
+        subsample=0.8,
+        colsample_bytree=0.6,
+        reg_lambda=1.0,
+        tree_method="hist",
+        enable_categorical=True,
+        random_state=seed,
+        n_jobs=N_JOBS,
+    )
+
+
+X_train = prepare(train)
+y_train = to_y(train)
+t0 = time.time()
+models = [make_model(s) for s in SEEDS]
+for m in models:
+    m.fit(X_train, y_train)
+print(f"Training time: {time.time() - t0:.1f}s")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    X = prepare(df)
+    return np.mean([m.predict_proba(X)[:, 1] for m in models], axis=0)
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

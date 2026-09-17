@@ -1,0 +1,148 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 22,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:09:30+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s22-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:32:59+00:00",
+  "wall_seconds": 5009.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17677.0,
+  "endpoint_at_end": "ok",
+  "head": "3fc2604",
+  "n_commits": 12,
+  "n_experiments": 26,
+  "n_ok": 24,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7356,
+  "final_eval_auc": 0.7356,
+  "holdout_auc": 0.736038058418,
+  "holdout_ap": 0.7261375678909225,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.021267306681999942,
+  "generalization_gap": -0.0004380584179999314,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5061132,
+    "tokens_in_uncached": 33228,
+    "tokens_in_cached": 5027904,
+    "tokens_out": 37483,
+    "turns": null,
+    "api_calls": 99,
+    "method": "sum-of-99-events",
+    "cost_usd": 0.1746,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 17482.9,
+  "cpu_seconds_counted": 5482.9,
+  "cpu_seconds_uncounted": 11553.4,
+  "cpu_seconds_exempt": 446.6,
+  "python_processes": 62,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 882,
+  "fits_counted": 115,
+  "fits_uncounted": 762,
+  "commits": [
+    {
+      "commit": "5485af8",
+      "message": "baseline"
+    },
+    {
+      "commit": "20a342d",
+      "message": "exp4: FE v1 without Route, 100 trees"
+    },
+    {
+      "commit": "0208892",
+      "message": "exp5: d4 lr.04 sub.8 col.8 n300 on baseline features"
+    },
+    {
+      "commit": "3d9961e",
+      "message": "exp6: 7-seed bagged ensemble of d4 recipe"
+    },
+    {
+      "commit": "c303db8",
+      "message": "exp7: hour-cat + alpha10 + d8 + 5-seed bag"
+    },
+    {
+      "commit": "d73f9ef",
+      "message": "exp8: +tod feats +route on deep-sparse recipe"
+    },
+    {
+      "commit": "da0cfff",
+      "message": "exp9: d14 a10 sub.85"
+    },
+    {
+      "commit": "56280a6",
+      "message": "exp12: max_bin 512"
+    },
+    {
+      "commit": "12080ac",
+      "message": "exp14: colsample_bylevel 0.8"
+    },
+    {
+      "commit": "310c05f",
+      "message": "restore best: alpha-mix 6-model ensemble (as exp18)"
+    },
+    {
+      "commit": "a0fb4ee",
+      "message": "exp21: +Minute numeric"
+    },
+    {
+      "commit": "ebe5076",
+      "message": "exp22: single a6 5-seed"
+    },
+    {
+      "commit": "3fc2604",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17036.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 194.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ebe5076",
+  "best_commit_eval_auc": 0.7356,
+  "best_commit_holdout_auc": 0.736038058418,
+  "best_commit_holdout_ap": 0.7261375678909225,
+  "best_commit_error": null,
+  "finalized_best": true
+}

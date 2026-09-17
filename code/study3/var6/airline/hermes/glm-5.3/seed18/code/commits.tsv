@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	f7a2074	1789652388	baseline
+01	7c59c96	1789652536	feat: parse c- strings, time+route features, early stopping
+02	b9206a4	1789652671	exp7: baseline + time-of-day features, 30 trees
+03	4cf780a	1789652706	exp10: numeric Month/DayofMonth/DayOfWeek instead of c-strings
+04	2008231	1789652748	exp11: numeric month/day/dow, drop raw c-strings, keep time feats
+05	efbb1aa	1789652757	exp12: depth 6->8
+06	a6056ee	1789652780	exp14: bagged ensemble of 15 xgb (col+row subsample)
+07	d9f3677	1789652813	exp16: ensemble depth 10
+08	ee41b3a	1789652826	exp17: ensemble depth 12
+09	682e56e	1789652859	exp18: ensemble depth 14
+10	d4ce0df	1789652883	exp19: ensemble depth 16
+11	c0441ae	1789652917	exp20: ensemble depth 20
+12	e1e51ee	1789652969	exp21: ensemble depth 24
+13	9dee806	1789653033	exp22: full row sample per member, colsample 0.8
+14	ee251ca	1789653103	exp23: colsample 0.6
+15	bba8e0f	1789653537	exp29: log-odds averaging of ensemble members
+16	91949d1	1789653599	exp30: hour*distance and dow*hour interactions
+17	f55f844	1789653891	exp34: 40 trees per member
+18	bfb73d0	1789654416	exp40: 45 trees per member

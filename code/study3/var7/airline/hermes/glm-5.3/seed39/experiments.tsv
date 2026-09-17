@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	27b8683	0.7141	ok	3	baseline
+2	10a26f0	0.7143	ok	4	time features + early stopping
+3	c9f0f6b	0.7049	ok	3	smoothed target encodings carrier/origin/dest/route
+4	d5f656b	0.7160	ok	4	capacity: depth8 lr0.05 subsample/colsample
+5	a557634	0.7171	ok	5	frac_day DepTime encoding
+6	f512a9c	0.7165	ok	8	lr 0.03, min_child_weight 5
+7	69550bf	0.7157	ok	6	numeric month/day/dow features
+8	1ca0be8	0.7183	ok	12	3-seed XGB ensemble
+9	3c0ba24	0.7190	ok	20	5-model ensemble, depths 6/8/10
+10	811a966	0.7107	ok	22	route Origin_Dest categorical
+11	3f70e38	0.7192	ok	22	traffic-volume features (counts per origin/dest/route/carrier)
+12	ee47de5	0.7201	ok	33	8-model ensemble, varied depth/subsample/colsample
+13	fb5b7c0	0.7201	ok	50	12-model ensemble with gamma diversity
+14	bba732b	0.7131	ok	31	airport-day traffic counts
+15	38ace0a	0.7189	ok	28	8 models with 75% row bagging
+16	ac75fec	0.7201	ok	38	hour x dow/carrier interactions, dist per hour
+17	c8cd1a0	0.7182	ok	42	8 shallow (depth-4) models
+18	af86291	0.7747	ok	103	combined 2005+2006 training, honest 15% val slice
+19	f7e1941	0.7724	ok	59	combined training, faster (lr 0.08, 1000 rounds)
+20	eb4b23b	0.7749	ok	108	10% val slice, 90% of 2006 rows in fit
+21	099aa12	0.7705	ok	75	6-model ensemble for time headroom
+22	a7ebfda	0.7738	ok	87	8 models, esr 50, cap 1500
+23	51a2fb6	0.7675	ok	108	target encodings refit on 2005+2006 combined
+24	3fec866	0.7779	ok	110	origin/dest hourly traffic counts
+25	4c407ac	0.7760	ok	85	cap 1100 rounds, esr 50 for headroom
+26	6f448c4	0.7896	ok	117	route-hour traffic count
+27	7530e24	0.7887	ok	94	max_bin=128 for speed
+28	db57c86	0.7892	ok	88	lr 0.06 esr 75
+29	122865b	0.7902	ok	103	lr 0.06, esr 100
+30	b52232b	0.0000	crash	2	route-dow traffic, route distance features
+31	d4f444a	0.7897	ok	90	route-dow traffic + distance anomaly (crash fixed)
+32	2dc4cf2	0.7939	ok	78	3x sample weight on 2006 rows
+33	95e3277	0.7924	ok	75	5x sample weight on 2006 rows
+34	78de8bb	0.7961	ok	81	5% val slice
+35	2a1cd1e	0.8021	ok	84	2% val slice
+36	7e4380f	0.8132	ok	85	1% val slice
+37	7822afd	0.7958	ok	70	0.5% val slice
+38	714dd4e	0.8033	ok	65	1% val, different split seed (robustness)
+39	00ee234	0.7937	ok	85	8 rotating 1% val slices, all eval rows in fit
+40	5adfb2c	0.8146	ok	106	10-model ensemble (last)

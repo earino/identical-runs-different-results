@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	534e9c2	0.7141	ok	4	baseline
+2	5522388	0.7082	ok	2	fe: dep time parsing + route categorical
+3	f52d25e	0.7248	ok	4	capacity400+depth7+deptime fe, no route
+4	2fb70b9	0.7084	ok	6	strong model + route categorical
+5	d6163fe	0.7246	ok	4	oof target encoding carrier/origin/dest/route
+6	43ed48b	0.7248	ok	5	1500 trees lr 0.02 depth7 + train auc probe
+7	80fc5d3	0.7227	ok	5	shallower+regularized: d5 mcw10 l2 800@0.03
+8	6d0cbb7	0.7281	ok	19	deeper trees d9 1200@0.03
+9	38fef0b	0.7278	ok	46	d12 1500@0.03
+10	a42af8b	0.7249	ok	45	d9 3000@0.02
+11	6298f74	0.7317	ok	21	freq/hub/origin-hour share features
+12	053aa46	0.7270	ok	21	extended structural features + month cyclical
+13	6490ff2	0.7341	ok	45	ensemble 3 xgb variants (d9/d7/d10)
+14	cc243f7	0.7352	ok	50	cum origin-hour congestion feature (in ensemble)
+15	dca3848	0.7380	ok	101	ensemble 6 diverse variants
+16	25906a2	0.7366	ok	90	+dest-hour cum & carrier-hour share (6-model ens)
+17	02f7391	0.7379	ok	68	ensemble 8 x 600 trees, diverse depths
+18	ad3cc30	0.7379	ok	72	importance readout (no model change)
+19	f758a6b	0.7390	ok	72	fix hub share feature bug
+20	3621d8e	0.7374	ok	73	arrival-side hub share features
+21	c48f5e1	0.7328	ok	73	day-of-year seasonal features
+22	c1a544b	0.7398	ok	70	ablation: drop Month
+23	116c6c5	0.7409	ok	68	ablation: drop Month + DayofMonth
+24	535b650	0.7371	ok	66	ablation: drop dep_minute+is_weekend
+25	713c66a	0.7405	ok	106	ensemble 8x1000@0.03
+26	bce7505	0.7426	ok	68	+dest_hour_share +co_hour_share
+27	e83f2ed	0.7380	ok	74	+route_hour_share +origin_dow_share
+28	449ac8b	0.7429	ok	73	+dest_hour_cum
+29	f0527f7	0.7426	ok	64	monotone constraint on dep_tod
+30	fe2008e	0.7427	ok	81	ensemble of 10 xgb variants
+31	b64eee3	0.7473	ok	42	drop origin/dest categoricals
+32	4cd7976	0.7454	ok	34	drop carrier categorical too
+33	280b309	0.7468	ok	49	OOF target encodings on lean feature set
+34	75e28f5	0.7473	ok	60	ensemble of 12 (lean features)
+35	5992c72	0.7470	ok	61	lean set: 8x1000@0.03
+36	1ceffb6	0.7480	ok	45	+route_share_origin
+37	61a2f2e	0.7321	ok	42	+route_hour_cum
+38	3b44324	0.7479	ok	48	colsample_bynode 0.8
+39	9d1a135	0.7478	ok	44	+route_share_dest
+40	886852c	0.7480	ok	45	+flights_so_far interactions

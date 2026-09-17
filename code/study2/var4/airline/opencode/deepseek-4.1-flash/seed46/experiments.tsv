@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	53b48f6	0.7141	ok	3	baseline
+2	fa613ad	0.6995	ok	5	FE calendar+time+route, 300 trees
+3	f241999	0.7125	ok	1	add time numerics
+4	1634ac8	0.7112	ok	3	400 trees lr0.05
+5	604c08f	0.7150	ok	1	depth 4
+6	d4c8f09	0.7119	ok	1	depth 3
+7	1d662e4	0.7145	ok	1	depth4 mcw10
+8	02595ea	0.7067	ok	2	route cat depth4
+9	72fa9e7	0.7150	ok	2	freq encoding
+10	c863152	0.7012	ok	1	target encoding
+11	d354294	0.7141	ok	1	time-of-day features
+12	97162d2	0.7166	ok	2	ensemble depth3-6
+13	00c608e	0.7168	ok	3	ensemble 8 diverse
+14	46d96c2	0.7164	ok	3	congestion freq
+15	8e1286f	0.7179	ok	3	calendar cyclical
+16	d8cf4fe	0.7176	ok	4	calendar + time-of-day
+17	1ba089f	0.7198	ok	4	drop cat calendar
+18	0bdff01	0.7196	ok	4	tod on numeric cal
+19	00eb2f8	0.7197	ok	4	ensemble 12
+20	da3c74f	0.7205	ok	4	ensemble deep regularized
+21	f688fe1	0.7217	ok	8	ensemble 16 strong reg
+22	4a558c3	0.7221	ok	11	ensemble 22
+23	47a79c6	0.7229	ok	14	carrier crosses
+24	1e46a1b	0.7143	ok	14	more crosses
+25	ef87e5b	0.7228	ok	13	dow_hour only
+26	c9bf696	0.7233	ok	21	bagged deep members
+27	e6e83ec	0.7284	ok	34	origin/dest hour crosses
+28	3837eb7	0.7262	ok	41	origin/dest dow crosses
+29	1595c6c	0.7283	ok	101	route_hour cross
+30	e428261	0.7283	ok	36	carrier origin/dest crosses
+31	dda05e5	0.7241	ok	31	max_cat_threshold 16
+32	c7aae7e	0.7210	ok	42	max_cat_threshold 512
+33	a238e7c	0.7288	ok	47	bigger bag
+34	ded6ae6	0.7289	ok	47	cumulative traffic
+35	5fbc6e0	0.7288	ok	46	global gamma 1.0
+36	a775965	0.7287	ok	69	DART members
+37	4f18b6b	0.7291	ok	53	extend bag
+38	85a95e3	0.7291	ok	62	extend bag 10
+39	e1ee6d6	0.7291	ok	53	cumulative range8
+40	47fe7e1	0.7289	ok	65	2-hour airport bins

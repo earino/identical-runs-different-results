@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7f9220b	0.7141	ok	4	baseline
+2	07dc679	0.7067	ok	2	FE v1: hour, route, numeric fields
+3	618bd9c	0.7077	ok	2	capacity bump + early stopping
+4	fbc2add	0.7118	ok	2	depth6 + early stopping
+5	d674036	0.7131	ok	1	FE v2 (no route), 30 trees
+6	f78d672	0.7128	ok	2	regularized 150 trees
+7	06905b0	0.7128	ok	2	TE carrier/origin/dest/route, 30 trees
+8	9cb7884	0.7140	ok	2	7-seed bagged ensemble
+9	e062c89	0.7114	ok	2	te_hour only, 30 trees
+10	b260512	0.7099	ok	1	monotone MinsSince5 instead of DepTime
+11	74ae090	0.7135	ok	1	45 trees depth6
+12	7e506ed	0.7104	ok	2	TE hour-bin interactions, 30 trees
+13	feb1326	0.7080	ok	2	TE interactions, full-train maps
+14	0785240	0.7123	ok	30	25-member diverse ensemble
+15	fac1038	0.7104	ok	7	25x bagged baseline config
+16	4ad9bdb	0.7077	ok	2	20 trees depth6
+17	b44864b	0.7095	ok	1	depth 5, 30 trees
+18	8e32683	0.7115	ok	2	one-hot small cats
+19	11ab83a	0.7114	ok	2	min_child_weight=10
+20	3fcbcdf	0.7162	ok	7	25x bagged baseline, clean
+21	1b80022	0.7164	ok	13	60x bagged baseline
+22	f4e0b0a	0.7155	ok	14	60x bagged + hour cat
+23	7ce3814	0.7134	ok	15	60x bagged + TE interactions
+24	9df7cdc	0.7167	ok	14	60x bagged, sub/col grid
+25	4c6e709	0.7170	ok	13	60x bagged, depth+sub+col grid
+26	a5aeb1c	0.7097	ok	18	60x bagged + hub interaction cats
+27	85ba37d	0.7167	ok	26	120x, sub/col to 0.5
+28	6e9023b	0.7175	ok	12	drop DayofMonth
+29	f00b425	0.7169	ok	12	drop DayofMonth + Distance
+30	15a74f7	0.7171	ok	11	mass-diverse members
+31	09159f0	0.7178	ok	13	recency weights Q4x2
+32	68932ed	0.7174	ok	12	recency Q4x3
+33	84483c1	0.7179	ok	24	120 members + recency x2
+34	02e8d91	0.7181	ok	22	ramp weights
+35	68cb247	0.7181	ok	24	ramp 1.0->2.5
+36	e86ba91	0.7180	ok	24	lr-diverse members
+37	b257681	0.7188	ok	27	grid with depth 8
+38	eff0fdc	0.7197	ok	26	grid depths 4-9
+39	1b5c1ce	0.7198	ok	27	grid depths 3-10
+40	986de2b	0.7202	ok	47	200 members, depth grid 3-10

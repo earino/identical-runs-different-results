@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	96890db	1789503875	baseline
+01	b7549ce	1789503948	100 trees depth5
+02	8bc721f	1789503961	FE: dep decomposition + weekend, log distance
+03	f9ff96e	1789504019	400 trees d5 lr0.05
+04	33b62dd	1789504069	5-model seed ensemble
+05	48dc777	1789504086	diverse 12-model ensemble
+06	2a72e40	1789504119	add dep_hour categorical
+07	b445868	1789504379	add frequency count features
+08	68c97ec	1789504414	add 30-min categorical
+09	6bde416	1789504445	add 15-min categorical
+10	b9e1741	1789504511	add 10-min categorical
+11	db52576	1789504593	expand ensemble to 25 models incl lossguide
+12	aa399f3	1789504899	airport/carrier x time congestion counts
+13	a238c96	1789504975	add route-time and carrier-airport counts
+14	cb47104	1789505158	add congestion ratio features
+15	ace82b5	1789505334	expand ensemble by 6 models
+16	9de0119	1789505597	expand ensemble to 35 models

@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	ae59b68	1789537859	baseline
+01	4181835	1789537938	exp6: baseline + DepTime_min
+02	123fee1	1789537955	exp7: 12-config regularization mini-grid, ES on train val split
+03	fd90192	1789537977	exp8: ES on eval.csv (2006 dev set), lr0.05 depth6 mcw30
+04	12ba451	1789538028	exp11: 5-seed ensemble of best config
+05	84102dc	1789538039	exp12: 6-model diverse ensemble (depth/mcw/colsample mix)
+06	1e0878e	1789538110	exp15: 16-model ensemble, gamma/lambda diversity, patience 100
+07	83e90a1	1789538181	exp16: +2 dart members (150 trees lr0.1)
+08	bfad5dd	1789538405	exp21: 26-member diverse ensemble
+09	5a4a357	1789538819	exp25: +doy feature (mmdd), member AUC diagnostics
+10	10b0b7f	1789538907	exp26: rebalance ensemble to shallow/colsample winners (20+2 dart)
+11	10407f3	1789539056	exp28: 30 gbtree + 2 dart (extra seeds of winners)

@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	8adf6be	1789530398	baseline
+01	c2715ff	1789530540	E3: dep_minute linear + hh_block categorical, same E2 params
+02	a97a197	1789530548	E3b: dep_minute linear + hh_block categorical, fixed cat_levels fit
+03	70b62bb	1789530562	E4: dom_bin cycle, carrier_hh, route cat, carrier freq+rank
+04	c7c58ef	1789530572	E4b: dom_num string fix; dom_bin, carrier_hh, route cat, carrier freq/rank
+05	20d60cd	1789530579	E4c: carrier_hh level-fit fix
+06	cc03a5c	1789530585	E4d: drop max_cat_to_onehot (invalid 0 in xgb 3.4)
+07	2c30336	1789530620	E5: native cat partitioning max_cat_threshold=2000, raw dom strings, drop E4 extras
+08	3625fcf	1789530626	E5b: hh_block level fit fix
+09	100b68c	1789530645	E6: E3b + route Origin>Dest categorical
+10	3412d45	1789530658	E7: E3b re-land (0.7165 best)
+11	f573e64	1789530698	E8: canonical feature order + colsample 1.0 (order-invariant)
+12	bb8527f	1789530722	E9: E3b config restored exactly (canonical order, colsample 0.8)
+13	14018c5	1789530737	E10: 5-fold ES CV ensemble, no refit
+14	a163897	1789531015	E14: 10-seed bag
+15	8920ea8	1789531099	E15: raw DepTime categorical (1219 levels) replaces hh_block
+16	f8285c1	1789531173	E16: E11 restore (5-seed bag, best 0.7170)
+17	cc6c78a	1789531218	E17: + max_leaves=32
+18	fa4d454	1789531265	E18: lossguide max_leaves 64
+19	d96bb62	1789531345	E19: lossguide max_leaves 128
+20	471c2a2	1789531434	E20: hetero bag (3 lossguide + 2 depthwise)
+21	bcf4e4b	1789531623	E22: pooled train+eval, 3-seed bag, ES cap 700
+22	5c8436e	1789531693	E23: pooled, 5-seed bag, lr 0.08 cap 500
+23	ce98c80	1789531823	E25: pooled, lossguide 128 leaves, lr 0.08 cap 500
+24	c8f9041	1789532347	E30: pooled, 6-seed 128-leaf bag
+25	ed27683	1789532451	E31: pooled, 256 leaves

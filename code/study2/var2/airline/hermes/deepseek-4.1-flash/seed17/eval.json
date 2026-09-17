@@ -1,0 +1,188 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 17,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:44:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s17-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:19:35+00:00",
+  "wall_seconds": 2121.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5490.0,
+  "endpoint_at_end": "ok",
+  "head": "1f75da1",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.756,
+  "final_eval_auc": 0.7556,
+  "holdout_auc": 0.75502976336,
+  "holdout_ap": 0.7467847495359174,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04025901162400003,
+  "generalization_gap": 0.0005702366399999992,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7708687,
+    "tokens_in_uncached": 7708687,
+    "tokens_in_cached": 0,
+    "tokens_out": 67967,
+    "turns": null,
+    "api_calls": 113,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 5276.6,
+  "cpu_seconds_counted": 4917.6,
+  "cpu_seconds_uncounted": 0.3,
+  "cpu_seconds_exempt": 358.7,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 172,
+  "fits_counted": 166,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "06dd032",
+      "message": "baseline"
+    },
+    {
+      "commit": "3e9f032",
+      "message": "dep-hour/min/tod features + 400 trees lr0.05"
+    },
+    {
+      "commit": "369bb95",
+      "message": "drop raw DepTime, keep hour/min/tod"
+    },
+    {
+      "commit": "7f8f5e8",
+      "message": "peak-hour congestion counts (origin/dest/carrier x hour)"
+    },
+    {
+      "commit": "e86c38e",
+      "message": "inbound-arrival congestion + airport movements per hour"
+    },
+    {
+      "commit": "5b0e159",
+      "message": "diverse 4-model subsampled ensemble"
+    },
+    {
+      "commit": "17991c0",
+      "message": "previous-hour congestion at origin"
+    },
+    {
+      "commit": "bcca0d4",
+      "message": "lag 1-3 congestion for origin departures/inbound and dest departures"
+    },
+    {
+      "commit": "69b921b",
+      "message": "lags up to 6"
+    },
+    {
+      "commit": "68bae90",
+      "message": "6-member diverse ensemble"
+    },
+    {
+      "commit": "03e4fd6",
+      "message": "lags 1-12 (full earlier-day profile)"
+    },
+    {
+      "commit": "99869ef",
+      "message": "lead 1-12 features (symmetric daily profile)"
+    },
+    {
+      "commit": "7582f7d",
+      "message": "carrier daily traffic profile (lag/lead)"
+    },
+    {
+      "commit": "5f49718",
+      "message": "holiday proximity features"
+    },
+    {
+      "commit": "e6a9fee",
+      "message": "ablation: drop destination-side daily profile"
+    },
+    {
+      "commit": "9b9785c",
+      "message": "refactor prepare keys + drop raw Origin/Dest categoricals"
+    },
+    {
+      "commit": "1440292",
+      "message": "also drop DayofMonth categorical"
+    },
+    {
+      "commit": "b54f9ad",
+      "message": "drop Month cat, add numeric + cyclical month"
+    },
+    {
+      "commit": "3f1808c",
+      "message": "drop DayOfWeek cat, add numeric/cyclical/weekend"
+    },
+    {
+      "commit": "9b62cb4",
+      "message": "7-member ensemble with deeper members"
+    },
+    {
+      "commit": "0d20b40",
+      "message": "deep ensemble (depths 6-12)"
+    },
+    {
+      "commit": "3cfd021",
+      "message": "very deep ensemble (depths 8-14)"
+    },
+    {
+      "commit": "1f75da1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4917.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 213.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ce3cc5b",
+  "best_commit_eval_auc": 0.756,
+  "best_commit_holdout_auc": 0.7551966070740002,
+  "best_commit_holdout_ap": 0.7469488083132074,
+  "best_commit_error": null,
+  "finalized_best": false
+}

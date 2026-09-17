@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	c7f8f3d	1789507326	baseline
+01	6f465cd	1789507370	FE v1: int dates, hour/minute cyclical, log dist; 300 trees
+02	7af3977	1789507382	ES + 2000 trees, depth 8, lr 0.05, subsample 0.9
+03	f9be714	1789507440	depth 10
+04	1aa88d7	1789507449	depth 12
+05	138ecfa	1789507459	depth 14
+06	707188d	1789507470	depth 16
+07	18889fb	1789507482	depth 18
+08	5204398	1789507497	depth 20
+09	c90dca6	1789507541	subsample 0.8 colsample 0.7
+10	e9aa857	1789507557	subsample 0.7 colsample 0.6
+11	b4bc015	1789507589	add colsample_bynode 0.7
+12	f3888ee	1789507620	lr 0.03, ES 100, max_depth unlimited
+13	bc33040	1789507657	lr 0.02, ES 200
+14	dd45904	1789507725	lr 0.01, ES 300
+15	e26f8ae	1789508065	count encoding origin/dest/route/carrier (no TE), lr 0.02 probe
+16	b3c4b80	1789508709	holiday window flags
+17	63db92b	1789508915	ES probe lr 0.02 then refit full data
+18	1412fbe	1789509009	30pct val for ES probe
+19	6b59c24	1789509237	colsample_bynode 0.5
+20	cd551e9	1789509385	shared probe + 2-seed full refit ensemble
+21	0a39409	1789509604	member-diverse colsample_bynode 0.5/0.6

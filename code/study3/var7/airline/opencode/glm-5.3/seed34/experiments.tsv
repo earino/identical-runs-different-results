@@ -1,0 +1,12 @@
+n	commit	eval_auc	status	seconds	description
+1	86ab46d	0.7141	ok	3	baseline
+2	d1ddf86	0.7086	ok	3	3000 trees d8 lr0.1 es50 internal valid
+3	8b8997e	0.7056	ok	3	FE round1 + 100 trees d6
+4	7da848a	0.7191	ok	2	cal+mm features, d4 150 trees
+5	f311883	0.7285	ok	4	alpha10 d8 300t lr0.1 mcw10
+6	d5ab09c	0.7348	ok	28	ens6: col7 d9/d8/d14/g1/n600 + TE
+7	2cbea55	0.7354	ok	54	10-member ensemble (5 plain + 5 TE, harm3/6)
+8	62c3dfb	0.7406	ok	61	ens10 + congestion/demand counts
+9	b5596a7	0.7424	ok	64	big single champion
+10	4423f9d	0.7444	ok	85	harm9 alpha5 champion
+11	bcbca49	0.7444	ok	107	n2500 lr0.012 at alpha5 harm9

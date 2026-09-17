@@ -1,0 +1,148 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 1,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:23:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s1-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:02:14+00:00",
+  "wall_seconds": 5943.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18053.9,
+  "endpoint_at_end": "ok",
+  "head": "9a038d0",
+  "n_commits": 12,
+  "n_experiments": 18,
+  "n_ok": 16,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7485,
+  "final_eval_auc": 0.7485,
+  "holdout_auc": 0.7489460531359999,
+  "holdout_ap": 0.7392975938905793,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03417530139999991,
+  "generalization_gap": -0.00044605313599987984,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6154175,
+    "tokens_in_uncached": 587327,
+    "tokens_in_cached": 5566848,
+    "tokens_out": 52141,
+    "turns": null,
+    "api_calls": 122,
+    "method": "sum-of-122-events",
+    "cost_usd": 2.4991,
+    "cached_share": 0.905
+  },
+  "cpu_seconds_python": 17606.0,
+  "cpu_seconds_counted": 3565.2,
+  "cpu_seconds_uncounted": 13732.4,
+  "cpu_seconds_exempt": 308.5,
+  "python_processes": 49,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 513,
+  "fits_counted": 72,
+  "fits_uncounted": 437,
+  "commits": [
+    {
+      "commit": "8993a1d",
+      "message": "baseline"
+    },
+    {
+      "commit": "f931fec",
+      "message": "new features + bigger model: 300 trees depth 8 subsample/colsample 0.8"
+    },
+    {
+      "commit": "a1d3fac",
+      "message": "hour x carrier interaction + 3-seed ensemble lr.02/900"
+    },
+    {
+      "commit": "d705337",
+      "message": "diverse 9-member ensemble: 3 configs x 3 seeds"
+    },
+    {
+      "commit": "1d67ba3",
+      "message": "15/30-min time-bin x carrier interactions, 6-member ensemble"
+    },
+    {
+      "commit": "1d5539d",
+      "message": "sin/cos time-of-day + colsample_bynode 0.5"
+    },
+    {
+      "commit": "a1453a4",
+      "message": "L1 alpha 0.5 + lambda 10 in ensemble members"
+    },
+    {
+      "commit": "733f839",
+      "message": "granularity-diverse members + time-jitter augmentation, 4-member ensemble"
+    },
+    {
+      "commit": "2445445",
+      "message": "operational-day shifted time/dow features"
+    },
+    {
+      "commit": "30672ba",
+      "message": "deep d10 member (250 trees) + day-of-year/month-cyclic features"
+    },
+    {
+      "commit": "120a68f",
+      "message": "deep-only ensemble: 3 seeds x (250/10 + 400/10)"
+    },
+    {
+      "commit": "1e46e0b",
+      "message": "8-member deep ensemble (4 seeds x 2 configs), cached augmentation per binset"
+    },
+    {
+      "commit": "9a038d0",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17297.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 447.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "120a68f",
+  "best_commit_eval_auc": 0.7485,
+  "best_commit_holdout_auc": 0.7489460531359999,
+  "best_commit_holdout_ap": 0.7392975938905793,
+  "best_commit_error": null,
+  "finalized_best": false
+}

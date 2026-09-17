@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d28affd	0.7141	ok	3	baseline
+2	c5e3fdb	0.7237	ok	5	numeric time feats + ES
+3	994a2f5	0.0000	crash	1	TE carrier/origin/dest/route
+4	feb5003	0.7207	ok	20	TE carrier/origin/dest/route
+5	cf4b538	0.7229	ok	6	OOF TE 5-fold
+6	0c20d60	0.7228	ok	5	route-only TE OOF
+7	7f081aa	0.7256	ok	8	interactions hour_carrier dow_hour
+8	ecf584d	0.7169	ok	9	more interactions + doy
+9	5a05e14	0.7142	ok	6	dense interactions + doy
+10	4bb3b46	0.7155	ok	6	dow_carrier month_dow no doy
+11	d2e68a1	0.7247	ok	6	depth 10 mcw 10 reg 2
+12	f8a365f	0.7220	ok	5	lr 0.1
+13	d464fd3	0.7259	ok	11	lr 0.03 patience 200
+14	24a75aa	0.7305	ok	11	subsample 0.7 colsample 0.6
+15	737782a	0.7316	ok	13	subsample 0.6 colsample 0.5
+16	1a50979	0.7325	ok	16	subsample 0.5 colsample 0.4
+17	a3e3e2d	0.7313	ok	16	subsample 0.4 colsample 0.3
+18	3d3dfa1	0.7353	ok	14	depth 10 subs 0.5 cols 0.4
+19	ef4e192	0.7376	ok	14	depth 12 subs 0.5 cols 0.4
+20	2662749	0.7390	ok	24	depth 14 subs 0.5 cols 0.4
+21	9677758	0.7408	ok	21	depth 16 subs 0.5 cols 0.4
+22	0fb9bd3	0.7415	ok	27	depth 20 subs 0.5 cols 0.4
+23	107d987	0.7423	ok	29	depth 25 subs 0.5 cols 0.4
+24	f71df50	0.7428	ok	31	depth 30 subs 0.5 cols 0.4
+25	cbe0d20	0.7444	ok	50	lr 0.02 patience 300
+26	5d39a48	0.7389	ok	26	mcw 10 gamma 0.5
+27	e01a455	0.7461	ok	55	volume/congestion features
+28	a754be1	0.7476	ok	65	lr 0.015 patience 400
+29	47198da	0.7486	ok	74	lr 0.01 patience 500
+30	1725442	0.7432	ok	71	lossguide leaves 512
+31	5d123b1	0.7479	ok	101	ensemble lr0.01d30 + lr0.03d16
+32	d1b5a96	0.7496	ok	82	max_bin 512
+33	249e154	0.7494	ok	98	holiday + month-end flags
+34	41adef9	0.0000	timeout	130	colsample_bynode 0.8
+35	8bed4d8	0.7510	ok	88	seed 7 variance probe
+36	57c0ae4	0.7488	ok	83	npt2 bagging lr0.025
+37	5802158	0.0000	timeout	130	depth 40 max_bin 1024
+38	35b0df0	0.0000	timeout	130	max_bin 1024 depth 30
+39	bf46501	0.7492	ok	81	depth 35 seed 7
+40	b230924	0.0000	timeout	121	reg_alpha 0.3

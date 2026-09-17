@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ae511d4	0.7141	ok	3	baseline
+2	fee3dbd	0.7084	ok	3	capacity+early-stopping
+3	6bb2c3e	0.7137	ok	2	FE v1: DepTime hour/min/cyclic, c-n to numeric
+4	0e1a221	0.7101	ok	2	200 trees depth6 no-ES
+5	a3e25f9	0.7057	ok	2	FE v2: minofday, route, date twins, logdist, baseline capacity
+6	a755e83	0.7153	ok	1	reg package: subsample .7 colsample .7 mcw30 lambda2 150x lr.08
+7	5fe7fde	0.7146	ok	2	reg package, capacity up: 250x d6 lr.05
+8	3a2ee09	0.7033	ok	3	FE v2 (minofday, route, twins, logdist) + reg package
+9	592a928	0.7143	ok	2	reg model + DepHour numeric twin
+10	9e7d2c8	0.7163	ok	3	3-seed ensemble of reg model
+11	66e8d92	0.7169	ok	5	6-seed ensemble of reg model
+12	b558e23	0.7172	ok	8	12-seed ensemble of reg model
+13	2c89e14	0.7169	ok	9	12 models: 4 seeds x depths 4/5/6
+14	49952d9	0.7167	ok	8	12 seeds, subsample .6 colsample .6 mcw 50
+15	cb869bf	0.7170	ok	16	12 seeds, 300x lr.04 (more trees, lower lr)
+16	2b3f246	0.7082	ok	10	TE (smooth 200) for Origin/Dest/Carrier/Route + 12-seed reg ensemble
+17	fb8c4e0	0.7169	ok	9	12 models: lr .05/.08/.12 x 4 seeds
+18	cc63a44	0.7173	ok	15	24-seed ensemble of reg model
+19	cb6c6fc	0.7186	ok	10	congestion counts (origin-hour, dest-hour) + 12-seed ensemble
+20	5a4edae	0.7128	ok	11	smoothed delay rates per (origin,hour)/(dest,hour) m=300
+21	ce2a960	0.7188	ok	10	congestion v2: + carrier-hour count, orig/dest marginal counts
+22	79d6b27	0.7184	ok	10	ablation: drop orig/dest marginal counts
+23	9a3e626	0.7168	ok	12	+ route-hour count
+24	72c1803	0.7188	ok	16	congestion v2, 250x lr.06
+25	e5d7710	0.7189	ok	21	congestion v2, 24-seed ensemble
+26	2be9ed1	0.7190	ok	19	rank-average of 24 models
+27	891651f	0.7182	ok	19	monotone +1 on hour_num
+28	5b150be	0.7189	ok	40	48-seed rank-average ensemble
+29	216674d	0.7191	ok	20	24 models: 12 depthwise d5 + 12 lossguide leaves24
+30	62f6284	0.7187	ok	20	24 models: 3 families x 8 seeds
+31	01790ac	0.7191	ok	21	sample_weight by month recency 0.6-1.4
+32	cf56f13	0.7194	ok	20	depthwise family colsample .5 for diversity
+33	6b4debc	0.7197	ok	19	depthwise cs .4, mcw 20, lambda 1
+34	bafa195	0.7201	ok	19	depthwise cs .35, mcw 15, lambda 0.5
+35	2e8f496	0.7203	ok	19	cs .3/.5, mcw 10, lambda 0.3
+36	d964f58	0.7205	ok	19	cs .25/.4, mcw 5, lambda .2, ss .65
+37	feb7253	0.7205	ok	19	exp36 but subsample .7 (isolate ss effect)
+38	35c6b58	0.7203	ok	26	lr .06, 200 trees both families
+39	1b63d8a	0.7211	ok	27	36 models: 3 families (d5 .25, lg .4, d6 .2) x 12 seeds
+40	1474a6f	0.7208	ok	26	drop orig/dest marginal counts from exp39

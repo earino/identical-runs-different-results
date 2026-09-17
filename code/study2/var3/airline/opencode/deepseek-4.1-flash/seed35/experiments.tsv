@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9665640	0.7141	ok	4	baseline
+2	5f5a7cf	0.7035	ok	2	dep-time decomposition + weekend + route
+3	aa8467a	0.7125	ok	1	dep_min + hour cyclical + weekend
+4	788bdec	0.7119	ok	3	300 trees lr 0.05
+5	8a28627	0.7125	ok	2	100 trees lr 0.1
+6	ac11cee	0.7153	ok	2	regularized deeper ensemble
+7	0c4587f	0.7174	ok	3	target encoding carrier/origin/dest
+8	eba96b3	0.7160	ok	3	add route target encoding
+9	ca3f484	0.7159	ok	3	dep time features on TE model
+10	26a1e14	0.7161	ok	4	600 trees lr 0.03
+11	be4eedf	0.7155	ok	3	depth6 regularized TE
+12	ac8c7f3	0.7171	ok	2	depth4 regularized TE
+13	3596f29	0.7178	ok	9	ensemble of 5 models
+14	424276a	0.7179	ok	8	TE smooth50 cv10
+15	67bcef1	0.7169	ok	9	TE for Month/DayOfWeek
+16	e8f61d1	0.7175	ok	8	frequency encoding
+17	1e47dfb	0.7175	ok	15	diverse ensemble 9 models
+18	84b3aac	0.0000	timeout	120	DART boosters
+19	fd4d13b	0.7169	ok	9	TE dep_hour
+20	6876a1d	0.7168	ok	3	single depth5 TE smooth50
+21	ffa9836	0.7180	ok	9	stronger regularization
+22	996d380	0.7175	ok	9	route TE smooth50
+23	c8b0925	0.7182	ok	11	lossguide ensemble
+24	b821e30	0.7182	ok	11	max_leaves96
+25	a40a925	0.7181	ok	9	max_bin256
+26	5f56935	0.7187	ok	14	8-model ensemble
+27	14323b2	0.7187	ok	20	12-model ensemble
+28	be3218a	0.7191	ok	16	gamma+alpha
+29	23c6c11	0.7202	ok	15	stronger gamma/alpha/lambda
+30	48e8758	0.7192	ok	13	gamma6 alpha6 lambda40
+31	15ccc77	0.7201	ok	12	gamma4 alpha4 lambda30
+32	5bcacf7	0.7195	ok	25	500 trees strong reg
+33	b27f042	0.7199	ok	17	max_cat_threshold256
+34	929811b	0.7198	ok	17	dual TE smoothing
+35	2c40197	0.7208	ok	14	dep features strong reg
+36	c152744	0.7200	ok	15	route TE + dep features
+37	6c5049d	0.7205	ok	17	dep_hour TE
+38	fa549a5	0.7207	ok	23	12-model ensemble dep features
+39	21c8a52	0.7205	ok	17	frequency encoding dep features
+40	e2215f5	0.7209	ok	18	min_child_weight10

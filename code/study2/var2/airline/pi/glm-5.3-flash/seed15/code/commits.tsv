@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	472ea1f	1789489971	baseline
+01	3881370	1789490039	FE v1: deptime cyclical+minutes, route, log dist, int dates; 3000 trees ES lr.05 d8
+02	edd1e72	1789490051	FE v1 + d6 lr0.1 sub.8 col.8 ES50
+03	b5544f2	1789490360	FE + teH + hour-cat + carrier-x-hour cat
+04	799844b	1789490371	5-fold bag of XGB (avg), same params
+05	0a39e4e	1789490487	fold-bag5 x depth 5/6/7 (15 models)
+06	0c61e70	1789490571	add dep_mm + is00/is30/is45 minute flags
+07	3b9e47e	1789490644	add distbin-x-hour and carrier-x-distbin cats
+08	81cdc64	1789490687	fixed dist-bin edges from train; 2 seeds per fold (30 models)
+09	be1f5df	1789490760	1 seed/fold, depths 4-8 (25 models)
+10	bca464c	1789491365	mixed bag: 25 fold + 5 full-train models
+11	8f8c0f9	1789491502	drop DayofMonth raw categorical (noise)
+12	8c16a7b	1789492263	bundle: teDH + teMH + dom bins
+13	2a4a281	1789492436	n_estimators=400 across bag
+14	7baa47c	1789493656	ablation: drop cd_cat
+15	bb360e6	1789493873	simplify: drop Dlog/wrap/is45

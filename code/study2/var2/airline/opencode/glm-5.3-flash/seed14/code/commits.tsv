@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	73eacf1	1789486920	baseline
+01	27f83e4	1789487018	fe v1, baseline hyperparams (isolate FE effect)
+02	2213c61	1789487039	baseline feats, capacity: 500 trees reg
+03	02b4e00	1789487067	OOF target encoding Origin/Dest/Carrier/route
+04	bc651ae	1789487086	TE, lower capacity 20t d5
+05	2f54b01	1789487106	ensemble 5x subsample/colsample diversity
+06	027db63	1789487126	ens10 mixed depths 4-8
+07	534c2c2	1789487134	ens16 depths 3-10
+08	4581449	1789487187	add freq features to ens16+TE
+09	425e765	1789487250	tod features + dep_nextday flag
+10	a617014	1789487302	ens16 + colsample_bynode 0.7
+11	aa0803d	1789487313	colsample_bynode 0.5
+12	ccd6fd3	1789487324	colsample_bynode 0.35
+13	0c6baa0	1789487336	colsample_bynode 0.25
+14	925c597	1789487404	ens32 bynode0.25
+15	9c905ca	1789487453	ens32 lr diversity
+16	252b534	1789487471	ens32 + nest diversity
+17	f53fdb8	1789487545	bynode diversity

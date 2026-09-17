@@ -1,0 +1,162 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 27,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:28:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s27-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:17:48+00:00",
+  "wall_seconds": 6576.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16814.1,
+  "endpoint_at_end": "ok",
+  "head": "cb953da",
+  "n_commits": 15,
+  "n_experiments": 17,
+  "n_ok": 15,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7637,
+  "final_eval_auc": 0.7637,
+  "holdout_auc": 0.7633343995059999,
+  "holdout_ap": 0.7510999896428184,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.048563647769999885,
+  "generalization_gap": 0.00036560049400014005,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4858249,
+    "tokens_in_uncached": 839305,
+    "tokens_in_cached": 4018944,
+    "tokens_out": 124977,
+    "turns": null,
+    "api_calls": 99,
+    "method": "sum-of-99-events",
+    "cost_usd": 2.7699,
+    "cached_share": 0.827
+  },
+  "cpu_seconds_python": 16766.0,
+  "cpu_seconds_counted": 1707.6,
+  "cpu_seconds_uncounted": 14707.9,
+  "cpu_seconds_exempt": 350.5,
+  "python_processes": 78,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 493,
+  "fits_counted": 51,
+  "fits_uncounted": 434,
+  "commits": [
+    {
+      "commit": "946c1e4",
+      "message": "baseline"
+    },
+    {
+      "commit": "3a8deae",
+      "message": "FE: minute-of-day + cyclical, numeric date parts, log dist, route cat"
+    },
+    {
+      "commit": "34fd750",
+      "message": "target-encoding features (hour/route/origin/dest/carrier/date + org_hour,car_hour,min30), lr 0.05"
+    },
+    {
+      "commit": "d7581f2",
+      "message": "target-encoding features (hour/route/origin/dest/carrier/date + org_hour,car_hour,min30), lr 0.05 [fix te col bug]"
+    },
+    {
+      "commit": "2a790d0",
+      "message": "out-of-fold target encodings for the training matrix"
+    },
+    {
+      "commit": "dc92042",
+      "message": "lossguide 64 leaves + finer 15-min time TE"
+    },
+    {
+      "commit": "fa2463c",
+      "message": "route/origin/dest/carrier x time-granularity TEs (min15/min30)"
+    },
+    {
+      "commit": "e8ceb50",
+      "message": "log-count companions for all TE keys + hour_month TE"
+    },
+    {
+      "commit": "386c8b6",
+      "message": "org_min15 TE"
+    },
+    {
+      "commit": "2623e56",
+      "message": "5-member jittered XGB ensemble"
+    },
+    {
+      "commit": "6dc3bd5",
+      "message": "ensemble diversity via per-member dropped feature groups"
+    },
+    {
+      "commit": "9cfc083",
+      "message": "8-member subset-diverse ensemble"
+    },
+    {
+      "commit": "c4f6ed7",
+      "message": "minute-of-hour + carrier/origin/dest x dist-bucket interaction TEs"
+    },
+    {
+      "commit": "02ae709",
+      "message": "3-fold OOF target encodings"
+    },
+    {
+      "commit": "6ec5fdc",
+      "message": "2-fold OOF target encodings"
+    },
+    {
+      "commit": "cb953da",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16415.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 48.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "6ec5fdc",
+  "best_commit_eval_auc": 0.7637,
+  "best_commit_holdout_auc": 0.7633343995059999,
+  "best_commit_holdout_ap": 0.7510999896428184,
+  "best_commit_error": null,
+  "finalized_best": true
+}

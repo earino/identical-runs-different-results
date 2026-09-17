@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	5483630	1789498319	baseline
+01	5b0a1ef	1789498434	max_depth 4
+02	71fbf4c	1789498440	depth4 60 trees
+03	9d19966	1789498449	depth4 lr0.05 150 trees
+04	955e7a3	1789498535	add dep_hour keeping raw DepTime
+05	dcbcf36	1789498650	ensemble depth3/4/5
+06	1c9b38f	1789498656	ensemble depth3/4/5/6
+07	bf2245c	1789498661	ensemble depth2/3/4/5/6
+08	d5409e4	1789498681	ensemble depths x lr 0.05/0.1
+09	78b6e9e	1789498690	ensemble depths x lr 0.03/0.05/0.1
+10	4f2acb5	1789498719	ensemble add lr0.2
+11	ededd9e	1789498733	ensemble add lr0.3
+12	f8853cd	1789498772	ensemble add depth7

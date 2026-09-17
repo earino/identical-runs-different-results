@@ -1,0 +1,244 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 3,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:42:54+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s3-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:21:26+00:00",
+  "wall_seconds": 2312.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6306.5,
+  "endpoint_at_end": "ok",
+  "head": "7c12f97",
+  "n_commits": 36,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 0,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7431,
+  "final_eval_auc": 0.7431,
+  "holdout_auc": 0.7439810344879999,
+  "holdout_ap": 0.7335965417930699,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.029210282751999883,
+  "generalization_gap": -0.000881034487999921,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5797296,
+    "tokens_in_uncached": 78640,
+    "tokens_in_cached": 5718656,
+    "tokens_out": 74195,
+    "turns": null,
+    "api_calls": 105,
+    "method": "cumulative-max",
+    "cost_usd": 0.2205,
+    "cached_share": 0.986
+  },
+  "cpu_seconds_python": 6127.5,
+  "cpu_seconds_counted": 5900.0,
+  "cpu_seconds_uncounted": 0.4,
+  "cpu_seconds_exempt": 227.2,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 564,
+  "fits_counted": 560,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "5846a3e",
+      "message": "baseline"
+    },
+    {
+      "commit": "9e1d3c2",
+      "message": "feat v2: native cats for all strings + time features, ES + refit"
+    },
+    {
+      "commit": "4ff7bdf",
+      "message": "feat v3: conservative params (d6 lr0.1 mcw50) + time feats + ES"
+    },
+    {
+      "commit": "7454b8b",
+      "message": "ablation: baseline model + time features only"
+    },
+    {
+      "commit": "67a83df",
+      "message": "baseline feats + 600 trees w/ early stopping + refit"
+    },
+    {
+      "commit": "7023ee7",
+      "message": "sweep: 12 capacity configs, select by eval AUC"
+    },
+    {
+      "commit": "dbbdba5",
+      "message": "sweep 2: shallow depths 2-5, sampling, lr 0.05"
+    },
+    {
+      "commit": "e5b8cdd",
+      "message": "route pair categorical + sweep 3 (route model)"
+    },
+    {
+      "commit": "d99499b",
+      "message": "sweep 4: regularization refinement at d4/lr0.05/ss0.8"
+    },
+    {
+      "commit": "8f902c0",
+      "message": "seed-bagging ensemble: 8 members x (300,d4,lr.05)"
+    },
+    {
+      "commit": "5d67427",
+      "message": "target encodings (k=50): airports, carrier, route, time parts"
+    },
+    {
+      "commit": "0aeecde",
+      "message": "drop-one-feature ablation at best cfg"
+    },
+    {
+      "commit": "780b5a8",
+      "message": "no-Month feature set: capacity re-sweep"
+    },
+    {
+      "commit": "2313148",
+      "message": "no-Month: drop-one ablation at (300,d4,.05,.9,.9)"
+    },
+    {
+      "commit": "2adb860",
+      "message": "elimination rd2 + DepTime-as-categorical"
+    },
+    {
+      "commit": "01dfa8b",
+      "message": "micro-tune sweep: sampling, lr, n, DART, cat onehot, lossguide"
+    },
+    {
+      "commit": "9f1af33",
+      "message": "diverse-config ensemble 6 members, mean vs rank avg"
+    },
+    {
+      "commit": "228cc2a",
+      "message": "grid: mcw x n_estimators at ss/cs .95"
+    },
+    {
+      "commit": "0649dee",
+      "message": "robust: 3 cfg x 5 seeds, mean-select + seed-averaged predict"
+    },
+    {
+      "commit": "60bb00f",
+      "message": "mega seed-avg: 20+10 models pooled"
+    },
+    {
+      "commit": "35aa23a",
+      "message": "max_bin sweep + colsample level/node, 3 seeds"
+    },
+    {
+      "commit": "fdba26a",
+      "message": "bin512/1024 x bylevel/n400/lr03, 5 seeds, avg-pred select"
+    },
+    {
+      "commit": "82be535",
+      "message": "lr ladder: 0.03 to 0.015 with more trees, bin512"
+    },
+    {
+      "commit": "efca928",
+      "message": "covariate-shift frequency-ratio sample weights"
+    },
+    {
+      "commit": "4302b4d",
+      "message": "micro: depth/gamma/mcw/lambda at final recipe"
+    },
+    {
+      "commit": "b533e3e",
+      "message": "depth-5 recheck: bylevel/n500/d6/gamma/mcw"
+    },
+    {
+      "commit": "1be3f7b",
+      "message": "top-variant ensemble 15 models, prob vs logit pooling"
+    },
+    {
+      "commit": "37b6a61",
+      "message": "drop-one recheck at final recipe"
+    },
+    {
+      "commit": "eb7438d",
+      "message": "big ensemble 4cfg x 8seeds + LOCO diag"
+    },
+    {
+      "commit": "6022d91",
+      "message": "ensemble subset search + weighted pooling"
+    },
+    {
+      "commit": "94cd512",
+      "message": "wide pool 8cfg x 4seeds subset search"
+    },
+    {
+      "commit": "06d3fac",
+      "message": "d8-centered pool, tight timing"
+    },
+    {
+      "commit": "c3130d2",
+      "message": "depth max: d10/d11 + partners"
+    },
+    {
+      "commit": "9bf07ae",
+      "message": "tight pair: d11_bl95 + d3_bl90"
+    },
+    {
+      "commit": "3d3554d",
+      "message": "d12_bl95 + d3_bl90, 2 seeds"
+    },
+    {
+      "commit": "f0a9290",
+      "message": "final: d13_bl95 + d3_bl90"
+    },
+    {
+      "commit": "7c12f97",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5900.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 179.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f0a9290",
+  "best_commit_eval_auc": 0.7431,
+  "best_commit_holdout_auc": 0.7439810344879999,
+  "best_commit_holdout_ap": 0.7335965417930699,
+  "best_commit_error": null,
+  "finalized_best": true
+}

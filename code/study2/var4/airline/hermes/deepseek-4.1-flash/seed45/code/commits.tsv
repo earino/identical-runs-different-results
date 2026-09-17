@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	4e0ca89	1789510502	baseline
+01	4ab729e	1789510543	time features: parse c-N ordinals, dep_min/cyclical hour
+02	5b65f21	1789510595	target+freq encodings for carrier/origin/dest/route (OOF on train)
+03	165a525	1789510606	capacity 100 trees depth6 lr.1 subsample/colsample .8
+04	44ded93	1789510644	seed-bagged ensemble of 5 xgboost models
+05	1026959	1789510685	compound target encodings (carrier/origin/dest x hour, carrier_route)
+06	99001e4	1789510705	add route_hour, carrier/origin/dest x dow encodings
+07	29fd17d	1789510734	add dow_hour, carrier_x_origin/dest, carrier_route_hour encodings + freqs
+08	aac6650	1789510814	10-seed bag
+09	b3df8ca	1789510936	relative traffic share ratios + freq for all compound keys
+10	7ea76f3	1789510984	ensemble diversity: 16 members over depth/colsample
+11	6694e5c	1789511034	20 diverse members incl. lr/rounds variation
+12	c21eae8	1789511332	10-fold OOF target encodings
+13	dcd79ee	1789511404	30-member wide ensemble (depth 3-9, varied lr/rounds/colsample)
+14	7c8573a	1789511620	row-subsampled members (70% each) for extra diversity
+15	d85e00f	1789511912	calendar-position features: dom, dow, weekend flag
+16	d7cc90f	1789511995	ablation: drop raw Origin/Dest categoricals (TE carries them)
+17	59408dc	1789512052	ablation: also drop raw UniqueCarrier categorical
+18	f316748	1789512181	hub/competition ratios + schedule-structure counts
+19	541a71d	1789512232	heavier target-encoding smoothing (k x3)
+20	c259792	1789512492	member row-subsample fraction 0.8
+21	298d903	1789512548	add very deep members (depth 10/12)

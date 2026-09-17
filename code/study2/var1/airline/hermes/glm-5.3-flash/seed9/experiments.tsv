@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d8765b8	0.7141	ok	4	baseline
+2	8a68c6a	0.0000	crash	2	FE v1: time cyclical+route+counts+ES 500@0.08 d8
+3	42edaa4	0.6999	ok	9	FE v1: time cyclical+route+counts+ES 500@0.08 d8
+4	9bf745b	0.7096	ok	3	tuned 500@.08 d8 ES on baseline cats (isolate model-vs-features)
+5	f715da1	0.7094	ok	2	tuned 200@.1 d6 full data no ES
+6	34c94a0	0.7021	ok	4	400@.1 d6 full data
+7	a470709	0.7136	ok	2	100@.1 d6 full data
+8	a470709	0.7136	ok	2	50@.1 d6 full data (underfit probe)
+9	39a625b	0.7148	ok	2	50@.1 d6 full data
+10	39a625b	0.7148	ok	2	25@.1 d6 full data
+11	5ad4030	0.7100	ok	1	25@.1 d6 full data
+12	ede9800	0.7148	ok	2	time features on 50@.1 d6
+13	23b3cbe	0.7053	ok	1	TE origin/dest/route/carrier/month smooth20
+14	54125aa	0.7130	ok	2	OOF TE 5-fold smooth20
+15	a2433b2	0.7066	ok	2	100@.05 d6
+16	6ebeabc	0.7038	ok	2	d4 50@.1
+17	42cfaf6	0.7041	ok	1	d8 50@.1
+18	5528d19	0.7048	ok	2	50@.1 d6 defaults
+19	3f889c9	0.7143	ok	2	mcw10 50@.1 d6
+20	d3b876c	0.7162	ok	2	3-seed ensemble 50@.1 d6
+21	e933d9c	0.7169	ok	5	8-seed ensemble 50@.1 d6
+22	e933d9c	0.7169	ok	5	16-seed ensemble
+23	37fafa7	0.7170	ok	7	16-seed ensemble 50@.1 d6
+24	ba896a7	0.7177	ok	4	hetero 8-member ensemble
+25	168cda6	0.7176	ok	8	16-member hetero ensemble
+26	ba896a7	0.7177	ok	5	hetero 8-member ensemble (re-verify best)
+27	fb89fa0	0.7177	ok	7	mixed depthwise+lossguide 12-member
+28	03c35b6	0.7168	ok	4	bynode=0.5 8-member 32@.15
+29	8082b59	0.7176	ok	4	depmod+sincos on best ensemble
+30	8fbb7bd	0.7177	ok	5	seed-bag ablation (jittered params, fixed seeds 42-49)
+31	8fbb7bd	0.7177	ok	4	lr=0.08 jittered ensemble
+32	fdb58c1	0.7175	ok	5	lr 0.08 jittered ensemble
+33	8a255fb	0.7176	ok	4	lambda 1.0 jittered ensemble
+34	058bce2	0.7169	ok	4	OddHour probe
+35	3ba6261	0.7176	ok	4	gamma 1.0 jittered ensemble
+36	89b6153	0.7178	ok	7	12-member jittered ensemble
+37	e7100ab	0.7175	ok	6	subsample 0.5-0.95 12-member
+38	51c6a9b	0.7179	ok	7	16-member jittered ensemble
+39	271b2d1	0.7178	ok	9	20-member jittered ensemble
+40	3d8b911	0.7178	ok	12	28-member jittered ensemble (final)

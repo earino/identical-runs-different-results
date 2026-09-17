@@ -1,0 +1,14 @@
+n	commit	eval_auc	status	seconds	description
+1	fa0113e	0.7141	ok	11	baseline
+2	8dc8b7b	0.7100	ok	47	FE v1 + early stopping
+3	1bf8797	0.7100	ok	12	early stopping monitors AUC
+4	5b65aed	0.7221	ok	4	E features + decay0.15 + d4/mcw20/lr.05
+5	bbfd72b	0.7224	ok	4	holidays added
+6	25a9400	0.7227	ok	5	ens6
+7	0bcbbf0	0.7449	ok	12	MoE 48 time windows
+8	28d7c9b	0.7458	ok	15	MoE 48+24 windows
+9	b818639	0.7469	ok	21	MoE 3cfg specialists
+10	b017f90	0.7493	ok	56	MoE 4-resolution ladder
+11	742f5fb	0.7495	ok	63	MoE ladder, 4cfg at 96p
+12	67d7d27	0.7509	ok	63	MoE ladder + L1 specialists
+13	2df7775	0.7519	ok	76	MoE L1 long rounds

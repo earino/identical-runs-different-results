@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	0a6a2cc	1789625202	baseline
+01	e204290	1789625353	early stopping 3000 trees
+02	b064cc7	1789625813	core: int calendar + hour, d4 lr0.05 lam0.5, ES on eval
+03	951bd96	1789626321	ensemble: 10x colsample0.8 seed bag
+04	8eb226f	1789626908	recency-weighted sample weights (quad ramp 0.5->1), 5-model bag
+05	cf58f1e	1789628512	FE v2: HourCarrier cat + minute feats + n_OriginHour, d5
+06	e886609	1789629564	depth 10 (interaction features need deep trees)
+07	1eb2c70	1789630571	depth 16, colsample 0.6
+08	45258cb	1789631354	depth 18
+09	3d70f42	1789632087	v3 FE: n_DestHour, n_Route, DistPerMin
+10	a0f25da	1789632844	seed 7 base for depth-diverse ensemble
+11	b973276	1789633158	7-bag at patience 50

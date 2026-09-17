@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	9828a38	1789595693	baseline
+01	735a02e	1789598028	FE: hour/minute/minutes_of_day only; 200 trees depth 8; no route
+02	707d716	1789598110	ablation: time FE at baseline capacity 30 trees d6
+03	09107c0	1789598182	early stopping on 2006 eval slice, subsample/colsample 0.8
+04	376e354	1789598196	depth 6 with early stop + reg
+05	c5ed617	1789598213	depth 5
+06	18e2851	1789598266	frequency encoding origin/dest/route + log distance
+07	1a47768	1789598286	lr 0.05, up to 2000 trees, patience 60
+08	9d1d6bc	1789598308	lr 0.03
+09	5b5be50	1789598354	5-seed ensemble, each early-stopped
+10	5eafa91	1789598694	diversity ensemble: depths 4-6, colsample 0.7-0.9
+11	94c5b83	1789598969	cyclical month/dow/day/time features
+12	58d3f92	1789599177	9-model diverse ensemble
+13	ff9e9db	1789600045	bucket rare/unseen airports into RARE level
+14	7fa0d05	1789600130	rare threshold 100
+15	33c3afd	1789600241	rare threshold 200
+16	8c80aae	1789600351	rare threshold 300, cap 1000 trees
+17	e290995	1789600470	rare threshold 400
+18	5264bc9	1789600828	carrier x hour interaction cat (RARE-bucketed)
+19	ec191d7	1789600967	carrier_hour with 6-model ensemble
+20	846d38c	1789601105	per-model lr: unlock capped shallow models
+21	576ad90	1789601207	fix: explicit per-model learning_rate (BASE no longer duplicates)
+22	9ca75df	1789601216	origin x hour interaction cat

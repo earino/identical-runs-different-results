@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	19317b3	0.7141	ok	4	baseline
+2	c6a989d	0.7059	ok	2	feature engineering: dep time + cyclical + route
+3	47ccb9c	0.7127	ok	2	time-of-day features only
+4	e4bca42	0.7080	ok	4	more capacity: 400 trees depth7 lr0.05
+5	a1764aa	0.7159	ok	2	regularized depth4 300 trees
+6	576aa00	0.7155	ok	3	depth3 500 trees
+7	8b6fb45	0.7164	ok	2	time-of-day features on depth4 model
+8	e41c7a3	0.7031	ok	4	route categorical on regularized model
+9	728c9a6	0.7162	ok	2	target encoding origin/dest/carrier
+10	1f4b9a5	0.7149	ok	3	depth5 400 trees
+11	cd95dfe	0.7168	ok	6	5-seed ensemble depth4
+12	0a729fe	0.7167	ok	7	cyclical/ordinal/log-distance features
+13	545bf73	0.7177	ok	7	frequency/congestion encodings
+14	4981185	0.7176	ok	7	interaction count encodings
+15	c8cc957	0.7178	ok	12	lower lr more trees with counts
+16	2e4edb7	0.7193	ok	12	congestion ratios and dest-hour counts
+17	8ad6320	0.7193	ok	14	carrier/route counts and shares
+18	c665223	0.7194	ok	12	depth5 on count/ratio features
+19	1b9eec4	0.7196	ok	17	diverse depth/seed ensemble
+20	5a139c8	0.7136	ok	17	target encoding origin/dest/carrier/origin-hour
+21	a642c89	0.7184	ok	19	origin/dest/carrier seasonal counts
+22	2c1625b	0.7196	ok	14	max_bin 512
+23	b076bf5	0.7198	ok	16	stronger regularization
+24	77637a8	0.7198	ok	16	even stronger regularization
+25	259156c	0.7083	ok	16	daily origin/dest traffic counts
+26	c122c39	0.7202	ok	23	ensemble + deep regularized members
+27	3509b0c	0.7206	ok	33	ensemble + more deep/lossguide members
+28	324c826	0.7208	ok	111	ensemble + dart/lossguide/extra members
+29	167021a	0.7209	ok	51	ensemble without dart
+30	6698cfc	0.7210	ok	65	more deep/lossguide members
+31	ffc9dd4	0.7203	ok	69	max_cat_threshold 128
+32	689b53b	0.7211	ok	70	carrier-hour and dow counts
+33	bb52e5e	0.7211	ok	82	four more ensemble members
+34	0ef152c	0.7211	ok	70	gamma 1.0 regularization
+35	9ecedbc	0.7197	ok	74	carrier x timebucket categorical
+36	fd94c0a	0.7209	ok	70	cumulative origin schedule share
+37	530cf3c	0.7230	ok	65	max_cat_to_onehot 16
+38	d8a7f06	0.7246	ok	65	max_cat_to_onehot 32
+39	133ebb6	0.7229	ok	52	max_cat_to_onehot 300
+40	ec19a5a	0.7262	ok	64	max_cat_threshold 16 with one-hot 32

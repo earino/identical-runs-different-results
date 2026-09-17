@@ -1,0 +1,216 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 38,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T06:11:20+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s38-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T07:02:22+00:00",
+  "wall_seconds": 3062.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9554.4,
+  "endpoint_at_end": "ok",
+  "head": "588e977",
+  "n_commits": 29,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 2,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7411,
+  "final_eval_auc": 0.7411,
+  "holdout_auc": 0.742538225632,
+  "holdout_ap": 0.7333720167372302,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027767473895999983,
+  "generalization_gap": -0.001438225632000023,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7307086,
+    "tokens_in_uncached": 7307086,
+    "tokens_in_cached": 0,
+    "tokens_out": 54412,
+    "turns": null,
+    "api_calls": 117,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 9390.0,
+  "cpu_seconds_counted": 8975.9,
+  "cpu_seconds_uncounted": 6.9,
+  "cpu_seconds_exempt": 407.1,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 155,
+  "fits_counted": 148,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "d6ef39d",
+      "message": "baseline"
+    },
+    {
+      "commit": "0b51fcf",
+      "message": "decode c-n codes as ordinal, decompose DepTime, 300 trees"
+    },
+    {
+      "commit": "ab2d33a",
+      "message": "depth8 lr0.05 subsample + early-stopping round selection"
+    },
+    {
+      "commit": "fc3586e",
+      "message": "depth8 lr0.05 + early-stopping callback"
+    },
+    {
+      "commit": "ddaf155",
+      "message": "xgb.train low-level API, depth8/lr0.05, early-stopped rounds"
+    },
+    {
+      "commit": "41f8696",
+      "message": "deeper trees depth12 lr0.03 stronger regularization"
+    },
+    {
+      "commit": "294020e",
+      "message": "max_cat_threshold 256 for airport partitions"
+    },
+    {
+      "commit": "5537564",
+      "message": "3-seed bagged XGBoost ensemble"
+    },
+    {
+      "commit": "f21eab0",
+      "message": "stronger stochastic regularization"
+    },
+    {
+      "commit": "48f72f4",
+      "message": "eta 0.02 with best regularization"
+    },
+    {
+      "commit": "0dcb059",
+      "message": "max_cat_to_onehot=8; bound rounds and seeds to the 120s limit"
+    },
+    {
+      "commit": "5f09bdd",
+      "message": "rank-based ensemble pooling, restore 3 seeds"
+    },
+    {
+      "commit": "b6b9815",
+      "message": "diverse 2-config ensemble (deep slow + shallow fast)"
+    },
+    {
+      "commit": "dcbfdbd",
+      "message": "restore best-known config (single deep bag)"
+    },
+    {
+      "commit": "a640e34",
+      "message": "ablation: drop tod_sin/cos and log_dist"
+    },
+    {
+      "commit": "a531a92",
+      "message": "cyclic month/day-of-week + weekend flag"
+    },
+    {
+      "commit": "7b3217c",
+      "message": "diverse per-member sampling rates in the bag"
+    },
+    {
+      "commit": "d059564",
+      "message": "2-fold averaged round selection"
+    },
+    {
+      "commit": "74a065c",
+      "message": "shrink stopping round by 15% to counter year-shift overshoot"
+    },
+    {
+      "commit": "19a16ee",
+      "message": "shrink factor 0.70"
+    },
+    {
+      "commit": "422f171",
+      "message": "shrink factor 0.55"
+    },
+    {
+      "commit": "8c566aa",
+      "message": "shrink factor 0.40"
+    },
+    {
+      "commit": "411dee1",
+      "message": "shrink factor 0.30"
+    },
+    {
+      "commit": "bc1f796",
+      "message": "shrink factor 0.20"
+    },
+    {
+      "commit": "707d76f",
+      "message": "6-member bag at shrink 0.30"
+    },
+    {
+      "commit": "086220b",
+      "message": "min_child_weight 10"
+    },
+    {
+      "commit": "258bfbc",
+      "message": "min_child_weight 5"
+    },
+    {
+      "commit": "c1eceda",
+      "message": "min_child_weight 2"
+    },
+    {
+      "commit": "c9beb93",
+      "message": "min_child_weight 1"
+    },
+    {
+      "commit": "588e977",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8982.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 164.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c9beb93",
+  "best_commit_eval_auc": 0.7411,
+  "best_commit_holdout_auc": 0.742538225632,
+  "best_commit_holdout_ap": 0.7333720167372302,
+  "best_commit_error": null,
+  "finalized_best": true
+}

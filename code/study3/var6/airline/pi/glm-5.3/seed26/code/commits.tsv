@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	1a3aab3	1789642826	baseline
+01	acea11e	1789642878	numeric date/time features + Route categorical + early stopping on eval
+02	c311966	1789643057	drop Route, no subsampling, ES on AUC, lr=0.05
+03	9279dcb	1789643869	deep trees (d24) + colsample 0.5, ES on AUC
+04	f656a8e	1789644048	lr 0.05 -> 0.04
+05	d7c7da2	1789644079	4-seed ensemble
+06	6ba73bb	1789644468	ensemble: max_bin=512, patience 40
+07	dcc6143	1789645127	volume/busyness count features
+08	2ee03d1	1789645337	add LogVolCarrier + LogVolOriginHour, patience 25
+09	23b3e3b	1789645583	add LogDistance
+10	80a2241	1789645797	hour categorical + colsample 0.45 + recency weights
+11	da049d2	1789646134	origin/dest connectivity features
+12	6f06927	1789647025	ensemble: 2 full-feature + 2 date-free members
+13	d4e7511	1789647222	colsample jitter across members
+14	f97f930	1789647323	row bagging subsample 0.85
+15	4eff895	1789647426	NaN-safe prepare (defensive imputation)
+16	bd49d59	1789647695	5-member ensemble (extra full-feature member)
+17	a9be24c	1789647815	5th member keeps DOW only (3 view types)

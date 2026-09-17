@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	9c5ae40	1789498201	baseline
+01	fdb3b97	1789498257	regularized: depth4 150trees lr.05 mcw20 lambda5
+02	805474e	1789498321	reg: depth3 400trees
+03	73e7055	1789498550	FE dep-time decomposition + tuned deep model
+04	c1c4e88	1789498692	tuned: d7 col.5 alpha1 maxbin512
+05	b28a90d	1789498792	FE: origin x hour and carrier x hour interactions
+06	b98391e	1789499056	retune on interaction features: d8/lambda1/onehot1/bin256
+07	35be663	1789499189	ensemble: 3x d8 + 2x d9 diverse seeds
+08	4e42e06	1789499380	ensemble 5x main + 3x deep seeds
+09	b89f23d	1789499882	ensemble: greedy-selected diverse configs
+10	1100d81	1789501184	ensemble: two deep depth-12 configs x2 seeds
+11	fce076a	1789501303	simplify ensemble to 2 deep models (same AUC, safer time)
+12	e0d9ee8	1789502875	ensemble: add colsample_bylevel/bynode variant A2

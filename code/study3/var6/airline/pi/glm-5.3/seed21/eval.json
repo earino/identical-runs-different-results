@@ -1,0 +1,160 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 21,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T03:39:25+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s21-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T07:09:49+00:00",
+  "wall_seconds": 12624.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17141.0,
+  "endpoint_at_end": "ok",
+  "head": "f5cd77a",
+  "n_commits": 15,
+  "n_experiments": 21,
+  "n_ok": 20,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7465,
+  "final_eval_auc": 0.7465,
+  "holdout_auc": 0.745904790852,
+  "holdout_ap": 0.7379150179790064,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03113403911599999,
+  "generalization_gap": 0.0005952091480000421,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5646106,
+    "tokens_in_uncached": 2967642,
+    "tokens_in_cached": 2678464,
+    "tokens_out": 124969,
+    "turns": null,
+    "api_calls": 129,
+    "method": "sum-of-129-events",
+    "cost_usd": 5.401,
+    "cached_share": 0.474
+  },
+  "cpu_seconds_python": 17092.1,
+  "cpu_seconds_counted": 5639.8,
+  "cpu_seconds_uncounted": 11035.0,
+  "cpu_seconds_exempt": 417.3,
+  "python_processes": 66,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 450,
+  "fits_counted": 140,
+  "fits_uncounted": 302,
+  "commits": [
+    {
+      "commit": "bf97200",
+      "message": "baseline"
+    },
+    {
+      "commit": "4f8739f",
+      "message": "feat: time-of-day features, route categorical, numeric calendar, stronger model with early stopping"
+    },
+    {
+      "commit": "e839be2",
+      "message": "feat: time-of-day + calendar/carrier/airport TEs + counts, regularized depth-5 with AUC early stopping"
+    },
+    {
+      "commit": "a27e05e",
+      "message": "feat: origin/dest x hour flight-volume (congestion) features"
+    },
+    {
+      "commit": "614fb45",
+      "message": "feat: 8-model xgboost ensemble, prob averaging"
+    },
+    {
+      "commit": "83a0562",
+      "message": "feat: month sin/cos + log count transforms"
+    },
+    {
+      "commit": "77e0a54",
+      "message": "feat: route/origin-hour/dest-hour share ratios"
+    },
+    {
+      "commit": "21cf575",
+      "message": "feat: strong-member 10-model ensemble (reg_alpha/gamma variants)"
+    },
+    {
+      "commit": "2c25181",
+      "message": "feat: 9-member lossguide ensemble (max_leaves 64-192)"
+    },
+    {
+      "commit": "20bd090",
+      "message": "feat: refreshed 9-member LG ensemble, patience 40"
+    },
+    {
+      "commit": "aa50387",
+      "message": "feat: standalone minute-of-hour feature"
+    },
+    {
+      "commit": "4a35eb9",
+      "message": "feat: big-leaf LG ensemble (ml 128-256, lr .05-.07, mcw 20-60)"
+    },
+    {
+      "commit": "1ccd04d",
+      "message": "feat: drop raw categoricals, 6-member no-cat LG ensemble"
+    },
+    {
+      "commit": "ee7a9e1",
+      "message": "feat: add with-cats diversity member to no-cat ensemble"
+    },
+    {
+      "commit": "bbc60d4",
+      "message": "feat: add depthwise with-cats diversity member"
+    },
+    {
+      "commit": "f5cd77a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16674.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 48.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "bbc60d4",
+  "best_commit_eval_auc": 0.7465,
+  "best_commit_holdout_auc": 0.745904790852,
+  "best_commit_holdout_ap": 0.7379150179790064,
+  "best_commit_error": null,
+  "finalized_best": true
+}

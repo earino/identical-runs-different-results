@@ -1,0 +1,200 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 41,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:02:58+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s41-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:50:15+00:00",
+  "wall_seconds": 2837.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4497.7,
+  "endpoint_at_end": "ok",
+  "head": "5c5e1fe",
+  "n_commits": 25,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 3,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7351,
+  "final_eval_auc": 0.7351,
+  "holdout_auc": 0.7349496458620001,
+  "holdout_ap": 0.7261394578101483,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020178894126000047,
+  "generalization_gap": 0.0001503541379999085,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7777918,
+    "tokens_in_uncached": 387710,
+    "tokens_in_cached": 7390208,
+    "tokens_out": 75881,
+    "turns": null,
+    "api_calls": 135,
+    "method": "cumulative-max",
+    "cost_usd": 2.7981,
+    "cached_share": 0.95
+  },
+  "cpu_seconds_python": 4302.4,
+  "cpu_seconds_counted": 4066.2,
+  "cpu_seconds_uncounted": 0.3,
+  "cpu_seconds_exempt": 235.9,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 380,
+  "fits_counted": 364,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "d692c5c",
+      "message": "baseline"
+    },
+    {
+      "commit": "53fc3f4",
+      "message": "probe 8 tree configs pick best"
+    },
+    {
+      "commit": "66e4ec2",
+      "message": "probe shallow/low-lr region"
+    },
+    {
+      "commit": "90017bf",
+      "message": "probe seed ensemble vs hour features"
+    },
+    {
+      "commit": "4f21831",
+      "message": "probe feature variants doy/logdist/hourbin/inter"
+    },
+    {
+      "commit": "e1d2ee9",
+      "message": "probe calendar refinements + TE with best config"
+    },
+    {
+      "commit": "6c4e6c7",
+      "message": "capacity probe on cal features"
+    },
+    {
+      "commit": "41c3678",
+      "message": "probe small models + hour ablation"
+    },
+    {
+      "commit": "71d6d14",
+      "message": "probe alpha spectrum + bagging"
+    },
+    {
+      "commit": "8153c81",
+      "message": "probe time-of-day feature variants"
+    },
+    {
+      "commit": "9c9559e",
+      "message": "probe drop-combos + minofday"
+    },
+    {
+      "commit": "3d53f47",
+      "message": "probe interactions route/carrier/origin x hour"
+    },
+    {
+      "commit": "95852c3",
+      "message": "probe orighour neighborhood variants"
+    },
+    {
+      "commit": "832eb65",
+      "message": "capacity probe on orighour features"
+    },
+    {
+      "commit": "b4ef44f",
+      "message": "grid around alpha5/depth4 optimum"
+    },
+    {
+      "commit": "53d65c9",
+      "message": "probe depth with strong alpha + volume feature"
+    },
+    {
+      "commit": "f669331",
+      "message": "stochastic regularization grid"
+    },
+    {
+      "commit": "7d301eb",
+      "message": "seed/config bagged ensembles"
+    },
+    {
+      "commit": "3a24427",
+      "message": "bag with dest-hour/carr-hour features"
+    },
+    {
+      "commit": "6e77806",
+      "message": "chronological early stopping bag"
+    },
+    {
+      "commit": "1074313",
+      "message": "booster param probe then bag"
+    },
+    {
+      "commit": "cc3c9f6",
+      "message": "7-member bag with deep/shallow diversity"
+    },
+    {
+      "commit": "ef63969",
+      "message": "fix blend selection: deploy mean of 7-member bag"
+    },
+    {
+      "commit": "fa43a38",
+      "message": "10-member bag, prefix selection"
+    },
+    {
+      "commit": "a3472bd",
+      "message": "16-member mega bag config x feature diversity"
+    },
+    {
+      "commit": "5c5e1fe",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 4066.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 195.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a3472bd",
+  "best_commit_eval_auc": 0.7351,
+  "best_commit_holdout_auc": 0.7349496458620001,
+  "best_commit_holdout_ap": 0.7261394578101483,
+  "best_commit_error": null,
+  "finalized_best": true
+}

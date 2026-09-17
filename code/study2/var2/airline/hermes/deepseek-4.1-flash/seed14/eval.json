@@ -1,0 +1,208 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 14,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T16:26:10+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s14-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T17:10:29+00:00",
+  "wall_seconds": 2658.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7573.2,
+  "endpoint_at_end": "ok",
+  "head": "d39b294",
+  "n_commits": 27,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7592,
+  "final_eval_auc": 0.7592,
+  "holdout_auc": 0.776647053484,
+  "holdout_ap": 0.768397337349824,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.06187630174799996,
+  "generalization_gap": -0.017447053483999997,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 11975812,
+    "tokens_in_uncached": 11975812,
+    "tokens_in_cached": 0,
+    "tokens_out": 69827,
+    "turns": null,
+    "api_calls": 145,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 7273.2,
+  "cpu_seconds_counted": 6949.7,
+  "cpu_seconds_uncounted": 4.1,
+  "cpu_seconds_exempt": 319.3,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 318,
+  "fits_counted": 305,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "2bf5b3b",
+      "message": "baseline"
+    },
+    {
+      "commit": "aa1b596",
+      "message": "exp3: time-of-day feats + fixed-round model (no ES), no high-card route cats"
+    },
+    {
+      "commit": "cb60e7a",
+      "message": "exp8: depth 5 (less capacity)"
+    },
+    {
+      "commit": "63d8d69",
+      "message": "exp9: depth 4"
+    },
+    {
+      "commit": "ebf87de",
+      "message": "exp11: 4-model XGBoost ensemble (varied depth/lr/subsample)"
+    },
+    {
+      "commit": "baa0b2b",
+      "message": "exp12: airport-hour traffic share features"
+    },
+    {
+      "commit": "49a18aa",
+      "message": "exp13: global/route/carrier-hour share features"
+    },
+    {
+      "commit": "abdbd3a",
+      "message": "exp14: origin/dest dow-hour share + carrier hub share feats"
+    },
+    {
+      "commit": "5248c50",
+      "message": "exp16: cumulative daily traffic share feats (origin/dest/carrier)"
+    },
+    {
+      "commit": "7af89e0",
+      "message": "exp17: route/carrier-route/dest-carrier share + route cumulative hour share"
+    },
+    {
+      "commit": "f61c102",
+      "message": "exp18: half-hour resolution shares + carrier-at-origin rotation build-up"
+    },
+    {
+      "commit": "177c855",
+      "message": "exp19: carrier 15-min shares, weekday-hour load, hour-busyness ranks"
+    },
+    {
+      "commit": "64704e1",
+      "message": "exp20: 8-model diverse shallow ensemble"
+    },
+    {
+      "commit": "eb223d5",
+      "message": "exp21: arrival-side congestion (est arrival hour from distance)"
+    },
+    {
+      "commit": "d8de504",
+      "message": "exp22: calendar features (day-of-year, holiday travel windows)"
+    },
+    {
+      "commit": "9dafdb6",
+      "message": "exp24: explicit interaction products"
+    },
+    {
+      "commit": "7a51765",
+      "message": "exp25: 12-model ensemble with wider colsample/subsample diversity"
+    },
+    {
+      "commit": "75d630f",
+      "message": "exp27: add leaf-wise members for structural diversity"
+    },
+    {
+      "commit": "4dcacc7",
+      "message": "exp28: minute-bucket schedule shares + route hour rank"
+    },
+    {
+      "commit": "ff146bd",
+      "message": "exp30: dest/carrier minute-bucket shares"
+    },
+    {
+      "commit": "8cc878a",
+      "message": "exp31: trim ensemble rounds for runtime headroom"
+    },
+    {
+      "commit": "7da954b",
+      "message": "exp32: minute-bucket shares at origin/dest/route/carrier-origin levels"
+    },
+    {
+      "commit": "14eec65",
+      "message": "exp33: dow-level and carrier-route minute-bucket shares"
+    },
+    {
+      "commit": "bd8c296",
+      "message": "exp34: explicit minute features (dep_min, minute mod 5/15)"
+    },
+    {
+      "commit": "64850e8",
+      "message": "exp37: 5-minute slot shares at origin/carrier-hour"
+    },
+    {
+      "commit": "38e83a3",
+      "message": "exp38: faster ensemble (13 members, fewer rounds) for timeout headroom"
+    },
+    {
+      "commit": "19ce486",
+      "message": "exp39: system-level month/dow minute and month-hour schedule shares"
+    },
+    {
+      "commit": "d39b294",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6953.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 300.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "19ce486",
+  "best_commit_eval_auc": 0.7592,
+  "best_commit_holdout_auc": 0.776647053484,
+  "best_commit_holdout_ap": 0.768397337349824,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	9c2714b	0.7141	ok	4	baseline
+2	7f2d816	0.7160	ok	4	hparams: capacity + early stopping
+3	f734646	0.7128	ok	4	feat v1: time-of-day + route + log dist
+4	baae55d	0.7458	ok	54	screened winner: hour/min/cyc + tuned deep xgb
+5	720885d	0.7538	ok	83	time cats + hour_carrier interaction
+6	f02b4e2	0.7547	ok	63	colsample 0.6 with time cats
+7	3a8bd7f	0.7552	ok	85	2-seed ensemble
+8	ab03036	0.7562	ok	82	ens2 alpha 0.5
+9	556729d	0.7565	ok	103	3-model ensemble (2x lr.03 + 1x lr.05)
+10	89865e7	0.7565	ok	103	rank-averaged ensemble
+11	32a1024	0.7547	ok	102	ablation: drop sin/cos
+12	d187a62	0.7541	ok	74	row-bagging diversity

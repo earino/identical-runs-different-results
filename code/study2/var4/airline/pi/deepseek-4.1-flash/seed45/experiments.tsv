@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f328ff1	0.7141	ok	4	baseline
+2	757afc8	0.7054	ok	5	capacity 500 trees lr0.05 depth7
+3	d5acfb4	0.7125	ok	2	capacity 100 trees depth6
+4	c2939c1	0.7138	ok	2	add dep hour/min/time-of-day
+5	099a4ff	0.7168	ok	2	OOF target encoding Origin/Dest/Route
+6	5c4faa7	0.7165	ok	3	300 trees lr0.05 with TE
+7	8aac224	0.0000	crash	1	add day-of-year seasonal features
+8	33bbc9f	0.7166	ok	2	add day-of-year seasonal features
+9	af4ba14	0.7189	ok	2	target-encode all object cols
+10	c931de5	0.7199	ok	27	interaction TE features
+11	b2ef7f6	0.7215	ok	15	400 trees lr0.03 depth6
+12	1dd24cf	0.7229	ok	7	1200 trees lr0.02 depth6
+13	e857186	0.7227	ok	14	3000 trees lr0.01 depth6
+14	dafd87e	0.7255	ok	11	depth 8, 1200 trees lr0.02
+15	43e9391	0.7284	ok	23	depth 11, 1200 trees lr0.02
+16	7112dfe	0.7301	ok	43	depth 14, 1200 trees lr0.02
+17	ff7cb5c	0.7300	ok	56	depth 16, 1200 trees lr0.02
+18	776c029	0.7284	ok	53	more TE interactions + log dist
+19	b4c3228	0.7250	ok	15	regularize depth14 (mcw20 lambda2)
+20	f467fd3	0.7267	ok	41	subsample=1 colsample=1 depth14
+21	9a63db6	0.7290	ok	51	lossguide max_leaves=512
+22	fb14e51	0.7301	ok	43	centered target encoding
+23	7fdc8d9	0.7313	ok	83	2-seed ensemble depth14
+24	6ccf385	0.7311	ok	92	3-seed ensemble depth14 900 trees
+25	a2b1eca	0.7303	ok	57	max_bin=512 depth14
+26	0d2ac86	0.7354	ok	44	origin-hour TE at hourly granularity
+27	418330a	0.7381	ok	45	add dest-hour TE (hourly)
+28	a79f6fd	0.7384	ok	50	add carrier-hour + month-hour TE
+29	307bf25	0.7423	ok	49	half-hour buckets OH/DH/CoH/MH
+30	b12abb4	0.7404	ok	50	15-min buckets OH/DH/CoH/MH
+31	ba42e6e	0.7433	ok	94	2-seed ensemble half-hour features
+32	9aa85f0	0.7433	ok	104	add origin/dest-dayofweek TE
+33	c8dbed1	0.7429	ok	94	TE smoothing=5
+34	f62562e	0.7436	ok	104	TE residual diff features
+35	17ad372	0.7431	ok	109	add dayofweek x timebucket TE
+36	302b227	0.7422	ok	113	pair-residual TE features
+37	12e1d16	0.7453	ok	113	multi-scale time TE (hourly+halfhour)
+38	4caf0a5	0.0000	timeout	122	more multi-scale TE
+39	9555eaa	0.7457	ok	108	2h airport scales (1050 trees)
+40	0257ce6	0.7456	ok	106	hourly carrier/month multi-scale

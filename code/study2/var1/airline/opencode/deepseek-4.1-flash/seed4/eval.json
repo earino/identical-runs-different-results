@@ -1,0 +1,184 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 4,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:46:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s4-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:31:48+00:00",
+  "wall_seconds": 2721.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5983.5,
+  "endpoint_at_end": "ok",
+  "head": "955273b",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.747,
+  "final_eval_auc": 0.747,
+  "holdout_auc": 0.746470244164,
+  "holdout_ap": 0.740064056021637,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.031699492427999965,
+  "generalization_gap": 0.0005297558360000121,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5794906,
+    "tokens_in_uncached": 5794906,
+    "tokens_in_cached": 0,
+    "tokens_out": 25167,
+    "turns": null,
+    "api_calls": 113,
+    "method": "sum-of-113-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 5711.1,
+  "cpu_seconds_counted": 5404.6,
+  "cpu_seconds_uncounted": 30.8,
+  "cpu_seconds_exempt": 275.6,
+  "python_processes": 52,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 408,
+  "fits_counted": 391,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "414fc3c",
+      "message": "baseline"
+    },
+    {
+      "commit": "b79cce8",
+      "message": "time features, no route, 400 trees"
+    },
+    {
+      "commit": "5bb7249",
+      "message": "drop Month+DayofMonth"
+    },
+    {
+      "commit": "7258f5c",
+      "message": "6-model XGB ensemble"
+    },
+    {
+      "commit": "6cebd46",
+      "message": "OOF target encodings route+hour interactions"
+    },
+    {
+      "commit": "d6eb27c",
+      "message": "add dow_hour TE"
+    },
+    {
+      "commit": "8537b7c",
+      "message": "12-model diverse ensemble"
+    },
+    {
+      "commit": "766a818",
+      "message": "TE smooth 20"
+    },
+    {
+      "commit": "392c347",
+      "message": "TE smooth 40"
+    },
+    {
+      "commit": "1a1a055",
+      "message": "add route_hour TE"
+    },
+    {
+      "commit": "2a7bb0b",
+      "message": "add carrier/airport/dow x hour triple TEs"
+    },
+    {
+      "commit": "d604db6",
+      "message": "add carrier x route TEs"
+    },
+    {
+      "commit": "f6874aa",
+      "message": "add carrier_dow_hour and route_dow TEs"
+    },
+    {
+      "commit": "f8813b9",
+      "message": "drop native Origin/Dest cats, keep TEs"
+    },
+    {
+      "commit": "4d745c4",
+      "message": "also drop native carrier cat"
+    },
+    {
+      "commit": "6e20556",
+      "message": "add univariate main-effect TEs"
+    },
+    {
+      "commit": "e15c1e7",
+      "message": "add carrier-dow and dbin-hour TEs"
+    },
+    {
+      "commit": "62a1d4d",
+      "message": "16-model ensemble"
+    },
+    {
+      "commit": "da7a7f5",
+      "message": "add group support count features"
+    },
+    {
+      "commit": "80020b4",
+      "message": "more support count features"
+    },
+    {
+      "commit": "71bcd6f",
+      "message": "4 more support counts"
+    },
+    {
+      "commit": "955273b",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5435.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 272.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "71bcd6f",
+  "best_commit_eval_auc": 0.747,
+  "best_commit_holdout_auc": 0.746470244164,
+  "best_commit_holdout_ap": 0.740064056021637,
+  "best_commit_error": null,
+  "finalized_best": true
+}

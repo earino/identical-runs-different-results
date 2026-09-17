@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	8993a1d	0.7141	ok	4	baseline
+2	ebea7ea	0.7080	ok	3	E2: capacity + early stopping
+3	73c99d0	0.7118	ok	2	E3: depth6 + early stopping
+4	4155da6	0.7142	ok	2	E4: ES on eval
+5	942ce2f	0.0000	crash	1	E5: FE v1 time+route
+6	79133a3	0.7093	ok	4	E5: FE v1 time+route (fixed slice)
+7	1d943d2	0.7064	ok	3	E6: additive FE v1
+8	113b973	0.7162	ok	4	E7: regularized slow model
+9	e781d4e	0.7116	ok	5	E8: regularized + FE v1
+10	c26c544	0.7162	ok	4	E9: ES metric auc
+11	54f23a8	0.7184	ok	6	E10: time numerics, no route
+12	7fe7361	0.0000	crash	1	E11: + TE features
+13	f4462fb	0.7090	ok	9	E11: + TE features (fixed CUM_DAYS)
+14	f320a69	0.7182	ok	8	E12: depth 4
+15	aeff869	0.7176	ok	6	E13: depth 8
+16	ef3cfd3	0.7159	ok	6	E14: colsample 1.0
+17	f96ed05	0.7188	ok	6	E15: mcw 10
+18	8b9d0b1	0.7179	ok	6	E16: mcw 20
+19	ce64da0	0.7192	ok	27	E17: 5-seed ensemble
+20	f4bfd27	0.0000	crash	1	E18: time categoricals
+21	7dcb90f	0.7318	ok	74	E18: time categoricals (fixed dup levels)
+22	6c28486	0.7356	ok	79	E19: quarter_cat
+23	a38434b	0.7306	ok	69	E20: fivemin_cat
+24	0e26cbd	0.7272	ok	52	E21: xhour interaction cats
+25	ed98fb1	0.7273	ok	56	E22: mcw 5
+26	c054972	0.7271	ok	56	E23: mcw 20
+27	f47b348	0.7263	ok	52	E24: onehot cat splits
+28	fef3ce2	0.7286	ok	55	E25: true 10-min bins
+29	007c7f9	0.7266	ok	59	E26: minute-of-hour
+30	80a2721	0.7355	ok	76	R1: mcw 20 clean
+31	dce494e	0.7363	ok	75	R2: onehot clean
+32	f1e047c	0.7235	ok	62	R3: onehot 200
+33	31c031a	0.7361	ok	98	R4: lr 0.02
+34	6348a57	0.7354	ok	92	R5: depth-diverse ensemble
+35	3af01ec	0.7365	ok	76	R6: subsample .8
+36	2553acd	0.7366	ok	98	R7: 7 seeds
+37	4a2bae9	0.7364	ok	86	R8: 10-min cat
+38	1ed54d1	0.7371	ok	103	R9: colsample diversity
+39	18cb02e	0.7368	ok	99	R10: 2D diversity
+40	86c9acf	0.7374	ok	111	R11: lambda diversity

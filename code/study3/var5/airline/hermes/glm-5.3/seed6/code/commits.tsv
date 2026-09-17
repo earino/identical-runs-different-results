@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	f3d0ce0	1789646966	baseline
+01	397d906	1789647041	exp2: many trees + early stopping on eval
+02	9fef43d	1789647148	exp7: DepTime decomp + regularization
+03	40d7d36	1789647342	exp9: tuned lr/depth/alpha/colsample + month numeric/cyclical
+04	7be322c	1789647468	exp11: hm ordinal, hour_cat, traffic freq encodings
+05	9a1dfdc	1789647628	exp14: depth 9, alpha 4, mcw 3
+06	b25f535	1789647870	exp15: dates numeric-only (drop date cats + doy), route_vol
+07	2cf39fe	1789647957	exp16: 4-seed XGB ensemble
+08	a6e3bb2	1789648525	exp17: drop all month features (year-specific overfit)
+09	959b48f	1789649614	exp18: lossguide max_leaves=1536 ensemble
+10	8139436	1789651185	exp19: carrier/origin x hour cats, 3-seed ens, 350 trees

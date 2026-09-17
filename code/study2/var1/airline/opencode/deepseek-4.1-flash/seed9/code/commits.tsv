@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	24603f5	1789527651	baseline
+01	bbffa44	1789527727	features: numeric calendar + time-of-day, 30 trees
+02	98a05be	1789527746	100 trees
+03	f7080a7	1789527756	depth5 100 trees
+04	89ce795	1789527760	depth4 100 trees
+05	9193e92	1789527821	5-seed XGBoost bagging ensemble
+06	431a193	1789527827	diverse depth ensemble
+07	e931a78	1789527836	15-model depth ensemble
+08	16b0f55	1789527914	hour as categorical
+09	e1ecd85	1789527929	add 30-min tod categorical
+10	d9ba622	1789527942	15-min tod categorical
+11	e48c088	1789527957	carrier x hour categorical
+12	81fb6a4	1789528009	dow x hour categorical
+13	696a118	1789528093	ensemble depths 2-6
+14	819c044	1789528128	ensemble depths 2-8
+15	a527b66	1789528159	ensemble depths 2-10
+16	f544268	1789528202	ensemble depths 2-12
+17	dc8368c	1789528275	ensemble depths 2-13
+18	5610ba3	1789528355	ensemble depths 2-14

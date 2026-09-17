@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:35:43+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T07:46:40+00:00",
+  "wall_seconds": 4258.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2856.8,
+  "endpoint_at_end": "ok",
+  "head": "bb14a4a",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7424,
+  "final_eval_auc": 0.7424,
+  "holdout_auc": 0.7427618397339999,
+  "holdout_ap": 0.7298049109936288,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.027991087997999875,
+  "generalization_gap": -0.00036183973399994684,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5350658,
+    "tokens_in_uncached": 727554,
+    "tokens_in_cached": 4623104,
+    "tokens_out": 15927,
+    "turns": null,
+    "api_calls": 127,
+    "method": "sum-of-127-events",
+    "cost_usd": 2.2907,
+    "cached_share": 0.864
+  },
+  "cpu_seconds_python": 2480.8,
+  "cpu_seconds_counted": 2373.5,
+  "cpu_seconds_uncounted": 2.3,
+  "cpu_seconds_exempt": 105.0,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 57,
+  "fits_counted": 56,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "ea29ef7",
+      "message": "baseline"
+    },
+    {
+      "commit": "dc210f2",
+      "message": "capacity + early stopping (3000 trees, lr .05, es=50)"
+    },
+    {
+      "commit": "63cb03b",
+      "message": "feature engineering: time/date numerics, route, count+target encodings"
+    },
+    {
+      "commit": "ce42e28",
+      "message": "ablation: drop target encodings"
+    },
+    {
+      "commit": "e6c381b",
+      "message": "baseline features + time-of-day features only"
+    },
+    {
+      "commit": "8b68d73",
+      "message": "baseline features + Route categorical"
+    },
+    {
+      "commit": "973b5b1",
+      "message": "strong regularization: depth4, mcw50, lambda10"
+    },
+    {
+      "commit": "685c66a",
+      "message": "time-based ES validation split (Nov-Dec 2005)"
+    },
+    {
+      "commit": "81e24b3",
+      "message": "full-data retrain at ES round count"
+    },
+    {
+      "commit": "2472e49",
+      "message": "5-fold CV ensemble with per-fold ES, averaged probs"
+    },
+    {
+      "commit": "d1a3f48",
+      "message": "10-seed ensemble of ES recipe"
+    },
+    {
+      "commit": "167a2cb",
+      "message": "drop DayOfMonth (calendar noise across years)"
+    },
+    {
+      "commit": "2f2ab30",
+      "message": "also drop Month"
+    },
+    {
+      "commit": "695ad86",
+      "message": "depth 8"
+    },
+    {
+      "commit": "8df3bcf",
+      "message": "depth 10"
+    },
+    {
+      "commit": "fcf68a0",
+      "message": "depth 12"
+    },
+    {
+      "commit": "7045c1f",
+      "message": "depth 16"
+    },
+    {
+      "commit": "0ddb4bb",
+      "message": "depth 20"
+    },
+    {
+      "commit": "4393a1b",
+      "message": "depth 24"
+    },
+    {
+      "commit": "acf0140",
+      "message": "lr 0.03, es 100"
+    },
+    {
+      "commit": "07a4f4a",
+      "message": "max_bin 512"
+    },
+    {
+      "commit": "df801aa",
+      "message": "max_bin 1024"
+    },
+    {
+      "commit": "0c73301",
+      "message": "depth 32"
+    },
+    {
+      "commit": "bb14a4a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2375.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 376.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "0c73301",
+  "best_commit_eval_auc": 0.7424,
+  "best_commit_holdout_auc": 0.7427618397339999,
+  "best_commit_holdout_ap": 0.7298049109936288,
+  "best_commit_error": null,
+  "finalized_best": true
+}

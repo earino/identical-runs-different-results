@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	ed145b9	1789489246	baseline
+01	d82d730	1789489319	depth 4
+02	88b3ae4	1789489331	depth4 200 trees lr0.05
+03	44ed940	1789489397	3-seed ensemble
+04	6a41312	1789489420	5-model diverse ensemble
+05	0eef59d	1789489459	hour categorical + 5-model ensemble
+06	844c784	1789489472	add tod numeric + cyclic to hour cat
+07	066bc3f	1789489577	holiday period flag
+08	9246dc4	1789489588	is_weekend flag
+09	01fe7e7	1789489618	reg_lambda 5
+10	29d4bb8	1789489628	reg_lambda 20
+11	086981b	1789489650	add reg_alpha 5
+12	11f3d3e	1789489685	lambda10 alpha5
+13	e45dcc1	1789489696	lambda5 alpha5
+14	867238c	1789489728	travel_rush + holiday_day flags
+15	18218d4	1789489741	gradient_based sampling
+16	f2b6916	1789489759	carrier_hour interaction
+17	c258a5a	1789489775	origin_hour interaction
+18	bfe003c	1789489793	dest_hour interaction

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	716cdb0	0.7141	ok	3	baseline
+2	05c41b9	0.6973	ok	3	time+weekend+route, 200 trees
+3	06acaff	0.7101	ok	2	200 trees, baseline features
+4	18cc203	0.7151	ok	3	d4 500 trees lr.05 subsample reg
+5	b1ffabd	0.7168	ok	3	time-of-day features
+6	d383b73	0.7010	ok	4	route categorical w/ regularized model
+7	7610d3a	0.7056	ok	4	target+count encodings
+8	644461d	0.7158	ok	4	depth3 800 trees
+9	d435f0a	0.7164	ok	3	freq counts + weekend
+10	0b79c40	0.7171	ok	3	max_cat_to_onehot=16
+11	ed3499a	0.7172	ok	3	early stopping
+12	b3fd561	0.7187	ok	12	ensemble 6 xgb depths 3-5
+13	940e457	0.7187	ok	24	ensemble 12 depths3-6
+14	75bd13d	0.7204	ok	13	day-of-year feature
+15	935b687	0.7191	ok	14	cyclical doy+hour
+16	58300c8	0.7203	ok	13	holiday flags
+17	f040635	0.7251	ok	35	one-hot all cats
+18	9ed221a	0.7044	ok	10	route one-hot
+19	f90dea3	0.7238	ok	39	route fully one-hot
+20	114ab17	0.7272	ok	61	ensemble depths 4-7
+21	8a7fa11	0.7277	ok	63	ensemble depths 5-8
+22	a26d470	0.7279	ok	74	ensemble depths 6-9
+23	e4cf0c0	0.7286	ok	69	per-model split seeds
+24	866a3d1	0.7292	ok	84	8 diverse seeds
+25	7a53d70	0.7265	ok	66	hour only time feature
+26	76abe5f	0.7271	ok	68	drop dep_minute
+27	9b67a0d	0.7308	ok	74	hour one-hot categorical
+28	168a36f	0.7311	ok	80	15-min buckets one-hot
+29	ef86931	0.7311	ok	75	distance bins one-hot
+30	c7f50a3	0.7298	ok	76	week-of-year one-hot
+31	3752cc6	0.7262	ok	73	min_child_weight 20
+32	0bf4aee	0.7331	ok	85	min_child_weight 2
+33	ee99caa	0.7333	ok	88	min_child_weight 1
+34	b7995ae	0.7323	ok	85	subsample .9 colsample 1.0
+35	6b281b0	0.7336	ok	87	reg_lambda 0.3
+36	2da306e	0.7335	ok	80	reg_lambda 0.1
+37	21ba577	0.7343	ok	95	ensemble depths 7-10
+38	63d26d9	0.7346	ok	105	ensemble depths 8-11
+39	c88121f	0.7348	ok	102	ensemble depths 9-12
+40	47a4b27	0.7378	ok	113	carrier x hour interaction

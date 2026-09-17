@@ -1,0 +1,11 @@
+n	commit	eval_auc	status	seconds	description
+1	ef2bc83	0.7141	ok	3	baseline: raw categoricals, 30 trees depth6
+2	85a13b0	0.6968	ok	9	feat-v1: parsing+hour cat+cyclical+route, 400t d8
+3	d982ccd	0.0000	crash	1	v2: deep d20 col.5 bin512
+4	fcba7ea	0.7309	ok	35	v2: deep d20 col.5 bin512
+5	b9cc439	0.7403	ok	33	v3: drop date cats, d20 col.5 bin512
+6	56f958f	0.0000	crash	1	v4: freq counts + 3-model ensemble
+7	d37e57d	0.7435	ok	85	v4: freq counts + 3-model ensemble
+8	0eb2f49	0.7438	ok	106	v5: 4-model ensemble
+9	fc2687f	0.7479	ok	37	v6: single d20 dropcyc alpha1 bin1024
+10	376d85b	0.7483	ok	96	v7: ensemble on new base

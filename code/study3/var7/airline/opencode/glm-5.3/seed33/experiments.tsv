@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7ecbc07	0.7141	ok	4	baseline
+2	a937fbc	0.7223	ok	6	feat: c-num parse, hour/min_of_day, ES on eval
+3	c37de7e	0.7140	ok	5	feat: route Origin_Dest categorical
+4	ab1e9ab	0.7213	ok	5	params: d6 mcw10 subsample/colsample 0.7
+5	4c8ab3c	0.7223	ok	10	feat: month/dow/hour categorical versions
+6	482e675	0.7230	ok	11	params: lr0.02, es patience 300
+7	a477ba7	0.7146	ok	15	feat: interaction cats hour x carrier/dow/month
+8	e54ce9f	0.7189	ok	13	feat: OOF smoothed TE (hour,month,dow,day,carrier,origin,dest,route)
+9	22b9957	0.7239	ok	44	ensemble: average of 5 seeds, d8 lr0.02
+10	5ef1b4c	0.7271	ok	11	params: d10 (single model)
+11	baec998	0.7301	ok	16	params: d12 (single model)
+12	32882f6	0.7334	ok	22	params: d14 (single model)
+13	d54d727	0.7352	ok	28	params: d16 (single model)
+14	3e3fdef	0.7371	ok	41	params: d20 (single model)
+15	4b5e182	0.7369	ok	45	params: d24 (single model)
+16	db9ca51	0.7301	ok	17	params: d20 + min_child_weight 10
+17	d1fdfbf	0.7346	ok	40	params: d20 subsample 0.7
+18	daaf866	0.7376	ok	70	params: d20 lr 0.01
+19	898fd4f	0.7315	ok	37	params: d20 lr0.02 max_bin 64
+20	668c7c8	0.7392	ok	75	params: d20 lr0.01 max_bin 512
+21	7f697c3	0.7402	ok	86	params: d20 lr0.01 max_bin 1024
+22	bb0dd29	0.7403	ok	89	params: d20 lr0.01 max_bin 2048
+23	02aede0	0.7406	ok	104	params: d24 lr0.01 max_bin 2048
+24	2c03c5a	0.7386	ok	66	params: d24 mcw 3
+25	e221c1e	0.7316	ok	113	params: d24 colsample 1.0
+26	2c912c0	0.7436	ok	98	params: d24 colsample 0.7
+27	de28857	0.7452	ok	92	params: d24 colsample 0.6
+28	373b56b	0.7447	ok	78	params: d24 colsample 0.5
+29	52561ba	0.7448	ok	80	params: d24 col0.6 lr 0.005
+30	21ae531	0.7467	ok	98	params: d24 col0.6 sub 0.9
+31	debea96	0.7457	ok	115	params: d24 col0.6 sub 1.0
+32	22644d0	0.7464	ok	103	params: d28 sub0.9 col0.6
+33	c6fda90	0.7443	ok	102	ensemble: 2 seeds fixed 420 rounds
+34	a362ac3	0.0000	timeout	127	predict: average checkpoints B-60..B
+35	2aae7a8	0.0000	timeout	120	params: lossguide d24 sub0.9 col0.6
+36	347dc75	0.7420	ok	107	params: colsample_bynode 0.7
+37	266abdb	0.7467	ok	85	params: max_bin 4096
+38	a3265c8	0.7474	ok	113	feat: origin/dest/route train frequency
+39	70168f8	0.0000	crash	1	feat: day-of-year numeric
+40	3d95740	0.7422	ok	99	feat: day-of-year numeric (fixed)

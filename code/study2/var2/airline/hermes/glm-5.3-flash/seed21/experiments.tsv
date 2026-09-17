@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	b210336	0.7141	ok	4	baseline: depth6 30 trees native categoricals
+2	07511d3	0.0000	crash	1	exp2: tuned XGB, DepTime feats, ES on 15% internal split
+3	5a1de0c	0.7115	ok	6	exp2: tuned XGB, DepTime feats, ES on 15% internal split
+4	ee44b3d	0.7152	ok	4	exp4: tuned params, baseline feats, 400 trees no ES
+5	5043eac	0.7159	ok	4	exp5: clean rewrite of best config
+6	a3afc46	0.7225	ok	6	exp6: d4 n1200 lr.05 col.5 sub.8 mcw20 lam5 alpha1
+7	b8750db	0.7380	ok	8	exp7: carrier x half-hour cat, n1600 lr.04
+8	4e1017b	0.7452	ok	22	exp8: 3-model diverse ensemble
+9	c463377	0.7473	ok	34	exp9: 5-model ensemble, 4 feature views
+10	ea8e29c	0.7488	ok	27	exp10: quad ensemble, month-recency weights
+11	ec8ee2d	0.7500	ok	57	exp11: 8-model ensemble, seed bags over 4 views
+12	66e37e6	0.7524	ok	80	exp12: 14-model ensemble with bare members
+13	3aa112c	0.7530	ok	93	exp13: 16-model ensemble (+bare sub.5 pair)
+14	f64b6cc	0.0000	crash	101	exp14: 18-model ensemble (+LSboost reg members)
+15	23062a0	0.7535	ok	102	exp14: 18-model ensemble (+LSboost reg members)
+16	6145ebe	0.7541	ok	107	exp16: 20-model ensemble (4 reg members)
+17	c8e5db2	0.7544	ok	118	exp17: 22-model ensemble (+reg-geo pair)
+18	62cacc6	0.7544	ok	115	exp18: clip predict_proba to [0,1] (contract fix)
+19	caa4c46	0.7544	ok	117	final check
+20	88e1db5	0.0000	timeout	121	exp20: 24-model ensemble (+2 tuned seed bags)

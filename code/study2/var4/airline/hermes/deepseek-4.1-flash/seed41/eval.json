@@ -1,0 +1,172 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 41,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:40:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s41-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T18:11:21+00:00",
+  "wall_seconds": 1854.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5523.6,
+  "endpoint_at_end": "ok",
+  "head": "e9c6fb3",
+  "n_commits": 18,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 5,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7377,
+  "final_eval_auc": 0.7377,
+  "holdout_auc": 0.738642691588,
+  "holdout_ap": 0.7278031269767951,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02387193985199998,
+  "generalization_gap": -0.0009426915879999775,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3170704,
+    "tokens_in_uncached": 3170704,
+    "tokens_in_cached": 0,
+    "tokens_out": 38334,
+    "turns": null,
+    "api_calls": 71,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 5449.9,
+  "cpu_seconds_counted": 5095.3,
+  "cpu_seconds_uncounted": 4.7,
+  "cpu_seconds_exempt": 350.0,
+  "python_processes": 85,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 130,
+  "fits_counted": 122,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "80cbc6b",
+      "message": "baseline"
+    },
+    {
+      "commit": "1a31506",
+      "message": "time-of-day + cyclic calendar features, deeper boosted model (fixed unseen categories)"
+    },
+    {
+      "commit": "78bbd04",
+      "message": "airport/carrier traffic-volume features"
+    },
+    {
+      "commit": "a7bc327",
+      "message": "airport/carrier x hour traffic counts"
+    },
+    {
+      "commit": "0c3b670",
+      "message": "hour-share ratios (count / airport total)"
+    },
+    {
+      "commit": "fc32eb0",
+      "message": "stronger regularization"
+    },
+    {
+      "commit": "b56895d",
+      "message": "lr 0.05 with 2000 trees under regularization"
+    },
+    {
+      "commit": "206fc24",
+      "message": "3-model XGBoost bag (seed + sampling perturbation)"
+    },
+    {
+      "commit": "3edefbe",
+      "message": "bag on full training data, fixed 900 trees"
+    },
+    {
+      "commit": "9c5a227",
+      "message": "carrier-at-airport dominance features"
+    },
+    {
+      "commit": "b8f6812",
+      "message": "estimated arrival-time features"
+    },
+    {
+      "commit": "12d320e",
+      "message": "5-member diverse bag"
+    },
+    {
+      "commit": "bf603b8",
+      "message": "destination traffic at arrival hour + block time"
+    },
+    {
+      "commit": "76a11c8",
+      "message": "prune duplicate/dead features"
+    },
+    {
+      "commit": "2466b29",
+      "message": "7-member bag with rate/shape diversity"
+    },
+    {
+      "commit": "205c4b3",
+      "message": "ablation: drop calendar cyclic encodings"
+    },
+    {
+      "commit": "57e0983",
+      "message": "ablation: drop Month"
+    },
+    {
+      "commit": "846f8e8",
+      "message": "8-member bag"
+    },
+    {
+      "commit": "e9c6fb3",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5100.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 73.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "846f8e8",
+  "best_commit_eval_auc": 0.7377,
+  "best_commit_holdout_auc": 0.738642691588,
+  "best_commit_holdout_ap": 0.7278031269767951,
+  "best_commit_error": null,
+  "finalized_best": true
+}

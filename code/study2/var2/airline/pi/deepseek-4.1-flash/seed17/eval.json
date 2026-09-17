@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 17,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:07:48+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s17-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:30:41+00:00",
+  "wall_seconds": 4973.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17222.7,
+  "endpoint_at_end": "ok",
+  "head": "ad25a47",
+  "n_commits": 20,
+  "n_experiments": 31,
+  "n_ok": 30,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7571,
+  "final_eval_auc": 0.7571,
+  "holdout_auc": 0.756691069712,
+  "holdout_ap": 0.7476733133359165,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04192031797599993,
+  "generalization_gap": 0.0004089302880000423,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4825887,
+    "tokens_in_uncached": 4825887,
+    "tokens_in_cached": 0,
+    "tokens_out": 71847,
+    "turns": null,
+    "api_calls": 104,
+    "method": "sum-of-104-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17226.2,
+  "cpu_seconds_counted": 6009.9,
+  "cpu_seconds_uncounted": 10895.8,
+  "cpu_seconds_exempt": 320.6,
+  "python_processes": 56,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 337,
+  "fits_counted": 70,
+  "fits_uncounted": 264,
+  "commits": [
+    {
+      "commit": "d37a3da",
+      "message": "baseline"
+    },
+    {
+      "commit": "4644da6",
+      "message": "200 trees"
+    },
+    {
+      "commit": "8a9a013",
+      "message": "lossguide d7 regularized, early stop on eval"
+    },
+    {
+      "commit": "3ac102f",
+      "message": "lossguide d9 leaves127 cs0.3"
+    },
+    {
+      "commit": "3ad55f8",
+      "message": "lossguide d12 leaves255 mb128"
+    },
+    {
+      "commit": "059f56f",
+      "message": "lossguide d15 leaves511 mb64"
+    },
+    {
+      "commit": "8c7f11a",
+      "message": "lossguide d20 leaves511 mb96"
+    },
+    {
+      "commit": "159da50",
+      "message": "add TODbin categorical"
+    },
+    {
+      "commit": "a244575",
+      "message": "TOD 30-min bins"
+    },
+    {
+      "commit": "00ddc78",
+      "message": "retune leaves1023 lr.02 mb128"
+    },
+    {
+      "commit": "2b98203",
+      "message": "3-model seed ensemble"
+    },
+    {
+      "commit": "a4248e8",
+      "message": "add train-frequency count features"
+    },
+    {
+      "commit": "309c603",
+      "message": "2-model ensemble, faster"
+    },
+    {
+      "commit": "49abe42",
+      "message": "pairwise count features"
+    },
+    {
+      "commit": "b36ca46",
+      "message": "route-time counts + shares"
+    },
+    {
+      "commit": "2433ecd",
+      "message": "retune d30 leaves1023 mb256"
+    },
+    {
+      "commit": "bf6482c",
+      "message": "4-seed ensemble"
+    },
+    {
+      "commit": "4f0a8db",
+      "message": "estimated arrival time features"
+    },
+    {
+      "commit": "e1acebc",
+      "message": "3-seed ensemble (runtime margin)"
+    },
+    {
+      "commit": "e59492d",
+      "message": "retune leaves2047 cs0.4 3seed"
+    },
+    {
+      "commit": "ad25a47",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16905.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -3.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e59492d",
+  "best_commit_eval_auc": 0.7571,
+  "best_commit_holdout_auc": 0.756691069712,
+  "best_commit_holdout_ap": 0.7476733133359165,
+  "best_commit_error": null,
+  "finalized_best": true
+}

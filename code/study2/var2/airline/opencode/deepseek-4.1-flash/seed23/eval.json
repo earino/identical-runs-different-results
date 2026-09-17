@@ -1,0 +1,192 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 23,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:54:17+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s23-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:16:56+00:00",
+  "wall_seconds": 1358.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3693.7,
+  "endpoint_at_end": "ok",
+  "head": "b351d51",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7446,
+  "final_eval_auc": 0.7446,
+  "holdout_auc": 0.744925408262,
+  "holdout_ap": 0.7367025802947291,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.030154656526000023,
+  "generalization_gap": -0.0003254082620000043,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4872422,
+    "tokens_in_uncached": 4872422,
+    "tokens_in_cached": 0,
+    "tokens_out": 22575,
+    "turns": null,
+    "api_calls": 127,
+    "method": "sum-of-127-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3543.2,
+  "cpu_seconds_counted": 3303.4,
+  "cpu_seconds_uncounted": 0.8,
+  "cpu_seconds_exempt": 239.0,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 94,
+  "fits_counted": 90,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "06b3d0c",
+      "message": "baseline"
+    },
+    {
+      "commit": "c56f549",
+      "message": "regularized: 300 trees depth5 lr0.05"
+    },
+    {
+      "commit": "b9ca777",
+      "message": "feat: dep time decomposition + cyclical + log distance"
+    },
+    {
+      "commit": "d6563dd",
+      "message": "feat: frequency encodings for origin/dest/carrier"
+    },
+    {
+      "commit": "d627624",
+      "message": "prune: drop raw DepTime/Distance/DayofMonth (keep derived)"
+    },
+    {
+      "commit": "c997e48",
+      "message": "fix: guard pruned cat col in prepare"
+    },
+    {
+      "commit": "e264d33",
+      "message": "tune: depth6 400 trees lr0.04 mcw15 colsample0.7"
+    },
+    {
+      "commit": "f40add1",
+      "message": "tune: depth7 mcw25 colsample0.6 lambda3"
+    },
+    {
+      "commit": "90f8ee1",
+      "message": "tune: depth8 mcw40 colsample0.5 lambda5"
+    },
+    {
+      "commit": "aff598d",
+      "message": "tune: depth10 mcw60 lambda8 alpha3"
+    },
+    {
+      "commit": "1ce73b5",
+      "message": "tune: depth12 mcw80 lambda10 alpha5"
+    },
+    {
+      "commit": "bee4a25",
+      "message": "ensemble: 3 xgboost models (depth 11/12/13, seeds)"
+    },
+    {
+      "commit": "3ff2297",
+      "message": "feat: route frequency encoding"
+    },
+    {
+      "commit": "e074688",
+      "message": "feat: origin/dest/carrier-hour frequency"
+    },
+    {
+      "commit": "a28c1bf",
+      "message": "feat: normalized hour-share congestion ratios"
+    },
+    {
+      "commit": "c3ced28",
+      "message": "feat: hour-relative concentration ratios"
+    },
+    {
+      "commit": "223580d",
+      "message": "feat: hour lift (observed/expected)"
+    },
+    {
+      "commit": "f54e60a",
+      "message": "ensemble: 4 models depth 10-13"
+    },
+    {
+      "commit": "b05ea65",
+      "message": "feat: dep hour categorical"
+    },
+    {
+      "commit": "86094b0",
+      "message": "feat: origin-dest congestion differences"
+    },
+    {
+      "commit": "2720d18",
+      "message": "feat: route competition (carrier count, dominance)"
+    },
+    {
+      "commit": "b221aed",
+      "message": "feat: distance relative to hub/carrier mean"
+    },
+    {
+      "commit": "ce80733",
+      "message": "feat: arrival-side relative distance"
+    },
+    {
+      "commit": "b351d51",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3304.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 150.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "ce80733",
+  "best_commit_eval_auc": 0.7446,
+  "best_commit_holdout_auc": 0.744925408262,
+  "best_commit_holdout_ap": 0.7367025802947291,
+  "best_commit_error": null,
+  "finalized_best": true
+}

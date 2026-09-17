@@ -1,0 +1,27 @@
+n	commit	eval_auc	status	seconds	description
+1	1a3aab3	0.7141	ok	4	baseline
+2	acea11e	0.7113	ok	3	numtime + route + ES on eval
+3	c311966	0.7196	ok	4	numeric feats, no route, ES on AUC lr0.05
+4	25b9410	0.7191	ok	6	OOF target encoding route/OD/carrier
+5	9279dcb	0.7492	ok	18	depth24 col0.5 lr0.05
+6	4f8af65	0.7464	ok	26	OOF TE (route/OD/carrier) with d24 col0.5
+7	f656a8e	0.7502	ok	25	lr0.04
+8	d7c7da2	0.7512	ok	81	4-seed ensemble
+9	a98da0d	0.7479	ok	100	hour-cat OOF TE (m=30)
+10	69ccd38	0.7505	ok	83	diverse 4-member ensemble
+11	6ba73bb	0.7519	ok	78	4-seed ensemble + max_bin=512
+12	4fd4660	0.7499	ok	73	4-seed ensemble, bynode0.8, fixed 100 rounds
+13	dcc6143	0.7566	ok	105	volume count features
+14	2ee03d1	0.7575	ok	96	+carrier vol +origin-hour abs vol
+15	23b3e3b	0.7586	ok	89	+LogDistance
+16	80a2241	0.7601	ok	99	hour-cat + col0.45 + recency
+17	da049d2	0.7603	ok	94	+connectivity features
+18	6f06927	0.7630	ok	86	2ALL + 2 no-DATE member mix
+19	066a77f	0.7629	ok	92	mix ALL/ALL/noDATE/keepDOW
+20	d4e7511	0.7631	ok	84	col jitter 0.42-0.48
+21	f97f930	0.7632	ok	84	subsample 0.85 bagging
+22	4eff895	0.7632	ok	82	NaN-safe prepare
+23	f3aab4d	0.7630	ok	76	H2-2005 specialist member
+24	bd49d59	0.7633	ok	106	5 members: 3 ALL + 2 noDATE
+25	a9be24c	0.7634	ok	101	mix 2ALL + 2noDATE + 1keepDOW
+26	2f5c49c	0.7634	ok	102	rank-average aggregation

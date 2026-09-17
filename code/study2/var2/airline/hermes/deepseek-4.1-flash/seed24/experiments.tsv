@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	0c71246	0.7141	ok	4	baseline
+2	2415fcb	0.7091	ok	4	int-decode + TOD + Route cat, 300 trees d7 lr.08
+3	50d3d06	0.7014	ok	5	ablation: calendar cols categorical + TOD + Route, same model
+4	e6a4257	0.7045	ok	3	ablation: baseline features + big model (capacity test)
+5	6f628a2	0.7083	ok	3	ablation: only n_estimators 300 (isolate tree count)
+6	bc69ed8	0.7150	ok	2	ablation: depth 4, 30 trees
+7	9fe92f7	0.7119	ok	2	ablation: depth 3, 30 trees
+8	f6d1bab	0.7156	ok	2	depth 4, 150 trees, lr .1
+9	dcf9a7a	0.7105	ok	3	depth 4, 500 trees, lr .1
+10	63d0b1f	0.7159	ok	2	depth4 150t + Hour/TOD/IsWeekend
+11	9a551dd	0.7158	ok	2	depth4 150t + mcw20
+12	c39624b	0.7155	ok	2	drop raw DepTime (keep Hour/TOD)
+13	d1570c9	0.7161	ok	2	depth4 150t + subsample/colsample .8
+14	997c2e1	0.7167	ok	4	ensemble of 5 seeds, depth4 150t sub/col .8
+15	e68ca87	0.7175	ok	4	ens5 + traffic volume features
+16	3c700a9	0.7057	ok	5	ens5 + vol + smoothed rate encodings
+17	86f2e3a	0.7021	ok	6	ens5 + vol + Route categorical
+18	062209f	0.7180	ok	6	depth-diverse ensemble 8 models
+19	88756d5	0.7171	ok	8	8-model ens + dest/route/carrier-hour volumes
+20	aa9fd8a	0.7184	ok	15	20-member diverse ensemble
+21	cae1eb8	0.7179	ok	16	20-ens + max_bin=64
+22	9eb9811	0.7178	ok	14	20-ens + cyclic hour/month
+23	8c81e8f	0.7122	ok	2	probe early stopping (best_iteration)
+24	1ed3f2c	0.7190	ok	16	20-ens minus DayofMonth
+25	838857b	0.0000	crash	1	20-ens + share features
+26	575fa56	0.7199	ok	17	20-ens + share features (retry)
+27	9cde944	0.7210	ok	19	20-ens + hour/dest-hour/carrier-origin load
+28	1f10f3d	0.7210	ok	20	20-ens + month/weekday volume, dest-route share
+29	9772f9e	0.7215	ok	33	40-member diverse ensemble
+30	aca3067	0.7216	ok	36	40-ens + hub degree features
+31	13cf67f	0.7216	ok	50	60-member diverse ensemble
+32	c20146d	0.0000	crash	1	60-ens + MonthHour categorical
+33	b6d1da5	0.7166	ok	54	60-ens + MonthHour categorical (retry)
+34	b85c32d	0.7211	ok	38	per-depth tree budgets (40 members)
+35	29350f0	0.7215	ok	52	60-ens with rank-average aggregation
+36	96c8c0b	0.7219	ok	51	60-ens + peak-shape ratios
+37	5f5b119	0.7222	ok	53	60-ens + reg_lambda 3.0
+38	c4d8df8	0.7225	ok	52	60-ens + reg_lambda 10.0
+39	4dd28d1	0.7223	ok	47	60-ens + row bagging
+40	7de6d5f	0.7225	ok	52	60-ens + reg_lambda 20.0

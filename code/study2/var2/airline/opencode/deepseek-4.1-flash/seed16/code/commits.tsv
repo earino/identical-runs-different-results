@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	793638e	1789499224	baseline
+01	88653e4	1789499346	frequency encoding + route + hour, depth10
+02	9057abd	1789499420	add origin-hour/dest-hour frequency traffic features
+03	6e47dfc	1789499469	smoothed target encoding of Origin/Dest
+04	dae811a	1789499638	lower lr 0.02 with 1200 trees, reg_lambda
+05	d4e68b5	1789499851	3-seed xgboost ensemble, colsample 0.9
+06	6fe6b2a	1789500229	squared-error objective + 3-seed ensemble (xgb.train)
+07	3b2331a	1789501605	5-seed ensemble, colsample 0.6, monotone hour
+08	55c1c2f	1789502809	ordinal encoding for low-cardinality columns
+09	b204d54	1789503112	airport-hour congestion share features
+10	9ea7c67	1789503218	carrier-origin frequency and share features
+11	77d80bc	1789503377	carrier-hour frequency and share features
+12	19db2b9	1789504020	feature-bagged ensemble members
+13	73af335	1789504516	1600 rounds bagged
+14	de1c325	1789504596	depth 11 bagged

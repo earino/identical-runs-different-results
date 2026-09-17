@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 45,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T23:45:19+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s45-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T02:30:00+00:00",
+  "wall_seconds": 9881.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4165.7,
+  "endpoint_at_end": "ok",
+  "head": "b2f8c14",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7355,
+  "final_eval_auc": 0.7355,
+  "holdout_auc": 0.7362924258800001,
+  "holdout_ap": 0.7268089118631339,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02152167414400008,
+  "generalization_gap": -0.0007924258800000583,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9489652,
+    "tokens_in_uncached": 1693172,
+    "tokens_in_cached": 7796480,
+    "tokens_out": 44401,
+    "turns": null,
+    "api_calls": 179,
+    "method": "sum-of-179-events",
+    "cost_usd": 4.5929,
+    "cached_share": 0.822
+  },
+  "cpu_seconds_python": 3774.2,
+  "cpu_seconds_counted": 2025.9,
+  "cpu_seconds_uncounted": 1571.6,
+  "cpu_seconds_exempt": 176.7,
+  "python_processes": 53,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 460,
+  "fits_counted": 315,
+  "fits_uncounted": 121,
+  "commits": [
+    {
+      "commit": "478b987",
+      "message": "baseline"
+    },
+    {
+      "commit": "8bed924",
+      "message": "FE bundle: tod/cyclic time, route, numeric month/day, log dist"
+    },
+    {
+      "commit": "36f0c55",
+      "message": "tod+doy features, no route, fixed 200 rounds lr.05"
+    },
+    {
+      "commit": "2448ecc",
+      "message": "5-seed bagged ensemble, avg probs"
+    },
+    {
+      "commit": "c3f9887",
+      "message": "OOF target encoding for origin/dest/carrier/hour/dow"
+    },
+    {
+      "commit": "2371db4",
+      "message": "interaction TE: hour x carrier, hour x origin"
+    },
+    {
+      "commit": "4658291",
+      "message": "more interaction TEs: hour*dest, dow*carrier, dow*origin"
+    },
+    {
+      "commit": "5774c50",
+      "message": "route TE (m=300) + hour*dow TE"
+    },
+    {
+      "commit": "36ab3a9",
+      "message": "estimated arrival time features from distance"
+    },
+    {
+      "commit": "961972a",
+      "message": "te_arr_hour + overnight flag"
+    },
+    {
+      "commit": "a66b389",
+      "message": "8-model diverse ensemble (depth/colsample/subsample varied)"
+    },
+    {
+      "commit": "5c81a12",
+      "message": "arrival-side interaction TEs: arr*carrier, arr*dest"
+    },
+    {
+      "commit": "22f5c5b",
+      "message": "half-hour TEs: tod48, tod48*carrier"
+    },
+    {
+      "commit": "b28fcfa",
+      "message": "quarter-hour TEs: tod96, tod96*carrier"
+    },
+    {
+      "commit": "d0bce8f",
+      "message": "arrival-side 48/96-bucket TEs"
+    },
+    {
+      "commit": "999e613",
+      "message": "5-min bucket TEs: tod192 + carrier"
+    },
+    {
+      "commit": "ef23f05",
+      "message": "tod48*dow + dest*tod6 TEs"
+    },
+    {
+      "commit": "c30a558",
+      "message": "12-member diverse ensemble, good region only"
+    },
+    {
+      "commit": "a11fd73",
+      "message": "distance-interaction TEs: origin*dist3, tod48*dist3"
+    },
+    {
+      "commit": "9a1b898",
+      "message": "view diversity: 6 members with cats, 6 without"
+    },
+    {
+      "commit": "17b8971",
+      "message": "16 members: 8 full + 8 no-cat"
+    },
+    {
+      "commit": "d08c590",
+      "message": "dest*dist3 TE"
+    },
+    {
+      "commit": "b2f8c14",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3597.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 391.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "17b8971",
+  "best_commit_eval_auc": 0.7355,
+  "best_commit_holdout_auc": 0.7361396519119999,
+  "best_commit_holdout_ap": 0.7268166944595016,
+  "best_commit_error": null,
+  "finalized_best": false
+}

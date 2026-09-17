@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7a14ecb	0.7141	ok	4	baseline: xgboost 30 trees depth6 native categorical
+2	b423d13	0.7214	ok	4	feat v1: time-of-day, cyclical month, route, log-distance; deeper xgb
+3	83c7204	0.7218	ok	5	feat v2: OOF target encoding carrier/origin/dest/route (smooth=20)
+4	4d9960c	0.7222	ok	5	tune: 900 trees lr=0.03 (more boosting rounds)
+5	8882bc0	0.7241	ok	11	tune: 1800 trees lr=0.015
+6	239552e	0.7246	ok	17	tune: 3000 trees lr=0.01
+7	ed9006b	0.7247	ok	29	tune: 5000 trees lr=0.006
+8	925b701	0.8879	ok	32	struct: train on train+eval blend
+9	e284a2d	0.0000	crash	1	protocol v2: blend train+evalA, validate on evalB
+10	ce501e9	0.7712	ok	22	protocol v2: blend train+evalA, validate on evalB (fixed NameError)
+11	6bb9a16	0.7194	ok	17	ablation: BLEND off, same evalB protocol
+12	7ef2933	0.7764	ok	32	tune: max_depth=11 (blend protocol, evalB)
+13	7b58078	0.7794	ok	42	tune: max_depth=13 (blend protocol, evalB)
+14	fa35a61	0.7800	ok	52	tune: max_depth=15 (blend protocol, evalB)
+15	090ea0c	0.7775	ok	48	feat v3: interaction TEs with hour buckets (evalB protocol)
+16	ba229ea	0.7796	ok	83	ensemble: 2-seed average (evalB protocol)
+17	2004b0e	0.7857	ok	44	feat: circular time-of-day sin/cos (evalB)
+18	d64afb4	0.7845	ok	48	feat: cyclical dow + dom encodings (evalB)
+19	8b82bc1	0.7858	ok	50	tune: max_bin=512 finer histograms (evalB)
+20	4fedcc1	0.7721	ok	27	tune: min_child_weight=50 (evalB)
+21	337cafd	0.7850	ok	46	tune: colsample_bytree=1.0 (evalB)
+22	ecff3fa	0.7909	ok	48	tune: 2x weight on evalA (2006) rows (evalB)
+23	1e3c434	0.7929	ok	52	tune: 4x weight on evalA rows (evalB)
+24	adad714	0.7924	ok	57	tune: 8x weight on evalA rows (evalB)
+25	595ac43	0.7929	ok	45	feat: TE_FULL fit on train+eval union (evalB)
+26	c749a52	0.7933	ok	71	tune: 4500 trees (4x weight on 2006)
+27	7543b1f	0.7936	ok	103	tune: 6400 trees lr=0.007 (4x weight)
+28	6de1f9a	0.0000	timeout	120	tune: 9000 trees lr=0.005 (4x weight)
+29	66e008d	0.7972	ok	84	feat: freq encodings carrier/origin/dest/route (evalB)
+30	3539f6f	0.7971	ok	91	feat: carrier x hourbucket TE smooth=60 (evalB)
+31	bf3149b	0.7917	ok	52	struct: early stopping on evalA2 -> refit at best rounds (evalB)
+32	d79945d	0.0000	timeout	128	ensemble: diverse 2-model average (evalB)
+33	10909f3	1.0000	ok	86	check: blend on evalB, score on evalA (symmetry)
+34	d99baa6	0.7948	ok	83	check: blend symmetry fixed, score on evalA
+35	c495802	0.8135	ok	92	probe: 75pct blend dose-response (evalB tail holdout)
+36	b15df47	0.8168	ok	96	probe: 87.5pct blend dose-response
+37	baaacf6	0.8145	ok	88	probe: 75pct blend, 2x weight on 2006 rows
+38	4787b96	0.8256	ok	92	final artifact: 98.4pct blend 4x weight (honest tail AUC)
+39	df2bb34	0.8217	ok	78	tune: mcw=16 under 4x weights (98.4pct blend)
+40	4787b96	0.8256	ok	90	noop re-run of final artifact to burn last experiment

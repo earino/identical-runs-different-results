@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	83944e4	0.7141	ok	4	baseline
+2	88265b0	0.6944	ok	7	FE time+route 400 trees
+3	1faf797	0.7132	ok	1	FE time only baseline params
+4	8dc485d	0.7098	ok	5	capacity 500 trees
+5	5dfb43d	0.7119	ok	4	500 trees lr0.05 depth6
+6	dc9da80	0.7107	ok	3	early stop internal + time feats
+7	a8d1654	0.7180	ok	1	drop seasonal features
+8	6ca19b8	0.7186	ok	2	no-seasonal + time/distance feats
+9	c14ab37	0.7115	ok	2	add Route/CarrierRoute cats
+10	8a1dd72	0.7190	ok	1	frequency encodings
+11	8d21aa9	0.7196	ok	3	300 trees lr0.1 no reg
+12	d7aa2c0	0.7226	ok	6	800 trees lr0.05
+13	a0882cf	0.7249	ok	13	2000 trees lr0.03
+14	13fa4de	0.7250	ok	23	4000 trees lr0.015
+15	1e30bea	0.7294	ok	21	depth 8
+16	411b156	0.7325	ok	36	depth 10
+17	9c39cf9	0.7339	ok	59	depth 12
+18	55b5cc8	0.7251	ok	49	depth12 regularized
+19	121e2cb	0.7343	ok	65	depth 14
+20	22ec92b	0.7269	ok	69	target encodings depth14
+21	68fe471	0.7351	ok	79	ensemble d12+d14
+22	c80dba4	0.7354	ok	114	ensemble d10+d12+d14
+23	7456133	0.7170	ok	111	Route cat + ensemble
+24	607d7a8	0.7347	ok	50	single depth16
+25	cbc8b2e	0.7355	ok	91	ensemble d14+d16
+26	0a57797	0.7367	ok	91	origin/carrier-hour freqs
+27	d915637	0.7288	ok	99	dest/route-hour freqs
+28	7f7da49	0.7365	ok	102	ensemble d12+d14+d16
+29	bc2bd7b	0.7364	ok	93	carrier-origin/dow-hour freqs
+30	3cf217b	0.7379	ok	84	max_bin 512
+31	419fe60	0.7378	ok	82	max_bin 1024
+32	a5e7484	0.7376	ok	83	ensemble d14+d18 mb512
+33	069f826	0.7402	ok	76	max_cat_to_onehot 32
+34	1fcdccc	0.7410	ok	81	max_cat_threshold 128
+35	ae48a4a	0.7411	ok	85	max_cat_threshold 256
+36	1d0384d	0.7410	ok	108	more trees lr0.03
+37	2de8802	0.7436	ok	20	one-hot high-card
+38	e9b2e8f	0.7435	ok	49	onehot scale up trees
+39	9a2600d	0.7437	ok	37	4-member ensemble
+40	d257a3b	0.7436	ok	42	max_bin 1024 onehot

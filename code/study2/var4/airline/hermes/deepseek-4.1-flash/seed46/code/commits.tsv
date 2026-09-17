@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	23d0ecb	1789513960	baseline
+01	ed8680e	1789514016	300 trees lr 0.05 depth 6 no early stopping
+02	6b74f25	1789514065	add time-of-day + calendar numeric features
+03	f971c11	1789514091	OOF target encoding (route/origin/dest/carrier/hour/month/dow + interactions)
+04	bf984d3	1789514131	more TE specs: *_dow and dest_hour interactions
+05	13d8a3c	1789514147	3-seed bagged XGBoost ensemble
+06	53fac5c	1789514211	6-model depth-diverse bag
+07	f1b1cef	1789514449	12-model depth/colsample/seed bag
+08	de1c38a	1789514570	drop raw categorical features (subsumed by target encoding)
+09	73db903	1789514965	low-lr regime: 1000 trees lr 0.02 (6 models)
+10	f1014e7	1789515009	12 models at 1000 trees lr 0.02
+11	61efe9f	1789515090	2000 trees lr 0.01 (6 models)
+12	5cbb6ce	1789515317	add origin_carrier/dest_carrier TE+cnt keys
+13	ebf170b	1789515585	subsample 0.7
+14	5f45739	1789515794	network structure features: airport size, route competition, carrier shares

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	84eb0f3	0.7141	ok	3	baseline
+2	4609d72	0.6989	ok	9	stronger model: dep_hour feats + 800 trees lr .05 depth8 + early stop
+3	2ae4ef4	0.7122	ok	4	early stopping 50 on time-ordered val
+4	6050528	0.7129	ok	3	ablation: baseline feats, strong model, early stop 50
+5	dc9714e	0.7132	ok	3	full-data 200x0.05 d8 subsample
+6	43a0153	0.7108	ok	3	d6 400x0.05 subs .9 full
+7	75eea06	0.7131	ok	17	CV grid 8 configs x 4 folds
+8	af1083f	0.7138	ok	9	ddr target encoding + 200x0.05 d6
+9	12277d3	0.7126	ok	3	dep_hour feature + 200x0.05 d6
+10	31ff89a	0.7140	ok	2	regularized 30x0.1 d6 mcw20 gamma1
+11	6bda92c	0.7161	ok	2	bag of 5 seeds, subsample .9, 30x0.1 d6
+12	c8dfb78	0.7164	ok	4	bag of 10, colsample .8, 30x0.1 d6
+13	8ec8b85	0.7171	ok	6	hetero bag 12 (4 configs x 3 seeds)
+14	91e58a5	0.7173	ok	7	hetero bag 16, depths 4-8
+15	6c86ece	0.7176	ok	9	bag16 + smoothed ddr encoding
+16	15d46e6	0.7172	ok	9	bag16 + ddr + volume counts
+17	aadff91	0.7175	ok	9	bag16 + ddr, rank averaging
+18	9449b85	0.7176	ok	10	bag16 + ddr, logit averaging
+19	d5ec3fd	0.7168	ok	9	bag16 + ddr + ddr_hour
+20	4cf942a	0.7175	ok	10	bag16 + ddr + month harmonics
+21	630cf39	0.7164	ok	14	bag 32 (8 cfg x 4 seeds, feat bootstrap)
+22	a372007	0.7177	ok	15	bag 32 prob mean
+23	64174d5	0.7169	ok	15	bag 32 row bootstrap
+24	6f119d6	0.7175	ok	14	bag 32, drop ddr_Month
+25	b69675c	0.7171	ok	15	bag 32, sampling+bin rotation
+26	59cde47	0.7082	ok	15	bag 32 + ddr + ddr_route
+27	f59af1d	0.7185	ok	19	bag 36, depths 3-10
+28	cfbef7a	0.7184	ok	24	bag 48, depths 3-10
+29	bd5ee53	0.7184	ok	24	bag 42 with slow-lr members
+30	a0f51e8	0.7184	ok	37	bag 36 + dist_x_night + log dist
+31	32f13bc	0.7177	ok	19	bag 36 median blend
+32	534d7c2	0.7184	ok	19	bag 36, unseen ddr = NaN
+33	be5e5e1	0.7182	ok	17	bag 36, re-seeded
+34	bcacc49	0.7200	ok	18	drop DayofMonth raw, keep ddr
+35	80c3b67	0.7198	ok	18	drop DayofMonth+DayOfWeek raw
+36	e143ab1	0.7201	ok	17	drop DayofMonth+Month raw
+37	6130119	0.7167	ok	13	drop raw Origin/Dest
+38	579e443	0.7198	ok	17	ddr_od interaction feature
+39	571aade	0.7201	ok	17	ddr smooth=100
+40	b6fb581	0.7219	ok	40	bag 42 with depth-12

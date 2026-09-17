@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f138082	0.7141	ok	4	baseline: unmodified train.py
+2	a1e09bd	0.7039	ok	5	early stopping: 2000 trees, lr 0.1, val-based ES
+3	3dd67ce	0.7078	ok	4	capacity: 400 trees, full-data fit, no ES
+4	7a09e09	0.7181	ok	5	features: cyclical time/calendar, 30 trees
+5	387f75d	0.7181	ok	3	robust parsing fix + todo marker
+6	dfba109	0.7133	ok	6	capacity: 300 trees depth 8
+7	29183ab	0.7153	ok	4	shallow ensemble: 300 trees depth 6 lr 0.05
+8	4d8d91a	0.7196	ok	2	ensemble: depth6 + depth3, 30 trees each
+9	f540864	0.7259	ok	3	ensemble: depth6 + depth3 + depth12
+10	5af995c	0.7254	ok	4	ensemble: d6 + d3 + d12 + d9
+11	9b0a26c	0.0000	crash	1	feature: route = Origin_Dest categorical
+12	43c2967	0.7137	ok	3	feature: route = Origin_Dest categorical
+13	c463515	0.0000	crash	1	target encoding: smoothed TE on carrier/origin/dest
+14	82d8cdb	0.7263	ok	4	target encoding: smoothed TE on carrier/origin/dest
+15	f326a79	0.0000	crash	1	interaction: hour x dayofweek target-encoded
+16	9200575	0.7224	ok	4	interaction: hour x dayofweek target-encoded
+17	7d11b25	0.7259	ok	3	feature: dom==31 flag (late-month scheduling artifact)
+18	39dd05f	0.7251	ok	3	bagging: members 2-3 on 80% subsamples
+19	a768084	0.7306	ok	9	ensemble: d6+d3+d12+d18
+20	8397643	0.7313	ok	14	ensemble: + depth24 member
+21	852330e	0.7311	ok	21	ensemble: + depth32 member
+22	5d4e7d8	0.7316	ok	14	ensemble: rank-average instead of mean
+23	ec71d98	0.7361	ok	17	ensemble: + depth24 colsample0.5 member
+24	7632a20	0.7391	ok	24	ensemble: + depth18 colsample0.3 member
+25	4951132	0.7391	ok	26	ensemble: + depth24 colsample0.2 member
+26	9bba5d1	0.7403	ok	29	ensemble: + d12 cs0.5, + d24 cs0.75
+27	f401068	0.7404	ok	32	ensemble: + d6 cs0.5, + d18 cs0.6
+28	593aa24	0.7410	ok	63	members: 60 trees lr 0.05
+29	fa43010	0.7396	ok	58	regularization: subsample 0.8
+30	f92e0ff	0.7403	ok	66	feature: deptime missingness flag
+31	fa1f6e4	0.7380	ok	33	regularization: min_child_weight=5
+32	9fc72d4	0.7418	ok	63	ensemble: weighted rank-average (deep+diverse x1.5)
+33	e29e386	0.7420	ok	110	members: 100 trees lr 0.03
+34	6867382	0.7419	ok	63	ablation: remove weakest 2 members
+35	2b9da3a	0.7360	ok	81	regularization: reg_lambda=10
+36	c61ff16	0.7421	ok	106	feature: DepTime x Distance proxy
+37	4fe454c	0.7416	ok	68	depdist feature at 60 trees lr0.05 (runtime-safe)
+38	c209e23	0.7420	ok	107	100 trees, d3 member removed
+39	b439bfb	0.7409	ok	109	weights: shallow-favored 1.2 rebalance
+40	55145ae	0.0000	timeout	121	seed-averaging d24 cs0.5 member (3 seeds)

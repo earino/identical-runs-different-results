@@ -1,0 +1,142 @@
+"""Baseline XGBoost binary classifier. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- features -----------------------------------------------------------------
+feature_cols = [c for c in train.columns if c not in ID_COLS + [TARGET]]
+obj_cols = [c for c in feature_cols if pd.api.types.is_object_dtype(train[c]) or pd.api.types.is_string_dtype(train[c])]
+# baseline: treat string columns as categoricals, but drop very high-cardinality ones (names, free text, timestamps)
+cat_cols = [c for c in obj_cols if train[c].nunique() <= 1000]
+feature_cols = [c for c in feature_cols if c not in obj_cols or c in cat_cols]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in cat_cols}
+
+
+def _hour_key(df: pd.DataFrame, col: str) -> pd.Series:
+    hhmm = pd.to_numeric(df["DepTime"], errors="coerce")
+    return df[col].astype(str) + "_" + np.floor(hhmm / 100).astype("Int64").astype(str)
+
+
+# Schedule density: how many departures an airport/carrier handles in that hour of the day. Hub volume in the
+# evening bank is a stable, year-invariant congestion proxy.
+_orig_hour_cnt = _hour_key(train, "Origin").value_counts()
+_dest_hour_cnt = _hour_key(train, "Dest").value_counts()
+_carrier_hour_cnt = _hour_key(train, "UniqueCarrier").value_counts()
+_hour_cnt = np.floor(pd.to_numeric(train["DepTime"], errors="coerce") / 100).value_counts()
+_origin_tot = train["Origin"].value_counts()
+_dest_tot = train["Dest"].value_counts()
+
+
+def _add_features(X: pd.DataFrame, src: pd.DataFrame) -> pd.DataFrame:
+    # hhmm departure -> hour / minute / minutes-since-midnight: hhmm is non-monotone (1259|1301) and hides
+    # the strong "delays accumulate over the day" effect.
+    hhmm = pd.to_numeric(src["DepTime"], errors="coerce")
+    hour = np.floor(hhmm / 100)
+    X["dep_hour"] = hour.clip(0, 24)
+    X["dep_minute"] = hhmm - hour * 100
+    X["dep_time_min"] = X["dep_hour"] * 60 + X["dep_minute"]
+    # the calendar columns arrive as "c-<n>" levels; they are inherently ordered, so expose them as ordinals
+    for c in ("Month", "DayofMonth", "DayOfWeek"):
+        X[c] = pd.to_numeric(src[c].astype(str).str.replace("c-", "", regex=False), errors="coerce").to_numpy()
+    X["origin_hour_count"] = np.log1p(_hour_key(src, "Origin").map(_orig_hour_cnt).fillna(0.0).to_numpy())
+    X["dest_hour_count"] = np.log1p(_hour_key(src, "Dest").map(_dest_hour_cnt).fillna(0.0).to_numpy())
+    X["carrier_hour_count"] = np.log1p(_hour_key(src, "UniqueCarrier").map(_carrier_hour_cnt).fillna(0.0).to_numpy())
+    _hh = np.floor(pd.to_numeric(src["DepTime"], errors="coerce") / 100)
+    X["system_hour_count"] = np.log1p(_hh.map(_hour_cnt).fillna(0.0).to_numpy(dtype=float))
+    # how busy this airport is *relative to its own daily average*: an airport-hour interaction that carries
+    # "is this airport in its own peak bank", which raw volume cannot express
+    X["origin_daily"] = np.log1p(src["Origin"].map(_origin_tot).fillna(0.0).to_numpy())
+    X["dest_daily"] = np.log1p(src["Dest"].map(_dest_tot).fillna(0.0).to_numpy())
+    X["origin_hour_ratio"] = X["origin_hour_count"] - X["origin_daily"]
+    X["dest_hour_ratio"] = X["dest_hour_count"] - X["dest_daily"]
+    return X
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = df[feature_cols].copy()
+    for c in cat_cols:
+        X[c] = pd.Categorical(X[c], categories=cat_levels[c])  # unseen levels -> NaN
+    X = _add_features(X, df)
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+# A bag of seed-diverse XGBoost models: averaging independent fits cancels part of the seed variance, which
+# matters here because the target year differs from the training year.
+SEEDS = (42, 7, 1234, 2024, 99, 5150, 17, 555, 808, 31337, 202, 606, 404, 909, 12321)
+# three tree shapes x five seeds: mixing shapes (not only seeds) is what made the bag pay off
+SHAPES = (
+    dict(max_depth=5, grow_policy="depthwise"),
+    dict(max_depth=0, grow_policy="lossguide", max_leaves=31),
+    dict(max_depth=0, grow_policy="lossguide", max_leaves=63, colsample_bytree=0.4),
+    dict(max_depth=0, grow_policy="lossguide", max_leaves=127, colsample_bytree=0.3, min_child_weight=20),
+)
+VARIANTS = tuple(
+    dict(random_state=s, **SHAPES[i % len(SHAPES)]) for i, s in enumerate((SEEDS + SEEDS)[:16])
+)
+
+
+def _make_model(**overrides) -> xgb.XGBClassifier:
+    params = dict(
+        n_estimators=2000,
+        max_depth=5,
+        learning_rate=0.05,
+        subsample=0.8,
+        colsample_bytree=0.5,
+        min_child_weight=40,
+        reg_lambda=2.0,
+        tree_method="hist",
+        enable_categorical=True,
+        n_jobs=N_JOBS,
+        early_stopping_rounds=50,
+    )
+    params.update(overrides)
+    return xgb.XGBClassifier(**params)
+
+
+Xtr, ytr = prepare(train), to_y(train)
+Xev = prepare(evald)
+t0 = time.time()
+models = []
+for variant in VARIANTS:
+    m = _make_model(**variant)
+    m.fit(Xtr, ytr, eval_set=[(Xev, to_y(evald))], verbose=False)
+    models.append(m)
+print(f"Training time: {time.time() - t0:.1f}s  best_iterations={[m.best_iteration for m in models]}")
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    X = prepare(df)
+    return np.mean([m.predict_proba(X)[:, 1] for m in models], axis=0)
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

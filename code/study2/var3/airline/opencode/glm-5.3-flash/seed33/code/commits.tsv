@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	8e3da0a	1789516530	baseline
+01	1566576	1789516590	featpack1 with baseline model (30 trees depth6)
+02	5229c9d	1789516599	keep cat month/dom/dow, add deptime features+route
+03	418f701	1789516752	drop Month, DepHour categorical, n100 d5
+04	94f9881	1789516793	add CarHour interaction, n150
+05	040d7b1	1789516847	add CarQ quarter-hour interaction, n300
+06	2e3db19	1789516984	ensemble: avg of n300 lr.1 + n600 lr.05 (d5), drop redundant CarHour
+07	b96ddb2	1789517086	5-member diversity ensemble (depth/subsample/colsample)
+08	690b5b9	1789517543	DepMin feature + CV-bag averaging of 5 members x 5 folds
+09	c007993	1789517956	all-10 ensemble (5 configs x alpha/no-alpha), full-data fits
+10	7af530b	1789518536	drop DayofMonth: dead-weight feature, nodom 10-member ensemble
+11	ed82f50	1789518992	triple CarQ granularity mix: noalpha q30 + alpha q15/q20, 15 members
+12	e6948db	1789519556	20-member ensemble: +4 OrigQ (origin x slot) + OrigQ45 (fix col leakage)
+13	2da114f	1789519872	greedy-selected 9-member ensemble (pool of 29 diverse candidates)
+14	8400b32	1789520136	greedy 10-member ensemble v2: DestQ45, seed replica, depth8 member
+15	2c91e8a	1789520236	greedy 12-member v3: +CarD, +Route members
+16	b549118	1789520961	lean 6-member ensemble: RouteQ30, max_bin=1024, mct32 members (greedy v8)
+17	65ba131	1789521974	11-member ensemble: CarD_mct32_d8, RouteQ d8, OrigQ20/DestQ45 members
+18	0b44796	1789522583	10-member ensemble: CarD+OrigQ double-interaction, CarD mct32 d8/d9 members
+19	df63df7	1789522967	9-member ensemble: drop slow depth-8 RouteQ member (LOO-free)
+20	a7c63d7	1789523087	10-member ensemble: RouteQ mct4 + lossguide members, drop D member
+21	fc49484	1789523626	restore best banked config (exp23, 0.7602)

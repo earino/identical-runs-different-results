@@ -1,0 +1,34 @@
+n	commit	eval_auc	status	seconds	description
+1	039f2b4	0.7141	ok	4	baseline
+2	46c6ed6	0.7014	ok	3	hour+route+earlystopping
+3	e6bfd9c	0.7163	ok	6	hour-feats + ES-on-eval d6 lr0.05
+4	7126fc8	0.7072	ok	8	target-encodings k=30
+5	c2d81e0	0.7193	ok	8	doy + lr0.03
+6	cb2645b	0.0000	crash	2	5-seed ensemble
+7	5ebe945	0.7198	ok	32	5-seed ensemble (fixed)
+8	54a080f	0.0000	crash	1	mega12 ensemble full features
+9	0e12cda	0.7200	ok	71	mega12 ensemble (fixed)
+10	012f608	0.7258	ok	95	multi-view blend A+2B+C+D
+11	a9ab483	0.7264	ok	101	blend + HGB view
+12	a9ab483	0.7264	ok	103	null re-run stability check
+13	de85c1a	0.7265	ok	108	B view hyper diversity
+14	e645a05	0.7265	ok	109	add RF view, A view to 5 members
+15	9677b10	0.7267	ok	113	HGB 600 iters
+16	a806f34	0.7260	ok	98	xgb-only multi-view blend (contract compliant)
+17	d9b6d67	0.7259	ok	106	C2 D2 smoothing
+18	e31bacf	0.7254	ok	110	squarederror view
+19	4ecdb92	0.7260	ok	119	A9 view smoothing
+20	5f8e899	0.7260	ok	90	A4 simplification
+21	5f3d11e	0.0000	crash	27	B view extra randomness
+22	cd4128a	0.7253	ok	81	B view extra randomness (fixed)
+23	b270055	0.7259	ok	98	B6 member scaling
+24	3fad1fc	0.7261	ok	90	A view lambda 2.0
+25	fc63de2	0.7260	ok	88	lambda 2 on A C D
+26	4fc32f8	0.7261	ok	88	A view lambda 3.0
+27	24fa404	0.7251	ok	72	ES patience 60
+28	5b3ccbc	0.7261	ok	99	ES patience 150
+29	3fad1fc	0.7261	ok	89	null stability run of final config
+30	9e8451e	0.7261	ok	94	lossguide A member
+31	4d3332b	0.7258	ok	90	ablation: no D view
+32	dcfdb4c	0.7260	ok	90	ablation: no C view
+33	5d993f5	0.7263	ok	88	ablation: no A view

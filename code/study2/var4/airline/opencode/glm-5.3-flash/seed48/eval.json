@@ -1,0 +1,140 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 48,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:49:19+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s48-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:22:56+00:00",
+  "wall_seconds": 2017.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 5909.9,
+  "endpoint_at_end": "ok",
+  "head": "5dd1884",
+  "n_commits": 10,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7294,
+  "final_eval_auc": 0.7294,
+  "holdout_auc": 0.729295309012,
+  "holdout_ap": 0.7197517743814399,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.014524557275999994,
+  "generalization_gap": 0.00010469098800003351,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4159331,
+    "tokens_in_uncached": 29091,
+    "tokens_in_cached": 4130240,
+    "tokens_out": 22875,
+    "turns": null,
+    "api_calls": 82,
+    "method": "sum-of-82-events",
+    "cost_usd": 0.1397,
+    "cached_share": 0.993
+  },
+  "cpu_seconds_python": 5705.7,
+  "cpu_seconds_counted": 5271.9,
+  "cpu_seconds_uncounted": 151.3,
+  "cpu_seconds_exempt": 282.5,
+  "python_processes": 82,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 569,
+  "fits_counted": 531,
+  "fits_uncounted": 6,
+  "commits": [
+    {
+      "commit": "2debb11",
+      "message": "baseline"
+    },
+    {
+      "commit": "5f3e6e8",
+      "message": "tod cyclical+ordinal dates+logdist, early stopping + refit, depth8 lr0.05"
+    },
+    {
+      "commit": "553ab0d",
+      "message": "5-seed ensemble, each member logloss-ES 85/15 + refit"
+    },
+    {
+      "commit": "1089e04",
+      "message": "ensemble + hour feature (no route cat)"
+    },
+    {
+      "commit": "f44b030",
+      "message": "add carrier x hour and dow x hour crosses"
+    },
+    {
+      "commit": "dae8a3e",
+      "message": "8-member seed ensemble"
+    },
+    {
+      "commit": "03307aa",
+      "message": "log-frequency features for carrier/origin/dest/route (fixed defs)"
+    },
+    {
+      "commit": "2a45983",
+      "message": "heterogeneous members: depth 7/8 x colsample 0.7/0.8"
+    },
+    {
+      "commit": "8489973",
+      "message": "member pool with depth 6 and 9"
+    },
+    {
+      "commit": "8202514",
+      "message": "16-member heterogeneous ensemble"
+    },
+    {
+      "commit": "5dd1884",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5423.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 204.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8202514",
+  "best_commit_eval_auc": 0.7294,
+  "best_commit_holdout_auc": 0.729295309012,
+  "best_commit_holdout_ap": 0.7197517743814399,
+  "best_commit_error": null,
+  "finalized_best": true
+}

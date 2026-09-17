@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	cc7bec8	1789487158	baseline
+01	e98fda6	1789487232	FE: time-of-day+cyclical, OOF target encoding, depth10 early stopping
+02	0556536	1789487249	lr.03 n4000 ES100 mcv5
+03	1173edf	1789487283	TE interactions: origin/dest x hour, carrier x dow/month, freq encodings
+04	aaf32fd	1789487301	depth12
+05	9d74335	1789487317	depth16
+06	96a70e6	1789487370	colsample .5
+07	b6ad894	1789487395	colsample .3
+08	976d37d	1789487517	eta .02 n8000 ES200
+09	165edad	1789487558	ensemble: 3 depths x seeds averaged
+10	986c700	1789488148	max_bin 512
+11	ec2e13b	1789489740	5% valid, patience 100
+12	273af40	1789490216	subsample .95

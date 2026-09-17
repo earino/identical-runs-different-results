@@ -1,0 +1,12 @@
+n	commit	eval_auc	status	seconds	description
+1	48d4d01	0.7141	ok	4	baseline
+2	0f35fea	0.7119	ok	23	feat: time/calendar, route cat, depth7 lr.05 ES
+3	a17100b	0.7325	ok	6	TE route-hour + origin/dest hour, OOF-TE, d5 c.2 lam5 lr.04 1200
+4	9b3a1e8	0.7377	ok	6	counts+nunique feats, drop Month/DOM, OOF TE
+5	73f006e	0.7380	ok	23	5-model ensemble d4/5/6 seeds
+6	d79e333	0.7422	ok	22	add minute-of-hour + hour features (ensemble)
+7	f80bab6	0.7503	ok	101	lossguide ensemble l192-320 c.2-.3
+8	4cda1d0	0.7501	ok	100	lossguide ensemble + is_weekend
+9	a344494	0.7513	ok	98	6-seed lossguide ensemble l256 c.25 n750
+10	ff4633c	0.7517	ok	102	8-seed lossguide ensemble n650
+11	a47ea49	0.7518	ok	118	10-seed lossguide ensemble n550

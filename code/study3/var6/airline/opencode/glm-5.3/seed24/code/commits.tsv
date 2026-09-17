@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	07d66d3	1789637493	baseline
+01	ebf6af5	1789637524	numeric time features + early stopping
+02	9ca6238	1789637570	smoothed target encodings (route/origin/dest/carrier/hour), OOF on train rows
+03	be20a0e	1789637577	fix to_numpy fill_value typo
+04	6f1f344	1789638069	regularized deep config: d12 s.5 c.5 alpha5 mcw5 lr.03
+05	e0f6e9a	1789638083	5-seed bagged ensemble
+06	643cb77	1789638144	candidate features: cyclic hour/doy, log distance, oh/ch/month/dow TEs
+07	69fb104	1789638467	add Origin x hour TE, drop route TE and cyclic/doy features
+08	c532b4f	1789638530	candidate TEs: dh/om/od/dep15 + counts
+09	f24c33c	1789639001	drop month/dow TEs; add Dest x hour, 15-min bucket TEs and counts
+10	3a40483	1789639634	retune: d16 lr.02 s.6 c.6
+11	115fb99	1789640056	add Origin x 15-min bucket TE
+12	81229f0	1789640735	traffic density counts: Origin x hour/15min, Dest x hour
+13	6bfab63	1789641560	AUC ES, 3 seeds d16 es50

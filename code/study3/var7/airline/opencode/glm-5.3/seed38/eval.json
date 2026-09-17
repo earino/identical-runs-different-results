@@ -1,0 +1,148 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 38,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T09:34:54+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s38-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T10:59:03+00:00",
+  "wall_seconds": 5049.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16850.0,
+  "endpoint_at_end": "ok",
+  "head": "97433a5",
+  "n_commits": 12,
+  "n_experiments": 17,
+  "n_ok": 17,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7484,
+  "final_eval_auc": 0.7484,
+  "holdout_auc": 0.7481555645260001,
+  "holdout_ap": 0.7365820398481873,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03338481279000005,
+  "generalization_gap": 0.0002444354739998822,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7901160,
+    "tokens_in_uncached": 123944,
+    "tokens_in_cached": 7777216,
+    "tokens_out": 49544,
+    "turns": null,
+    "api_calls": 150,
+    "method": "sum-of-150-events",
+    "cost_usd": 2.4136,
+    "cached_share": 0.984
+  },
+  "cpu_seconds_python": 16430.9,
+  "cpu_seconds_counted": 1308.4,
+  "cpu_seconds_uncounted": 14880.3,
+  "cpu_seconds_exempt": 242.2,
+  "python_processes": 67,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 630,
+  "fits_counted": 51,
+  "fits_uncounted": 572,
+  "commits": [
+    {
+      "commit": "55ebe6a",
+      "message": "baseline"
+    },
+    {
+      "commit": "144f739",
+      "message": "FE v1 minus route, 30 trees depth 6 (ablation)"
+    },
+    {
+      "commit": "063ecea",
+      "message": "OOF target encoding for carrier/origin/dest/route + regularized GBT"
+    },
+    {
+      "commit": "ab512c2",
+      "message": "hour interactions (carrier@hour, dow@hour), route counts, 1500 rounds d4 lr.05"
+    },
+    {
+      "commit": "8960c0f",
+      "message": "carrier@halfhour interaction replaces carrier@hour"
+    },
+    {
+      "commit": "ff2e9b9",
+      "message": "halfhour x distance-quintile interaction"
+    },
+    {
+      "commit": "591ba1d",
+      "message": "bag of 3 xgb models, colsample 0.6"
+    },
+    {
+      "commit": "ecd2b24",
+      "message": "prune redundant features (route stats, dow_hour, hour_c)"
+    },
+    {
+      "commit": "7ad4e9c",
+      "message": "carrier@20min interaction, hh_dist stays 30min; bag of 5"
+    },
+    {
+      "commit": "02d13c8",
+      "message": "depth 5 + colsample 0.5, distance octiles for hh_dist"
+    },
+    {
+      "commit": "771c4df",
+      "message": "bag of 7 members"
+    },
+    {
+      "commit": "2932144",
+      "message": "carrier time bins 20->24 min"
+    },
+    {
+      "commit": "97433a5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16188.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 419.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "2932144",
+  "best_commit_eval_auc": 0.7484,
+  "best_commit_holdout_auc": 0.7481555645260001,
+  "best_commit_holdout_ap": 0.7365820398481873,
+  "best_commit_error": null,
+  "finalized_best": true
+}

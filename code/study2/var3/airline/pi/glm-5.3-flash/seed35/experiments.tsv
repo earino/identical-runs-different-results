@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	90d2e91	0.7141	ok	2	baseline
+2	19f7f53	0.7104	ok	4	early stopping, depth8 lr0.05 subsample0.9
+3	5a257b4	0.7004	ok	7	1000 trees depth6 lr0.05 fixed
+4	ad7758c	0.7125	ok	2	baseline + 100 trees
+5	a4c97c7	0.7119	ok	2	subsample0.7 col0.7 mcw10 200trees
+6	9c4cd68	0.0000	crash	1	FE v1: hour, route, numeric dates, log dist
+7	360d64f	0.0000	crash	1	FE v1: hour, route, numeric dates, log dist
+8	30ca3f7	0.7070	ok	3	FE v1: hour, route, numeric dates, log dist
+9	cd98c70	0.7076	ok	2	FE v1 at baseline params
+10	41a1e31	0.0000	crash	1	FE v1 minus route/minute
+11	4df53d2	0.7166	ok	2	FE v1 minus route/minute
+12	1f07d70	0.0000	crash	1	TE m=50 carrier/origin/dest/route/hour/dow + counts
+13	634d3d4	0.7059	ok	2	TE m=50 carrier/origin/dest/route/hour/dow + counts
+14	5707893	0.7198	ok	3	5-seed ensemble sub0.8 col0.8
+15	b8102f1	0.7232	ok	5	8x60 trees sub0.7 col0.7
+16	b899389	0.7257	ok	9	12x100 trees sub0.6 col0.6
+17	2bfcb16	0.7265	ok	15	16x150 trees sub0.5 col0.5
+18	5b2f9fb	0.7263	ok	12	depth-diverse d5/6/7 12 members
+19	42edd9b	0.7268	ok	22	12x300 lr0.05 sub0.5 col0.5
+20	807065c	0.7248	ok	25	add month_c dow_c categoricals
+21	7a98a66	0.7259	ok	22	bootstrap bagging 12x300
+22	a24315c	0.7227	ok	24	drop dom_n
+23	fc2009d	0.0000	crash	1	holiday window flag
+24	c27be50	0.7275	ok	21	holiday window flag
+25	c64cfc3	0.7274	ok	35	20x300 sub0.5 col0.5
+26	e9c0e6d	0.7273	ok	24	12x300 mcw10
+27	e747718	0.7333	ok	37	hhmm/30 bucket cat
+28	f3be13f	0.7347	ok	39	15-min bucket cat
+29	3bd9570	0.7345	ok	38	10-min bucket cat
+30	d563111	0.7352	ok	36	hub counts origin/dest
+31	f10a54b	0.7336	ok	40	colsample_bynode 0.7
+32	86a8139	0.7342	ok	39	drop hour_n
+33	e275378	0.0000	crash	1	route and carrier counts
+34	f42d1b7	0.7357	ok	39	route and carrier counts
+35	1c9ed64	0.7367	ok	42	sub0.6 col0.6 retest
+36	8dc758c	0.7367	ok	41	sub0.7 col0.7
+37	e243155	0.7365	ok	49	24 members x 300 sub0.6 col0.6
+38	bd3a28b	0.7371	ok	32	two-config ensemble
+39	e9bb43f	0.7370	ok	50	three-config ensemble 24 members
+40	55d1bbc	0.7373	ok	31	gamma=1 both configs

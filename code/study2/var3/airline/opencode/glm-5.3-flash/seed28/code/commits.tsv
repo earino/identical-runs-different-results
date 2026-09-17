@@ -1,0 +1,5 @@
+n	commit	unix_time	subject
+00	f37561c	1789491675	baseline
+01	0260b9c	1789491732	feat: int dates, dep-time cyclical, route, logdist; depth8 ES
+02	aa2dfa2	1789491886	5-seed bagged ensemble of best config
+03	92124ac	1789493568	staggered caps 800-1600 under ES

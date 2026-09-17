@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	534e9c2	1789509629	baseline
+01	f52d25e	1789509690	model capacity + dep-time fe, no route cat
+02	43ed48b	1789509751	capacity sweep: 1500 trees lr0.02
+03	6d0cbb7	1789509782	deeper: d9 1200@0.03
+04	6298f74	1789509941	schedule-structure features: freq + hub share + origin-hour share
+05	6490ff2	1789510010	ensemble of 3 xgb variants
+06	cc243f7	1789510069	cumulative origin-hour congestion feature
+07	dca3848	1789510127	ensemble of 6 diverse xgb variants
+08	02f7391	1789510394	ensemble of 8 cheaper variants (600 trees each)
+09	ad3cc30	1789510519	diagnostic: ensemble feature importances
+10	f758a6b	1789510603	fix swapped hub-share lookup keys (co_share_* were constant 0)
+11	c1a544b	1789510877	ablation: drop raw Month feature
+12	116c6c5	1789510956	ablation: drop DayofMonth feature too
+13	bce7505	1789511234	add dest-hour share and carrier-origin-hour share
+14	71cf3ac	1789511560	add cumulative dest-hour congestion feature (restore exp#28, eval 0.7429)
+15	b64eee3	1789511663	test: drop native origin/dest categoricals (keep numeric surrogates)
+16	1ceffb6	1789511988	add route-share-of-origin feature
+17	e816c1c	1789512384	cleanup: drop diagnostics and dead code (no feature change)

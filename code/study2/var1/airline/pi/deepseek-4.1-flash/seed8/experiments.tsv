@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	05f69d2	0.7141	ok	4	baseline
+2	ce8490f	0.7021	ok	8	time feats + route cat + stronger xgb
+3	a0a7a33	0.7157	ok	4	time feats only, 300 trees lr0.05
+4	5df04b1	0.7116	ok	7	800 trees lr0.03 depth7
+5	652dd0a	0.7148	ok	3	add frequency encodings
+6	d7b80fc	0.7145	ok	4	depth5 500 trees
+7	5a1b1b5	0.7160	ok	2	150 trees
+8	7cba801	0.7148	ok	1	80 trees
+9	b2243f5	0.7178	ok	5	heavy reg 700 trees lr0.03
+10	f2caa60	0.7167	ok	10	heavier reg 1500 trees lr0.02
+11	45c1f34	0.7173	ok	7	depth7 + heavy reg
+12	7369921	0.7175	ok	6	mcw100
+13	306b0ba	0.7183	ok	5	lambda3
+14	8be435a	0.7188	ok	5	lambda8
+15	d9f89f2	0.7189	ok	6	lambda20
+16	dd49541	0.7103	ok	8	add route categorical (reg model)
+17	3412329	0.7189	ok	5	default max_cat_to_onehot
+18	770ebac	0.7208	ok	6	reg_alpha2
+19	71e5369	0.7228	ok	5	reg_alpha5
+20	694cdaa	0.7238	ok	6	reg_alpha10
+21	30fe059	0.7229	ok	5	reg_alpha20
+22	65deeee	0.7241	ok	8	alpha10 1200 trees lr0.02
+23	8451fb9	0.7247	ok	9	mcw20
+24	de9d834	0.7249	ok	9	mcw10
+25	861adb3	0.7248	ok	14	2000 trees lr0.015
+26	04f95f7	0.7252	ok	32	4-model xgb ensemble
+27	a1b699b	0.7236	ok	32	add day-of-year cyclical
+28	abb89bf	0.7251	ok	60	8-model ensemble
+29	a148c10	0.7250	ok	31	more randomized 4-model ensemble
+30	fbb3b66	0.7249	ok	32	OOF target-encoded carrier/origin/dest/route
+31	986f9ee	0.7248	ok	8	single model lambda10
+32	811173e	0.0000	timeout	121	DART booster
+33	f381457	0.7261	ok	9	shifted-day time features
+34	c8af6d6	0.7264	ok	32	4-model ensemble + shifted features
+35	9ff0c19	0.7261	ok	32	monotone constraint on shifted_minute
+36	6798de1	0.7264	ok	33	drop unshifted minute_of_day
+37	a31a5cd	0.7262	ok	47	6-model ensemble
+38	98ab0b5	0.7264	ok	33	rank-average ensemble
+39	a354fba	0.7261	ok	32	drop raw DepTime
+40	6ce1e32	0.7262	ok	40	5x depth6 seed/colsample ensemble

@@ -1,0 +1,25 @@
+n	commit	eval_auc	status	seconds	description
+1	8e3da0a	0.7141	ok	4	baseline
+2	24a79eb	0.7073	ok	6	featpack1 + depth8 300 trees
+3	1566576	0.7092	ok	2	featpack1, baseline model params
+4	5229c9d	0.7062	ok	2	baseline cats + deptime/route additions
+5	418f701	0.7196	ok	2	drop Month + DepHourCat n100 d5
+6	dee4069	0.0000	crash	1	CarHour carrier x DepHour, n150 d5
+7	94f9881	0.7255	ok	2	CarHour carrier x DepHour, n150 d5
+8	040d7b1	0.7338	ok	4	CarQ carrier x hour x quarter, n300 d5
+9	2e3db19	0.7361	ok	7	2-model ensemble avg
+10	b96ddb2	0.7421	ok	16	5-member ensemble C+E+F+G+H
+11	690b5b9	0.7431	ok	61	DepMin + CV-bag 25 models
+12	c007993	0.7449	ok	29	10-member ensemble alpha diversity
+13	7af530b	0.7470	ok	28	nodom 10-member ensemble
+14	ed82f50	0.7531	ok	36	CarQ granularity mix 15-member
+15	82894c9	0.0000	timeout	120	OrigQ diversity 20-member
+16	e6948db	0.7552	ok	63	OrigQ diversity 20-member (fixed cols)
+17	2da114f	0.7569	ok	28	greedy 9-member subset
+18	8400b32	0.7576	ok	34	greedy 10-member v2
+19	2c91e8a	0.7581	ok	40	greedy 12-member v3
+20	b549118	0.7592	ok	38	lean 6-member greedy v8
+21	65ba131	0.7598	ok	84	11-member greedy v9
+22	0b44796	0.0000	timeout	120	10-member greedy v10
+23	df63df7	0.7602	ok	55	9-member greedy v10 fast
+24	a7c63d7	0.0000	timeout	121	10-member greedy v11

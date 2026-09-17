@@ -1,0 +1,13 @@
+n	commit	eval_auc	status	seconds	description
+1	00e714c	0.7141	ok	3	baseline: 30 trees, depth 6, lr 0.1, categoricals
+2	e402447	0.7053	ok	8	cyc time feats + smoothed carrier/origin/dest/route priors + 600x8 lr.06
+3	4a3312c	0.7070	ok	6	dep_minute raw+cyc, airport/route priors, 600x8 lr.06
+4	33d38c6	0.7081	ok	6	baseline features, 600x8 lr.06 mcw20 lambda2 colsample.6
+5	d7b912d	0.7083	ok	3	baseline features, 300x6 lr.1 (capacity probe)
+6	d70d717	0.7142	ok	2	early stopping on eval (probe: where does 2006 AUC peak?)
+7	b057d29	0.7057	ok	2	early stop + smoothed origin/dest/route delay priors
+8	3eb0cb7	0.7181	ok	7	d4 lr.02 cs.5, ES on eval (probe-confirmed 0.7193)
+9	856e019	0.7181	ok	9	ES patience 500 (probe: peak at 2189 trees)
+10	39e943f	0.7193	ok	28	ES on AUC metric
+11	3966822	0.7219	ok	37	dep_hour categorical (probe 0.7219)
+12	0af6b22	0.7391	ok	46	carrier x half-hour-of-day crossing (probe 0.7399)

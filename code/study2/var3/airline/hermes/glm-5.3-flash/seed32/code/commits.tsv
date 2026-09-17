@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	cda5002	1789511655	baseline
+01	8af6586	1789511884	feateng clean: route/car_orig/dow_hour categoricals + cyclic time, no TE, ES-tuned depth8
+02	01c0c29	1789511903	clean feateng + shallower regularized params (d6 mcw50)
+03	0f872ce	1789511933	diagnostic sweep: feature sets x tree counts x depths
+04	8aa9d0d	1789511998	sweep2: more trees on bt, depth/regularization probes, dep_bin15 + car_hour
+05	79ef827	1789512093	sweep3: combine bin15+car_hour, probe bin5, dow_hour, orig_hour, lr, lambda
+06	dfa149d	1789512359	consolidate: no-dom, bin15+car_hour, n2000 lr0.05 + micro probes
+07	211b108	1789512453	diag: half-split stability, month_hour probe
+08	9addfdc	1789512540	probes: dist_bin+freqs, depth-diverse ensemble
+09	9dc5895	1789512633	ensemble sweep: 6 fitted members, combo search, no refit
+10	6c8221f	1789512750	8-member pool + greedy subset selection, no refit
+11	66352b4	1789512871	diversity pool: colsample/lr variants, greedy over 8
+12	577c0b4	1789512996	pool+gamma/alpha members, greedy stop +0.0002
+13	f8903d4	1789513137	feature-subset-diverse members on top of hyperparam pool
+14	989de96	1789513422	pool: +d6c7, +dest_hour, drop weak extras
+15	3d5c707	1789513525	pool + lossguide max_leaves64 member
+16	5f011f7	1789513801	rank-average ensemble combination
+17	6e4442a	1789514271	single-model probes: max_bin, colsample_bynode, recency weights, dist_hour
+18	1c4cea3	1789514366	pool v2: colnode + recency + orig_hour + dist_hour members, equal weights
+19	e4fb23b	1789514643	pool v3: 7 members incl colnode/dist_hour, greedy
+20	45ecf5c	1789514914	pool v5: winning quartet + rec_disthour + d4
+21	d2401cb	1789515162	recency-centric pool: slope probes + rec d6g + rec orig_hour
+22	3ab3b00	1789515245	recency family: dest_hour, colnode, lg64 variants
+23	645a16b	1789515583	probes: dow_bin15, hour-load numerics, max_bin=256
+24	6749944	1789515699	wider recency pool, weight grid on trio
+25	36e13ce	1789515799	exhaustive subset search over 7 recency members

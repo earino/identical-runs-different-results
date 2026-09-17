@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	e130baa	1789506399	baseline
+01	841748a	1789506462	feat: hour/minute, int dates, log distance, route + freq encodings; early stopping + refit
+02	bf1f53d	1789506479	fixed 600 trees, no early stop (time-split early stop underfit at 42 trees)
+03	23fa1c8	1789506864	d6 lr.03 n350; hour+minute+int dates+distance+3 cats (route/freq/logdist dropped)
+04	656edb8	1789506897	OOF target encoding: carrier/origin/dest + carrier-hour/origin-hour (smoothed, full-train maps in prepare)
+05	a994729	1789507000	add TE route (m300) + dow-hour (m150)
+06	9483f4c	1789507027	3-model ensemble (seeds 42/1337/2024, colsample .7/.8/.9), prob average
+07	25e47a7	1789507102	diverse-3 ensemble: d6 + lossguide128 + d4/n500
+08	4a00b76	1789507530	diverse-5 ensemble + TE dest-hour, origin-dow
+09	40cdd3a	1789507876	8-member ensemble (+d7, lossguide192, d3)
+10	430306d	1789508077	10-member ensemble: +TE-only and base-only feature-subset members
+11	c1a76b4	1789508467	12-member ensemble (+lossguide96, d8)
+12	f02db66	1789509308	add 4 congestion-volume features (key fix: same string keys as TE)
+13	376304e	1789509892	16-member ensemble (+d6cs.6, lg256, TE-only d5, BASE-only d4)
+14	af6d2d6	1789510852	scale trees per member x1.5
+15	21ff413	1789510983	mixed TE fold seeds + x2 trees on shallow members

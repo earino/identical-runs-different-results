@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	73eacf1	1789486920	baseline
+01	43b7968	1789487108	exp4: engineered feats, 150 trees depth6 no route
+02	a7f18d6	1789487212	exp7: frequency encodings carrier/origin/dest/route
+03	768ccba	1789487234	exp11: 10-seed ensemble of exp4 config
+04	691d509	1789487250	exp12: 30-seed ensemble, subsample/colsample 0.7
+05	078c8d1	1789487430	exp16: drop Month/Dom/Dow cats, keep carrier/origin/dest
+06	f78012c	1789487602	exp21: depth8 + stronger regularization (mcw20 gamma2)
+07	f8683cb	1789487680	exp24: depth8 reg, lr0.05 x 300 trees
+08	f5d9748	1789487890	exp27: drop sin features ablation
+09	db05990	1789488085	exp30: 50 seeds on exp27 config
+10	076e02a	1789488198	exp31: subsample/colsample 0.5
+11	22cafeb	1789488638	exp36: repair to exp31 config

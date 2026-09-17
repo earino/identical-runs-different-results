@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	00e714c	1789487598	baseline
+01	7723414	1789487648	FE: calendar/deptime/cyc features, route cat, 2000 trees ES+refit
+02	f6c2c36	1789487910	3-model ensemble: depth8/10/6, fixed counts, prob average
+03	18e0bb1	1789487953	4-member ensemble: add sub0.5/col0.5 heavy-bag depth8
+04	83caf40	1789488009	5-member ensemble: add depth12 msw30 member
+05	22f07b6	1789488216	6-member: add long low-lr depth9 member
+06	218f7be	1789488324	diagnostics: per-member solo eval AUC
+07	680476a	1789488452	swap weak depth6 member for second deep variant; trim long member
+08	1d58064	1789488576	drop weak M0 member and diagnostics overhead
+09	ef8db36	1789488777	seed-bag: second depth12-msw10 member seed888
+10	baaf5e8	1789488877	max_bin 512
+11	cb03a16	1789489114	recency sample weights by month (Jan=1.0..Dec=1.44)
+12	563c84a	1789489224	stronger recency ramp 0.08/month
+13	d6b5e7d	1789489719	numeric 15-min dep_slot feature
+14	b290e0f	1789490193	recent-months member + trims to fit timeout
+15	293ccea	1789490518	Route-dropped decorrelated twin member
+16	f2be0f2	1789490636	Origin/Dest-dropped route-view member (swap heavy-bag)
+17	742878f	1789490986	second Route-dropped member (depth10 seed889) replaces od-drop member

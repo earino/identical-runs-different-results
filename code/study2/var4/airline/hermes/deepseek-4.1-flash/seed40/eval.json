@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 40,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T16:33:23+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s40-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T17:35:55+00:00",
+  "wall_seconds": 3752.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 12164.9,
+  "endpoint_at_end": "ok",
+  "head": "f79763c",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7419,
+  "final_eval_auc": 0.7419,
+  "holdout_auc": 0.743053882022,
+  "holdout_ap": 0.7255408164407477,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.028283130285999936,
+  "generalization_gap": -0.0011538820219999524,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 5395945,
+    "tokens_in_uncached": 5395945,
+    "tokens_in_cached": 0,
+    "tokens_out": 60804,
+    "turns": null,
+    "api_calls": 88,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 12077.1,
+  "cpu_seconds_counted": 10935.0,
+  "cpu_seconds_uncounted": 17.8,
+  "cpu_seconds_exempt": 1124.3,
+  "python_processes": 70,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 115,
+  "fits_counted": 104,
+  "fits_uncounted": 2,
+  "commits": [
+    {
+      "commit": "62c91bc",
+      "message": "baseline"
+    },
+    {
+      "commit": "b9601de",
+      "message": "feat: time decomposition, route cat, log distance"
+    },
+    {
+      "commit": "03c4315",
+      "message": "hp: lr 0.03, 2500 rounds, early stop 100"
+    },
+    {
+      "commit": "9c9b1b2",
+      "message": "hp: fixed n2000, no probe, lr0.03"
+    },
+    {
+      "commit": "01a1d14",
+      "message": "hp: fixed n2000 no probe, lr0.03 (fix crash)"
+    },
+    {
+      "commit": "c3b200c",
+      "message": "ens: 3-seed average n2000"
+    },
+    {
+      "commit": "dd553fd",
+      "message": "feat: traffic volume counts + route share (3-seed ens)"
+    },
+    {
+      "commit": "767eaa1",
+      "message": "ablate: drop Month+DayofMonth"
+    },
+    {
+      "commit": "61eba9b",
+      "message": "ablate: drop month cyclicals"
+    },
+    {
+      "commit": "e75587f",
+      "message": "ablate: drop DayOfWeek features"
+    },
+    {
+      "commit": "91bfd1a",
+      "message": "ablate: drop count features"
+    },
+    {
+      "commit": "d08c4f8",
+      "message": "feat: weekday only + drop dead count code"
+    },
+    {
+      "commit": "360b05c",
+      "message": "ens: 3 seeds n2500"
+    },
+    {
+      "commit": "980492f",
+      "message": "feat: daily harmonics (2nd, 3rd)"
+    },
+    {
+      "commit": "964135f",
+      "message": "feat: harmonics k=1..6, n2000"
+    },
+    {
+      "commit": "b445b97",
+      "message": "feat: harmonics k=1..12"
+    },
+    {
+      "commit": "86fcd75",
+      "message": "ens: n2200 with harmonics"
+    },
+    {
+      "commit": "d69f1cf",
+      "message": "reg: colsample0.6 n2000 harmonics"
+    },
+    {
+      "commit": "958ca32",
+      "message": "simplify: drop unused calendar feature computations"
+    },
+    {
+      "commit": "f79763c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10952.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 87.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "d69f1cf",
+  "best_commit_eval_auc": 0.7419,
+  "best_commit_holdout_auc": 0.743053882022,
+  "best_commit_holdout_ap": 0.7255408164407477,
+  "best_commit_error": null,
+  "finalized_best": false
+}

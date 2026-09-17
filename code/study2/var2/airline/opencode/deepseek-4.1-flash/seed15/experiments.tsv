@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ffb5f01	0.7141	ok	4	baseline
+2	61e2108	0.7126	ok	5	time+route feats, es
+3	774fcdd	0.7161	ok	3	baseline cats + dep time feats, 300 trees
+4	23ebe7b	0.7024	ok	4	add route categorical
+5	3f2e570	0.7158	ok	2	add log_distance
+6	c59ce3b	0.7133	ok	7	1000 trees lr 0.03
+7	7e85c50	0.7170	ok	4	600 trees lr 0.025
+8	4b6c45d	0.7161	ok	6	800 trees lr 0.025
+9	dace713	0.7166	ok	5	add frequency encodings
+10	ba75ebb	0.7179	ok	4	depth 5
+11	b083427	0.7177	ok	3	depth 4
+12	4c0e1ed	0.7173	ok	4	min_child_weight 20
+13	c4a9493	0.7183	ok	9	3-seed ensemble
+14	7167ef8	0.7189	ok	10	cyclical encodings
+15	2850625	0.7102	ok	10	target encoding
+16	79a87d4	0.7187	ok	18	6-seed ensemble
+17	0f93c8f	0.7196	ok	9	heterogeneous ensemble
+18	6f092e0	0.0000	crash	8	5-model ensemble
+19	5ba3946	0.7201	ok	16	5-model ensemble
+20	06e180d	0.7184	ok	15	drop raw DepTime and dep_min
+21	eeb9aae	0.7052	ok	20	origin_carrier + dest_carrier
+22	861ac75	0.7215	ok	17	add regularization
+23	6a956eb	0.7241	ok	17	stronger regularization
+24	3882f87	0.7232	ok	16	even stronger regularization
+25	23ad8ff	0.7241	ok	23	7-model ensemble
+26	3c1f3fd	0.7230	ok	20	route with strong reg
+27	c462d97	0.7241	ok	17	max_bin 128
+28	e6b62bc	0.7239	ok	17	group rare levels
+29	7b5058a	0.7237	ok	17	colsample_bynode 0.6
+30	a0a0fb1	0.7241	ok	15	gamma 1.0
+31	32b93d2	0.7239	ok	88	add dart member
+32	f503a92	0.7239	ok	17	3x min_child_weight
+33	26e25d5	0.7247	ok	22	1000 trees strong reg
+34	596ecce	0.7246	ok	30	1500 trees strong reg
+35	8b1e795	0.7243	ok	28	lower lr, more trees
+36	92e181f	0.7251	ok	41	8-model ensemble
+37	a4146fe	0.7251	ok	57	12-model ensemble
+38	d3a97cf	0.7232	ok	40	reg 10/2 at 1000 trees
+39	ef8d3cc	0.7250	ok	40	rank-average ensemble
+40	90c862f	0.7279	ok	38	congestion features

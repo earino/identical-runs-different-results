@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ea744ba	0.7141	ok	4	baseline
+2	7561463	0.7097	ok	2	deeper trees + early stopping
+3	2e9afdf	0.7110	ok	4	depth6 lr0.06 ES + random split
+4	21c851a	0.7135	ok	2	DepTime+Distance engineered features
+5	059dfc5	0.0000	crash	1	smoothed target encoding + freq
+6	a42f219	0.7022	ok	2	smoothed target encoding + freq
+7	9852852	0.0000	crash	1	crossed cats: route, carrier x hour
+8	63aef4f	0.0000	crash	1	crossed cats: route, carrier x hour
+9	efa4248	0.7130	ok	2	crossed cats: route, carrier x hour
+10	95a535d	0.7152	ok	3	bagged ensemble of 5 small trees
+11	5849a10	0.7160	ok	3	hour features on top of bagging
+12	282cfc3	0.7165	ok	5	bag of 10 + carrier x hour cross
+13	0121c78	0.7167	ok	7	bag of 20
+14	1c1ffe8	0.0000	crash	2	route + time band cats
+15	be46146	0.7106	ok	10	route + time band cats
+16	3663c46	0.7167	ok	8	coarse time band cat
+17	7caa2bb	0.7175	ok	8	colsample_bynode in bag members
+18	e78c5f8	0.7183	ok	8	mixed-depth bag
+19	e839bb6	0.7120	ok	10	org_month + dow_hour crosses
+20	ad3f199	0.7189	ok	9	hp-jittered bag
+21	e07ed39	0.7188	ok	11	bag of 30 + mcw jitter
+22	512ebde	0.7188	ok	9	target-free aggregate features
+23	f772065	0.7187	ok	8	rank-average fusion
+24	fd27001	0.7157	ok	9	hour cat + dow_month cross
+25	8ae1f45	0.7187	ok	8	max_delta_step=2 in members
+26	ad3f199	0.7189	ok	9	seed rerun of best (noise estimate)
+27	0dc94f1	0.7185	ok	9	numeric month/dom/dow + cyclic
+28	11fa718	0.7189	ok	10	cyclic month/dom + weekend flag
+29	cc40d79	0.0000	crash	5	two-view ensemble
+30	155d4ab	0.7135	ok	6	two-view ensemble
+31	2a1e55c	0.7188	ok	15	bag of 40
+32	ee8680c	0.7191	ok	32	OOF-weighted member fusion
+33	14b00a9	0.7191	ok	50	OOF-weighted 30 members
+34	5efe21e	0.7194	ok	34	sharper OOF weights
+35	bc5a0f2	0.7200	ok	60	60-tree lr0.06 members
+36	913ff77	0.7203	ok	78	80-tree lr0.055 members
+37	1481f35	0.7204	ok	90	100-tree lr0.05 members
+38	bdf681b	0.7204	ok	88	4-fold OOF + 130-tree members
+39	afa5a5e	0.7204	ok	94	115-tree lr0.048 members
+40	c6b0e53	0.7204	ok	92	seed 777 ensemble draw

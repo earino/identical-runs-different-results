@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	764a198	0.7141	ok	3	baseline
+2	968148b	0.7263	ok	7	feat v1 + bigger model + early stop
+3	d4542c3	0.7109	ok	5	OOF TE carrier/origin/dest/route
+4	e83795a	0.7224	ok	9	TE v2 no route cat, conservative model
+5	fcddb33	0.7253	ok	11	TE v2 + exp2 model config
+6	a03c48c	0.0000	crash	1	dep_hour cat + dist bins
+7	6a6664a	0.0000	crash	3	dep_hour cat + dist bins (fixed)
+8	a517456	0.7318	ok	12	dep_hour cat + dist bins (fixed)
+9	c808dd2	0.7106	ok	5	route + hour_dow cats
+10	7d897a3	0.7216	ok	6	hour_dow only, no route
+11	292440b	0.7328	ok	18	lower lr + more trees
+12	bc96661	0.7361	ok	24	depth 10
+13	8eb2cfe	0.7398	ok	51	lossguide 512 leaves
+14	53b86d3	0.7399	ok	53	lossguide 1024 leaves
+15	5b6f7c0	0.7444	ok	49	regularized lossguide
+16	8ad887f	0.7415	ok	47	lambda10 mcw30
+17	eb898fe	0.7453	ok	77	lr .02 more trees
+18	c76e8ac	0.7453	ok	81	lr .015 3200 trees
+19	00d2e69	0.7406	ok	71	month cat
+20	854ad78	0.7456	ok	74	max_bin 512
+21	2f5d4d4	0.7463	ok	91	origin/dest counts
+22	21686a1	0.7471	ok	82	carrier med hour/dist
+23	9f976fd	0.7463	ok	73	weekend + dow cyclic
+24	d0b9ced	0.7473	ok	75	redeye + rush flags
+25	2168cb4	0.0000	timeout	120	2-model ensemble
+26	569464a	0.7475	ok	97	ensemble 2 cheaper models
+27	6e0620e	0.7476	ok	99	3-member ensemble
+28	5e283bb	0.7458	ok	93	month cyclic
+29	46a5c6a	0.0000	timeout	121	dart booster
+30	d940832	0.7511	ok	100	half-hour bins
+31	9a635a4	0.7521	ok	85	15-min bins
+32	8f07b9b	0.7459	ok	82	5-min bins
+33	7cfbaa7	0.0000	crash	2	congestion counts
+34	d231012	0.7529	ok	99	congestion counts (fixed)
+35	e4ab867	0.7539	ok	105	max_leaves 768
+36	d669e7d	0.0000	timeout	124	max_leaves 1024
+37	616b8d7	0.7539	ok	112	finer dist bins
+38	0919dd3	0.7536	ok	101	subsample .7
+39	4901983	0.0000	timeout	120	carrier x qtr cat
+40	8764e0b	0.7538	ok	104	subsample .85 bynode .9

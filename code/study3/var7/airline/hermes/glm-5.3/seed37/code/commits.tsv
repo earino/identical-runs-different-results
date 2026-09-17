@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	769318f	1789635256	baseline
+01	1c8bd46	1789635439	FE v1: hour cyc, dow/mon/dom cyc, dist_log
+02	980d1a7	1789635464	shallow regularized: d4 lr.06 mcw50 subsamp .7 reg2
+03	a11da01	1789635598	lr 0.02, 1200 rounds
+04	629acb4	1789635706	mcw 20
+05	b408eae	1789635756	3-seed bagged ensemble
+06	43407a1	1789635830	minofday + dist x hour interaction
+07	f4c0b17	1789635861	doy cyclic + weekend flag
+08	8984e49	1789636200	max_bin 1024
+09	457cc93	1789636335	origin/dest hourly schedule-volume features
+10	363d8f4	1789636401	train-fit volume lookups + carrier volume
+11	bae4b3f	1789636426	5 seeds of best config
+12	84c0e50	1789636470	relative (size-normalized) congestion features
+13	7cc5752	1789636586	carrier rel vol + congestion x hour interactions
+14	984e54b	1789636628	hour x weekend interaction
+15	ebdb0b7	1789636671	40-bin dep-time cat feature
+16	921970c	1789636719	80-bin dep-time cat
+17	d0459d6	1789636864	depth 5 with dt_bank cats
+18	0a264ad	1789636921	depth 6
+19	073cadd	1789636989	depth 7

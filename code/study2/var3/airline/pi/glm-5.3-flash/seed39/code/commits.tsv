@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	fdfc8bc	1789539606	baseline
+01	86091ca	1789539663	E3: time-of-day features + log distance, moderate model
+02	ff7159a	1789539672	E4: tod features + small model 50 trees depth6
+03	712aa85	1789539688	E5: OOF target+count encoding Origin/Dest/Route/Carrier
+04	a90e944	1789539719	E6: interaction TE origin/dest/carrier x hour-bucket
+05	17d2ada	1789539777	E7: monotone tod, mcw20 gamma1, lean features
+06	2e39811	1789539783	E8: fix monotone constraints format
+07	e53bcd6	1789539797	E9: shallow robust model d4 mcw30, lean TE features
+08	0c21cd1	1789539839	E10: shallow robust + interaction TEs incl DOWxhb
+09	34be553	1789539848	E11: 5-seed ensemble of shallow robust model
+10	fc6f293	1789539868	E13: drop DayofMonth (unstable across years)
+11	8c0dfbe	1789539877	E14: drop Month too
+12	4a087de	1789539887	E15: capacity retest after drift removal (d5 250t)
+13	16d1e39	1789539899	E16: d6 350t mcw10
+14	f5eaf98	1789539915	E17: d7 450t mcw5
+15	f7dd110	1789539940	E18: d8 500t
+16	bb53511	1789539970	E19: d9 550t
+17	361cfcc	1789540019	E20: d10 600t
+18	4ebbdd3	1789540082	E21: lr 0.05, 900 trees d9
+19	dfd314a	1789540372	E25: distance-bin x hb TE
+20	2248822	1789540550	E27: diverse ensemble (depth/col/sub vary)
+21	d8a0ed5	1789540749	E30: congestion features (origin/dest x hour volume)
+22	bb49ab8	1789540810	E31: + originxDOW and carrierxhour volumes
+23	e27ca36	1789541011	E36: lr 0.04, 1100 trees

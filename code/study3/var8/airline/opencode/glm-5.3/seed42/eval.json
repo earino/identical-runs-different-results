@@ -1,0 +1,172 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 42,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:08:05+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s42-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T22:13:20+00:00",
+  "wall_seconds": 7514.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18227.5,
+  "endpoint_at_end": "ok",
+  "head": "38df3f1",
+  "n_commits": 18,
+  "n_experiments": 17,
+  "n_ok": 17,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7428,
+  "final_eval_auc": 0.7428,
+  "holdout_auc": null,
+  "holdout_ap": null,
+  "holdout_error": "scorer failed (exit 1): Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/app/bench/score_holdout.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/app/bench/score_holdout.py\", line 27, in main\n    p = np.asarray(fn(df.drop(columns=[target])), dtype=float).ravel()\n                   ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"train.py\", line 135, in predict_proba\n    s += _logit(m.predict_proba(Fx[\"native\"])[:, 1])\nValueError: operands could not be broadcast together with shapes (100000,) (200000,) (100000,)",
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": null,
+  "generalization_gap": null,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7231532,
+    "tokens_in_uncached": 1971500,
+    "tokens_in_cached": 5260032,
+    "tokens_out": 59132,
+    "turns": null,
+    "api_calls": 133,
+    "method": "sum-of-133-events",
+    "cost_usd": 4.3879,
+    "cached_share": 0.727
+  },
+  "cpu_seconds_python": 17820.7,
+  "cpu_seconds_counted": 4763.8,
+  "cpu_seconds_uncounted": 12636.0,
+  "cpu_seconds_exempt": 420.9,
+  "python_processes": 58,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 737,
+  "fits_counted": 193,
+  "fits_uncounted": 530,
+  "commits": [
+    {
+      "commit": "f1e348c",
+      "message": "baseline"
+    },
+    {
+      "commit": "9fe71d1",
+      "message": "capacity + internal early stopping"
+    },
+    {
+      "commit": "6c426b7",
+      "message": "numMD features (numeric Month/Day/Dow), d4 lr0.1 n100"
+    },
+    {
+      "commit": "7cb7a18",
+      "message": "2-view blend: native-cats d4 lr.05 n200 + onehot d16 lr.05 n300, logit avg"
+    },
+    {
+      "commit": "9922ef2",
+      "message": "bagged deep one-hot ensemble (5x d20 sub.8 col.8) + native view, logit avg"
+    },
+    {
+      "commit": "9396a03",
+      "message": "deep one-hot bag 5x(85/50)+2x(90/50) + native bag5, logit avg"
+    },
+    {
+      "commit": "cb6d0ae",
+      "message": "11-member deep one-hot bag (n200 lr.075, xgb.train w/ shared DMatrix) + native bag5"
+    },
+    {
+      "commit": "da4f2f2",
+      "message": "swap 2 deep members for recency-weighted (alpha .5)"
+    },
+    {
+      "commit": "f0f7822",
+      "message": "native bag d6, add col.35 diversity member"
+    },
+    {
+      "commit": "f0c1ccb",
+      "message": "revert to exp 8 config (best 0.7391)"
+    },
+    {
+      "commit": "d13fd62",
+      "message": "add 9th 85/50 deep member (12 deep total)"
+    },
+    {
+      "commit": "00475a4",
+      "message": "recency members a.5 x2 + a1.0, drop 90/50"
+    },
+    {
+      "commit": "45cb886",
+      "message": "8 plain + 4 recency members (2x a.5, 2x a1.0)"
+    },
+    {
+      "commit": "280aab1",
+      "message": "reduce native bag to 2 members"
+    },
+    {
+      "commit": "b68c8cb",
+      "message": "recency members at logit weight 1.25"
+    },
+    {
+      "commit": "4aa12f2",
+      "message": "add third a1.0 recency member (13 deep total)"
+    },
+    {
+      "commit": "9b326d4",
+      "message": "finalize: revert to 12-member config (96s, same AUC) for holdout predict safety"
+    },
+    {
+      "commit": "c4adde0",
+      "message": "add MinOfHour (DepTime%100) numeric feature to both views"
+    },
+    {
+      "commit": "38df3f1",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17399.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 406.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c4adde0",
+  "best_commit_eval_auc": 0.7428,
+  "best_commit_holdout_auc": null,
+  "best_commit_holdout_ap": null,
+  "best_commit_error": "scorer failed (exit 1): Traceback (most recent call last):\n  File \"<frozen runpy>\", line 203, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/app/bench/score_holdout.py\", line 41, in <module>\n    main()\n    ~~~~^^\n  File \"/app/bench/score_holdout.py\", line 27, in main\n    p = np.asarray(fn(df.drop(columns=[target])), dtype=float).ravel()\n                   ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"train.py\", line 135, in predict_proba\n    s += _logit(m.predict_proba(Fx[\"native\"])[:, 1])\nValueError: operands could not be broadcast together with shapes (100000,) (200000,) (100000,)",
+  "finalized_best": true
+}

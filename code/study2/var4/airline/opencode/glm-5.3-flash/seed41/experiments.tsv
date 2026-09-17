@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5e2e512	0.7141	ok	4	baseline
+2	2a5bd60	0.6970	ok	5	bigger model 400t d8
+3	c1de0cc	0.7130	ok	2	regularized 150t d6
+4	054efbe	0.7157	ok	3	feateng v1 on reg model
+5	3829788	0.0000	crash	1	TE v1 smooth30
+6	5af57bf	0.0000	crash	1	TE v1 smooth30
+7	c1f25d1	0.7051	ok	4	TE v1 smooth30
+8	a19a7c3	0.7099	ok	4	interaction cats v1
+9	1ec2711	0.7220	ok	6	800t lr.03 d5 heavy reg
+10	43b41ef	0.7220	ok	10	1500t lr.015 d4
+11	d8b063a	0.7211	ok	8	OOF TE halves m50
+12	bf73046	0.7226	ok	8	800t lr.03 d6
+13	c11b908	0.7217	ok	11	800t lr.03 d7
+14	c2e8550	0.7229	ok	33	5-seed ensemble
+15	58b4da3	0.7230	ok	35	max_bin 512
+16	324810e	0.7233	ok	43	flags v1
+17	70b6558	0.7208	ok	41	lr decay 0.995
+18	233cdff	0.0000	crash	1	count features v1
+19	a9c78c3	0.0000	crash	2	count features v1
+20	cf88a16	0.7234	ok	54	count features v1
+21	27097e3	0.7215	ok	34	ablate cyclical
+22	76e9141	0.7192	ok	60	low-card crosses + counts
+23	f6bf17f	0.7232	ok	47	config-diverse ensemble
+24	844efea	0.7229	ok	52	mcw 40
+25	0df3159	0.7245	ok	50	sub.65 col.5
+26	44aa3a7	0.7259	ok	48	sub.6 col.4
+27	27a8f59	0.7255	ok	31	sub.5 col.3
+28	37d4971	0.7255	ok	49	sub.55 col.4
+29	8e170cc	0.7248	ok	69	1200 trees
+30	7822a72	0.7261	ok	99	10 seeds
+31	91a02eb	0.7255	ok	31	dep fix + lambda20
+32	1d62589	0.7252	ok	27	dep fix + gamma3
+33	93fb0eb	0.7253	ok	29	dep fix + mcw30
+34	b008402	0.7259	ok	65	lr.02 1200t
+35	ba4f739	0.7249	ok	39	max_leaves 32
+36	759bf7f	0.7274	ok	61	lossguide probe
+37	7d54dd6	0.7277	ok	64	lossguide 64
+38	da8982b	0.7286	ok	90	lossguide 96
+39	f2e3ec1	0.7285	ok	103	lossguide 128
+40	97a02e8	0.7290	ok	84	colsample_bynode 0.8

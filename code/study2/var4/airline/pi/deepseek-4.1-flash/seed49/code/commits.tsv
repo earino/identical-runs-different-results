@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	48d4d01	1789523702	baseline
+01	a17100b	1789525102	feat: route-hour target encoding + regularized xgb
+02	9b3a1e8	1789526012	feat: frequency/nunique encodings, drop shifting calendar cols
+03	73f006e	1789526025	exp: 5-model xgb ensemble
+04	d79e333	1789526359	feat: minute-of-hour features
+05	f80bab6	1789528191	exp: lossguide ensemble
+06	a344494	1789528423	exp: 6-seed lossguide ensemble
+07	ff4633c	1789528531	exp: 8-seed lossguide ensemble

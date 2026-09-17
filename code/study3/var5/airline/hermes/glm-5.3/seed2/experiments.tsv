@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3efb628	0.7141	ok	3	baseline
+2	4de52d4	0.7214	ok	4	feat+earlystop+tune
+3	a7ff800	0.7075	ok	4	route interactions
+4	587265a	0.6696	ok	4	target encodings
+5	468b3bc	0.7252	ok	5	hyperparam tune v2
+6	34629da	0.7292	ok	7	hyperparam tune v3
+7	727c1b5	0.7321	ok	8	depth 12
+8	37f7af0	0.7355	ok	10	depth 14 mcw 2
+9	76f09f7	0.7387	ok	18	depth 16 lr 0.02
+10	7df13b6	0.7405	ok	28	depth 18 lr .015
+11	5e682e4	0.7416	ok	37	depth 20 lr .012
+12	04b8a13	0.7417	ok	46	depth 24 lr .01
+13	cd64f95	0.7325	ok	74	interaction cats
+14	36b5f78	0.7347	ok	34	less sampling reg
+15	5c81368	0.7420	ok	71	lr .008 lambda2
+16	a0483fb	0.0000	crash	2	route dist features
+17	a30ec8d	0.7425	ok	76	route dist features
+18	6b352b8	0.7358	ok	87	seasonality + dist aggregates
+19	820f32d	0.7432	ok	112	max_bin 1024
+20	433bff5	0.7432	ok	100	gamma 0.2
+21	de028da	0.7444	ok	112	frequency counts
+22	dbdeaa4	0.7433	ok	65	faster lr .02
+23	0ebd855	0.7442	ok	76	lr .015 n2000
+24	ed71298	0.7451	ok	99	3-model ensemble
+25	93dd433	0.0000	timeout	120	5-model ensemble
+26	41419aa	0.7453	ok	105	time granularity
+27	a575113	0.7472	ok	115	hour native cat
+28	3b08ec7	0.0000	timeout	120	half-hour bins
+29	2ad9c80	0.7472	ok	104	speed headroom
+30	9511542	0.7514	ok	112	half-hour bins
+31	4472798	0.0000	timeout	122	15-min bins
+32	75a79a8	0.7500	ok	83	15-min bins K=2
+33	e19697c	0.7513	ok	95	max_bin 256
+34	44c01e6	0.7503	ok	97	lr .03 esr100
+35	1c78159	0.7519	ok	112	hm cyclic
+36	e86e7d4	0.7273	ok	114	carrier-month cat
+37	a041ac0	0.7519	ok	116	dist ratios
+38	6d39e8b	0.0000	timeout	122	20-min bins
+39	97fd5ff	0.7511	ok	116	month edge flags
+40	1d88707	0.7505	ok	111	45-min bins

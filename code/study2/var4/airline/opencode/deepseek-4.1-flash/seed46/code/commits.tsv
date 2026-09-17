@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	53b48f6	1789513807	baseline
+01	604c08f	1789513869	reg: depth 4
+02	97162d2	1789513932	ensemble of depth 3-6 xgb, 30 trees each
+03	00c608e	1789513941	ensemble: 8 diverse members (subsample/colsample/lr)
+04	8e1286f	1789513967	FE: calendar numeric/cyclical features
+05	1ba089f	1789513982	ablation: drop categorical calendar, keep numeric/cyclical
+06	da3c74f	1789514053	ensemble: add regularized deep members
+07	f688fe1	1789514066	ensemble: 16 members, stronger regularization (mcw/lambda)
+08	4a558c3	1789514081	ensemble: 22 members, more deep regularized
+09	47a79c6	1789514116	FE: explicit carrier x hour, carrier x dow crosses
+10	c9bf696	1789514174	ensemble: +6 bagged heavy-reg deep members
+11	e6e83ec	1789514199	FE: origin_hour, dest_hour crosses
+12	a238e7c	1789514552	ensemble: +12 bagged heavy-reg deep members
+13	4f18b6b	1789514847	ensemble: extend bag to 8 seeds

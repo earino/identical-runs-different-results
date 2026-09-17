@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	478b987	1789602319	baseline
+01	8bed924	1789603140	FE bundle: tod/cyclic time, route, numeric month/day, log dist
+02	36f0c55	1789604164	tod+doy features, no route, fixed 200 rounds lr.05
+03	2448ecc	1789605464	5-seed bagged ensemble, avg probs
+04	c3f9887	1789606703	OOF target encoding for origin/dest/carrier/hour/dow
+05	2371db4	1789607337	interaction TE: hour x carrier, hour x origin
+06	4658291	1789607815	more interaction TEs: hour*dest, dow*carrier, dow*origin
+07	5774c50	1789607961	route TE (m=300) + hour*dow TE
+08	36ab3a9	1789609720	estimated arrival time features from distance
+09	961972a	1789609925	te_arr_hour + overnight flag
+10	a66b389	1789610207	8-model diverse ensemble (depth/colsample/subsample varied)
+11	5c81a12	1789610324	arrival-side interaction TEs: arr*carrier, arr*dest
+12	22f5c5b	1789610586	half-hour TEs: tod48, tod48*carrier
+13	b28fcfa	1789610777	quarter-hour TEs: tod96, tod96*carrier
+14	d0bce8f	1789610826	arrival-side 48/96-bucket TEs
+15	999e613	1789610984	5-min bucket TEs: tod192 + carrier
+16	ef23f05	1789611109	tod48*dow + dest*tod6 TEs
+17	c30a558	1789611235	12-member diverse ensemble, good region only
+18	a11fd73	1789611449	distance-interaction TEs: origin*dist3, tod48*dist3
+19	9a1b898	1789611490	view diversity: 6 members with cats, 6 without
+20	17b8971	1789611522	16 members: 8 full + 8 no-cat
+21	d08c590	1789611732	dest*dist3 TE

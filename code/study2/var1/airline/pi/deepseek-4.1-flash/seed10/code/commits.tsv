@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	e2fc500	1789531466	baseline
+01	2a029e2	1789532631	time features + deep regularized xgb (300x16 lr.03)
+02	a7b8675	1789533256	add 30-min time-of-day categorical bins
+03	79e052d	1789533898	add carrier x time-of-day interaction
+04	60c1d11	1789533924	3-model depth-diverse xgb ensemble
+05	b18b77a	1789534627	add dist bins, raw DepTime, origin x hour interaction
+06	42f8630	1789535607	add scheduled arrival TOD bins and holiday flag
+07	c707abf	1789536154	add origin-dest-carrier frequency
+08	3137dd7	1789536671	add carrier frequency
+09	3a9719b	1789537077	weight ensemble toward deeper models

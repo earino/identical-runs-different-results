@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	638db8a	0.7141	ok	4	baseline
+2	829e428	0.7076	ok	6	feat:time+route,400x0.05
+3	80426a5	0.7124	ok	3	baseline feats,300x0.05
+4	dc7ab8f	0.7169	ok	2	depth4,200x0.05
+5	fdc6c2e	0.7157	ok	2	depth3,500x0.05
+6	fc078f5	0.0000	crash	1	drop Origin/Dest
+7	6b5e446	0.7014	ok	2	drop Origin/Dest
+8	e8a1bfc	0.7172	ok	2	depth4,350x0.03
+9	83335b9	0.7167	ok	3	add dep_hour
+10	d373683	0.0000	crash	1	monotone DepTime
+11	d7c937e	0.7044	ok	2	monotone DepTime
+12	add3a49	0.7165	ok	3	mcw20,l2
+13	b2aca4d	0.7171	ok	7	5-seed ensemble
+14	c7073ab	0.7133	ok	5	lossguide 63 leaves
+15	7a57906	0.7170	ok	3	freq encodings
+16	7dc2af8	0.7161	ok	3	depth5
+17	54305a9	0.7116	ok	3	interactions carrier-dow-month
+18	6e5cbcc	0.7140	ok	3	max_cat_threshold16
+19	c21f7fe	0.7163	ok	61	DART booster
+20	946d259	0.7203	ok	2	ordinal c-cols
+21	7fad3a2	0.7194	ok	3	ordinal, depth5
+22	592d8c4	0.7199	ok	3	add day_of_year
+23	4ec7da5	0.7213	ok	3	rare collapse >=50
+24	0c5b5b4	0.7226	ok	2	rare collapse >=100
+25	b739789	0.7239	ok	3	rare collapse >=200
+26	b1cd0c6	0.7240	ok	2	rare collapse >=400
+27	4173519	0.7236	ok	2	rare collapse >=800
+28	725447c	0.7247	ok	3	rare400, depth5
+29	1cc67bb	0.7246	ok	3	rare400, depth6
+30	677b04f	0.7241	ok	4	depth5,700x0.03
+31	70ea9d2	0.7245	ok	3	add collapsed Route
+32	3c72362	0.7273	ok	3	best + time feats
+33	d85835c	0.7280	ok	3	best + cyclic time
+34	e6ab329	0.7294	ok	3	depth6 full
+35	4ca9032	0.7321	ok	4	depth7
+36	940267d	0.7330	ok	4	depth8
+37	7ef634b	0.7358	ok	6	depth10
+38	8a97391	0.7381	ok	17	depth14
+39	d21ee33	0.7396	ok	30	depth20
+40	6355bf8	0.7398	ok	34	unlimited depth

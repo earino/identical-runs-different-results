@@ -1,0 +1,168 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 18,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T20:48:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s18-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:35:34+00:00",
+  "wall_seconds": 2843.7,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9242.2,
+  "endpoint_at_end": "ok",
+  "head": "a583cd9",
+  "n_commits": 17,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 2,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7324,
+  "final_eval_auc": 0.7324,
+  "holdout_auc": 0.732904754958,
+  "holdout_ap": 0.7251575194938653,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.018134003221999984,
+  "generalization_gap": -0.0005047549579999533,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3528769,
+    "tokens_in_uncached": 30081,
+    "tokens_in_cached": 3498688,
+    "tokens_out": 47723,
+    "turns": null,
+    "api_calls": 98,
+    "method": "sum-of-98-events",
+    "cost_usd": 0.1333,
+    "cached_share": 0.991
+  },
+  "cpu_seconds_python": 9272.4,
+  "cpu_seconds_counted": 9020.1,
+  "cpu_seconds_uncounted": 0.5,
+  "cpu_seconds_exempt": 251.7,
+  "python_processes": 54,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 562,
+  "fits_counted": 543,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "b957d5c",
+      "message": "baseline"
+    },
+    {
+      "commit": "4ca4bab",
+      "message": "exp2: 3000 trees lr0.05 + early stopping (10% val), subsample/colsample 0.8"
+    },
+    {
+      "commit": "613a84a",
+      "message": "exp3: time-of-day hour/minute, cyclic sin/cos, day-of-year, log-distance"
+    },
+    {
+      "commit": "ce12a88",
+      "message": "exp5: target+frequency encoding for Origin/Dest/Carrier/route/hour/carrier_hour"
+    },
+    {
+      "commit": "bf58240",
+      "message": "exp6: frequency encoding only (TE ablated)"
+    },
+    {
+      "commit": "7637ac5",
+      "message": "exp10: ensemble of 3 diverse XGB members (depth 5/6/7, seeds, subsample)"
+    },
+    {
+      "commit": "adf9b29",
+      "message": "exp11: 5-member ensemble with more diversity"
+    },
+    {
+      "commit": "391f657",
+      "message": "exp14: 9-member ensemble, shared early-stopped round count, full-data fits"
+    },
+    {
+      "commit": "7f892ac",
+      "message": "exp18: cap member rounds at 0.6xR (shift-regularization)"
+    },
+    {
+      "commit": "9737117",
+      "message": "exp19: rounds cap 0.4xR"
+    },
+    {
+      "commit": "0d02eb2",
+      "message": "exp24: blend 0.4R + 0.7R ensembles"
+    },
+    {
+      "commit": "affd744",
+      "message": "exp27: triple-cap blend 0.25/0.4/0.7"
+    },
+    {
+      "commit": "9949fa5",
+      "message": "exp29: add depth-9 member"
+    },
+    {
+      "commit": "00904e6",
+      "message": "exp32: dual-cap 0.4/0.7 with 10 members (runtime headroom)"
+    },
+    {
+      "commit": "2fc9a88",
+      "message": "exp34: lean 9-member dual-cap (runtime safety)"
+    },
+    {
+      "commit": "1f46007",
+      "message": "exp36: per-member feature bagging (75% cols)"
+    },
+    {
+      "commit": "88f1a96",
+      "message": "exp37: feature bagging keep=0.6"
+    },
+    {
+      "commit": "a583cd9",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9020.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -30.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "88f1a96",
+  "best_commit_eval_auc": 0.7324,
+  "best_commit_holdout_auc": 0.732904754958,
+  "best_commit_holdout_ap": 0.7251575194938653,
+  "best_commit_error": null,
+  "finalized_best": true
+}

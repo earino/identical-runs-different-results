@@ -1,0 +1,152 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 47,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:59:48+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s47-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:37:54+00:00",
+  "wall_seconds": 2286.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7676.3,
+  "endpoint_at_end": "ok",
+  "head": "f72af51",
+  "n_commits": 13,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7462,
+  "final_eval_auc": 0.7462,
+  "holdout_auc": 0.747494669578,
+  "holdout_ap": 0.7359927524537839,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.032723917842000017,
+  "generalization_gap": -0.0012946695780000628,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4646962,
+    "tokens_in_uncached": 35634,
+    "tokens_in_cached": 4611328,
+    "tokens_out": 19168,
+    "turns": null,
+    "api_calls": 129,
+    "method": "sum-of-129-events",
+    "cost_usd": 0.1533,
+    "cached_share": 0.992
+  },
+  "cpu_seconds_python": 7506.5,
+  "cpu_seconds_counted": 7163.3,
+  "cpu_seconds_uncounted": 1.2,
+  "cpu_seconds_exempt": 342.0,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 423,
+  "fits_counted": 403,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "6fa2b0e",
+      "message": "baseline"
+    },
+    {
+      "commit": "6092633",
+      "message": "time-of-day features from DepTime"
+    },
+    {
+      "commit": "0c56067",
+      "message": "600 trees lr0.05 early stopping on internal valid"
+    },
+    {
+      "commit": "cc81a19",
+      "message": "lr0.03 n1200"
+    },
+    {
+      "commit": "d1a83ed",
+      "message": "carrier x hour interaction"
+    },
+    {
+      "commit": "80da251",
+      "message": "5-fold CV bagging ensemble"
+    },
+    {
+      "commit": "e7ab83c",
+      "message": "10-fold bagging"
+    },
+    {
+      "commit": "3388ea7",
+      "message": "max_cat_threshold=32"
+    },
+    {
+      "commit": "b97c4bb",
+      "message": "max_bin=512"
+    },
+    {
+      "commit": "43de632",
+      "message": "2x10-fold lr0.1 members"
+    },
+    {
+      "commit": "a0d318f",
+      "message": "dep_hour categorical"
+    },
+    {
+      "commit": "6622427",
+      "message": "30-min slot categorical"
+    },
+    {
+      "commit": "6dd1577",
+      "message": "15-min slot categorical"
+    },
+    {
+      "commit": "f72af51",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7164.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 169.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "6dd1577",
+  "best_commit_eval_auc": 0.7462,
+  "best_commit_holdout_auc": 0.747494669578,
+  "best_commit_holdout_ap": 0.7359927524537839,
+  "best_commit_error": null,
+  "finalized_best": true
+}

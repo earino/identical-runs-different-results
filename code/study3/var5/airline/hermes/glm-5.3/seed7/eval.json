@@ -1,0 +1,176 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 7,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T12:49:06+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s7-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T14:30:51+00:00",
+  "wall_seconds": 6104.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18929.7,
+  "endpoint_at_end": "ok",
+  "head": "5245d7d",
+  "n_commits": 19,
+  "n_experiments": 28,
+  "n_ok": 25,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7441,
+  "final_eval_auc": 0.7441,
+  "holdout_auc": 0.745912737806,
+  "holdout_ap": 0.7328770869955161,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03114198606999996,
+  "generalization_gap": -0.0018127378059999977,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10033801,
+    "tokens_in_uncached": 413705,
+    "tokens_in_cached": 9620096,
+    "tokens_out": 83716,
+    "turns": null,
+    "api_calls": 166,
+    "method": "cumulative-max",
+    "cost_usd": 3.4488,
+    "cached_share": 0.959
+  },
+  "cpu_seconds_python": 18522.2,
+  "cpu_seconds_counted": 3106.0,
+  "cpu_seconds_uncounted": 14931.1,
+  "cpu_seconds_exempt": 485.0,
+  "python_processes": 75,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 1,
+  "fits_total": 590,
+  "fits_counted": 91,
+  "fits_uncounted": 493,
+  "commits": [
+    {
+      "commit": "4239283",
+      "message": "baseline"
+    },
+    {
+      "commit": "b9599e3",
+      "message": "exp6: 200 trees + subsample/colsample/reg"
+    },
+    {
+      "commit": "9c428d8",
+      "message": "exp7: depth 4, 100 trees (diag: shallow generalizes)"
+    },
+    {
+      "commit": "86224ac",
+      "message": "exp8: d4 n300 lr.05 sub.8 col.8"
+    },
+    {
+      "commit": "fea26bb",
+      "message": "exp9: seasonal sin/cos day-of-year"
+    },
+    {
+      "commit": "69f5c12",
+      "message": "exp10: DepHour as 24-level categorical"
+    },
+    {
+      "commit": "b836a7a",
+      "message": "exp11: 600 trees lr.025"
+    },
+    {
+      "commit": "1455c30",
+      "message": "exp12: 3-seed ensemble"
+    },
+    {
+      "commit": "90bfa1f",
+      "message": "exp13: depth 5 ensemble"
+    },
+    {
+      "commit": "54b0e93",
+      "message": "exp14: heterogeneous feat-drop ensemble x5"
+    },
+    {
+      "commit": "e2c9c30",
+      "message": "exp15: route/origin/dest count encodings"
+    },
+    {
+      "commit": "800234b",
+      "message": "exp16: DepMinutes + 15-min buckets"
+    },
+    {
+      "commit": "dbd6e9b",
+      "message": "exp17: schedule-pressure count features"
+    },
+    {
+      "commit": "3ffbe46",
+      "message": "exp18: depth 6"
+    },
+    {
+      "commit": "c0567ca",
+      "message": "exp19: two-variant feature ensemble"
+    },
+    {
+      "commit": "61a834c",
+      "message": "exp20: depth 8"
+    },
+    {
+      "commit": "64d8bd7",
+      "message": "exp21: depth10 + linear recency weights"
+    },
+    {
+      "commit": "913ce2b",
+      "message": "exp23: mixed recency ramps per model"
+    },
+    {
+      "commit": "a54d582",
+      "message": "exp27: 6th model without freq features"
+    },
+    {
+      "commit": "5245d7d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18037.1,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 407.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a54d582",
+  "best_commit_eval_auc": 0.7441,
+  "best_commit_holdout_auc": 0.745912737806,
+  "best_commit_holdout_ap": 0.7328770869955161,
+  "best_commit_error": null,
+  "finalized_best": true
+}

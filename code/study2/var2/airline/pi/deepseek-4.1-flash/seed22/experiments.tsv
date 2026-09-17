@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	4bd4b1e	0.7141	ok	4	baseline
+2	a159d48	0.0000	crash	1	time feats + route/freq enc, 400 trees lr.05
+3	69f40d1	0.0000	crash	1	time feats + route/freq enc, 400 trees lr.05
+4	fe67922	0.7099	ok	7	time+route feats, calendar ordinal, 400 trees lr.05
+5	bbc743a	0.7525	ok	54	bagged deep-tree XGB ensemble, 10x40
+6	a343190	0.7536	ok	62	deep ensemble + freq/weekend/logdist features
+7	7df0435	0.7584	ok	44	tuned deep ensemble col.45 sub.95 n30
+8	d98bb10	0.7601	ok	49	add hour-frequency congestion features
+9	6cc132c	0.7612	ok	49	add minute-of-hour features
+10	d72e4e5	0.7628	ok	60	colsample .42 + max_bin 512
+11	6b34eaa	0.7628	ok	61	colsample .40
+12	04feaca	0.7624	ok	75	max_bin 1024
+13	a2411b8	0.7632	ok	91	16-model deep ensemble
+14	2e47a61	0.7638	ok	99	add carrier-airport freq features
+15	3166896	0.0000	timeout	121	20-model deep ensemble
+16	0331d99	0.7629	ok	104	add carrier-airport-hour freq

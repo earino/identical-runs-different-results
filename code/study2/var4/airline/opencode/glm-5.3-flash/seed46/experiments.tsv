@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	94d3a4a	0.7141	ok	4	baseline
+2	52cb45b	0.7211	ok	4	FE time-of-day/calendar/cyclic + ES 2000 trees d6
+3	0eeaa82	0.7270	ok	11	depth10 lr0.05 mcw5 colsample0.7
+4	5a1da44	0.0000	crash	2	OOF TE carrier/origin/dest/route m50 + counts
+5	b00aa5d	0.7251	ok	8	OOF TE carrier/origin/dest/route m50 + counts
+6	834b4bf	0.7216	ok	28	counts only (no TE), ES on AUC
+7	eac9225	0.7232	ok	20	time-split ES val=Oct-Dec05 AUC, no counts
+8	0020fbe	0.7270	ok	6	fixed 300 trees, no ES
+9	5c91658	0.7242	ok	9	fixed 600 trees
+10	a7b0db7	0.7303	ok	8	depth 12, 300 trees
+11	e697ac3	0.7307	ok	9	depth 14, 300 trees
+12	61a4b8a	0.7310	ok	14	depth 16, 300 trees
+13	1d19700	0.0000	crash	1	route categorical, depth 14
+14	a69cf0f	0.7148	ok	12	route categorical, depth 14
+15	e239461	0.7260	ok	10	mcw 20, depth 16
+16	797eb74	0.7288	ok	4	gamma 5, depth 16
+17	a241269	0.7321	ok	14	max_bin 512
+18	549b308	0.7314	ok	15	max_bin 1024
+19	ae89839	0.7336	ok	24	lr0.03 500 trees d16 mb512
+20	1949fae	0.7346	ok	36	lr0.02 800 trees d16 mb512
+21	4f83b57	0.7360	ok	64	lr0.01 1500 trees d16 mb512
+22	e780759	0.7354	ok	74	lr0.008 2000 trees d16 mb512
+23	78e90a7	0.7269	ok	85	colsample_bynode 0.7 lr0.01 1500 d16
+24	5884da2	0.7306	ok	68	colsample_bytree 0.9 lr0.01 1500 d16
+25	4ce2dd6	0.7379	ok	64	subsample 0.9 lr0.01 1500 d16
+26	13ce125	0.7368	ok	66	subsample 1.0 lr0.01 1500 d16
+27	7930d9c	0.7336	ok	68	2-model ensemble d16+d10
+28	a0a7bd3	0.7253	ok	85	low-card calendar categoricals
+29	bb0088f	0.7371	ok	87	seed bagging 2x lr0.015 1000 trees
+30	9dd3e38	0.0000	crash	0	lossguide max_leaves 64 lr0.01 1500
+31	e7ba99e	0.0000	crash	0	lossguide max_leaves 64 lr0.01 1500
+32	65864c0	0.7275	ok	16	lossguide max_leaves 64 lr0.01 1500
+33	6ba4117	0.7376	ok	77	carrier x hour categorical d16
+34	258c330	0.7387	ok	64	colsample_bytree 0.6 lr0.01 1500 d16
+35	922a5ab	0.7394	ok	55	colsample_bytree 0.5 lr0.01 1500 d16
+36	45db69f	0.7397	ok	52	colsample_bytree 0.4 lr0.01 1500 d16
+37	4796c54	0.7358	ok	47	colsample_bytree 0.3 lr0.01 1500 d16
+38	8bb1780	0.7383	ok	53	subsample 0.8 colsample 0.4
+39	f26b111	0.7402	ok	63	depth 18 colsample 0.4
+40	c408e5c	0.7403	ok	72	depth 20 colsample 0.4

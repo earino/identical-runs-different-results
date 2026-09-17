@@ -1,0 +1,40 @@
+n	commit	eval_auc	status	seconds	description
+1	91f48ff	0.7141	ok	3	baseline
+2	f3e038f	0.0000	crash	1	feat v1: numeric date fields, deptime decomposition, route cat
+3	c08dd18	0.0000	crash	1	feat v1 fixed: numeric date fields, deptime decomposition, route cat
+4	76f8b66	0.7092	ok	1	feat v1: numeric date fields, deptime decomposition, route cat
+5	ae07e07	0.0000	crash	23	scaled model + enriched features (num+cat month/dow, route, deptime decomp)
+6	2ff5cfd	0.7048	ok	3	scaled model + enriched features (num+cat month/dow, route, deptime decomp)
+7	bffbfa4	0.7075	ok	9	grid: depth/lr/mcw with AUC early stopping
+8	38e08af	0.7141	ok	19	surface: {baseline,enriched} x {30..480} rounds, no ES
+9	155a76c	0.7141	ok	4	TE features: A vs A+route vs A+TE@30/120/240 vs TE-only@240
+10	a41b78e	0.7141	ok	7	OOF TE fix + arms A/AT/T/AT_route/AT_hour
+11	69f733f	0.7168	ok	5	congestion features: o_hour TE (m60/150), d_hour, block, counts
+12	f3013f6	0.7192	ok	11	capacity tuning around OH60 features
+13	dab00a4	0.7195	ok	28	shallow+slow capacity search around d4/lr0.03
+14	68c24e5	0.7259	ok	16	feature blocks retested at shallow recipe
+15	6c780eb	0.7274	ok	24	block granularity + dest side + m sensitivity + rounds
+16	143e752	0.7300	ok	19	stacked congestion features + depth recheck
+17	dd03293	0.7305	ok	28	10-min granularity + full congestion stack at d3/800+
+18	5cafec6	0.7305	ok	85	ensemble: bagged members, mixed depth/colsample
+19	95d17b0	0.0000	crash	4	hierarchical TE + regularization arms
+20	8eb2950	0.7313	ok	33	hierarchical TE + regularization arms
+21	900f489	0.7318	ok	48	lambda/alpha + structural blend + cs ensemble
+22	faa6842	0.0000	crash	73	ensemble scale + fresh structural ideas
+23	508f030	0.7325	ok	84	alpha ensemble variants + lossguide
+24	4ee95f0	0.7326	ok	86	fold diversity + holiday features
+25	4afd90b	0.7329	ok	75	holiday ensemble + seasonal sin/cos
+26	1d68359	0.0000	crash	1	seasonal origin TE + OOF/ensemble variants
+27	0cac0bb	0.0000	timeout	120	seasonal origin TE + OOF/ensemble variants
+28	6d0e0df	0.7333	ok	89	colsample_bynode ensemble variants
+29	6908566	0.0000	crash	60	feature ablation + d_dow + logit averaging
+30	2802349	0.0000	crash	0	pruned feature set in ensemble
+31	778024b	0.0000	crash	47	pruned feature set in ensemble
+32	8a88107	0.7333	ok	61	clean run verification, 10-member ensemble
+33	546456b	0.0000	crash	39	mixed ensembles: depth mix, fs mix
+34	26e34fa	0.0000	crash	86	mixed ensembles: depth mix, fs mix
+35	04014c1	0.0000	crash	23	product feature + gamma + slow lr
+36	c9e7c48	0.7334	ok	86	product feature + gamma + slow lr
+37	95595ac	0.7334	ok	76	product variants, final micro-bets
+38	6894d4b	0.7332	ok	21	FINAL: cleaned pipeline, verify eval AUC unchanged
+39	84a5d1e	0.7334	ok	21	FINAL: cleaned pipeline verified

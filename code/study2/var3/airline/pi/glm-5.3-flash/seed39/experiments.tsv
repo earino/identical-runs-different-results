@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	fdfc8bc	0.7141	ok	5	baseline
+2	e644e4e	0.7108	ok	6	E2: 3000 trees lr .05 depth8 early stop
+3	86091ca	0.7053	ok	5	E3: tod features, 400 trees depth7
+4	ff7159a	0.7131	ok	2	E4: tod features small model
+5	712aa85	0.7135	ok	3	E5: OOF TE + count enc
+6	a90e944	0.7127	ok	4	E6: interaction TE x hour bucket
+7	17d2ada	0.0000	crash	1	E7: monotone tod + reg
+8	2e39811	0.7113	ok	4	E8: monotone tod + reg (fixed)
+9	e53bcd6	0.7145	ok	2	E9: shallow robust d4
+10	0c21cd1	0.7155	ok	3	E10: shallow + ix TE
+11	34be553	0.7170	ok	6	E11: 5-seed ensemble
+12	3a86c02	0.7161	ok	6	E12: + MHB TE
+13	fc6f293	0.7172	ok	6	E13: drop DayofMonth
+14	8c0dfbe	0.7209	ok	5	E14: drop Month
+15	4a087de	0.7218	ok	9	E15: d5 250t
+16	16d1e39	0.7227	ok	13	E16: d6 350t
+17	f5eaf98	0.7236	ok	21	E17: d7 450t
+18	f7dd110	0.7244	ok	27	E18: d8 500t
+19	bb53511	0.7250	ok	44	E19: d9 550t
+20	361cfcc	0.7253	ok	57	E20: d10 600t
+21	4ebbdd3	0.7269	ok	68	E21: lr .05 900t
+22	95ea9d4	0.7265	ok	64	E22: sub .8 col .7
+23	e61189e	0.7269	ok	64	E23: 3h buckets
+24	d71f378	0.7269	ok	70	E24: TE m=50/30
+25	dfd314a	0.7279	ok	61	E25: + BHB TE
+26	3551324	0.7280	ok	102	E26: 8 seeds
+27	2248822	0.7269	ok	59	E27: diverse ensemble
+28	661896f	0.7269	ok	53	E28: + season
+29	2c65c6b	0.7269	ok	60	E29: no OxD ix
+30	d8a0ed5	0.7316	ok	56	E30: congestion feats
+31	bb49ab8	0.7320	ok	52	E31: more congestion feats
+32	97a4ab0	0.0000	crash	2	E32: OHR/DHR TE
+33	97e6ffb	0.7320	ok	59	E33: OHR/DHR TE fixed
+34	c44206d	0.0000	crash	2	E34: reg 5 mcw 10
+35	28192ff	0.7314	ok	58	E35: reg5 mcw10
+36	e27ca36	0.7324	ok	67	E36: lr .04 1100t
+37	bb01800	0.7324	ok	77	E37: lr .03 1400t
+38	4822d2a	0.7323	ok	71	E38: full congestion family
+39	9b5c9b2	0.0000	crash	1	E39: route sym + RHB
+40	0735c9d	0.7322	ok	67	E40: route sym + RHB fixed

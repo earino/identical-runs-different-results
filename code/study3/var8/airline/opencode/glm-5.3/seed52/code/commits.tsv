@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	877c0d4	1789641343	baseline
+01	7024d0d	1789641385	FE: time features, route, cyclical, log dist + early stopping
+02	7422b1e	1789643446	FE: numeric time+cyc+freq+congestion; d18 cols.4 lr.03 early-stop
+03	8200c4f	1789643470	5-member ensemble (cols/seed diversity) on FE v3
+04	848fac2	1789643764	carrier-hour/dow freq feats + d20 + max_bin 512, single model
+05	315dc21	1789643954	5-member ensemble d20 mb512 (Xtr/Xev prepared once)
+06	f167bbd	1789644219	5-member ensemble d20 mb256 es40 (safe runtime)
+07	073ae3c	1789644551	depth-mix ensemble (18-24), cols .36-.48
+08	0bf43a2	1789644663	rank-average member predictions
+09	f673be4	1789645099	5 members mb512 es30 (stronger members)
+10	4aa042d	1789645225	mb512 members with es20 for runtime safety
+11	3bd0bf7	1789645870	add origin/dest x carrier frequency features
+12	1122984	1789646528	AUC-weighted rank averaging of members

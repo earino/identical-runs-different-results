@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e0c5b6a	0.7141	ok	11	baseline
+2	2642a7f	0.7156	ok	7	early stopping + depth8 lr.05 3000r
+3	4339808	0.7170	ok	7	temporal features (hour, sin/cos, redeye, logdist)
+4	a9db7a3	0.7069	ok	7	target encodings + route/pair cats
+5	e8e9533	0.7168	ok	10	target encodings only
+6	c0e0e22	0.7159	ok	7	depth10 probe
+7	dd8c6b7	0.7071	ok	6	freq encodings + route cat
+8	419816a	0.7173	ok	14	lr0.03 es200
+9	28b900f	0.7189	ok	14	hour-cat + cat-onehot split
+10	d3f3047	0.7183	ok	14	leaf regularization
+11	e7d0cae	0.7201	ok	35	3-seed bagging
+12	7f9a0ea	0.7206	ok	61	5-seed bagging
+13	15dedd8	0.7257	ok	76	carrier x hour cat
+14	0c45395	0.7206	ok	50	origin/dest x hour cats
+15	27c010d	0.7187	ok	56	dow x hour + carrier x dow
+16	4faf3ee	0.7246	ok	74	dist bin x carrier
+17	83824a1	0.7174	ok	57	month x hour
+18	5de6886	0.7254	ok	50	es rounds 40
+19	83e5611	0.7261	ok	82	mixed depth bag
+20	bc7fb0e	0.7262	ok	102	lr0.02
+21	ee4fa33	0.7268	ok	100	fix sincos time
+22	3cc1ee4	0.7266	ok	105	lossguide member
+23	a30c007	0.7268	ok	100	4-seed bag
+24	00f2270	0.7278	ok	107	colsample bynode
+25	a3d30a9	0.7278	ok	79	eta anneal
+26	89ffc1a	0.7135	ok	43	dom x hour
+27	5035c6a	0.7278	ok	108	6-seed bag
+28	9b92c4c	0.7275	ok	97	subsample 0.7
+29	0ae4af0	0.0000	timeout	121	airport counts
+30	acd328f	0.7215	ok	83	block x carrier
+31	f4eead3	0.7278	ok	106	max_bin 128
+32	00f2270+dirty	0.0000	timeout	120	2-stage stack
+33	2c2ffcc	0.0000	timeout	120	2-stage stack lean
+34	42eec2c	0.7286	ok	112	mcw 5
+35	2288add	0.7284	ok	117	mcw 2
+36	c5ca3eb	0.0000	timeout	120	cols_bytree 0.7
+37	74fb6f6	0.0000	timeout	120	sub .9 cols .9
+38	ea2d40d	0.0000	timeout	120	simplify bag + es120
+39	2a783b1	0.7286	ok	82	4-member es100
+40	fbc6621	0.7286	ok	104	5-member es100

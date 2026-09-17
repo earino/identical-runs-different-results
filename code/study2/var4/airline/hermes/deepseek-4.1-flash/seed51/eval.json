@@ -1,0 +1,196 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 51,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:32:53+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s51-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:16:11+00:00",
+  "wall_seconds": 2597.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6861.0,
+  "endpoint_at_end": "ok",
+  "head": "27b7f58",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.76,
+  "final_eval_auc": 0.76,
+  "holdout_auc": 0.758871290088,
+  "holdout_ap": 0.7463626411737698,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04410053835200001,
+  "generalization_gap": 0.001128709911999981,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 12241577,
+    "tokens_in_uncached": 12241577,
+    "tokens_in_cached": 0,
+    "tokens_out": 72393,
+    "turns": null,
+    "api_calls": 145,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 6571.1,
+  "cpu_seconds_counted": 6210.2,
+  "cpu_seconds_uncounted": 1.2,
+  "cpu_seconds_exempt": 359.7,
+  "python_processes": 50,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 161,
+  "fits_counted": 156,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "4390b93",
+      "message": "baseline"
+    },
+    {
+      "commit": "7e4dc22",
+      "message": "capacity: 500 trees lr0.05 subsample/colsample 0.8"
+    },
+    {
+      "commit": "fcb35b3",
+      "message": "strong regularization: depth4 mchild20 150 trees"
+    },
+    {
+      "commit": "bd7e3e4",
+      "message": "count/congestion features + dep hour"
+    },
+    {
+      "commit": "1d36f58",
+      "message": "more count keys (dest_hour, carrier_origin) + share ratios"
+    },
+    {
+      "commit": "0ab8e86",
+      "message": "capacity retest with richer features: depth6 400 trees lr0.05"
+    },
+    {
+      "commit": "aca4d10",
+      "message": "lr0.025 900 trees mcw20 colsample0.7"
+    },
+    {
+      "commit": "3855af3",
+      "message": "3-member diverse xgboost ensemble"
+    },
+    {
+      "commit": "28a2529",
+      "message": "5-member ensemble"
+    },
+    {
+      "commit": "f7716c9",
+      "message": "ordinal + cyclical time features (dep_frac, month/dow sin-cos, day_of_year)"
+    },
+    {
+      "commit": "c56bea6",
+      "message": "structural route network features (ncar_route, route/carrier shares)"
+    },
+    {
+      "commit": "2b671c1",
+      "message": "30-min congestion buckets + arrival-side congestion proxy"
+    },
+    {
+      "commit": "9d56fd5",
+      "message": "rolling local-density congestion features at 15/30/60min + inbound turnaround pressure"
+    },
+    {
+      "commit": "16cdacc",
+      "message": "carrier-bank, route, inbound rolling density windows"
+    },
+    {
+      "commit": "bff782a",
+      "message": "5-minute resolution local density windows"
+    },
+    {
+      "commit": "3375394",
+      "message": "asymmetric trailing/leading bank windows (head vs tail of departure bank)"
+    },
+    {
+      "commit": "54beec2",
+      "message": "back/fwd windows at 15/60min + route and arrival-side asymmetric windows"
+    },
+    {
+      "commit": "43e720b",
+      "message": "5-min asymmetric back/fwd windows at 15/30min"
+    },
+    {
+      "commit": "18dece9",
+      "message": "schedule-gap (headway) features around the flight for origin/carrier/route/arrival"
+    },
+    {
+      "commit": "f236ca2",
+      "message": "retune base: depth7 mcw30 lr0.02 1300 trees colsample0.6"
+    },
+    {
+      "commit": "a825cba",
+      "message": "refresh ensemble members around new base params"
+    },
+    {
+      "commit": "4d2594d",
+      "message": "2-hour asymmetric windows + route 60min windows"
+    },
+    {
+      "commit": "7cb4593",
+      "message": "route and arrival-side 60/120min asymmetric windows"
+    },
+    {
+      "commit": "56dd734",
+      "message": "whole-day back/fwd windows (ladder endpoint)"
+    },
+    {
+      "commit": "27b7f58",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6211.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 289.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "56dd734",
+  "best_commit_eval_auc": 0.76,
+  "best_commit_holdout_auc": 0.758871290088,
+  "best_commit_holdout_ap": 0.7463626411737698,
+  "best_commit_error": null,
+  "finalized_best": true
+}

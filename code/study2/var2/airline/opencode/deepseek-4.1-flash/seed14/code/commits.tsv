@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	c390fc4	1789487720	baseline
+01	649c766	1789487755	time features + cyclic date encodings
+02	a0cfae9	1789487853	10-seed bagged ensemble
+03	78eb22c	1789487862	30-seed bag
+04	8169d1e	1789487873	depth-diverse bag
+05	1e05a48	1789487890	60-member depth-diverse bag
+06	e86f4c9	1789488024	stronger regularization
+07	fe03e10	1789488083	airport-hour congestion counts
+08	8cee53c	1789488124	route and route-hour counts
+09	9b644ad	1789488170	OOF TE on interaction keys
+10	3561be2	1789488253	dow interaction TEs
+11	e685479	1789488279	deeper depth cycle
+12	a58a712	1789488314	deeper depth cycle v2
+13	ad95145	1789488364	deeper depth cycle v3
+14	29f23a3	1789488431	deeper depth cycle v4
+15	8ffac6a	1789488517	deeper depth cycle v5
+16	fa389a3	1789488625	add d_h c_h TE
+17	092aae2	1789489024	dow dest/carrier TE, bag 50
+18	9443314	1789489544	subsample/colsample 0.7
+19	d52c763	1789489633	subsample/colsample 0.6
+20	080c322	1789489709	subsample/colsample 0.5

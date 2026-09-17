@@ -1,0 +1,138 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 14,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:25:18+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s14-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T21:28:07+00:00",
+  "wall_seconds": 10969.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 31773.5,
+  "endpoint_at_end": "ok",
+  "head": "e57ad78",
+  "n_commits": 9,
+  "n_experiments": 8,
+  "n_ok": 8,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7285,
+  "final_eval_auc": 0.7285,
+  "holdout_auc": 0.7586044203100001,
+  "holdout_ap": 0.7492242077783228,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04383366857400006,
+  "generalization_gap": -0.030104420310000046,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7463609,
+    "tokens_in_uncached": 2369145,
+    "tokens_in_cached": 5094464,
+    "tokens_out": 103902,
+    "turns": null,
+    "api_calls": 129,
+    "method": "sum-of-129-events",
+    "cost_usd": 5.0985,
+    "cached_share": 0.683
+  },
+  "cpu_seconds_python": 31725.6,
+  "cpu_seconds_counted": 354.1,
+  "cpu_seconds_uncounted": 17659.5,
+  "cpu_seconds_exempt": 13712.0,
+  "python_processes": 91,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 1,
+  "fits_total": 2776,
+  "fits_counted": 54,
+  "fits_uncounted": 2206,
+  "commits": [
+    {
+      "commit": "3cfed71",
+      "message": "baseline"
+    },
+    {
+      "commit": "82852e0",
+      "message": "time+route features, internal early stopping"
+    },
+    {
+      "commit": "8bd6f17",
+      "message": "time features, shallow depth-4, 150 rounds, colsample 0.8"
+    },
+    {
+      "commit": "e0380b6",
+      "message": "bag of 10 shallow models + late-2005 recency weighting"
+    },
+    {
+      "commit": "b29b905",
+      "message": "depth-diverse bag [2,3,4,5,6]x2"
+    },
+    {
+      "commit": "d6e3777",
+      "message": "add MinuteOfHour feature"
+    },
+    {
+      "commit": "f5769fb",
+      "message": "bag rounds 150 -> 250"
+    },
+    {
+      "commit": "9959073",
+      "message": "pool rare airports (<300 train rows) into NaN"
+    },
+    {
+      "commit": "e456bd0",
+      "message": "Final: deep-emphasis depth ladder + arrival-time & congestion-count features, n=45, max_bin=128 (validate eval AUC 0.7594)"
+    },
+    {
+      "commit": "e57ad78",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18013.6,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 47.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9959073",
+  "best_commit_eval_auc": 0.7285,
+  "best_commit_holdout_auc": 0.728653600602,
+  "best_commit_holdout_ap": 0.7194673761516165,
+  "best_commit_error": null,
+  "finalized_best": false
+}

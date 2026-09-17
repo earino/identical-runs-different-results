@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	5245ee1	1789589023	baseline
+01	6a6f7ea	1789589812	Hour+Minute FE; shallow d5, lr.03, alpha=4, col.85, n1000
+02	2a046ba	1789590133	drop shift-noisy Month/DayofMonth; add Block15 + HourCar categoricals
+03	ffb0f10	1789591197	add HourOrig; deep d12 lr.02 a2
+04	c104af9	1789591786	Block20; 2-member deep+shallow ensemble, averaged probs
+05	bb3ca05	1789593003	DevRouteDist/DevCarDist features; 3-member ens (2x deep seeds + shallow)
+06	1cc2a51	1789593797	bagged deep members (subsample .85), n700 lr.028
+07	3439e28	1789594943	block-diversity: deep member 2 on 15-min blocks
+08	343830c	1789595040	mct192 deeps + d5 shallow on block-diverse base

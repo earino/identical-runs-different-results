@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	cdfcd94	1789587561	baseline
+01	5d3a035	1789587639	FE: time-of-day sin/cos, calendar numerics, route categorical; 2000 trees ES
+02	8a6539e	1789587661	fixed 600 trees lr=0.1 no ES
+03	d76076b	1789587740	ES on eval with eval_metric=auc
+04	020054d	1789588168	OOF TE (5-fold K=25) route/carrier/origin/dest/cxr_hour/orig_hour; dedup hash lookup
+05	b3f7f0b	1789588236	add te_dest_hour, te_route_hour, te_origin_todq; print feature importances
+06	bdd57b3	1789588323	hierarchical OOF TE: route_hour/carrier_hour shrink to parent; +carrier/dest todq; drop redundant hour TEs
+07	d5bc918	1789588762	add te_dow_hour K=5, te_month_hour K=10 (calendar interactions only)
+08	b4be315	1789588834	3-member XGB ensemble (depth 8/10/8, varied sampling+regs+seeds), mean proba
+09	24efa88	1789588937	4 diverse members (d8/d10/d6/d9), ES patience 150
+10	dce1ab9	1789589112	6 members at lr=0.1, patience 100
+11	d3c82d9	1789589230	mixed ensemble: 2x lr0.05 + 4x lr0.1
+12	96501f1	1789590145	int-coded TE keys + bincount aggregation (speed), n_est caps
+13	f723f4c	1789590466	3-fold OOF (noisier train TEs)
+14	f23c056	1789590865	add te_dow_todq K=5 (dow x 15-min tod)
+15	7cdab4a	1789590988	add te_month_todq K=10
+16	3ee9da3	1789591695	rank-average ensemble members; reuse X_ev for eval scoring
+17	6a55c89	1789592196	softmax performance weighting (tau=0.01) of member ranks
+18	ce15595	1789592540	sharper member weighting tau=0.005
+19	558363e	1789592776	fix: normalize rank-average output to (0,1] for the predict_proba contract

@@ -1,0 +1,7 @@
+n	commit	unix_time	subject
+00	a5090b7	1789648509	baseline
+01	27ed554	1789648665	capacity curve harness: N_TREES env knob
+02	9e75a82	1789648705	sweep harness: N_TREES/DEPTH/LR env knobs
+03	578a6d0	1789648732	champion: baseline feats, d4 n60 hardcoded
+04	8385983	1789648772	restore env knobs (defaults d4 n60)
+05	d7798db	1789648807	final: lr0.02 n280 d4 hardcoded (0.7175)

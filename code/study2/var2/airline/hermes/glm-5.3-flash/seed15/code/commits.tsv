@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	a54c8b8	1789492457	baseline
+01	f68dbfa	1789492564	feat: numeric+ cyclic deptime, calendar, freq + shrink encodings, airport one-hots, 300x8
+02	0493d1f	1789492688	ablation: same features, baseline model size, drop one-hots, add hour
+03	59034e6	1789492715	isolate: numeric calendar/deptime/dist only, no encodings, 30xd6
+04	3979b87	1789492727	capacity: 400xd8 lr0.05 subsample colsample on clean numeric features
+05	69659ac	1789492738	capacity: 600xd10 lr0.05
+06	997ad32	1789492758	capacity: 600xd8 lr0.05
+07	bc3a0c7	1789492775	reg: 400xd8 subs0.9 col0.9
+08	a5e61c0	1789492792	ensemble: 5-seed average of 400xd8
+09	afb4b2c	1789492975	bins: max_bin=1024
+10	4ea19e5	1789493055	ensemble: heterogeneous members (depth, colsample)
+11	b48a530	1789493088	ensemble: 8 heterogeneous members
+12	d1f5d6e	1789493269	ensemble: 10 members, deeper spread
+13	3c52da2	1789493330	ensemble: 16 members
+14	d7ee983	1789493650	ensemble: 20 members, 4 lossguide

@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	ef9ddfa	0.7141	ok	4	baseline
+2	0a9b1c8	0.7029	ok	4	FE v1 + early stopping + target encoding
+3	f366c1c	0.7524	ok	73	deep bagged ensemble + hour FE
+4	ab01985	0.7534	ok	56	drop Month+DayofMonth
+5	96b38a3	0.7567	ok	78	cyclic time features
+6	9bc4d0d	0.7568	ok	88	diverse-config ensemble + cyc
+7	6cffce4	0.7572	ok	90	cs.6 lr.06/.08 more rounds
+8	6e3a29e	0.7576	ok	88	n50 d20 lr.05 cs.6 x8
+9	d218464	0.7576	ok	87	geometric mean ensemble
+10	dafb014	0.7581	ok	104	TTA DepTime +-3min
+11	9787779	0.7576	ok	104	TTA 2 shifts +-3
+12	fa95494	0.7582	ok	93	6 members + TTA +-5
+13	7c44cf8	0.7580	ok	111	7 members + TTA5
+14	89fab4d	0.7577	ok	92	seed robustness check
+15	79929d3	0.7575	ok	100	n45 + TTA7
+16	550390b	0.7577	ok	94	train-side time offset 3+3
+17	3c4755e	0.7582	ok	94	hour-consistent TTA
+18	c854304	0.7572	ok	74	reg_lambda 2.0

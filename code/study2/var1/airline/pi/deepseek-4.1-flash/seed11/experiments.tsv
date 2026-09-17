@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cb238e2	0.7141	ok	4	baseline
+2	6df0b00	0.0000	crash	1	time+route features, 400 trees
+3	141a6fd	0.7024	ok	8	time+route features, 400 trees
+4	ebe1755	0.7119	ok	3	baseline feats, 300 trees lr0.05
+5	7d81431	0.7132	ok	2	baseline + hour/tod/weekend
+6	ccd9216	0.7127	ok	3	OOF target encoding carrier/origin/dest + hour/tod, 300 trees
+7	6300ce5	0.7108	ok	4	baseline feats, early stopping on internal 15% val
+8	05ef6fb	0.7145	ok	2	depth4, 200 trees, reg
+9	2227ffb	0.7145	ok	2	depth3, 400 trees, reg
+10	d4f00a2	0.7141	ok	2	depth4 + hour/tod/weekend
+11	6a76bb6	0.7161	ok	6	5-seed ensemble of depth4 models
+12	cafd562	0.7161	ok	6	depth-diverse ensemble (3,4,4,4,5)
+13	428719d	0.7161	ok	5	ensemble + frequency encodings
+14	fbd1074	0.7175	ok	6	ensemble + day-of-year seasonality
+15	c0c98ce	0.7173	ok	5	ensemble + doy + hour/tod
+16	c2696d8	0.7176	ok	5	ensemble + doy + OOF target encoding
+17	e1f975b	0.7178	ok	10	ensemble lr0.05/400trees depth4
+18	db17f16	0.7181	ok	16	10-seed ensemble lr0.05
+19	d5ecdbd	0.7183	ok	33	20-seed ensemble lr0.05
+20	2c75b0f	0.7181	ok	31	20-seed + hour/tod
+21	f4eb8d0	0.7189	ok	33	max_cat_to_onehot=16
+22	fd48142	0.7188	ok	32	max_cat_to_onehot=32
+23	731625c	0.7189	ok	34	subsample0.7 colsample0.6
+24	1bf969d	0.7041	ok	50	add route categorical
+25	08f0e25	0.7189	ok	66	40-seed ensemble
+26	9b3b537	0.7189	ok	32	extra_trees=True
+27	2ad9083	0.7188	ok	32	min_child_weight20 gamma0.5
+28	f4eb8d0+dirty	0.7184	ok	29	depth5 ensemble 300trees
+29	b72a2ea	0.7261	ok	35	carrier_hour categorical
+30	8d95a48	0.7212	ok	50	add origin_hour categorical
+31	d801148	0.7170	ok	38	add carrier_dow and carrier_mon
+32	dfeeaac	0.7265	ok	34	add carrier_dist interaction
+33	08cb8dc	0.7340	ok	38	carrier half-hour bucket
+34	aff5df4	0.7308	ok	41	carrier 15-min bucket
+35	0dacdd3	0.7350	ok	35	depth5 300trees with carrier_hh
+36	1de0669	0.7343	ok	30	depth6 200trees with carrier_hh
+37	2cd6cb5	0.7368	ok	67	depth5 lr0.03 600trees
+38	67f35ce	0.7363	ok	81	depth5 lr0.025 700trees
+39	1699c2b	0.7362	ok	75	add origin_dist interaction
+40	799e2cb	0.7370	ok	65	min_child_weight5

@@ -1,0 +1,216 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T06:11:48+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T08:28:10+00:00",
+  "wall_seconds": 8182.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 13473.5,
+  "endpoint_at_end": "ok",
+  "head": "37a6796",
+  "n_commits": 29,
+  "n_experiments": 40,
+  "n_ok": 34,
+  "n_crash": 4,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7611,
+  "final_eval_auc": 0.7611,
+  "holdout_auc": 0.7614787955419999,
+  "holdout_ap": 0.7523625877933646,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04670804380599991,
+  "generalization_gap": -0.00037879554199993226,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7377777,
+    "tokens_in_uncached": 2640177,
+    "tokens_in_cached": 4737600,
+    "tokens_out": 112249,
+    "turns": null,
+    "api_calls": 146,
+    "method": "sum-of-146-events",
+    "cost_usd": 5.4219,
+    "cached_share": 0.642
+  },
+  "cpu_seconds_python": 13430.0,
+  "cpu_seconds_counted": 10097.1,
+  "cpu_seconds_uncounted": 2888.3,
+  "cpu_seconds_exempt": 444.7,
+  "python_processes": 117,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 745,
+  "fits_counted": 659,
+  "fits_uncounted": 74,
+  "commits": [
+    {
+      "commit": "46566bb",
+      "message": "baseline"
+    },
+    {
+      "commit": "985d768",
+      "message": "bigger model + internal early stopping, refit on full train"
+    },
+    {
+      "commit": "5226fe9",
+      "message": "exp5: ablate feature sets at fixed model, ship best"
+    },
+    {
+      "commit": "0d43318",
+      "message": "exp6: time feature extensions ablation"
+    },
+    {
+      "commit": "1047d4f",
+      "message": "exp7: smoothed target encodings for route/origin/dest/carrier"
+    },
+    {
+      "commit": "35e97d7",
+      "message": "exp8: hyperparameter grid depth/mcw/subsample at fixed features"
+    },
+    {
+      "commit": "265d6b0",
+      "message": "exp9: 8-seed XGBoost ensemble at best config"
+    },
+    {
+      "commit": "bd92194",
+      "message": "exp10: bagged XGBoost ensembles (row/col subsampling)"
+    },
+    {
+      "commit": "ef024c8",
+      "message": "exp11: bag composition tuning (colsample/subsample/depth/k/mcw)"
+    },
+    {
+      "commit": "52fdaef",
+      "message": "exp12: deeper bags with stronger column subsampling"
+    },
+    {
+      "commit": "cc273c2",
+      "message": "exp13: push colsample lower and depth higher in bags"
+    },
+    {
+      "commit": "9a4fbf3",
+      "message": "exp14: col0.3 n=20, col0.4 d10, col0.25 d12"
+    },
+    {
+      "commit": "ecefa7d",
+      "message": "exp15: structural traffic-count features (airport/hour congestion)"
+    },
+    {
+      "commit": "5614e40",
+      "message": "exp16: count features with cached-prob harness"
+    },
+    {
+      "commit": "7219cd1",
+      "message": "fix: unpack dict bag configs"
+    },
+    {
+      "commit": "371c3c0",
+      "message": "exp18: extended count family + route distance deviation"
+    },
+    {
+      "commit": "cc821f6",
+      "message": "exp19: arrival-hour congestion features"
+    },
+    {
+      "commit": "8823554",
+      "message": "fix: explicit count key set"
+    },
+    {
+      "commit": "d4c0116",
+      "message": "exp21: deterministic column order; more rounds at low colsample"
+    },
+    {
+      "commit": "8bbadfa",
+      "message": "exp22: fast DMatrix harness; 5-bag diverse union"
+    },
+    {
+      "commit": "8826520",
+      "message": "exp23: union of strong deep bags, best-subset ship"
+    },
+    {
+      "commit": "e93b8ba",
+      "message": "exp24: d14 n=12 + d16 n=6 union with fit deadline guard"
+    },
+    {
+      "commit": "8f52b66",
+      "message": "exp25: d16 vs d18 bags"
+    },
+    {
+      "commit": "b08bcc2",
+      "message": "exp26: d20 col03 and d18 col02"
+    },
+    {
+      "commit": "d706d32",
+      "message": "exp28: share features vs control at d18"
+    },
+    {
+      "commit": "c9ff96e",
+      "message": "fix: per-bag feature frame routing"
+    },
+    {
+      "commit": "ee1d75c",
+      "message": "exp35: consolidate 2-view union n=8 each"
+    },
+    {
+      "commit": "db4681f",
+      "message": "exp40: final confirmation run of best config (exp35 code, no change)"
+    },
+    {
+      "commit": "9367751",
+      "message": "cleanup: remove dead code, fix diag label (no functional change)"
+    },
+    {
+      "commit": "37a6796",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 12985.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 43.5,
+  "best_commit_dirty_rows_excluded": 2,
+  "best_commit": "ee1d75c",
+  "best_commit_eval_auc": 0.7611,
+  "best_commit_holdout_auc": 0.7614787955419999,
+  "best_commit_holdout_ap": 0.7523625877933646,
+  "best_commit_error": null,
+  "finalized_best": false
+}

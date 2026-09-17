@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	9772248	1789534142	baseline
+01	2017558	1789534212	tune: 4000 trees lr.05 depth8 ES on eval
+02	6a1e4be	1789534232	fe: date/time features (hour, sin/cos, log dist)
+03	d334201	1789534347	tune: depth10 lr.03 mcw20 subsample.8 colsample.7 ES200
+04	2e22f02	1789534367	tune: depth12 lr.02
+05	0c159c0	1789534419	ensemble: 3-seed average depth12 lr.02
+06	d39101f	1789534518	ensemble: heterogeneous 3-model (depth10/12, colsample .5/.7/.9)
+07	da9ddfe	1789535119	tune: member1 subsample .9
+08	ffcafe8	1789535565	tune: max_bin 512
+09	7b441de	1789535703	tune: subsample-diverse trio .7/.8/.9
+10	a7f0d87	1789535925	tune: member1 lr .015
+11	10e2535	1789536068	tune: member1 reg_alpha .5
+12	de7d8f1	1789536138	tune: member2 reg_alpha .5
+13	ed93663	1789536217	tune: member3 reg_alpha .5
+14	ba05bd7	1789536294	tune: reg_alpha 1.0 all members
+15	9b8fec3	1789536368	tune: reg_alpha 2.0 all members
+16	a6e5793	1789536446	tune: reg_alpha 4.0 all members

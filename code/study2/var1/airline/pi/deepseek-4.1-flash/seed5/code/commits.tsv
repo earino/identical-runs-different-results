@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	97adf19	1789509493	baseline
+01	467b1d6	1789509555	regularized deeper model
+02	07c72f5	1789509584	3-model ensemble
+03	5f46450	1789509627	5-model ensemble
+04	e8ec83b	1789509729	airport-hour congestion counts
+05	cbb66a9	1789509764	congestion ratios
+06	d7c5e7c	1789509806	arrival congestion + dep hour
+07	5171378	1789509879	one-hot encoding
+08	f41da7c	1789510912	deep one-hot ensemble d9/d10/d12
+09	d844413	1789512791	deep mcw1 ensemble
+10	6f6cb7d	1789513294	lean ensemble + throughput features
+11	df95bb4	1789513509	max_bin 512
+12	64df0a1	1789514203	dep_min + slightly leaner max_bin512

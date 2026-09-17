@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	984ccdd	1789530339	baseline
+01	677aa06	1789530381	feat: time-of-day features + deeper 300-tree model
+02	1598179	1789531155	feat: numeric dates + time-of-day, low colsample model
+03	3b8bff8	1789531386	feat: freq encodings + logdist, depth10 colsample0.3
+04	a9fc49e	1789532178	feat: origin-hour freq, depth11 eta0.03
+05	3767f96	1789532816	feat: 5-model XGBoost ensemble
+06	da73898	1789532866	feat: 6-seed homogeneous ensemble
+07	cedf180	1789535413	feat: lossguide max_leaves=512 3-seed ensemble + dest/carrier-hour freq

@@ -1,0 +1,34 @@
+n	commit	eval_auc	status	seconds	description
+1	f3d0ce0	0.7141	ok	4	baseline
+2	9654745	0.7140	ok	3	time features + more trees
+3	2dd26dc	0.7118	ok	6	depth8 lr0.05 400 trees
+4	484e20a	0.0000	crash	7	feature overhaul: numeric dates, route, target encoding
+5	0a8794e	0.0000	crash	1	feature overhaul v2: pinned categories
+6	d0d610b	0.6847	ok	8	feature overhaul v3: numeric dates, route, TE, early stop
+7	fc9b923	0.7170	ok	1	reg path: md4 ne100 lam10
+8	887a02f	0.7248	ok	6	ens4 seeds md6 a3 cs.7
+9	98852f8	0.7256	ok	12	ens12 mixed depths 4-8
+10	a4f926a	0.7273	ok	14	rel-to-origin/carrier dep-time, hour, doy
+11	bd81245	0.7276	ok	15	hour cyclic feats + a5
+12	93138e2	0.7326	ok	20	ori_hh + car_hh interaction categoricals
+13	d0bb31a	0.7354	ok	16	drop M/D cats + a5 + cs0.6
+14	06b59f1	0.7389	ok	37	ne=400
+15	5d68635	0.7426	ok	75	time-bucket interactions 20m/30m/hourly
+16	c4d8f11	0.7425	ok	94	ne=500 cs=0.65
+17	a54e37f	0.7426	ok	57	ne=300 (wall-time safety)
+18	490cc09	0.7427	ok	59	alpha=4
+19	b648611	0.7424	ok	59	max_cat_to_onehot=256
+20	7e2c8c3	0.7424	ok	100	ori30m x dow, car30m x dow
+21	c14692d	0.7427	ok	77	ens16 seeds
+22	82da25a	0.7424	ok	63	dest x hour interaction
+23	8fb50a9	0.0000	crash	0	lr=0.08 ne=380
+24	85d1d4e	0.7426	ok	74	lr=0.08 ne=380 (fixed)
+25	74da923	0.7429	ok	58	gamma=0.1
+26	4b2c809	0.7427	ok	54	gamma=0.2
+27	2a6c2b7	0.7428	ok	57	gamma0.1 + mcw3
+28	c122fb5	0.7431	ok	52	cs=0.55 with gamma0.1
+29	2b46808	0.7430	ok	51	cs=0.5
+30	a9c5d2d	0.7432	ok	54	reg_lambda=8
+31	00a0c31	0.7430	ok	54	reg_lambda=6
+32	2fd3015	0.7429	ok	54	reg_alpha=4.5
+33	a9c5d2d	0.7432	ok	54	probe budget state

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	34a52cb	0.7141	ok	3	baseline
+2	ffff67c	0.7086	ok	4	time features, route cat, stronger params + early stopping
+3	dc9753b	0.7157	ok	12	route x hour interaction cats
+4	8cc237d	0.6759	ok	9	target encoding of high-card cats
+5	26fdec5	0.7125	ok	12	freq encoding of high-card cats
+6	cba61ff	0.7161	ok	20	deeper trees + slower lr
+7	b203f46	0.7185	ok	22	minute-of-day + more hour interactions
+8	df2ea69	0.7208	ok	99	5-model bagged ensemble
+9	8f99610	0.7205	ok	102	8-model bag, depth8
+10	06c7957	0.7176	ok	100	carrier x dow, carrier x month interactions
+11	316ff69	0.7189	ok	111	schedule-density congestion features
+12	54bf6a5	0.7204	ok	101	6 bags full data, fixed iters
+13	7339f3e	0.7211	ok	98	route distance anomaly features
+14	f9f7461	0.7214	ok	98	route time z-score
+15	a7fb3f2	0.7236	ok	102	origin-date departure order features
+16	d43e359	0.7284	ok	101	scale-stable dep order variants
+17	0acb373	0.0000	timeout	120	route-date + origin-hour order features
+18	1892514	0.7282	ok	82	route-date + origin-hour order (4 bags)
+19	cbbe4c1	0.7287	ok	105	order-time interaction numerics
+20	aaa4f81	0.7284	ok	107	departure gap feature
+21	a4d8acb	0.7213	ok	101	scale-stable only order features
+22	d5ac632	0.7287	ok	94	diverse hyperparams across bags
+23	4f13f3e	0.7285	ok	108	past-midnight wrap
+24	4397954	0.7320	ok	94	reg tuning: mcw1, subsamp .7, alpha
+25	6060fbe	0.7354	ok	100	stronger reg: lambda4 alpha1, ss .6
+26	e15e469	0.0000	timeout	121	even stronger reg ss.5 lam8
+27	f7a0aa4	0.7352	ok	83	strong reg lam8, 4 bags
+28	5a41cfe	0.0000	timeout	120	depth12 6bags strong reg
+29	93dca33	0.7354	ok	118	5pct val split, ES80
+30	49981c1	0.6919	ok	95	OOF target encoding retry
+31	e5ece40	0.0000	crash	2	span position feature
+32	f6399bb	0.7355	ok	111	span position feature (fixed order)
+33	1024bf8	0.0000	timeout	121	seasonal + holiday distance features
+34	e9ef27c	0.7353	ok	111	seasonal features 4 bags
+35	a18b27d	0.0000	timeout	121	schedule profile features
+36	fab8624	0.7352	ok	101	schedule profiles 4 bags
+37	ea208c0	0.7360	ok	117	arrival-side congestion ranks
+38	f198b14	0.0000	timeout	121	turnaround gap feature
+39	3bfebc3	0.7359	ok	106	turnaround gap 4 bags
+40	3e47b09	0.7392	ok	118	colsample_bynode 0.8

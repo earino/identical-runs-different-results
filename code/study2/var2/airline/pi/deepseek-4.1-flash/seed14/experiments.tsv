@@ -1,0 +1,12 @@
+n	commit	eval_auc	status	seconds	description
+1	9d7f209	0.7141	ok	4	baseline
+2	3d52c99	0.6994	ok	7	time features + route + stronger model
+3	07acfca	0.7101	ok	2	more trees 200
+4	948582e	0.7056	ok	1	baseline + route categorical
+5	8cce155	0.7138	ok	2	baseline + time of day features
+6	80291db	0.0000	crash	1	target encoding origin/dest/carrier/route
+7	322a8f5	0.7127	ok	2	target encoding origin/dest/carrier/route (bugfix)
+8	29a298c	0.7213	ok	6	date+doy TE+freq 3-seed ensemble
+9	9db4420	0.7244	ok	5	depmin+hour + dest_hour TE
+10	925d30d	0.7275	ok	7	arrival-hour TE da450+ca450, tuned reg
+11	a219256	0.7298	ok	28	da300/ca300 + depth-diverse ensemble

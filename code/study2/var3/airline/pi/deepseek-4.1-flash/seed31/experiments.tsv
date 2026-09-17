@@ -1,0 +1,34 @@
+n	commit	eval_auc	status	seconds	description
+1	ff6299e	0.7141	ok	11	baseline
+2	e63691f	0.7094	ok	39	n=400 lr=.05 depth=7 subsample
+3	19458ce	0.7101	ok	3	n=200 base depth/lr
+4	15febf2	0.7065	ok	2	FE dep_hour dep_min route
+5	0a029da	0.7138	ok	2	FE dep_hour dep_minute only
+6	bf83df9	0.7427	ok	27	drop dates + origin_hour + d12 a2 n1000
+7	fab08f3	0.7444	ok	63	depth 20 origin_hour a2 n1000
+8	c53d1fd	0.7442	ok	94	ensemble 2x d16
+9	c8cd794	0.7457	ok	75	d20 max_cat_threshold 128
+10	03475b7	0.7451	ok	77	d20 max_cat_threshold 256
+11	df733f2	0.7450	ok	75	d20 max_cat_threshold 192
+12	7da04af	0.7457	ok	86	d24 maxcat128
+13	fdc38dd	0.7442	ok	63	d20 alpha3 maxcat128
+14	23acba1	0.7430	ok	103	d20 maxcat128 +dest_hour
+15	c1e14b0	0.7437	ok	100	d20 n1500 maxcat128
+16	b6f180e	0.7446	ok	53	d16 maxcat128
+17	f05d16d	0.7442	ok	85	d20 cs0.8 maxcat128
+18	ae75bba	0.7458	ok	100	ensemble d20+d12 maxcat128
+19	ceaad8e	0.7434	ok	72	d20 lam5 maxcat128
+20	c7ed649	0.0000	timeout	123	d20 maxcat128 +origin_slot
+21	7374c5f	0.6885	ok	59	d20 maxcat128 no raw DepTime
+22	052a9c5	0.7447	ok	71	d20 maxcat128 minute_of_day
+23	8a2f01c	0.7460	ok	87	d20 maxcat128 +minute_of_day
+24	2955753	0.7481	ok	100	d20 maxcat128 +dep_minute_of_hour
+25	4cd6511	0.7471	ok	102	d20 maxcat128 +dep_hour
+26	c584727	0.7507	ok	110	d20 maxcat128 +origin_slot n600
+27	e88e9b0	0.7503	ok	80	d20 maxcat128 origin_slot only n600
+28	f1015cb	0.7511	ok	99	d20 maxcat128 origin_slot15 n400
+29	2962c06	0.7509	ok	104	d20 maxcat128 origin_slot10 n300
+30	fb7d0e9	0.7506	ok	111	slot15 maxcat256 n400
+31	6fcc918	0.7493	ok	94	slot15 d16 n600
+32	515653d	0.0000	timeout	129	slot15 d20 n500
+33	3c4066f	0.7509	ok	94	slot15 n400 no minute_of_day

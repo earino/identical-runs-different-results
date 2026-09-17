@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	1eb5e79	1789633362	baseline
+01	6e448ee	1789633463	early stopping, lr .05 depth 8, 2000 rounds
+02	d97fd33	1789633510	FE: hour/minute/dep_h/sin/cos + route interaction; depth 6
+03	7d1d96e	1789633831	wrap hour, mono dep_h, max_bin512, lr.02 n450 d4
+04	b14757d	1789634407	alpha5 + depth10 + colsample .6, n700 lr.02
+05	cd8b9a3	1789634823	a3 d14 cs0.4 n700 lr.02
+06	f562ec5	1789635566	RF-ized: a3 d30 cs0.3 lr.02 n700, mono off
+07	2b8311e	1789636742	robust interactions: carr/orig/dest x hour, carr x distbin
+08	cf79f97	1789639372	max_cat_to_onehot=100 (one-hot cat splits)
+09	06f212d	1789639517	min_child_weight=3 under onehot
+10	76ae388	1789639728	add 2h-bin orig/dest codes under onehot

@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	ee95d12	1789539056	baseline
+01	0358ff8	1789539092	FE v1: int dates, hour/minute, logDist + 600 trees lr.05 depth8
+02	6620c58	1789539154	early stopping via 80/20 split, refit on full train
+03	3c45489	1789539166	max_depth 10
+04	309e7b3	1789539177	max_depth 12
+05	255c91f	1789539188	max_depth 16
+06	9350b67	1789539204	max_depth 20
+07	6c07821	1789539225	max_depth 24
+08	8d37902	1789539308	ensemble of 3 diverse deep models
+09	e885ffa	1789539501	4-member ensemble incl lr.03
+10	4ea3563	1789539680	5th member: d28 cs.5
+11	cc2e4cd	1789540165	recency weighting linear 1->2
+12	dff441d	1789540291	recency 1->3
+13	5637abf	1789540923	low-cs members, prepare-once
+14	f729bb9	1789541052	trim: patience 15, d26
+15	3d3ef4d	1789541181	fixed-round 5th member
+16	bb8f094	1789541425	6 members: lr.03 fixed, +d16 member
+17	1654f29	1789541533	max_bin 512
+18	c4413db	1789541662	all-fixed members, drop ES machinery
+19	c242fac	1789541750	7th member d30
+20	27a1b43	1789542097	recency 1->2.5

@@ -1,0 +1,204 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 48,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T04:36:22+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s48-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T06:48:17+00:00",
+  "wall_seconds": 7914.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 4030.0,
+  "endpoint_at_end": "ok",
+  "head": "b23ac77",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 29,
+  "n_crash": 10,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7485,
+  "final_eval_auc": 0.7485,
+  "holdout_auc": 0.748565067296,
+  "holdout_ap": 0.7395019019974097,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03379431556000001,
+  "generalization_gap": -6.506729599997652e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9011385,
+    "tokens_in_uncached": 2719673,
+    "tokens_in_cached": 6291712,
+    "tokens_out": 93591,
+    "turns": null,
+    "api_calls": 165,
+    "method": "sum-of-165-events",
+    "cost_usd": 5.8552,
+    "cached_share": 0.698
+  },
+  "cpu_seconds_python": 3999.9,
+  "cpu_seconds_counted": 3666.2,
+  "cpu_seconds_uncounted": 1.5,
+  "cpu_seconds_exempt": 332.1,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 464,
+  "fits_counted": 448,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "5073808",
+      "message": "baseline"
+    },
+    {
+      "commit": "a7c3610",
+      "message": "capacity + early stopping (90/10 probe, refit full)"
+    },
+    {
+      "commit": "e83a53a",
+      "message": "diagnostic sweep: depth x rounds on eval"
+    },
+    {
+      "commit": "7219475",
+      "message": "ablation: time/date/dist/route feature groups"
+    },
+    {
+      "commit": "a5f7b48",
+      "message": "regularization sweep: mcw, lambda, lr schedule, depth"
+    },
+    {
+      "commit": "a15d9d3",
+      "message": "target encoding: simple + interaction TEs, OOF for train"
+    },
+    {
+      "commit": "8a0039d",
+      "message": "interaction TE family + smoothing sweep"
+    },
+    {
+      "commit": "84e3a55",
+      "message": "hour_route variants: m sweep, bins, new interaction families"
+    },
+    {
+      "commit": "6eeb58e",
+      "message": "hyperparameter sweep on TE feature set"
+    },
+    {
+      "commit": "af66403",
+      "message": "hierarchical TE (hour_route->route prior), flight TE, count features"
+    },
+    {
+      "commit": "d7f6c74",
+      "message": "flight TE variants: keys, smoothing, priors"
+    },
+    {
+      "commit": "5d08a41",
+      "message": "combine flight/origdep/destdep TEs + f4 + hyper re-check"
+    },
+    {
+      "commit": "e792a97",
+      "message": "hour-binned origdep/destdep, carrier-hour TEs, f4 variants"
+    },
+    {
+      "commit": "fc61a65",
+      "message": "ensembling: seed avg, OOF-fold noise, 10-fold OOF, two-view"
+    },
+    {
+      "commit": "886c278",
+      "message": "multi-view ensemble: view zoo, weights, seed-stacked views"
+    },
+    {
+      "commit": "a4f7823",
+      "message": "4-view ensemble tuning: weights, extra views, rank-avg, seedx2"
+    },
+    {
+      "commit": "4a1dc23",
+      "message": "grow view zoo: F4/C4/simple-TE view/bagged view + prune checks"
+    },
+    {
+      "commit": "16b6ac8",
+      "message": "lossguide + DART ensemble members"
+    },
+    {
+      "commit": "0053bb5",
+      "message": "new views: route-cat, noclock, 3-level flight prior, oof-seed members"
+    },
+    {
+      "commit": "461b248",
+      "message": "spec-view members: base/flight/inter TE subsets, colsample/mcw members"
+    },
+    {
+      "commit": "10e357b",
+      "message": "longer members: lr 0.02x1200, lr 0.03x800 across views"
+    },
+    {
+      "commit": "9272230",
+      "message": "8-view ensemble at lr0.03 x 1200 rounds (clean single config)"
+    },
+    {
+      "commit": "fe41078",
+      "message": "8-view ens at lr0.03 x 1600 rounds"
+    },
+    {
+      "commit": "f8a8b4a",
+      "message": "8-view ens at lr0.025 x 2000 rounds"
+    },
+    {
+      "commit": "345d63c",
+      "message": "test d5-variants and subsampled members at lr0.025 r2000"
+    },
+    {
+      "commit": "66b01be",
+      "message": "16-member depth-ladder ensemble at lr0.025 r2000"
+    },
+    {
+      "commit": "b23ac77",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3667.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 30.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "66b01be",
+  "best_commit_eval_auc": 0.7485,
+  "best_commit_holdout_auc": 0.748565067296,
+  "best_commit_holdout_ap": 0.7395019019974097,
+  "best_commit_error": null,
+  "finalized_best": true
+}

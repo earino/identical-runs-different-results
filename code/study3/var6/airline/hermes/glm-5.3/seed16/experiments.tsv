@@ -1,0 +1,33 @@
+n	commit	eval_auc	status	seconds	description
+1	2ec2d2a	0.7141	ok	3	baseline
+2	86965f2	0.7079	ok	9	more capacity: 800 trees depth 8
+3	9c02f49	0.6934	ok	5	numeric time feats, cyclic, route pair
+4	efe69bd	0.6971	ok	5	route pair + hour numeric feats
+5	8c76d40	0.7156	ok	1	shallow regularized: 200 trees d3 mcw50
+6	ff274f1	0.7050	ok	2	target encoding origin dest carrier hour
+7	a906698	0.7160	ok	2	time/dist features + TE origin
+8	dce5cba	0.7164	ok	9	bagged ensemble 8 models
+9	64cc6b7	0.7167	ok	15	16-model bagged ensemble
+10	424a82e	0.7178	ok	17	full features + 16 bag
+11	97f9f59	0.7180	ok	17	two-view h30+h10 ensemble
+12	e5ca19a	0.7181	ok	20	OOF target encoding
+13	733c0ca	0.7201	ok	21	congestion features cnt_oh30 cnt_odow
+14	9a5f204	0.7204	ok	22	carrier congestion cnt_ch30
+15	5f4eab9	0.0000	crash	1	mixed colsample bag
+16	6d25d96	0.7208	ok	25	mixed colsample bag (fixed)
+17	9fef40b	0.7212	ok	23	te_time10 + cnt_oc
+18	260d185	0.7229	ok	28	periodic hour spline basis
+19	5fbb883	0.7263	ok	43	k24 hour + doy harmonics
+20	00eeaea	0.7304	ok	69	d6 ss.9 + dow harmonics
+21	10ac671	0.7324	ok	119	d7 n300 lr.08
+22	b53ede9	0.7332	ok	94	d8 n200
+23	0f43496	0.7344	ok	98	d10 n150
+24	53a2c58	0.7349	ok	102	d12 n120
+25	d429454	0.7350	ok	93	d14 n100
+26	d739bd0	0.7334	ok	110	harmonics k32 doy6
+27	49802e9	0.7364	ok	114	d12 mcw30
+28	2e6706b	0.0000	timeout	120	mcw20
+29	a6323db	0.0000	timeout	120	n150 d12 mcw30
+30	19b89dc	0.7368	ok	101	12 models n150 d12 mcw30
+31	0b707da	0.7361	ok	102	dest congestion + route volume
+32	4e0ef50	0.7369	ok	106	te_O x harmonics interactions

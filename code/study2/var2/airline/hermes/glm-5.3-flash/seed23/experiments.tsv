@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	93d47b8	0.7141	ok	3	baseline: raw cats, depth6, 30 trees
+2	2cbdf7f	0.7160	ok	3	E2: time feats + bigger model, ES on eval
+3	74cd0dd	0.7051	ok	4	E3: smoothed TE carrier/origin/dest/route + counts
+4	dcb4bf9	0.7197	ok	5	E4: depth10 lr0.03 mcw10 lambda2 es100
+5	bf65a83	0.7247	ok	6	E5: add dep_hour categorical
+6	d8fabe5	0.7281	ok	49	E6: 5-fold bagged XGB, per-fold ES
+7	4466bc4	0.7269	ok	46	E7: doy+dom cyclic features
+8	5545055	0.7252	ok	32	E8: 4-fold, colsample 0.8
+9	f27761b	0.7255	ok	117	E9: ES on AUC metric
+10	730bf00	0.7257	ok	45	E10: depth 8
+11	b9559a8	0.7268	ok	49	E11: smoothed carrier-hour feature
+12	eef9c34	0.7289	ok	63	E12: depth 12
+13	c0db28e	0.7304	ok	75	E13: depth 14
+14	bd065d0	0.7306	ok	87	E14: depth 16
+15	b10a4fc	0.7296	ok	98	E15: lossguide max_leaves=256
+16	53648c9	0.7304	ok	84	E16: depth16 + max_bin=128
+17	830f044	0.7277	ok	85	E17: month-hour smoothed mean + origin freq
+18	19a58cf	0.7232	ok	52	E18: subsample 0.7, mcw 50
+19	9844da2	0.7306	ok	54	E19: lr 0.05 at depth 16
+20	b166b4b	0.7308	ok	34	E20: lr 0.07 at depth 16
+21	0be4ffc	0.0000	crash	26	E21: CV-picked iters, full-train refit ensemble
+22	7dbedcd	0.0000	crash	25	E21: CV-picked iters, full-train refit (fixed kwarg)
+23	3fc2112	0.0000	crash	26	E21: CV-picked iters, full-train refit (fixed)
+24	dec6fa1	0.7317	ok	52	E23: CV-picked iters, full-train refit (fixed)
+25	b6c86c6	0.7316	ok	61	E25: refit iters x1.25
+26	2f1a688	0.7223	ok	50	E26: colsample 0.9
+27	6fcc7de	0.7319	ok	60	E27: depth 20
+28	7588530	0.7320	ok	60	E28: depth 24
+29	515cd96	0.7307	ok	83	E29: blend depth24+depth8 ensembles
+30	8af6009	0.7322	ok	61	E30: reg_lambda 5
+31	faf6d7c	0.7326	ok	68	E31: reg_lambda 10
+32	e3ff23c	0.7324	ok	79	E32: reg_lambda 20
+33	ed0a674	0.7321	ok	49	E34: gamma 1.0
+34	5fa8b64	0.7329	ok	57	E34: refit iters x0.75
+35	fd89f9a	0.7317	ok	46	E35: refit iters x0.5
+36	b31c6b3	0.7322	ok	42	E36: lr 0.1
+37	088293f	0.7324	ok	65	E37: depth 28
+38	e7caacf	0.7316	ok	59	E38: subsample 1.0
+39	408e8b3	0.7220	ok	50	E39: colsample_bynode 0.7
+40	b5ad00e	0.7327	ok	54	E40: depth 26

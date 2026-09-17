@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	180a269	0.7141	ok	3	baseline: unmodified train.py
+2	26e034c	0.0000	crash	4	exp2: lr0.05 d8 mcw5 es50 on 10pct val
+3	5de46a2	0.7095	ok	5	exp3: lr0.05 d8 mcw5 es50 on 10pct val (fixed attr)
+4	75afd75	0.7309	ok	11	exp4: TE(m100) full-map + dephour, LG L128 sub.95 col.75 n1200
+5	274ea5c	0.0000	crash	2	exp5: jointTE cr_hr or_hr + route_cnt n1600
+6	fd42c67	0.0000	crash	1	exp5 fixed: jointTE cr_hr or_hr + route_cnt n1600
+7	fae02b5	0.7356	ok	13	exp5 fix2: jointTE cr_hr or_hr + route_cnt n1600
+8	0cf21b4	0.7372	ok	14	exp8: +carrier_dephour TE m500
+9	71725a9	0.7401	ok	27	exp9: +qslot lr.03 n3000 ml128
+10	60d351e	0.7406	ok	34	exp10: maxbin512
+11	d489321	0.0000	timeout	120	exp11: 4-seed ensemble
+12	613239b	0.7422	ok	94	exp11 amend: 3-seed ensemble
+13	1eb29f8	0.7417	ok	97	exp13: diverse 3-member ensemble
+14	1a68949	0.7445	ok	100	exp14: +sin/cos cyclical time
+15	a875791	0.7453	ok	108	exp15: +joint TE cell counts n

@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	6ba2630	1789491767	baseline
+01	834d7b1	1789491820	feat: deptime cyclical+hour, dist log, cat levels frozen on train
+02	954058d	1789491840	capacity: depth8 lr.05 es+refit, subsample/colsample .9
+03	46823df	1789491958	depth10 lr.03 mcw10 lambda2 es-auc rounds100
+04	a30e15d	1789491984	ensemble: 3 xgb depths 8/10/12 seeds varied, proba mean
+05	48570f0	1789492068	congestion counts + slot15
+06	583296a	1789492198	single d10 with congestion+slot15 (fast probe)
+07	7949b04	1789492310	ensemble d10+d8 on congestion features, es cap 1600
+08	901512f	1789492506	reg probe: ss.7 cs.7 bynode.7 mcw20 alpha.5 bin512 (fix dup kwargs)
+09	eea21c8	1789492720	geography: origin/dest mean dist, rel dist, dist buckets
+10	21c5e1b	1789493504	pair d10+d12
+11	2ac68e4	1789493600	gamma 2.0
+12	7974edd	1789494204	colsample 0.6
+13	b83f6e6	1789494366	minute + round-slot flag
+14	30d7f78	1789494880	weighted blend 0.4/0.6

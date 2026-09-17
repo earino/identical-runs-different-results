@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	17d809f	1789630311	baseline
+01	17ac574	1789630622	FE v1 features, baseline model config
+02	7aca782	1789631485	bagged ensemble (4 cfg x 12 seeds), drop Month+DayofMonth
+03	7d0c92c	1789632089	multi-view bagged ensemble (6 feature views x 4 cfg x 4 seeds)
+04	3a44e85	1789633677	Exp 6: 5-view ensemble (md/oh/ch/no_od/fullte) with out-of-fold target encodings
+05	c5f06a2	1789635776	Exp 7: lossguide trees (max_leaves~320) across 5 OOF-TE views, 20 models
+06	17bc10a	1789636082	Exp 8: 4-view lossguide ensemble (base/ot/no_od/fullte), 6 seeds
+07	158dfe6	1789636249	Exp 9: n150/lr0.05 lossguide configs, 5 seeds per view
+08	41fca22	1789636339	Exp 10: n200/lr0.04 lossguide configs, 4 seeds per view
+09	6f0abd0	1789636662	Exp 13: max_bin 512 for lossguide trees
+10	054f0d5	1789636858	Exp 15: leaves 384 at max_bin 512
+11	feed904	1789636957	Exp 16: leaves 448 at max_bin 512
+12	f25b870	1789637073	Exp 17: n150/lr0.05 with leaves 448 at max_bin 512
+13	8022416	1789637379	Exp 18: leaves 512 at n150/lr0.05, max_bin 512

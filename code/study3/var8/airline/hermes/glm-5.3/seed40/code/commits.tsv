@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	b1a064f	1789582829	baseline
+01	92ef917	1789582900	feat: route pair, cyclic time features, hour interactions, more trees + early stopping
+02	60a454d	1789584503	low lr + many trees, col0.6 lam10, ES on 2005 tail
+03	7eed806	1789584544	train on full 100k, fixed 700 trees, no ES
+04	ab7cacb	1789584715	cyclic month + cyclic dep time; drop Month identity
+05	a47676f	1789585494	deep trees md16, col.4 lam3, hour_x_carrier interaction
+06	a3eddb1	1789585724	n_estimators 200 (fixed-n honest optimum)
+07	538832b	1789585875	4-seed ensemble of md16 col.4 lam3 n200
+08	46acded	1789587905	8 dep-time harmonics, md20
+09	d4a76f4	1789588030	2-seed for exploration speed
+10	af44672	1789588302	15-min dep-time bins as categorical
+11	b8f734b	1789588833	distance x time interaction + distance bands
+12	d3adeae	1789588901	log_dist + dist_per_min
+13	e7a5602	1789589067	n_estimators 250
+14	d8e5f59	1789589237	3-seed ensemble at n=250

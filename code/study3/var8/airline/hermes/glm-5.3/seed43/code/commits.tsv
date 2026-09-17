@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	791e1d8	1789592261	baseline
+01	d0c4bfd	1789592539	exp10: target encoding (OOF for train, smoothed maps for predict)
+02	d443fc9	1789592634	exp11: add route (origin-dest) target encoding
+03	1ea558f	1789592748	exp15: depth8 mcw10 60 trees for TE features
+04	2c36f4c	1789592796	exp18: route x hour TE interaction
+05	09f27d4	1789592866	exp19: +origin_hour,dest_hour TEs, refactor keys, n120
+06	f5a5cae	1789592936	exp20: smooth50, n240 lr0.07
+07	371f022	1789592988	exp21: train-only aggregates (counts, avg dist/dep, diversity)
+08	5431556	1789593114	exp22: TE count features + colsample 0.7
+09	e4cf2c4	1789593207	exp23: carrier_dist TE + 480 trees lr0.05
+10	1fb6332	1789593632	exp24: 15-min bucket TEs (origin_m15, route_m15) + counts
+11	382f5dd	1789593723	exp25: 4-model bagged ensemble (2 fold-splits x 2 seeds)
+12	3e7863a	1789593891	exp26: 8-model ensemble (4 fold-splits x 2 seeds)
+13	0e79f2c	1789595442	exp27: recency-weighted training (late-2005 months upweighted)
+14	7e50e7a	1789596558	exp28: 16-model ensemble (8 fold splits)
+15	4feb098	1789596848	exp29: minute_of_hour feature
+16	9439f50	1789597286	exp30: route x minute-of-hour TE
+17	197859a	1789597627	exp31: carrier x 15-min TE
+18	11fdcad	1789600266	exp33: hierarchical TE shrinkage toward parent keys
+19	8ecbac5	1789600663	exp34: hier TE blend 0.5/0.5
+20	0ad015f	1789600838	exp35: 24-model ensemble
+21	42ed1a7	1789601193	exp36: 32 members, n360 lr0.066
+22	628af4c	1789601546	exp37: subsample 0.85, colsample 0.6

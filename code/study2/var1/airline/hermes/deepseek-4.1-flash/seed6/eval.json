@@ -1,0 +1,180 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 6,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:51:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s6-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:22:15+00:00",
+  "wall_seconds": 5461.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17732.4,
+  "endpoint_at_end": "ok",
+  "head": "d2111de",
+  "n_commits": 20,
+  "n_experiments": 35,
+  "n_ok": 35,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7573,
+  "final_eval_auc": 0.7573,
+  "holdout_auc": 0.756399440374,
+  "holdout_ap": 0.7466944304065345,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.041628688637999955,
+  "generalization_gap": 0.0009005596259999971,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10708689,
+    "tokens_in_uncached": 10708689,
+    "tokens_in_cached": 0,
+    "tokens_out": 105801,
+    "turns": null,
+    "api_calls": 121,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 17638.2,
+  "cpu_seconds_counted": 6230.0,
+  "cpu_seconds_uncounted": 10960.7,
+  "cpu_seconds_exempt": 447.5,
+  "python_processes": 85,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1058,
+  "fits_counted": 247,
+  "fits_uncounted": 801,
+  "commits": [
+    {
+      "commit": "f06f887",
+      "message": "baseline"
+    },
+    {
+      "commit": "e4331fd",
+      "message": "clock features + shallow regularized model (d4 300 trees mcw10)"
+    },
+    {
+      "commit": "9319150",
+      "message": "drop year-specific Month/DayofMonth calendar features"
+    },
+    {
+      "commit": "5fa6476",
+      "message": "core feature set: clock feats incl sin/cos+minute, drop raw DepTime and distance_log"
+    },
+    {
+      "commit": "f63ab95",
+      "message": "5-seed probability-averaged XGBoost ensemble"
+    },
+    {
+      "commit": "a9e895a",
+      "message": "restore full clock block (minute, raw DepTime, distance_log)"
+    },
+    {
+      "commit": "2fac703",
+      "message": "add carrier x hour categorical cross, depth 6"
+    },
+    {
+      "commit": "53c0171",
+      "message": "add distance-bin x hour cross, depth 8"
+    },
+    {
+      "commit": "0511332",
+      "message": "add 15-min time-of-day categorical bucket"
+    },
+    {
+      "commit": "eb13a86",
+      "message": "depth-diverse 6-model bag (depths 6-12, mcw 5-20)"
+    },
+    {
+      "commit": "55cddd8",
+      "message": "simplify: drop raw DepTime, distance_log, cyclic tod"
+    },
+    {
+      "commit": "3d390a8",
+      "message": "10-model bag: depths 4-12 x mcw 5/10"
+    },
+    {
+      "commit": "24e8f9e",
+      "message": "top-30 origin x hour cross"
+    },
+    {
+      "commit": "6dd44a4",
+      "message": "bag10 all mcw5, depths 4-12 x2"
+    },
+    {
+      "commit": "4a7ac64",
+      "message": "gradient-based row sampling"
+    },
+    {
+      "commit": "442c2ae",
+      "message": "gradient_based subsample=0.95"
+    },
+    {
+      "commit": "2a19cf8",
+      "message": "500 trees lr0.03 under gradient sampling"
+    },
+    {
+      "commit": "e663a61",
+      "message": "bag members mcw=3"
+    },
+    {
+      "commit": "615514c",
+      "message": "colsample_bytree=0.8"
+    },
+    {
+      "commit": "3f7e1c5",
+      "message": "reg_alpha=0.5"
+    },
+    {
+      "commit": "d2111de",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17190.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 94.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3f7e1c5",
+  "best_commit_eval_auc": 0.7573,
+  "best_commit_holdout_auc": 0.756399440374,
+  "best_commit_holdout_ap": 0.7466944304065345,
+  "best_commit_error": null,
+  "finalized_best": true
+}

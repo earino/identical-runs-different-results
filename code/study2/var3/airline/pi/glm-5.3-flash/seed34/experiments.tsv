@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2f68a48	0.7141	ok	4	baseline
+2	cda9137	0.7208	ok	11	FE time parse + bigger model w early stop
+3	e148dac	0.6658	ok	3	smoothed TE origin/dest/route + hourbucket interactions
+4	80b6728	0.0000	crash	7	OOF TE 5-fold, 9 key sets + ES
+5	dc339bb	0.7147	ok	9	OOF TE 5-fold 9 keys, cnt cols fixed
+6	44edcb4	0.7242	ok	5	deeper+regularized, exp2 FE
+7	4c730d1	0.7173	ok	10	interaction cats via native categorical
+8	a22c68c	0.7205	ok	21	cyclical time/month encodings
+9	719f7b9	0.7228	ok	4	deeper stronger regularization
+10	7800949	0.7263	ok	48	CV grid select depth/mcw/lr/colsample/sub/lambda
+11	7096691	0.7281	ok	75	grid v2 colsample refinement
+12	98b18c2	0.0000	crash	69	grid v3 colsample .4 refinement
+13	57fa58d	0.7283	ok	86	grid v3 colsample .4 refinement (sort fix)
+14	da39b46	0.7307	ok	111	6-member diverse ensemble
+15	c20031f	0.0000	timeout	121	9-member ensemble, faster CV
+16	33c65f0	0.7309	ok	39	8 members fixed cfg
+17	f06a1dd	0.7310	ok	65	16-member ensemble
+18	27681d2	0.0000	timeout	121	small interaction cats + day of year
+19	a172930	0.7308	ok	62	small cats + doy, 14 members
+20	3c8a5b9	0.7310	ok	69	16 members, logit blend
+21	f64837c	0.7315	ok	59	max_bin 512, 12 members
+22	3d03776	0.7321	ok	60	month recency weighting
+23	61b08e7	0.7323	ok	82	steeper recency weighting
+24	5785e16	0.7321	ok	77	steepest recency weighting
+25	ee29e01	0.7292	ok	78	holiday windows + weekend + doy
+26	bbed6e3	0.7353	ok	77	volume count features
+27	0c05bc4	0.0000	crash	1	degree + carrier-origin volume
+28	be72036	0.7357	ok	85	degree + carrier-origin volume (fix)
+29	bce2401	0.7337	ok	86	evening congestion products
+30	02d2419	0.7345	ok	87	mean distance stats
+31	912bc5f	0.7343	ok	92	more trees + row subsampling
+32	78276fc	0.7361	ok	97	14 members
+33	9ed54b5	0.7333	ok	105	calendar cols as cats
+34	7557b08	0.7406	ok	56	CV grid re-check with volume features + recency
+35	c598961	0.7424	ok	34	bag deep few-rounds cfg
+36	92b05cc	0.7440	ok	75	grid around deep cfg, bag winner
+37	d57a50f	0.0000	timeout	120	grid refine deep cfg
+38	3fb667a	0.7459	ok	72	bag deep winner cfg
+39	aa09483	0.7457	ok	101	12-seed bag
+40	03c98da	0.7457	ok	80	mixed diversity bag

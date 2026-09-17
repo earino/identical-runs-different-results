@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2310e2e	0.7141	ok	3	baseline: 30 trees, depth 6, lr 0.1, categorical dtype
+2	89b8aa9	0.7173	ok	1	features: decode c- ordinals, DepHour + cyclical time
+3	05c6d2e	0.7181	ok	24	1500 trees lr0.05 depth8, ES on last-20% split + refit
+4	f06135e	0.7168	ok	28	target encoding + log-freq features
+5	33b2f95	0.7168	ok	24	lr 0.08, depth 9
+6	7e8c73f	0.7089	ok	44	route categorical + interaction codes + redeye + distbucket
+7	b10b0c9	0.7175	ok	17	interaction codes + redeye + distbucket (no route cat)
+8	f8b2e41	0.7169	ok	20	calendar + DepHour as native categoricals
+9	db76fbe	0.0000	crash	1	congestion/count features
+10	1582916	0.7214	ok	28	congestion/count features
+11	4832f5f	0.7109	ok	22	extended congestion counts + shares
+12	4aee816	0.7255	ok	33	congestion counts + hourly shares
+13	453ddf1	0.0000	crash	2	extended share ratios + density counts
+14	f810fce	0.7081	ok	22	extended share ratios + density counts
+15	aeb6737	0.7267	ok	67	3-seed ensemble
+16	e939bb7	0.7251	ok	92	2500 trees, patience 100
+17	58ad0d0	0.7273	ok	91	5-fold bagging
+18	82b5938	0.7280	ok	87	bagging + member diversity
+19	d6f2c90	0.7256	ok	89	day-of-year feature
+20	42395a8	0.7151	ok	64	calendar density counts + shares
+21	73f66ed	0.7249	ok	41	min_child_weight 20
+22	d51eeb0	0.7281	ok	91	colsample_bynode 0.8
+23	707602f	0.7281	ok	106	bag K=6
+24	3b1b95b	0.7293	ok	90	dep_min numeric
+25	bb749f0	0.7298	ok	90	DepTime quirk flags
+26	c234031	0.7298	ok	93	recency sample weights
+27	1175a35	0.7297	ok	94	ES random split
+28	b3db16f	0.7305	ok	90	per-member subsample
+29	a376b33	0.7307	ok	95	lr 0.04 cap 2000
+30	d8cb03e	0.0000	timeout	120	lr 0.03 cap 2500
+31	9e718be	0.7313	ok	103	max_bin 512
+32	82217f9	0.0000	timeout	121	bag K=7
+33	3460650	0.0000	timeout	120	max_bin 1024
+34	473d379	0.7298	timeout	120	month-hr dow-hr density counts
+35	a0b9141	0.7319	ok	78	cap 1200
+36	74a005f	0.7319	ok	65	cap 1000
+37	e244085	0.7317	ok	67	lr 0.033 cap 1000
+38	35569d5	0.7314	ok	66	origin/dest x dow counts
+39	ae03f85	0.7317	ok	66	log distance
+40	c9d838a	0.7316	ok	79	bag K=6 (final)

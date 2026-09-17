@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	478b987	0.7141	ok	4	baseline
+2	4bf1b43	0.7132	ok	3	early stopping + stronger params
+3	8bed924	0.7080	ok	3	FE: tod+cyclic+route+numeric calendar
+4	36f0c55	0.7179	ok	2	FE tod/doy + fixed 200 rounds (ES removed)
+5	1ca55e9	0.7172	ok	2	stronger per-tree regularization
+6	2448ecc	0.7194	ok	6	5-seed bagged ensemble
+7	7d00632	0.0000	crash	1	smoothed OOF target encodings
+8	c3f9887	0.7201	ok	7	smoothed OOF target encodings (typo fixed)
+9	654bc32	0.7199	ok	7	log congestion counts from 2005 schedule
+10	2371db4	0.7228	ok	6	interaction TEs hour*carrier, hour*origin
+11	4658291	0.7241	ok	8	interaction TEs hour*dest dow*carrier dow*origin
+12	5774c50	0.7245	ok	8	route TE m300 + hour*dow TE
+13	fceef8c	0.7244	ok	20	K=10 ensemble at 300 rounds
+14	c8a4d4d	0.7237	ok	8	holiday proximity feature
+15	36ab3a9	0.7254	ok	8	arrival-time proxy features
+16	961972a	0.7258	ok	9	arrival-hour TE + overnight flag
+17	642c1b5	0.7258	ok	8	rank averaging instead of prob averaging
+18	e2b6bbc	0.7257	ok	8	TE carrier*origin, carrier*dest
+19	c83cf16	0.7257	ok	9	drop raw DepTime column
+20	a66b389	0.7268	ok	13	diverse 8-model ensemble
+21	59cf25a	0.7263	ok	19	12 diverse models
+22	5c81a12	0.7281	ok	14	TE arr_hour*carrier, arr_hour*dest
+23	22f5c5b	0.7309	ok	14	TE tod48 + tod48*carrier
+24	b28fcfa	0.7323	ok	15	TE tod96 + tod96*carrier
+25	d0bce8f	0.7324	ok	16	TE arr48/arr96 + carrier interactions
+26	999e613	0.7327	ok	17	TE tod192 + tod192*carrier
+27	895239e	0.7327	ok	17	TE carrier*dist3, carrier*tod6
+28	ef23f05	0.7328	ok	19	TE tod48*dow, dest*tod6
+29	1c3f030	0.7292	ok	18	TE origin/dest/carrier x month
+30	c30a558	0.7329	ok	23	12 members, all good region
+31	a11fd73	0.7331	ok	24	TE origin*dist3, tod48*dist3
+32	9a1b898	0.7348	ok	20	6-with-cats + 6-without-cats ensemble
+33	17b8971	0.7355	ok	27	16 members: 8 full + 8 no-cats
+34	c9aa089	0.7353	ok	42	24 members: 3 views (full, no-cats, time-focused)
+35	d08c590	0.7355	ok	29	TE dest*dist3
+36	2f9acac	0.7354	ok	30	10-fold OOF TE
+37	edd1c77	0.7355	ok	55	32 members (2 seeds/cell)
+38	8ac1d37	0.0000	crash	3	16 members on 8-fold complements
+39	b33f8b8	0.7353	ok	28	16 members on 8-fold complements (fixed)
+40	9a41ac6	0.0000	crash	2	TE arr192 + arr192*carrier

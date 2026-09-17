@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	160b374	1789648508	baseline
+01	dfb5b38	1789648549	numeric parsing, hour/minute, route cat, early stopping
+02	a678349	1789648729	hour categorical, subsampled shallow ensemble, 480 trees lr .05
+03	69b5590	1789650799	car_hour interaction, deep (d16) 5-seed ensemble
+04	57685bf	1789651382	origin_hour rare-lumped interaction; 3-seed ensemble
+05	5c611a2	1789651592	drop day-of-month
+06	e01fedd	1789652391	lump car_hour levels <50
+07	32c37c1	1789652689	n_estimators 200
+08	406e71b	1789652743	n_estimators 150
+09	f615b38	1789652817	depth 20 at n150
+10	c998f17	1789652939	n120 at depth 20
+11	07b9f13	1789653052	5 seeds at n120 d20
+12	1a9b148	1789653507	origin_hour >= 50
+13	ba80f91	1789653943	6 seeds

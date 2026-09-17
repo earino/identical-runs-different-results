@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	b929d02	1789510741	baseline
+01	5c7ef99	1789510815	FE v1b: no Route, depth6 lr.05, ES on 20% val
+02	18c0a13	1789510830	ES on eval (2006 dist), full-train fit
+03	bc0c980	1789510873	depth8 lr.03 ES200
+04	cb3c1d5	1789510885	depth10 lr.02 mcw10 ES300
+05	531b32e	1789510899	depth12 lr.015 mcw20
+06	63e8371	1789510963	ES metric = AUC
+07	ee74aa3	1789511149	ensemble d10/12/14 + flags
+08	d133e9c	1789511391	colsample.7 gamma1
+09	b01db41	1789511556	colsample.5
+10	9b9a885	1789511998	raw hour (0-26) + raw DepTime feature
+11	2a1fffb	1789512358	per-member colsample 45/50/55
+12	7ef95c6	1789512555	max_bin 512
+13	bd5e0b8	1789513303	reg_alpha 1.0

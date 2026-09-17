@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c7f8f3d	0.7141	ok	3	baseline
+2	6f465cd	0.7154	ok	3	FE v1: int dates, hour feats, log dist, 300 trees
+3	7af3977	0.7217	ok	6	ES + 2000 trees, depth 8, lr 0.05, subs/cols 0.9
+4	0bf0f9f	0.7203	ok	9	OOF TE + count encoding (m=20, 5-fold)
+5	1044693	0.7199	ok	8	route TE OOF m=20 + route count
+6	f9be714	0.7242	ok	7	depth 10 (rest as exp3)
+7	1aa88d7	0.7269	ok	8	depth 12
+8	138ecfa	0.7293	ok	8	depth 14
+9	707188d	0.7308	ok	10	depth 16
+10	18889fb	0.7319	ok	11	depth 18
+11	5204398	0.7323	ok	12	depth 20
+12	770065a	0.7249	ok	10	lossguide, max_leaves 256
+13	b3b96d7	0.7244	ok	10	depth 20 + min_child_weight 10
+14	c90dca6	0.7365	ok	13	subsample 0.8, colsample 0.7 (depth 20)
+15	e9aa857	0.7370	ok	14	subsample 0.7, colsample 0.6
+16	4b2d347	0.7359	ok	11	subsample 0.6, colsample 0.5
+17	b4bc015	0.7386	ok	16	colsample_bynode 0.7 on top
+18	f3888ee	0.7407	ok	33	lr 0.03, ES 100, unbounded depth
+19	bc33040	0.7432	ok	54	lr 0.02, ES 200, unbounded depth
+20	dd45904	0.7438	ok	100	lr 0.01, ES 300, unbounded depth
+21	c43f26d	0.7440	ok	98	3-seed ensemble, lr 0.03, ES 100
+22	37ea77d	0.7439	ok	111	max_bin 512 at lr 0.01
+23	e26f8ae	0.7454	ok	100	count encodings only, lr 0.02 probe
+24	6ffbaa9	0.7423	ok	95	dom/dow cyclical added
+25	109bc15	0.7404	ok	83	cross cats carrier|hour and dow|hour
+26	5744425	0.0000	timeout	130	reg_lambda 5 at lr 0.01
+27	2e4fe74	0.7453	ok	103	2-seed ensemble lr 0.02
+28	7277976	0.0000	crash	1	temporal ES split
+29	d6f8215	0.7358	ok	66	temporal ES split (fixed)
+30	b3c4b80	0.7460	ok	96	winter-holiday + thanksgiving flags
+31	4087547	0.7454	ok	97	subsample 0.75, colsample 0.65, bynode 0.7
+32	63db92b	0.7496	ok	87	ES@0.02 probe + refit full
+33	1412fbe	0.7502	ok	76	ES probe with 30% val + refit full
+34	3888ae7	0.7472	ok	45	gamma 1.0 probe+refit
+35	bdf95f3	0.7435	ok	89	Month+DayOfWeek native cat
+36	6b59c24	0.7506	ok	64	colsample_bynode 0.5
+37	2244add	0.7486	ok	70	colsample_bynode 0.35
+38	cd551e9	0.7521	ok	99	shared probe, 2-seed refit ensemble
+39	29d4a28	0.7521	ok	105	ES patience 300
+40	0a39409	0.7524	ok	99	bynode diversity 0.5/0.6 across members

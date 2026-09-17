@@ -1,0 +1,28 @@
+n	commit	eval_auc	status	seconds	description
+1	9c2714b	0.7141	ok	3	baseline
+2	9c2714b+dirty	0.7113	ok	2	early stopping 2000x6 lr0.1
+3	0ec2569	0.7083	ok	3	300 trees fixed, lr 0.1
+4	3f24ffa	0.7143	ok	4	numeric time features, 30 trees
+5	06de87e	0.7190	ok	9	d1-7 depth ensemble
+6	30d15a3	0.7211	ok	12	d1-7 ens + time + sched_cnt
+7	cc834a2	0.7252	ok	13	d1-7 + time + sched + sched30 + dowh
+8	8d53a08	0.7263	ok	12	sched+sched30+route_cnt+rt_mean
+9	c55d56f	0.7272	ok	30	d1-10 ensemble
+10	081fdcd	0.7356	ok	45	d1-10 cs0.3 ne600 lr.03
+11	1f77db0	0.7348	ok	44	d1-10 cs.3 sbs.85 ne600 lr.03
+12	af123c6	0.7363	ok	84	20 members cs{0.2,0.3} ne600
+13	822d1e2	0.7332	ok	83	weighted 1/sqrt(depth) averaging
+14	675eae9	0.7359	ok	83	mcw3 on 20 members
+15	9b2085e	0.0000	crash	2	recency-weighted training
+16	646d28f	0.7367	ok	86	recency-weighted training (fixed _cnum)
+17	32dadac	0.7363	ok	81	quadratic recency weights
+18	6385492	0.7394	ok	82	sched15 counts added
+19	b25feb1	0.7395	ok	88	sched5 counts added
+20	598d893	0.7409	ok	86	route blk15/blk5 counts
+21	b71a063	0.7411	ok	88	fid (carrier,route,block) counts
+22	acd75fd	0.7409	ok	91	fidh mean dist + dev
+23	6a8a01c	0.7414	ok	90	log_dist added
+24	2c5f11a	0.7380	ok	83	drop sched_cnt + sched30_cnt
+25	b04c129	0.7410	ok	90	dowb15 counts
+26	eaaaabb	0.7414	ok	88	30 members cs{.2,.25,.3} ne400
+27	61e6fbc	0.7413	ok	85	doy-granularity recency weights

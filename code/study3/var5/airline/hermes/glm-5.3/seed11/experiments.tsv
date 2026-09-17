@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	eefb276	0.7141	ok	4	baseline
+2	78bb0cd	0.7169	ok	4	cyclical calendar + dep-time features, 300 trees
+3	b04776d	0.7107	ok	3	target encoding carrier/origin/dest/route
+4	8852a80	0.7119	ok	4	keep native cats + TE columns alongside
+5	10820c7	0.7243	ok	10	hyperparams: depth8 lr0.05 600 trees
+6	c6e6ca9	0.7203	ok	10	early stopping with val split
+7	305057c	0.7247	ok	22	depth10, 1000 rounds
+8	b853001	0.7247	ok	23	interactions: DistPerMin, IsWeekend, Hour_x_DOW
+9	baa4073	0.7240	ok	22	add LogDistance
+10	c426643	0.7272	ok	66	ensemble 3 XGBs depth 8/10/12
+11	f35e447	0.7193	ok	88	route as native categorical on top of ensemble
+12	38dd138	0.7284	ok	72	frequency encoding on ensemble
+13	863a2db	0.7321	ok	83	OriginHour/DestHour congestion counts
+14	5ca7fdb	0.7346	ok	80	richer congestion: OriginDOW/OriginHourDOW/CarrierHour/OriginHM
+15	72bc348	0.0000	crash	1	queue features: +-1h dep/arr rolling counts
+16	a15c600	0.7371	ok	82	queue features: +-1h dep/arr rolling counts (fixed bucket mod)
+17	2e60518	0.7377	ok	89	OriginMonthHour/RouteHour/CarrierRoute counts
+18	a7279a1	0.7378	ok	88	DestHourDOW + CarrierDOW counts
+19	d6ebe15	0.0000	timeout	121	widen ensemble to 5 XGBs
+20	12491de	0.0000	timeout	120	3 XGBs, lr0.03 1500 rounds
+21	1813851	0.7396	ok	98	multi-scale queue windows 30m/1h/2h
+22	89b854f	0.7395	ok	99	cumulative dep position features
+23	3a29190	0.7385	ok	97	stronger regularization mcw5/gamma0.1/lambda2
+24	ea8f303	0.7363	ok	82	3 XGBs on 80% row bags
+25	32815e0	0.7442	ok	81	3 XGBs colsample 0.5-0.6
+26	96a2f97	0.7453	ok	94	mcw=1 with colsample diversity
+27	404395f	0.7470	ok	101	queue x hour interactions
+28	d7d2da9	0.7482	ok	110	volume/distance x hour interactions
+29	2fb623e	0.7486	ok	106	CarrierOriginHour + MonthOriginHour counts
+30	576a691	0.0000	timeout	122	lr0.04, 1200 rounds
+31	ad5640f	0.7479	ok	119	log1p counts + RouteHourCnt x hour
+32	73b365e	0.7468	ok	98	ablate calendar sin/cos
+33	5ff8c93	0.7480	ok	110	origin gap-minutes feature
+34	42368c8	0.7497	ok	113	queue vs hour-typical ratios
+35	4f8b24e	0.7506	ok	118	30m/2h ratio features
+36	0d53721	0.0000	timeout	124	arrival-side 30m/2h ratios
+37	fbb9d60	0.7505	ok	119	rank-average ensemble instead of prob mean
+38	4dd6f31	0.7505	ok	114	5-seed ensemble 600 rounds
+39	6129163	0.7502	ok	112	per-model rounds: 1200 shallow, 900 deep
+40	7851e22	0.7498	ok	116	RouteHourRatio feature

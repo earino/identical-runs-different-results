@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	ba8381d	1789536538	baseline
+01	721a31c	1789536594	feat: ordinal calendar + DepTime hour/min
+02	5b763b3	1789536613	reg: depth4 500 trees minchild5 lambda2
+03	4f5ac5f	1789536620	reg: depth6 500 trees minchild5 lambda2
+04	880d1aa	1789536656	tune: lr0.03 1000 trees
+05	b89c249	1789536706	ensemble: 3 seeds
+06	6c3fea3	1789536793	reg: ss0.7 cs0.7 mcw10 lam5
+07	bd7a608	1789536818	reg: ss0.6 cs0.6 mcw20 lam10
+08	0e69721	1789536837	reg: ss0.5 cs0.5 mcw30 lam20
+09	47e7970	1789536881	tune: lr0.02 1500 trees
+10	5ba5230	1789536906	tune: depth7 strong reg
+11	3c34fef	1789536938	tune: depth8 strong reg
+12	3a6f677	1789536972	tune: depth10 strong reg
+13	d778ef8	1789537017	tune: depth12 strong reg
+14	ffa7a21	1789537159	tune: 2500 trees lr0.012
+15	a3133ce	1789537257	reg: add alpha5
+16	4204449	1789537646	tune: mcw10 alpha5
+17	6e16d33	1789537738	tune: mcw5 alpha5
+18	dc7e2c2	1789538057	tune: colsample0.4

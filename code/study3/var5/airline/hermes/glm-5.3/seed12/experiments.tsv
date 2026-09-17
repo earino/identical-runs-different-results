@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	dff744d	0.7141	ok	10	baseline
+2	69ee83b	0.7134	ok	8	dep-time temporal features
+3	f1cbd77	0.7018	ok	35	early stopping 2000 trees lr0.1 d6
+4	8bc185d	0.7036	ok	1	route smoothed delay-rate feature
+5	3509f1b	0.7170	ok	2	heavy regularization lr.05 mcw10 l10 s.7 cs.7 n100
+6	46a19ef	0.7174	ok	2	n200 lr.025 same reg
+7	f243f4b	0.7188	ok	9	5-seed bagged ensemble d7 lr.03 n200
+8	928d376	0.7191	ok	9	minute feature on 5-seed ensemble
+9	053189d	0.7206	ok	13	hour as categorical + minute
+10	3a053c8	0.7211	ok	9	dep_minutes min_bin hour-levels-fix
+11	7bc7733	0.7215	ok	10	log_dist + dom_bin
+12	1ec4850	0.7388	ok	25	d20 n200 lr.05 mcw10 l10 s.7 cs.4 5-seed
+13	a1c3829	0.7424	ok	60	d20 n200 lr.05 mcw1 l10 s.7 cs.4 5-seed
+14	46bc9bc	0.7475	ok	89	d20 n200 lr.05 mcw1 l2 s1.0 cs.4 5-seed
+15	6af33d7	0.0000	timeout	129	d24 n300 lr.04 mcw1 l2 s1.0 cs.4 5-seed

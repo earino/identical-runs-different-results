@@ -1,0 +1,176 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 51,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:04:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s51-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T05:47:24+00:00",
+  "wall_seconds": 2578.4,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8129.8,
+  "endpoint_at_end": "ok",
+  "head": "bda6fde",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 0,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7436,
+  "final_eval_auc": 0.7436,
+  "holdout_auc": 0.744117653648,
+  "holdout_ap": 0.7343945571620686,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.029346901911999956,
+  "generalization_gap": -0.0005176536479999383,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4241682,
+    "tokens_in_uncached": 4241682,
+    "tokens_in_cached": 0,
+    "tokens_out": 53141,
+    "turns": null,
+    "api_calls": 106,
+    "method": "sum-of-106-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 8161.1,
+  "cpu_seconds_counted": 7859.9,
+  "cpu_seconds_uncounted": 0.9,
+  "cpu_seconds_exempt": 300.4,
+  "python_processes": 42,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 681,
+  "fits_counted": 661,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "e2f19f3",
+      "message": "baseline"
+    },
+    {
+      "commit": "5306148",
+      "message": "bagged ensemble of 8 x 100-tree models"
+    },
+    {
+      "commit": "3f5ffe5",
+      "message": "ensemble + dep hour/min + traffic count features"
+    },
+    {
+      "commit": "5605898",
+      "message": "diverse ensemble: 20 models varying depth/subsample/colsample"
+    },
+    {
+      "commit": "f30ee7b",
+      "message": "ensemble: 220 trees lr0.035 per model"
+    },
+    {
+      "commit": "13d5a99",
+      "message": "ensemble: 450 trees lr0.02 per model"
+    },
+    {
+      "commit": "6f0a5a2",
+      "message": "add carrier-origin and hour-interaction count features"
+    },
+    {
+      "commit": "42d8557",
+      "message": "more composite counts: dest/route-hour, carrier-route"
+    },
+    {
+      "commit": "e4d0a02",
+      "message": "add dow/month interaction counts"
+    },
+    {
+      "commit": "6137b12",
+      "message": "OOF target encoding of interaction keys"
+    },
+    {
+      "commit": "b75e1f3",
+      "message": "expand TE keys with dest_hour, carrier_route, dow interactions"
+    },
+    {
+      "commit": "3bf07c8",
+      "message": "3-way interaction TEs"
+    },
+    {
+      "commit": "59b3ca7",
+      "message": "more 3-way interaction TEs"
+    },
+    {
+      "commit": "4bf512f",
+      "message": "add 2 more interaction TEs"
+    },
+    {
+      "commit": "24fdbcf",
+      "message": "stronger regularization: mcw 10-25, lambda 4-10"
+    },
+    {
+      "commit": "0b79591",
+      "message": "even stronger regularization"
+    },
+    {
+      "commit": "a8c7966",
+      "message": "add counts for every TE key"
+    },
+    {
+      "commit": "c7bc9b8",
+      "message": "lower colsample for many TE features"
+    },
+    {
+      "commit": "2994345",
+      "message": "even lower colsample 0.2-0.4"
+    },
+    {
+      "commit": "bda6fde",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7860.8,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": -31.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "2994345",
+  "best_commit_eval_auc": 0.7436,
+  "best_commit_holdout_auc": 0.744117653648,
+  "best_commit_holdout_ap": 0.7343945571620686,
+  "best_commit_error": null,
+  "finalized_best": true
+}

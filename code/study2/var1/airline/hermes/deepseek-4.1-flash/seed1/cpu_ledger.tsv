@@ -1,0 +1,26 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789489894	99	0.066	uncounted	exit	0.0	0	-c
+1789489895	101	0.069	uncounted	exit	0.0	0	-c
+1789489895	103	0.046	uncounted	exit	0.0	0	-m --version
+1789489895	105	0.033	uncounted	exit	0.0	0	-c
+1789489904	193	4.878	counted	exit	3.4	1	train.py
+1789489913	229	0.847	uncounted	exit	0.5	0	/tmp/explore.py
+1789489925	271	0.069	uncounted	exit	0.0	0	-c
+1789489925	273	0.036	uncounted	exit	0.0	0	-c
+1789489926	275	0.065	uncounted	exit	0.0	0	-c
+1789489941	338	8.688	counted	exit	3.1	1	train.py
+1789489961	441	26.450	counted	exit	7.5	1	train.py
+1789489977	554	12.447	counted	exit	4.0	1	train.py
+1789489992	654	14.857	counted	exit	4.7	1	train.py
+1789490009	805	9.338	counted	exit	3.4	1	train.py
+1789490027	904	10.695	counted	exit	3.9	1	train.py
+1789490050	992	37.756	counted	exit	10.7	5	train.py
+1789490059	1042	0.063	uncounted	exit	0.0	0	/tmp/diag.py
+1789490098	1086	111.611	uncounted	exit	34.4	11	/tmp/diag.py
+1789490235	1140	413.759	uncounted	exit	125.2	42	/tmp/diag2.py
+1789490483	1164	756.975	uncounted	exit	228.1	75	/tmp/diag3.py
+1789490489	1189	0.053	uncounted	exit	0.0	0	/tmp/diag4.py
+1789490686	1235	651.951	uncounted	exit	185.8	42	/tmp/diag4.py
+1789490863	1290	586.653	uncounted	exit	169.7	42	/tmp/diag5.py
+1789491237	1345	1334.896	uncounted	exit	368.9	42	/tmp/diag6.py
+1789491666	1411	1538.275	uncounted	term	420.0	31	/tmp/diag7.py

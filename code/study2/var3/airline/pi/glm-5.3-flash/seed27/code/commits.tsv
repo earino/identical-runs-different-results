@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	81de627	1789487132	baseline
+01	6445d65	1789487232	feat overhaul: numeric date/time+cyclical, ES, depth8 lr0.05 1200 trees
+02	5962bfa	1789487282	ablation: low-card TE only (carrier/origin/dest, m=30) + origin/dest counts
+03	e638f6e	1789487303	refit on full train with ES-tuned tree count
+04	0b14cf6	1789487560	seed-bagged ensemble of 4 full-train models, averaged probs
+05	2666239	1789487636	diverse ensemble: depths 6/8/9/10, scaled trees
+06	569d54c	1789487842	6-member ensemble: depths 6-10 + colsample 0.6 member
+07	574aada	1789488068	logit-mean pooling + max_bin 512
+08	175292a	1789488303	safe aggregates: avg dist by carrier/origin/dest, dist ratio, weekend flag
+09	47e4eae	1789488425	drop ES pass; fixed member tree counts (saves ~11s)
+10	1b4dcb8	1789490231	7th member d7@cs0.6 + shared prepare

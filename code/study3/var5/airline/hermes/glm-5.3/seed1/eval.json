@@ -1,0 +1,152 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 1,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T18:23:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-s1-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:15:47+00:00",
+  "wall_seconds": 6756.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 19088.7,
+  "endpoint_at_end": "ok",
+  "head": "c8b1c77",
+  "n_commits": 13,
+  "n_experiments": 20,
+  "n_ok": 16,
+  "n_crash": 1,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7587,
+  "final_eval_auc": 0.7587,
+  "holdout_auc": 0.794956404044,
+  "holdout_ap": 0.7869178026429126,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.08018565230800001,
+  "generalization_gap": -0.03625640404399999,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 8487826,
+    "tokens_in_uncached": 1278162,
+    "tokens_in_cached": 7209664,
+    "tokens_out": 80337,
+    "turns": null,
+    "api_calls": 137,
+    "method": "cumulative-max",
+    "cost_usd": 4.0174,
+    "cached_share": 0.849
+  },
+  "cpu_seconds_python": 18955.1,
+  "cpu_seconds_counted": 3940.6,
+  "cpu_seconds_uncounted": 14074.2,
+  "cpu_seconds_exempt": 940.2,
+  "python_processes": 61,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 1,
+  "fits_total": 184,
+  "fits_counted": 33,
+  "fits_uncounted": 147,
+  "commits": [
+    {
+      "commit": "8993a1d",
+      "message": "baseline"
+    },
+    {
+      "commit": "a3323c8",
+      "message": "exp2: parse c-N ints, DepTime hour/minute features, capacity up"
+    },
+    {
+      "commit": "394060f",
+      "message": "exp5: AUC early stopping + HoursSince3am, no Route"
+    },
+    {
+      "commit": "0b52a99",
+      "message": "exp8: deep trees d24 lr0.03 with AUC early stop"
+    },
+    {
+      "commit": "4fc3a57",
+      "message": "exp9: sin/cos harmonics of wrapped time-of-day"
+    },
+    {
+      "commit": "bc8bdb5",
+      "message": "exp10: scheduled arrival time proxy features"
+    },
+    {
+      "commit": "301f849",
+      "message": "exp11: origin/dest hourly congestion counts"
+    },
+    {
+      "commit": "d8e62a1",
+      "message": "exp12: 3-seed XGB ensemble, averaged probabilities"
+    },
+    {
+      "commit": "335ec1f",
+      "message": "exp13: colsample_bytree 0.7 in ensemble"
+    },
+    {
+      "commit": "72b32ff",
+      "message": "exp14: arrival time sin/cos harmonics"
+    },
+    {
+      "commit": "badd7e9",
+      "message": "exp15: half-hour congestion counts"
+    },
+    {
+      "commit": "1e59af1",
+      "message": "exp17: lr 0.025, esr 80 ensemble"
+    },
+    {
+      "commit": "3d07b95",
+      "message": "exp20: add union-fit model to ensemble, honest stop tail"
+    },
+    {
+      "commit": "c8b1c77",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18014.8,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 133.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "1e59af1",
+  "best_commit_eval_auc": 0.7587,
+  "best_commit_holdout_auc": 0.758680455914,
+  "best_commit_holdout_ap": 0.7482157237413811,
+  "best_commit_error": null,
+  "finalized_best": false
+}

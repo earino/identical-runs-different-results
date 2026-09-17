@@ -1,0 +1,11 @@
+n	commit	eval_auc	status	seconds	description
+1	984ccdd	0.7141	ok	4	baseline
+2	4a53a78	0.0000	crash	2	feat: parse time/date, route, cyclical + freq encodings
+3	4bedf56	0.7041	ok	7	feat: parse time/date, route, cyclical + freq encodings
+4	677aa06	0.7138	ok	3	feat: time-of-day + deeper model
+5	1598179	0.7307	ok	4	numeric dates + time features, cs=0.4 depth8
+6	3b8bff8	0.7370	ok	5	freq encodings + d10 cs0.3
+7	a9fc49e	0.7425	ok	13	origin-hour freq + d11 eta0.03
+8	cc45960	0.7418	ok	12	add carrier-hour freq
+9	3767f96	0.7430	ok	42	5-model ensemble
+10	da73898	0.7438	ok	48	6-seed homogeneous ensemble

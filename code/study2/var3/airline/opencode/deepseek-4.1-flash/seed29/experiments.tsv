@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5483630	0.7141	ok	4	baseline
+2	c1da50a	0.7141	ok	2	DepTime hour/min/cyclical
+3	c23ea13	0.7119	ok	4	400 trees lr0.05 subsample
+4	9cecf56	0.7135	ok	1	freq encoding cats+route
+5	1810b69	0.7125	ok	1	DepTime minutes since midnight
+6	7d4c809	0.7056	ok	1	route categorical feature
+7	5b0a1ef	0.7150	ok	2	max_depth 4
+8	79696de	0.7119	ok	2	max_depth 3
+9	71fbf4c	0.7161	ok	2	depth4 60 trees
+10	573fb88	0.7160	ok	2	depth4 120 trees
+11	9d19966	0.7171	ok	1	depth4 lr0.05 150 trees
+12	6e523fa	0.7169	ok	2	depth4 lr0.03 250 trees
+13	1ef3fb3	0.7168	ok	2	subsample+colsample 0.8
+14	6b28d58	0.7171	ok	2	one-hot low-card cats
+15	955e7a3	0.7174	ok	2	dep_hour + raw DepTime
+16	d3c0482	0.7173	ok	1	min_child_weight 10
+17	e25786c	0.7166	ok	4	5-model subsample ensemble
+18	16c55a2	0.7172	ok	2	depth4 lr0.05 300 trees
+19	42a193a	0.7071	ok	1	target encoding cats+route
+20	9551373	0.7170	ok	2	DepTime hh/mm/sin/cos + raw
+21	d817c20	0.7138	ok	3	lossguide 31 leaves
+22	21ba91f	0.7167	ok	2	reg_lambda 10
+23	a827400	0.0000	crash	1	drop DayofMonth
+24	ffd4b42	0.7173	ok	2	drop DayofMonth fixed
+25	2114721	0.7159	ok	2	max_cat_threshold 32
+26	c1d96c9	0.7119	ok	2	one-hot all cats
+27	1ff560d	0.7162	ok	3	depth5 n150 lr0.05
+28	dcbcf36	0.7179	ok	3	ensemble depth3/4/5
+29	1c9b38f	0.7180	ok	3	ensemble depth3/4/5/6
+30	bf2245c	0.7183	ok	4	ensemble depth2-6
+31	190c5ff	0.7183	ok	4	ensemble depth1-6
+32	d5409e4	0.7189	ok	7	ensemble depths x lr
+33	78b6e9e	0.7190	ok	10	ensemble depths x 3 lrs
+34	e2d2d98	0.7184	ok	10	scaled n per lr
+35	4f2acb5	0.7198	ok	12	ensemble depths x lr 0.03-0.2
+36	ededd9e	0.7201	ok	16	ensemble depths x lr to 0.3
+37	c3d2f0f	0.7197	ok	18	ensemble depths x lr to 0.5
+38	f8853cd	0.7203	ok	21	ensemble depths2-7 x lr to 0.3
+39	04e3736	0.7203	ok	29	ensemble depths2-8
+40	7eeed0e	0.7202	ok	25	ensemble finer lr grid

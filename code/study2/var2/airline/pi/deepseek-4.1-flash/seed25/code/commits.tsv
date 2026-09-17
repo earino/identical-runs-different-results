@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	9c6972f	1789543317	baseline
+01	b0ed938	1789544283	ordinal date + hour-cat + traffic + deep trees
+02	4de8eb0	1789544314	ensemble depths 14/16/18
+03	47b3784	1789545133	neighbor-hour origin traffic
+04	8747c40	1789545620	reg_alpha=1 ensemble
+05	e0378aa	1789545894	mcw=2 ensemble
+06	8ce19a0	1789545964	mcw=1 ensemble
+07	ca3534f	1789546045	mcw=0 ensemble
+08	7fa8d32	1789546233	colsample 0.6 mcw0
+09	3639424	1789546333	lambda=1
+10	d53f9e8	1789546431	lambda=0
+11	38fe1bd	1789546825	subsample 0.8
+12	86190e1	1789546925	subsample 0.9
+13	e965c8e	1789547140	colsample 0.5 sub0.9
+14	866187c	1789547588	DepMinOfDay
+15	70bb8d9	1789548124	alpha=0.5
+16	77c8b86	1789548239	freq features
+17	d71dbab	1789548363	320 trees lr.025 + freq
+18	55a2224	1789548463	350 trees lr.023 freq

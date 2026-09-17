@@ -1,0 +1,144 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 46,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:53:21+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s46-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:37:09+00:00",
+  "wall_seconds": 6228.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 19491.9,
+  "endpoint_at_end": "ok",
+  "head": "333da7c",
+  "n_commits": 11,
+  "n_experiments": 26,
+  "n_ok": 20,
+  "n_crash": 3,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7506,
+  "final_eval_auc": 0.7506,
+  "holdout_auc": 0.74989035839,
+  "holdout_ap": 0.7437069318903611,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.035119606653999935,
+  "generalization_gap": 0.0007096416100000891,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 22949394,
+    "tokens_in_uncached": 126034,
+    "tokens_in_cached": 22823360,
+    "tokens_out": 137749,
+    "turns": null,
+    "api_calls": 250,
+    "method": "cumulative-max",
+    "cost_usd": 0.7725,
+    "cached_share": 0.995
+  },
+  "cpu_seconds_python": 19114.7,
+  "cpu_seconds_counted": 5911.4,
+  "cpu_seconds_uncounted": 12095.4,
+  "cpu_seconds_exempt": 1108.0,
+  "python_processes": 82,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 1,
+  "fits_total": 1119,
+  "fits_counted": 251,
+  "fits_uncounted": 816,
+  "commits": [
+    {
+      "commit": "a8dec73",
+      "message": "baseline"
+    },
+    {
+      "commit": "0170fb5",
+      "message": "xgb tuned params + early stopping, raw features"
+    },
+    {
+      "commit": "c3d144f",
+      "message": "xgb tuned params fixed 400 rounds full data"
+    },
+    {
+      "commit": "69d4429",
+      "message": "cfg12: depth8 lr.05 600r colsample.6 mcw5"
+    },
+    {
+      "commit": "fed9fbd",
+      "message": "noMonth/Dom + hhxcar/hhxorg + time feats, d8 a5 n500"
+    },
+    {
+      "commit": "7d1292a",
+      "message": "noMonth/Dom + hhxcar + time feats, d8 a5 n500 (fix cats)"
+    },
+    {
+      "commit": "857ab15",
+      "message": "ens: bag4 base col.85 n400 + 2 month-models w0.2"
+    },
+    {
+      "commit": "e643c5c",
+      "message": "recency-weighted bag8 + 3 month-models w0.2"
+    },
+    {
+      "commit": "62a1d1e",
+      "message": "recency a=5 bag6 + 4 unweighted month-models w0.7"
+    },
+    {
+      "commit": "8538721",
+      "message": "#12 recipe scaled: bag8 base + 5 month-models w0.7"
+    },
+    {
+      "commit": "6a79f44",
+      "message": "final: #22 recipe, mixture normalized for predict_proba contract"
+    },
+    {
+      "commit": "333da7c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18006.8,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 377.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "8538721",
+  "best_commit_eval_auc": 0.7506,
+  "best_commit_holdout_auc": 0.74989035839,
+  "best_commit_holdout_ap": 0.7437069318903611,
+  "best_commit_error": null,
+  "finalized_best": false
+}

@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	73afa3a	1789503402	baseline
+01	d07998e	1789503462	es d6 regularized
+02	317a1ad	1789503474	es on eval set
+03	4c1d979	1789503486	time features + cyclical
+04	f3fa11e	1789503522	lr03 stronger subsample
+05	28afc9c	1789503776	carrier x hour cat
+06	d5f33c0	1789503817	ch model lighter reg
+07	e039771	1789503831	ch mcw5 lam2
+08	4317d36	1789503886	ch30 half-hour
+09	453a7df	1789503905	ch15 quarter-hour
+10	5a55bb8	1789503987	s.8 c.8 probe
+11	1dc76e0	1789504020	5-member ensemble s.8
+12	442c381	1789504080	7-member ensemble
+13	01c18be	1789504165	origin-hour congestion count
+14	1bb7e74	1789504416	tod15 cat
+15	a1d572c	1789504497	drop hourly ch

@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	dd83ccf	1789527108	baseline
+01	5989a4f	1789527188	fe: base + oof target/count encodings
+02	a3b8054	1789527207	fe: carrier/origin/dest x hour target encodings + route_frac
+03	149b5b8	1789527225	fe: origin/dest x carrier TEs
+04	76e70f8	1789527288	lr 0.03 more trees
+05	f6fcab3	1789527310	depth8 mcw40 lambda3
+06	718b7f4	1789527340	fe: route/origin/dest hour traffic counts
+07	9ea35e7	1789527395	fe: hour traffic fractions
+08	e0c9133	1789527510	ensemble: 3-seed averaging
+09	d97a7fa	1789527577	te: 10-fold oof
+10	bbc6938	1789527763	hp: colsample 0.5 subsample 0.7
+11	1b7814a	1789527830	hp: colsample 0.3 subsample 0.6
+12	d24867a	1789527907	hp: colsample 0.2 subsample 0.5
+13	04b8097	1789528579	ensemble: heterogeneous colsample/subsample
+14	3e3c843	1789528798	hp: reg_alpha 1.0
+15	7b65942	1789529068	fe: drop dow/month cyclical
+16	68452eb	1789529156	fe: cumulative daily flight share at airport
+17	608a49e	1789529233	fe: route cumulative + peak load

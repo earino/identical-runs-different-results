@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	cc7bec8	1789487158	baseline
+01	fc4dbdb	1789487225	feat engineering: time cycles, route, freq encodings; ES + refit
+02	3dcdca9	1789487259	no-ES mini-grid over complexity on v2 features
+03	6ba14b5	1789487302	additive feature-group ablation at baseline complexity
+04	03e8a1e	1789487317	hp grid on raw+time features
+05	fc97a01	1789487337	shallow-tree grid d3-5
+06	3f461af	1789487381	rate encodings + interaction cats (fix str cast)
+07	f22cb8b	1789487426	lr/n sweep + regularization variants (full data)
+08	ed14e4b	1789487499	fold-bag + config blends
+09	3b58fbf	1789487539	greedy diverse blend (8 candidates, cap 6)
+10	735add7	1789487567	expanded blend pool (fix fit loop)
+11	1bc2e9b	1789487593	colsample/subsample diversity pool, greedy cap 10
+12	f1ea3d7	1789487630	numeric product interactions (PROD) in pool
+13	cec462e	1789487663	DART members + greedy threshold 2e-4
+14	1034732	1789487838	rank vs prob blend comparison
+15	5b7e56f	1789487870	holiday flags + hour rates + heavy pair rates variants
+16	e8078ce	1789487909	fold-bagged blend + dt5 + recency weights
+17	bec3ab5	1789488190	feature pruning on cs3bp + fb4 with pruned member (fix)
+18	cd4c972	1789488290	OOF stacking: LR/XGB meta over 4 member foldbags
+19	2ab3afa	1789488444	clean final: 4-member full-data equal blend
+20	2896137	1789488558	member-variant swap grid + weight ascent
+21	b9785a8	1789488631	3-seed averaged members + weight ascent
+22	f74f746	1789488831	5th member candidates + per-member predict_proba grouping (fix)
+23	c063ddd	1789488904	5-seed averaging + wide ascent with zero weights

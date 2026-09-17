@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	da82276	1789521419	baseline
+01	5fa8f65	1789521493	feature-set ablation A-E at fixed 150 trees
+02	bd73d84	1789521509	sweep lr x depth x trees on B_time
+03	4529096	1789521587	add train-fitted frequency/count features
+04	7171059	1789521752	ablate categorical column subsets
+05	1de618b	1789521782	network/structural feature additions
+06	c0a290f	1789521826	5-model diverse XGBoost ensemble
+07	6ff0b31	1789521844	seed-stability of strong depth5 colsample0.6 config
+08	6146200	1789521871	sweep depth x colsample x lr around strong config
+09	06c49e7	1789521931	extend trees to 1600, depth 7, lr 0.03-0.05
+10	01b883d	1789522029	extend trees to 3200 depth 7-8
+11	c95ce00	1789522266	probe depth 10-11 low colsample
+12	61fc6e7	1789522325	probe depth 12-13
+13	09c6199	1789522381	probe depth 14-16
+14	e14473b	1789522425	probe depth 18-20
+15	e01ea44	1789522481	diverse-depth ensemble
+16	be519b1	1789522568	probe depth 24-32
+17	d1c3fe9	1789522748	6-seed ensemble of depth20, reuse P
+18	bf35405	1789522933	diverse hyperparameter ensemble
+19	e21103e	1789523151	combined lossguide+depthwise ensemble
+20	2846db0	1789523542	final ensemble with strongest diverse configs
+21	27aa03a	1789523833	leaner 4-model ensemble with max_bin member
+22	e553278	1789523917	5-model max_bin ensemble
+23	e04af20	1789524125	final refined 5-model ensemble

@@ -1,0 +1,198 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 8,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:16:20+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s8-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T03:07:19+00:00",
+  "wall_seconds": 3059.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9302.4,
+  "endpoint_at_end": "ok",
+  "head": "3aa871a",
+  "n_commits": 24,
+  "n_experiments": 40,
+  "n_ok": 31,
+  "n_crash": 4,
+  "n_timeout": 5,
+  "best_eval_auc": 0.7487,
+  "final_eval_auc": 0.7487,
+  "holdout_auc": 0.7502626601619999,
+  "holdout_ap": 0.7366820491499569,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03549190842599992,
+  "generalization_gap": -0.001562660161999907,
+  "final_md_written": true,
+  "violations": [
+    "suspicious-train-py:holdout"
+  ],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6905117,
+    "tokens_in_uncached": 6905117,
+    "tokens_in_cached": 0,
+    "tokens_out": 85843,
+    "turns": null,
+    "api_calls": 102,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 9237.7,
+  "cpu_seconds_counted": 8908.2,
+  "cpu_seconds_uncounted": 2.8,
+  "cpu_seconds_exempt": 326.7,
+  "python_processes": 54,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 968,
+  "fits_counted": 952,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "cb8209f",
+      "message": "baseline"
+    },
+    {
+      "commit": "2f3400a",
+      "message": "feat: time-of-day (dep_hour, tod, is_early) only"
+    },
+    {
+      "commit": "000319a",
+      "message": "sweep: capacity/regularization grid on eval (exploration)"
+    },
+    {
+      "commit": "7b1008d",
+      "message": "sweep3: feature ablations under best config"
+    },
+    {
+      "commit": "ea11ffd",
+      "message": "sweep4: origin/dest encoding variants"
+    },
+    {
+      "commit": "89c1937",
+      "message": "sweep5: freq encodings + reg variants on reduced set"
+    },
+    {
+      "commit": "dcdc0b8",
+      "message": "sweep6: seed variance + bagging/depth-mix ensembles"
+    },
+    {
+      "commit": "0881231",
+      "message": "sweep7: diversity ensemble recipes"
+    },
+    {
+      "commit": "e714e8f",
+      "message": "sweep8: larger ensemble recipes + rank avg"
+    },
+    {
+      "commit": "786e39d",
+      "message": "sweep9: depth/lr diversity extension"
+    },
+    {
+      "commit": "ddffb44",
+      "message": "sweep10: wide depth x lr grids"
+    },
+    {
+      "commit": "fd05a50",
+      "message": "sweep11: depths 1-10 x 4 lrs, + subsample/seed diversity"
+    },
+    {
+      "commit": "ebca4fe",
+      "message": "clean 40-model depth x lr ensemble (single fit)"
+    },
+    {
+      "commit": "59fdab0",
+      "message": "sweep12: 48-model superset + sub-ensemble/logit analysis"
+    },
+    {
+      "commit": "1305abe",
+      "message": "clean 24-model ensemble (depths 1-12 x lr .04/.16)"
+    },
+    {
+      "commit": "377f3bc",
+      "message": "extend ensemble to depths 1-16 (32 models)"
+    },
+    {
+      "commit": "4f61ec4",
+      "message": "sweep13: subset trade-off analysis on d1-16"
+    },
+    {
+      "commit": "604fdbf",
+      "message": "clean 16-model ensemble (d1-16 lr.16) + carrier-airport feature test"
+    },
+    {
+      "commit": "5fa38e8",
+      "message": "sweep15: single-model encoding/regularization probes"
+    },
+    {
+      "commit": "fdb502a",
+      "message": "sweep16: regularization arms across ensemble"
+    },
+    {
+      "commit": "16a29fb",
+      "message": "clean 16-model ensemble, min_child_weight=1, lr 0.16"
+    },
+    {
+      "commit": "a85b7d3",
+      "message": "ensemble mcw=0 (no leaf-weight constraint)"
+    },
+    {
+      "commit": "cf702a7",
+      "message": "sweep18: cheaper mcw0 configs (n=200)"
+    },
+    {
+      "commit": "be3842e",
+      "message": "final: clean 16-model depth-grid ensemble (mcw0, n200)"
+    },
+    {
+      "commit": "3aa871a",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8911.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 64.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "cf702a7",
+  "best_commit_eval_auc": 0.7487,
+  "best_commit_holdout_auc": 0.7502626601619999,
+  "best_commit_holdout_ap": 0.7366820491499569,
+  "best_commit_error": null,
+  "finalized_best": false
+}

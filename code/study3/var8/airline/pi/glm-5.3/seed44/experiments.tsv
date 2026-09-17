@@ -1,0 +1,39 @@
+n	commit	eval_auc	status	seconds	description
+1	29fb77b	0.7141	ok	3	baseline
+2	19d2b36	0.0000	crash	17	fe-base: numeric+cyclic time features, route cat, ES depth6
+3	46405d2	0.0000	crash	3	fe-base: numeric+cyclic time features, route cat, ES depth6
+4	391a690	0.7075	ok	2	fe-base: numeric+cyclic time features, route cat, ES depth6
+5	22829f3	0.7203	ok	2	noMonth+month_n, d3 n100 rl30, no subsampling
+6	75c3d9c	0.7215	ok	3	4-model XGB ensemble on robust feature set
+7	b12747d	0.7226	ok	3	ensemble + o_pct/o_offset schedule features
+8	3e71089	0.7232	ok	16	6-member ensemble incl d5 and robust member
+9	b970ead	0.7245	ok	7	9-member ensemble incl deep high-mcw + odist
+10	a2ff982	0.7259	ok	9	greedy-weighted diverse 7-member ensemble
+11	f8ac167	0.7262	ok	9	robsched member + retuned weights
+12	11b3f09	0.7263	ok	11	HGBC member added to ensemble
+13	91cc5b7	0.7267	ok	10	CODE member: numeric airport codes species
+14	fb7879a	0.7271	ok	13	dest arrival-flow features, +2 members
+15	1905840	0.7280	ok	9	arrival-flow-centered ensemble reweighting
+16	e8d2d7b	0.7343	ok	10	route schedule-position features
+17	e129995	0.7353	ok	10	hierarchical route blend + reweight
+18	5a5ba14	0.7350	ok	10	robsched+route member, retuned weights
+19	024763b	0.7355	ok	9	r_offset hierarchical shrinkage
+20	eb87abd	0.7354	ok	10	route dow-share feature
+21	3532e75	0.7355	ok	10	sample-count features
+22	249b511	0.7355	ok	11	add I4r member
+23	f8f132b	0.7368	ok	10	congestion features (arrivals before dep, dest dep density, route tightness)
+24	be9d58c	0.7371	ok	10	congestion features for all members
+25	bf0451b	0.7380	ok	10	relative congestion load factors
+26	784b02b	0.7406	ok	18	more trees for bigger feature sets
+27	ec2da38	0.7412	ok	20	reweight + U3r member
+28	ac4c5e4	0.7414	ok	21	restore arrival+dist features to route members
+29	1428bcc	0.7418	ok	21	per-member shrinkage + tuned Ir
+30	39f4c54	0.7426	ok	22	circadian sin/cos features
+31	bc169d6	0.7433	ok	23	2nd harmonic dep trig
+32	bc62022	0.7435	ok	24	arr trig for all + reweight
+33	6c1cb95	0.7447	ok	41	lossguide-deep member + reweight
+34	e7cc87e	0.7471	ok	62	lossguide family ensemble
+35	c1cb233	0.7464	ok	58	refined lossguide family
+36	d470a69	0.7471	ok	73	LGCA n1200 lr0.02
+37	b3b24f6	0.7467	ok	53	LGCA leaves 96
+38	312d1c7	0.7469	ok	63	swap RS for RSr

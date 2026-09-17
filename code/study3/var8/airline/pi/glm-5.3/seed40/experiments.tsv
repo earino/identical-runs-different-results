@@ -1,0 +1,40 @@
+n	commit	eval_auc	status	seconds	description
+1	160b374	0.7141	ok	4	baseline
+2	dfb5b38	0.6949	ok	4	numeric parsing + hour/minute + route + early stopping
+3	a678349	0.7277	ok	4	hour categorical + regularized 480-tree model
+4	69b5590	0.7503	ok	82	car_hour + deep 5-seed ensemble
+5	57685bf	0.7521	ok	60	origin_hour interaction (lumped >=100)
+6	e4327cf	0.7509	ok	62	dest_hour interaction
+7	ec8d23c	0.7449	ok	68	hour_dow interaction
+8	5c611a2	0.7523	ok	60	drop day-of-month (calendar noise)
+9	39e18dd	0.7516	ok	66	car_slot interaction
+10	0340288	0.7522	ok	98	5-seed ensemble
+11	06cf4e8	0.7519	ok	94	lossguide ensemble mix
+12	70a3c98	0.7516	ok	71	n_estimators 300
+13	eac4e3a	0.7522	ok	59	origin_hour threshold 50
+14	6b697a1	0.0000	crash	1	origin_blk interaction
+15	aec45cf	0.0000	crash	2	origin_blk interaction (fixed)
+16	c33e55d	0.7516	ok	65	origin_blk interaction
+17	4656198	0.7520	ok	65	car_origin interaction
+18	d6387d0	0.7523	ok	56	dep_minutes linear time
+19	e01fedd	0.7532	ok	57	car_hour lumped >=50
+20	563b8ab	0.7531	ok	56	car_hour lumped >=100
+21	56ccc52	0.7522	ok	55	origin_hour lumped >=200
+22	bef6ff6	0.7532	ok	59	rare-hour lumping
+23	32c37c1	0.7533	ok	48	n_estimators 200
+24	406e71b	0.7538	ok	37	n_estimators 150
+25	234b56f	0.7529	ok	23	n_estimators 100
+26	f615b38	0.7547	ok	52	depth 20, n150
+27	fc07a70	0.7547	ok	59	depth 24, n150
+28	c998f17	0.7548	ok	41	n120 depth 20
+29	323dadb	0.7546	ok	36	n100 depth 20
+30	07b9f13	0.7549	ok	72	5-seed n120 d20
+31	f938307	0.7545	ok	73	colsample 0.6
+32	90fb619	0.7542	ok	67	subsample 0.75
+33	f229cfb	0.7548	ok	67	lr 0.025
+34	a5f2e2a	0.7539	ok	60	reg_lambda 2.0
+35	1a9b148	0.7550	ok	73	origin_hour >= 50
+36	ed37a0a	0.7539	ok	58	min_child_weight 2
+37	56d9133	0.7550	ok	77	car_hour >= 30
+38	936cdb8	0.7542	ok	75	colsample jitter bagging
+39	ba80f91	0.7552	ok	90	6-seed ensemble

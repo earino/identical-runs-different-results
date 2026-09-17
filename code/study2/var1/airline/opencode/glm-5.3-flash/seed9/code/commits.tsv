@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	74830a8	1789525708	baseline
+01	2e45e42	1789525859	tuned: depth 4, 150 trees, lr 0.05
+02	b5910e3	1789525885	OOF target encoding for high-card cats
+03	ea1ce4b	1789525898	TE extended to time cats + DestHour
+04	832b991	1789525977	log_dist + flight counts
+05	a5f2061	1789525991	3-model ensemble (seeds/depth/subsample)
+06	ec6b3cb	1789526153	colsample_bytree .5 + bynode .7 on all members
+07	efefd2e	1789526736	3x d12 n300 cols.5 bynode.7
+08	2efca12	1789529175	3x d20 n300 bytree.2 bynode.8
+09	5536b99	1789529295	interaction TEs + cyclic hour under d20
+10	c72c7a8	1789529426	distance-decile TEs (fixed)
+11	18f929f	1789529886	prune low-card TEs (fixed2)
+12	2db6c1b	1789530816	bynode .85

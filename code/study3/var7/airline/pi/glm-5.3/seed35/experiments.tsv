@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	8248728	0.7141	ok	18	baseline
+2	7915190	0.7123	ok	7	hour-of-day + calendar ints + route, 400 trees d8
+3	de71796	0.7234	ok	8	OOF-TE hour interactions + 9-seed bag 150x d4
+4	a161c49	0.7358	ok	11	te_routehour + core TEs, d6 lr.08, 9-seed bag
+5	a1ad796	0.7464	ok	12	route30 TE + volume feats + routehour
+6	d2a9a31	0.7517	ok	13	ALL TE family (route15, origin30, dest30) + vol, ss.8 cs.5
+7	c4b212a	0.7576	ok	14	carroutehour + carroute30 TEs
+8	4e51c99	0.7578	ok	18	volume counts + n200 lr.06
+9	8bb8927	0.7605	ok	31	TE diffs + lossguide64
+10	ab8dbac	0.7653	ok	29	6 full + 3 stable-only family mix
+11	b8c4259	0.7838	ok	30	same-day airport density features
+12	3df7b83	0.7906	ok	27	carrier-day/hour + dayhour density
+13	5b5cac7	0.7910	ok	32	hour share of airport-day schedule
+14	2203a33	0.7914	ok	50	capacity bump 300x96
+15	5f9d0d7	0.7914	ok	49	float32 feature matrix
+16	06638e8	0.0000	crash	40	capacity rung 400 trees

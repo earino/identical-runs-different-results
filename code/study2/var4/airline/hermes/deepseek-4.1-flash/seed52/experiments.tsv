@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a906be4	0.7141	ok	4	baseline
+2	30bdb73	0.0000	crash	9	time decomposition + numeric c-N
+3	d95c892	0.7179	ok	9	time decomposition + numeric c-N
+4	43c6fc7	0.7237	ok	8	500 trees lr0.05 sub/col 0.8
+5	d4093b8	0.7225	ok	16	early stopping + refit
+6	51ec460	0.7092	ok	7	add route categorical
+7	07d8337	0.7239	ok	4	route target encoding OOF
+8	4703550	0.7280	ok	5	7 target-encoded keys
+9	901cabd	0.7279	ok	5	log count features
+10	7a3d229	0.7276	ok	14	2000 trees lr0.02
+11	8f48de8	0.7294	ok	7	7 more TE keys (season/route-hour)
+12	47767fc	0.7262	ok	8	calendar features + 5 TE keys
+13	650ce7f	0.7303	ok	7	doy/week/holiday raw features
+14	bef3c8c	0.7371	ok	6	colsample 0.2 + reg_lambda 5
+15	a3c6033	0.7395	ok	7	count features 7 keys
+16	04219ff	0.7410	ok	17	5-seed bag
+17	1daf63a	0.7434	ok	15	pruned TE set (30 feats)
+18	c616d15	0.7444	ok	15	carrier share features
+19	0a6e5e1	0.7517	ok	62	max_depth 14, bag4
+20	39fae22	0.7521	ok	57	cumulative congestion features
+21	55ebfd0	0.7522	ok	60	max_cat_threshold 256
+22	7191c29	0.7506	ok	73	airport descriptors + season counts
+23	6aa6c50	0.7518	ok	62	TE_K 100
+24	52e2667	0.7522	ok	91	6-seed bag
+25	867d0c3	0.7525	ok	70	gradient_based sampling
+26	739750a	0.7522	ok	62	max_bin 128
+27	f4c9a78	0.7528	ok	75	min_child_weight 0.5
+28	4f66ac5	0.7531	ok	101	depth-diverse bag
+29	fb91980	0.7529	ok	82	4-member diverse bag
+30	79fcbc0	0.7525	ok	106	reverse-route TE
+31	03bb676	0.7536	ok	105	cnt_carrier_origin_hour
+32	63b8fa2	0.7546	ok	102	cum_route
+33	5eac9fa	0.7551	ok	104	cum carrier + carrier_origin
+34	493bde1	0.7556	timeout	120	min_child_weight 0.2
+35	2942e57	0.7548	ok	86	4-member bag, margin
+36	b1dfcce	0.7554	ok	108	cum airport movements
+37	0af3676	0.7553	ok	91	4-member bag
+38	eae5681	0.7518	ok	93	drop derived calendar features
+39	e66ffcc	0.7554	ok	114	5-member bag recheck
+40	43d2ef0	0.7554	ok	107	reg_alpha 1.0

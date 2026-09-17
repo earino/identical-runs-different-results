@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cc7bec8	0.7141	ok	4	baseline
+2	fc4dbdb	0.7021	ok	14	features+v2 model
+3	3dcdca9	0.7068	ok	29	grid complexity, v2 features
+4	6ba14b5	0.7164	ok	5	feature ablation raw/time/route/freq
+5	03e8a1e	0.7173	ok	13	hp grid depth/trees/lr on raw+time
+6	fc97a01	0.7196	ok	11	shallow trees d3-5 grid
+7	78388ec	0.0000	crash	1	rate encodings + ixcats
+8	dcb219a	0.0000	crash	2	rate encodings + ixcats
+9	3f461af	0.7200	ok	12	rate encodings + ixcats
+10	6a33de7	0.7199	ok	13	seed bag 7x
+11	f22cb8b	0.7200	ok	28	lr/n + reg grid
+12	b5d9002	0.0000	crash	2	feature cleanup grid
+13	5de8c90	0.7175	ok	9	feature cleanup grid
+14	ed14e4b	0.7211	ok	21	foldbag + blends
+15	3b58fbf	0.7237	ok	15	greedy blend
+16	bd58890	0.0000	crash	2	bigger greedy blend
+17	735add7	0.7251	ok	19	bigger greedy blend
+18	1bc2e9b	0.7253	ok	24	deep diversity blend
+19	f1ea3d7	0.7257	ok	21	prod interactions + blend
+20	cec462e	0.7257	ok	59	dart + blend
+21	4539988	0.7258	ok	34	cs3 grid + bag blend
+22	f3de202	0.7257	ok	21	view-diverse blend
+23	1034732	0.7258	ok	17	rank vs prob blends
+24	5b7e56f	0.7056	ok	11	holiday/rates variants + blend
+25	e8078ce	0.7261	ok	41	foldbag blend + dt5/recency
+26	2247eaa	0.7259	ok	59	10fold bags
+27	38b49d4	0.7233	ok	39	forest family + fb6
+28	2b6c574	0.7261	ok	57	forest family + fb6 fixed
+29	0a5656c	0.7222	ok	17	prune grid + blend
+30	bec3ab5	0.7261	ok	74	prune grid + blend fixed
+31	cd4c972	0.7263	ok	43	oof stacking
+32	74b6d4a	0.7263	ok	36	fulldata blend variants
+33	f3e35ad	0.7263	ok	41	fulldata blend final
+34	2ab3afa	0.7263	ok	8	clean 4-member blend
+35	328edfe	0.7265	ok	59	blend expansion tests
+36	2896137	0.7265	ok	28	swap grid + weights
+37	b9785a8	0.7266	ok	40	3seed members + ascent
+38	14f5b21	0.7267	ok	65	fifth member test
+39	f74f746	0.7267	ok	68	predict_proba grouping fix
+40	c063ddd	0.7268	ok	106	5-seed + wide ascent

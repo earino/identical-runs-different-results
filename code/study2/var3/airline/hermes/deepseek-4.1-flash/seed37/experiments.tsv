@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6e081b0	0.7141	ok	4	baseline
+2	0ff62fb	0.7078	ok	4	400 trees lr0.1 d6
+3	f92c351	0.7177	ok	2	temporal feats, 30 trees
+4	01bda3b	0.7127	ok	3	200 trees, temporal feats
+5	bbdbdaa	0.7170	ok	2	depth 4, 30 trees
+6	f954811	0.7179	ok	2	min_child_weight 50
+7	b98ffd6	0.7164	ok	2	100 trees mcw50
+8	d770d4c	0.7194	ok	13	5-seed bagged ensemble
+9	3e6d4eb	0.7206	ok	4	bagged 60 trees
+10	6e0d619	0.7204	ok	5	bagged 120 trees
+11	8d4623e	0.7204	ok	4	hour_dow + logdist
+12	dc34bb0	0.7226	ok	4	freq features
+13	d484e65	0.7132	ok	4	target encodings
+14	59cc8e4	0.7187	ok	3	drop origin/dest identity
+15	44f110d	0.7224	ok	4	monotone tod
+16	8918447	0.7219	ok	4	max_cat_threshold 8
+17	4d2429b	0.7243	ok	4	congestion ratios
+18	64e86d5	0.7252	ok	7	diverse ensemble
+19	54b1b8c	0.7253	ok	9	lr0.05 120trees
+20	cc16230	0.7252	ok	6	hub share feats
+21	336d481	0.7251	ok	11	16-member ensemble
+22	301865f	0.7247	ok	9	origin tod frac
+23	be27b9b	0.7253	ok	5	reg_lambda 2
+24	299dc3b	0.7232	ok	5	mcw 200
+25	3934cea	0.7253	ok	6	hour_cat
+26	cde008b	0.7255	ok	5	prune cyclic feats
+27	06425b4	0.7238	ok	5	prune minute+dom
+28	da96d79	0.7259	ok	10	lr0.05 120t retest
+29	95b4e9d	0.7273	ok	12	200 trees lr0.05
+30	89ab57c	0.7280	ok	18	350 trees lr0.05
+31	9fb8e86	0.7276	ok	30	600 trees lr0.05
+32	30f39f0	0.7297	ok	20	tod interaction products
+33	0a5d21f	0.7294	ok	21	more tod products
+34	6db3dc0	0.7303	ok	19	peak-hour feats
+35	10f45f0	0.7300	ok	22	dest peak + products
+36	5b65a1e	0.7311	ok	33	12-member ensemble
+37	175efb0	0.7317	ok	42	16-member ensemble
+38	44e068a	0.0000	crash	1	lossguide 96 leaves
+39	dfdf44e	0.7354	ok	101	lossguide 96 leaves
+40	cb5e663	0.7350	ok	99	max_bin 128

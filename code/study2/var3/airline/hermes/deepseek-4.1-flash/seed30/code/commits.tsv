@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	149ba8b	1789502429	baseline
+01	0b2c9e3	1789502551	shallow: depth3 800 trees lr0.05
+02	f3cdfc1	1789502625	ens: 3-seed bag of depth3/800
+03	08e83aa	1789502641	ens: depth-diverse bag 3/4/6
+04	65d5208	1789502682	group rare Origin/Dest into OTHER (K=50)
+05	8e77bd0	1789502719	K=25
+06	e3fa652	1789502807	max_bin=512
+07	3d71fe2	1789502816	max_bin=1024
+08	1c1ac55	1789502826	lr 0.02 with 2.5x trees
+09	cebaeff	1789502891	feat: carrier x hour categorical
+10	809ffba	1789503017	group sparse carrier-hour cells (>=300)
+11	1dbeacd	1789503052	carrier-hour min support 150
+12	b9ce9d0	1789503077	airports: min support 1000 instead of top-K
+13	2dee358	1789503095	airports: min support 500
+14	b23d6f0	1789503113	airports: min support 200
+15	2788e54	1789503132	airports: min support 100
+16	ace6a9d	1789503172	ens: 5 members
+17	d257f7c	1789503205	carrier-hour support 75
+18	0d6c50f	1789503251	feat: + origin x hour (grouped, support>=300)

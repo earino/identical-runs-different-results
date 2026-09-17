@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	7c558d0	0.7141	ok	4	baseline
+2	e892767	0.7175	ok	1	ordinal decode + dep time features
+3	b62f9d6	0.7154	ok	3	400 trees lr0.05 depth6
+4	21f6ad1	0.7092	ok	3	route cat + freq count features
+5	0c1806d	0.7177	ok	2	count features only
+6	20323e3	0.0000	crash	1	cal x hour interactions
+7	85f4059	0.0000	crash	2	cal x hour interactions (int cats)
+8	878a93b	0.7024	ok	3	cal x hour interactions v2
+9	aee4f1b	0.7175	ok	6	probe model config sweep
+10	94397e7	0.7175	ok	27	probe2 regularized regime
+11	c857627	0.7175	ok	32	probe3 lossguide axis
+12	cc240b5	0.7175	ok	35	probe4 sampling+lambda axis
+13	ed958d9	0.7175	ok	61	probe5 leaves and trees scale-up
+14	4b189a5	0.7329	ok	13	lossguide lg256 n500 lr.02 col.5 lam20
+15	9e29cd3	0.0000	crash	2	probe6 feature sets
+16	4ff8da1	0.7329	ok	97	probe6b feature sets
+17	a0108a5	0.0000	crash	2	probe7 ensemble onehot knobs
+18	b063f05	0.0000	timeout	121	probe7b ensemble onehot knobs
+19	4c5c9b6	0.0000	timeout	120	probe8 max_bin dart capacity
+20	7ca2828	0.7342	ok	36	counts + max_bin512 + 3-seed ensemble
+21	38e7508	0.0000	crash	1	probe9 density features
+22	7b3f39f	0.7341	ok	48	probe9b density features
+23	70a5dd7	0.7391	ok	67	probe10 extended density
+24	fd23b40	0.7450	ok	74	probe11 finer buckets
+25	55f06f0	0.7455	ok	44	density features + ensemble
+26	76f3536	0.7450	ok	75	probe12 windowed congestion
+27	fb1b0ad	0.7469	ok	84	probe13 congestion combos
+28	5a5efb5	0.7480	ok	43	congestion family final
+29	e0b373d	0.7474	ok	61	probe14 retune
+30	b5308c9	0.7488	ok	68	col.35 + 5 seeds
+31	d5ad0f2	0.7481	ok	59	probe15 more density ideas
+32	dd544a3	0.7500	ok	62	probe16 window variants
+33	33c8b5d	0.7500	ok	67	final: +prev/next15, col.35, 5 seeds
+34	9c273f5	0.7500	ok	56	probe17 final knobs
+35	11bfd54	0.7500	ok	75	probe18 robustness variants
+36	baf0952	0.7515	ok	78	n1000 lr.015 3 seeds
+37	0e97333	0.0000	timeout	122	probe19 n1500 and diversity
+38	be550a2	0.7511	ok	75	diverse ensemble
+39	6235234	0.7500	ok	37	probe20 arrival congestion
+40	a3b874a	0.7531	ok	79	arrival congestion final

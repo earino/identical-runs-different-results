@@ -1,0 +1,31 @@
+n	commit	eval_auc	status	seconds	description
+1	e7b6dda	0.7141	ok	5	baseline
+2	fe917d5	0.0000	crash	2	v2 feature engineering
+3	8a7b63e	0.7034	ok	7	v2 feature engineering (fix fit return)
+4	862c46e	0.7119	ok	4	v3 capacity 500 trees lr0.05
+5	a35911e	0.0000	crash	2	v4 freq+hourcat+d5 ensemble
+6	eb6e2bd	0.7276	ok	10	v4 freq+hourcat+d5 ensemble (fix drop keys)
+7	75ddbd2	0.7407	ok	79	v5 deep d11 ensemble
+8	f73f524	0.7392	ok	116	v6 OOF target encoding
+9	96e215e	0.7417	ok	84	v7 depth13
+10	e2c3eb2	0.7426	ok	83	v8 depth16
+11	67deb73	0.7428	ok	81	v9 depth20
+12	db07c97	0.7422	ok	82	v10 depth-diverse ensemble
+13	9147953	0.7460	ok	95	v11 extra freq + est_arr
+14	5aacd2d	0.7462	ok	100	v12 more congestion freq
+15	a3b3e48	0.7451	ok	98	v13 ablate est_arr_tod
+16	3595084	0.7486	ok	97	v14 ss/cs 0.8
+17	a403b90	0.7503	ok	91	v15 ss/cs 0.7
+18	27b99a7	0.7512	ok	81	v16 ss/cs 0.6
+19	9fd14d1	0.7512	ok	75	v17 ss/cs 0.5
+20	ba83e69	0.7517	ok	73	v18 depth24
+21	bcf0d2a	0.7521	ok	67	v19 depth32
+22	7fa5304	0.7510	ok	54	v20 mcw5
+23	f9aa8ec	0.7535	ok	72	v21 lambda5
+24	5bba76a	0.7549	ok	80	v22 lambda2
+25	6a39aba	0.7554	ok	73	v23 lambda0.5
+26	079aba3	0.0000	timeout	125	v24 lambda0.1
+27	9693b6d	0.7553	ok	69	v25 colsample_bylevel
+28	986b4e6	0.7563	ok	108	v26 gamma0.5
+29	325803d	0.7563	ok	102	v27 ss/cs0.5 gamma0.5
+30	03942e9	0.7552	ok	110	v28 arrival-hour+weekend

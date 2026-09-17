@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cda5002	0.7141	ok	4	baseline
+2	c900b7d	0.7062	ok	5	feateng v1: TE + cyclic time + tuned
+3	8af6586	0.7094	ok	6	clean feateng, no TE, ES
+4	01c0c29	0.7071	ok	5	clean feateng, d6/mcw50, ES
+5	0f872ce	0.7186	ok	41	diag sweep feature sets x n x depth
+6	8aa9d0d	0.7290	ok	74	sweep2 bt trees/depth/reg + bin15/car_hour
+7	79ef827	0.7373	ok	92	sweep3 combine wins + finer bins + interactions
+8	8fa055d	0.0000	timeout	120	sweep4 lr/trees depth7 reg drop-dom
+9	dfa149d	0.7396	ok	66	consolidate nodom n2000 lr.05 + probes
+10	211b108	0.7396	ok	52	halfsplit stability + month_hour
+11	9addfdc	0.7419	ok	62	distbin freqs depth-ensemble
+12	9dc5895	0.7425	ok	90	ensemble sweep 6 members combos
+13	6c8221f	0.7441	ok	99	8 members greedy selection
+14	66352b4	0.7445	ok	100	diversity pool colsample lr greedy
+15	577c0b4	0.7463	ok	118	gamma alpha members greedy stop
+16	f8903d4	0.7481	ok	111	feature subset diversity members
+17	2e09f21	0.0000	timeout	120	crossed pool depth x features
+18	989de96	0.7485	ok	92	pool d6c7 dest_hour greedy
+19	3d5c707	0.7486	ok	116	pool + lossguide member
+20	c3ce523	0.0000	timeout	120	car_bin15 orig_bin15 members
+21	5f011f7	0.7486	ok	115	rank average ensemble
+22	0f033b9	0.0000	timeout	120	subsample + mini members
+23	2090226	0.0000	timeout	120	minute features members
+24	2e8d74b	0.0000	crash	2	maxbin colnode recency disthour
+25	6e4442a	0.7419	ok	66	maxbin colnode recency disthour (amend)
+26	1c4cea3	0.7483	ok	104	pool v2 winners equal weight
+27	3361b18	0.0000	crash	66	pool v3 7 members greedy
+28	b8be7e3	0.0000	crash	64	pool v3 7 members greedy (amend)
+29	e4fb23b	0.7498	ok	109	pool v3 7 members greedy (amend2)
+30	1b2bd0e	0.0000	timeout	123	pool v4 d4 rec-disthour
+31	45ecf5c	0.7501	ok	89	pool v5 rec-disthour quartet
+32	7a9b5cf	0.0000	timeout	120	recency variants crossing
+33	d2401cb	0.7508	ok	70	recency pool slope probes
+34	3ab3b00	0.7508	ok	108	recency family dest colnode lg
+35	dba69c7	0.0000	crash	83	dowbin15 hrload bin256 probes
+36	409bdfa	0.0000	crash	78	dowbin15 hrload bin256 (amend)
+37	645a16b	0.7508	ok	84	dowbin15 hrload bin256 (amend2)
+38	6749944	0.7509	ok	86	wider pool weight grid
+39	36e13ce	0.7509	ok	108	exhaustive subsets 7 members
+40	c5b4b8b	0.7504	ok	86	final quartet more trees

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	e1abf17	0.7141	ok	3	baseline
+2	ad38f0d	0.7112	ok	3	400 trees lr0.05 depth6
+3	ea481f6	0.0000	crash	1	time features hour/min/cyclic + numeric calendar
+4	8cd650c	0.0000	crash	2	time features hour/min/cyclic + numeric calendar
+5	0f6cf4f	0.7181	ok	1	time features hour/min/cyclic + numeric calendar
+6	8a92855	0.7381	ok	6	deep regularized: d13 mcw20 cs0.4 lambda20 400 trees
+7	1ff65cc	0.7378	ok	7	count encodings origin/dest/carrier/route/hour
+8	b8eaf88	0.7420	ok	8	carrier x dep-hour interaction feature
+9	9fb2107	0.7437	ok	13	hour x origin interaction, 500 trees
+10	b62a211	0.7460	ok	28	3-model diverse xgboost ensemble
+11	fba8be8	0.7463	ok	61	6-model ensemble (adds d10/cs.5, lr.03, d16/cs.3)
+12	19c4e68	0.7469	ok	88	8-member ensemble: adds lossguide512 and gamma0.5
+13	1f3fb21	0.7471	ok	84	ensemble encoding diversity (max_cat_to_onehot=8, max_cat_threshold=32)
+14	fd86419	0.7471	ok	107	logit-space averaging of ensemble members
+15	ae183ed	0.7472	ok	83	feature-view diversity members
+16	fd43400	0.7470	ok	82	row-subsample bagging diversity (2 members @85%)
+17	779cb3a	0.7470	ok	82	per-member subsample diversity (0.7-0.9)
+18	3b29c83	0.7471	ok	97	add mid-lr member (d14 cs.35 lr0.04, 500 trees)
+19	a074023	0.7475	ok	79	L1 reg_alpha member (gamma member becomes gamma+L1)
+20	e7c4148	0.7476	ok	81	max_delta_step=1 across all members
+21	fdef06d	0.7476	ok	81	max_bin=128 view member at depth 13
+22	cf5933d	0.7474	ok	91	600 trees for 2 members (avg tolerates later trees)
+23	800bf41	0.0000	timeout	120	DART member replaces lossguide member
+24	6b6d004	0.7482	ok	83	reg_alpha=1.0 on all members
+25	a09054d	0.7475	ok	64	reg_alpha=3.0 on all members
+26	a51d3cd	0.7475	ok	78	reg_lambda 35 with L1 and max_delta_step
+27	847f8b7	0.7482	ok	79	gamma=0.5 on all members
+28	26ea1df	0.7481	ok	97	add calendar-lean view member (drop dom/dow/weekend)
+29	16ffdf7	0.7480	ok	86	colsample_bynode=0.7 on all members
+30	236dafa	0.7449	ok	76	ablation: drop hour_carrier from all members
+31	6c70dd8	0.7451	ok	58	ablation: drop hour_origin from all members
+32	00c1792	0.0000	timeout	120	ablation: remove reduced feature-views from members
+33	bc5c549	0.0000	crash	2	max_cat_to_onehot=0 all members
+34	9d1690e	0.7482	ok	82	max_cat_to_onehot=1 all members
+35	aab2d47	0.7488	ok	94	min_child_weight 15 all members
+36	12c8de6	0.7494	ok	104	min_child_weight 10 all members
+37	672e25f	0.7497	ok	105	mcw=6 (350 trees on lr.05 members to stay in time budget)
+38	f8b3e63	0.7498	ok	113	mcw=3 (lr.03 member trimmed to 600 trees)
+39	bc4364c	0.7499	ok	110	seed-stability check: all member seeds shifted by +1000
+40	7f80c32	0.7496	ok	109	reg_alpha=0.5 at min_child_weight=3

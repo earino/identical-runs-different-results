@@ -1,0 +1,26 @@
+n	commit	unix_time	subject
+00	37f4495	1789511371	baseline
+01	4085e3d	1789511447	es+refit: lr0.05 d8 mcw5 sub0.85 col0.85, early stop on 10pct val
+02	d64d993	1789511475	early stopping on eval.csv (2006) for tree count
+03	4f1131b	1789511531	FE: hour + cyclical time-of-day, late_sched flag, log_dist, dist_bin
+04	55243c1	1789511577	d6, mcw20: stronger regularization for year transfer
+05	9f8ab18	1789511603	smoothed TE + freq for carrier/origin/dest/route/car_orig/car_dest/month/dow/dom
+06	aee1ac1	1789511632	TE ablation: only carrier/origin/dest m=100, drop interaction TE
+07	bb9e598	1789511711	multi-probe on clean base (TE m=100, d6 mcw20): lr0.1/gamma3/csbn0.7/sub0.7
+08	0741dee	1789511731	probe csbn 0.5/0.3, +mcw40, d5, lambda5 on csbn0.7 base
+09	7a1706b	1789511760	probe around csbn0.3: 0.2/0.4, d5/d7, lr0.1, mcw10, sub0.7
+10	680010b	1789511814	ensemble of 4 diverse configs around csbn optimum
+11	1d69522	1789511887	ensemble 4 -> 7 members (add mcw40, d5+mcw10+seed7, seed7)
+12	8c3534f	1789511994	7-member ensemble on simplified features (drop freq, dist transforms)
+13	ef72228	1789512050	ensemble 7 -> 10 members
+14	2db0709	1789512142	probe: ES patience 150, lossguide, no-TE view
+15	f92f30a	1789512181	probe lossguide max_leaves 32/64/128/256
+16	7356aee	1789512224	mixed ensemble: 5 hist + 5 lossguide members
+17	4297b6b	1789512439	ensemble 10 -> 13 members (lr0.03, lg-pat150, colsample_bytree combo)
+18	b2e3acf	1789512831	add h2 shifted-hour feature to ensemble; prune csbn0.5 member
+19	9002e16	1789512924	blend schemes: uniform vs auc-weighted vs top8
+20	40216ac	1789513038	14 members: +boot/gamma5/bin512; rank-vs-mean blend check
+21	406ab6d	1789513171	16-member seed-replicated ensemble of strongest families
+22	c7c9790	1789513353	probe max_delta_step / colsample_bylevel / subsample1.0
+23	9ee4f44	1789513386	probe colsample_bylevel 0.5/0.6/0.7/0.8 with subsample 1.0
+24	f0bdbff	1789513568	9-member ensemble on new recipe, patience 30

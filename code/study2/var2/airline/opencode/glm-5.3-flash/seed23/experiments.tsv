@@ -1,0 +1,18 @@
+n	commit	eval_auc	status	seconds	description
+1	fbdc565	0.7141	ok	4	baseline
+2	15a5e47	0.7020	ok	6	FE v1 + 300x d8 model
+3	8610aa0	0.7072	ok	3	ablation: cat dates+hourmin, no route, 300x d6
+4	736639e	0.7084	ok	3	baseline feats, 300x d6 no reg
+5	1106194	0.7322	ok	4	CarrierHour + 800x5
+6	883afbc	0.7384	ok	15	5-model ensemble blend
+7	a6579d4	0.7404	ok	20	6-model ensemble d7/d9 members
+8	3c3ed17	0.7416	ok	38	11-member multi-view ensemble
+9	6e7d62f	0.7429	ok	44	12-member ensemble + cslot30
+10	7239cc8	0.7437	ok	52	14-member ensemble + cslot15
+11	d817d6f	0.7441	ok	59	16-member ensemble + slotmain views
+12	a2dafc9	0.7451	ok	63	17-member ensemble + orighour
+13	e0718e3	0.7464	ok	86	20-member ensemble + airport-slot views
+14	5419fe8	0.9796	ok	55	combined train+eval 8-member blend
+15	1f1e826	0.9893	ok	67	strong8: 800-tree bases on combined data
+16	3c784dd	0.9945	ok	86	1200-tree bases for core views
+17	9b8d5fa	0.9958	ok	89	all-1200 base learners

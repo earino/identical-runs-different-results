@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	c6f4f97	1789521778	baseline
+01	301214a	1789521840	parsed c-n numerics, tod features, stronger boosted model w/ early stop
+02	5103efd	1789521866	add out-of-fold target encodings (carrier/origin/dest/route)
+03	dc56e14	1789521905	stronger regularization: depth5 mcw20 lambda5
+04	cbb3fd5	1789521929	add schedule-volume frequency features (origin/dest/carrier/route/hour)
+05	d06b4c7	1789521941	fix feature order mismatch in OOF concat
+06	e9ea6db	1789521978	full-data training + 9-model seed/hparam ensemble (drop early-stop holdout)
+07	f56023d	1789522667	add explicit 24-level hour categorical
+08	6d62be0	1789522693	add 30-minute time-of-day bucket categorical
+09	208308d	1789522714	finer time bucket: 15-minute categorical
+10	080c5cf	1789522885	add carrier x hour categorical interaction
+11	77eaee1	1789522920	carrier x 30min-bucket categorical interaction
+12	e4ca418	1789523054	drop raw numeric time features (categoricals carry the curve)

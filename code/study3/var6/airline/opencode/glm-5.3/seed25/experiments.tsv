@@ -1,0 +1,11 @@
+n	commit	eval_auc	status	seconds	description
+1	948898c	0.7141	ok	4	baseline
+2	e3b8432	0.7037	ok	4	cyclic time + route cat + ES
+3	d9271e3	0.7305	ok	9	ES->refit full d9 lr.05
+4	338d857	0.7427	ok	27	d14 n=800 lr.05 full
+5	13e6c90	0.7453	ok	35	d16 bin1024 hour n=800
+6	38f265a	0.7464	ok	80	ensemble3 n600
+7	322c5dd	0.7470	ok	89	ensemble3 + recency weight a2
+8	5e4703b	0.7475	ok	102	ensemble: b1024+b2048+csn0.7 weighted
+9	31eff21	0.7474	ok	98	ablation: no hour feature
+10	c72dc30	0.7471	ok	110	recency weight alpha=2.25

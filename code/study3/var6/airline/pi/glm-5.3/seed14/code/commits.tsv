@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	3cfed71	1789583118	baseline
+01	82852e0	1789583250	time+route features, internal early stopping
+02	8bd6f17	1789583770	time features, shallow depth-4, 150 rounds, colsample 0.8
+03	e0380b6	1789584108	bag of 10 shallow models + late-2005 recency weighting
+04	b29b905	1789584340	depth-diverse bag [2,3,4,5,6]x2
+05	d6e3777	1789584590	add MinuteOfHour feature
+06	f5769fb	1789584846	bag rounds 150 -> 250
+07	9959073	1789585384	pool rare airports (<300 train rows) into NaN
+08	e456bd0	1789594022	Final: deep-emphasis depth ladder + arrival-time & congestion-count features, n=45, max_bin=128 (validate eval AUC 0.7594)

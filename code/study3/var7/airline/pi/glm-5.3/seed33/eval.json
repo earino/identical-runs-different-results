@@ -1,0 +1,204 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 33,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T00:53:08+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s33-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T02:50:52+00:00",
+  "wall_seconds": 7064.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9830.8,
+  "endpoint_at_end": "ok",
+  "head": "cbe2432",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 35,
+  "n_crash": 2,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7437,
+  "final_eval_auc": 0.7437,
+  "holdout_auc": 0.74360758878,
+  "holdout_ap": 0.732035287312405,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.028836837043999974,
+  "generalization_gap": 9.241122000003266e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7565387,
+    "tokens_in_uncached": 745291,
+    "tokens_in_cached": 6820096,
+    "tokens_out": 96079,
+    "turns": null,
+    "api_calls": 152,
+    "method": "sum-of-152-events",
+    "cost_usd": 3.2394,
+    "cached_share": 0.901
+  },
+  "cpu_seconds_python": 9792.0,
+  "cpu_seconds_counted": 9643.9,
+  "cpu_seconds_uncounted": 4.7,
+  "cpu_seconds_exempt": 143.3,
+  "python_processes": 50,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 262,
+  "fits_counted": 258,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "3edf617",
+      "message": "baseline"
+    },
+    {
+      "commit": "1f03564",
+      "message": "FE: time features (Hour/Minute/DepTimeFrac), no route, baseline model"
+    },
+    {
+      "commit": "7fcc20a",
+      "message": "capacity: 1500 trees lr0.1, early stopping on internal 20% split, baseline features"
+    },
+    {
+      "commit": "6f2e64c",
+      "message": "sweep n_estimators on eval, keep best model"
+    },
+    {
+      "commit": "d876ece",
+      "message": "FE v3: smoothed target encodings (hour/carrier/origin/dest/route) + Hour numeric, sweep capacity"
+    },
+    {
+      "commit": "ee6e972",
+      "message": "hyperparameter sweep with per-round eval AUC curves"
+    },
+    {
+      "commit": "ee1d120",
+      "message": "shallow-tree hyperparam refinement sweep"
+    },
+    {
+      "commit": "14336ce",
+      "message": "ensemble: average 8 structurally diverse XGB models (top sweep configs + bagged seeds)"
+    },
+    {
+      "commit": "5350eb7",
+      "message": "FE variants: hour-cat, hour-num, drop origin/dest at d4-lr05"
+    },
+    {
+      "commit": "e42ff18",
+      "message": "hour-cat features, extended-round lr scan"
+    },
+    {
+      "commit": "2dca442",
+      "message": "hourcat: deeper scan + 7-member ensemble"
+    },
+    {
+      "commit": "495c869",
+      "message": "interaction categorical variants: route, hour x carrier/dow/month"
+    },
+    {
+      "commit": "5d71213",
+      "message": "hourcarrier capacity extension + 4-member ensemble"
+    },
+    {
+      "commit": "f292236",
+      "message": "lr 0.025/0.03 long scans + 3-member ensemble"
+    },
+    {
+      "commit": "818ad53",
+      "message": "variants: recency weights, log-dist, drop day-of-month/month"
+    },
+    {
+      "commit": "fdb712b",
+      "message": "longer rounds: no-dom / no-month / recency combos"
+    },
+    {
+      "commit": "482c5d5",
+      "message": "pruned features: 4-member long ensemble"
+    },
+    {
+      "commit": "e4e8bf2",
+      "message": "subsample-seed diversity members + marginal ensemble value"
+    },
+    {
+      "commit": "60a891f",
+      "message": "6-member ensemble: d7 + more bagged seeds + rank/prob compare"
+    },
+    {
+      "commit": "7e84634",
+      "message": "d8/d7 anchors + bagged members (trimmed to fit 120s)"
+    },
+    {
+      "commit": "1f7e1ef",
+      "message": "member upgrades: recency-weighted anchor, sub0.92 quality bagged"
+    },
+    {
+      "commit": "b1f2600",
+      "message": "best-member assembly: d8 anchors x3 weightings + lossguide + bagged"
+    },
+    {
+      "commit": "0792527",
+      "message": "greedy forward ensemble selection over 7 members"
+    },
+    {
+      "commit": "b604647",
+      "message": "wide 8-member greedy pool with seed pairs"
+    },
+    {
+      "commit": "75d5d22",
+      "message": "lean production candidate: fixed greedy-4 ensemble, no monitoring"
+    },
+    {
+      "commit": "3391f96",
+      "message": "recency-weighted bagged members"
+    },
+    {
+      "commit": "cbe2432",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9648.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 38.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3391f96",
+  "best_commit_eval_auc": 0.7437,
+  "best_commit_holdout_auc": 0.74360758878,
+  "best_commit_holdout_ap": 0.732035287312405,
+  "best_commit_error": null,
+  "finalized_best": true
+}

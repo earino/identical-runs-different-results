@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	a906be4	1789540717	baseline
+01	d95c892	1789540793	decompose DepTime into hour/tod, numeric month/dow
+02	43c6fc7	1789540809	more capacity: 500 trees lr0.05 subsample
+03	07d8337	1789540891	smoothed OOF target encoding for route
+04	4703550	1789540911	generic OOF target encoding for 7 keys
+05	8f48de8	1789540970	seasonal + route-hour + carrier-route target encodings
+06	650ce7f	1789541019	raw calendar features only (doy/week/holiday)
+07	bef3c8c	1789541299	strong feature subsampling: cs0.2 + lambda5
+08	a3c6033	1789541443	log frequency counts (7 keys), reused under cs0.2
+09	04219ff	1789541457	5-seed bagged ensemble
+10	1daf63a	1789541647	prune harmful encodings: 5 TE keys, 30 features
+11	c616d15	1789541735	carrier-affinity share features
+12	0a6e5e1	1789543011	deep trees: max_depth 14
+13	39fae22	1789543796	cumulative airport congestion by hour
+14	55ebfd0	1789543905	wider categorical splits
+15	867d0c3	1789544262	gradient-based row sampling
+16	f4c9a78	1789544419	min_child_weight 0.5
+17	4f66ac5	1789544514	depth-diverse bag (d10/d14/d18)
+18	03bb676	1789544847	carrier-origin-hour congestion count
+19	63b8fa2	1789544973	route-level cumulative congestion
+20	5eac9fa	1789545082	cumulative carrier traffic
+21	b1dfcce	1789545431	airport total movements cumulative
+22	0af3676	1789545547	4-member bag (time margin)
+23	e66ffcc	1789545755	restore 5-member bag (best eval)

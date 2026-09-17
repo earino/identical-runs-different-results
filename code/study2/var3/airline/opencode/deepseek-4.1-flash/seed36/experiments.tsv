@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9546865	0.7141	ok	4	baseline
+2	30000f8	0.7139	ok	4	time feats + deeper model
+3	c9d7714	0.7097	ok	8	OOF target/freq encodings
+4	c1b25c0	0.7036	ok	3	route categorical
+5	c285972	0.7167	ok	10	xgb ensemble 6 models
+6	fe8c989	0.7172	ok	20	ensemble 12 models depth 3-8
+7	e5e9444	0.7173	ok	21	count encodings + ensemble
+8	41068f0	0.7185	ok	31	ensemble 21 models diverse
+9	3d5b30c	0.7188	ok	67	ensemble 32 models
+10	a9f5dc1	0.7221	ok	71	TE hour interactions + ensemble
+11	1911adb	0.7214	ok	83	more TE keys
+12	fb134c7	0.7221	ok	75	month/dow hour TE
+13	7cd7df3	0.7223	ok	74	TE smooth 150
+14	f32226c	0.7220	ok	73	TE smooth 300
+15	9e57fb0	0.7221	ok	78	route-hour TE
+16	24b2c33	0.7222	ok	79	TE deviation features
+17	b990dd7	0.7224	ok	80	max_bin 512
+18	200e23b	0.7231	ok	98	lossguide mix
+19	b023ed6	0.7234	ok	97	db-hour TE
+20	c63a864	0.7233	ok	78	40 models shallower
+21	da3d474	0.0000	timeout	120	dart ensemble
+22	e294ed3	0.7336	ok	104	t10 TE keys
+23	36b7927	0.7338	ok	118	more t10 interactions
+24	0509341	0.7336	ok	75	32 models n=200 with t10 feats
+25	1b8f464	0.7338	ok	94	32 models n=250
+26	ef2e654	0.7342	ok	95	SMOOTH 50
+27	5fc45d9	0.7348	ok	89	SMOOTH 20
+28	63e6344	0.7345	ok	97	SMOOTH 10
+29	ec0d713	0.7344	ok	109	exact-minute TEs
+30	e9aded9	0.7349	ok	111	t10 residual features
+31	c7f915b	0.7347	ok	100	reg diversity
+32	84ecfe8	0.7347	ok	97	rank averaging
+33	043f1e9	0.7340	ok	104	carrier-calendar + airport-dist TEs
+34	912ce87	0.7343	ok	97	no raw DepTime
+35	10e4b85	0.7349	ok	113	coarse time TEs
+36	6ef48ea	0.0000	timeout	120	max_bin 1024
+37	795699f	0.7351	ok	106	n=220 margin
+38	0122443	0.7350	ok	84	n=200 lr=0.06
+39	d91cfc4	0.0000	timeout	121	40 models depths 3-12
+40	05e0c20	0.7350	ok	86	36 models add depth2

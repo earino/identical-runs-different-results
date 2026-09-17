@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cf64388	0.7141	ok	5	baseline
+2	3b3ab56	0.7065	ok	5	FE v1 + ES, depth8 lr.05
+3	a16e4be	0.7220	ok	3	numeric FE, no route cats, depth6 ES50
+4	e8aa8d3	0.7206	ok	4	depth4, rest same as exp3
+5	26e720f	0.7256	ok	5	Hour categorical added
+6	0c70897	0.7169	ok	4	calendar fields as cats
+7	c9ff553	0.7264	ok	9	lr 0.03 ES100
+8	02445ce	0.7265	ok	9	min_child_weight 50
+9	2142aff	0.7265	ok	8	subsample/colsample 0.7
+10	abb99e0	0.7281	ok	9	subsample/colsample 0.7
+11	f9080b8	0.7281	ok	8	subsample/colsample 0.6
+12	b4fbbc6	0.7264	ok	10	smoothed TE features
+13	ddaf871	0.7085	ok	5	Route+RoutePair retry, strong reg
+14	34462b1	0.7332	ok	9	Carrier x Hour interaction cat
+15	d36e416	0.7213	ok	7	OriginHour+DestHour cats
+16	1b3361e	0.7294	ok	8	Hour x DOW interaction cat
+17	5544b98	0.7143	ok	6	Carrier x Month interaction cat
+18	ffb9580	0.7340	ok	43	5-seed ensemble
+19	95946aa	0.7350	ok	40	ensemble depth7
+20	025560b	0.7360	ok	36	ensemble depth8
+21	ac680d6	0.7365	ok	34	ensemble depth9
+22	f9363d5	0.7372	ok	34	ensemble depth10
+23	b7a9d9b	0.7381	ok	35	ensemble depth12
+24	384a230	0.7396	ok	41	ensemble depth16
+25	8033cd7	0.7400	ok	42	ensemble depth24
+26	1eb6a07	0.7389	ok	44	lossguide 128 leaves
+27	e7cacf9	0.7370	ok	39	mcw100 depth24
+28	21b8496	0.7397	ok	60	lr0.02 ES150
+29	7055477	0.7339	ok	35	drop Minute (simplification)
+30	81cf83a	0.7413	ok	64	8-model diverse blend
+31	506a917	0.7415	ok	90	11-model 3-config blend
+32	d67baf4	0.7415	ok	98	cat_smooth 50
+33	a211a19	0.0000	timeout	120	early stopping on AUC
+34	d197fb6	0.7391	ok	100	Carrier x DistanceBin cat
+35	0f7131d	0.7416	ok	109	gamma 0.5
+36	f920be2	0.7423	ok	99	subsample .8 colsample .6
+37	f336e97	0.7432	ok	108	subsample .9 colsample .5
+38	c39e8dd	0.7433	ok	106	subsample 1.0 colsample .4
+39	ff1c5dc	0.7412	ok	107	colsample .3
+40	304afce	0.7435	ok	111	reg_lambda 4.0

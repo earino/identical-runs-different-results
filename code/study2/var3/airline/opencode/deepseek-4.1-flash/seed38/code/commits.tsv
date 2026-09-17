@@ -1,0 +1,8 @@
+n	commit	unix_time	subject
+00	d9a3461	1789538927	baseline
+01	bcf79e7	1789539177	bagged ensemble of 30 shallow xgboost models
+02	33c5953	1789539321	add cyclical dep-time and month features to ensemble
+03	8f09c9b	1789541149	deep bagged ensemble (depth 18-22)
+04	2b4f266	1789541573	random-forest mode: 600 parallel deep trees
+05	92fa21d	1789543135	RF: subsample 0.9 colsample 0.5
+06	f786f1a	1789543242	average two complementary 300-tree forests

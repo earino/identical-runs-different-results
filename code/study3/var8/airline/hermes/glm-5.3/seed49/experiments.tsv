@@ -1,0 +1,16 @@
+n	commit	eval_auc	status	seconds	description
+1	c39afb4	0.7141	ok	4	baseline
+2	40a7ad0	0.0000	crash	1	numeric time/date features, Route, 300 trees d8
+3	aaa9b8b	0.6959	ok	6	numeric/date features, Route, 300x d8
+4	b04f885	0.7227	ok	2	numeric time feats, Minute, recency x2 m>=10, 200 d4
+5	76a6b62	0.7311	ok	2	reg_alpha=8, depth 7
+6	250377f	0.7421	ok	6	hour interactions, a4 d7 ne300
+7	c02dae1	0.7447	ok	9	half-hour Origin/Dest interactions + dist*hour, a5
+8	2dc731d	0.7456	ok	10	sin/cos depmin cyclical time features
+9	1adcb76	0.7466	ok	71	8-model hyperparameter-diverse ensemble
+10	662613e	0.7482	ok	52	feature-bagged ensemble (2 full + 8 bag-of-4)
+11	0e7baad	0.7495	ok	59	volume (congestion) features added to ensemble core
+12	41ae485	0.7506	ok	55	dest-hour volume features in core
+13	efc0ebe	0.7509	ok	71	ensemble members n_estimators 300->400
+14	8933cdd	0.7527	ok	74	base members reg_alpha=2, bagged stay 5
+15	3daa6f5	0.7532	ok	85	base members d8 a2

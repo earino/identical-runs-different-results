@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	d84ddc2	1789644634	baseline
+01	08cafbe	1789644666	feat: time features + target encoding + 300 trees w/ early stopping
+02	3926619	1789644727	feat: route TE only, no colsample drop, 800 trees lr=0.05
+03	cd13746	1789644758	feat: OOF target encoding (5-fold) for cat cols + route interaction
+04	b4a5794	1789644785	feat: capacity bump depth8 lr0.05 1500 trees
+05	eb70b7d	1789644805	feat: 5-seed bagged ensemble
+06	8882e15	1789644827	feat: 10-seed bag
+07	412117a	1789644883	feat: hour categorical + distance bins
+08	af1c231	1789644998	feat: 15-min time-of-day categorical
+09	2c648f7	1789645446	feat: schedule-density features (origin/dest x hour counts)
+10	2dd5cfa	1789645747	tune: colsample 0.7
+11	63c6a77	1789646085	feat: hyperparameter-diverse bag
+12	4394568	1789646433	feat: route distance deviation + log dist
+13	41458d7	1789646528	feat: OOF hour-interaction TEs with high smoothing
+14	0900c02	1789647373	tune: reg_lambda 2
+15	0a0f1db	1789647589	feat: origin/dest qhour queue counts
+16	e51fcf0	1789647695	feat: airport slot-share congestion features
+17	dd225d2	1789647879	feat: hour-granularity slot share
+18	54daa71	1789647990	feat: carrier hour share

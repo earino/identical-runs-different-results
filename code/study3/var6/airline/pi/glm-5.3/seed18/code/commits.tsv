@@ -1,0 +1,6 @@
+n	commit	unix_time	subject
+00	b831d9f	1789597794	baseline
+01	8275b62	1789599930	full-data 5-seed ensemble, deep+coldecorrelated, count features, fixed rounds
+02	eb2c7be	1789601965	d16 mcw1, add h2/h3-block count features
+03	a9df83d	1789602829	fix count maps: store value_counts, not raw keys (counts were all zero)
+04	54cd430	1789604110	d18, colsample 0.35, 150 rounds

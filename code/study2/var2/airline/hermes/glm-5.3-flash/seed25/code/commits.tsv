@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	024ddd7	1789543065	baseline
+01	2b84380	1789543253	add DepHour feature
+02	c1a25d2	1789543268	shallow trees + DepHour, parametrized
+03	e35b7b4	1789543322	add DepMin + cyclical sin/cos encodings
+04	2f2f84c	1789543453	add DepMinInHr, OnSlot, LogDistance
+05	1530a35	1789543467	DepHour also as categorical
+06	3fa9aa7	1789543480	default depth 4
+07	c3d2840	1789543640	add Carrier x DepHour categorical interaction
+08	3e4714a	1789543730	add DayOfWeek x DepHour interaction
+09	4f48271	1789543746	add Carrier x half-hour interaction
+10	58aab00	1789543830	add plain DepHalfHour categorical
+11	cfdfebe	1789543915	add DepQuarterHour categorical

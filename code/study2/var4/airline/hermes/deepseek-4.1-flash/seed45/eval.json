@@ -1,0 +1,188 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 45,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T22:15:02+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s45-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:53:42+00:00",
+  "wall_seconds": 2320.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 6384.7,
+  "endpoint_at_end": "ok",
+  "head": "649a23d",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 1,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7407,
+  "final_eval_auc": 0.7407,
+  "holdout_auc": 0.7409467300439999,
+  "holdout_ap": 0.7293622085472828,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.026175978307999892,
+  "generalization_gap": -0.00024673004399988763,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 9354288,
+    "tokens_in_uncached": 9354288,
+    "tokens_in_cached": 0,
+    "tokens_out": 57094,
+    "turns": null,
+    "api_calls": 136,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 6128.5,
+  "cpu_seconds_counted": 5916.9,
+  "cpu_seconds_uncounted": 2.7,
+  "cpu_seconds_exempt": 208.9,
+  "python_processes": 51,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 753,
+  "fits_counted": 719,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "4e0ca89",
+      "message": "baseline"
+    },
+    {
+      "commit": "4ab729e",
+      "message": "time features: parse c-N ordinals, dep_min/cyclical hour"
+    },
+    {
+      "commit": "5b65f21",
+      "message": "target+freq encodings for carrier/origin/dest/route (OOF on train)"
+    },
+    {
+      "commit": "165a525",
+      "message": "capacity 100 trees depth6 lr.1 subsample/colsample .8"
+    },
+    {
+      "commit": "44ded93",
+      "message": "seed-bagged ensemble of 5 xgboost models"
+    },
+    {
+      "commit": "1026959",
+      "message": "compound target encodings (carrier/origin/dest x hour, carrier_route)"
+    },
+    {
+      "commit": "99001e4",
+      "message": "add route_hour, carrier/origin/dest x dow encodings"
+    },
+    {
+      "commit": "29fd17d",
+      "message": "add dow_hour, carrier_x_origin/dest, carrier_route_hour encodings + freqs"
+    },
+    {
+      "commit": "aac6650",
+      "message": "10-seed bag"
+    },
+    {
+      "commit": "b3df8ca",
+      "message": "relative traffic share ratios + freq for all compound keys"
+    },
+    {
+      "commit": "7ea76f3",
+      "message": "ensemble diversity: 16 members over depth/colsample"
+    },
+    {
+      "commit": "6694e5c",
+      "message": "20 diverse members incl. lr/rounds variation"
+    },
+    {
+      "commit": "c21eae8",
+      "message": "10-fold OOF target encodings"
+    },
+    {
+      "commit": "dcd79ee",
+      "message": "30-member wide ensemble (depth 3-9, varied lr/rounds/colsample)"
+    },
+    {
+      "commit": "7c8573a",
+      "message": "row-subsampled members (70% each) for extra diversity"
+    },
+    {
+      "commit": "d85e00f",
+      "message": "calendar-position features: dom, dow, weekend flag"
+    },
+    {
+      "commit": "d7cc90f",
+      "message": "ablation: drop raw Origin/Dest categoricals (TE carries them)"
+    },
+    {
+      "commit": "59408dc",
+      "message": "ablation: also drop raw UniqueCarrier categorical"
+    },
+    {
+      "commit": "f316748",
+      "message": "hub/competition ratios + schedule-structure counts"
+    },
+    {
+      "commit": "541a71d",
+      "message": "heavier target-encoding smoothing (k x3)"
+    },
+    {
+      "commit": "c259792",
+      "message": "member row-subsample fraction 0.8"
+    },
+    {
+      "commit": "298d903",
+      "message": "add very deep members (depth 10/12)"
+    },
+    {
+      "commit": "649a23d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 5919.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 256.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "298d903",
+  "best_commit_eval_auc": 0.7407,
+  "best_commit_holdout_auc": 0.7409467300439999,
+  "best_commit_holdout_ap": 0.7293622085472828,
+  "best_commit_error": null,
+  "finalized_best": true
+}

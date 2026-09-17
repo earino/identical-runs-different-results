@@ -1,0 +1,19 @@
+n	commit	eval_auc	status	seconds	description
+1	3da6250	0.7141	ok	3	baseline
+2	7c6defe	0.7138	ok	3	dep clock/calendar features + early stopping
+3	8c6fca2	0.7035	ok	3	route cat + count features
+4	6dce5cb	0.7135	ok	1	traffic-volume count features
+5	56e3dbe	0.7167	ok	2	shallower model d4 n200
+6	54fc188	0.7172	ok	2	dep hour/minofday features
+7	1c714ae	0.7172	ok	5	seed-averaged bag of 5
+8	290b326	0.7274	ok	9	deep+regularized trees
+9	d970d89	0.7320	ok	17	d16 cs0.3 mcw5
+10	12ee1cf	0.7359	ok	18	carrier x hour categorical
+11	cf46f99	0.7390	ok	29	d20 mcw2 lam10
+12	950c63c	0.7400	ok	32	d28
+13	d8c797c	0.7407	ok	35	holiday/part-of-day flags
+14	1310637	0.7441	ok	34	origin-hour volume
+15	aa25707	0.7445	ok	36	dist x hour
+16	4be7291	0.7450	ok	37	airport mean stage length
+17	bf1a011	0.7453	ok	80	2-seed bag
+18	02e7381	0.7481	ok	80	dist x minofday

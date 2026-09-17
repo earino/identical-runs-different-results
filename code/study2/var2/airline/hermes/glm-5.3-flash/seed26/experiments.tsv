@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a761a49	0.7141	ok	3	baseline
+2	0551d8e	0.7178	ok	2	feat v1: cyclical dep time, parsed date cols, log distance
+3	a92ec21	0.7128	ok	4	more trees: 400 est, lr 0.06
+4	004742c	0.7211	ok	3	400 est, lr .06, mcw20, subsample .8
+5	9812d91	0.7149	ok	4	early stopping on tail 20% val split, 1200 max trees
+6	cea7350	0.7205	ok	3	full-data fit at 500 trees
+7	73c5c5c	0.0000	crash	1	target encodings (carrier/origin/dest/route/month/dow) + route cat
+8	31ca688	0.0000	crash	2	target encodings (carrier/origin/dest/route/month/dow) + route cat
+9	441fa17	0.0000	crash	1	target encodings (carrier/origin/dest/route/month/dow) + route cat
+10	06592ff	0.0000	crash	6	target encodings (carrier/origin/dest/route/month/dow) + route cat
+11	6bde5b6	0.7005	ok	5	target encodings (carrier/origin/dest/route/month/dow) + route cat
+12	add2489	0.7177	ok	4	TE m=400: carrier/origin/dest/month/dow/dep_hour, no route cat
+13	1fb8f68	0.7186	ok	4	interaction/bin features: month_hour, dow_hour, dist_bin, sched_tight, early_am
+14	e361825	0.7207	ok	5	depth8, mcw50, reg_lambda2, 500 trees
+15	b48c200	0.7189	ok	3	300 trees, lr 0.08
+16	5d4e4da	0.7206	ok	3	400 trees, lr .06, mcw10
+17	16da476	0.7215	ok	8	seed bagging: 3-model mean
+18	2386adf	0.7224	ok	14	5-model diverse ensemble
+19	e073ce2	0.7212	ok	15	add smoothed TE carrier/origin/dest (m=300) to ensemble
+20	23929fa	0.7216	ok	17	ensemble: depth6 members at 600 trees
+21	d58c573	0.7151	ok	8	airport traffic counts + dep mod5 features
+22	1c364c1	0.7224	ok	19	add depth10 member to ensemble
+23	2e02a53	0.0000	crash	11	add 2 lr-0.03 members (800 trees)
+24	fc341e1	0.7226	ok	23	add 2 lr-0.03 members (800 trees)
+25	1064d8c	0.0000	crash	19	add 2 subsample-0.6/colsample-0.5 members
+26	33e25e0	0.7233	ok	29	add 2 subsample-0.6/colsample-0.5 members
+27	dae037d	0.7239	ok	45	grow ensemble to 13 members
+28	5382725	0.7234	ok	61	grow ensemble to 17 members (bynode, gamma)
+29	e8a12df	0.7195	ok	4	solo probe: max_bin=512
+30	8671b39	0.7194	ok	45	ablation: drop sin/cos from 13-ensemble
+31	3553c82	0.7223	ok	38	13 members rebalanced to winning configs
+32	e687c31	0.7231	ok	50	add 2 lossguided members (replace 2 heavy-bag members)
+33	2fe263f	0.7235	ok	46	median aggregation of 13 members
+34	3c70ef4	0.7238	ok	57	17 members: +1 of each winning config
+35	c91d004	0.7235	ok	47	add train-quantile distance bins
+36	01f6502	0.7211	ok	4	solo probe: cat_smooth=100
+37	7a1e4d2	0.7235	ok	45	ablation: drop raw DepTime (keep dep_min/sin/cos)
+38	583e06d	0.7209	ok	49	Month/DayOfWeek as categoricals
+39	acab247	0.7263	ok	50	reg_alpha=1.0 on all ensemble members
+40	53bfb97	0.7306	ok	50	reg_alpha=3.0

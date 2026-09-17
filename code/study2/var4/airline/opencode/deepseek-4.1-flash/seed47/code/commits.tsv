@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	19317b3	1789518022	baseline
+01	a1764aa	1789518107	model: shallow regularized depth4 300 trees
+02	8b6fb45	1789518119	feat: time-of-day + weekend on regularized model
+03	cd95dfe	1789518151	model: 5-seed averaged ensemble
+04	545bf73	1789518189	feat: frequency/congestion encodings
+05	c8cc957	1789518213	model: lr0.03 600 trees with counts
+06	2e4edb7	1789518232	feat: dest-hour counts + congestion ratios
+07	c665223	1789518286	model: depth5 lr0.03 450 trees with counts
+08	1b9eec4	1789518303	model: diverse depth/seed ensemble
+09	b076bf5	1789518397	model: stronger regularization lambda5 mcw20
+10	c122c39	1789518462	model: add 2 deep heavily-regularized members
+11	3509b0c	1789518489	model: more deep + lossguide members
+12	324c826	1789518525	model: add lossguide/dart/extra members
+13	167021a	1789518640	model: drop dart member for runtime
+14	6698cfc	1789518697	model: three more deep/lossguide members
+15	689b53b	1789518840	feat: carrier-hour and weekly traffic counts
+16	530cf3c	1789519244	model: one-hot low-card cats
+17	d8a7f06	1789519312	model: one-hot incl dayofmonth
+18	ec19a5a	1789519440	model: max_cat_threshold 16 with one-hot

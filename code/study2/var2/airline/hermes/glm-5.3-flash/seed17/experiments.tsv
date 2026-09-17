@@ -1,0 +1,7 @@
+n	commit	eval_auc	status	seconds	description
+1	92329fa	0.7141	ok	4	baseline: native categoricals, 30 trees depth6
+2	07482f5	0.7121	ok	4	capacity+ES: 2000 trees lr.05 d8 mcw5 ss.8 cs.8, ES on 10% split, refit best_it
+3	9604f86	0.7032	ok	6	fixed 500 trees lr.05 d8 mcw5 ss.8 cs.8, no ES, all train
+4	d663592	0.7157	ok	2	featpack v1 (tod/cal cyclic/dist) + 100t lr.05 d6 ss.8 cs.8
+5	2478679	0.7327	ok	5	featpack v1 + carhour interaction, 320t lr.05 d8
+6	91f0e26	0.7442	ok	59	carsl30 + doy + 5-seed ensemble d9 lr.03 700t

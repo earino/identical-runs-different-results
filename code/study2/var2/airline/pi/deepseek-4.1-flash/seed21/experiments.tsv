@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	da82276	0.7141	ok	4	baseline
+2	43ba304	0.7101	ok	4	FE time+cyclical+route cats, early stop, depth7
+3	a3eedbb	0.7115	ok	3	baseline FE, 400 trees lr0.05 depth6
+4	45a4248	0.0000	crash	6	diagnostic tree curve
+5	5fa8f65	0.7157	ok	9	FE ablation A-E
+6	bd73d84	0.7170	ok	69	lr x depth x trees sweep
+7	4529096	0.7181	ok	9	count/frequency features
+8	05ac63f	0.7181	ok	18	target encoding variants
+9	641baee	0.7181	ok	66	depth x mcw sweep
+10	7171059	0.7186	ok	21	categorical subset ablation
+11	1de618b	0.7204	ok	9	network feature additions
+12	c75a0af	0.7205	ok	14	structural features L2
+13	c0a290f	0.7227	ok	14	5-model ensemble
+14	6ff0b31	0.7259	ok	14	seed stability strong config
+15	6146200	0.7338	ok	56	depth x colsample x lr sweep
+16	06c49e7	0.7408	ok	92	trees1600 depth6-7 sweep
+17	01b883d	0.7442	ok	89	trees3200 depth7-8
+18	f6a1540	0.0000	timeout	125	depth 8-10 curve
+19	c95ce00	0.7493	ok	54	depth 10-11 probe
+20	61fc6e7	0.7527	ok	51	depth 12-13 probe
+21	09c6199	0.7552	ok	39	depth 14-16 probe
+22	e14473b	0.7562	ok	44	depth 18-20 probe
+23	e01ea44	0.7562	ok	76	diverse-depth ensemble
+24	be519b1	0.7562	ok	40	depth 24-32 probe
+25	ba64563	0.0000	timeout	121	8-seed ensemble
+26	d1c3fe9	0.7588	ok	78	6-seed ensemble
+27	fe6ca8d	0.7562	ok	84	featureset variants depth20
+28	bf35405	0.7589	ok	78	diverse hyperparam ensemble
+29	dc4c55f	0.0000	timeout	120	lossguide capacity
+30	e21103e	0.7595	ok	114	combined family ensemble
+31	4fc88f9	0.0000	timeout	120	lossguide family refinement
+32	6baddd5	0.7570	ok	62	extra count features
+33	1a00366	0.7587	ok	47	regularization variants
+34	2846db0	0.7596	ok	113	strongest diverse ensemble
+35	0a07e5f	0.7586	ok	83	max_bin/gradient/leaf200
+36	b570393	0.7583	ok	56	seasonality probe
+37	27aa03a	0.7600	ok	77	leaner 4-model ensemble
+38	e553278	0.7601	ok	106	5-model max_bin ensemble
+39	e7c75c6	0.7597	ok	87	pure max_bin ensemble
+40	e04af20	0.7603	ok	101	final refined ensemble

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	3892f36	0.7141	ok	4	baseline
+2	b38bce4	0.7050	ok	9	feature eng: tod, route, carrier-route
+3	d220c6d	0.7115	ok	3	model: 400 trees lr0.05 sub/col 0.8
+4	4a0ec55	0.7125	ok	1	model: 100 trees lr0.1
+5	4a28ab2	0.7158	ok	2	model: depth4 300trees lr0.05 mcw20
+6	dd4697d	0.7156	ok	3	model: depth3 600trees lr0.05 mcw20
+7	50f889b	0.7191	ok	2	feat: hour/minute/cyclic tod
+8	92f1700	0.7008	ok	3	feat: route categorical
+9	fe6f5ac	0.7188	ok	2	feat: freq enc route/origin/dest
+10	aeff63b	0.7194	ok	3	feat: target enc carrier/origin/dest
+11	b2e9e5c	0.7163	ok	3	model: sub/col 0.8 on depth4
+12	dda5c63	0.7192	ok	3	model: L2=10 L1=1 depth4
+13	a7483d4	0.7196	ok	4	model: lr0.03 800trees depth4
+14	bf454f6	0.7186	ok	5	model: lr0.02 1500trees depth4
+15	e33d9f9	0.7190	ok	4	ablation: drop raw DepTime
+16	241f396	0.7196	ok	10	ensemble: 3 seeds depth4 lr0.03
+17	a0b5aa9	0.7183	ok	4	model: depth5 mcw50 lr0.03
+18	1b25628	0.7096	ok	4	feat: +route target encoding
+19	3890f8f	0.7196	ok	5	feat: +tod numeric
+20	8658bad	0.7152	ok	3	ablation: Origin/Dest TE only
+21	3dbc599	0.7197	ok	4	te: alpha 50
+22	2d60db8	0.7198	ok	4	te: alpha 100
+23	61058e4	0.7206	ok	5	feat: origin/dest x hour TE
+24	ed5fbb9	0.7189	ok	4	te: hour buckets of 2
+25	9561f12	0.7213	ok	5	feat: +carrier x hour TE
+26	3cd3046	0.7144	ok	5	feat: +origin/dest x dow TE
+27	27b5611	0.7212	ok	5	feat: +TE count features
+28	a839b22	0.7214	ok	16	5-fold OOF TE ensemble
+29	abb7f63	0.7136	ok	15	OOF + route TE
+30	682fd00	0.7213	ok	15	OOF TE alpha 30
+31	0527076	0.7147	ok	16	OOF + dow TEs
+32	ce79270	0.7216	ok	29	10-fold OOF TE
+33	914f821	0.7189	ok	30	OOF + carrier x origin TE
+34	72501d1	0.7233	ok	31	feat: arrival-time + block time
+35	1ea3caa	0.7233	ok	36	feat: +arrival-hour TEs
+36	569b7c7	0.7232	ok	31	feat: +raw tod/arr hour
+37	529d945	0.7090	ok	33	OOF + month TEs
+38	d9182aa	0.7223	ok	28	model: depth5 mcw50
+39	0ee3d50	0.7233	ok	39	model: lr0.02 1200trees
+40	6b78293	0.7233	ok	56	ensemble: 2 seeds per fold

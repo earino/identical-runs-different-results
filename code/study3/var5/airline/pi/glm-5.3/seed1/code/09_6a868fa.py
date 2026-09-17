@@ -1,0 +1,124 @@
+"""XGBoost binary classifier — airline delay. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+
+# --- features -----------------------------------------------------------------
+CAT_COLS = ["UniqueCarrier", "Origin", "Dest"]
+cat_levels = {c: pd.Index(sorted(train[c].dropna().unique())) for c in CAT_COLS}
+_route_cnt = (train["Origin"].astype(str) + "_" + train["Dest"].astype(str)).value_counts()
+
+
+def _cnum(s: pd.Series) -> pd.Series:
+    """'c-<n>' string column -> float n."""
+    return pd.to_numeric(s.astype(str).str.replace("c-", "", regex=False), errors="coerce")
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    # ALL feature engineering belongs here: predict_proba() calls prepare() on unseen rows, so anything you
+    # compute on `train`/`evald` outside this function will NOT be applied to the hidden holdout.
+    X = pd.DataFrame(index=df.index)
+    month = _cnum(df["Month"])
+    day = _cnum(df["DayofMonth"])
+    dow = _cnum(df["DayOfWeek"])
+    X["Month"] = month
+    X["DayofMonth"] = day
+    X["DayOfWeek"] = dow
+    X["DayOfYear"] = (month - 1) * 31 + day
+    dep = pd.to_numeric(df["DepTime"], errors="coerce")
+    hour = (dep // 100).astype(float)
+    minute = dep % 100
+    X["Hour"] = hour
+    X["Minute"] = minute
+    X["DepMinutes"] = hour * 60 + minute
+    X["Distance"] = pd.to_numeric(df["Distance"], errors="coerce")
+    X["LogDistance"] = np.log1p(X["Distance"])
+    X["RouteCnt"] = (df["Origin"].astype(str) + "_" + df["Dest"].astype(str)).map(_route_cnt).fillna(0.0)
+    for c in CAT_COLS:
+        X[c] = df[c].values
+        X[c] = pd.Categorical(X[c], categories=cat_levels[c])  # unseen levels -> NaN
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+# --- model --------------------------------------------------------------------
+rng = np.random.RandomState(SEED)
+idx = rng.permutation(len(train))
+n_va = int(0.2 * len(train))
+X_all = prepare(train)
+y_all = to_y(train)
+t0 = time.time()
+
+HP_ES = dict(
+    max_depth=20,
+    learning_rate=0.03,
+    subsample=0.8,
+    colsample_bytree=0.7,
+    tree_method="hist",
+    enable_categorical=True,
+    early_stopping_rounds=50,
+    n_jobs=N_JOBS,
+)
+
+# two complementary early-stopping runs to stabilise the tree count:
+# fold A validates on a 20% slice, fold B on the complementary 80% slice
+fA = xgb.XGBClassifier(n_estimators=600, random_state=SEED, **HP_ES)
+fA.fit(X_all.iloc[idx[n_va:]], y_all[idx[n_va:]],
+       eval_set=[(X_all.iloc[idx[:n_va]], y_all[idx[:n_va]])], verbose=False)
+fB = xgb.XGBClassifier(n_estimators=600, random_state=SEED, **HP_ES)
+fB.fit(X_all.iloc[idx[:n_va]], y_all[idx[:n_va]],
+       eval_set=[(X_all.iloc[idx[n_va:]], y_all[idx[n_va:]])], verbose=False)
+best_iter = int(round((fA.best_iteration + fB.best_iteration) / 2))
+print(f"ES iters: {fA.best_iteration} / {fB.best_iteration} -> {best_iter}")
+
+# refit an ENSEMBLE on the FULL training set with the averaged tree count
+HP = dict(
+    max_depth=20,
+    learning_rate=0.03,
+    subsample=0.8,
+    colsample_bytree=0.7,
+    tree_method="hist",
+    enable_categorical=True,
+    n_jobs=N_JOBS,
+)
+members = []
+for seed in (1, 2, 3):
+    m = xgb.XGBClassifier(n_estimators=best_iter, random_state=seed, **HP)
+    m.fit(X_all, y_all, verbose=False)
+    members.append(m)
+print(f"Refit time: {time.time() - t0:.1f}s ({len(members)} members)")
+model = members[0]
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    X = prepare(df)
+    return np.mean([m.predict_proba(X)[:, 1] for m in members], axis=0)
+
+
+t0 = time.time()
+eval_auc = roc_auc_score(to_y(evald), predict_proba(evald))
+print(f"Eval time: {time.time() - t0:.1f}s")
+print(f"Eval AUC: {eval_auc:.4f}")

@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	c7ae6cf	1789526681	baseline
+01	ad243ab	1789526750	exp5: shallower regularized 200x depth4 lr0.08
+02	55010a3	1789526779	exp8: 600 trees lr0.03 depth4
+03	efd0564	1789526801	exp10: reg_lambda5 reg_alpha0.5
+04	ff404b2	1789526812	exp11: 5-seed ensemble
+05	63f0b07	1789526832	exp12: freq encoding origin/dest/carrier/route
+06	39599e3	1789526854	exp13: pairwise freq features
+07	35c47e5	1789526919	exp16: normalized congestion ratio features
+08	2623094	1789526972	exp18: add carrier_hour ratio only
+09	5323004	1789526992	exp19: diverse-depth ensemble (4x d4, 2x d3, 2x d5)
+10	016a5ed	1789527021	exp20: route-share ratios
+11	ba5a86b	1789527082	exp21: 12-model diverse ensemble
+12	2400e69	1789527184	exp24: 18-model ensemble
+13	2571c03	1789527408	exp27: mcw20 lambda10
+14	9e7ff42	1789527466	exp28: mcw40 lambda20 alpha1
+15	cd7220f	1789527522	exp29: mcw80 lambda40 alpha2 gamma1
+16	e56a85f	1789527637	exp31: 900 trees lr0.02 with strong reg
+17	3fbd938	1789527729	exp32: estimated arrival time features
+18	14f0740	1789527824	exp33: arrival-hour congestion ratios
+19	77b0724	1789528017	exp35: carrier arrival-hour only
+20	27c6d4a	1789528115	exp36: colsample_bynode0.7
+21	329002a	1789528530	exp40: 2-hour arrival congestion ratios

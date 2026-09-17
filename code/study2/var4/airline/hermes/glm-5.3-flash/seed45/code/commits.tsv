@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	a975667	1789509960	baseline
+01	d4d3fcb	1789510092	FE: cyclical time, TE with OOF + smoothing, ES
+02	61ca68f	1789510168	freq encodings, lr=0.03 depth=7 ES150
+03	3c09b04	1789510694	reg_lambda 3
+04	003827a	1789510710	reg_lambda 6
+05	faef002	1789510725	reg_lambda 12
+06	bc9ae8d	1789510741	reg_lambda 24
+07	6725010	1789510763	reg_lambda 48
+08	0c02983	1789510783	reg_lambda 96
+09	8df0bc3	1789510807	reg_lambda 192
+10	14c3048	1789510832	reg_lambda 384
+11	27c55ca	1789510932	colsample 0.6
+12	9ae6986	1789510957	colsample 0.4
+13	075a642	1789510990	colsample 0.3
+14	2eebd23	1789511021	colsample 0.2

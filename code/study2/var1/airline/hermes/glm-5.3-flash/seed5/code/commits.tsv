@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	180a269	1789508112	baseline
+01	5de46a2	1789508235	exp2: bigger model, lr 0.05, depth 8, early stopping on 10% val
+02	75afd75	1789509030	exp4: full-train shrunk TE(m=100) + dephour, lossguide 128 leaves, col 0.75
+03	fae02b5	1789509326	exp5: +joint TE cr/hr or/hr, route_cnt, n=1600
+04	0cf21b4	1789509645	exp8: +carrier x dephour TE (m500), n1600
+05	71725a9	1789510314	exp9: +qslot, lr 0.03 n3000, ml128
+06	60d351e	1789510577	exp10: max_bin 512
+07	613239b	1789511557	exp11: 3-seed ensemble (42,0,2)
+08	1a68949	1789512739	exp14: +hoursin/hourcos cyclical time feats
+09	a875791	1789512861	exp15: +joint TE cell counts

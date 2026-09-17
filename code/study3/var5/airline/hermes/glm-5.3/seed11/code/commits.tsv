@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	eefb276	1789631521	baseline
+01	78bb0cd	1789631584	cyclical calendar + dep-time features, 300 trees
+02	10820c7	1789631815	hyperparams: depth8 lr0.05 600 trees subsample0.8
+03	305057c	1789631916	depth10, 1000 rounds
+04	c426643	1789632237	ensemble of 3 XGBs (depth 8/10/12), avg probs
+05	38dd138	1789632467	frequency encoding carrier/origin/dest/route on ensemble
+06	863a2db	1789632558	airport-hour congestion counts
+07	5ca7fdb	1789632662	richer congestion features: OriginDOW, OriginHourDOW, CarrierHour, OriginHM
+08	a15c600	1789632811	queue features: +-1h dep/arr rolling counts, relative congestion
+09	2e60518	1789632918	OriginMonthHour, RouteHour, CarrierRoute congestion counts
+10	a7279a1	1789633029	DestHourDOW + CarrierDOW counts
+11	1813851	1789633491	multi-scale queue windows 30m/1h/2h + exact bucket
+12	32815e0	1789634104	3 XGBs with colsample 0.5-0.6 for diversity
+13	96a2f97	1789634209	min_child_weight 1 with colsample diversity
+14	404395f	1789634315	queue x hour interaction features
+15	d7d2da9	1789634464	volume/distance x hour interactions
+16	2fb623e	1789634585	CarrierOriginHour + MonthOriginHour counts
+17	42368c8	1789635209	queue vs hour-typical ratios
+18	4f8b24e	1789635376	ratio features for 30m and 2h windows

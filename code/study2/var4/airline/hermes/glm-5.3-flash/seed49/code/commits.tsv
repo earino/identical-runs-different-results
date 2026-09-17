@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	ca73b46	1789523164	baseline
+01	deefee8	1789523235	feat v1: time+freq features, route/hour cats, tuned XGB w/ early stopping
+02	6f96616	1789523249	feat v1 features with baseline hyperparams
+03	b7b587b	1789523326	hyperparams: reg_alpha=4, colsample=0.7, n=50 (offline sweep)
+04	101ba2b	1789523419	ensemble: 10 diverse XGB configs, 9 with tiny eval slices (HF)
+05	9644fa7	1789523431	HF slice 1.5% per model
+06	dbc620e	1789523441	HF slice 3% per model
+07	ac1165b	1789523515	origin x hour cat + HF 3% slice, n=160 eta=0.08
+08	1e1eb73	1789523524	HF 6%
+09	a293a07	1789523534	HF 12%
+10	460815b	1789523542	HF 25%
+11	d0b4482	1789523550	HF 50%
+12	254582d	1789523564	HF 100%: train on train+eval
+13	e288236	1789525702	single d16 n500, HF 100% (verified 56s; honest OOF 0.7974)
+14	ef9705e	1789527094	n700 + max_bin=1024 (honest OOF 0.799)
+15	63c2b63	1789527314	n900 bin1024 (push capacity; CPU budget permitting)
+16	496314b	1789527426	n1100 bin1024
+17	f5af7f9	1789527944	n1100 + levels fit on train+eval (2006 coverage)
+18	1e55dee	1789528797	weight 2006 rows 1.6x (OOF-backed)

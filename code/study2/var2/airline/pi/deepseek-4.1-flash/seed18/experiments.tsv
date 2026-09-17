@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	71067d4	0.7141	ok	3	baseline
+2	43a1b6d	0.7119	ok	4	400 trees lr.05 depth6 subsample
+3	eb2332d	0.7133	ok	1	calendar + deptime numeric features
+4	2b93f4a	0.7127	ok	1	calendar + deptime numeric features
+5	dcb1456	0.7042	ok	1	target encoding carrier/origin/dest/route
+6	9525560	0.7163	ok	2	depth4 200 trees lr.05 regularized
+7	71acd85	0.7143	ok	2	depth5 400 trees lr.05 mcw10
+8	3e652c0	0.7151	ok	2	depth4 500 trees lr.05
+9	98883b0	0.7045	ok	2	add route categorical
+10	471454b	0.7159	ok	2	add dep_tod + is_weekend
+11	fbeea3e	0.0000	crash	1	ablation drop Origin Dest
+12	288dd67	0.7002	ok	2	ablation drop Origin Dest
+13	939ed0d	0.7167	ok	2	frequency encoding origin/dest/route
+14	d099011	0.7144	ok	3	depth5 400 with freq features
+15	d57cd1c	0.7161	ok	3	OOF target encoding carrier/origin/dest/route
+16	a34017d	0.7173	ok	5	3-model xgboost ensemble
+17	a19c3f7	0.7177	ok	6	5-model ensemble add depth3 depth6
+18	39b8c46	0.7178	ok	6	carrier/origin-carrier/route-carrier freq
+19	bb86f64	0.7180	ok	11	8-model ensemble
+20	a00767d	0.7200	ok	11	add day_of_year
+21	e41799f	0.7200	ok	11	add dow_n is_weekend
+22	4860887	0.7203	ok	10	add holiday proximity
+23	b51c2c9	0.7203	ok	50	add DART member
+24	63e5400	0.7213	ok	11	origin/dest/carrier x hour freq
+25	4dc0568	0.7205	ok	11	route-hour + origin/dest-dow freq
+26	4206796	0.7227	ok	11	hour share ratio features
+27	d022399	0.7230	ok	12	more ratio features
+28	903e2c8	0.7229	ok	14	main member depth5
+29	b3825d2	0.7226	ok	13	national hour share features
+30	830f6c8	0.7228	ok	20	dep_hour categorical
+31	79160a8	0.7224	ok	13	origin/dest/carrier x month freq
+32	a772e22	0.7231	ok	13	airport HHI/ncarriers
+33	1f88580	0.7227	ok	12	max_bin 512
+34	a1bac67	0.7230	ok	13	rank-average ensemble
+35	c95240c	0.7229	ok	14	lower lr more trees base members
+36	18c0dc9	0.7228	ok	14	dep_tod + is_weekend on rich features
+37	a5caacd	0.7231	ok	13	airport HHI/ncarriers
+38	9dac701	0.7231	ok	24	15-model ensemble
+39	0efc6ac	0.7236	ok	14	carrier-at-airport-hour share
+40	93d109b	0.7173	ok	14	route-hour conditional shares

@@ -1,0 +1,23 @@
+n	commit	eval_auc	status	seconds	description
+1	261c1ca	0.7141	ok	4	baseline
+2	e6656d2	0.0000	crash	5	FE v1: dep-time features, numeric dates, ES + full retrain
+3	7ebee21	0.7232	ok	7	FE v1 fixed: dep-time features, numeric dates, ES + full retrain
+4	7a2d943	0.7212	ok	9	target encoding carrier/origin/dest/route (OOF on train rows)
+5	7ebee21	0.7232	ok	7	noop check after reset
+6	7943fd3	0.0000	crash	1	Route (Origin_Dest) as native categorical
+7	51d59ae	0.7127	ok	3	Route (Origin_Dest) native categorical, fixed
+8	dfc159a	0.7468	ok	50	OOF TE (route/origin/dest x hour) + congestion counts + cs0.4 lr0.05 d10 4-seed ensemble
+9	9b35a38	0.7587	ok	85	A15+rh/oh TEs, d20 mcw1 cs0.3, 4-seed ensemble
+10	8906077	0.7583	ok	98	reg_alpha=1.0 L1 on TE-heavy features
+11	4084f29	0.7587	ok	81	A15+rh/oh + dhour + chour TEs
+12	ba49173	0.7564	ok	93	seasonality: day-of-year and month cyclic features
+13	0c27b9d	0.7585	ok	79	congestion counts at 15/30-min bucket resolution
+14	82ce7cd	0.7587	ok	88	add route+origin x 30min TEs (3 scales)
+15	0aa1b6b	0.7579	ok	89	10-fold OOF TE (was 5-fold)
+16	c4565c3	0.7590	ok	82	subsample=0.9
+17	cfa8f53	0.7595	ok	81	subsample=1.0
+18	56beecd	0.7594	ok	78	early-stopping split 90/10 (was 80/20)
+19	0e3880f	0.7588	ok	72	colsample=0.35 (with sub=1.0)
+20	1c33973	0.7599	ok	94	5-seed ensemble (was 4)
+21	2a99caa	0.7596	ok	107	2nd harmonic (12h) dep-time cyclic features
+22	ebecc69	0.7600	ok	108	6-seed ensemble (was 5)

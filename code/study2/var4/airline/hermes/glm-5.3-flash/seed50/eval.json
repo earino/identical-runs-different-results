@@ -1,0 +1,192 @@
+{
+  "harness": "hermes",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 50,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:26:27+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-glm-5.3-flash-s50-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T04:29:10+00:00",
+  "wall_seconds": 3763.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 9739.7,
+  "endpoint_at_end": "ok",
+  "head": "9326ee0",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7433,
+  "final_eval_auc": 0.7433,
+  "holdout_auc": 0.742823205964,
+  "holdout_ap": 0.7316356583246009,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.028052454227999957,
+  "generalization_gap": 0.0004767940359999834,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 21835873,
+    "tokens_in_uncached": 133025,
+    "tokens_in_cached": 21702848,
+    "tokens_out": 137144,
+    "turns": null,
+    "api_calls": 210,
+    "method": "cumulative-max",
+    "cost_usd": 0.7396,
+    "cached_share": 0.994
+  },
+  "cpu_seconds_python": 9463.5,
+  "cpu_seconds_counted": 9190.9,
+  "cpu_seconds_uncounted": 1.0,
+  "cpu_seconds_exempt": 271.6,
+  "python_processes": 111,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 885,
+  "fits_counted": 866,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "0442994",
+      "message": "baseline"
+    },
+    {
+      "commit": "beeaaa0",
+      "message": "v2: interaction cats Origin/Carrier/Dest x hour, d5 n150 mcw20 l50 (probe 0.7216)"
+    },
+    {
+      "commit": "9648ba0",
+      "message": "v3: +DOW_hour, +Orig_distblock, l200, colsample_bynode 0.8 (probe 0.7251)"
+    },
+    {
+      "commit": "ee23af5",
+      "message": "v4: +dist_block x hour interaction (probe 0.7266)"
+    },
+    {
+      "commit": "911c671",
+      "message": "v5: +Car_dist +DOW_dist (8 interactions, probe 0.7277)"
+    },
+    {
+      "commit": "4c28621",
+      "message": "v6: ensemble d5-l200 + d8-m50-l30 (matched probe 0.7285 vs 0.7277)"
+    },
+    {
+      "commit": "b77c135",
+      "message": "v7: drop Month categorical (2005 seasonality anti-transfers; probe 0.7287 solo, 0.7296 ens)"
+    },
+    {
+      "commit": "8b1fdcb",
+      "message": "v8: 6-model feature/capacity-diverse ensemble (probe 0.7344)"
+    },
+    {
+      "commit": "92c039f",
+      "message": "v9: +Dest_dist interaction, +carrier/origin thematic members (probe 0.7343-0.7344)"
+    },
+    {
+      "commit": "f2cd683",
+      "message": "v10-fix: Origin x 20-min block + dup-column fix (probe 0.7364)"
+    },
+    {
+      "commit": "1fa7aee",
+      "message": "final"
+    },
+    {
+      "commit": "405d499",
+      "message": "v11: +DB_t20 +Car_t30 features (probe 0.7374)"
+    },
+    {
+      "commit": "2848268",
+      "message": "v13: subset members get more trees (n200/n150)"
+    },
+    {
+      "commit": "8bb0484",
+      "message": "v15: subset members n300/n200"
+    },
+    {
+      "commit": "c5f4fbd",
+      "message": "v16: subset members n400/n250"
+    },
+    {
+      "commit": "a116eaf",
+      "message": "v18: full-set members slow-lr (0.05, n300/n200)"
+    },
+    {
+      "commit": "6dc895d",
+      "message": "v25: heavier lambda on slow full members (400/60)"
+    },
+    {
+      "commit": "f51081d",
+      "message": "v26: lambda 800/120 on slow full members"
+    },
+    {
+      "commit": "ef1198d",
+      "message": "v28: +2 slow-heavy subset members"
+    },
+    {
+      "commit": "4c7754e",
+      "message": "v29: +slow-heavy hour member"
+    },
+    {
+      "commit": "04b24fe",
+      "message": "v36: fast full members (n300/n200, l800/120 kept)"
+    },
+    {
+      "commit": "2a72081",
+      "message": "v39: subset members n600/n350"
+    },
+    {
+      "commit": "f74d91e",
+      "message": "v40: subset members n800/n450 (final experiment)"
+    },
+    {
+      "commit": "9326ee0",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 9191.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 276.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f74d91e",
+  "best_commit_eval_auc": 0.7433,
+  "best_commit_holdout_auc": 0.742823205964,
+  "best_commit_holdout_ap": 0.7316356583246009,
+  "best_commit_error": null,
+  "finalized_best": true
+}

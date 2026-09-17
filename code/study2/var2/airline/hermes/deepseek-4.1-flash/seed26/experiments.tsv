@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	cdc7906	0.7141	ok	7	baseline
+2	4393cc3	0.7127	ok	9	dep time min-of-day + hour
+3	ec832bc	0.7083	ok	19	n_estimators 300 (baseline is 30, underfit)
+4	8c8313f	0.7159	ok	2	regularized shallow model, many trees
+5	596f2f0	0.7165	ok	6	OOF target+freq encodings carrier/origin/dest/route
+6	9c7bc34	0.7150	ok	4	shallower+stronger reg: depth3 mcw20 800t
+7	53a54ab	0.7153	ok	7	lower lr 0.03, 1000 trees, depth4
+8	3d3da94	0.7169	ok	7	depth6 + heavy reg (mcw50 col.6 l2=5 l1=1)
+9	0b920d2	0.7181	ok	26	5-seed bagged ensemble of best config
+10	60b89b4	0.7229	ok	33	extra encodings: hour,month,dow,congestion pairs
+11	356881e	0.0000	crash	1	prune neutral keys (carrier/dest/route/dow/carrier_hour)
+12	01cc527	0.7239	ok	27	prune neutral keys (carrier/dest/route/dow/carrier_hour)
+13	af9d7db	0.7295	ok	32	add origin/dest_month, origin_dow, route_hour encodings
+14	b8d70ac	0.7401	ok	43	route_month/route_dow/route_tod30 encodings
+15	16b13b5	0.7467	ok	39	finer/explicit airport-slot encodings
+16	c346f30	0.7462	ok	48	finer slot + 3-way route slot combos
+17	fe191be	0.7470	ok	47	slot-vs-coarser deviation features
+18	c417102	0.7427	ok	57	route x exact-departure-time and carrier x time encodings
+19	0ce4638	0.7466	ok	68	hp re-probe for enlarged feature space
+20	bc9b8b3	0.7475	ok	51	normalised schedule-share ratio features
+21	7da5bd8	0.7475	ok	53	week-of-year seasonality encodings (woy, route_woy, origin_woy)
+22	33b131a	0.7475	ok	45	prune redundant month/dow pair keys
+23	19c6795	0.7477	ok	49	structurally diverse 6-model ensemble
+24	8338aed	0.7475	ok	52	additional shrinkage levels for slot encodings
+25	7add21a	0.7479	ok	72	wider ensemble: 3 configs x 3 seeds
+26	cd158f5	0.7461	ok	72	10-fold OOF encodings (less label leakage in train features)
+27	2d74c56	0.7477	ok	85	lossguide (leaf-wise) ensemble member
+28	172097c	0.7484	ok	83	distance-bucket x time-slot encodings
+29	a3e4b93	0.7500	ok	79	calendar/holiday raw features
+30	2d284de	0.7498	ok	82	finer calendar features (window id, weekend, month edges)
+31	f45e4cf	0.7500	ok	83	holiday-window x slot target encoding
+32	9a711d5	0.7501	ok	81	stronger regularisation probe (lambda20, gamma1)
+33	99d650f	0.7460	ok	68	prune redundant route_tod15/route_hour
+34	2d4a638	0.7520	ok	83	clock-face schedule features
+35	7e371d6	0.7528	ok	82	finer round-departure flags
+36	57cac7f	0.7528	ok	87	pure time-of-day TEs (tod15, tod5)
+37	691f319	0.7537	ok	84	cyclic minute-of-hour + minute bucket
+38	402f30d	0.7540	ok	84	minute bucket + daily cycle sin/cos
+39	62e3bbf	0.7535	ok	91	annual and weekly cyclic features
+40	173ed76	0.7545	ok	89	minute-of-hour target encoding key

@@ -1,0 +1,140 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 9,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T03:11:05+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s9-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T04:46:04+00:00",
+  "wall_seconds": 5699.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 18313.3,
+  "endpoint_at_end": "ok",
+  "head": "a295c88",
+  "n_commits": 10,
+  "n_experiments": 22,
+  "n_ok": 22,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7427,
+  "final_eval_auc": 0.7427,
+  "holdout_auc": 0.7428568093560001,
+  "holdout_ap": 0.7330723630909785,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.02808605762000005,
+  "generalization_gap": -0.00015680935600004275,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10274515,
+    "tokens_in_uncached": 10274515,
+    "tokens_in_cached": 0,
+    "tokens_out": 114315,
+    "turns": null,
+    "api_calls": 117,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 18122.2,
+  "cpu_seconds_counted": 3961.8,
+  "cpu_seconds_uncounted": 13578.1,
+  "cpu_seconds_exempt": 582.2,
+  "python_processes": 193,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 285,
+  "fits_counted": 92,
+  "fits_uncounted": 183,
+  "commits": [
+    {
+      "commit": "2051860",
+      "message": "baseline"
+    },
+    {
+      "commit": "5aa70c7",
+      "message": "time-of-day + cyclic features, depth3"
+    },
+    {
+      "commit": "6dcf643",
+      "message": "carrier x hour interaction, depth4 mcw20 eta.05 n2000"
+    },
+    {
+      "commit": "bab83bc",
+      "message": "rank-averaged ensemble of 3 xgboost members"
+    },
+    {
+      "commit": "bbd5c32",
+      "message": "5-member ensemble, carrier x hour/bucket/distance features"
+    },
+    {
+      "commit": "510d5f7",
+      "message": "hdist feature, lower-lr members"
+    },
+    {
+      "commit": "6788b58",
+      "message": "prob-averaging + 5th member"
+    },
+    {
+      "commit": "0e4aaa2",
+      "message": "e.04 retune: same strength, fewer trees"
+    },
+    {
+      "commit": "24f214d",
+      "message": "more rounds for strongest members"
+    },
+    {
+      "commit": "06302b5",
+      "message": "num_parallel_tree=2 members"
+    },
+    {
+      "commit": "a295c88",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17539.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 191.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "06302b5",
+  "best_commit_eval_auc": 0.7427,
+  "best_commit_holdout_auc": 0.7428568093560001,
+  "best_commit_holdout_ap": 0.7330723630909785,
+  "best_commit_error": null,
+  "finalized_best": true
+}

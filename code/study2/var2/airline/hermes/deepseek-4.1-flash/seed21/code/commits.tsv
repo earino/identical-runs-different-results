@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	6db92ac	1789522823	baseline
+01	6e705aa	1789523144	engineered time/calendar features, shallow trees (d3, 600 trees)
+02	eec59c9	1789523162	add out-of-fold airport x scheduled-hour target encoding
+03	c58f517	1789523513	target-encode airport x 30-min bucket instead of hourly
+04	6377037	1789523754	add carrier x 30-min-bucket target encoding
+05	0fbeeb3	1789523852	finer target-encoding bucket: 15 minutes
+06	f4a86c3	1789524011	add carrier x origin x 15min-bucket target encoding
+07	79ed6e0	1789524158	add carrier x dest x 15min-bucket target encoding
+08	87ff46e	1789524521	add carrier x origin x dest x 15min-bucket target encoding (flight-slot rate)
+09	342de1c	1789525133	column subsampling (colsample_bytree=0.5)
+10	492715f	1789525144	bag of 8 XGBoost models averaged
+11	0ad7799	1789526715	3 out-of-fold splits instead of 5
+12	9f7eb23	1789526737	add 30-min-bucket duplicates of the carrier x airport encodings
+13	b19c2b4	1789527116	2 out-of-fold splits
+14	ce9c46a	1789528205	depth 4 bag members
+15	f047709	1789528285	blend 2 non-rate-table members into the bag
+16	3e2d0ab	1789528318	4 varied non-rate-table members
+17	8fbb16f	1789528355	12 rate-table members
+18	d14a858	1789528460	300 trees per ensemble member (cheaper members)
+19	37d4964	1789528539	up-weight the decorrelated plain members
+20	90108a6	1789528874	reg_alpha 1.0
+21	fb86aea	1789528917	reg_alpha 5.0
+22	b6a3ba4	1789528995	depth 5 members with L1

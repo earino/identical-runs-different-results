@@ -1,0 +1,21 @@
+n	commit	eval_auc	status	seconds	description
+1	e9ce7c0	0.7141	ok	5	baseline
+2	5fe313b	0.0000	crash	1	FE overhaul + ES/refit
+3	bdbca4e	0.7116	ok	6	FE overhaul + ES/refit (fixed ES kwarg)
+4	eee087e	0.7292	ok	15	d7 cs.25 TE+sc+hour ES-on-eval
+5	7ef7998	0.7511	ok	35	d24 cs.3 lr.02 single
+6	aea65b2	0.7527	ok	32	onehot32 on d24 lr.02
+7	647dbea	0.7537	ok	73	ens3 fixed250 oh32
+8	645c894	0.7543	ok	95	ens3 + rf4 member
+9	637b30e	0.7503	ok	108	OOF-TE + ens4
+10	30a759f	0.7540	ok	111	multi-scale TE
+11	e394b8c	0.7548	ok	103	ens: 2 boost + 2 rf
+12	050b1b4	0.7545	ok	98	2 boost + rf4 + rf8
+13	c59cd2f	0.7549	ok	102	rank averaging
+14	5d8b5d5	0.7541	ok	104	5-member ensemble
+15	fa1934c	0.0000	timeout	120	5 members + rank avg
+16	5699f29	0.7550	ok	93	trimmed 4-member ens
+17	d3a9f61	0.7547	ok	92	TE m=50
+18	c96d522	0.7548	ok	100	TE heavy smoothing
+19	4bc1b7e	0.7536	ok	103	2 boost + 3 rf
+20	195f282	0.0000	timeout	128	2 boost + 3 rf (npt4)

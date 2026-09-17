@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	29b50a0	0.7141	ok	4	baseline
+2	c48449d	0.7089	ok	2	time+route features
+3	156b710	0.7115	ok	4	capacity 400 trees lr .05
+4	1e191c2	0.7098	ok	4	early stopping lr .05
+5	8852ffa	0.7132	ok	2	baseline + hour features
+6	830bd26	0.7155	ok	2	depth4 150 trees
+7	fca57c6	0.7160	ok	3	depth4 400 trees lr.05
+8	5600ea6	0.7158	ok	2	count features
+9	f0c1cf2	0.7160	ok	3	OOF target encoding
+10	adb3442	0.7170	ok	8	5-seed bag
+11	ec5a74c	0.7174	ok	13	hetero 8-member bag
+12	46e7bc9	0.7173	ok	26	16-member hetero bag
+13	46feae9	0.7100	ok	4	depth6 mcw20 lambda5
+14	33a1a5d	0.7177	ok	12	bag minus DayofMonth
+15	8c01c62	0.7211	ok	11	bag minus DayofMonth+Month
+16	b9fdd77	0.7056	ok	9	bag minus month/doy/origin/dest
+17	d0c8f82	0.7232	ok	13	best + hour features
+18	65040c1	0.7254	ok	13	best + congestion counts
+19	8ce7393	0.7234	ok	16	more count + share features
+20	f9b68ca	0.7253	ok	22	12-member bag
+21	e28a67c	0.7255	ok	13	arrival-hour congestion
+22	04464de	0.7253	ok	30	16 depth3-5 members
+23	084c288	0.7186	ok	25	airport x hour categoricals
+24	f324e82	0.7257	ok	14	dep_frac feature
+25	8730d80	0.7257	ok	12	mcw5 lambda2
+26	f2c91ab	0.7253	ok	12	peak season flag
+27	ba50542	0.7256	ok	12	dep_minutes
+28	aa600e3	0.7257	ok	14	rev route + hubs
+29	6547d53	0.7234	ok	12	max_cat_threshold 8
+30	8831d34	0.0000	crash	1	route-hour + carrier-route density
+31	a4be2bd	0.7239	ok	14	route-hour + carrier-route density
+32	d1dc408	0.7278	ok	23	bag + lossguide members
+33	12b9851	0.7283	ok	33	16-member mixed-shape bag
+34	8398983	0.7281	ok	42	20-member bag, bin diversity
+35	10ce9f1	0.0000	timeout	121	bag + DART members
+36	1c14e10	0.7278	ok	41	20-member shape-diverse bag
+37	a25a179	0.7289	ok	39	arrival congestion v2
+38	c5520ad	0.7283	ok	43	12 depthwise + 8 lossguide
+39	40425aa	0.7291	ok	37	dest departures at arrival hour
+40	64685f4	0.7296	ok	37	dest arrival fraction

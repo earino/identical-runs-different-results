@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	06dd032	1789505053	baseline
+01	3e9f032	1789505103	dep-hour/min/tod features + 400 trees lr0.05
+02	369bb95	1789505210	drop raw DepTime, keep hour/min/tod
+03	7f8f5e8	1789505222	peak-hour congestion counts (origin/dest/carrier x hour)
+04	e86c38e	1789505325	inbound-arrival congestion + airport movements per hour
+05	5b0e159	1789505371	diverse 4-model subsampled ensemble
+06	17991c0	1789505395	previous-hour congestion at origin
+07	bcca0d4	1789505416	lag 1-3 congestion for origin departures/inbound and dest departures
+08	69b921b	1789505466	lags up to 6
+09	68bae90	1789505533	6-member diverse ensemble
+10	03e4fd6	1789505589	lags 1-12 (full earlier-day profile)
+11	99869ef	1789505645	lead 1-12 features (symmetric daily profile)
+12	7582f7d	1789505695	carrier daily traffic profile (lag/lead)
+13	5f49718	1789505836	holiday proximity features
+14	e6a9fee	1789505899	ablation: drop destination-side daily profile
+15	9b9785c	1789506026	refactor prepare keys + drop raw Origin/Dest categoricals
+16	1440292	1789506081	also drop DayofMonth categorical
+17	b54f9ad	1789506136	drop Month cat, add numeric + cyclical month
+18	3f1808c	1789506188	drop DayOfWeek cat, add numeric/cyclical/weekend
+19	9b62cb4	1789506293	7-member ensemble with deeper members
+20	0d20b40	1789506359	deep ensemble (depths 6-12)
+21	3cfd021	1789506448	very deep ensemble (depths 8-14)

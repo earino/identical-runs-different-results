@@ -1,0 +1,23 @@
+n	commit	unix_time	subject
+00	0442994	1789529187	baseline
+01	beeaaa0	1789529725	v2: interaction cats Origin/Carrier/Dest x hour, d5 n150 mcw20 l50 (probe 0.7216)
+02	9648ba0	1789529886	v3: +DOW_hour, +Orig_distblock, l200, colsample_bynode 0.8 (probe 0.7251)
+03	ee23af5	1789529947	v4: +dist_block x hour interaction (probe 0.7266)
+04	911c671	1789530049	v5: +Car_dist +DOW_dist (8 interactions, probe 0.7277)
+05	4c28621	1789530153	v6: ensemble d5-l200 + d8-m50-l30 (matched probe 0.7285 vs 0.7277)
+06	b77c135	1789530241	v7: drop Month categorical (2005 seasonality anti-transfers; probe 0.7287 solo, 0.7296 ens)
+07	8b1fdcb	1789530408	v8: 6-model feature/capacity-diverse ensemble (probe 0.7344)
+08	92c039f	1789530464	v9: +Dest_dist interaction, +carrier/origin thematic members (probe 0.7343-0.7344)
+09	f2cd683	1789530656	v10-fix: Origin x 20-min block + dup-column fix (probe 0.7364)
+10	405d499	1789531150	v11: +DB_t20 +Car_t30 features (probe 0.7374)
+11	2848268	1789531432	v13: subset members get more trees (n200/n150)
+12	8bb0484	1789531512	v15: subset members n300/n200
+13	c5f4fbd	1789531544	v16: subset members n400/n250
+14	a116eaf	1789531623	v18: full-set members slow-lr (0.05, n300/n200)
+15	6dc895d	1789532023	v25: heavier lambda on slow full members (400/60)
+16	f51081d	1789532058	v26: lambda 800/120 on slow full members
+17	ef1198d	1789532128	v28: +2 slow-heavy subset members
+18	4c7754e	1789532168	v29: +slow-heavy hour member
+19	04b24fe	1789532630	v36: fast full members (n300/n200, l800/120 kept)
+20	2a72081	1789532764	v39: subset members n600/n350
+21	f74d91e	1789532814	v40: subset members n800/n450 (final experiment)

@@ -1,0 +1,208 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 44,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T22:15:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s44-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T01:55:48+00:00",
+  "wall_seconds": 13235.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 14369.9,
+  "endpoint_at_end": "ok",
+  "head": "c1660b5",
+  "n_commits": 27,
+  "n_experiments": 38,
+  "n_ok": 36,
+  "n_crash": 2,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7471,
+  "final_eval_auc": 0.7471,
+  "holdout_auc": 0.7470225618640001,
+  "holdout_ap": 0.7398496299758489,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03225181012800005,
+  "generalization_gap": 7.743813599991878e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 12822370,
+    "tokens_in_uncached": 3622946,
+    "tokens_in_cached": 9199424,
+    "tokens_out": 220838,
+    "turns": null,
+    "api_calls": 231,
+    "method": "sum-of-231-events",
+    "cost_usd": 8.4357,
+    "cached_share": 0.717
+  },
+  "cpu_seconds_python": 14305.1,
+  "cpu_seconds_counted": 2615.3,
+  "cpu_seconds_uncounted": 11143.6,
+  "cpu_seconds_exempt": 546.1,
+  "python_processes": 176,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1572,
+  "fits_counted": 223,
+  "fits_uncounted": 1337,
+  "commits": [
+    {
+      "commit": "29fb77b",
+      "message": "baseline"
+    },
+    {
+      "commit": "391a690",
+      "message": "fe: numeric time/calendar features, cyclic, route categorical, early stopping"
+    },
+    {
+      "commit": "22829f3",
+      "message": "drop categorical Month (year-specific noise), numeric month_n; d3 n100 rl30"
+    },
+    {
+      "commit": "75c3d9c",
+      "message": "ensemble of 4 diverse XGB configs (depth/lr/rounds/subsample)"
+    },
+    {
+      "commit": "b12747d",
+      "message": "schedule-position features: origin dep-time ECDF percentile + offset vs origin mean"
+    },
+    {
+      "commit": "3e71089",
+      "message": "6-member ensemble: +depth-5 member +robust-feature member"
+    },
+    {
+      "commit": "b970ead",
+      "message": "9-member ensemble: +deep high-mcw members (d6/d8), odist variant"
+    },
+    {
+      "commit": "a2ff982",
+      "message": "greedy-weighted 7-member ensemble: odist/deep-mcw/lossguide-stump/robust members"
+    },
+    {
+      "commit": "f8ac167",
+      "message": "RS member (robust cats + schedule features) replaces R; retuned greedy weights"
+    },
+    {
+      "commit": "91cc5b7",
+      "message": "add CODE species: Origin/Dest as numeric codes (w=2, d8 mcw100 rl5)"
+    },
+    {
+      "commit": "fb7879a",
+      "message": "arrival-position features (odist2/odist3 members) + C8 weight 2->4"
+    },
+    {
+      "commit": "1905840",
+      "message": "arrival-heavy 7-member ensemble (odist3/codeA members dominate), greedy weights"
+    },
+    {
+      "commit": "e8d2d7b",
+      "message": "route-level daily-flow position (r_pct/r_offset) in top-3 members"
+    },
+    {
+      "commit": "e129995",
+      "message": "r_pct shrunk toward o_pct (m=1); reweight to route-heavy greedy (Ir/P/CAr/S3r/C8/RS)"
+    },
+    {
+      "commit": "024763b",
+      "message": "shrink r_offset toward o_offset (m=1 pseudo-count)"
+    },
+    {
+      "commit": "f8f132b",
+      "message": "operational congestion features: o_arr_before, d_dep_near_arr, r_std"
+    },
+    {
+      "commit": "be9d58c",
+      "message": "congestion features for all variants via _add_congestion"
+    },
+    {
+      "commit": "bf0451b",
+      "message": "add relative load factors o_arr_rel, d_dep_rel"
+    },
+    {
+      "commit": "784b02b",
+      "message": "capacity bump: n800 lr0.03 for Ir/S3r/P/RS, n500 for CAr"
+    },
+    {
+      "commit": "ec2da38",
+      "message": "greedy reweight: Ir7 P6 CAr7 S3r5 C8:1 RS5 +U3r w1"
+    },
+    {
+      "commit": "ac4c5e4",
+      "message": "fix: 'r'-suffixed variants were missing arrival/dist features (base variant normalization)"
+    },
+    {
+      "commit": "1428bcc",
+      "message": "per-member route shrinkage m (odist3rN), tuned Ir (mcw25 rl50)"
+    },
+    {
+      "commit": "39f4c54",
+      "message": "circadian trig encoding of dep and est arrival minutes"
+    },
+    {
+      "commit": "bc169d6",
+      "message": "2nd harmonic of departure minute"
+    },
+    {
+      "commit": "bc62022",
+      "message": "universal arrival trig; final greedy weights + RSr member"
+    },
+    {
+      "commit": "6c1cb95",
+      "message": "add deep lossguide member; greedy weights (Ir4 CAr8 P7 LG8 RS4 RSr3)"
+    },
+    {
+      "commit": "e7cc87e",
+      "message": "lossguide-dominant ensemble: LGCA8 P11 LGRS7 LG96:10 Ir2 RS2"
+    },
+    {
+      "commit": "c1660b5",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 13758.9,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 64.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "e7cc87e",
+  "best_commit_eval_auc": 0.7471,
+  "best_commit_holdout_auc": 0.7470225618640001,
+  "best_commit_holdout_ap": 0.7398496299758489,
+  "best_commit_error": null,
+  "finalized_best": true
+}

@@ -1,0 +1,25 @@
+n	commit	unix_time	subject
+00	90d2e91	1789525848	baseline
+01	19f7f53	1789525896	exp2: early stopping on internal split, depth8 lr0.05 subsample
+02	5a257b4	1789525913	exp3: 1000 trees depth6 lr0.05, no early stopping
+03	ad7758c	1789525932	exp4: baseline params, 100 trees (tree-count ablation)
+04	a4c97c7	1789525941	exp5: subsample0.7 colsample0.7 mcw10, 200 trees
+05	30ca3f7	1789525972	exp6: FE v1 - numeric month/dom/dow, hour/minute, hour cat, route, log dist
+06	cd98c70	1789525981	exp9: FE v1 at baseline params (30 trees d6 lr0.1)
+07	4df53d2	1789525995	exp10: FE v1 minus route, minus minute
+08	634d3d4	1789526029	exp12: smoothed target encoding m=50 for carrier/origin/dest/route/hour/dow + counts
+09	5707893	1789526050	exp14: 5-seed ensemble, sub0.8 col0.8, FE v2 (no TE)
+10	b8102f1	1789526058	exp15: 8 members x 60 trees, sub0.7 col0.7
+11	b899389	1789526068	exp16: 12 members x 100 trees, sub0.6 col0.6
+12	2bfcb16	1789526082	exp17: 16 members x 150 trees, sub0.5 col0.5
+13	5b2f9fb	1789526107	exp18: depth-diverse ensemble d5/6/7 x 4 seeds, 150 trees sub0.5
+14	42edd9b	1789526129	exp19: 12 members x 300 trees lr0.05 sub0.5
+15	c27be50	1789526282	exp23: holiday-window flag
+16	c64cfc3	1789526307	exp24: 20 members x 300 trees
+17	e747718	1789526378	exp27: half-hour bucket cat replaces hour_c
+18	f3be13f	1789526420	exp28: 15-min bucket cat
+19	d563111	1789526509	exp30: hub-size counts for origin/dest
+20	f42d1b7	1789526650	exp33: add route + carrier counts
+21	1c9ed64	1789526692	exp35: sub0.6 col0.6 retest
+22	bd3a28b	1789526839	exp38: two-config ensemble 10x(300/lr.05/sub.6) + 10x(150/lr.1/sub.85)
+23	55d1bbc	1789526934	exp40: gamma=1 on both ensemble configs

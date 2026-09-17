@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	2f7fb8f	1789500720	baseline
+01	d66e017	1789500778	exp2: early stopping + refit, 2000 trees
+02	3d8274c	1789500806	exp5: FE v1 (ints, tod cyclic, hour cat, route, weekend, log dist)
+03	fe1e036	1789501104	exp5: 11 target encodings + cyclic + 3-model XGB blend
+04	1bb8e92	1789501331	exp7: 5-model blend (te d2/d3/d4 + gblinear + raw d3) with holiday feats
+05	1d59fd1	1789501701	exp8: 6-model blend (te d2/d3/d4 + gblinear + raw+doy + carrier-subset d3)
+06	2ce098d	1789502024	exp9: swap carrier-subset member for numerics-only tree member (d3n)
+07	f5acdda	1789502254	exp10: per-feature TE smoothing m (low-card 20-30, interactions 150)
+08	e4284c1	1789502328	exp11: add d4n numerics-only member (7-model blend)
+09	8b1dbc5	1789502402	exp13: seed-averaged tree members (2 seeds x te_d4/d3/d2)
+10	18090c6	1789502487	exp14: 3-seed averaging incl raw_d3 member
+11	6d460ec	1789502625	exp15: 5-seed averaging for te tree members
+12	e5eeb7c	1789502875	exp16: half-hour buckets for interaction TEs
+13	3742ef6	1789503038	exp17: quarter-hour interaction TEs, m=300
+14	a031a7f	1789503351	exp18: fold-seed 7 robustness variant
+15	dca40ec	1789504078	exp22: TE support-count features (log1p train counts)
+16	8fd3079	1789504897	exp26: seed-average d3n/d4n members
+17	7454b70	1789505031	exp27: combined TE m micro-retune (Route150, Org/Dst50, hour40)
+18	ab9d813	1789505557	exp33: d3n n600
+19	25a6ce0	1789505644	exp34: d4n n300
+20	d17ef97	1789505819	exp36: te_d3 n600
+21	9042528	1789505917	exp37: te_d2 n900
+22	d7c801c	1789506020	exp38: raw_d3 n500

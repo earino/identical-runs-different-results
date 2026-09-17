@@ -1,0 +1,23 @@
+n	commit	eval_auc	status	seconds	description
+1	80b5647	0.7141	ok	5	baseline
+2	7cda129	0.7053	ok	4	dep time parts + route + stronger model
+3	e7325e6	0.7252	ok	8	dep time categorical + L1 reg
+4	1e1f127	0.7306	ok	4	carrier-airport interactions + counts
+5	5993d55	0.7387	ok	8	origin/dest x hour interactions
+6	4a22807	0.7400	ok	32	depth ensemble 5-8
+7	9834c4b	0.7407	ok	57	depth ensemble 5-10 n400
+8	2ffcdc6	0.7414	ok	59	carrier-origin volume + dist x hour
+9	4adb58b	0.7418	ok	61	continuous day-of-year
+10	00b6982	0.7419	ok	60	carrier network size + carrier-dest volume
+11	8beef43	0.7417	ok	50	per-depth tree counts
+12	ab698d7	0.7420	ok	58	colsample_bynode 0.9
+13	4ce4aac	0.7419	ok	60	carrier x hour categorical
+14	7d0b63f	0.7424	ok	61	route frequency count
+15	691ada6	0.7428	ok	62	carrier-route volume + origin diversity
+16	ff633aa	0.7426	ok	63	ensemble add depth 4
+17	bb77820	0.7431	ok	86	ensemble add depth 11
+18	4b38a13	0.7431	ok	87	rank-average ensemble
+19	9eacb60	0.7434	ok	115	ensemble add depth 12
+20	70411df	0.7433	ok	98	depths 5-12 n320
+21	b9805e3	0.7433	ok	116	depths 6-12 n400
+22	dacef5b	0.0000	timeout	120	carrier/origin x distance band

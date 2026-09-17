@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	d7713ee	0.7141	ok	3	baseline
+2	45bef25	0.7020	ok	4	early stopping + deeper trees, lower lr
+3	7236ab4	0.7101	ok	3	capacity check: 200 trees depth 6
+4	a189281	0.7140	ok	2	feat: DepTime clock/cyclical, weekend, freq encodings
+5	59c66ad	0.7205	ok	3	clock features + d4/n400/colsample0.8
+6	bc538d2	0.7215	ok	9	5-seed bagged ensemble
+7	5ee785a	0.7384	ok	65	deep trees (d24) + colsample0.5 + 3-seed bag
+8	f8a44b6	0.7412	ok	90	diverse deep-tree bag (4 depths x 2 seeds)
+9	b59dabd	0.7574	ok	86	drop calendar cats, add freq counts
+10	b28cc11	0.7581	ok	84	drop weekend flag, add hub-size stats
+11	30bcf52	0.7621	ok	91	add estimated arrival-time features, drop dep_minute
+12	4c9a0a0	0.7614	ok	95	bag specs: all colsample 0.5, depths 16-28
+13	0c8ff27	0.7627	ok	90	wider bag: 10 models, 5 depths x 2 seeds, n90
+14	24a2480	0.7631	ok	97	14-model bag, 7 depths x 2 seeds, n70
+15	11a5ad4	0.7632	ok	102	18-model bag, 9 depths x 2 seeds, n55
+16	0e00af7	0.7626	ok	93	bag with row subsample 0.8
+17	8d6be79	0.7636	ok	88	feature-subset diversity: half bag drops Origin/Dest cats
+18	108fe3e	0.7625	ok	84	lean sub-bag: drop Origin/Dest cats + hub stats
+19	03f9fea	0.7636	ok	85	column-subsample jitter across the two sub-bags
+20	5a65926	0.7633	ok	84	20-model bag, 10 depths x 2 variants, n50
+21	2a66a73	0.7633	ok	85	rank-space averaging of the bag
+22	ab0479a	0.7643	ok	89	max_bin 128 to fit more trees per model
+23	e33922f	0.7644	ok	97	n80 with max_bin 128

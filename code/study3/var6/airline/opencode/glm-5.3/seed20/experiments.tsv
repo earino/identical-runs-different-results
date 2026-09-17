@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1c0bd2e	0.7141	ok	4	baseline
+2	556418a	0.7132	ok	3	exp2: hypertuned trees + early stopping
+3	d32bc4f	0.7063	ok	1	exp3: feature engineering v1, baseline model
+4	5bbd5ed	0.7132	ok	2	exp4: +dep_min/dep_hour only
+5	b0fd3dc	0.7141	ok	3	exp5: ES on eval, more rounds
+6	b15f8ed	0.7070	ok	3	exp6: FE v2 with ES on eval
+7	2f568b6	0.0000	crash	1	exp7: TE v1 + doy
+8	7d7ef8b	0.0000	crash	2	exp7 retry: TE v1 + doy
+9	85a6327	0.7167	ok	3	exp7 retry2: TE v1 + doy
+10	d5f6c1f	0.7133	ok	4	exp10: depth 8 + TE
+11	806d746	0.7153	ok	5	exp11: +hour interaction TEs
+12	2593577	0.7166	ok	3	exp12: TE smoothing up
+13	3282ec9	0.7186	ok	11	exp13: 5-model ensemble
+14	43c65dc	0.7191	ok	20	exp14: K=10 ensemble
+15	87d08a0	0.7192	ok	35	exp15: lr 0.03 ensemble
+16	6e72439	0.7192	ok	36	exp16: mcw 5
+17	2b1cc5e	0.7195	ok	38	exp17: depth 5
+18	b07e930	0.7195	ok	42	exp18: depth 4
+19	0924d15	0.7175	ok	33	exp19: drop doy
+20	7f00c91	0.7199	ok	39	exp20: colsample 0.7
+21	0d48eb8	0.7202	ok	44	exp21: colsample 0.6
+22	60d46a2	0.7204	ok	47	exp22: colsample 0.5
+23	4c946e5	0.7205	ok	55	exp23: colsample 0.4
+24	d4385e0	0.7204	ok	58	exp24: subsample 0.7
+25	8443e7b	0.7215	ok	66	exp25: lossguide 32 leaves
+26	2c59745	0.7222	ok	71	exp26: lossguide 64 leaves
+27	8e23e50	0.7236	ok	79	exp27: lossguide 128 leaves
+28	6337b78	0.7251	ok	111	exp28: lossguide 256 leaves
+29	5343861	0.0000	timeout	120	exp29: 512 leaves, max_bin 64
+30	39c4021	0.7216	ok	84	exp30: 384 leaves maxbin64 K8
+31	725f39a	0.7247	ok	72	exp31: 384 leaves lr0.05 K10
+32	328cdf9	0.7229	ok	63	exp32: architecture blend
+33	7763e1e	0.7246	ok	112	exp33: dow interaction TEs
+34	04d3fec	0.7249	ok	110	exp34: mcw10 lossguide
+35	5e87379	0.7163	ok	80	exp35: drop raw high-card cats
+36	bc039d2	0.7253	ok	110	exp36: TE m up
+37	a4dba13	0.7251	ok	111	exp37: 10-fold OOF
+38	9ef311e	0.7253	ok	110	exp38: route m 100
+39	e8ebd74	0.7252	ok	114	exp39: lambda 2
+40	4f89663	0.7223	ok	114	exp40: carrier-month TE

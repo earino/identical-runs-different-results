@@ -1,0 +1,164 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 5,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:06:39+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-flash-s5-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T22:30:25+00:00",
+  "wall_seconds": 5026.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17029.0,
+  "endpoint_at_end": "ok",
+  "head": "a486760",
+  "n_commits": 16,
+  "n_experiments": 20,
+  "n_ok": 18,
+  "n_crash": 1,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7341,
+  "final_eval_auc": 0.7341,
+  "holdout_auc": 0.7355075997520001,
+  "holdout_ap": 0.7255173953848044,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.020736848016000065,
+  "generalization_gap": -0.0014075997520001104,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4673438,
+    "tokens_in_uncached": 63518,
+    "tokens_in_cached": 4609920,
+    "tokens_out": 96743,
+    "turns": null,
+    "api_calls": 93,
+    "method": "sum-of-93-events",
+    "cost_usd": 0.1962,
+    "cached_share": 0.986
+  },
+  "cpu_seconds_python": 15412.8,
+  "cpu_seconds_counted": 2861.8,
+  "cpu_seconds_uncounted": 11519.5,
+  "cpu_seconds_exempt": 1031.6,
+  "python_processes": 59,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 799,
+  "fits_counted": 133,
+  "fits_uncounted": 634,
+  "commits": [
+    {
+      "commit": "e130baa",
+      "message": "baseline"
+    },
+    {
+      "commit": "841748a",
+      "message": "feat: hour/minute, int dates, log distance, route + freq encodings; early stopping + refit"
+    },
+    {
+      "commit": "bf1f53d",
+      "message": "fixed 600 trees, no early stop (time-split early stop underfit at 42 trees)"
+    },
+    {
+      "commit": "23fa1c8",
+      "message": "d6 lr.03 n350; hour+minute+int dates+distance+3 cats (route/freq/logdist dropped)"
+    },
+    {
+      "commit": "656edb8",
+      "message": "OOF target encoding: carrier/origin/dest + carrier-hour/origin-hour (smoothed, full-train maps in prepare)"
+    },
+    {
+      "commit": "a994729",
+      "message": "add TE route (m300) + dow-hour (m150)"
+    },
+    {
+      "commit": "9483f4c",
+      "message": "3-model ensemble (seeds 42/1337/2024, colsample .7/.8/.9), prob average"
+    },
+    {
+      "commit": "25e47a7",
+      "message": "diverse-3 ensemble: d6 + lossguide128 + d4/n500"
+    },
+    {
+      "commit": "4a00b76",
+      "message": "diverse-5 ensemble + TE dest-hour, origin-dow"
+    },
+    {
+      "commit": "40cdd3a",
+      "message": "8-member ensemble (+d7, lossguide192, d3)"
+    },
+    {
+      "commit": "430306d",
+      "message": "10-member ensemble: +TE-only and base-only feature-subset members"
+    },
+    {
+      "commit": "c1a76b4",
+      "message": "12-member ensemble (+lossguide96, d8)"
+    },
+    {
+      "commit": "f02db66",
+      "message": "add 4 congestion-volume features (key fix: same string keys as TE)"
+    },
+    {
+      "commit": "376304e",
+      "message": "16-member ensemble (+d6cs.6, lg256, TE-only d5, BASE-only d4)"
+    },
+    {
+      "commit": "af6d2d6",
+      "message": "scale trees per member x1.5"
+    },
+    {
+      "commit": "21ff413",
+      "message": "mixed TE fold seeds + x2 trees on shallow members"
+    },
+    {
+      "commit": "a486760",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 14381.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 1616.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "21ff413",
+  "best_commit_eval_auc": 0.7341,
+  "best_commit_holdout_auc": 0.7355075997520001,
+  "best_commit_holdout_ap": 0.7255173953848044,
+  "best_commit_error": null,
+  "finalized_best": true
+}

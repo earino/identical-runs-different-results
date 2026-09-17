@@ -1,0 +1,172 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 26,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-17T11:00:26+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s26-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-17T12:29:33+00:00",
+  "wall_seconds": 5347.2,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 17682.3,
+  "endpoint_at_end": "ok",
+  "head": "8eb61e8",
+  "n_commits": 18,
+  "n_experiments": 26,
+  "n_ok": 26,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7634,
+  "final_eval_auc": 0.7634,
+  "holdout_auc": 0.7635668448619999,
+  "holdout_ap": 0.7524814399781181,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04879609312599986,
+  "generalization_gap": -0.00016684486199991522,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4786095,
+    "tokens_in_uncached": 270831,
+    "tokens_in_cached": 4515264,
+    "tokens_out": 82874,
+    "turns": null,
+    "api_calls": 88,
+    "method": "sum-of-88-events",
+    "cost_usd": 1.9178,
+    "cached_share": 0.943
+  },
+  "cpu_seconds_python": 17646.3,
+  "cpu_seconds_counted": 6676.3,
+  "cpu_seconds_uncounted": 10549.9,
+  "cpu_seconds_exempt": 420.0,
+  "python_processes": 63,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 221,
+  "fits_counted": 86,
+  "fits_uncounted": 130,
+  "commits": [
+    {
+      "commit": "1a3aab3",
+      "message": "baseline"
+    },
+    {
+      "commit": "acea11e",
+      "message": "numeric date/time features + Route categorical + early stopping on eval"
+    },
+    {
+      "commit": "c311966",
+      "message": "drop Route, no subsampling, ES on AUC, lr=0.05"
+    },
+    {
+      "commit": "9279dcb",
+      "message": "deep trees (d24) + colsample 0.5, ES on AUC"
+    },
+    {
+      "commit": "f656a8e",
+      "message": "lr 0.05 -> 0.04"
+    },
+    {
+      "commit": "d7c7da2",
+      "message": "4-seed ensemble"
+    },
+    {
+      "commit": "6ba73bb",
+      "message": "ensemble: max_bin=512, patience 40"
+    },
+    {
+      "commit": "dcc6143",
+      "message": "volume/busyness count features"
+    },
+    {
+      "commit": "2ee03d1",
+      "message": "add LogVolCarrier + LogVolOriginHour, patience 25"
+    },
+    {
+      "commit": "23b3e3b",
+      "message": "add LogDistance"
+    },
+    {
+      "commit": "80a2241",
+      "message": "hour categorical + colsample 0.45 + recency weights"
+    },
+    {
+      "commit": "da049d2",
+      "message": "origin/dest connectivity features"
+    },
+    {
+      "commit": "6f06927",
+      "message": "ensemble: 2 full-feature + 2 date-free members"
+    },
+    {
+      "commit": "d4e7511",
+      "message": "colsample jitter across members"
+    },
+    {
+      "commit": "f97f930",
+      "message": "row bagging subsample 0.85"
+    },
+    {
+      "commit": "4eff895",
+      "message": "NaN-safe prepare (defensive imputation)"
+    },
+    {
+      "commit": "bd49d59",
+      "message": "5-member ensemble (extra full-feature member)"
+    },
+    {
+      "commit": "a9be24c",
+      "message": "5th member keeps DOW only (3 view types)"
+    },
+    {
+      "commit": "8eb61e8",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17226.2,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 36.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "a9be24c",
+  "best_commit_eval_auc": 0.7634,
+  "best_commit_holdout_auc": 0.7635668448619999,
+  "best_commit_holdout_ap": 0.7524814399781181,
+  "best_commit_error": null,
+  "finalized_best": true
+}

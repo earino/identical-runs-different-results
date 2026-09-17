@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	15287b5	1789512542	baseline
+01	cf3aa88	1789512588	baseline cats + engineered time/distance features, ES 800 trees
+02	2277345	1789512621	stronger regularization: depth5 lr0.03 mcw20 subsample0.7 lambda2
+03	eb11a96	1789512668	more regularization: depth4 mcw30 lambda5 alpha1
+04	22256b3	1789512813	colsample_bytree 0.4, more trees
+05	a5ae1db	1789512902	depth5 lr0.02 colsample0.4
+06	34c91cc	1789512972	drop raw DepTime, add dep_min
+07	7fbfe18	1789513410	depth7 mcw10 colsample0.3 max_bin256
+08	3b6e79b	1789513612	depth8 lr0.015 mcw5
+09	a5a3bb1	1789513884	depth10 lr0.01 mcw1 cs0.35
+10	da8b1de	1789514551	depth14 lr0.008 mcw2 cs0.4

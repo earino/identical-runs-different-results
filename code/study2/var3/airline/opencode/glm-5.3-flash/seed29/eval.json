@@ -1,0 +1,176 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 29,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T18:39:53+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s29-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:39:47+00:00",
+  "wall_seconds": 3594.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 10208.0,
+  "endpoint_at_end": "ok",
+  "head": "a9c5784",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 28,
+  "n_crash": 5,
+  "n_timeout": 7,
+  "best_eval_auc": 0.7355,
+  "final_eval_auc": 0.7355,
+  "holdout_auc": 0.7366131223179999,
+  "holdout_ap": 0.7251776488804995,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.021842370581999893,
+  "generalization_gap": -0.0011131223179998706,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": "a6762e21001zfavqqkytetdds\",\"reason\":\"tool-calls\",\"snapshot\":\"429a563170e95bbfa22bfa09c00af1706a4028b1\",\"messageid\":\"msg_0a6760455001ik1exyk7zxjr7l\",\"sessionid\":",
+  "usage": {
+    "tokens_in": 10012963,
+    "tokens_in_uncached": 140003,
+    "tokens_in_cached": 9872960,
+    "tokens_out": 88610,
+    "turns": null,
+    "api_calls": 177,
+    "method": "sum-of-177-events",
+    "cost_usd": 0.3615,
+    "cached_share": 0.986
+  },
+  "cpu_seconds_python": 9570.1,
+  "cpu_seconds_counted": 8306.2,
+  "cpu_seconds_uncounted": 3.3,
+  "cpu_seconds_exempt": 1260.5,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 718,
+  "fits_counted": 676,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "5d4baf2",
+      "message": "baseline"
+    },
+    {
+      "commit": "1c002a9",
+      "message": "exp2: time features, ordinal/one-hot encoding, adaptive tree budget"
+    },
+    {
+      "commit": "c65e67c",
+      "message": "exp4: temporal-split early stopping (2005 m11-12 as val)"
+    },
+    {
+      "commit": "512f2b7",
+      "message": "exp9: depth x trees landscape scan"
+    },
+    {
+      "commit": "c2e092b",
+      "message": "exp11: depth x lr x trees fine scan"
+    },
+    {
+      "commit": "24abc36",
+      "message": "exp15: heterogeneous depth ensemble"
+    },
+    {
+      "commit": "3c20405",
+      "message": "exp16: extended 8-member ensemble"
+    },
+    {
+      "commit": "f1d9ac5",
+      "message": "exp17: feature variants at winning ensemble"
+    },
+    {
+      "commit": "d255b76",
+      "message": "exp18: dep_block refinements (15min, dow x block, A+C)"
+    },
+    {
+      "commit": "309301e",
+      "message": "exp19: block granularity sweep 5/10/15min + multi-scale"
+    },
+    {
+      "commit": "1bcc3da",
+      "message": "exp20: member-mix scan (deeper, subsample-diverse, dart)"
+    },
+    {
+      "commit": "0ac5be7",
+      "message": "exp21: semantic bagging + week-of-year cat"
+    },
+    {
+      "commit": "595f60c",
+      "message": "exp22: ES-count members + lossguide members"
+    },
+    {
+      "commit": "71c4881",
+      "message": "exp23: broader ES-member ensemble (d2-8, ES lossguide)"
+    },
+    {
+      "commit": "622ee4e",
+      "message": "exp26: 16-member hardcoded ES-count ensemble"
+    },
+    {
+      "commit": "8cabd88",
+      "message": "exp27: extend depth grid with d9/d10 ES members"
+    },
+    {
+      "commit": "09da8d5",
+      "message": "exp34: full 18 XGB + 2 HGB ensemble confirm"
+    },
+    {
+      "commit": "9e8d9f7",
+      "message": "exp36: final-form 18 XGB + 3 HGB ensemble"
+    },
+    {
+      "commit": "19e3df1",
+      "message": "exp39: HGB max_features diversity + weighted combos"
+    },
+    {
+      "commit": "a9c5784",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 8309.5,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 637.9,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "19e3df1",
+  "best_commit_eval_auc": 0.7355,
+  "best_commit_holdout_auc": 0.7366131223179999,
+  "best_commit_holdout_ap": 0.7251776488804995,
+  "best_commit_error": null,
+  "finalized_best": true
+}

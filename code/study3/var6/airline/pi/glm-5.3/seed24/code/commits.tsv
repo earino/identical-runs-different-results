@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	eb5b5a3	1789634445	baseline
+01	2b8131c	1789634940	TE features (core+interactions), time feats, d8/lr.03/ES on AUC
+02	f706b90	1789635340	add count features (route/origin/carrier + congestion)
+03	1dd3e51	1789635603	5-seed ensemble with per-seed OOF folds
+04	e00f19a	1789635951	add 30-min-bucket interaction TEs (route/carrier/origin/dow)
+05	f904a8e	1789636175	add 30-min congestion count features
+06	c7b43f7	1789636732	schedule-deviation features (tod vs group-mean tod)
+07	b65b494	1789637022	feature-diverse 6-member ensemble (30min/15min/max_bin variants)
+08	e0d3ba0	1789637388	swap mb512 variant for nohm (hour-TE-only) members
+09	c909427	1789637518	fix: give merged fine-OOF only to the fine variant
+10	bf7be96	1789639059	min_child_weight 10->5 across ensemble members
+11	42c3853	1789639436	4-fold OOF target encoding
+12	43a5210	1789639702	depth 9 for base/fine members, nohm stays d8
+13	af96a55	1789639796	all members depth 9
+14	075f8a2	1789639887	all members depth 10
+15	54fe222	1789640110	min_child_weight 3 with d10
+16	7c7b254	1789640235	ES 120 for runtime headroom

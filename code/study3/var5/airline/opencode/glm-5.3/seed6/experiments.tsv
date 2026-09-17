@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1d98632	0.7141	ok	4	baseline
+2	38020c1	0.7120	ok	4	capacity + early stopping, depth8 lr0.05
+3	2a79c52	0.7093	ok	3	FE round1: dep time features, route cat
+4	6ad5cd8	0.6917	ok	4	FE round1 + 300 trees no ES
+5	e02b2de	0.7093	ok	2	FE round1 + 30 trees
+6	8699e67	0.7158	ok	12	scan depth x trees x reg
+7	7bf24f6	0.7036	ok	8	route categorical + shallow scan
+8	a889f75	0.7161	ok	4	route target encoding (smoothed OOF)
+9	11c3032	0.7167	ok	4	+ hour categorical
+10	f076169	0.0000	crash	1	TE family incl hour interactions
+11	3a02696	0.7166	ok	4	TE family incl hour interactions (fixed)
+12	fd81704	0.7167	ok	4	seed ensemble 5x depth4/100
+13	54d1b42	0.0000	crash	3	candidate feature scan
+14	23f14cd	0.7167	ok	5	candidate feature scan (fixed)
+15	e3f7934	0.7169	ok	3	ES on eval lr0.03 depth4
+16	ed84d96	0.7180	ok	32	9-member colsample ensemble
+17	9555468	0.7182	ok	35	cs sweep 0.3-0.5
+18	d07ba5d	0.7225	ok	33	depth x cs=0.5 scan
+19	2377ea5	0.7312	ok	80	depth 10-15 x cs grid
+20	f236e70	0.0000	timeout	121	deep forest regime: d12-20 low cs
+21	ecb43cb	0.0000	timeout	123	d18-20 cs0.3-0.4 ensembles
+22	bf31985	0.7340	ok	72	4-seed d18 cs0.3 ensemble
+23	f335eaa	0.7382	ok	98	FE candidates under d18/cs0.3
+24	0a815aa	0.7419	ok	101	dep_min(+ohc) 3-seed comparison
+25	d655a68	0.7420	ok	83	5-seed dep_min+ohc
+26	c5be694	0.7445	ok	112	FE round2 under deep regime
+27	668e2b7	0.7488	ok	75	stack all 3 features, 4 seeds
+28	4afbad8	0.7477	ok	113	depth/cs retune with stacked features
+29	d0ca75b	0.0000	crash	2	FE round3: chc, origin/dest hour TEs
+30	eec67ca	0.7490	ok	109	FE round3 fixed: chc, origin/dest hour TEs
+31	08290d9	0.7498	ok	109	6-seed core+carrier_hour_count
+32	f06c327	0.7493	ok	116	ss0.8 vs mcw5 vs lr0.02
+33	2146e03	0.7489	ok	115	bynode, maxbin512, lambda5
+34	5035cd3	0.7499	ok	64	deep+shallow blend
+35	e0e3668	0.7475	ok	102	doh/month schedule counts
+36	cbcb143	0.7500	ok	112	lr0.02 5-seed
+37	45caabb	0.0000	timeout	121	hybrid lr ensemble 3+3
+38	03b9dc9	0.0000	crash	2	lean hybrid ensemble
+39	8e82f6d	0.7498	ok	79	lean hybrid ensemble (fixed)
+40	6d183b6	0.0000	timeout	124	time_q categorical

@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	43c6bfc	1789507944	baseline
+01	d9eb99a	1789507998	es+params: 2000 trees lr.05 d8 subsample, early stopping, refit full
+02	c25ccbc	1789508016	fe1: parsed dates, deptime hour/min/cyclic, dist log, freq encodings
+03	9e28b07	1789508500	ensemble3: shared es iter, full-data refit per member
+04	c4241fe	1789508591	ensemble4: depth-diverse members 7/8/8/9
+05	dd7294f	1789508715	fe3: hub-ness, route distance deviation, route freq on 4-member ens
+06	732b45b	1789510593	fe3: hardcoded 1413 trees, sklearn refits
+07	e551114	1789511031	member4 d9->d10
+08	ca92580	1789511140	member4 d10->d11
+09	9469607	1789511253	member4 d11->d12
+10	2333c1a	1789511624	member4 gamma 1.0
+11	89fb997	1789511720	member4 d13 gamma 1.0
+12	18c896c	1789511811	member4 d15 gamma 2.0
+13	9647b82	1789511899	member4 d17 gamma 3.0
+14	c073d0d	1789511982	member2 d8->d12 gamma1

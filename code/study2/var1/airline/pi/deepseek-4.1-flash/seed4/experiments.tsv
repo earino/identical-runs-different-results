@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	96890db	0.7141	ok	4	baseline
+2	0e22d52	0.0000	crash	2	FE dep-time+route, 500x0.05 d7
+3	7ddfc6f	0.7068	ok	8	FE dep-time+route, 500x0.05 d7
+4	0fa0a6c	0.7055	ok	6	capacity 500x0.05 d7
+5	b7549ce	0.7142	ok	2	100 trees d5 lr0.1
+6	8bc721f	0.7162	ok	2	FE dep decomposition, 100d5
+7	fc265ef	0.0000	crash	1	add Route cat
+8	c7200cd	0.7029	ok	2	add Route cat
+9	f9ff96e	0.7165	ok	3	400d5 lr0.05
+10	4f9ef30	0.7164	ok	6	900d5 lr0.025
+11	d743fd1	0.7163	ok	3	mcw20 lambda5
+12	8fb2d15	0.7157	ok	4	TE+counts
+13	33b62dd	0.7191	ok	12	5-seed ensemble
+14	48dc777	0.7202	ok	26	diverse 12-model ensemble
+15	2a72e40	0.7233	ok	27	dep_hour cat + ensemble
+16	4309690	0.7228	ok	27	dep_min bucket cat
+17	c8397d4	0.7231	ok	29	max_cat_threshold 256
+18	83c0608	0.7233	ok	27	doy cyclical
+19	44f422e	0.7192	ok	113	one-hot Origin/Dest
+20	b445868	0.7235	ok	29	count features
+21	68c97ec	0.7291	ok	29	30-min cat
+22	6bde416	0.7318	ok	30	15-min cat
+23	2f64bf3	0.7279	ok	30	5-min cat
+24	b9e1741	0.7321	ok	28	10-min cat
+25	9c9ebc8	0.7320	ok	34	carrier x time cat
+26	db52576	0.7330	ok	70	25-model ensemble
+27	d084c4f	0.7329	ok	69	drop raw DepTime
+28	452834d	0.7311	ok	71	daytype x time
+29	0951c16	0.7324	ok	63	row-bagged ensemble
+30	aa399f3	0.7353	ok	72	congestion counts
+31	a238c96	0.7361	ok	75	more congestion counts
+32	4b4310d	0.7357	ok	73	seasonal counts
+33	cb47104	0.7362	ok	79	congestion ratios
+34	48443ce	0.7362	ok	77	network diversity
+35	ace82b5	0.7365	ok	94	31-model ensemble
+36	e49e2ea	0.0000	crash	1	normalized ratios
+37	465e4e2	0.0000	crash	1	normalized ratios
+38	c9e21c4	0.7362	ok	96	normalized ratios
+39	9de0119	0.7366	ok	112	35-model ensemble
+40	82a2a99	0.7366	ok	113	logit-average combiner

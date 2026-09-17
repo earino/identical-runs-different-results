@@ -1,0 +1,24 @@
+n	commit	unix_time	subject
+00	40f3a0f	1789512393	baseline
+01	ff6d03e	1789512476	capacity test: 1500 trees lr0.05 depth6 with early stopping
+02	c506238	1789512546	regularized model: depth6 lr.03 mcw100 sub.7 col.6, 200 trees, full data
+03	013e3cc	1789512561	fe v1 on regularized model: time/cyclical/distance/freq features
+04	be92a2f	1789512606	add schedule congestion features (flights per origin-hour-day)
+05	1b615be	1789512743	density-normalize congestion counts to training sampling density
+06	d170e1c	1789512773	add destination-side congestion features
+07	8a8d55e	1789512865	shallower trees: depth4 500 trees lr.03
+08	b23f895	1789512904	add cumulative daily airport load + carrier-hour congestion
+09	9fd8231	1789512926	add raw DepTime and minute-of-day features
+10	bda0d24	1789512944	capacity revisit: depth8 n250
+11	6faf406	1789512954	depth10 n300
+12	ce5fa2b	1789512965	depth12 n300
+13	bfa4037	1789512979	mcw 30 (more leaves)
+14	f0ae75c	1789512992	mcw 10
+15	d04f5e9	1789513007	mcw 3
+16	41058a5	1789513079	3-seed ensemble of best config
+17	21ba869	1789513116	4-model diverse ensemble (depth 10/12/14/12, varying colsample)
+18	fdb997d	1789513331	reg_lambda 5 in ensemble
+19	d3e745f	1789513381	lower subsample/colsample on 2 ensemble members
+20	114e76d	1789513423	subsample .5 colsample .4 for all ensemble members
+21	275088c	1789513744	ablation: drop Dest identity categorical
+22	ffd20b3	1789513818	add OOF target encoding for dest and route

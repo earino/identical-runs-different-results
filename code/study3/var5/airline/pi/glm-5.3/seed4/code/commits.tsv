@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	c35c27e	1789593073	baseline
+01	432099c	1789593148	FE + early stopping (constructor arg, AUC, es=50) on eval val
+02	672f566	1789593804	numeric calendar + tod/hour/minute + raw dep, drop route; d4 lr.1 es50 on eval-val
+03	c6c5fa7	1789594133	5-seed colsample.8 ensemble + count encodings (oh,dh,route,origin,dest)
+04	2c63202	1789595112	div15 ensemble (d3/4/5 x 5 seeds, col.8), drop doy
+05	9dbe670	1789596315	schedule-position CDFs (origin dep, dest est-arrival) + carrier-airport counts; div15
+06	9794c2f	1789596923	share ratios (congestion shares) + L1 alpha 0.5
+07	bdae47b	1789598761	15-min window congestion counts at origin and est-arrival dest (o15/a15)
+08	f12ea01	1789599232	previous-bucket congestion counts (o15_prev, oarr15_prev)
+09	7995236	1789599544	second-bucket-back congestion (o15_prev2, oarr15_prev2)
+10	a02acbd	1789599661	extend congestion chain to 45/60 min back (prev3, prev4)
+11	114e149	1789600108	champion features + es=40 for runtime headroom
+12	6e56b5a	1789600463	alpha 0.5 -> 0.7

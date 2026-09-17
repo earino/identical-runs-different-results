@@ -1,0 +1,24 @@
+n	commit	eval_auc	status	seconds	description
+1	57a9dc1	0.7141	ok	5	baseline: 30 trees depth6 lr0.1 native categorical
+2	7b4b6dc	0.7040	ok	15	early stopping on train-internal val split, up to 2000 trees
+3	7490ba8	0.7124	ok	4	regularized medium model: 300 trees lr0.06 subs/cols 0.8 mcw20
+4	27da492	0.7091	ok	15	add DepTime hour/minute/cyclical/daypart features
+5	0057373	0.7249	ok	4	dt feats + smoothed TE + colsample0.25 n600
+6	bed3530	0.7276	ok	4	add minute feature
+7	85ab7ba	0.7303	ok	4	reg_alpha=4
+8	32a8f9d	0.7318	ok	4	add origin/dest/origin-hour frequency counts
+9	b65d224	0.7362	ok	8	all count features + n1500 lr0.03
+10	9a006b7	0.7499	ok	55	max_depth=20
+11	d036f2d	0.7513	ok	92	depth-diverse 2-model ensemble d20/d24
+12	6507b32	0.7525	ok	108	add share features, drop night/evening flags
+13	fd55a7e	0.0000	crash	2	numeric-only features + hub shares
+14	c6d9f2b	0.7555	ok	74	numeric-only features + hub shares
+15	141ac25	0.7557	ok	94	pair members colsample 0.4
+16	594cddd	0.0000	timeout	120	4-model seed-bagged ensemble
+17	aeab940	0.7556	ok	92	pair with cols diversity 0.3/0.5
+18	4eae04b	0.7563	ok	112	pair members alpha=2
+19	b05c7d4	0.7562	ok	120	pair members alpha=1
+20	32204a8	0.7561	ok	87	members n1000 lr0.04 alpha2
+21	b7cd24e	0.7562	ok	106	asymmetric cols pair 0.35/0.45 alpha2
+22	88b13f8	0.7563	ok	103	depth-asymmetric pair d18/d26
+23	1049645	0.7562	ok	119	pair members alpha=1.5

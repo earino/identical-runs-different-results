@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	5356f07	1789636682	baseline
+01	97f35b3	1789636723	feat engineering + early stopping
+02	b9486b1	1789637431	tod bucket cats + hour-carr interaction + strong regularization
+03	51ebb63	1789637765	diverse 5-model ensemble, prob-averaged
+04	c1389db	1789638473	jitter-augmented 3-member ensemble
+05	7272cb2	1789638734	add 4th jitter member with congestion features
+06	f9f60ba	1789638936	15-min congestion in all members, drop 4th member
+07	f6fa4b5	1789639187	route-typical DepTime, carrier-hour, hub features
+08	7a1d324	1789639677	lr 0.03 schedules, trimmed rounds 700/500/700
+09	c7a03ea	1789639756	full lr0.03 round counts 900/600/900
+10	1e048c5	1789640241	colsample 0.6 all members, rounds 800/520/800
+11	5e9f1e0	1789640878	5-view TTA (amp5) in predict_proba
+12	7182174	1789641300	TTA 9 views
+13	2d31563	1789641423	stream TTA views one at a time (memory-safe for 1M holdout)

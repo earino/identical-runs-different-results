@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	13fcfc3	0.7141	ok	4	baseline
+2	9d58776	0.7056	ok	7	capacity 2000x8 lr.05 early stop
+3	d4999c2	0.6931	ok	12	depth10, 500 rounds, subsample/colsample 0.8, lambda 2
+4	3f4757b	0.6962	ok	9	target encoding carrier/origin/dest/route/hour + dep time feats
+5	4a01181	0.7083	ok	3	n_estimators 300 baseline features
+6	3f63a19	0.7116	ok	2	depth 4, lr 0.3 (shallower, faster learning)
+7	4b62e53	0.7137	ok	2	hour/minute/sin/cos + numeric month/day/dow
+8	f2b1f6e	0.7138	ok	1	60 rounds subsample/colsample 0.8
+9	81a6963	0.0000	crash	2	route categorical + numeric time feats, baseline model
+10	034c8e5	0.7051	ok	2	route categorical (fixed levels) + time feats
+11	96badfa	0.7161	ok	4	bag of 8 (subsample .7, colsample .8)
+12	ab1393d	0.7159	ok	5	bag of 16
+13	cde8456	0.7161	ok	3	bag of 8, depth 7
+14	5797b08	0.7162	ok	4	bag of 8 + hour feature
+15	4731d68	0.7128	ok	3	bag of 8 + TE(carrier, carrier-hour, origin, dest) m=20-50
+16	7e6f02a	0.7164	ok	4	bag of 8, 60 rounds each
+17	41f4417	0.7157	ok	7	bag of 8, 100 rounds each
+18	0ec92d7	0.7161	ok	4	bag of 8 + numeric month/dow + hour interactions
+19	a7753a1	0.7159	ok	3	bag of 8 x60, hour monotone +1
+20	72cf14e	0.7170	ok	5	bag 8x60 + TE origin-hour & dest-hour (m=100)
+21	b44ceec	0.7166	ok	5	bag 8x60 + OH/DH TE + carrier TE
+22	5f38985	0.7170	ok	5	bag 8x60 + OH/DH TE m=50
+23	3e72fe4	0.7170	ok	5	bag 8x60 + TE on 30-min slot keys (m=100)
+24	742af5e	0.7176	ok	6	bag of 12 with mixed depths 4/5/6/8
+25	7158119	0.7177	ok	9	bag of 12, depths 4-10, colsample 0.6/0.8/1.0
+26	e9d2669	0.7177	ok	15	bag of 24 (depths 4-10, colsample grid)
+27	e1d064b	0.7178	ok	8	bag of 12, rank-averaged (AUC-aware)
+28	8f09a9c	0.7175	ok	9	bag of 12, + lr diversity 0.06/0.1/0.15
+29	0f7d815	0.0000	crash	1	bag + log_dist, dist*hour, dist vs route mean
+30	9c2212a	0.7177	ok	9	bag + log_dist, dist*hour, dist vs route mean (fixed)
+31	9b7f9bc	0.7208	ok	12	12 diverse bag (full view) + 4 lean-view models, rank-averaged
+32	07d35b2	0.7203	ok	14	12 full-view + 8 lean-view models
+33	6c5b70c	0.7207	ok	12	lean view adds OH/DH TE numerics
+34	a44a6c1	0.7212	ok	14	lean-view models at 400 rounds
+35	e8e88f6	0.7211	ok	17	full-view bag at 100 rounds
+36	4f1e112	0.7208	ok	16	add 4-model raw view (no TE)
+37	e214b01	0.7212	ok	14	lean view + dep sin/cos
+38	d5eb547	0.7207	ok	18	full-view bag 18 (lean 4 unchanged)
+39	8b96682	0.7213	ok	16	12 full-view + 6 lean-view (400 rounds)
+40	74d9e08	0.7210	ok	20	12 full-view + 8 lean-view (400 rounds)

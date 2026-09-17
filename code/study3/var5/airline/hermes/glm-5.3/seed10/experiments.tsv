@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	1a46e0c	0.7141	ok	4	baseline
+2	18a104d	0.7144	ok	3	hour features + cyclical + early stopping
+3	0fb34f4	0.7091	ok	3	route cat + ordinal time features
+4	ab41a59	0.7160	ok	3	OOF target encoding carrier/origin/dest
+5	0b0077b	0.7167	ok	4	TE route + hour interactions
+6	bfc985a	0.7177	ok	6	lr 0.05 3000 trees es100
+7	aec76e4	0.7232	ok	7	calendar TEs + dow interactions + log dist
+8	530c63b	0.7213	ok	7	depth 8 mcw 10
+9	5fc6594	0.7236	ok	7	min_child_weight 1
+10	6131285	0.7244	ok	8	lr 0.03 4000 trees
+11	2c6efd6	0.7223	ok	9	congestion count features
+12	4d006d0	0.7249	ok	8	time bucket features
+13	c6e7057	0.7387	ok	10	t30 TE interactions
+14	d030664	0.7401	ok	11	t15 TE interactions
+15	6def87a	0.7410	ok	13	t10 TE interactions
+16	08d8e76	0.7406	ok	13	te smoothing 10
+17	236083a	0.7411	ok	13	te smoothing 50
+18	76f7f22	0.7416	ok	12	te smoothing 100
+19	5b58a44	0.7420	ok	13	te smoothing 200
+20	25399c1	0.7431	ok	13	te smoothing 400
+21	7ddaa6a	0.7429	ok	13	te smoothing 800
+22	7f32bd9	0.7441	ok	15	te smoothing 600
+23	3dcf3ab	0.7429	ok	19	te smoothing 500
+24	87f5a7c	0.7436	ok	31	te smoothing 700
+25	bda1c54	0.7510	ok	18	2-model logit ensemble
+26	bbfc2b1	0.7515	ok	19	ensemble weights 65/35
+27	8664674	0.7504	ok	19	ensemble weights 75/25
+28	933ff96	0.7517	ok	18	ensemble weights 60/40
+29	7300fee	0.7519	ok	25	3-model ensemble
+30	3fce154	0.7507	ok	26	month-interaction TEs
+31	67e0a96	0.7511	ok	45	5-model ensemble
+32	db81ec8	0.7520	ok	24	time-decay weights on model B
+33	289f875	0.7524	ok	23	time-decay weights all models
+34	b92df5e	0.7523	ok	23	stronger time-decay 0.2-1.0
+35	60d2717	0.7524	ok	22	time-decay 0.35-1.0
+36	116ad80	0.7276	ok	44	day-grouped OOF folds
+37	2c2aa7f	0.7521	ok	25	10-fold OOF TE
+38	043fdd2	0.7430	ok	42	unseen-key TE fallback to prior
+39	55f5258	0.7522	ok	31	bagged full-view model 2 seeds
+40	9b3a840	0.7527	ok	23	final ensemble weight tweak

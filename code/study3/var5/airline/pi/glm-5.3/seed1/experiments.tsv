@@ -1,0 +1,25 @@
+n	commit	eval_auc	status	seconds	description
+1	8993a1d	0.7141	ok	4	baseline
+2	04686a0	0.7079	ok	2	FE v1: numeric date/time + route categorical
+3	6a8e747	0.7042	ok	5	FE v1 + capacity: ES on 80/20 split, lr .05 depth 8
+4	2f0c30c	0.7171	ok	5	FE v2 (drop Route cat) + capacity
+5	c09e386	0.7126	ok	6	TE m=50 for Route/Origin/Dest/Carrier
+6	012a21f	0.7215	ok	9	ES->refit full data d8 lr.05
+7	a4aa4a8	0.7297	ok	17	d12 lr.03 ES->refit
+8	f626efe	0.7379	ok	28	d20 lr.03 ES->refit
+9	2599191	0.7387	ok	29	RouteCnt feature
+10	eaa28be	0.7404	ok	59	ens3 seeds on full data
+11	8d1f535	0.7408	ok	73	ens3 colsample 0.7
+12	6a868fa	0.7419	ok	64	2-fold ES mean b, ens3
+13	666ae35	0.7457	ok	86	cs.6 mb1024, 2-fold ES ens3
+14	dbadb1e	0.0000	timeout	121	lr .02, cs.6 mb1024
+15	b8044f9	0.7444	ok	86	hetero-cs ens3
+16	805c9e0	0.7455	ok	81	b-ensemble {mean,fA,fB} rounds
+17	c43f9c6	0.7434	ok	97	cs_bynode 0.8
+18	03ddf57	0.7453	ok	73	d18 bracket check
+19	13a8a70	0.7448	ok	79	subsample 0.75 bracket
+20	6915f7f	0.7445	ok	85	cs 0.65 bracket
+21	fba50ea	0.7449	ok	76	lr .035 bracket
+22	4f7267c	0.7442	ok	87	carrier onehot max_cat_to_onehot=64
+23	1ada18f	0.7454	ok	93	mb2048 bracket
+24	1d945bf	0.7456	ok	87	sub 0.85 bracket

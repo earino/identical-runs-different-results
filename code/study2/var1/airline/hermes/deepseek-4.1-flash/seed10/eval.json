@@ -1,0 +1,160 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 10,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T04:41:38+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s10-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T04:58:06+00:00",
+  "wall_seconds": 988.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2144.3,
+  "endpoint_at_end": "ok",
+  "head": "4cf096e",
+  "n_commits": 15,
+  "n_experiments": 40,
+  "n_ok": 37,
+  "n_crash": 3,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7336,
+  "final_eval_auc": 0.7336,
+  "holdout_auc": 0.73456518634,
+  "holdout_ap": 0.7244816117846054,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.01979443460399999,
+  "generalization_gap": -0.0009651863399999794,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3604059,
+    "tokens_in_uncached": 3604059,
+    "tokens_in_cached": 0,
+    "tokens_out": 51945,
+    "turns": null,
+    "api_calls": 70,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 2063.2,
+  "cpu_seconds_counted": 1813.1,
+  "cpu_seconds_uncounted": 8.5,
+  "cpu_seconds_exempt": 241.6,
+  "python_processes": 80,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 75,
+  "fits_counted": 73,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "76b4b1f",
+      "message": "baseline"
+    },
+    {
+      "commit": "42608e7",
+      "message": "regularized: depth4 lr.05 150 trees mcw10"
+    },
+    {
+      "commit": "ccfbceb",
+      "message": "lr0.025 400 trees depth4"
+    },
+    {
+      "commit": "5b1917b",
+      "message": "lr0.0125 800 trees"
+    },
+    {
+      "commit": "5f771b2",
+      "message": "5-member averaged ensemble, varied depth/lr/seed"
+    },
+    {
+      "commit": "e9f825a",
+      "message": "drop DayofMonth"
+    },
+    {
+      "commit": "d34b1d6",
+      "message": "single model, no DayofMonth"
+    },
+    {
+      "commit": "f579e69",
+      "message": "drop DayofMonth and Month"
+    },
+    {
+      "commit": "9843f97",
+      "message": "reduced features + depth5"
+    },
+    {
+      "commit": "2b3a797",
+      "message": "reduced features + depth6"
+    },
+    {
+      "commit": "e1558c8",
+      "message": "reduced features + depth8"
+    },
+    {
+      "commit": "5075a2f",
+      "message": "reduced features + depth12"
+    },
+    {
+      "commit": "8e2302c",
+      "message": "reduced features + depth16"
+    },
+    {
+      "commit": "73f986a",
+      "message": "unlimited depth"
+    },
+    {
+      "commit": "c6480c6",
+      "message": "unlimited depth lr0.0125 800 trees"
+    },
+    {
+      "commit": "4cf096e",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1821.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 81.1,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "c6480c6",
+  "best_commit_eval_auc": 0.7336,
+  "best_commit_holdout_auc": 0.73456518634,
+  "best_commit_holdout_ap": 0.7244816117846054,
+  "best_commit_error": null,
+  "finalized_best": true
+}

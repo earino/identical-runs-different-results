@@ -1,0 +1,140 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 40,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T16:21:50+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s40-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T16:33:36+00:00",
+  "wall_seconds": 705.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 1308.6,
+  "endpoint_at_end": "ok",
+  "head": "a370d58",
+  "n_commits": 10,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7191,
+  "final_eval_auc": 0.7191,
+  "holdout_auc": 0.719931705476,
+  "holdout_ap": 0.7090253699838623,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.005160953740000029,
+  "generalization_gap": -0.0008317054760000886,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6154931,
+    "tokens_in_uncached": 6154931,
+    "tokens_in_cached": 0,
+    "tokens_out": 25440,
+    "turns": null,
+    "api_calls": 132,
+    "method": "sum-of-132-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 1164.6,
+  "cpu_seconds_counted": 1116.4,
+  "cpu_seconds_uncounted": 1.0,
+  "cpu_seconds_exempt": 47.3,
+  "python_processes": 48,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 295,
+  "fits_counted": 283,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "a599bdc",
+      "message": "baseline"
+    },
+    {
+      "commit": "152d500",
+      "message": "depth4 100t + train AUC diag"
+    },
+    {
+      "commit": "b28561e",
+      "message": "depth3 200t"
+    },
+    {
+      "commit": "39c9684",
+      "message": "ensemble of 5 diverse shallow models"
+    },
+    {
+      "commit": "b777bb9",
+      "message": "ensemble of 10 diverse shallow models"
+    },
+    {
+      "commit": "a6e8471",
+      "message": "ensemble + origin-hour congestion feature"
+    },
+    {
+      "commit": "3056f46",
+      "message": "ensemble + lossguide members"
+    },
+    {
+      "commit": "c346c2f",
+      "message": "add carrier-hour congestion"
+    },
+    {
+      "commit": "950ebf2",
+      "message": "add dest-hour on best"
+    },
+    {
+      "commit": "3cd802d",
+      "message": "add carrier-origin count"
+    },
+    {
+      "commit": "a370d58",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1117.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 144.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "3cd802d",
+  "best_commit_eval_auc": 0.7191,
+  "best_commit_holdout_auc": 0.719931705476,
+  "best_commit_holdout_ap": 0.7090253699838623,
+  "best_commit_error": null,
+  "finalized_best": true
+}

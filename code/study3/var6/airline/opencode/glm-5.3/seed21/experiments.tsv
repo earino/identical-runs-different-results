@@ -1,0 +1,28 @@
+n	commit	eval_auc	status	seconds	description
+1	86677d0	0.7141	ok	3	baseline
+2	b296c3a	0.7094	ok	2	scale up trees + early stopping
+3	a9f364a	0.7148	ok	15	d6 lr0.05 more trees + ES
+4	a1cbf56	0.7104	ok	5	FE batch 1: dep time/calendar/route
+5	96eabae	0.7148	ok	2	FE: dep time-of-day only
+6	9563054	0.7147	ok	3	target encoding (OOF, smooth 30)
+7	ad1fdae	0.7159	ok	6	d3 lr0.02 heavy reg, 2500 trees
+8	61f4e02	0.7156	ok	12	lr0.01 4000 trees ES200
+9	3ea15d5	0.7193	ok	10	TE + hour interactions, slow profile
+10	6e46f27	0.7226	ok	10	TE v3 + counts
+11	acae3cd	0.7224	ok	10	TE v4 + adaptive smoothing
+12	e8fa102	0.7232	ok	42	5-seed ensemble d4_l20
+13	6e98a07	0.7232	ok	68	8-model mixed ensemble
+14	12bcc56	0.0000	crash	1	time-decay weighting k=0.2
+15	78ddd49	0.7218	ok	37	time-decay weighting k=0.2 (fix crash)
+16	d76d157	0.7247	ok	65	time features under TE+slow profile
+17	8fafa3a	0.7263	ok	71	ensemble colsample 0.5
+18	6de60ec	0.7258	ok	82	10-fold TE + contrasts
+19	3585267	0.7319	ok	34	slot TE family
+20	cfe5fb1	0.7332	ok	37	slot15 TE + 10fold + d5 profile
+21	f28519c	0.7345	ok	41	10-min slot TEs
+22	6ebba30	0.7361	ok	47	ensemble d8_mcw200_l10
+23	a0fe002	0.7357	ok	67	8-model profile-diverse ensemble
+24	64c8ccb	0.7362	ok	57	per-model TE fold seeds
+25	e69f70b	0.7362	ok	76	7 models, per-model TE folds
+26	1cef40f	0.7384	ok	52	colsample 0.4
+27	0cad26a	0.7486	ok	74	cs 0.08 mcw 20

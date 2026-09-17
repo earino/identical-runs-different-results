@@ -1,0 +1,27 @@
+n	commit	unix_time	subject
+00	c01a325	1789590313	baseline
+01	2a4be11	1789590395	FE v1: numeric dates, hour/minute, route pair; capacity + eval early stopping
+02	94c0980	1789590465	lr 0.05, mcw 10, lambda 2, verbose trajectory
+03	73ab175	1789590491	add OOF smoothed target encoding for route/origin/dest/carrier
+04	c5c8e04	1789590518	add hour-interaction target encodings (origin/dest/carrier/route x hour)
+05	c43d34a	1789590624	depth 8 for TE-rich features
+06	3b42f91	1789590666	stronger regularization for year transfer
+07	8d12644	1789590753	push regularization further
+08	6c904bc	1789590791	reg even harder: mcw80 lambda20 ss0.5 cs0.5
+09	bf4c288	1789590912	add dow_hour TE (weekly cycle transfers)
+10	f15148c	1789590955	weekly-cycle TEs: carrier_dow, route_dow
+11	014abff	1789590987	origin_dow + dest_dow TEs
+12	a2f87e1	1789591058	4-seed ensemble averaging, fresh ES callback per model
+13	3c09e89	1789591121	6-seed ensemble
+14	bb95df9	1789591293	10-fold OOF target encoding
+15	28f6c1a	1789591842	alpha 1.0 L1
+16	9c2e297	1789592087	slot15 time-of-day TE + carrier_origin TE
+17	48d0c00	1789592211	carrier_dest + carrier_slot15 TEs
+18	01ee22a	1789592301	origin_slot15 + dow_slot15 TEs
+19	894ab44	1789592387	dest_slot15 + slot10 TEs
+20	e28d08f	1789592476	reg re-probe: mcw40 lambda10 with 21 TEs
+21	514041b	1789592601	reg probe: mcw20 lambda5
+22	290d763	1789592679	reg probe: mcw10 lambda2
+23	6f18d50	1789592853	slot5 + carrier_slot10 TEs
+24	d629019	1789592942	lr 0.04
+25	e7af86f	1789593299	7-seed ensemble

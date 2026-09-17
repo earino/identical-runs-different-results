@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	26c960a	0.7141	ok	4	baseline
+2	07b9635	0.7237	ok	9	exp2: deptime parse, cyclical time, numeric calendar, cats
+3	1a46f20	0.7278	ok	12	exp3: hour+dow categorical
+4	047f048	0.7283	ok	10	exp4: target encoding origin/dest/carrier
+5	1432423	0.7281	ok	12	exp5: distance log + bins
+6	b0c151e	0.7280	ok	11	exp6: month/dom cats + holiday flags
+7	8170a2e	0.0000	crash	13	exp7: hour interactions
+8	628b893	0.7213	ok	10	exp8: numeric interactions
+9	ea74a1a	0.7283	ok	12	exp9: depth9 lr05 600r
+10	9379350	0.7341	ok	12	exp10: deeper regularized
+11	1be75c1	0.7343	ok	19	exp11: 800 rounds
+12	7013b64	0.7326	ok	29	exp12: 1400 rounds
+13	c30b140	0.7251	ok	20	exp13: route+origin-hour TE
+14	de5e2ca	0.7339	ok	15	exp14: od pair id
+15	3e65ed6	0.7343	ok	15	exp15: 3-seed ensemble
+16	6070f8b	0.7343	ok	61	exp16: CV harness
+17	576d4c0	0.7343	ok	65	exp17: cat_smooth 50
+18	7b0d4ce	0.7337	ok	76	exp18: tod buckets
+19	8c78cbc	0.7340	ok	26	exp19: 2-model ensemble
+20	09ce069	0.7340	ok	81	exp20: frequency encoding
+21	65991b0	0.7343	ok	64	exp21: time-ordered CV
+22	e076e76	0.7356	ok	64	exp22: drop Month
+23	ebd8145	0.7297	ok	59	exp23: drop sincos
+24	1f03fcd	0.7349	ok	61	exp24: TE alpha 5
+25	40e3398	0.7356	ok	63	exp25: longhaul interaction
+26	a322f04	0.7356	ok	64	exp26: carrier-hour interaction
+27	423035b	0.0000	timeout	120	exp27: lossguide
+28	015c6ed	0.7336	ok	46	exp28: depth 9
+29	0a18309	0.7360	ok	85	exp29: ensemble v2
+30	a4fc101	0.7358	ok	87	exp30: 3-model ensemble
+31	2d9b67d	0.7460	ok	105	exp31: tod+dom cats
+32	af5a19d	0.7454	ok	89	exp32: drop sincos
+33	7a60c84	0.7460	ok	115	exp33: 3rd deep member
+34	afe54f1	0.7367	ok	117	exp34: min5 + badtime
+35	9800acc	0.0000	timeout	123	exp35: 4-model bag
+36	2c9aee9	0.7438	ok	115	exp36: 3-model bag
+37	03bfd71	0.7460	ok	34	exp37: no CV harness
+38	0208e48	0.7458	ok	38	exp38: dow-tod interaction
+39	0e558c7	0.7464	ok	46	exp39: depth 12
+40	d7639df	0.7465	ok	44	exp40: depth14 second member

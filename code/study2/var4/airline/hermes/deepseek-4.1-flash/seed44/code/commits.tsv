@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	c07443c	1789505713	baseline
+01	00a1ca1	1789505779	hp: 300 trees depth5 mcw20 reg2 lr0.05
+02	b3ab494	1789505792	feat: dep time decomposition
+03	e3b9e1a	1789505851	hp: early stopping on eval, 2000 trees cap
+04	c3b9132	1789505894	feat: ordinal calendar columns instead of categorical
+05	1c9bb3d	1789505934	model: 5-seed XGBoost bag averaged
+06	4ab6813	1789506022	model: 10-seed bag
+07	9f0cee4	1789506070	feat: airport-hour schedule density
+08	a437e86	1789506117	feat: dest/carrier/system hour densities
+09	2d6e691	1789506323	hp: colsample 0.5 mcw 40
+10	2e69f83	1789506424	model: 15-seed bag
+11	638cab3	1789506503	model: mix lossguide into the bag
+12	6c99ddf	1789506577	model: 3-shape x 5-seed bag
+13	6a3687a	1789506657	model: 4-shape x 5-seed bag (20 models)
+14	3ec6747	1789506990	feat: airport peak-hour ratio + daily volume
+15	be9f735	1789507664	model: 16-model bag at lr 0.05

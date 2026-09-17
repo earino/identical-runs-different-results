@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a12627d	0.7141	ok	4	baseline
+2	8ce00fe	0.7136	ok	3	capacity+early stopping
+3	baba171	0.7089	ok	3	FE v1 hour/cyclical/route/logdist
+4	a9b3e98	0.7124	ok	2	baseline + hour feats + logdist
+5	9760045	0.7083	ok	3	300 trees baseline feats
+6	e908f86	0.7158	ok	1	depth4 100trees
+7	d44938e	0.7083	ok	2	depth4 300trees
+8	33abd68	0.7162	ok	2	depth3 100trees
+9	114cbf6	0.7160	ok	2	depth3 200trees
+10	0064516	0.7153	ok	2	subsample colsample 0.8
+11	d7251f5	0.7164	ok	1	min_child_weight 20
+12	626ff20	0.7044	ok	2	target encoding m=25
+13	5d154d8	0.7146	ok	3	5-bag ensemble subsample0.7
+14	b5e87de	0.7175	ok	2	depth ladder ensemble 3/4/5
+15	dbef009	0.7177	ok	4	depth ladder 2-6
+16	5919e36	0.7177	ok	8	ladder 2-6 x 3 seeds
+17	1ea85cf	0.7181	ok	4	dep_hour categorical
+18	07d0a8a	0.7166	ok	3	drop raw DepTime
+19	a54b99a	0.7181	ok	4	distance bins cat
+20	6bcb2ae	0.7180	ok	3	origin/dest frequency
+21	00f2d7c	0.7196	ok	8	depth x lr ensemble 15 models
+22	60f3f92	0.7196	ok	9	cat_smooth 10
+23	0f179ef	0.7201	ok	8	recency weights
+24	0661570	0.7201	ok	7	recency weights 1-3
+25	fcfaa3f	0.7201	ok	10	carrier x hour cat
+26	84e77b2	0.7202	ok	7	ensemble colsample 0.7
+27	9c5db31	0.7189	ok	19	per-member early stopping on eval
+28	f851a8b	0.7200	ok	9	20-member lr grid
+29	12f7154	0.7209	ok	21	alpha-diverse ensemble 45
+30	07326ac	0.7207	ok	26	dow x hour cat
+31	829d710	0.7209	ok	20	mcw-diverse ensemble
+32	9a3e5a5	0.7195	ok	17	month x dow cat
+33	33d355d	0.7246	ok	21	half-hour buckets
+34	bc35efa	0.7253	ok	22	15-min buckets
+35	faedf1b	0.7231	ok	22	5-min buckets
+36	c81a409	0.7263	ok	23	multi-scale dep buckets
+37	ecb5003	0.7269	ok	23	10+15+30+60 dep buckets
+38	98d8bb6	0.7301	ok	32	150 trees per member
+39	9e3eddc	0.7323	ok	41	200 trees per member
+40	d0eb65a	0.7349	ok	59	300 trees per member

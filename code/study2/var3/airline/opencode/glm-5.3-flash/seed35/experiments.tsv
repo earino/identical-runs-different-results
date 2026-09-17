@@ -1,0 +1,23 @@
+n	commit	eval_auc	status	seconds	description
+1	f95a5b2	0.7141	ok	4	baseline
+2	f28b247	0.7141	ok	3	exp2: bigger model + early stopping on eval
+3	51a34e8	0.7063	ok	4	exp3: feature engineering v1
+4	c04e572	0.0000	crash	2	exp4: OOF TE route + carrier-hour, tuned params
+5	516dfe1	0.7195	ok	7	exp4: OOF TE route + carrier-hour, tuned params
+6	63161b9	0.7222	ok	34	exp5: 5-model ensemble
+7	dbd96b1	0.7250	ok	42	exp6: colsample 0.4 ensemble
+8	ee4b169	0.7269	ok	47	exp7: frequency features in ensemble
+9	05512a4	0.7281	ok	65	exp8: DepTimeRaw + ES on AUC
+10	58ee846	0.7295	ok	78	exp9: dep 2nd harmonic
+11	7023c0d	0.7299	ok	94	exp10: depth-diverse 6-member ensemble
+12	9d69f17	0.7300	ok	78	exp11: per-member TE seed diversity
+13	525c776	0.7406	ok	84	exp12: view-diverse ensemble
+14	e3c2777	0.7389	ok	94	exp13: 6 views incl noDep
+15	ac4ef6e	0.7401	ok	96	exp14: 6 views incl noOriginDest
+16	8cc2728	0.7414	ok	104	exp15: noDateCat 2nd seed
+17	f8c79e3	0.7385	ok	110	exp16: noTE 2nd seed instead of teOnly
+18	b6f34d0	0.0000	crash	0	exp17: lr diversity on noFreq member
+19	9a151e4	0.7415	ok	107	exp17: lr diversity on noFreq member
+20	d5c23a0	0.7416	ok	108	exp18: subsample diversity on teOnly
+21	e53576a	0.7418	ok	109	exp19: month recency weights
+22	910ea02	0.7418	ok	113	exp20: 10-fold OOF TE

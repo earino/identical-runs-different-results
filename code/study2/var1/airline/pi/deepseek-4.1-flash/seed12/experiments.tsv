@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c0d7916	0.7141	ok	4	baseline
+2	9f1ba0b	0.7089	ok	6	time features + route + 400 trees
+3	1ba3c20	0.7091	ok	4	baseline feats, 400 trees
+4	262f770	0.7125	ok	2	100 trees only
+5	bb643e7	0.7150	ok	2	depth 4
+6	483af2f	0.7119	ok	1	depth 3
+7	42efcb9	0.7158	ok	2	depth4 100trees
+8	73e2f57	0.7126	ok	3	depth4 300trees
+9	f99e60c	0.7165	ok	2	tod features
+10	932639d	0.7045	ok	3	route categorical
+11	f447abd	0.7165	ok	2	mcw50
+12	bb85946	0.7180	ok	2	150 trees
+13	80c4694	0.7178	ok	2	200 trees
+14	d5efe30	0.7166	ok	2	depth5 100
+15	fc2801d	0.7180	ok	2	freq enc
+16	3222efd	0.7180	ok	2	drop DepTime
+17	1b20be2	0.7171	ok	2	sub/col 0.8
+18	28b529d	0.7191	ok	2	lr.05 300t
+19	772a0ff	0.7188	ok	4	lr.03 500t
+20	48c5e6c	0.7164	ok	2	depth5 lr.05 200t
+21	a5fbaa3	0.7191	ok	4	3-seed ensemble
+22	e69279f	0.7163	ok	3	max_cat_threshold 256
+23	247d9a5	0.7188	ok	2	OOF target encoding
+24	2eb56b2	0.7139	ok	25	dart
+25	8d4af4e	0.7196	ok	5	diverse ensemble
+26	e618799	0.7197	ok	8	expanded ensemble
+27	eba2172	0.7201	ok	5	3-member ensemble
+28	552f70b	0.7208	ok	9	5-member ensemble
+29	903b9fe	0.7225	ok	9	doy weekend
+30	2f70860	0.7227	ok	11	carrier_hour
+31	d2455bb	0.7217	ok	9	cyclical
+32	9efbc1e	0.7227	ok	11	bagged members
+33	a7e9364	0.0000	crash	1	drop origin/dest
+34	356a635	0.7254	ok	11	drop month/dom cat
+35	dde032a	0.7215	ok	11	drop dow cat
+36	145244c	0.7230	ok	10	drop minute
+37	93dc0ec	0.7065	ok	9	drop O/D cat
+38	9f6902b	0.7261	ok	7	greedy ensemble
+39	afe5ad6	0.7261	ok	8	target encodings
+40	dcc0991	0.7263	ok	10	final ensemble

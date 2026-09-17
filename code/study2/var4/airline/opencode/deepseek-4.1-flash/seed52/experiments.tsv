@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d120550	0.7141	ok	4	baseline
+2	70fa530	0.7019	ok	5	FE time+cyclic+route, 1200 trees lr.05 ES
+3	4b9836b	0.7096	ok	6	800 trees lr.03 subsample .9
+4	c910b83	0.7125	ok	2	100 trees lr.1
+5	dcae93a	0.7136	ok	2	min_child_weight 20
+6	95d814a	0.7161	ok	2	depth 4, 60 trees
+7	2ae8907	0.7161	ok	2	depth 3, 140 trees
+8	98a84cd	0.7167	ok	2	depth 4, 200 trees lr.05
+9	e456217	0.7169	ok	3	depth 4, 400 trees lr.03
+10	6f5155c	0.7031	ok	4	depth4 + hour/tod/route features
+11	d4182d5	0.7170	ok	3	depth4 + hour/tod cyclic only
+12	d331b6d	0.7169	ok	3	depth4 400 + sub/colsample .8
+13	c5275ba	0.7162	ok	3	TE OOF carrier/origin/dest/route
+14	e01ddbd	0.7163	ok	3	depth5 300 lr.03
+15	9af63f6	0.7171	ok	11	ensemble 6x depth4 sub/col.8
+16	ada4c48	0.7186	ok	9	ensemble + doy cyclic
+17	6edd0ae	0.7186	ok	9	ensemble + doy + dow cyclic
+18	709ce93	0.7186	ok	9	ensemble + doy + numeric tod
+19	1766cb7	0.7166	ok	9	ablation drop M/DOM/DOW cats
+20	0c04095	0.7187	ok	9	ensemble + doy + freq encodings
+21	de412c0	0.7187	ok	20	ensemble depth4 800 lr.015
+22	05a8ecf	0.7188	ok	11	ensemble + doy + holiday_dist
+23	b1e76a6	0.7177	ok	22	lossguide leaves31 ensemble
+24	88d913c	0.7189	ok	11	ensemble mixed depths 3/4/5
+25	4775ce5	0.7191	ok	11	network share features
+26	f0149cc	0.7190	ok	14	target-rate features
+27	cae84df	0.7192	ok	21	diverse 12-model ensemble
+28	f58f58e	0.7198	ok	23	ensemble + reg lambda/alpha/gamma
+29	63280b4	0.7209	ok	22	reg lambda20 alpha5 gamma3
+30	09a6202	0.7196	ok	21	reg lambda50 alpha10 gamma5
+31	3c09754	0.7205	ok	21	reg 35/7/4
+32	b1e3b7d	0.7210	ok	38	reg + 700 trees lr.02
+33	0c8184b	0.7211	ok	36	reg + mcw 10/20
+34	0cabb38	0.7219	ok	47	deeper ensemble with strong reg
+35	a5fe2ea	0.7223	ok	55	deeper ensemble v2
+36	1554161	0.7227	ok	62	deeper ensemble v3
+37	35b30ec	0.7228	ok	70	deeper ensemble v4
+38	7bb1549	0.7230	ok	84	deeper ensemble v5
+39	6c95584	0.7232	ok	80	deeper ensemble v6
+40	b2666d8	0.7232	ok	86	deeper ensemble v7

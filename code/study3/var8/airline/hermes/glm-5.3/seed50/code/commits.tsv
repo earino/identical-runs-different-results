@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	5356f07	1789636682	baseline
+01	bf51135	1789636729	capacity: 2000 trees lr=0.05 early stopping
+02	299165a	1789636781	feat: DepTime breakdown + numeric date parts, no route
+03	a5ee8fc	1789636822	feat: smoothed carrier/origin/dest target rates
+04	5458d37	1789636848	hp: depth8 subsample0.8 colsample0.8 mcw5 lambda2
+05	480fb47	1789636860	hp: lr 0.05 -> 0.03
+06	cd60fdd	1789636905	feat: 2h blocks, 15-min bins, hour x dist, logdist
+07	22c8812	1789636927	feat: carrier x time-of-day interaction cats
+08	79474c3	1789637077	feat: smoothed car-hour/car-blk/org-blk rate numerics
+09	ba0d15a	1789637155	ensemble: 3-seed average
+10	ce5f370	1789637253	feat: congestion counts (org/dest x hour, total/hour)
+11	26b6c0b	1789637302	feat: carrier/hour x distance-band rates
+12	eb22b14	1789637346	feat: car x 30min rate, coarse-origin x time rates
+13	b587d1a	1789637587	hp: feature_weights boost interactions
+14	5957f06	1789637880	ensemble: 4 seeds

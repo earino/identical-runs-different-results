@@ -1,0 +1,34 @@
+n	commit	unix_time	subject
+00	288cf64	1789496063	baseline
+01	7d5bfd5	1789496104	feat: time/cyclical features, route+carrier cats, 2000 trees + early stopping
+02	f142794	1789496147	exp3: drop Route cat, print internal valid AUC
+03	bd6f829	1789496174	exp4: n_estimators sweep at lr=0.1, no Route
+04	12b459e	1789496202	exp5: depth x lr sweep
+05	933aefe	1789496258	exp8: n_est sweep at depth8 lr0.05 (no TE)
+06	d333144	1789496291	exp9: mcw x colsample sweep
+07	2e9d816	1789496319	exp10: colsample x subsample x n_est sweep
+08	ae7aee0	1789496381	exp11: lower colsample x depth
+09	fd27827	1789496438	exp12: depth 12 probe
+10	7970d6c	1789496499	exp13: depth 14/16 probe
+11	09ddc50	1789496567	exp14: 6-member config ensemble
+12	f4fc4e4	1789496635	exp15: strong-member ensemble + depth20 probe
+13	58079bc	1789496960	exp18: depth20 lr/n/lambda tuning
+14	a0b7927	1789497071	exp19: 5-member production ensemble
+15	fcaf5a8	1789497188	exp20: subsample x max_bin at depth20
+16	7fb2bcf	1789497295	exp21: 4x depth20 sub1 bin512 ensemble
+17	5f1d340	1789497499	exp22: feature variants at depth20 (fixed distbucket dtype)
+18	4f3b56d	1789497627	exp24: freq packs (hours/base/all)
+19	99d2168	1789497725	exp25: ensemble on hours+base freq features
+20	eb22805	1789497864	exp26: freq pack v1/v2/v3
+21	5081743	1789497976	exp27: shape retune on freq features
+22	d165e7b	1789498108	exp28: 5-member ensemble on freq features
+23	6c816d4	1789498368	exp29: 4-member ensemble with lr0.03 anchor (fixed)
+24	72da1ea	1789498571	exp31: share ratios + DowHour freq (fixed)
+25	9d5ecca	1789498677	exp33: ensemble on ratios + agg comparison
+26	b5ebe2a	1789498805	exp34: 3-member ratios ensemble + agg
+27	659c32d	1789498931	exp35: alt member mix (2nd anchor, col 0.5)
+28	d88db29	1789499055	exp36: lr0.02 anchor mix
+29	5c61d55	1789499183	exp37: depth-diverse mix, anchor n450
+30	0a59ea0	1789499305	exp38: carrier-market freqs + CarRoute share (anchor config)
+31	4f06659	1789499436	exp39: final ensemble on full variant
+32	80e7944	1789499569	exp40: 2-member ensemble on full (final)

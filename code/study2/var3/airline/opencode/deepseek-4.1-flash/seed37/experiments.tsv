@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	ba8381d	0.7141	ok	5	baseline
+2	cdd4a17	0.7061	ok	6	capacity 400 trees deep
+3	f8d1467	0.7131	ok	3	300 trees depth6 lr0.05
+4	721a31c	0.7177	ok	2	ordinal calendar + dep time features
+5	7164934	0.7089	ok	2	Route interaction categorical
+6	5b763b3	0.7218	ok	3	regularized depth4 500 trees
+7	4f5ac5f	0.7221	ok	5	depth6 500 trees reg
+8	5e746f9	0.7213	ok	5	freq encodings
+9	c9ab6c2	0.7203	ok	5	cyclic calendar doy
+10	880d1aa	0.7224	ok	7	lr0.03 1000 trees
+11	5179a19	0.7220	ok	5	depth5 lr0.03 1000
+12	11e11ad	0.7224	ok	9	depth7 lr0.03 1000
+13	b89c249	0.7233	ok	16	3-seed ensemble
+14	4faaccb	0.7232	ok	29	5-seed ensemble
+15	8f313ee	0.7221	ok	19	max_cat_threshold256
+16	6c3fea3	0.7241	ok	18	stronger reg
+17	bd7a608	0.7245	ok	16	even stronger reg
+18	0e69721	0.7251	ok	17	very strong reg
+19	56033fb	0.7244	ok	16	mcw50 lam30
+20	47e7970	0.7254	ok	23	lr0.02 1500 trees
+21	5ba5230	0.7261	ok	31	depth7 strong reg
+22	3c34fef	0.7267	ok	33	depth8 strong reg
+23	3a6f677	0.7279	ok	43	depth10 strong reg
+24	d778ef8	0.7281	ok	47	depth12 strong reg
+25	7ae1bcb	0.7282	ok	55	depth14 strong reg
+26	ffa7a21	0.7283	ok	87	2500 trees lr0.012
+27	a3133ce	0.7315	ok	77	add reg_alpha5
+28	2e0535a	0.7242	ok	58	reg_alpha20
+29	2614e93	0.7313	ok	70	reg_alpha3
+30	064098b	0.7315	ok	82	depth14 alpha5
+31	0f0cb5a	0.7175	ok	76	target encoding
+32	4204449	0.7327	ok	90	mcw10 alpha5
+33	6e16d33	0.7329	ok	101	mcw5 alpha5
+34	cd0beed	0.7329	ok	96	diverse depth ensemble
+35	35b1e11	0.7311	ok	95	subsample0.4
+36	dc7e2c2	0.7329	ok	87	colsample0.4
+37	22c42e2	0.0000	timeout	120	lossguide 512 leaves
+38	e22f0b7	0.0000	crash	2	drop raw DepTime
+39	fbedbc2	0.7310	ok	89	drop raw DepTime fixed
+40	e3c4a63	0.0000	crash	1	reg_alpha7

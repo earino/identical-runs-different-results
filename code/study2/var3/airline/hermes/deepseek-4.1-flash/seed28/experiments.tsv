@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c20c3c4	0.7141	ok	4	baseline
+2	fc4f916	0.0000	crash	1	fe v1 + depth8/lr0.05/400 trees
+3	7e21a74	0.7008	ok	8	fe v1 + depth8/lr0.05/400 trees
+4	94c31fb	0.7167	ok	3	fe v2 (no route) 300 trees lr0.05 depth6
+5	1119a4a	0.7016	ok	5	fe v3 + route cat
+6	7d8e99e	0.7173	ok	4	fe v4 + freq encodings
+7	3ccc96d	0.7155	ok	5	fe v5 + OOF target encodings
+8	d7fa2c5	0.7197	ok	5	params: 800 trees lr0.03 cs0.6 mcw10 lambda2
+9	6560094	0.7213	ok	16	params: 2000 trees lr0.015 depth7 mcw20 lambda5
+10	1771ff8	0.7268	ok	26	params: 3000 trees lr0.01 depth8 mcw40 lambda10
+11	6d6cbb4	0.7298	ok	34	params: 4000 trees lr0.008 depth10 mcw80 lambda20
+12	d0eb972	0.7286	ok	53	params: 6000 trees lr0.006 depth10 mcw120 lambda40
+13	8020798	0.7262	ok	41	fe v6 + doy/month cyclical
+14	bf7f30e	0.7301	ok	88	ensemble of 3 XGB models
+15	c500073	0.7327	ok	63	lossguide 255 leaves single model
+16	2832d72	0.7327	ok	64	lossguide 511 leaves 3000 trees lr0.01
+17	bd39743	0.7297	ok	50	ablation: drop DepTime+minute
+18	c1d3a2d	0.7310	ok	70	fe: hour+minute categorical
+19	9ffe47f	0.7222	ok	116	retest route cat w/ heavy reg
+20	c8d147b	0.0000	timeout	128	ensemble 3 lossguide models
+21	b3b19b7	0.7334	ok	81	ensemble 2 lossguide models
+22	9dd434c	0.0000	crash	2	probe carrier_dow cat single model
+23	5e123f2	0.7292	ok	76	probe carrier_dow cat single model
+24	53d483c	0.7294	ok	61	ensemble 2x lossguide mcw160 lambda40
+25	c5ff8c5	0.7354	ok	76	fe: route/carrier tod z-score (single model)
+26	174fede	0.7359	ok	93	ensemble + tod z-score features
+27	5655eeb	0.7370	ok	89	fe: origin/dest tod z-scores added
+28	b6101e2	0.7402	ok	97	fe: schedule density features
+29	744c8bf	0.7384	ok	97	fe: weekday/month schedule shares
+30	ae55781	0.7411	ok	86	fe: carrier dominance shares
+31	eb24687	0.7412	ok	101	fe: market competition (ncarriers/HHI)
+32	dcdac0a	0.7434	ok	82	fe: rotation position features
+33	0d58c5b	0.0000	timeout	120	fe: schedule rank01 + dest pos
+34	1aa7291	0.7431	ok	106	fe: dest pos01 + first/last for dest/carrier/origin
+35	ffd08e2	0.6549	ok	91	fe: schedule rank01 + 1800t ensemble
+36	6b05df0	0.0000	timeout	125	ens: 3 diverse lossguide models
+37	c5eb97b	0.0000	timeout	123	fe: schedule rank01 (merge lookup)
+38	9bc4168	0.0000	timeout	121	fe: carrier hour density
+39	95bfa85	0.7432	ok	66	ablation: cheaper 1500t/2-model ensemble
+40	45b1ae5	0.7440	ok	94	ens: 3 diverse 1300t models

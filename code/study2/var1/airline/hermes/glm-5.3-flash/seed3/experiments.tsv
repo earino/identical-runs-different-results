@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	5846a3e	0.7141	ok	3	baseline: 30 trees depth6, categorical native
+2	8584d3a	0.7108	ok	13	feat v1: cyclical time, OHE routes, ES+refit, depth9
+3	9e1d3c2	0.7110	ok	15	feat v2: all-native cats + time feats, ES+refit
+4	4ff7bdf	0.7117	ok	5	feat v3: depth6 lr0.1 mcw50 + time feats ES
+5	7454b8b	0.7133	ok	2	ablation: baseline 30xd6 model + time feats
+6	67a83df	0.7067	ok	6	baseline feats, 600 trees ES+refit
+7	7023ee7	0.7158	ok	9	sweep: 12 capacity configs select-on-eval
+8	dbbdba5	0.7170	ok	8	sweep 2: d2-d5, sampling, lr0.05
+9	e5b8cdd	0.7052	ok	42	route pair cat + sweep 3
+10	d99499b	0.7170	ok	29	sweep 4: reg refinement at best cfg
+11	8f902c0	0.7171	ok	10	seed-bag ensemble 8 members
+12	5d67427	0.7156	ok	9	target encodings k50 multi-col
+13	0aeecde	0.7193	ok	11	drop-one ablation
+14	780b5a8	0.7197	ok	20	no-Month: capacity re-sweep
+15	2313148	0.7200	ok	10	no-Month drop-one ablation
+16	2adb860	0.7200	ok	10	elimination rd2 + dt categorical
+17	01dfa8b	0.7207	ok	38	micro-tune sweep batch
+18	9f1af33	0.7211	ok	6	diverse ensemble 6 mean/rank
+19	228cc2a	0.7209	ok	12	grid mcw x n
+20	0649dee	0.7212	ok	16	robust multi-seed selection
+21	60bb00f	0.7212	ok	32	mega seed averaging 30 models
+22	35aa23a	0.7212	ok	22	max_bin + colsample variants
+23	fdba26a	0.7216	ok	35	bin512 follow-up sweep
+24	82be535	0.7216	ok	56	lr ladder down
+25	efca928	0.7216	ok	30	freq-ratio reweighting
+26	4302b4d	0.7218	ok	45	depth/gamma/mcw micro at final recipe
+27	b533e3e	0.7220	ok	65	d5 recheck variants
+28	1be3f7b	0.7224	ok	34	top-variant ensemble
+29	37b6a61	0.7220	ok	38	drop-one recheck final recipe
+30	eb7438d	0.7224	ok	71	big ensemble 4x8
+31	6022d91	0.7227	ok	68	ensemble subset search
+32	94cd512	0.7249	ok	85	wide ensemble pool subset search
+33	c2622a0	0.0000	timeout	120	d3-d8 span subset search
+34	06d3fac	0.7303	ok	106	d8-centered pool
+35	c3130d2	0.7357	ok	99	d10-d11 max depth
+36	cfa7884	0.0000	timeout	123	d11-d12 ladder
+37	9bf07ae	0.7387	ok	45	d11+d3 tight pair
+38	76d54cf	0.0000	timeout	125	d12-d13 check
+39	3d3554d	0.7416	ok	39	d12+d3 pair 2 seeds
+40	f0a9290	0.7431	ok	50	final exp: d13+d3

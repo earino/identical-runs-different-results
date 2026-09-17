@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f1f8fbc	0.7141	ok	4	baseline: xgb 30 trees depth6 lr0.1 native categorical
+2	a68d739	0.0000	crash	9	exp2: depth10 600 trees early stop refit
+3	4276b9a	0.0000	crash	1	exp3: depth10 600 trees early stop refit
+4	598cbf0	0.0000	crash	3	exp4: depth10 600 trees early stop refit
+5	19221eb	0.7031	ok	4	exp5: depth10 600 trees early stop refit
+6	8530f1c	0.7085	ok	5	exp6: depth8 500 trees
+7	f925e55	0.7146	ok	4	exp7: time features d6 200t
+8	06409a2	0.7162	ok	11	exp8: capacity sweep
+9	ac6cd15	0.0000	crash	2	exp9: route feature
+10	448e152	0.6956	ok	4	exp10: route feature
+11	ae88a0c	0.0000	crash	3	exp11: reg sweep d4
+12	da8a447	0.7178	ok	12	exp12: reg sweep d4
+13	e0ab27f	0.7191	ok	20	exp13: lr frontier sweep
+14	dc4fc58	0.7188	ok	20	exp14: shallow frontier
+15	0450879	0.7210	ok	10	exp15: hour cat + dist bins
+16	a865838	0.7203	ok	33	exp16: capacity re-sweep
+17	95cda6f	0.7194	ok	8	exp17: target encoding
+18	29c33e9	0.7227	ok	28	exp18: diverse ensemble
+19	8f2d8c9	0.7237	ok	41	exp19: depth spread ensemble
+20	6abbd82	0.7203	ok	41	exp20: bagged ensemble
+21	84a7669	0.7237	ok	44	exp21: rank average
+22	0b23cf4	0.7238	ok	40	exp22: max_bin 512
+23	60724a0	0.7240	ok	69	exp23: 12 members
+24	4bdaf7d	0.7248	ok	102	exp24: lossguide members
+25	0728f9c	0.7248	ok	114	exp25: time flags
+26	2606f6d	0.7247	ok	94	exp26: mcw5
+27	5f5f0ff	0.7346	ok	98	exp27: hour x dist interaction
+28	a2ece43	0.7361	ok	118	exp28: interaction stack
+29	c97727d	0.0000	timeout	120	exp29: member rebalance
+30	659e7f6	0.7356	ok	79	exp30: 10 strong members
+31	b031d72	0.7358	ok	90	exp31: 12 members rebalanced
+32	acfdfee	0.7327	ok	113	exp32: more interactions
+33	9f259c1	0.7366	ok	99	exp33: halfhour x dist
+34	f2df45d	0.7356	ok	98	exp34: 16 dist bins
+35	64d9f65	0.7288	ok	89	exp35: halfhour x carrier
+36	1e16ab7	0.7271	ok	86	exp36: ablate hour_x_carrier
+37	26e085c	0.7366	ok	90	exp37: dow_x_hour
+38	b604ba5	0.7363	ok	89	exp38: dist x carrier 16 bins
+39	90613ae	0.7364	ok	92	exp39: weighted ensemble
+40	2bd6c08	0.7325	ok	82	exp40: ablate minute

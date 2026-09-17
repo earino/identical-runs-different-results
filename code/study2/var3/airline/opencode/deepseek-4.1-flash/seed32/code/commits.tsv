@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	e844aaf	1789512495	baseline
+01	ba46fbb	1789512789	ensemble of low-lr XGB with target-encoding + frequency features
+02	e8ba379	1789513190	add OOF origin-hour target encoding + frequency
+03	2591075	1789514659	deep-tree ensemble (depth 12-14, colsample 0.3-0.35, low lr)
+04	6bb26e0	1789515493	add carrier-hour and dest-hour OOF TE; deep ensemble
+05	5d64f07	1789515861	add freq origin/carrier/dest-hour; trim ensemble to 3 models
+06	54448d2	1789516216	add structural network features
+07	ecd0565	1789516558	deepen ensemble to d18/d16/d14
+08	52e1ba1	1789516982	d20/d18/d16 with reg_alpha 0.5
+09	1c80a75	1789517350	2-model d20/d18 seed-diverse
+10	12ee80c	1789517443	d22 + d18 seed-diverse

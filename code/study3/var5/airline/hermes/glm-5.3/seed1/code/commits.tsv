@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	8993a1d	1789582991	baseline
+01	a3323c8	1789583075	exp2: parse c-N ints, DepTime hour/minute features, capacity up
+02	394060f	1789583339	exp5: AUC early stopping + HoursSince3am, no Route
+03	0b52a99	1789583972	exp8: deep trees d24 lr0.03 with AUC early stop
+04	4fc3a57	1789584168	exp9: sin/cos harmonics of wrapped time-of-day
+05	bc8bdb5	1789584466	exp10: scheduled arrival time proxy features
+06	301f849	1789584505	exp11: origin/dest hourly congestion counts
+07	d8e62a1	1789584741	exp12: 3-seed XGB ensemble, averaged probabilities
+08	335ec1f	1789585012	exp13: colsample_bytree 0.7 in ensemble
+09	72b32ff	1789585435	exp14: arrival time sin/cos harmonics
+10	badd7e9	1789586325	exp15: half-hour congestion counts
+11	1e59af1	1789587714	exp17: lr 0.025, esr 80 ensemble
+12	3d07b95	1789589372	exp20: add union-fit model to ensemble, honest stop tail

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	a5090b7	0.7141	ok	3	baseline
+2	aad7558	0.7070	ok	5	FE v1: tod features + route cat + ES
+3	7f98cd0	0.7106	ok	2	capacity: baseline feats, n_est ES
+4	27ed554	0.7125	ok	1	capacity: 100 trees d6 full data
+5	27ed554	0.7101	ok	2	capacity: 200 trees d6 full data
+6	27ed554	0.7078	ok	3	capacity: 400 trees d6 full data
+7	27ed554	0.7128	ok	2	capacity: 15 trees d6
+8	27ed554	0.7085	ok	1	capacity: 8 trees d6
+9	27ed554	0.7137	ok	1	capacity: 25 trees d6
+10	27ed554	0.7137	ok	2	capacity: 35 trees d6
+11	8c6d4b4	0.7132	ok	1	FE: add hour/minute/tod/cyclic
+12	da1eaba	0.7056	ok	2	FE: add route cat
+13	9e75a82	0.7150	ok	1	sweep: d4 n30
+14	9e75a82	0.7151	ok	2	sweep: d5 n30
+15	9e75a82	0.7119	ok	1	sweep: d3 n30
+16	9e75a82	0.7109	ok	2	sweep: d7 n30
+17	9e75a82	0.7153	ok	1	sweep: d4 n40
+18	9e75a82	0.7152	ok	1	sweep: d5 n40
+19	9e75a82	0.7161	ok	2	sweep: d4 n60
+20	9e75a82	0.7160	ok	1	sweep: d4 n80
+21	9e75a82	0.7158	ok	2	sweep: d4 n100
+22	9e75a82	0.7160	ok	1	sweep: d4 n120
+23	578a6d0	0.7161	ok	2	confirm champion d4 n60
+24	56df710	0.0000	crash	2	FE: tod replaces DepTime, d4n60
+25	f49b498	0.7161	ok	2	FE: tod replaces DepTime, d4n60 (fixed)
+26	578a6d0	0.7161	ok	2	chk: d5 n40 (was 0.7152)
+27	578a6d0	0.7161	ok	1	chk: d3 n60
+28	578a6d0	0.7161	ok	2	chk: d3 n120
+29	578a6d0	0.7161	ok	1	chk: d2 n60
+30	8385983	0.7172	ok	2	lr0.05 n120 d4
+31	8385983	0.7173	ok	1	lr0.03 n200 d4
+32	8385983	0.7174	ok	2	lr0.02 n300 d4
+33	8385983	0.7172	ok	2	lr0.03 n300 d4
+34	8385983	0.7171	ok	3	lr0.02 n500 d4
+35	8385983	0.7157	ok	2	lr0.02 n400 d5
+36	8385983	0.7173	ok	2	lr0.02 n250 d4
+37	8385983	0.7174	ok	2	lr0.015 n400 d4
+38	8385983	0.7175	ok	2	lr0.02 n280 d4 (was best 0.7174)
+39	8385983	0.7174	ok	2	lr0.02 n300 d4 sub0.8
+40	d7798db	0.7175	ok	2	confirm final: lr0.02 n280 d4

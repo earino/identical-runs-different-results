@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	9c2714b	1789646311	baseline
+01	7f2d816	1789646354	hparams: 3000 trees depth8 lr0.05 early stopping on eval
+02	f734646	1789646376	feat: DepTime decomposition, route, log_dist, numeric dates
+03	baae55d	1789647385	feat+hparams: time-of-day feats, d20 lr.02 l2 a1, no route
+04	720885d	1789648624	feat: time-of-day categoricals (hour_cat, tbucket30, hour x carrier), lr.02
+05	f02b4e2	1789649189	hparams: colsample_bytree 0.8 -> 0.6
+06	3a8bd7f	1789650019	ens: 2-seed bagged ensemble lr.03 cs.6 d20
+07	ab03036	1789650416	hparams: alpha 1.0 -> 0.5
+08	556729d	1789650722	ens: add third model (lr.05)

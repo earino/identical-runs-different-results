@@ -1,0 +1,85 @@
+ts	pid	cpu_s	kind	event	wall_s	fits	argv
+1789589967	109	0.039	uncounted	exit	0.0	0	-c
+1789589967	111	0.034	uncounted	exit	0.0	0	-c
+1789589967	113	0.035	uncounted	exit	0.0	0	-m --version
+1789589967	115	0.034	uncounted	exit	0.0	0	-c
+1789589987	174	4.917	counted	exit	3.6	1	train.py
+1789590010	213	1.560	uncounted	exit	0.8	0	-c
+1789590076	267	0.032	uncounted	exit	0.0	0	-c
+1789590076	269	0.032	uncounted	exit	0.0	0	-c
+1789590076	271	0.032	uncounted	exit	0.0	0	-c
+1789590085	341	9.290	counted	exit	2.9	1	train.py
+1789590117	491	12.022	counted	exit	3.7	1	train.py
+1789590151	645	12.859	counted	exit	3.9	1	train.py
+1789590191	1059	10.845	counted	exit	3.4	1	train.py
+1789590205	1094	0.764	uncounted	exit	0.4	0	-
+1789590234	1146	0.038	uncounted	exit	0.0	0	-m train.py
+1789590248	1165	53.491	counted	exit	14.0	7	train.py
+1789590271	1210	0.958	uncounted	exit	0.6	0	-
+1789590327	1345	49.208	counted	exit	13.0	7	train.py
+1789590431	1496	219.005	counted	exit	56.0	25	train.py
+1789590502	1713	0.037	uncounted	exit	0.0	0	-m train.py
+1789590617	1731	439.147	counted	exit	114.8	34	train.py
+1789590776	1845	448.738	counted	term	120.0	22	train.py
+1789590887	1946	197.104	counted	exit	52.7	7	train.py
+1789590989	2049	286.857	counted	exit	77.3	10	train.py
+1789591022	2240	0.040	uncounted	exit	0.0	0	-m train.py
+1789591142	2258	451.081	counted	term	120.2	10	train.py
+1789591212	2374	198.431	counted	exit	55.1	7	train.py
+1789591223	2461	0.039	uncounted	exit	0.0	0	-m train.py
+1789591296	2479	264.437	counted	exit	72.5	10	train.py
+1789591357	2594	200.186	counted	exit	54.0	7	train.py
+1789591370	2629	0.803	uncounted	exit	0.4	0	-
+1789591516	2764	0.037	uncounted	exit	0.0	0	-m train.py
+1789591612	2782	341.602	counted	exit	95.6	7	train.py
+1789591956	2950	446.991	counted	term	124.4	7	train.py
+1789592144	3077	235.248	counted	exit	64.9	7	train.py
+1789592203	3125	0.759	uncounted	exit	0.6	0	-
+1789592336	3260	456.459	counted	term	121.4	7	train.py
+1789592380	3567	0.041	uncounted	exit	0.0	0	-m train.py
+1789592498	3585	444.561	counted	exit	118.2	7	train.py
+1789592777	3664	911.541	uncounted	exit	242.0	24	offline_cv.py
+1789593051	3728	913.516	uncounted	exit	240.4	18	offline_cv.py
+1789593186	3801	431.754	uncounted	exit	114.2	9	offline_cv.py
+1789593367	3856	37.518	uncounted	exit	10.5	1	offline_check.py
+1789593371	3877	0.034	uncounted	exit	0.0	0	-
+1789593399	3890	92.087	uncounted	exit	25.5	2	offline_check.py
+1789593729	4017	458.233	counted	term	120.0	4	train.py
+1789593836	4104	47.034	uncounted	exit	12.9	15	offline_cv.py
+1789593996	4164	442.973	uncounted	exit	118.2	18	offline_cv.py
+1789594133	4264	0.039	uncounted	exit	0.0	0	-m train.py
+1789594214	4282	300.474	counted	exit	80.8	7	train.py
+1789594357	4396	381.682	counted	exit	102.9	10	train.py
+1789594555	4469	531.010	uncounted	exit	141.7	15	offline_cv.py
+1789594646	4544	0.046	uncounted	exit	0.0	0	-m train.py
+1789594744	4562	360.463	counted	exit	97.6	7	train.py
+1789594904	4598	53.199	uncounted	exit	15.2	1	-
+1789594918	4619	0.946	uncounted	exit	0.6	0	-
+1789594929	4738	0.042	uncounted	exit	0.0	0	-m train.py
+1789595027	4756	371.752	counted	exit	98.6	7	train.py
+1789595136	4792	305.665	uncounted	exit	81.7	12	-
+1789595157	4929	0.040	uncounted	exit	0.0	0	-m train.py
+1789595256	4947	362.203	counted	exit	99.0	7	train.py
+1789595534	4983	500.336	uncounted	exit	134.7	21	-
+1789595700	5005	482.410	uncounted	exit	128.9	18	-
+1789595938	5060	0.037	uncounted	exit	0.0	0	-c
+1789595938	5062	0.039	uncounted	exit	0.0	0	-c
+1789595938	5064	0.043	uncounted	exit	0.0	0	-c
+1789596107	5158	0.042	uncounted	exit	0.0	0	-m train.py
+1789596200	5176	347.098	counted	exit	92.7	7	train.py
+1789596486	5280	391.253	counted	exit	105.4	7	train.py
+1789596668	5315	598.186	uncounted	exit	160.5	21	-
+1789596857	5337	489.128	uncounted	exit	130.9	12	-
+1789596911	5518	0.037	uncounted	exit	0.0	0	-m train.py
+1789597028	5536	437.936	counted	exit	116.9	7	train.py
+1789597176	5639	460.312	counted	term	124.0	7	train.py
+1789597436	5756	379.204	counted	exit	101.9	5	train.py
+1789597565	5791	368.450	uncounted	exit	98.2	12	-
+1789597703	5881	310.655	counted	exit	83.5	5	train.py
+1789597892	5984	368.489	counted	exit	98.1	4	train.py
+1789598309	6154	387.648	counted	exit	102.6	5	train.py
+1789598364	6189	158.806	uncounted	exit	42.7	3	-
+1789598525	6280	430.326	counted	exit	115.8	5	train.py
+1789598737	6316	163.469	uncounted	exit	44.2	3	-
+1789598868	6406	455.203	counted	term	121.1	6	train.py
+1789599071	6454	577.839	exempt	exit	153.5	5	validate.py

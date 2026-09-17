@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	9772248	0.7141	ok	4	baseline: xgb 30 trees depth6 lr0.1, string cats as categorical
+2	2017558	0.7149	ok	4	tune: 4000 trees, lr .05, depth 8, subsample .9 colsample .8, ES on eval
+3	6a1e4be	0.7266	ok	10	fe: date/time features (hour, sin/cos, log dist)
+4	b1ccf5a	0.7227	ok	13	fe: OOF target encoding carrier/origin/dest/route/hour/month/dow
+5	749aa39	0.7219	ok	17	fe: full-train TE both sides (no OOF)
+6	7366c36	0.0000	crash	2	fe: native-cat combos route/carrier_hour/origin_hour/dest_month/dow_hour/origin_month
+7	ca79af2	0.7124	ok	10	fe: native-cat combos route/carrier_hour/origin_hour/dest_month/dow_hour/origin_month
+8	d334201	0.7292	ok	17	tune: depth10 lr.03 mcw20 sub.8 col.7 ES200
+9	2e22f02	0.7324	ok	19	tune: depth12 lr.02 (push same direction)
+10	aaf26be	0.7313	ok	21	tune: depth14 mcw30
+11	0c159c0	0.7336	ok	52	ensemble: 3-seed average depth12 lr.02
+12	bb9aeeb	0.7329	ok	33	tune: lr.01 depth12 single model
+13	d39101f	0.7338	ok	54	ensemble: heterogeneous 3-model
+14	1b217b8	0.7301	ok	68	fe: hour/dom/dow native categoricals
+15	732f5ff	0.7323	ok	71	ensemble: 5-fold CV-bag
+16	65cbb87	0.7335	ok	100	tune: lossguide max_leaves 64/128/256 ensemble
+17	b038dab	0.7336	ok	63	fe: log-frequency encoding origin/dest/route
+18	98565ff	0.7292	ok	39	ablation: drop dep_min dow_sin/cos
+19	a6ece68	0.7324	ok	47	fe: holiday proximity features
+20	d1a9c2c	0.7338	ok	88	ensemble: 5 models full-data
+21	da9ddfe	0.7339	ok	55	tune: member1 subsample .9
+22	73c98bc	0.7339	ok	55	tune: member1 gamma 1.0
+23	d741209	0.7332	ok	63	fe: rank-encoded origin/dest delay rates
+24	68f61b8	0.7322	ok	56	ensemble: 5 lighter members
+25	03f64fb	0.7339	ok	57	tune: cat_smooth 50
+26	9a2f52f	0.7307	ok	54	fe: sin/cos cross terms + raw DepTime
+27	a8c5a6b	0.7339	ok	60	tune: ES patience 300
+28	ffcafe8	0.7340	ok	69	tune: max_bin 512
+29	d8b78d2	0.7335	ok	59	tune: colsample_bynode .8
+30	7b441de	0.7344	ok	61	tune: subsample-diverse trio
+31	165b984	0.7343	ok	73	ensemble: add 4th member d14 ss.6
+32	5568ce5	0.7344	ok	70	ensemble: logit-space averaging
+33	a7f0d87	0.7346	ok	63	tune: member1 lr .015
+34	cd23ee4	0.7344	ok	72	tune: member2 lr .015
+35	10e2535	0.7350	ok	67	tune: member1 reg_alpha .5
+36	de7d8f1	0.7351	ok	75	tune: member2 reg_alpha .5
+37	ed93663	0.7358	ok	74	tune: member3 reg_alpha .5
+38	ba05bd7	0.7370	ok	70	tune: reg_alpha 1.0 all members
+39	9b8fec3	0.7391	ok	74	tune: reg_alpha 2.0 all members
+40	a6e5793	0.7392	ok	72	tune: reg_alpha 4.0 all members

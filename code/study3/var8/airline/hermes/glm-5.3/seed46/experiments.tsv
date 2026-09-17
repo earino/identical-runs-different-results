@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	11948ba	0.7141	ok	4	baseline
+2	57241b5	0.7179	ok	2	all cats + early stopping + depth6
+3	0ff83e0	0.7193	ok	2	DepHour cyclical + depth8
+4	7b23d4d	0.7026	ok	4	interactions: route, carrier-origin, carrier-dest
+5	aa9c849	0.7125	ok	4	target encoding route/carrier/hour combos
+6	7a13480	0.7222	ok	8	early stop on AUC
+7	1382c2c	0.7228	ok	16	lr 0.03 + AUC early stop
+8	096e01c	0.7232	ok	20	lr 0.02 + AUC early stop
+9	9cae388	0.7238	ok	35	lr 0.012 + AUC early stop
+10	a768129	0.7236	ok	72	lr 0.007 + AUC early stop
+11	cad0eb1	0.7230	ok	40	numeric dates + minute-angle + logdist
+12	f2f0e16	0.7204	ok	33	depth 6
+13	bb818b5	0.7273	ok	38	depth 10
+14	81338b5	0.7305	ok	41	depth 12
+15	3b898a1	0.7332	ok	27	depth 14
+16	b4fd60b	0.7359	ok	30	depth 16
+17	8286d02	0.7382	ok	38	depth 20
+18	18d9f2c	0.7389	ok	41	depth 24
+19	bba4bf9	0.7395	ok	43	depth 30
+20	3877b4f	0.7392	ok	47	depth 40
+21	6a3bf89	0.7268	ok	64	depth 30 + colsample/subsample 1.0
+22	d0000e7	0.7388	ok	42	depth 30 + subsample 0.7
+23	8a117d2	0.7304	ok	51	depth 30 + mcw 20
+24	c81035b	0.7433	ok	63	depth 30 + mcw 2
+25	b7768f5	0.7446	ok	80	depth 30 + mcw 1
+26	277c6c9	0.7447	ok	77	depth 30 + mcw 1 + gamma 0.1
+27	e99fbd3	0.0000	crash	2	ensemble of 4 deep xgb models
+28	8efdfd1	0.0000	timeout	120	ensemble of 4 deep xgb models (fixed)
+29	92ac14a	0.0000	timeout	120	interactions + deep trees + AUC stop
+30	3d7e717	0.7466	ok	118	3-seed ensemble fixed 300 rounds
+31	6b3ca4e	0.7467	ok	117	3-seed ensemble, colsample diversity
+32	0895895	0.7470	ok	110	ensemble depth diversity
+33	9959a3d	0.7470	ok	112	ensemble lr diversity
+34	50467f3	0.7454	ok	105	bagged ensemble members
+35	f7b3ca6	0.0000	timeout	125	ensemble 350 rounds
+36	ea09677	0.0000	timeout	130	hour cat + day-of-year
+37	8d95003	0.7414	ok	118	day-of-year numeric only
+38	75c2c78	0.7458	ok	107	ensemble reg_lambda 2.0
+39	5871c3a	0.7470	ok	108	rank averaging
+40	0b6c237	0.7474	ok	83	max_bin 512, 2 members

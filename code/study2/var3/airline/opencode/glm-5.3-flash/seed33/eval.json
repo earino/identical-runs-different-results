@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 33,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:55:30+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s33-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T01:55:10+00:00",
+  "wall_seconds": 7179.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 19147.7,
+  "endpoint_at_end": "ok",
+  "head": "b012e73",
+  "n_commits": 22,
+  "n_experiments": 24,
+  "n_ok": 20,
+  "n_crash": 1,
+  "n_timeout": 3,
+  "best_eval_auc": 0.7602,
+  "final_eval_auc": 0.7602,
+  "holdout_auc": 0.759609318876,
+  "holdout_ap": 0.7493751722163521,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.04483856714000001,
+  "generalization_gap": 0.0005906811239999588,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 10702204,
+    "tokens_in_uncached": 394492,
+    "tokens_in_cached": 10307712,
+    "tokens_out": 150555,
+    "turns": null,
+    "api_calls": 190,
+    "method": "sum-of-190-events",
+    "cost_usd": 0.4437,
+    "cached_share": 0.963
+  },
+  "cpu_seconds_python": 18228.9,
+  "cpu_seconds_counted": 3309.5,
+  "cpu_seconds_uncounted": 14717.0,
+  "cpu_seconds_exempt": 202.4,
+  "python_processes": 119,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 1,
+  "fits_total": 1255,
+  "fits_counted": 179,
+  "fits_uncounted": 1067,
+  "commits": [
+    {
+      "commit": "8e3da0a",
+      "message": "baseline"
+    },
+    {
+      "commit": "1566576",
+      "message": "featpack1 with baseline model (30 trees depth6)"
+    },
+    {
+      "commit": "5229c9d",
+      "message": "keep cat month/dom/dow, add deptime features+route"
+    },
+    {
+      "commit": "418f701",
+      "message": "drop Month, DepHour categorical, n100 d5"
+    },
+    {
+      "commit": "94f9881",
+      "message": "add CarHour interaction, n150"
+    },
+    {
+      "commit": "040d7b1",
+      "message": "add CarQ quarter-hour interaction, n300"
+    },
+    {
+      "commit": "2e3db19",
+      "message": "ensemble: avg of n300 lr.1 + n600 lr.05 (d5), drop redundant CarHour"
+    },
+    {
+      "commit": "b96ddb2",
+      "message": "5-member diversity ensemble (depth/subsample/colsample)"
+    },
+    {
+      "commit": "690b5b9",
+      "message": "DepMin feature + CV-bag averaging of 5 members x 5 folds"
+    },
+    {
+      "commit": "c007993",
+      "message": "all-10 ensemble (5 configs x alpha/no-alpha), full-data fits"
+    },
+    {
+      "commit": "7af530b",
+      "message": "drop DayofMonth: dead-weight feature, nodom 10-member ensemble"
+    },
+    {
+      "commit": "ed82f50",
+      "message": "triple CarQ granularity mix: noalpha q30 + alpha q15/q20, 15 members"
+    },
+    {
+      "commit": "e6948db",
+      "message": "20-member ensemble: +4 OrigQ (origin x slot) + OrigQ45 (fix col leakage)"
+    },
+    {
+      "commit": "2da114f",
+      "message": "greedy-selected 9-member ensemble (pool of 29 diverse candidates)"
+    },
+    {
+      "commit": "8400b32",
+      "message": "greedy 10-member ensemble v2: DestQ45, seed replica, depth8 member"
+    },
+    {
+      "commit": "2c91e8a",
+      "message": "greedy 12-member v3: +CarD, +Route members"
+    },
+    {
+      "commit": "b549118",
+      "message": "lean 6-member ensemble: RouteQ30, max_bin=1024, mct32 members (greedy v8)"
+    },
+    {
+      "commit": "65ba131",
+      "message": "11-member ensemble: CarD_mct32_d8, RouteQ d8, OrigQ20/DestQ45 members"
+    },
+    {
+      "commit": "0b44796",
+      "message": "10-member ensemble: CarD+OrigQ double-interaction, CarD mct32 d8/d9 members"
+    },
+    {
+      "commit": "df63df7",
+      "message": "9-member ensemble: drop slow depth-8 RouteQ member (LOO-free)"
+    },
+    {
+      "commit": "a7c63d7",
+      "message": "10-member ensemble: RouteQ mct4 + lossguide members, drop D member"
+    },
+    {
+      "commit": "fc49484",
+      "message": "restore best banked config (exp23, 0.7602)"
+    },
+    {
+      "commit": "b012e73",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 18026.5,
+  "cpu_over_budget": true,
+  "cpu_seconds_overhead": 918.8,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "df63df7",
+  "best_commit_eval_auc": 0.7602,
+  "best_commit_holdout_auc": 0.759609318876,
+  "best_commit_holdout_ap": 0.7493751722163521,
+  "best_commit_error": null,
+  "finalized_best": true
+}

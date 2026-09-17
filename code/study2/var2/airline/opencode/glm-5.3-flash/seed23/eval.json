@@ -1,0 +1,168 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 23,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T05:00:08+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-flash-s23-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T06:25:56+00:00",
+  "wall_seconds": 5147.5,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 16951.7,
+  "endpoint_at_end": "ok",
+  "head": "68d3060",
+  "n_commits": 17,
+  "n_experiments": 17,
+  "n_ok": 17,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.9958,
+  "final_eval_auc": 0.9958,
+  "holdout_auc": 0.829295190514,
+  "holdout_ap": 0.8225292105612542,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.114524438778,
+  "generalization_gap": 0.166504809486,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 7988735,
+    "tokens_in_uncached": 136703,
+    "tokens_in_cached": 7852032,
+    "tokens_out": 88299,
+    "turns": null,
+    "api_calls": 146,
+    "method": "sum-of-146-events",
+    "cost_usd": 0.3002,
+    "cached_share": 0.983
+  },
+  "cpu_seconds_python": 16523.4,
+  "cpu_seconds_counted": 2543.3,
+  "cpu_seconds_uncounted": 13609.0,
+  "cpu_seconds_exempt": 371.1,
+  "python_processes": 65,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 1004,
+  "fits_counted": 138,
+  "fits_uncounted": 858,
+  "commits": [
+    {
+      "commit": "fbdc565",
+      "message": "baseline"
+    },
+    {
+      "commit": "15a5e47",
+      "message": "FE: DepTime hour/min, int dates, Route; model 300 trees depth 8"
+    },
+    {
+      "commit": "8610aa0",
+      "message": "cat dates + hour/min, no route, 300x d6"
+    },
+    {
+      "commit": "736639e",
+      "message": "baseline features + 300x d6 defaults"
+    },
+    {
+      "commit": "1106194",
+      "message": "CarrierHour interaction + 800 trees d5 lr0.04"
+    },
+    {
+      "commit": "883afbc",
+      "message": "5-model diverse ensemble (cbl05/alpha1/600x6/300x6/cbl03)"
+    },
+    {
+      "commit": "a6579d4",
+      "message": "6-model ensemble with deep cbl members"
+    },
+    {
+      "commit": "3c3ed17",
+      "message": "11-member multi-view ensemble (main/hourcat/te/route)"
+    },
+    {
+      "commit": "6e7d62f",
+      "message": "add cslot30 view member, unify seeds"
+    },
+    {
+      "commit": "7239cc8",
+      "message": "add cslot15 members (14-model ensemble)"
+    },
+    {
+      "commit": "d817d6f",
+      "message": "add slotmain/slotmain30 members (16-model ensemble)"
+    },
+    {
+      "commit": "a2dafc9",
+      "message": "add orighour member (17-model ensemble)"
+    },
+    {
+      "commit": "e0718e3",
+      "message": "add origslot15/desthour/destslot15 members (20-model ensemble)"
+    },
+    {
+      "commit": "5419fe8",
+      "message": "combined train+eval training, 8-member OOF06-selected blend"
+    },
+    {
+      "commit": "1f1e826",
+      "message": "stronger 800-tree base learners (strong8)"
+    },
+    {
+      "commit": "3c784dd",
+      "message": "1200-tree bases for cslot30/main/te"
+    },
+    {
+      "commit": "9b8d5fa",
+      "message": "slotmain30 to 1200 trees (all-1200 config)"
+    },
+    {
+      "commit": "68d3060",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 16152.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 428.3,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "9b8d5fa",
+  "best_commit_eval_auc": 0.9958,
+  "best_commit_holdout_auc": 0.829295190514,
+  "best_commit_holdout_ap": 0.8225292105612542,
+  "best_commit_error": null,
+  "finalized_best": true
+}

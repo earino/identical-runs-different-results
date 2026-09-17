@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	c779be9	1789537824	baseline
+01	e1edd88	1789537857	feat set v1 with mild regularization (100 trees d6)
+02	ee7ae72	1789537874	baseline hyperparams + DepHour/Route features
+03	3a3fe02	1789537897	OOF smoothed target encoding + interactions
+04	b88d0ac	1789537904	expand TE keys
+05	feac943	1789537910	600 trees d7 lr0.05
+06	e0cbed0	1789537921	TE: 15-min slots + dist bins
+07	47d06a0	1789537929	ablation: drop raw Origin/Dest/Route cats
+08	5a1e05d	1789537944	1200 trees lr0.03
+09	52d0613	1789537970	3-seed ensemble
+10	567756d	1789537990	diverse ensemble d6/7/8
+11	74ce7d5	1789538012	frequency encoding
+12	21dbcd9	1789538033	CNT for interaction keys
+13	758c1f8	1789538092	TE smoothing m=10
+14	5534760	1789538493	recency sample weights
+15	f8fc3fa	1789538516	recency weights slope 2
+16	e4e7bf0	1789538540	recency weights slope 3
+17	a39bc89	1789538563	recency weights slope 5

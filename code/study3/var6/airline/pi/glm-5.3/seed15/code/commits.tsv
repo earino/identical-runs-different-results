@@ -1,0 +1,30 @@
+n	commit	unix_time	subject
+00	3cfed71	1789583118	baseline
+01	8369dee	1789583224	FE v1: hour/minute, route pair, int dates, log dist; xgb.train with internal early stopping, depth 8
+02	53a23a1	1789583302	diagnostic: eval AUC vs rounds on 80% model
+03	ac8da6e	1789583372	FE ablation: 6 variants x rounds grid, in-code best selection
+04	7514c47	1789583403	fix route KeyError in ablation
+05	e690220	1789583416	fix route levels lookup
+06	b56bbc4	1789583521	reg grid around int_dates+hour FE
+07	a4b6dae	1789583566	shallow + randomized grid, lr 0.05 variant
+08	cc27c36	1789583643	TE feature ablation: single/time/inter/route groups, EB smoothing
+09	a6c17ac	1789583667	combine TE-single with model config grid
+10	419b00a	1789583701	7-member seed/config ensemble with TE features
+11	05dd804	1789583837	12-member diverse ensemble, lr 0.03-0.1, FE groups
+12	d11e776	1789583848	fix dmatrix cache key
+13	b43bde2	1789584231	curated 10-member slow-learner ensemble with time/vol FE diversity
+14	0f3b4d5	1789584322	members at peak rounds (500), +month TE, +time-decay weight member
+15	55723e6	1789584348	fix curve range beyond model rounds
+16	4f7c5f3	1789584415	ensemble v3: d7 seeds, decay-weight variants, no te_month, lr02@1000
+17	4ea4167	1789584429	fix d7 curve range
+18	9954144	1789584522	ensemble v4: +dart, m20 TE, colsample 0.4 diversity
+19	408184b	1789584664	cs 0.3-0.5 x seeds, m20+cs04, wlin+cs04, dart+cs04
+20	a141a9c	1789584785	ensemble v5: 13 cs04-family members, depth/sub/lr diversity
+21	fde95c0	1789584897	ensemble v6: d8+cs04+sub08 family, depth 7-9, lr02 curve
+22	ae11830	1789584982	ensemble v7: depth 9-12 with cs04, sub10 variants
+23	8a3b80c	1789585433	deep-short v2: 8 members d14-18 @100-150 rounds
+24	f8d1574	1789585540	deep v3: lr x rounds scan at d16-20
+25	ed79056	1789585618	ensemble v8: d18 family x9 members @100
+26	4c0475c	1789585739	ensemble v9: 10 deep members, mixed FE groups
+27	20e233d	1789585988	ensemble v11: 11 members, best seeds + d16 cs045
+28	437c725	1789586883	minute-of-day feature members (mod group) x2

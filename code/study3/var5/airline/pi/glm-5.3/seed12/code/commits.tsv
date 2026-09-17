@@ -1,0 +1,10 @@
+n	commit	unix_time	subject
+00	a5ace67	1789634002	baseline
+01	d95717f	1789634132	FE v1: deptime parsing, sin/cos, route categorical, bigger model
+02	dc6bf28	1789635296	deep bagged xgb ensemble d20 cs.4 + deptime FE
+03	ccdb194	1789635887	add airport traffic/hub features, d24
+04	136adee	1789636706	cs.35, max_bin 512, recency weighting
+05	2cf0e0b	1789636814	drop max_bin 512 to keep runtime safe
+06	0c2d2d3	1789638942	subsample 0.9
+07	22429c5	1789639039	8 members (ensemble saturated; inference safety)
+08	19e7112	1789639100	ramp amplitude diversity across members

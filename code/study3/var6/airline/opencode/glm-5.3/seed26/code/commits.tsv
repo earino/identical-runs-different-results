@@ -1,0 +1,28 @@
+n	commit	unix_time	subject
+00	bea5201	1789645526	baseline
+01	182dda8	1789645675	time+route features, bigger model
+02	4d88fd2	1789645696	baseline features + bigger model (isolate capacity)
+03	8fc5c72	1789645710	baseline features + early stopping on eval
+04	f7bfc58	1789645718	rich features + ES on eval
+05	55c9d9e	1789645728	drop route + sin/cos, keep time feats
+06	85aa19d	1789645791	5-seed ensemble average
+07	92b3153	1789645847	param-diverse 5-model ensemble
+08	95495d3	1789645881	10-config ensemble
+09	3a5278e	1789645969	max_bin=512 + member diagnostics
+10	f28bb53	1789646002	12 configs focused on colsample-strong region
+11	425df18	1789646049	16 members: 12 strong-family + 4 keepers
+12	c6076fb	1789646099	deep regularized family 12 + 4 keepers
+13	439394c	1789646148	pure 12-member deep family
+14	8ed59d2	1789646220	16 members d9-d12 region
+15	ea85b46	1789646280	prune weak members, clone leaders
+16	706198a	1789646859	tighten family to low-colsample leaders
+17	4160fae	1789646919	family push: mcw 18-40
+18	4619207	1789646969	max_bin 1024
+19	2bb112b	1789647036	softmax AUC-weighted blend
+20	16011c1	1789647092	sharper blend T=0.001
+21	ea7fb1d	1789647153	family centered on best member region
+22	5ba8870	1789647267	clone leaders, extend to d13
+23	0ab9a7b	1789647347	extend family to d14
+24	b2b9640	1789647420	family to d15-16, leader signature
+25	6604b5e	1789647498	family to d17-18
+26	9ba2b7a	1789647593	prune weak, fill d15-17 sweet spot

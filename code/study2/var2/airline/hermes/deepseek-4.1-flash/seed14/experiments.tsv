@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2bf5b3b	0.7141	ok	4	baseline
+2	a9f31d0	0.7049	ok	4	features+time-of-day+cats+ES
+3	aa1b596	0.7152	ok	4	tod feats, 300 rounds, no route
+4	64052ca	0.7137	ok	11	lr0.02/1200 rounds
+5	58a75e5	0.0000	crash	2	OOF target enc + freq enc
+6	04f3832	0.7098	ok	6	OOF target enc + freq enc (fixed)
+7	6a68526	0.6982	ok	5	route cats added
+8	cb60e7a	0.7160	ok	4	depth5 300r lr0.05
+9	63d8d69	0.7161	ok	3	depth4 300r lr0.05
+10	8269a14	0.7153	ok	3	depth3 300r lr0.05
+11	ebf87de	0.7173	ok	10	4-model ensemble
+12	baa0b2b	0.7203	ok	11	airport-hour density feats
+13	49a18aa	0.7245	ok	12	route/carrier/hour share feats
+14	abdbd3a	0.7247	ok	15	dow-hour + hub share feats
+15	8a79653	0.7231	ok	24	deeper ensemble
+16	5248c50	0.7253	ok	16	cumulative hour share feats
+17	7af89e0	0.7296	ok	14	route-level traffic shares
+18	f61c102	0.7357	ok	19	halfhour shares + carrier-origin cum
+19	177c855	0.7363	ok	18	quarterhour + dow-hour + hour ranks
+20	64704e1	0.7370	ok	30	8-model ensemble
+21	eb223d5	0.7379	ok	38	arrival-side congestion feats
+22	d8de504	0.7390	ok	45	calendar/holiday feats
+23	2159b6a	0.7389	ok	46	prev/next hour congestion
+24	9dafdb6	0.7393	ok	47	interaction products
+25	7a51765	0.7401	ok	68	12-model diverse ensemble
+26	80aef75	0.7400	ok	75	hub-wave diversity feats
+27	75d630f	0.7404	ok	87	14-model incl lossguide
+28	4dcacc7	0.7453	ok	90	minute-bucket shares + route rank
+29	6e785bd	0.7444	ok	101	5-min bucket + exact dep shares
+30	ff146bd	0.7467	ok	94	dest+carrier minute shares
+31	8cc878a	0.7467	ok	93	trimmed ensemble rounds
+32	7da954b	0.7498	ok	93	more minute-bucket shares
+33	14eec65	0.7516	ok	96	dow-level minute shares
+34	bd8c296	0.7584	ok	97	dep_min family
+35	15ebccd	0.7583	ok	102	dep_min categorical
+36	0c33448	0.7584	ok	97	deep members retest
+37	64850e8	0.7590	ok	108	5-min slot shares retest
+38	38e83a3	0.7588	ok	80	faster 13-member ensemble
+39	19ce486	0.7592	ok	84	system calendar schedule shares
+40	30c5641	0.7590	ok	103	16-member ensemble

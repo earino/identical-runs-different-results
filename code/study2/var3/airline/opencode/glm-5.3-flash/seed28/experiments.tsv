@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	f37561c	0.7141	ok	4	baseline: 30 trees depth6 lr0.1 native cats
+2	969b8dd	0.0000	crash	1	FE v1: parsed dates+deptime cyc+route; depth8 1200 trees ES
+3	f9dd6be	0.0000	crash	2	FE v1: parsed dates+deptime cyc+route; depth8 1200 trees ES
+4	0260b9c	0.7148	ok	4	FE v1: parsed dates+deptime cyc+route; depth8 1200 trees ES
+5	5aac59a	0.0000	crash	1	TE+freq encodings on cats
+6	b79a83e	0.7075	ok	4	TE+freq encodings on cats
+7	63e9ce3	0.7119	ok	18	OOF TE instead of leaky TE
+8	d680b6f	0.7115	ok	3	capacity probe: depth10 mcw10
+9	7af1a5f	0.7043	ok	11	interaction cats + full-train fixed 600 trees
+10	6ad4e0f	0.7062	ok	15	interaction cats under ES protocol
+11	aa2dfa2	0.7244	ok	48	5-seed ensemble
+12	1dbb007	0.0000	timeout	122	10-seed ensemble
+13	910c032	0.7232	ok	94	6 members lr0.05 cap1500
+14	9e93a95	0.7243	ok	99	8 members with cfg diversity
+15	e2d5295	0.7192	ok	63	rank:pairwise members + rank-average
+16	59c8c96	0.0000	timeout	121	5 seeds cap2000 lr0.06
+17	2d3450a	0.7219	ok	99	full-data fixed-trees bagging
+18	90e8ba1	0.7220	ok	61	mcw10 probe
+19	2b4e2de	0.7239	ok	58	colsample0.5 subsample0.7 probe
+20	e951d4d	0.7240	ok	64	max_bin512 probe
+21	f9022e5	0.7184	ok	36	hill-climbed weights, common split
+22	a53d6fd	0.7236	ok	64	5-fold CV ensemble
+23	45cb36b	0.7216	ok	60	10 members cap600
+24	daf28b9	0.7237	ok	46	gamma1 probe
+25	0ed4a13	0.7212	ok	40	depth7 probe
+26	5b808f9	0.7240	ok	72	two-config blend
+27	60d233e	0.7204	ok	73	DistRel solo
+28	463b3f9	0.7222	ok	64	lossguide probe
+29	de3fed1	0.0000	crash	88	dart+gbm blend
+30	432db70	0.0000	timeout	120	dart+gbm blend
+31	92124ac	0.7245	ok	43	staggered caps
+32	636cf89	0.7240	ok	77	7 members wider caps
+33	21a9cae	0.7196	ok	72	sub0.9 col0.7 probe
+34	42aa30d	0.7217	ok	75	mcw3 probe
+35	d70397b	0.7239	ok	118	10 members staggered
+36	5fdc506	0.7232	ok	42	lambda1 probe
+37	c37aefa	0.7229	ok	57	valid0.12 probe
+38	ce8a794	0.7232	ok	52	lr0.07 probe
+39	b7f10c3	0.7245	ok	48	cat onehot probe
+40	351564e	0.7228	ok	47	median combiner

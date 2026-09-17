@@ -1,0 +1,15 @@
+n	commit	eval_auc	status	seconds	description
+1	cc27031	0.7141	ok	4	baseline
+2	8159e07	0.7091	ok	4	FE v1 + early stopping
+3	96c0461	0.7384	ok	11	robust features + d16 a1 mb512 n400
+4	ee993fb	0.7483	ok	14	+Dest cat, n=300
+5	8e7ae85	0.7496	ok	51	3-cfg ensemble
+6	6132faf	0.7503	ok	76	ens6 deep+shallows
+7	ce7a4b5	0.7517	ok	94	traffic features + ens6
+8	310cdac	0.7530	ok	96	ens6 + AHcnt + COcnt
+9	fb1d0ed	0.7552	ok	78	ens: 3deep n300 + numeric-only + cats-heavy diversity members
+10	bde1b3b	0.7607	ok	81	ens8: deep d16b1024+d20 + num + cats-heavy + shallow d3,d2,d3num,d1stump
+11	c46df12	0.7625	ok	89	AHfrac arrival-congestion share + logit-mean ensemble aggregation
+12	df78c82	0.7631	ok	96	circular SinTod/CosTod day-position features (midnight wrap) for all members
+13	16914f4	0.7646	ok	105	circular SinArr/CosArr estimated-arrival-time features
+14	34855c5	0.7646	ok	109	ArrHour hour-binned estimated arrival time

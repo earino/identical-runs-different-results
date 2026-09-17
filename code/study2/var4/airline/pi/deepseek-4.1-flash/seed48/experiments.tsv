@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	72c407f	0.7141	ok	4	baseline
+2	e1fe890	0.7077	ok	5	600 trees lr0.05
+3	3311655	0.7098	ok	2	engineered features
+4	644c718	0.7145	ok	1	raw cats + tod
+5	1ea887f	0.7057	ok	2	add route cat
+6	d64959d	0.7147	ok	2	100 trees lr0.05
+7	fa30247	0.7152	ok	2	200 trees lr0.05
+8	1c0ef2b	0.7159	ok	3	400 trees lr0.05
+9	1c218dd	0.7165	ok	5	800 trees lr0.05
+10	c3b00e9	0.7162	ok	11	1600 trees lr0.05
+11	2fab370	0.7141	ok	9	depth8 800t
+12	d1d10db	0.7155	ok	8	depth5 1500t
+13	9ec70af	0.7152	ok	5	mcw10 lambda2
+14	d867dce	0.7096	ok	5	route target encoding
+15	7a61020	0.7165	ok	21	5-seed ensemble
+16	2aa5193	0.7149	ok	6	weekend dow cyclical
+17	ba8ee52	0.7167	ok	10	lr0.03 1500t
+18	e6ed65c	0.7175	ok	14	lr0.02 2500t
+19	f7a6928	0.7181	ok	26	lr0.01 5000t
+20	8853f09	0.7171	ok	62	lr0.005 12000t
+21	8aaa774	0.7156	ok	37	depth7 lr0.01 5000t
+22	1e5ce66	0.7181	ok	27	max_bin 512
+23	b52ac02	0.7221	ok	25	colsample 0.8
+24	d352600	0.7238	ok	25	colsample 0.6
+25	599bef3	0.7257	ok	23	colsample 0.4
+26	4a2e1fb	0.7267	ok	25	colsample 0.3
+27	ea1a8cd	0.7252	ok	23	colsample 0.2
+28	80007e5	0.7239	ok	27	colsample0.3 subsample0.8
+29	c675cce	0.7253	ok	36	colsample0.3 8000t
+30	13c8d69	0.7175	ok	24	ablate sincos tod
+31	c31edd1	0.7261	ok	22	colsample bylevel0.5
+32	a837899	0.7279	ok	29	depth7 colsample0.3
+33	5a9550b	0.7285	ok	37	depth8 colsample0.3
+34	69d62f5	0.7281	ok	66	depth10 colsample0.3
+35	3457266	0.7248	ok	33	depth8 colsample0.2
+36	ea56168	0.7271	ok	41	depth8 colsample0.4
+37	5fd5022	0.7297	ok	104	3seed x4000 depth8
+38	11ab200	0.7307	ok	90	4seed x3000 depth8
+39	9859ce0	0.7301	ok	95	6seed x2000 depth8
+40	1b1ff17	0.7307	ok	93	5seed x2500 depth8

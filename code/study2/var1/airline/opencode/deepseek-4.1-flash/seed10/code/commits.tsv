@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	bdebb51	1789533000	baseline
+01	edc71ca	1789533088	regularized deep ensemble depth4 lr.03
+02	a7c3b53	1789533115	regularized + dep time features
+03	57b8f8c	1789533155	lr.015 1500 trees stronger reg
+04	97feece	1789533166	lr.01 3000 mcw30 lam20
+05	f7db6d6	1789533190	add frequency congestion features
+06	2b55a4b	1789533215	3-seed ensemble
+07	3d8156b	1789533425	calendar features
+08	28e1a72	1789533702	origin-hour congestion freq
+09	9641a56	1789533755	dest-hour origin-day congestion ratio
+10	78190c4	1789533858	dest-day freq and congestion ratios
+11	391e984	1789533911	carrier hour day freq
+12	02dc6e0	1789533963	depth5 with congestion
+13	3c61004	1789534026	prev/next hour origin congestion
+14	a409def	1789534094	extended congestion windows
+15	c7ed77d	1789534160	origin 3h carrier 1h neighbors
+16	8b0e8d9	1789534284	route temporal neighbors dest pm2
+17	3d3cec2	1789534363	route ratio day carrier-route-hour
+18	1e4ab2f	1789534532	depth6 lr.015 2000
+19	100158c	1789534597	depth8 lr.02 1000

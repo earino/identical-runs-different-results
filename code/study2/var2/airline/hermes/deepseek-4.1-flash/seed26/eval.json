@@ -1,0 +1,192 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 26,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T08:40:20+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s26-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T09:38:36+00:00",
+  "wall_seconds": 3495.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 11206.9,
+  "endpoint_at_end": "ok",
+  "head": "4cc199d",
+  "n_commits": 23,
+  "n_experiments": 40,
+  "n_ok": 39,
+  "n_crash": 1,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7545,
+  "final_eval_auc": 0.7545,
+  "holdout_auc": 0.7546000410520001,
+  "holdout_ap": 0.7404905695917602,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03982928931600005,
+  "generalization_gap": -0.00010004105200012159,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 11061851,
+    "tokens_in_uncached": 11061851,
+    "tokens_in_cached": 0,
+    "tokens_out": 71519,
+    "turns": null,
+    "api_calls": 147,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 10929.3,
+  "cpu_seconds_counted": 7762.5,
+  "cpu_seconds_uncounted": 2802.1,
+  "cpu_seconds_exempt": 364.7,
+  "python_processes": 60,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 369,
+  "fits_counted": 229,
+  "fits_uncounted": 131,
+  "commits": [
+    {
+      "commit": "cdc7906",
+      "message": "baseline"
+    },
+    {
+      "commit": "8c8313f",
+      "message": "regularized: depth4 lr.05 mcw10 sub.8 col.8 lambda2 300t"
+    },
+    {
+      "commit": "596f2f0",
+      "message": "OOF target+freq encodings (carrier/origin/dest/route)"
+    },
+    {
+      "commit": "3d3da94",
+      "message": "deep heavily-regularized: d6 mcw50 col.6 lam5 alpha1 600t"
+    },
+    {
+      "commit": "0b920d2",
+      "message": "5-seed bagged ensemble"
+    },
+    {
+      "commit": "60b89b4",
+      "message": "add hour/month/dow/origin_hour/dest_hour/carrier_hour encodings"
+    },
+    {
+      "commit": "01cc527",
+      "message": "prune useless encoding keys, generic key spec"
+    },
+    {
+      "commit": "af9d7db",
+      "message": "expand pair-encoding family: *_month, origin_dow, route_hour"
+    },
+    {
+      "commit": "b8d70ac",
+      "message": "route family: route_month, route_dow, route_tod30"
+    },
+    {
+      "commit": "16b13b5",
+      "message": "add route_tod15, origin_tod30, dest_tod30"
+    },
+    {
+      "commit": "fe191be",
+      "message": "deviation features between fine and coarse slot encodings"
+    },
+    {
+      "commit": "bc9b8b3",
+      "message": "schedule-share ratio features"
+    },
+    {
+      "commit": "33b131a",
+      "message": "prune 4 redundant keys (origin/dest_month, origin/route_dow)"
+    },
+    {
+      "commit": "19c6795",
+      "message": "diverse ensemble: depths 5/6/7 x 2 seeds"
+    },
+    {
+      "commit": "7add21a",
+      "message": "9-model ensemble (3 configs x 3 seeds)"
+    },
+    {
+      "commit": "172097c",
+      "message": "distance-bucket encodings (distb, distb_tod30)"
+    },
+    {
+      "commit": "a3e4b93",
+      "message": "calendar features: doy, holiday windows, dow ordinal"
+    },
+    {
+      "commit": "9a711d5",
+      "message": "stronger regularization: lambda20 gamma1"
+    },
+    {
+      "commit": "2d4a638",
+      "message": "clock-face features: minute-of-hour, round-5 flag"
+    },
+    {
+      "commit": "7e371d6",
+      "message": "finer clock-face flags: round10/15/30"
+    },
+    {
+      "commit": "691f319",
+      "message": "cyclic minute-of-hour features + minute bucket"
+    },
+    {
+      "commit": "402f30d",
+      "message": "min_10 + daily-cycle cyclic features"
+    },
+    {
+      "commit": "173ed76",
+      "message": "minute-of-hour target encoding (minhr)"
+    },
+    {
+      "commit": "4cc199d",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 10564.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 277.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "173ed76",
+  "best_commit_eval_auc": 0.7545,
+  "best_commit_holdout_auc": 0.7546000410520001,
+  "best_commit_holdout_ap": 0.7404905695917602,
+  "best_commit_error": null,
+  "finalized_best": true
+}

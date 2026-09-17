@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	6052b13	1789540147	baseline
+01	e724798	1789540220	exp2: time-of-day features (tod, cyclical, hour cat), month/dow/dom as ints, log-dist
+02	4e469e0	1789540231	exp3: 600 rounds lr=0.06 + early stopping on random 15% of train, reg tuned
+03	5eebb11	1789540309	exp7: bigger model depth8 lr0.04 minchild15 colsub0.5
+04	21591ee	1789540321	exp8: depth10 minchild25 colsub0.4 lr0.035
+05	4af621f	1789540334	exp9: depth12 minchild40 gamma2 lr0.03
+06	cb6a9fa	1789540403	exp15: more trees, lr 0.02
+07	20dc7ac	1789540537	exp22: lambda 8, 2600 trees
+08	5ddb0c7	1789540647	exp28: carrier x hour interaction
+09	690407b	1789540670	exp30: origin/dest x hour interactions (freq>=150)
+10	7ab4bff	1789540749	exp34: minchild 30, 2600 trees on top of interactions
+11	309a958	1789540768	exp35: minchild 25 lambda 5
+12	a198cc3	1789540787	exp36: depth 13
+13	1837765	1789540828	exp38: half-hour buckets for carrier x time
+14	42e784a	1789540902	exp41: subsample 0.9

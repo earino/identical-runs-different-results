@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	f06f887	1789516273	baseline
+01	e4331fd	1789516467	clock features + shallow regularized model (d4 300 trees mcw10)
+02	9319150	1789516691	drop year-specific Month/DayofMonth calendar features
+03	5fa6476	1789516774	core feature set: clock feats incl sin/cos+minute, drop raw DepTime and distance_log
+04	f63ab95	1789516781	5-seed probability-averaged XGBoost ensemble
+05	a9e895a	1789516842	restore full clock block (minute, raw DepTime, distance_log)
+06	2fac703	1789517255	add carrier x hour categorical cross, depth 6
+07	53c0171	1789517649	add distance-bin x hour cross, depth 8
+08	0511332	1789517793	add 15-min time-of-day categorical bucket
+09	eb13a86	1789518154	depth-diverse 6-model bag (depths 6-12, mcw 5-20)
+10	55cddd8	1789518740	simplify: drop raw DepTime, distance_log, cyclic tod
+11	3d390a8	1789519334	10-model bag: depths 4-12 x mcw 5/10
+12	24e8f9e	1789519991	top-30 origin x hour cross
+13	6dd44a4	1789520069	bag10 all mcw5, depths 4-12 x2
+14	4a7ac64	1789520383	gradient-based row sampling
+15	442c2ae	1789520492	gradient_based subsample=0.95
+16	2a19cf8	1789520549	500 trees lr0.03 under gradient sampling
+17	e663a61	1789520647	bag members mcw=3
+18	615514c	1789520754	colsample_bytree=0.8
+19	3f7e1c5	1789520857	reg_alpha=0.5

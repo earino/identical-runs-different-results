@@ -1,0 +1,204 @@
+{
+  "harness": "opencode",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 29,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:25:13+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-glm-5.3-s29-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T21:26:47+00:00",
+  "wall_seconds": 3693.9,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 7061.5,
+  "endpoint_at_end": "ok",
+  "head": "152a87c",
+  "n_commits": 26,
+  "n_experiments": 40,
+  "n_ok": 36,
+  "n_crash": 3,
+  "n_timeout": 1,
+  "best_eval_auc": 0.7446,
+  "final_eval_auc": 0.7446,
+  "holdout_auc": 0.7457156477419999,
+  "holdout_ap": 0.7324427722392491,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.030944896005999922,
+  "generalization_gap": -0.0011156477419999034,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6873659,
+    "tokens_in_uncached": 617211,
+    "tokens_in_cached": 6256448,
+    "tokens_out": 20055,
+    "turns": null,
+    "api_calls": 150,
+    "method": "sum-of-150-events",
+    "cost_usd": 2.579,
+    "cached_share": 0.91
+  },
+  "cpu_seconds_python": 6717.1,
+  "cpu_seconds_counted": 6331.2,
+  "cpu_seconds_uncounted": 5.4,
+  "cpu_seconds_exempt": 380.4,
+  "python_processes": 45,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 152,
+  "fits_counted": 144,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "c01a325",
+      "message": "baseline"
+    },
+    {
+      "commit": "2a4be11",
+      "message": "FE v1: numeric dates, hour/minute, route pair; capacity + eval early stopping"
+    },
+    {
+      "commit": "94c0980",
+      "message": "lr 0.05, mcw 10, lambda 2, verbose trajectory"
+    },
+    {
+      "commit": "73ab175",
+      "message": "add OOF smoothed target encoding for route/origin/dest/carrier"
+    },
+    {
+      "commit": "c5c8e04",
+      "message": "add hour-interaction target encodings (origin/dest/carrier/route x hour)"
+    },
+    {
+      "commit": "c43d34a",
+      "message": "depth 8 for TE-rich features"
+    },
+    {
+      "commit": "3b42f91",
+      "message": "stronger regularization for year transfer"
+    },
+    {
+      "commit": "8d12644",
+      "message": "push regularization further"
+    },
+    {
+      "commit": "6c904bc",
+      "message": "reg even harder: mcw80 lambda20 ss0.5 cs0.5"
+    },
+    {
+      "commit": "bf4c288",
+      "message": "add dow_hour TE (weekly cycle transfers)"
+    },
+    {
+      "commit": "f15148c",
+      "message": "weekly-cycle TEs: carrier_dow, route_dow"
+    },
+    {
+      "commit": "014abff",
+      "message": "origin_dow + dest_dow TEs"
+    },
+    {
+      "commit": "a2f87e1",
+      "message": "4-seed ensemble averaging, fresh ES callback per model"
+    },
+    {
+      "commit": "3c09e89",
+      "message": "6-seed ensemble"
+    },
+    {
+      "commit": "bb95df9",
+      "message": "10-fold OOF target encoding"
+    },
+    {
+      "commit": "28f6c1a",
+      "message": "alpha 1.0 L1"
+    },
+    {
+      "commit": "9c2e297",
+      "message": "slot15 time-of-day TE + carrier_origin TE"
+    },
+    {
+      "commit": "48d0c00",
+      "message": "carrier_dest + carrier_slot15 TEs"
+    },
+    {
+      "commit": "01ee22a",
+      "message": "origin_slot15 + dow_slot15 TEs"
+    },
+    {
+      "commit": "894ab44",
+      "message": "dest_slot15 + slot10 TEs"
+    },
+    {
+      "commit": "e28d08f",
+      "message": "reg re-probe: mcw40 lambda10 with 21 TEs"
+    },
+    {
+      "commit": "514041b",
+      "message": "reg probe: mcw20 lambda5"
+    },
+    {
+      "commit": "290d763",
+      "message": "reg probe: mcw10 lambda2"
+    },
+    {
+      "commit": "6f18d50",
+      "message": "slot5 + carrier_slot10 TEs"
+    },
+    {
+      "commit": "d629019",
+      "message": "lr 0.04"
+    },
+    {
+      "commit": "e7af86f",
+      "message": "7-seed ensemble"
+    },
+    {
+      "commit": "152a87c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 6336.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 344.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "d629019",
+  "best_commit_eval_auc": 0.7446,
+  "best_commit_holdout_auc": 0.745717211134,
+  "best_commit_holdout_ap": 0.7323785745258304,
+  "best_commit_error": null,
+  "finalized_best": false
+}

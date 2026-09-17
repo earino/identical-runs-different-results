@@ -1,0 +1,21 @@
+n	commit	unix_time	subject
+00	cb7cc0c	1789631277	baseline
+01	e8edd27	1789631426	FE round 1: numeric date parts, DepTime hour/min cyclical encodings
+02	0e8a898	1789631456	hyperparams: 1500 trees lr .05 depth 8, early stopping on internal 90/10 split
+03	4e5c334	1789631493	fix: iloc positional indexing for internal split
+04	6ad21f4	1789632139	exploration: fixed 1200-tree model, sweep eval AUC vs iterations
+05	31da8d5	1789632227	reg probe: depth 6 mcw 10, sweep to find peak
+06	62d4050	1789632249	ensemble: 7-seed bagged XGB at peak config (d8 mcw5 200 trees)
+07	a05ed50	1789632341	heterogeneous 10-member ensemble, full-train members, rotated params
+08	1a05430	1789632410	ensemble v2: concentrate on deep/low-mcw region, probe depth 10-11
+09	2dfd13a	1789632479	probe deeper: d10-13 ensemble, lr .03, mcw 2-3
+10	83b655a	1789632598	probe d14-16
+11	fb54174	1789633367	d16 members: lr .015-.03 sweep, bin512, lambda2 variants, time-guarded
+12	fa6a874	1789633518	sweet-spot lr .015-.02 members, 7 configs, guard 80s
+13	0489b22	1789633698	DMatrix reuse for member/eval predicts; strong lr .015-.02 member set, guard 70s
+14	1272275	1789634402	full-data members (subsample=1.0), colsample diversity, n380
+15	b4fe39d	1789634702	mixed ensemble: 2 strong d16 + mid d14/15 diversity members
+16	bd1bc4e	1789635019	dynamic time guard; probe d18 and max_bin=64 members
+17	0d48bd4	1789635210	depth 20 members (n280-320 lr .015-.02)
+18	b5a3446	1789635472	depth 22-24 members
+19	491cfba	1789635589	d22 refinement: lr.015 n320, mcw1 probe

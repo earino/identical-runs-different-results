@@ -1,0 +1,38 @@
+n	commit	eval_auc	status	seconds	description
+1	cb7cc0c	0.7141	ok	1	baseline
+2	e8edd27	0.7185	ok	2	FE1: numeric dates + DepTime decomposition
+3	0e8a898	0.0000	crash	1	HP: early stopping + bigger model
+4	4e5c334	0.7189	ok	8	HP: early stopping + bigger model (iloc fix)
+5	72fb1db	0.7075	ok	14	FE2: route cat + OOF target encodings
+6	6dcc1a3	0.7059	ok	5	FE3: route pair categorical only
+7	6ad21f4	0.7157	ok	18	sweep: AUC vs n_estimators
+8	31da8d5	0.7195	ok	6	regularized depth6 mcw10 sweep
+9	62d4050	0.7240	ok	15	7-seed bagged ensemble @ peak config
+10	a05ed50	0.7251	ok	27	heterogeneous ensemble @ full train
+11	1a05430	0.7285	ok	49	deep-region ensemble (d9-11, mcw2-3)
+12	2dfd13a	0.7325	ok	97	deep probe d10-13
+13	83b655a	0.7343	ok	109	deep probe d14-16
+14	792caaa	0.0000	timeout	121	lossguide probe (leaves 1k-4k)
+15	e880291	0.0000	timeout	123	interactions: carrier_hb + dow_hb
+16	04ef11b	0.0000	timeout	121	feature cleanup + 7 members
+17	1147d6d	0.7343	ok	115	time-guarded 7-member deep ensemble
+18	fb54174	0.7360	ok	116	d16 lr sweep + bin512 + lambda
+19	fa6a874	0.0000	timeout	125	lr .015-.02 member sweet spot
+20	0489b22	0.7363	ok	113	dmatrix reuse + sweet-spot members
+21	751e855	0.7349	ok	108	frequency features + deep ensemble
+22	12701ba	0.7049	ok	106	ablation: no airport cats
+23	abbf5eb	0.7308	ok	104	bynode feature-sampling diversity
+24	94d9a2b	0.0000	crash	11	time-aware n_estimators probe
+25	1272275	0.7366	ok	110	subsample 1.0 members
+26	a08beae	0.0000	timeout	126	n460 lr.015 sub1.0 members
+27	b4fe39d	0.7367	ok	108	mixed-depth ensemble
+28	e3867a1	0.0000	timeout	121	lr .012 members
+29	bd1bc4e	0.7380	ok	115	d18 + bin64 probe
+30	0d48bd4	0.7406	ok	99	d20 members
+31	b5a3446	0.7411	ok	99	d22-d24 members
+32	491cfba	0.7415	ok	105	d22 lr/mcw refinement
+33	b994169	0.7331	ok	78	holiday-distance features
+34	f9b2fec	0.7404	ok	96	seed-replica ensemble
+35	bd866cf	0.7393	ok	94	subsample diversity d22
+36	089e180	0.7402	ok	61	snapshot ensemble
+37	ea2952c	0.7400	ok	96	gamma probe

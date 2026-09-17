@@ -1,0 +1,30 @@
+n	commit	eval_auc	status	seconds	description
+1	fa64524	0.7141	ok	4	baseline
+2	2a7fa0a	0.7070	ok	4	stronger boosting
+3	0489388	0.7057	ok	3	time+freq+route features
+4	4d6824a	0.7134	ok	2	time features only
+5	cb67ac9	0.7083	ok	3	300 trees lr0.1
+6	6dab2ff	0.0000	crash	2	feature select + regularize
+7	60e4fdb	0.7202	ok	3	feature select + regularize fix
+8	9123fdd	0.7393	ok	58	depth-diverse ensemble
+9	644ec4d	0.7436	ok	64	time + density features in ensemble
+10	43ec063	0.7453	ok	69	carrier-hour + cyclic time
+11	0aae815	0.7462	ok	98	ensemble depths 2-20
+12	d6ab47f	0.7492	ok	82	colsample diversity
+13	d32af86	0.7528	ok	70	colsample 0.6
+14	4740730	0.7538	ok	74	colsample 0.4
+15	e57847f	0.7473	ok	52	colsample 0.25
+16	b9d3989	0.7528	ok	61	subsample+seed diversity
+17	66a8d10	0.7552	ok	89	ensemble to depth 24
+18	b359576	0.7557	ok	93	ensemble to depth 28
+19	115f92f	0.7555	ok	109	ensemble to depth 32
+20	c4e36e7	0.7581	ok	117	carrier-hub density
+21	a2dcdef	0.7579	ok	91	trim to depth26
+22	f859ce2	0.7587	ok	92	fewer trees per depth
+23	560f2b6	0.7588	ok	102	lossguide diversity
+24	e6531b8	0.7574	ok	85	drop cd_cnt
+25	0b1434e	0.7603	ok	97	seed diversity
+26	efd671a	0.7599	ok	85	colsample per-member
+27	9373483	0.0000	crash	2	doubled members
+28	52d5e28	0.7588	ok	105	doubled members fix
+29	34a3ba2	0.0000	timeout	121	extra deep seeds

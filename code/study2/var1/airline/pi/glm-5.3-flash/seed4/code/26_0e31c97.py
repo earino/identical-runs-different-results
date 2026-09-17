@@ -1,0 +1,230 @@
+"""XGBoost binary classifier for the airline delay task. THIS IS THE ONLY FILE THE AGENT EDITS.
+
+Contract (see program.md):
+  1. `python train.py` trains on data/train.csv, evaluates on data/eval.csv, prints `Eval AUC: 0.xxxx`.
+  2. After running, a module-level function `predict_proba(df)` exists: raw DataFrame -> 1-D array of P(positive).
+"""
+import json
+import os
+import time
+
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.metrics import roc_auc_score
+
+TASK = json.load(open("task.json"))
+TARGET = TASK["target"]
+POSITIVE = TASK["positive_label"]
+ID_COLS = TASK.get("id_columns", [])
+N_JOBS = int(os.environ.get("BENCH_THREADS", "4"))
+SEED = 42
+
+train = pd.read_csv("data/train.csv")
+evald = pd.read_csv("data/eval.csv")
+y_all = (train[TARGET] == POSITIVE).astype(int)
+
+# --- encoders fitted on TRAIN only (module level); prepare() applies them to any raw df ------------
+CAT_COLS = ["Month", "DayofMonth", "DayOfWeek", "UniqueCarrier", "Origin", "Dest"]
+PRIOR = float(y_all.mean())
+
+
+def _keys(df: pd.DataFrame) -> pd.DataFrame:
+    k = pd.DataFrame(index=df.index)
+    for c in ["Month", "DayofMonth", "DayOfWeek", "UniqueCarrier", "Origin", "Dest"]:
+        k[c] = df[c].astype(str)
+    k["hour"] = (df["DepTime"].astype(float) // 100).astype(int).astype(str)
+    k["block30"] = (df["DepTime"].astype(float) // 30).astype(int).astype(str)
+    for b in (10, 15, 20, 45, 60):
+        k[f"block{b}"] = (df["DepTime"].astype(float) // b).astype(int).astype(str)
+    wk = ((df["DepTime"].astype(float) // 100).astype(int) * 60 + df["DepTime"].astype(float) % 100
+          + (k["DayOfWeek"].str.slice(2).astype(int) - 1) * 1440)
+    k["carrier_block15"] = k["UniqueCarrier"] + "_" + k["block15"]
+    k["carrier_block30"] = k["UniqueCarrier"] + "_" + k["block30"]
+    k["origin_block60"] = k["Origin"] + "_" + k["block60"]
+    k["carrier_block45"] = k["UniqueCarrier"] + "_" + k["block45"]
+    k["carrier_block20"] = k["UniqueCarrier"] + "_" + k["block20"]
+    k["origin_block30"] = k["Origin"] + "_" + k["block30"]
+    k["origin_block15"] = k["Origin"] + "_" + k["block15"]
+    k["origin_block20"] = k["Origin"] + "_" + k["block20"]
+
+
+    k["route"] = k["Origin"] + "_" + k["Dest"]
+    return k
+
+
+_k_train = _keys(train)
+cat_levels = {c: pd.Index(sorted(train[c].astype(str).unique())) for c in CAT_COLS}
+for c in ["hour", "block30", "block10", "block15", "block20", "block60", "block45",
+          "carrier_block15", "carrier_block30", "origin_block60", "carrier_block45",
+          "carrier_block20", "origin_block30", "origin_block15", "origin_block20"]:
+    cat_levels[c] = pd.Index(sorted(_k_train[c].unique()))
+
+
+def prepare(df: pd.DataFrame) -> pd.DataFrame:
+    """ALL feature engineering lives here: predict_proba() calls prepare() on unseen rows."""
+    k = _keys(df)
+    X = pd.DataFrame(index=df.index)
+    X["DepTime"] = df["DepTime"].astype(float)  # raw hhmm
+    hour_num = k["hour"].astype(int)
+    dep_min = hour_num * 60 + (df["DepTime"].astype(float) % 100)
+    X["hour_num"] = hour_num
+    X["dep_sin"] = np.sin(2 * np.pi * dep_min / 1440.0)
+    X["dep_cos"] = np.cos(2 * np.pi * dep_min / 1440.0)
+    X["month"] = pd.Categorical(k["Month"], categories=cat_levels["Month"])
+    X["dayofmonth"] = pd.Categorical(k["DayofMonth"], categories=cat_levels["DayofMonth"])
+    X["dayofweek"] = pd.Categorical(k["DayOfWeek"], categories=cat_levels["DayOfWeek"])
+    X["month_num"] = k["Month"].str.slice(2).astype(int)
+    X["day_num"] = k["DayofMonth"].str.slice(2).astype(int)
+    X["dow_num"] = k["DayOfWeek"].str.slice(2).astype(int)
+    X["carrier"] = pd.Categorical(k["UniqueCarrier"], categories=cat_levels["UniqueCarrier"])
+    X["origin"] = pd.Categorical(k["Origin"], categories=cat_levels["Origin"])
+    X["dest"] = pd.Categorical(k["Dest"], categories=cat_levels["Dest"])
+    dist = df["Distance"].astype(float)
+    X["distance"] = dist
+    X["dist_log"] = np.log1p(dist)
+    X["block30"] = pd.Categorical(k["block30"], categories=cat_levels["block30"])
+    X["hour_cat"] = pd.Categorical(k["hour"], categories=cat_levels["hour"])
+    for b in (10, 15, 20, 60, 45):
+        X[f"block{b}"] = pd.Categorical(k[f"block{b}"], categories=cat_levels[f"block{b}"])
+    X["carrier_block15"] = pd.Categorical(k["carrier_block15"], categories=cat_levels["carrier_block15"])
+    X["carrier_block30"] = pd.Categorical(k["carrier_block30"], categories=cat_levels["carrier_block30"])
+    X["origin_block60"] = pd.Categorical(k["origin_block60"], categories=cat_levels["origin_block60"])
+    X["carrier_block45"] = pd.Categorical(k["carrier_block45"], categories=cat_levels["carrier_block45"])
+    X["carrier_block20"] = pd.Categorical(k["carrier_block20"], categories=cat_levels["carrier_block20"])
+    X["origin_block30"] = pd.Categorical(k["origin_block30"], categories=cat_levels["origin_block30"])
+    X["origin_block15"] = pd.Categorical(k["origin_block15"], categories=cat_levels["origin_block15"])
+    X["origin_block20"] = pd.Categorical(k["origin_block20"], categories=cat_levels["origin_block20"])
+    # holiday / weekend flags (fixed date rules, year-stable)
+    m = X["month_num"].to_numpy()
+    d = X["day_num"].to_numpy()
+    md = m * 100 + d
+    X["is_weekend"] = (X["dow_num"] >= 6).astype(int)
+    X["is_holiday"] = ((md >= 1220) | (md <= 103) | ((md >= 701) & (md <= 707)) |
+                       ((md >= 1122) & (md <= 1128)) | (md == 704) | (md == 1111)).astype(int)
+    return X
+
+
+def to_y(df: pd.DataFrame) -> np.ndarray:
+    return (df[TARGET] == POSITIVE).astype(int).to_numpy()
+
+
+BASE_PARAMS = {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "tree_method": "hist",
+    "enable_categorical": True,
+    "seed": SEED,
+    "n_jobs": N_JOBS,
+}
+
+t0 = time.time()
+FULL = prepare(train)
+FULL_EVAL = prepare(evald)
+y_eval = to_y(evald)
+print(f"Data prep time: {time.time() - t0:.1f}s")
+
+B6CATS = ["month", "dayofmonth", "dayofweek", "carrier", "origin", "dest"]
+FL = ["is_weekend", "is_holiday"]
+BASE_F = B6CATS + ["DepTime", "distance"] + FL
+SC = ["dep_sin", "dep_cos"]
+EXT_F = BASE_F + SC
+HC_F = EXT_F + ["hour_cat", "hour_num"]
+HC_B_F = HC_F + ["block30"]
+HC_B15_F = HC_F + ["block15"]
+HC_B60_F = HC_F + ["block60"]
+HC_B20_F = HC_F + ["block20"]
+HC_B10_F = HC_F + ["block10"]
+HC_B3060_F = HC_F + ["block30", "block60"]
+HC_B1530_F = HC_F + ["block15", "block30"]
+B30ONLY_F = EXT_F + ["block30", "block30n"]
+HCX_F = HC_F + ["block15", "block30", "block60", "block10", "block20"]
+B1530_F = HC_F + ["block15", "block30"]
+BIG_F = EXT_F + ["dow_hour", "carrier_dow", "cnt_Origin", "cnt_Dest", "cnt_route"]
+BIG_HC_F = HC_F + ["dow_hour", "carrier_dow", "cnt_Origin", "cnt_Dest", "cnt_route"]
+CAL_F = ["month", "dayofmonth", "dayofweek", "DepTime", "distance", "dep_sin", "dep_cos",
+         "month_num", "day_num", "dow_num"] + FL
+
+
+def fit_member(name: str, cols: list, over: dict, n_rounds, seed=SEED):
+    params = {**BASE_PARAMS, **over, "seed": seed}
+    dtr = xgb.DMatrix(FULL[cols], label=y_all.to_numpy(), enable_categorical=True)
+    t = time.time()
+    bst = xgb.train(params, dtr, num_boost_round=n_rounds)
+    p = bst.predict(xgb.DMatrix(FULL_EVAL[cols], enable_categorical=True))
+    auc = roc_auc_score(y_eval, p)
+    print(f"MEM {name:36s} eval={auc:.4f} ({time.time() - t:.0f}s)")
+    return name, auc, (bst, cols, p)
+
+
+M = {}
+C3 = {"max_depth": 6, "eta": 0.05, "min_child_weight": 20.0, "colsample_bynode": 0.3}
+M["q4"] = fit_member("q4_HC+b30", HC_B_F, C3, 400)
+M["b15"] = fit_member("b15_HC+b15", HC_F + ["block15"], C3, 400)
+M["b20"] = fit_member("b20_HC+b20", HC_F + ["block20"], C3, 400)
+M["b1530"] = fit_member("b1530_HC+b15+b30", HC_F + ["block15", "block30"], C3, 400)
+M["b10"] = fit_member("b10_HC+b10", HC_F + ["block10"], C3, 400)
+M["trio"] = fit_member("trio_HC+b15+b30+b60", HC_F + ["block15", "block30", "block60"], C3, 400)
+M["quad"] = fit_member("quad_HC+b10+b15+b30", HC_F + ["block10", "block15", "block30"], C3, 400)
+M["w1"] = fit_member("b1530_600t", HC_F + ["block15", "block30"], C3, 600)
+M["w9"] = fit_member("carb15_HC+b15+carb15", HC_F + ["block15", "carrier_block15"], C3, 400)
+M["v1"] = fit_member("b1530_800t", HC_F + ["block15", "block30"], C3, 800)
+M["v3"] = fit_member("carb15_600t", HC_F + ["block15", "carrier_block15"], C3, 600)
+M["v4"] = fit_member("HC+b30+carb30", HC_F + ["block30", "carrier_block30"], C3, 400)
+M["v5"] = fit_member("HC+b60+origb60", HC_F + ["block60", "origin_block60"], C3, 400)
+M["x2"] = fit_member("HC+b45+carb45", HC_F + ["block45", "carrier_block45"], C3, 400)
+M["x3"] = fit_member("HC+b20+carb20", HC_F + ["block20", "carrier_block20"], C3, 400)
+M["x4"] = fit_member("carb15_800t", HC_F + ["block15", "carrier_block15"], C3, 800)
+M["x5"] = fit_member("HC+b30+origb30", HC_F + ["block30", "origin_block30"], C3, 400)
+M["x6"] = fit_member("HC+b15+origb15", HC_F + ["block15", "origin_block15"], C3, 400)
+M["y6"] = fit_member("HC+b30+carb15+carb30", HC_F + ["block30", "carrier_block15", "carrier_block30"], C3, 400)
+M["y7"] = fit_member("carb30_600t", HC_F + ["block30", "carrier_block30"], C3, 600)
+M["y8"] = fit_member("origb30_600t", HC_F + ["block30", "origin_block30"], C3, 600)
+M["aa1"] = fit_member("carb30_1500t", HC_F + ["block30", "carrier_block30"], C3, 1500)
+M["aa3"] = fit_member("carb15_1000t", HC_F + ["block15", "carrier_block15"], C3, 1000)
+M["aa4"] = fit_member("carb20_800t", HC_F + ["block20", "carrier_block20"], C3, 800)
+M["aa5"] = fit_member("carb45_800t", HC_F + ["block45", "carrier_block45"], C3, 800)
+M["z1"] = fit_member("carb30_1000t", HC_F + ["block30", "carrier_block30"], C3, 1000)
+
+def mean_of(keys):
+    return np.mean([M[k][2][2] for k in keys], axis=0)
+
+
+def auc_of(p):
+    return roc_auc_score(y_eval, p)
+
+
+R = {}
+BASE = ["q4", "b15", "b20", "b1530", "b10", "trio", "quad", "w1", "w9", "v1", "v3", "v4",
+        "v5", "x2", "x3", "x4", "x5", "x6", "y6", "y7", "y8", "z1"]
+R["AA0"] = ("AA0_base22", auc_of(mean_of(BASE)))
+for i, ak in enumerate(["aa1", "aa3", "aa4", "aa5"], 1):
+    R[f"AA{i}"] = (f"AA{i}_22+{ak}", auc_of(mean_of(BASE + [ak])))
+R["AAC"] = ("AAC_22+aa1+aa3", auc_of(mean_of(BASE + ["aa1", "aa3"])))
+R["AAD"] = ("AAD_22+aa1+aa3+aa4", auc_of(mean_of(BASE + ["aa1", "aa3", "aa4"])))
+R["AAE"] = ("AAE_22+all4", auc_of(mean_of(BASE + ["aa1", "aa3", "aa4", "aa5"])))
+
+for name, auc in R.values():
+    print(f"ENS {name:36s} eval={auc:.4f}")
+best_name = max(R, key=lambda k: R[k][1])
+best_auc = R[best_name][1]
+print(f"BEST: {best_name} {best_auc:.4f}")
+
+XKEYS = ["x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11", "x12"]
+COMBOS = {"AA0": BASE}
+for i, ak in enumerate(["aa1", "aa3", "aa4", "aa5"], 1):
+    COMBOS[f"AA{i}"] = BASE + [ak]
+COMBOS.update({"AAC": BASE + ["aa1", "aa3"], "AAD": BASE + ["aa1", "aa3", "aa4"],
+               "AAE": BASE + ["aa1", "aa3", "aa4", "aa5"]})
+ENSEMBLE_KEYS = COMBOS[best_name]
+MODELS = [(M[k][2][0], M[k][2][1]) for k in ENSEMBLE_KEYS]
+
+
+def predict_proba(df: pd.DataFrame) -> np.ndarray:
+    P = prepare(df)
+    ps = np.column_stack([b.predict(xgb.DMatrix(P[c], enable_categorical=True)) for b, c in MODELS])
+    return ps.mean(axis=1)
+
+
+eval_auc = best_auc
+print(f"Eval AUC: {eval_auc:.4f}")

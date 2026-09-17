@@ -1,0 +1,16 @@
+n	commit	unix_time	subject
+00	bba7499	1789501389	baseline
+01	bbebb0e	1789501477	depth 4, 30 trees
+02	fe798b1	1789501485	depth 4, 100 trees
+03	98c72cb	1789501506	FE no-route: int dates + hour/min, depth4/100t
+04	7c60ad1	1789501559	lr 0.05, 200 trees, depth4
+05	ab5f591	1789501563	lr 0.03, 400 trees, depth4
+06	5848b07	1789501575	colsample 0.7, lr 0.03, 600 trees
+07	4189394	1789501580	colsample 0.5, 800 trees
+08	8dc2a6f	1789501586	colsample 0.3, 1200 trees
+09	d3c8336	1789501623	depth 5, colsample 0.3, 1200 trees
+10	17e4137	1789501631	depth 6, colsample 0.3, 1200 trees
+11	caa9357	1789501650	lr 0.02, 1800 trees, depth6 cs0.3
+12	6a9dcb9	1789501688	dow x hour interaction
+13	a4ab167	1789501702	carrier x hour interaction
+14	18ed2c3	1789501733	colsample 0.4 richer features

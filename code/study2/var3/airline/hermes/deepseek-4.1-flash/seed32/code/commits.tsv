@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	7c558d0	1789513768	baseline
+01	e892767	1789513817	ordinal decode of c-N cols + dep time-of-day features
+02	4b189a5	1789514153	regularized lossguide 256 leaves n500 lr0.02
+03	7ca2828	1789514601	counts + max_bin512 + 3-seed ensemble
+04	55f06f0	1789514915	density features (hour+15min slots) + 3-seed lossguide ensemble
+05	76f3536	1789514978	probe12: windowed/cumulative congestion (temporary)
+06	5a5efb5	1789515154	congestion windows + slot-share features, 3-seed ensemble
+07	b5308c9	1789515269	colsample 0.35 + 5-seed ensemble
+08	d5ad0f2	1789515353	probe15: busy-day/prev-next/seasonality (temporary)
+09	33c8b5d	1789515490	add origin prev/next 15-min congestion
+10	baf0952	1789515743	n1000 lr0.015, 3-seed ensemble
+11	a3b874a	1789516092	arrival-slot destination congestion + n1000 lr.015 3 seeds

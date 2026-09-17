@@ -1,0 +1,176 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 20,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T23:39:40+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s20-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:02:46+00:00",
+  "wall_seconds": 1386.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3586.7,
+  "endpoint_at_end": "ok",
+  "head": "3bcd683",
+  "n_commits": 19,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7373,
+  "final_eval_auc": 0.7373,
+  "holdout_auc": 0.7393113662299999,
+  "holdout_ap": 0.7259759324109218,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.024540614493999913,
+  "generalization_gap": -0.002011366229999978,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4367130,
+    "tokens_in_uncached": 4367130,
+    "tokens_in_cached": 0,
+    "tokens_out": 55074,
+    "turns": null,
+    "api_calls": 111,
+    "method": "sum-of-111-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3566.0,
+  "cpu_seconds_counted": 3331.5,
+  "cpu_seconds_uncounted": 7.5,
+  "cpu_seconds_exempt": 227.0,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 298,
+  "fits_counted": 291,
+  "fits_uncounted": 1,
+  "commits": [
+    {
+      "commit": "9dc14e3",
+      "message": "baseline"
+    },
+    {
+      "commit": "5cc198c",
+      "message": "early stopping on internal val + refit full"
+    },
+    {
+      "commit": "3bde684",
+      "message": "fe: DepTime hour/min/tod"
+    },
+    {
+      "commit": "7b0d433",
+      "message": "model: depth8 lr.03 mcw20 lambda5"
+    },
+    {
+      "commit": "c8aad09",
+      "message": "model: depth10 lr.02 mcw40 lambda10"
+    },
+    {
+      "commit": "0bc7535",
+      "message": "ensemble: 5x100-tree seeds"
+    },
+    {
+      "commit": "0f2adeb",
+      "message": "ensemble: 10 seeds"
+    },
+    {
+      "commit": "44a2689",
+      "message": "ensemble: 5 diverse configs x2 seeds"
+    },
+    {
+      "commit": "aaebdb5",
+      "message": "ensemble: 8 configs incl lr diversity"
+    },
+    {
+      "commit": "536d3d9",
+      "message": "fe: origin/dest/carrier x hour congestion counts"
+    },
+    {
+      "commit": "984df30",
+      "message": "fe: route-hour count + hour fractions"
+    },
+    {
+      "commit": "b7dcc47",
+      "message": "fe: route/dow counts + prev-hour congestion"
+    },
+    {
+      "commit": "c59a316",
+      "message": "fe: 15min-bin congestion + route/dow/day counts"
+    },
+    {
+      "commit": "a5930ba",
+      "message": "fe: congestion fractions + 2h windows"
+    },
+    {
+      "commit": "ad32304",
+      "message": "probe: 300 trees with rich features"
+    },
+    {
+      "commit": "1277e1d",
+      "message": "probe: 600 trees"
+    },
+    {
+      "commit": "56b96df",
+      "message": "ensemble: diverse 600-tree configs"
+    },
+    {
+      "commit": "211f5e6",
+      "message": "fe: carrier-route, month-traffic, route-2h counts"
+    },
+    {
+      "commit": "afc9b40",
+      "message": "fe: adjacent-window congestion"
+    },
+    {
+      "commit": "3bcd683",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3339.0,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 20.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "afc9b40",
+  "best_commit_eval_auc": 0.7373,
+  "best_commit_holdout_auc": 0.7393113662299999,
+  "best_commit_holdout_ap": 0.7259759324109218,
+  "best_commit_error": null,
+  "finalized_best": true
+}

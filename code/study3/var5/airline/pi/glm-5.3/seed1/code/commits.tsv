@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	8993a1d	1789582991	baseline
+01	6a8e747	1789583071	FE v1 + capacity: ES on 80/20 split, lr .05 depth 8
+02	2f0c30c	1789583115	FE v2 (no Route cat) + capacity ES
+03	012a21f	1789583342	ES to find iters, refit on full train
+04	a4aa4a8	1789583500	depth 12, lr 0.03
+05	f626efe	1789584108	depth 20
+06	2599191	1789584395	add route popularity count
+07	eaa28be	1789584433	3-seed ensemble refit on full data
+08	8d1f535	1789584755	ensemble colsample 0.7
+09	6a868fa	1789585657	2-fold ES to stabilize tree count
+10	666ae35	1789587588	colsample 0.6 + max_bin 1024

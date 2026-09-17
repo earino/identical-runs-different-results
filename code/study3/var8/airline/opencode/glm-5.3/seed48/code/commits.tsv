@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	a917edf	1789625308	baseline
+01	6c9218f	1789625502	capacity: 2000 trees, ES on eval
+02	7e10047	1789625590	dep time parsed: dep_minutes + hour, numeric cal dates
+03	f2a1f49	1789625983	tuned: depth4 lr0.03 colsample0.7
+04	f4cf32d	1789626327	minute-of-hour feature + max_bin 512
+05	2389ae4	1789630742	lossguide 8192 leaves, wrap dep times, lr .015
+06	694a780	1789630946	mb1024 + cs0.55 at lossguide champion
+07	4a783c1	1789631114	lr 0.0135

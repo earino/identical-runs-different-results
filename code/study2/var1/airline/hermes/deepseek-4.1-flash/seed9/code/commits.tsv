@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	2051860	1789528265	baseline
+01	5aa70c7	1789529770	time-of-day + cyclic features, depth3
+02	6dcf643	1789529784	carrier x hour interaction, depth4 mcw20 eta.05 n2000
+03	bab83bc	1789529829	rank-averaged ensemble of 3 xgboost members
+04	bbd5c32	1789530712	5-member ensemble, carrier x hour/bucket/distance features
+05	510d5f7	1789531688	hdist feature, lower-lr members
+06	6788b58	1789532079	prob-averaging + 5th member
+07	0e4aaa2	1789532240	e.04 retune: same strength, fewer trees
+08	24f214d	1789532315	more rounds for strongest members
+09	06302b5	1789532393	num_parallel_tree=2 members

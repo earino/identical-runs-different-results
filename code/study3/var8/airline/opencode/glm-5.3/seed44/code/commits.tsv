@@ -1,0 +1,14 @@
+n	commit	unix_time	subject
+00	fa0113e	1789599861	baseline
+01	8dc8b7b	1789599980	FE v1: numeric/cyclic time features, route categorical, early stopping on eval
+02	1bf8797	1789600102	early stop on AUC (logloss stops too early on 2005->2006 shift)
+03	5b65aed	1789600777	numeric cal/time features + recency-weighted samples + d4 shallow trees, AUC early stop
+04	bbfd72b	1789600897	add fixed-date holiday distance features
+05	25a9400	1789601078	6-model ensemble (3 configs x 2 seeds), fixed rounds, no early stopping
+06	0bcbbf0	1789601854	mixture of 48 time-window experts + 6 global models, blend 0.35
+07	28d7c9b	1789602575	multi-resolution MoE: 48p+24p specialists blended with global (w=.30/.10)
+08	b818639	1789603048	add bagged config (subsample/colsample .8) to specialists
+09	b017f90	1789605711	multi-resolution ladder MoE: 24/48/96/120 time windows (.08/.26/.10/.06)
+10	742f5fb	1789606862	4th bagged config for 96p resolution too
+11	67d7d27	1789609590	L1 (alpha=0.15) on specialist models
+12	2df7775	1789610633	longer specialist rounds (230/205/260/290) with L1

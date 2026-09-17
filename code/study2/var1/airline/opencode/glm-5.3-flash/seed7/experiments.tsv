@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c9cbd0f	0.7141	ok	3	baseline
+2	96f1e0a	0.7172	ok	7	feateng v1 + big model ES last20k
+3	14aaef1	0.7254	ok	4	train full, ES on eval
+4	4960b74	0.7152	ok	5	freq enc + route cat
+5	d9eb7ea	0.7138	ok	6	target encodings
+6	a7288b8	0.7280	ok	5	depth10 mcw5
+7	1b6cdbd	0.7329	ok	5	depth12 mcw5
+8	2e1c085	0.7381	ok	11	depth16
+9	2b2cfe5	0.7388	ok	14	depth20
+10	54107de	0.7399	ok	9	depth16 subs.7 col.6
+11	d2ccae6	0.7387	ok	10	sub.6 col.5
+12	9b0d707	0.7316	ok	7	lr 0.1
+13	fbb9520	0.7428	ok	13	lr 0.03
+14	57cfe1e	0.7437	ok	18	lr 0.02
+15	6ab9e67	0.7456	ok	30	lr 0.01
+16	3e5df05	0.7460	ok	57	lr 0.005
+17	ca3bd11	0.7387	ok	20	mcw 10
+18	d4649a5	0.7324	ok	11	cyclic encodings
+19	b4d0ac1	0.7464	ok	117	ensemble 4 seeds
+20	e35a82a	0.7464	ok	113	patience 50
+21	6680848	0.7455	ok	83	diverse ensemble 3
+22	21f9a7b	0.7199	ok	27	pruned features single
+23	cfa300d	0.7457	ok	33	max_bin 512
+24	44ed1ea	0.7384	ok	32	TE retest strong base
+25	ccfb479	0.0000	crash	1	cat crosses
+26	80cf05f	0.0000	timeout	121	cat crosses fixed
+27	e3d2f0d	0.7268	ok	37	crosses single
+28	3723449	0.7268	ok	29	gamma 1.0
+29	a0b6be4	0.7278	ok	47	depth20 lr.01
+30	455fcf1	0.7277	ok	24	ES metric auc
+31	3648acb	0.7454	ok	34	sub.8 col.7 single
+32	68cceb7	0.0000	timeout	126	5 seeds patience 25
+33	db9eaca	0.7464	ok	106	4 seeds patience 25
+34	d806289	0.7466	ok	81	lr-diverse ensemble
+35	de238e5	0.7472	ok	97	6 members
+36	0a58c76	0.7476	ok	110	8 members
+37	e5e7c6b	0.7476	ok	106	rank average
+38	bee9a83	0.0000	timeout	123	colsample_bynode 0.8
+39	592aa57	0.0000	crash	1	member jitter
+40	39267fb	0.7472	ok	108	member jitter fixed

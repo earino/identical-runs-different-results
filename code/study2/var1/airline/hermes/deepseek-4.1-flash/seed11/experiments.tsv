@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	6f474a3	0.7141	ok	4	baseline
+2	969abaa	0.7091	ok	4	tod features + stronger gbm
+3	1c95b23	0.7116	ok	7	early stopping round count
+4	b790d2a	0.7170	ok	2	drop Month
+5	2854249	0.7175	ok	2	OOF smoothed target encoding
+6	b62a3ca	0.7171	ok	6	capacity 200x0.05 regularized
+7	d417c63	0.7194	ok	4	8-seed ensemble
+8	003444b	0.7192	ok	6	time-bucketed TE interactions
+9	7161d2f	0.7093	ok	4	monotone constraint on DepTime
+10	183521b	0.7240	ok	6	schedule density features
+11	61c5190	0.7123	ok	6	cumulative share + cell counts
+12	1a74903	0.7205	ok	8	90 trees lr 0.08 with density feats
+13	2a5e4fe	0.7176	ok	4	no raw Origin/Dest categoricals
+14	b577bd9	0.7241	ok	4	no target encodings
+15	5ce2fe6	0.0000	crash	2	relative density + cleanup
+16	73a2ef8	0.7235	ok	5	relative density + cleanup (fixed)
+17	40e8adc	0.7241	ok	4	clean code, share+size only
+18	0997bd2	0.7240	ok	4	carrier-airport hub shares
+19	4dc88ef	0.7240	ok	5	network degree features
+20	59e7c69	0.7249	ok	7	16-member diverse bagging
+21	720b226	0.7249	ok	7	route-relative + competition features
+22	527bb9b	0.7256	ok	6	drop DayofMonth
+23	e29fec8	0.7221	ok	6	drop DayOfWeek
+24	76fbfad	0.7245	ok	6	drop Distance
+25	5d03ec9	0.7207	ok	7	route as native categorical
+26	7e132ff	0.7253	ok	7	weekday x hour density
+27	a3adcbf	0.7248	ok	10	32 members, 0.5 bagging
+28	448bfbf	0.7256	ok	6	rank-average combiner
+29	8fe672e	0.7243	ok	15	many weak regularized trees
+30	4588429	0.7202	ok	5	categorical complexity cap
+31	c8cfd1c	0.7274	ok	7	peak-hour offset features
+32	5e1549b	0.7273	ok	7	phase z-score features
+33	bb4ef5c	0.7273	ok	7	peak hour + offset features
+34	8a2203f	0.7275	ok	11	32 members, 0.7 bagging
+35	6898f28	0.7278	ok	11	ablate size features
+36	83412c4	0.7236	ok	9	ablate share features
+37	6343c9e	0.7257	ok	9	depth 5 instead of 6
+38	3e66575	0.7276	ok	12	pair peak offsets
+39	6f8b3fa	0.7269	ok	11	q50 phase offsets
+40	3e6c7df	0.7278	ok	14	48 ensemble members

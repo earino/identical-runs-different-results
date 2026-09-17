@@ -1,0 +1,12 @@
+n	commit	unix_time	subject
+00	97dbfce	1789497797	baseline
+01	4016062	1789497871	proper params + time-ordered early stopping
+02	d82028c	1789498066	seed ensemble x3
+03	3d2e66f	1789498116	freq encodings + diverse seed ensemble
+04	a0feb86	1789498303	5-model diverse ensemble
+05	9343239	1789498363	rank-average ensemble
+06	93a09c5	1789498758	max_bin 512
+07	aaf2b71	1789498940	6-model parallel ensemble, max_bin 512
+08	9738abd	1789499013	9-model ensemble
+09	fb4a9cb	1789499773	DistCat + hour 2nd harmonic
+10	3aeae4f	1789499877	DepHour categorical

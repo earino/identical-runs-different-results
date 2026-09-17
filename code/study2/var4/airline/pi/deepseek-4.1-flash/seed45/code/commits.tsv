@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	f328ff1	1789510117	baseline
+01	c2939c1	1789510155	feat: dep hour/min/time-of-day
+02	099a4ff	1789510175	feat: OOF target encoding + freq for Origin/Dest/Route
+03	af4ba14	1789510198	TE for all object cols, no native cats
+04	c931de5	1789510208	feat: interaction TE (carrier-airport, airport-month, origin-hour)
+05	b2ef7f6	1789510237	capacity 400 trees lr0.03 with all-TE
+06	1dd24cf	1789510291	capacity 1200 trees lr0.02
+07	dafd87e	1789510331	depth 8 with 1200 trees
+08	43e9391	1789510343	depth 11
+09	7112dfe	1789510368	depth 14
+10	0d2ac86	1789511035	OH hourly buckets
+11	418330a	1789511082	add dest-hour TE
+12	a79f6fd	1789511131	add carrier-hour and month-hour TE
+13	307bf25	1789511187	half-hour buckets for hour TEs
+14	ba42e6e	1789511294	2-seed ensemble on half-hour TE features
+15	f62562e	1789511612	add time-of-day residual diff features
+16	12e1d16	1789511969	multi-scale hourly + half-hourly airport TE
+17	9555eaa	1789512218	add 2h airport TE, 1050 trees

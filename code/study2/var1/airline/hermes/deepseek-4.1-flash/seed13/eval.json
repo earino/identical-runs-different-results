@@ -1,0 +1,180 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 13,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T08:12:25+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s13-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T09:20:27+00:00",
+  "wall_seconds": 4081.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 13290.8,
+  "endpoint_at_end": "ok",
+  "head": "8d5559f",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 38,
+  "n_crash": 0,
+  "n_timeout": 2,
+  "best_eval_auc": 0.7498,
+  "final_eval_auc": 0.7498,
+  "holdout_auc": 0.75015976708,
+  "holdout_ap": 0.7413963215207207,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03538901534399996,
+  "generalization_gap": -0.00035976707999996194,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 11684644,
+    "tokens_in_uncached": 11684644,
+    "tokens_in_cached": 0,
+    "tokens_out": 81958,
+    "turns": null,
+    "api_calls": 139,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 13099.8,
+  "cpu_seconds_counted": 143.2,
+  "cpu_seconds_uncounted": 1606.2,
+  "cpu_seconds_exempt": 11350.4,
+  "python_processes": 76,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 469,
+  "fits_counted": 5,
+  "fits_uncounted": 102,
+  "commits": [
+    {
+      "commit": "f677fb1",
+      "message": "baseline"
+    },
+    {
+      "commit": "dd564b4",
+      "message": "time features + carrier_x_hour interaction + 1200 trees lr.03 depth4"
+    },
+    {
+      "commit": "c0255ad",
+      "message": "depth6 + colsample_bylevel .8, 800 trees"
+    },
+    {
+      "commit": "48388da",
+      "message": "depth8 + colsample_bylevel .7"
+    },
+    {
+      "commit": "8935f93",
+      "message": "ensemble of 3 diverse xgb configs (d8/d6/lossguide)"
+    },
+    {
+      "commit": "f550082",
+      "message": "ensemble of 4 diverse configs (d8, d10, d8+alpha, d4-deep-trees)"
+    },
+    {
+      "commit": "7f40ea6",
+      "message": "ensemble5 at 500t/lr.04 (d8a,d9,d4,m d8a2,d10)"
+    },
+    {
+      "commit": "d87e031",
+      "message": "reg_lambda=3 global"
+    },
+    {
+      "commit": "fee5b02",
+      "message": "ensemble6: extra seed of the d9 member"
+    },
+    {
+      "commit": "450e64f",
+      "message": "add target-encoded-view member (OOF TE of carrier/origin/dest/route/carrier_hour)"
+    },
+    {
+      "commit": "8b110d2",
+      "message": "3 members on the TE feature view"
+    },
+    {
+      "commit": "ffd98ad",
+      "message": "add carrier_origin, origin_hour, carrier_dow target encodings to view 2"
+    },
+    {
+      "commit": "85bb3d0",
+      "message": "add dest_hour, route_dow, carrier_route target encodings"
+    },
+    {
+      "commit": "3295980",
+      "message": "5 members on TE view"
+    },
+    {
+      "commit": "490c475",
+      "message": "TE smoothing k=500"
+    },
+    {
+      "commit": "7ebde4c",
+      "message": "10-fold OOF target encoding"
+    },
+    {
+      "commit": "e71078e",
+      "message": "TE-view members: 800 trees lr.03"
+    },
+    {
+      "commit": "a644f90",
+      "message": "20-fold OOF target encoding"
+    },
+    {
+      "commit": "8f11796",
+      "message": "7 native members"
+    },
+    {
+      "commit": "f83a103",
+      "message": "6 TE members"
+    },
+    {
+      "commit": "8d5559f",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 1749.4,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 191.0,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "f83a103",
+  "best_commit_eval_auc": 0.7498,
+  "best_commit_holdout_auc": 0.75015976708,
+  "best_commit_holdout_ap": 0.7413963215207207,
+  "best_commit_error": null,
+  "finalized_best": true
+}

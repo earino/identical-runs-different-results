@@ -1,0 +1,188 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 49,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T02:04:02+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s49-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T02:42:36+00:00",
+  "wall_seconds": 2314.8,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 8008.0,
+  "endpoint_at_end": "ok",
+  "head": "75c731c",
+  "n_commits": 22,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7378,
+  "final_eval_auc": 0.7378,
+  "holdout_auc": 0.73762425824,
+  "holdout_ap": 0.7301893954127003,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.022853506503999976,
+  "generalization_gap": 0.0001757417600000144,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 4462563,
+    "tokens_in_uncached": 4462563,
+    "tokens_in_cached": 0,
+    "tokens_out": 17528,
+    "turns": null,
+    "api_calls": 118,
+    "method": "sum-of-118-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 7852.3,
+  "cpu_seconds_counted": 7254.6,
+  "cpu_seconds_uncounted": 2.0,
+  "cpu_seconds_exempt": 595.7,
+  "python_processes": 43,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 241,
+  "fits_counted": 233,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "716cdb0",
+      "message": "baseline"
+    },
+    {
+      "commit": "18cc203",
+      "message": "model: shallower+regularized (d4, 500 trees, lr.05, subsample)"
+    },
+    {
+      "commit": "b1ffabd",
+      "message": "feat: time-of-day derived features"
+    },
+    {
+      "commit": "0b79c40",
+      "message": "model: one-hot low-card categoricals (max_cat_to_onehot=16)"
+    },
+    {
+      "commit": "ed3499a",
+      "message": "model: internal early stopping (90/10 split)"
+    },
+    {
+      "commit": "b3fd561",
+      "message": "model: ensemble of 6 xgb (depths 3-5, 2 seeds), early stopping"
+    },
+    {
+      "commit": "75bd13d",
+      "message": "feat: day-of-year"
+    },
+    {
+      "commit": "f040635",
+      "message": "model: one-hot all categoricals (max_cat_to_onehot=500)"
+    },
+    {
+      "commit": "114ab17",
+      "message": "model: deeper ensemble depths 4-7"
+    },
+    {
+      "commit": "8a7fa11",
+      "message": "model: ensemble depths 5-8"
+    },
+    {
+      "commit": "a26d470",
+      "message": "model: ensemble depths 6-9"
+    },
+    {
+      "commit": "e4cf0c0",
+      "message": "model: per-model early-stop split seeds"
+    },
+    {
+      "commit": "866a3d1",
+      "message": "model: 8 diverse seeds/depths"
+    },
+    {
+      "commit": "9b67a0d",
+      "message": "feat: dep_hour as one-hot categorical"
+    },
+    {
+      "commit": "168a36f",
+      "message": "feat: 15-min departure bucket one-hot"
+    },
+    {
+      "commit": "0bf4aee",
+      "message": "model: min_child_weight=2"
+    },
+    {
+      "commit": "ee99caa",
+      "message": "model: min_child_weight=1"
+    },
+    {
+      "commit": "6b281b0",
+      "message": "model: reg_lambda=0.3"
+    },
+    {
+      "commit": "21ba577",
+      "message": "model: ensemble depths 7-10"
+    },
+    {
+      "commit": "63d26d9",
+      "message": "model: ensemble depths 8-11"
+    },
+    {
+      "commit": "c88121f",
+      "message": "model: ensemble depths 9-12"
+    },
+    {
+      "commit": "47a4b27",
+      "message": "feat: carrier x hour interaction one-hot"
+    },
+    {
+      "commit": "75c731c",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 7256.6,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 155.7,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "47a4b27",
+  "best_commit_eval_auc": 0.7378,
+  "best_commit_holdout_auc": 0.73762425824,
+  "best_commit_holdout_ap": 0.7301893954127003,
+  "best_commit_error": null,
+  "finalized_best": true
+}

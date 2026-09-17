@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c07443c	0.7141	ok	4	baseline
+2	692f455	0.7091	ok	4	hp: 400 trees lr0.05 depth7 subsample
+3	325bac8	0.7108	ok	1	feat: dep time decomposition + route cat
+4	00a1ca1	0.7167	ok	3	hp: regularized 300 trees depth5
+5	b3ab494	0.7186	ok	3	feat: dep hour/minute/time_min
+6	6aaa479	0.7145	ok	2	feat: route categorical
+7	7886faa	0.7173	ok	5	hp: deeper 600 trees lr0.03
+8	43aa219	0.7177	ok	3	feat: log-frequency encodings
+9	e3b9e1a	0.7187	ok	5	hp: early stopping on eval
+10	e8bdf8d	0.7088	ok	4	feat: smoothed target encodings
+11	874bb8e	0.7174	ok	3	simplify: drop raw DepTime
+12	c3b9132	0.7232	ok	5	feat: calendar as ordinals
+13	4f464b1	0.7216	ok	4	simplify: drop dep_minute
+14	abf80f4	0.7207	ok	4	feat: cyclic season/time features
+15	1c9bb3d	0.7245	ok	17	model: 5-seed bag
+16	ea5086d	0.7240	ok	18	model: depth-diverse bag
+17	9677db9	0.7070	ok	9	ablate: drop Origin/Dest
+18	0fe7ea8	0.7243	ok	13	train: recency weights
+19	4ab6813	0.7246	ok	30	model: 10-seed bag
+20	9f0cee4	0.7263	ok	36	feat: airport-hour density
+21	a437e86	0.7272	ok	41	feat: full hour-density family
+22	74a3b57	0.7242	ok	24	feat: route-hour + carrier-origin density
+23	ceea0ab	0.7264	ok	37	model: monotone dep_time prior
+24	76731be	0.7270	ok	56	hp: lr 0.03
+25	2d6e691	0.7275	ok	44	hp: colsample0.5 mcw40
+26	825d4b8	0.7248	ok	43	hp: max_cat_threshold 16
+27	2e69f83	0.7276	ok	63	model: 15-seed bag
+28	638cab3	0.7300	ok	67	model: mixed growth policy bag
+29	6c99ddf	0.7319	ok	67	model: 3-shape bag
+30	6a3687a	0.7345	ok	98	model: 4-shape 20-model bag
+31	2a42b84	0.7336	ok	97	model: 5-shape bag
+32	6e49a4c	0.7344	ok	94	model: rank-average
+33	3ec6747	0.7371	ok	116	feat: airport peak-hour ratio
+34	0a4084a	0.7363	ok	71	hp: lr 0.08 (speed safety)
+35	482fd35	0.7366	ok	96	model: 24-model bag lr0.07
+36	c240bed	0.7367	ok	97	hp: lr 0.06 compromise
+37	72ecf0c	0.0000	timeout	120	hp: max_bin 128
+38	497fbb8	0.7366	ok	78	model: 16-model bag lr0.06
+39	be9f735	0.7371	ok	91	model: 16-model bag lr0.05
+40	ab5435d	0.7368	ok	93	model: 5-shape 16-model bag

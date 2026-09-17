@@ -1,0 +1,180 @@
+{
+  "harness": "pi",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 7,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T00:36:11+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-deepseek-4.1-flash-s7-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "12-15"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T00:51:30+00:00",
+  "wall_seconds": 918.3,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2461.5,
+  "endpoint_at_end": "ok",
+  "head": "feea906",
+  "n_commits": 20,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7411,
+  "final_eval_auc": 0.7411,
+  "holdout_auc": 0.739722383986,
+  "holdout_ap": 0.731797709282376,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.024951632249999967,
+  "generalization_gap": 0.0013776160139999938,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 1558247,
+    "tokens_in_uncached": 1558247,
+    "tokens_in_cached": 0,
+    "tokens_out": 30225,
+    "turns": null,
+    "api_calls": 60,
+    "method": "sum-of-60-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 2444.0,
+  "cpu_seconds_counted": 2095.5,
+  "cpu_seconds_uncounted": 1.6,
+  "cpu_seconds_exempt": 346.8,
+  "python_processes": 56,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 119,
+  "fits_counted": 114,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "eb192b0",
+      "message": "baseline"
+    },
+    {
+      "commit": "aa5d088",
+      "message": "hpo: depth 4"
+    },
+    {
+      "commit": "a099e81",
+      "message": "hpo: depth4 + 200 trees lr0.05 sub/col0.9"
+    },
+    {
+      "commit": "114a983",
+      "message": "fe: frequency encoding Origin/Dest/carrier/route"
+    },
+    {
+      "commit": "79283fd",
+      "message": "fe: numeric ordinal calendar instead of categorical"
+    },
+    {
+      "commit": "406dd93",
+      "message": "ensemble: seed-average 5 x depth4 model"
+    },
+    {
+      "commit": "96788f5",
+      "message": "fe: group rare categorical levels (min count 100)"
+    },
+    {
+      "commit": "e185987",
+      "message": "hpo: RARE_MIN=300"
+    },
+    {
+      "commit": "d54e93b",
+      "message": "hpo: RARE_MIN=400"
+    },
+    {
+      "commit": "50bbb7e",
+      "message": "hpo: depth5 with rare min400"
+    },
+    {
+      "commit": "73a371e",
+      "message": "hpo: depth6 with rare min400"
+    },
+    {
+      "commit": "b3ca12c",
+      "message": "hpo: depth7 with rare min400"
+    },
+    {
+      "commit": "cb09b8a",
+      "message": "hpo: depth8 with rare min400"
+    },
+    {
+      "commit": "453283d",
+      "message": "hpo: depth10 with rare min400"
+    },
+    {
+      "commit": "5166f81",
+      "message": "hpo: depth12 with rare min400"
+    },
+    {
+      "commit": "7575af5",
+      "message": "hpo: depth16 with rare min400"
+    },
+    {
+      "commit": "3f664eb",
+      "message": "hpo: depth20 rare400, 3 seeds"
+    },
+    {
+      "commit": "2fdaa70",
+      "message": "hpo: rare500 at depth20"
+    },
+    {
+      "commit": "97b6f5b",
+      "message": "hpo: rare800 at depth20"
+    },
+    {
+      "commit": "b21f984",
+      "message": "ensemble: 5 seeds at depth20 rare800"
+    },
+    {
+      "commit": "feea906",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 2097.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 17.5,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b21f984",
+  "best_commit_eval_auc": 0.7411,
+  "best_commit_holdout_auc": 0.739722383986,
+  "best_commit_holdout_ap": 0.731797709282376,
+  "best_commit_error": null,
+  "finalized_best": true
+}

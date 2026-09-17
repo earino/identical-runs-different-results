@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	c7ae6cf	0.7141	ok	4	baseline
+2	a561a59	0.7062	ok	5	more capacity 400 trees lr0.05 depth8 subsample
+3	25da58b	0.7063	ok	2	time-of-day + route features (baseline model)
+4	544520b	0.7127	ok	2	time-of-day features only (baseline model)
+5	ad243ab	0.7153	ok	2	shallow regularized 200 trees depth4 lr0.08 mcw10
+6	b4007d8	0.7068	ok	2	target encoding origin/dest/carrier/route
+7	ff6fbc8	0.7137	ok	3	depth5 200 trees lr0.08 mcw10
+8	55010a3	0.7163	ok	3	600 trees lr0.03 depth4 mcw10
+9	dbcfa42	0.7162	ok	7	1500 trees lr0.015 depth4 mcw10
+10	efd0564	0.7164	ok	4	reg_lambda5 reg_alpha0.5 on exp8
+11	ff404b2	0.7167	ok	13	5-seed ensemble of exp10 config
+12	63f0b07	0.7171	ok	14	freq encoding origin/dest/carrier/route + ensemble
+13	39599e3	0.7183	ok	14	pairwise freq (origin_hour,dest_hour,carrier_origin)
+14	35e000e	0.7164	ok	15	add route_hour/carrier_route/carrier_hour freq
+15	fb10065	0.7176	ok	11	depth3 on exp13 features
+16	35c47e5	0.7196	ok	16	ratio features (origin_hour, dest_hour, carrier_origin)
+17	b0e3a40	0.7190	ok	18	more ratio features batch
+18	2623094	0.7197	ok	16	add carrier_hour ratio to exp16
+19	5323004	0.7201	ok	25	diverse-depth ensemble
+20	016a5ed	0.7203	ok	25	add route_origin/route_dest share ratios
+21	ba5a86b	0.7210	ok	38	12-model diverse ensemble
+22	c74cdc6	0.0000	crash	1	add origin/dest/carrier month volume ratios
+23	ed11ed9	0.7196	ok	40	add origin/dest/carrier month volume ratios (fix)
+24	2400e69	0.7211	ok	56	18-model diverse ensemble
+25	88978b1	0.7046	ok	75	carrier/dow, carrier/month, origin/dest/dow interactions
+26	99c732f	0.7204	ok	57	max_bin=512
+27	2571c03	0.7213	ok	56	mcw20 reg_lambda10
+28	9e7ff42	0.7215	ok	55	mcw40 reg_lambda20 alpha1
+29	cd7220f	0.7218	ok	55	mcw80 reg_lambda40 alpha2 gamma1
+30	b2edb0a	0.7207	ok	54	mcw160 reg_lambda80 alpha4 gamma2
+31	e56a85f	0.7219	ok	84	900 trees lr0.02 strong reg
+32	3fbd938	0.7221	ok	84	estimated arrival tod/hour features
+33	14f0740	0.7226	ok	89	arrival-hour congestion ratios
+34	f912ab2	0.7193	ok	94	carrier+route arrival-hour congestion ratios
+35	77b0724	0.7228	ok	87	carrier arrival-hour congestion only
+36	27c6d4a	0.7229	ok	107	colsample_bynode0.7
+37	f9d5c80	0.7228	ok	95	700 trees lr0.025 (leaner)
+38	e1b453b	0.7229	ok	93	add arr_next_day
+39	9af1101	0.7217	ok	82	drop dep-hour congestion, keep arrival-hour
+40	329002a	0.7233	ok	98	add 2-hour arrival congestion ratios

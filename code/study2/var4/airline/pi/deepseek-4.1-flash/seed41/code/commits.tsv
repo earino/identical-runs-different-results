@@ -1,0 +1,20 @@
+n	commit	unix_time	subject
+00	5f3f361	1789492973	baseline
+01	62edbf7	1789493002	time feats + stronger config
+02	201f3d1	1789493252	TE interactions
+03	9eaf364	1789493422	regularized config
+04	2c561c2	1789493554	5-seed ensemble
+05	edd41c3	1789493801	TE + counts + coh/cdh
+06	0c59d5f	1789494091	add route and carrier_route TE
+07	98b79ad	1789494933	depth7 cs0.2 eta.03
+08	8daab2b	1789495668	neighbour-hour TE features
+09	0f2f750	1789495924	neighbour counts
+10	a1c50b4	1789496237	5 model ensemble
+11	83f8b17	1789496577	eta.04 4 models 1600 trees
+12	cbe43d1	1789496874	5 models eta.04 1500 trees
+13	97aa6b7	1789497232	graph-size schedule features
+14	c823057	1789498030	depth 8
+15	9a3fa7c	1789498267	route minute-bucket TE, depth8 1200
+16	cb41fce	1789498378	airport/carrier minute-bucket TE
+17	2075dde	1789498541	route-hour minute-bucket TE
+18	e8a1860	1789498668	airport-hour minute-bucket TE

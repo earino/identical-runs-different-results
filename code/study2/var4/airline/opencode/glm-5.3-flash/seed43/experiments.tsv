@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	fb79117	0.7141	ok	4	baseline
+2	77115a9	0.7028	ok	10	fe v1: time/route/freq/OOF-TE + early stopping
+3	97099b4	0.6998	ok	3	base feats + time/route, d6 lr.1 500t ES30
+4	0050809	0.7091	ok	3	time feats only, no route, baseline-ish params
+5	5792378	0.7140	ok	3	time feats, ES on eval (2006 proxy)
+6	a7a456c	0.7152	ok	3	ES on eval + refit full train
+7	1293471	0.0000	crash	2	OOF TE 8 groups, ES on eval, refit full
+8	ebd58d1	0.7152	ok	3	OOF TE 8 groups, ES on eval, refit full
+9	5a1e861	0.7158	ok	3	lr.05 d8 mcw10 ES50
+10	b52c00a	0.7183	ok	12	5-member diverse ensemble
+11	b26c6da	0.7179	ok	17	8-member bagged ensemble
+12	8999cb8	0.7191	ok	24	10 diverse full-data members
+13	9cce125	0.7190	ok	25	rank-average 10 members
+14	44bc35b	0.7195	ok	35	16 diverse members
+15	62e1806	0.7202	ok	57	16 members + OOF TE features
+16	3762113	0.7220	ok	66	12 TE groups, 16 members
+17	d01d318	0.7218	ok	80	17 TE groups, 16 members
+18	cf9a1c7	0.7221	ok	90	24 members, 12 TE groups
+19	cab8d2a	0.7231	ok	77	24 members, every 3rd base-only
+20	f75866d	0.7230	ok	77	rotating TE-subset variants per member
+21	58bf6c4	0.7231	ok	94	deep/slow-biased 24 members
+22	309f414	0.7234	ok	62	OOF linear stack 6 configs
+23	74aeebb	0.0000	timeout	120	10-config NNLS stack
+24	d19c4bf	0.7251	ok	79	8-config stack 4-fold OOF
+25	6d6d912	0.7259	ok	84	colsample grid 0.35-0.7 NNLS
+26	b9e092f	0.7250	ok	76	TE +te_deptime +te_hour_dow, col grid
+27	239f33a	0.7256	ok	79	Ridge positive stacker, col grid
+28	14b83d1	0.7254	ok	83	sub x col grid 8 configs
+29	57bf306	0.7266	ok	91	seed-replicated col grid, 3-fold OOF
+30	8d10717	0.7250	ok	89	XGB meta stacker
+31	378f066	0.7266	ok	100	11 configs col grid
+32	b43093a	0.7269	ok	89	blend stack+mean
+33	e6d2341	0.7265	ok	86	col grid + cat_threshold 128 variant
+34	6774276	0.7268	ok	89	blend 0.7/0.3
+35	e059ace	0.7269	ok	91	bootstrap NNLS weights
+36	1209e6a	0.7250	ok	79	simplify: drop sin/cos/log
+37	7959075	0.7271	ok	91	col grid + d9/d10 configs
+38	53f5a2c	0.7262	ok	83	gamma variant in grid
+39	b5c1918	0.7262	ok	86	mcw5 variant in grid
+40	9a61d39	0.7261	ok	88	col0.55 swap

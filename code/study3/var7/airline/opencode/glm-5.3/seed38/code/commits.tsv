@@ -1,0 +1,13 @@
+n	commit	unix_time	subject
+00	55ebe6a	1789637694	baseline
+01	144f739	1789637786	FE v1 minus route, 30 trees depth 6 (ablation)
+02	063ecea	1789637809	OOF target encoding for carrier/origin/dest/route + regularized GBT
+03	ab512c2	1789638446	hour interactions (carrier@hour, dow@hour), route counts, 1500 rounds d4 lr.05
+04	8960c0f	1789638753	carrier@halfhour interaction replaces carrier@hour
+05	ff2e9b9	1789639092	halfhour x distance-quintile interaction
+06	591ba1d	1789639118	bag of 3 xgb models, colsample 0.6
+07	ecd2b24	1789639853	prune redundant features (route stats, dow_hour, hour_c)
+08	7ad4e9c	1789640347	carrier@20min interaction, hh_dist stays 30min; bag of 5
+09	02d13c8	1789640971	depth 5 + colsample 0.5, distance octiles for hh_dist
+10	771c4df	1789641570	bag of 7 members
+11	2932144	1789641987	carrier time bins 20->24 min

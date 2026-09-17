@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	2394343	0.7141	ok	3	baseline
+2	857e12b	0.6999	ok	7	bigger model 600 trees lr0.05 depth8
+3	be3260d	0.7063	ok	4	600 trees lr0.05 depth6
+4	8060ff5	0.7108	ok	4	early stopping 85/15 split
+5	f16188c	0.7125	ok	1	100 trees lr0.1 depth6
+6	64b56ad	0.7128	ok	2	15 trees lr0.1 depth6
+7	6a31ed7	0.7135	ok	1	deptime parse+cyclical, doy cyclical, log dist
+8	3b79d56	0.7137	ok	9	target encoding OOF k=100
+9	884a2b9	0.7056	ok	5	feature pack TE+hour+route
+10	4418768	0.7141	ok	7	5-seed ensemble baseline config
+11	dbff0fd	0.7133	ok	1	deptime fractional hours
+12	8a0f6b7	0.7095	ok	1	30 trees depth8
+13	77650a6	0.7150	ok	1	30 trees depth4
+14	b9d400e	0.7119	ok	1	30 trees depth3
+15	7f90985	0.7161	ok	2	60 trees depth4
+16	805b0cc	0.7158	ok	2	100 trees depth4
+17	2b67061	0.7156	ok	2	TE + 60t d4
+18	4fa04d6	0.7172	ok	2	120t lr.05 d4
+19	a07274e	0.7173	ok	3	200t lr.03 d4
+20	ac47c7b	0.7174	ok	2	300t lr.02 d4
+21	1ebafd1	0.7174	ok	2	mcw=10 300t lr.02 d4
+22	ee30753	0.7164	ok	2	sub0.8 col0.8 300t lr.02 d4
+23	5bdf2e5	0.7168	ok	2	reg_lambda5 300t lr.02 d4
+24	5f2f4ce	0.7155	ok	2	200t lr.03 d5
+25	9ed627f	0.7175	ok	3	diversity ensemble 3 configs d4
+26	a88ed3b	0.7176	ok	5	5-config ensemble
+27	ad47647	0.7176	ok	5	5 configs + TE member
+28	3cfa56b	0.7167	ok	5	row-bagged members 85pct
+29	18a7a69	0.7165	ok	5	max_bin diversity
+30	44fc4ed	0.7157	ok	6	carrier x hour interaction
+31	4bc7e1f	0.7176	ok	7	7-member ensemble
+32	93e48e1	0.7177	ok	6	5 configs + lossguide member
+33	261d738	0.7179	ok	8	6 configs + 2nd lossguide
+34	0f7fe1f	0.7179	ok	9	7 configs + 3rd lossguide
+35	da876e8	0.7176	ok	8	dep cyclical on ensemble
+36	5a35b6f	0.7179	ok	8	freq encoding on ensemble
+37	d8c6504	0.7180	ok	8	colsample_bynode 0.8
+38	7708c8c	0.7181	ok	7	colsample_bynode 0.7
+39	cb0fd53	0.7177	ok	8	colsample_bynode 0.6
+40	a5bd696	0.7181	ok	10	9-member ensemble colsample.7

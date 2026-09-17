@@ -1,0 +1,184 @@
+{
+  "harness": "hermes",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 4,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T21:03:14+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-hermes-deepseek-4.1-flash-s4-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "8-11"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T21:30:05+00:00",
+  "wall_seconds": 1611.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 3706.9,
+  "endpoint_at_end": "ok",
+  "head": "2df0542",
+  "n_commits": 21,
+  "n_experiments": 40,
+  "n_ok": 40,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7608,
+  "final_eval_auc": 0.7608,
+  "holdout_auc": 0.7607430038379999,
+  "holdout_ap": 0.7458807112764276,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.045972252101999844,
+  "generalization_gap": 5.699616200016688e-05,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 3477068,
+    "tokens_in_uncached": 3477068,
+    "tokens_in_cached": 0,
+    "tokens_out": 53792,
+    "turns": null,
+    "api_calls": 66,
+    "method": "cumulative-max",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 3584.3,
+  "cpu_seconds_counted": 3315.0,
+  "cpu_seconds_uncounted": 3.1,
+  "cpu_seconds_exempt": 266.3,
+  "python_processes": 85,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 105,
+  "fits_counted": 96,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "9edf92a",
+      "message": "baseline"
+    },
+    {
+      "commit": "37dffd3",
+      "message": "add time-of-day (tod/hour/minute/cyclic) + ordinal month/day/dow"
+    },
+    {
+      "commit": "cb13c70",
+      "message": "model: 200x0.05 d5 mcw10 ss/cs0.8"
+    },
+    {
+      "commit": "04f4fdf",
+      "message": "model: 600x0.03 d4 mcw25 lambda5 cs0.7"
+    },
+    {
+      "commit": "c0c8f0a",
+      "message": "model: 1500x0.02 d4 mcw40 lambda10 cs0.6"
+    },
+    {
+      "commit": "1e99f71",
+      "message": "re-add OOF target encoding on top of tuned 1500x0.02 model"
+    },
+    {
+      "commit": "a56e278",
+      "message": "add log frequency encodings (carrier/origin/dest/route/hour interactions)"
+    },
+    {
+      "commit": "998bf69",
+      "message": "more TE keys: dest_hour, car_dow, org_dow, car_dest"
+    },
+    {
+      "commit": "68bc717",
+      "message": "TE + freq for car_org and route_hour"
+    },
+    {
+      "commit": "3de7a0d",
+      "message": "TE/freq: route_dow, org_hour_dow, car_route_hour"
+    },
+    {
+      "commit": "21bec4d",
+      "message": "TE/freq on 30-min time buckets: route_b30, org_b30, car_b30"
+    },
+    {
+      "commit": "7ca3246",
+      "message": "15-min bucket TE (route/org) + dest_b30"
+    },
+    {
+      "commit": "1890ee7",
+      "message": "10-min bucket TE (route/org) + dest_b15"
+    },
+    {
+      "commit": "579b41e",
+      "message": "ablation: drop high-cardinality raw cats (Origin/Dest/Carrier); TE covers them"
+    },
+    {
+      "commit": "5d8a12c",
+      "message": "depth 5 with trimmed categorical set"
+    },
+    {
+      "commit": "ebfbb0d",
+      "message": "ensemble of 3 XGB models (seeds 42/7/2024, depths 4/5/6)"
+    },
+    {
+      "commit": "7a70432",
+      "message": "max_bin=512; drop dead feature_cols"
+    },
+    {
+      "commit": "fefe168",
+      "message": "5-model ensemble (d4/d5/d5/d6/d7, max_bin 512)"
+    },
+    {
+      "commit": "89923ae",
+      "message": "8-model ensemble at lr 0.03 for more diversity"
+    },
+    {
+      "commit": "af5261f",
+      "message": "randomized 12-model ensemble (random search over depth/reg/sampling)"
+    },
+    {
+      "commit": "dd49d11",
+      "message": "randomized ensemble trimmed to 9 models / <=900 trees for runtime safety"
+    },
+    {
+      "commit": "2df0542",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 3318.1,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 122.6,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "dd49d11",
+  "best_commit_eval_auc": 0.7608,
+  "best_commit_holdout_auc": 0.7607430038379999,
+  "best_commit_holdout_ap": 0.7458807112764276,
+  "best_commit_error": null,
+  "finalized_best": true
+}

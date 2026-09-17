@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	d84ddc2	0.7141	ok	3	baseline
+2	08cafbe	0.7149	ok	3	time features + target encoding + 300 trees
+3	77eaa55	0.7095	ok	5	route + hour-interaction TEs, freq encodings
+4	3926619	0.7057	ok	5	route TE only + 800 trees lr 0.05
+5	cd13746	0.7149	ok	3	OOF target encoding + route TE
+6	b4a5794	0.7163	ok	5	capacity: depth8 lr0.05 1500 trees
+7	eb70b7d	0.7186	ok	17	5-seed bagged ensemble
+8	8882e15	0.7191	ok	34	10-seed bag
+9	412117a	0.7228	ok	47	hour cat + dist bins
+10	8c10e6c	0.7223	ok	50	ablation: cat_hour only
+11	af1c231	0.7372	ok	91	qhour categorical (96 levels)
+12	6897ff7	0.7290	ok	59	5-min time bins (288 levels), bag 8
+13	c75bb1e	0.7353	ok	83	10-min time bins
+14	0e7db33	0.7369	ok	74	qhour OOF TE
+15	3d7eb03	0.7363	ok	51	lr 0.1
+16	2c648f7	0.7378	ok	100	schedule density features
+17	268c220	0.7374	ok	78	more density features, bag 8
+18	4fe180f	0.7367	ok	93	depth 7
+19	2dd5cfa	0.7380	ok	91	colsample 0.7
+20	b97b720	0.7192	ok	31	DepTime native categorical
+21	c99bdfc	0.7380	ok	93	min_child_weight 5
+22	0a44a8d	0.7378	ok	81	CV-bag ensemble
+23	63c6a77	0.7397	ok	88	hyper-diverse bag
+24	955d673	0.0000	timeout	120	4-way diverse bag
+25	4dec24d	0.7392	ok	87	seasonal features
+26	4394568	0.7401	ok	89	route distance features
+27	41458d7	0.7409	ok	98	origin/dest/carrier x hour OOF TEs
+28	045f3ad	0.0000	crash	1	qhour interaction TEs
+29	2b3a526	0.7395	ok	70	qhour interaction TEs (fixed)
+30	bcc12a6	0.7410	ok	117	route x carrier, month x origin TEs
+31	5c473b7	0.7332	ok	107	day + month volume features
+32	80c1635	0.7396	ok	114	12-model diverse bag
+33	1124f16	0.0000	timeout	120	internal early stopping
+34	0900c02	0.7415	ok	99	reg_lambda 2
+35	843ea7c	0.7411	ok	94	reg_lambda 4
+36	0a0f1db	0.7422	ok	95	qhour queue counts
+37	e51fcf0	0.7431	ok	88	slot share features
+38	71f9640	0.7420	ok	74	carrier+route qhour counts
+39	dd225d2	0.7438	ok	102	hour slot share
+40	54daa71	0.7440	ok	96	carrier hour share

@@ -1,0 +1,15 @@
+n	commit	unix_time	subject
+00	71067d4	1789508272	baseline
+01	9525560	1789508336	depth4 200 trees lr.05 regularized
+02	939ed0d	1789508384	frequency encoding origin/dest/route
+03	a34017d	1789508417	3-model xgboost ensemble
+04	a19c3f7	1789508425	5-model ensemble add depth3 depth6
+05	39b8c46	1789508446	interaction frequency features
+06	bb86f64	1789508456	expand ensemble to 8 models
+07	a00767d	1789508489	add day_of_year
+08	4860887	1789508525	add holiday proximity
+09	63e5400	1789508608	hour interaction frequencies
+10	4206796	1789508639	hour share ratio features
+11	d022399	1789508657	more ratio features
+12	a5caacd	1789508906	airport carrier concentration features
+13	0efc6ac	1789508958	carrier-at-airport-hour share

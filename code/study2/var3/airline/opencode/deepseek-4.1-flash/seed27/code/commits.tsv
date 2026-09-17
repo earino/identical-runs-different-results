@@ -1,0 +1,19 @@
+n	commit	unix_time	subject
+00	a934d37	1789488874	baseline
+01	b6bf6e4	1789488950	feat: deptime parts + freq encodings
+02	d77078d	1789488964	regularized depth4
+03	f4fb65d	1789489109	seed ensemble 4 models
+04	db9357c	1789489129	lossguide probe
+05	304df39	1789489143	lossguide 63 leaves
+06	45e1cd9	1789489151	lossguide 127 leaves
+07	726a679	1789489158	lossguide 255 leaves
+08	90c595f	1789489170	lossguide 511 leaves
+09	0f4ccbe	1789489231	ensemble 511 leaves
+10	fca8ffa	1789489311	ensemble lr0.025 n400
+11	70cfb10	1789489576	colsample0.6 probe
+12	aad6a51	1789489593	colsample0.4 probe
+13	91eb688	1789489644	ensemble col0.4
+14	a7f6001	1789489737	mcw5 col0.4 probe
+15	a166d63	1789489751	ensemble mcw5 col0.4
+16	43f676b	1789489821	leaves1023 col0.4 probe
+17	2a37e00	1789489848	ensemble 1023 leaves

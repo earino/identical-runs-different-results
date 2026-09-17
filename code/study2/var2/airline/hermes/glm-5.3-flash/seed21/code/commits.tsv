@@ -1,0 +1,17 @@
+n	commit	unix_time	subject
+00	b210336	1789521364	baseline
+01	5a1de0c	1789521472	exp2: tuned XGB, DepTime cyclical/slot cats, log distance, ES
+02	ee44b3d	1789521494	exp4: tuned hyperparams, baseline features, fixed 400 trees
+03	5043eac	1789521508	exp5: clean rewrite, keep best (400t tuned, DepTime feats)
+04	a3afc46	1789521840	exp6: d4 n1200 lr.05 col.5 sub.8 mcw20 lam5 alpha1
+05	b8750db	1789522170	exp7: +carrier_halfhour interaction, n1600 lr.04
+06	4e1017b	1789522574	exp8: 3-model diverse ensemble (full d4, full d6 col.7, minimal d4)
+07	c463377	1789523025	exp9: 5-model ensemble over full/full_qh/geo/minimal views
+08	ea8e29c	1789523449	exp10: quad ensemble + month-recency weights on 3 members
+09	ec8ee2d	1789524515	exp11: 8-model ensemble (seed bags over 4 views)
+10	66e37e6	1789525020	exp12: 14-model ensemble (+6 bare n800/lr.08 members)
+11	3aa112c	1789525262	exp13: +2 bare sub.5 full members (16 total)
+12	23062a0	1789525637	exp14: 18-model ensemble (+LSboost reg members)
+13	6145ebe	1789525817	exp16: +2 more reg members (20 total)
+14	c8e5db2	1789525990	exp17: +2 reg-geo members (22 total)
+15	62cacc6	1789526305	exp18: clip predict_proba output to [0,1] (contract fix)

@@ -1,0 +1,7 @@
+n	commit	unix_time	subject
+00	946c1e4	1789583291	baseline
+01	a2b667b	1789583389	FE: numeric calendar, hour/cyclical time, log dist, route cat + early-stopped model
+02	3124b45	1789583420	FE + deterministic 400-tree model (isolate FE effect)
+03	39a0b79	1789584284	FE counts + deep d24 colsample0.3 lr0.02 model
+04	9f578ac	1789585952	lean FE + time dups + minute, 3-seed ensemble d24 c.3 lr.02
+05	137b926	1789587893	ensemble diversity via per-member max_bin 256/384/512

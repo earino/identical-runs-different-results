@@ -1,0 +1,9 @@
+n	commit	unix_time	subject
+00	5569d4e	1789504681	baseline
+01	c82d76a	1789504899	carrier x hour interaction + depth4 300 trees
+02	d1d6a89	1789505397	doy feature + deep trees (d10 n600)
+03	f302244	1789506085	reg_lambda 50
+04	bbdcd3b	1789506559	4-model diverse ensemble
+05	4e87565	1789506781	carrier x distance interaction
+06	8e3b1a6	1789507203	origin x hour and hour x distance interactions
+07	115dd80	1789507999	drop raw Month/DayofMonth in favor of doy

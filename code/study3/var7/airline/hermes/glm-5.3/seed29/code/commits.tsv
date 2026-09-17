@@ -1,0 +1,22 @@
+n	commit	unix_time	subject
+00	1476c09	1789593506	baseline
+01	130d1c7	1789593683	route feature, hour/minute from DepTime, 200 trees
+02	48a0c45	1789593814	numeric dates + hour/minute/depminutes, 30 trees
+03	3b14363	1789593831	lr 0.03 x 250 trees
+04	09e923c	1789593880	subsample 0.7 colsample 0.7
+05	958adcb	1789593891	subsample+colsample 0.5
+06	5d131ba	1789594052	depth 8, 200 trees lr0.05, sampling 0.5
+07	2202c3b	1789594272	min_child_weight 5, reg_lambda 3
+08	ed0ced7	1789594398	3-seed bagged ensemble
+09	27c76e0	1789594414	6-seed bagged ensemble
+10	6fa549f	1789594462	6-seed ensemble, depths 6/8/10
+11	dae5b1f	1789594480	9-model ensemble, varied depth+subsample
+12	3f2f9c3	1789594524	day-of-year + hour as categorical
+13	8a21a3b	1789594555	15-min time bins + clean day-of-year
+14	7591b14	1789595447	reg_alpha 2, DistPerMin, OriginTE sm500, CarrierTE sm100
+15	0f4f3bd	1789595514	timebin + dow target encodings
+16	98eeeb8	1789595668	out-of-fold target encodings
+17	e497963	1789595895	route OOF TE sm500
+18	017d152	1789596118	hour/month/day OOF TEs
+19	c189162	1789597031	corrected float TEs, honest OOF for train rows only, 12-model ensemble
+20	f418210	1789597662	k10 OOF folds, lr 0.03 x 350 trees

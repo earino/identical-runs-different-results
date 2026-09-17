@@ -1,0 +1,11 @@
+n	commit	unix_time	subject
+00	c20426e	1789525581	baseline
+01	12998f1	1789525667	feat: departure clock features (hour, minute, tod, red-eye)
+02	120d5bb	1789525691	feat: ordered calendar (month/dom/dow ints + day_of_year)
+03	c99ff8e	1789525789	feat: carrier x hour and origin x hour categoricals
+04	cd7b6c6	1789525980	tune: max_depth 10
+05	3ed1421	1789526002	tune: max_depth 13
+06	b43b4df	1789526127	tune: learning_rate 0.02
+07	3127d39	1789526185	simplify: fixed 700 rounds, single full-data fit (no probe/refit)
+08	62a660b	1789526582	tune: max_bin 512
+09	709fd74	1789527201	tune: max_bin 1024

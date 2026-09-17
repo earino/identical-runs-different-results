@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	8f65f43	0.7141	ok	5	baseline
+2	60e7c20	0.7049	ok	6	time+route cats, 500 trees lr0.05
+3	64f9dc3	0.7098	ok	4	500 trees lr0.05 subsample, baseline features
+4	211e595	0.7132	ok	1	baseline + dep_hour feature
+5	68f509b	0.0000	crash	2	baseline + route categorical
+6	6eae976	0.7056	ok	1	baseline + route categorical
+7	18d4fea	0.7148	ok	2	depth3 mcw5 50 trees
+8	67a845a	0.7163	ok	2	depth3 mcw5 200 trees lr0.05
+9	63bf739	0.7164	ok	3	depth3 mcw5 500 trees lr0.02
+10	f92fb1e	0.7055	ok	3	depth3 + route categorical
+11	09c2aa0	0.7163	ok	6	depth3 + freq encodings
+12	d4bfca1	0.7053	ok	3	depth3 + target encodings
+13	5418f0f	0.7159	ok	3	depth3 + dep_hour categorical
+14	03669e4	0.7162	ok	2	mcw30 lambda5
+15	35a19b9	0.7163	ok	7	ensemble of 5 diverse models
+16	6fc7dc6	0.7195	ok	3	ablation: drop Month, DayofMonth
+17	f88f958	0.7198	ok	2	drop month/dom + dep_hour
+18	fbdc2bb	0.7168	ok	2	drop Month,dom,dow
+19	f517e51	0.7187	ok	3	drop Distance
+20	a360487	0.7208	ok	2	rare grouping min50
+21	72057c7	0.7221	ok	3	rare grouping min200
+22	d3e3322	0.7194	ok	2	rare grouping min500
+23	4e85981	0.7222	ok	2	add route cat (rare-grouped)
+24	ab642bb	0.7244	ok	2	depth4 mcw10 400 trees
+25	072f4ea	0.7256	ok	3	depth5 mcw20 350 trees
+26	73569db	0.7270	ok	3	depth6 mcw30 300 trees
+27	643895b	0.7298	ok	3	depth8 mcw50 300 trees
+28	b1c8286	0.7303	ok	4	depth12 mcw80 300 trees
+29	495029e	0.7273	ok	4	depth16 mcw150 300 trees
+30	001fbee	0.7306	ok	9	depth12 800 trees lr0.01
+31	6d00c9e	0.7337	ok	10	depth12 mcw40 800 trees lr0.01
+32	895068f	0.7369	ok	15	depth12 mcw20 800 trees lr0.01
+33	cca84fe	0.7398	ok	17	depth12 mcw10 800 trees lr0.01
+34	50f2d3c	0.7417	ok	19	depth12 mcw5 800 trees lr0.01
+35	095222c	0.7435	ok	22	depth12 mcw1 800 trees lr0.01
+36	919edb2	0.7454	ok	46	depth16 mcw1 800 trees lr0.01
+37	fa55867	0.7447	ok	34	depth20 mcw1 400 trees lr0.02
+38	b61ea53	0.7457	ok	41	depth16 mcw1 sub0.7 col0.6
+39	7fea474	0.7456	ok	80	2-seed ensemble depth16
+40	e492c9b	0.7409	ok	73	depth16 mcw1 1600 trees lr0.01

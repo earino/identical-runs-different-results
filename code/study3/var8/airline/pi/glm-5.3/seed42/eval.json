@@ -1,0 +1,200 @@
+{
+  "harness": "pi",
+  "model": "glm-5.3",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 42,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-16T20:07:58+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-pi-glm-5.3-s42-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "0-3"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-16T20:55:56+00:00",
+  "wall_seconds": 2878.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 2934.5,
+  "endpoint_at_end": "ok",
+  "head": "b247edf",
+  "n_commits": 25,
+  "n_experiments": 30,
+  "n_ok": 26,
+  "n_crash": 4,
+  "n_timeout": 0,
+  "best_eval_auc": 0.7456,
+  "final_eval_auc": 0.7456,
+  "holdout_auc": 0.7462703675060001,
+  "holdout_ap": 0.7392869099792864,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.031499615770000045,
+  "generalization_gap": -0.0006703675060000247,
+  "final_md_written": false,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6858647,
+    "tokens_in_uncached": 488983,
+    "tokens_in_cached": 6369664,
+    "tokens_out": 97245,
+    "turns": null,
+    "api_calls": 120,
+    "method": "sum-of-120-events",
+    "cost_usd": 2.7686,
+    "cached_share": 0.929
+  },
+  "cpu_seconds_python": 2907.3,
+  "cpu_seconds_counted": 2902.9,
+  "cpu_seconds_uncounted": 4.4,
+  "cpu_seconds_exempt": 0.0,
+  "python_processes": 44,
+  "cpu_refusals": 0,
+  "cpu_over_budget_events": 0,
+  "fits_total": 363,
+  "fits_counted": 363,
+  "fits_uncounted": 0,
+  "commits": [
+    {
+      "commit": "8cc2a25",
+      "message": "baseline"
+    },
+    {
+      "commit": "0d5fd0f",
+      "message": "numeric time features, route cat, early stopping"
+    },
+    {
+      "commit": "c9789d8",
+      "message": "strong regularization for year transfer"
+    },
+    {
+      "commit": "7bb8bfc",
+      "message": "diagnostic: feature sets A/B/C x tree counts"
+    },
+    {
+      "commit": "d74a972",
+      "message": "feature set B + smoothed target encodings (OOF)"
+    },
+    {
+      "commit": "b5d727c",
+      "message": "expanded TE family + volume features"
+    },
+    {
+      "commit": "fa66cd8",
+      "message": "fix keys_for call"
+    },
+    {
+      "commit": "793a933",
+      "message": "reorder TE_M after derived cols"
+    },
+    {
+      "commit": "308c6df",
+      "message": "ablation of feature groups"
+    },
+    {
+      "commit": "c1ca017",
+      "message": "combined ablation variants"
+    },
+    {
+      "commit": "c329e6d",
+      "message": "hyperparameter grid on TE feature set"
+    },
+    {
+      "commit": "11962c5",
+      "message": "lr/n/lambda refinement grid"
+    },
+    {
+      "commit": "a097b41",
+      "message": "TE upgrades: hier shrinkage, dev features, hour counts"
+    },
+    {
+      "commit": "e5ea866",
+      "message": "volume feature family expansion"
+    },
+    {
+      "commit": "4a3ef9a",
+      "message": "fine-grained season/airport x time TEs"
+    },
+    {
+      "commit": "ba7fe12",
+      "message": "ensemble: 5-seed bagging + config diversity + max_bin"
+    },
+    {
+      "commit": "bf37bdf",
+      "message": "diverse ensemble scaling + colbag"
+    },
+    {
+      "commit": "2ce063f",
+      "message": "ensemble scaling: 15 configs x colbag, 70pct variants"
+    },
+    {
+      "commit": "9e7ebdc",
+      "message": "ensemble composition: fullTE + long-lr members"
+    },
+    {
+      "commit": "6006cfb",
+      "message": "data-diversity scaling: fullTE twins for all configs"
+    },
+    {
+      "commit": "4a91094",
+      "message": "feature round 2: dest-side, dep5, carrier_dep15, route variants"
+    },
+    {
+      "commit": "3042bdc",
+      "message": "ensemble on slimmed W6 feature set"
+    },
+    {
+      "commit": "8399cf8",
+      "message": "m-value sweep for TE smoothing"
+    },
+    {
+      "commit": "b3e2494",
+      "message": "m combos: half/weakmd/dep/inter"
+    },
+    {
+      "commit": "7161f0f",
+      "message": "ensemble on m_all features + aggregation test"
+    },
+    {
+      "commit": "b247edf",
+      "message": "member types: lossguide, m_ref-view, dart"
+    }
+  ],
+  "cpu_seconds_budgeted": 2907.3,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 27.2,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "b247edf",
+  "best_commit_eval_auc": 0.7456,
+  "best_commit_holdout_auc": 0.7462703675060001,
+  "best_commit_holdout_ap": 0.7392869099792864,
+  "best_commit_error": null,
+  "finalized_best": true
+}

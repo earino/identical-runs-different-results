@@ -1,0 +1,148 @@
+{
+  "harness": "opencode",
+  "model": "deepseek-4.1-flash",
+  "model_endpoint": "lunaroute",
+  "dataset": "airline",
+  "seed": 2,
+  "wall_clock_minutes": 230,
+  "max_experiments": 40,
+  "experiment_timeout_seconds": 120,
+  "threads": 4,
+  "cpu_budget_seconds": 18000,
+  "cpu_kill_seconds": 46000,
+  "research_allowed": false,
+  "llm_base_url": "https://gw.lunaroute.com",
+  "started": "2026-09-15T17:37:39+00:00",
+  "isolation": "container",
+  "container": {
+    "name": "bench-airline-opencode-deepseek-4.1-flash-s2-1",
+    "image": "harness-benchmark:local",
+    "cpus": "4",
+    "memory": "6g",
+    "cpuset": "4-7"
+  },
+  "harness_version": null,
+  "in_docker": true,
+  "image_versions": {
+    "claude": "2.1.268 (Claude Code)",
+    "pi": "0.85.1",
+    "opencode": "1.18.30",
+    "codex": "codex-cli 0.153.4",
+    "openclaw": "OpenClaw 2026.9.4 (3a9d69d)",
+    "hermes_commit": "d20a8e44755a8e999a2e816ef9f458c438d3e17c",
+    "uv": "0.12.7",
+    "python": "3.13"
+  },
+  "ended": "2026-09-15T19:19:36+00:00",
+  "wall_seconds": 6117.1,
+  "exit_code": 0,
+  "timed_out": false,
+  "stalled": false,
+  "disk_blowup": false,
+  "cpu_killed": false,
+  "cpu_seconds_container": 20464.7,
+  "endpoint_at_end": "ok",
+  "head": "8199736",
+  "n_commits": 12,
+  "n_experiments": 26,
+  "n_ok": 26,
+  "n_crash": 0,
+  "n_timeout": 0,
+  "best_eval_auc": 0.75,
+  "final_eval_auc": 0.75,
+  "holdout_auc": 0.750306058628,
+  "holdout_ap": 0.7391282713844786,
+  "holdout_error": null,
+  "baseline_holdout_auc": 0.714770751736,
+  "delta_vs_baseline": 0.03553530689200002,
+  "generalization_gap": -0.0003060586280000388,
+  "final_md_written": true,
+  "violations": [],
+  "scored_on": "Linux-x86_64-docker",
+  "provider_error": null,
+  "usage": {
+    "tokens_in": 6093290,
+    "tokens_in_uncached": 6093290,
+    "tokens_in_cached": 0,
+    "tokens_out": 50970,
+    "turns": null,
+    "api_calls": 130,
+    "method": "sum-of-130-events",
+    "cost_usd": null,
+    "cached_share": 0.0
+  },
+  "cpu_seconds_python": 18232.3,
+  "cpu_seconds_counted": 4732.0,
+  "cpu_seconds_uncounted": 13192.7,
+  "cpu_seconds_exempt": 307.5,
+  "python_processes": 71,
+  "cpu_refusals": 1,
+  "cpu_over_budget_events": 0,
+  "fits_total": 614,
+  "fits_counted": 90,
+  "fits_uncounted": 520,
+  "commits": [
+    {
+      "commit": "d501584",
+      "message": "baseline"
+    },
+    {
+      "commit": "432a196",
+      "message": "capacity: 800 trees lr0.05 depth7 early-stop"
+    },
+    {
+      "commit": "494df68",
+      "message": "features: time-of-day and cyclical, no route"
+    },
+    {
+      "commit": "2eac965",
+      "message": "d4 lr0.02 250t, time features, native cats"
+    },
+    {
+      "commit": "5d0ece7",
+      "message": "ensemble depths 3-7"
+    },
+    {
+      "commit": "b9ca845",
+      "message": "add calendar features doy weekend dow cyclic"
+    },
+    {
+      "commit": "33daf22",
+      "message": "shallow+deep ensemble d3 d20"
+    },
+    {
+      "commit": "0076da3",
+      "message": "ensemble d2,d3 + deep d32 cs0.6 weighted"
+    },
+    {
+      "commit": "9c9847d",
+      "message": "add second deep member d20 cs0.6"
+    },
+    {
+      "commit": "36c359c",
+      "message": "dep_hour categorical"
+    },
+    {
+      "commit": "bd9729f",
+      "message": "half-hour categorical"
+    },
+    {
+      "commit": "928924e",
+      "message": "15-min categorical"
+    },
+    {
+      "commit": "8199736",
+      "message": "final"
+    }
+  ],
+  "cpu_seconds_budgeted": 17924.7,
+  "cpu_over_budget": false,
+  "cpu_seconds_overhead": 2232.4,
+  "best_commit_dirty_rows_excluded": 0,
+  "best_commit": "928924e",
+  "best_commit_eval_auc": 0.75,
+  "best_commit_holdout_auc": 0.750306058628,
+  "best_commit_holdout_ap": 0.7391282713844786,
+  "best_commit_error": null,
+  "finalized_best": true
+}

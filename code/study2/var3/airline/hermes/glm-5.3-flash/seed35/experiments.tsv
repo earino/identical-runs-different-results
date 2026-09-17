@@ -1,0 +1,17 @@
+n	commit	eval_auc	status	seconds	description
+1	365e0cf	0.7141	ok	4	baseline: 30 trees depth 6 lr 0.1, raw categoricals
+2	43455ba	0.6927	ok	5	exp2: 400 trees depth 8 lr0.1 subsample 0.9
+3	cb5eaa7	0.7126	ok	2	exp3: 300 trees depth 4 lr0.1
+4	5260a6a	0.7156	ok	5	exp4: sincos dep time, no Distance, 800 trees lr0.04
+5	10e4de2	0.7176	ok	5	exp5: insertion-order categories
+6	51bfde0	0.7333	ok	9	exp6: carrier x 30min block, 1200 trees lr0.03
+7	0a86919	0.7377	ok	40	exp7: 5-model ensemble d5/d6/d7 x +/-Distance
+8	87ca2dd	0.7404	ok	71	exp8: 9-member bagged ensemble
+9	a9c9b32	0.7414	ok	94	exp9: 12-member ensemble
+10	e774aaa	0.7422	ok	109	exp10: 14 members +minute features
+11	3903291	0.7438	ok	99	exp11: 12-member ens incl quantile median
+12	54a4924	0.0000	timeout	120	exp12: 14 members with airport x hour
+13	4ade867	0.0000	timeout	120	exp13: 12 members with airport x hour
+14	5b13a6d	0.7449	ok	102	exp14: 11 members n1100
+15	b2d2aa8	0.0000	timeout	120	exp15: greedy-11 member subset
+16	59118aa	0.7459	ok	112	exp16: greedy-11 subset n1100

@@ -1,0 +1,41 @@
+n	commit	eval_auc	status	seconds	description
+1	79a3db4	0.7141	ok	5	baseline
+2	0db7a02	0.7074	ok	4	stronger model 400x depth7
+3	c7e4de8	0.7168	ok	2	ordinal c-N + clock features
+4	97b01c6	0.7192	ok	3	200 trees lr.05 depth6 regularized
+5	875bc7f	0.7174	ok	5	800 trees lr.03 depth6
+6	fb24e11	0.7219	ok	9	freq+congestion counts
+7	70afbad	0.7241	ok	12	OOF target encoding alpha=20
+8	e8f66e5	0.7230	ok	4	day_of_year + weekend
+9	b27e4b2	0.7236	ok	4	seed variance check seed=7
+10	4696f62	0.7251	ok	9	5-seed bagging ensemble
+11	b39e67f	0.7241	ok	9	TE alpha 5
+12	9a3b06e	0.7254	ok	8	TE alpha 60
+13	bc63d71	0.7253	ok	10	TE alpha 150
+14	7f8b4c4	0.7262	ok	9	airport hourly schedule share
+15	d58f77a	0.7261	ok	11	carrier-airport interaction keys
+16	72442ea	0.7251	ok	8	depth 5 ensemble
+17	035aa07	0.7253	ok	17	400 trees
+18	63bb951	0.7259	ok	12	coarse airport-time buckets
+19	e1f5a21	0.7262	ok	10	hierarchical TE
+20	9743680	0.7255	ok	10	min_child_weight 25
+21	00013ee	0.7243	ok	11	categorical twins month/dow/hour
+22	4158851	0.7257	ok	10	TE OOF 20 folds
+23	4c952ca	0.7260	ok	9	hierarchical TE alpha 20
+24	d22ba76	0.7259	ok	9	global minute load features
+25	2569d4c	0.7263	ok	15	depth-mixed ensemble
+26	d78bb6a	0.0000	crash	3	hour-vs-airport TE deviation
+27	16b2ba9	0.7257	ok	16	hour-vs-airport TE deviation
+28	a3490f7	0.7264	ok	16	max_bin 512
+29	c8a49ae	0.7266	ok	15	prune redundant cnt features
+30	8132bc7	0.7263	ok	15	drop count features
+31	fb46205	0.7269	ok	24	15-member ensemble
+32	6090838	0.7265	ok	28	18-member lr/depth-diverse ensemble
+33	992343e	0.7270	ok	35	21-member ensemble
+34	f743341	0.7276	ok	51	30-member wide-depth ensemble
+35	4eb33c2	0.7276	ok	77	40-member ensemble
+36	0c9d4da	0.7292	ok	50	colsample 0.6
+37	0080507	0.7304	ok	47	colsample 0.4
+38	5ec8b5a	0.7294	ok	37	colsample 0.2
+39	b2c25c5	0.7300	ok	44	subsample 0.6 with colsample 0.4
+40	29d41c2	0.7304	ok	58	40-member ensemble colsample 0.4

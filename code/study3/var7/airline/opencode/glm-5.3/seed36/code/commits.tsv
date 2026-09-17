@@ -1,0 +1,18 @@
+n	commit	unix_time	subject
+00	8e8e579	1789630137	baseline
+01	eb39a42	1789630677	smooth regularized: depth4 lr.05 100t
+02	abd9130	1789630805	5-seed bagged ensemble of smooth model
+03	f6a5bd3	1789630838	diverse 9-model ensemble
+04	263be69	1789630945	schedule density count features
+05	b235c93	1789631150	interaction TE carrier_hour origin_hour
+06	4dc4e4e	1789631230	add dest@hour TE
+07	9a1c5d0	1789631363	add dow interaction TEs
+08	8b43fc5	1789631417	16-model ensemble with deep-reg config
+09	5f0409f	1789631520	TE smoothing k=200
+10	701fc46	1789631570	double n_estimators
+11	758f118	1789631618	1.5x more trees
+12	5dbac49	1789632057	dest@est arrival hour TE
+13	d05791d	1789632252	origin@pre-hour TE
+14	e194e21	1789632423	carrier@arrhour TE + arrival density counts
+15	88d14eb	1789632695	TE K=100 retest
+16	8f941d8	1789632947	day of year feature

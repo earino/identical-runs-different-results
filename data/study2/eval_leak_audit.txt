@@ -1,0 +1,95 @@
+audited 312 delivered files under results/variance/evals
+
+code-level hits: 32   automatic-screen flags: 7
+  var1/airline/hermes/glm-5.3-flash/seed10             hits=1 screen=False eval=0.7321 holdout=0.7314
+      .fit(Xtr, ytr, eval_set=[(Xev, to_y(evald)
+  var1/airline/hermes/glm-5.3-flash/seed2              hits=1 screen=False eval=0.7286 holdout=0.7289
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var1/airline/opencode/deepseek-4.1-flash/seed13      hits=1 screen=False eval=0.7412 holdout=0.7418
+      .fit(X_train, y_train, eval_set=[(X_eval, y_eval)
+  var1/airline/opencode/deepseek-4.1-flash/seed8       hits=1 screen=False eval=0.7504 holdout=0.7506
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var1/airline/opencode/glm-5.3-flash/seed4            hits=2 screen=False eval=0.7546 holdout=0.7548
+      .fit(SUBSETS[subset], y_all)
+  var1/airline/pi/deepseek-4.1-flash/seed3             hits=1 screen=False eval=0.756 holdout=0.7571
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var1/airline/pi/glm-5.3-flash/seed12                 hits=1 screen=False eval=0.7211 holdout=0.7213
+      .fit(X_all, y_all, eval_set=[(prepare(evald)
+  var1/airline/pi/glm-5.3-flash/seed3                  hits=1 screen=False eval=0.7248 holdout=0.7258
+      .fit(X_all, y_all, eval_set=[(X_val, y_val)
+  var2/airline/hermes/glm-5.3-flash/seed20             hits=1 screen=False eval=0.7412 holdout=0.7418
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var2/airline/hermes/glm-5.3-flash/seed22             hits=1 screen=False eval=0.7416 holdout=0.7417
+      .fit(FRAMES[view][0], ytr)
+  var2/airline/opencode/glm-5.3-flash/seed21           hits=1 screen=False eval=0.7247 holdout=0.7258
+      .fit(X_tr, y_train, eval_set=[(X_ev, y_eval)
+  var2/airline/opencode/glm-5.3-flash/seed23           hits=2 screen=True eval=0.9958 holdout=0.8292
+      pd.concat([train, evald], ignore_index=True)
+  var2/airline/pi/glm-5.3-flash/seed16                 hits=1 screen=False eval=0.7436 holdout=0.7435
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var3/airline/hermes/glm-5.3-flash/seed29             hits=3 screen=True eval=0.9988 holdout=0.8059
+      pd.concat([train, evald], ignore_index=True)
+  var3/airline/hermes/glm-5.3-flash/seed30             hits=1 screen=True eval=0.8988 holdout=0.7215
+      .fit(XT, YT, eval_set=[(XE, YE)
+  var3/airline/hermes/glm-5.3-flash/seed33             hits=1 screen=False eval=0.7404 holdout=0.7403
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var3/airline/hermes/glm-5.3-flash/seed36             hits=2 screen=True eval=0.9833 holdout=0.7854
+      pd.concat([train, evald], ignore_index=True)
+  var3/airline/hermes/glm-5.3-flash/seed39             hits=1 screen=False eval=0.7384 holdout=0.7387
+      .fit(X, y, eval_set=[(Xe, ye)
+  var3/airline/opencode/glm-5.3-flash/seed30           hits=1 screen=False eval=0.7411 holdout=0.7424
+      .fit(X_all, y_all, eval_set=[(X_eval, y_eval)
+  var3/airline/opencode/glm-5.3-flash/seed31           hits=1 screen=False eval=0.7534 holdout=0.7532
+      .fit(Xtr, y_train, eval_set=[(Xev, y_eval)
+  var3/airline/opencode/glm-5.3-flash/seed35           hits=1 screen=False eval=0.7418 holdout=0.7426
+      .fit(X_train, ytrain, sample_weight=sample_w, eval_set=[(X_eval_v, yeval)
+  var3/airline/opencode/glm-5.3-flash/seed37           hits=1 screen=False eval=0.7471 holdout=0.7475
+      .fit(X_tr, y_tr, sample_weight=w_tr, eval_set=[(X_va, y_va)
+  var3/airline/opencode/glm-5.3-flash/seed38           hits=3 screen=False eval=0.7435 holdout=0.7437
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var3/airline/pi/deepseek-4.1-flash/seed35            hits=1 screen=False eval=0.7446 holdout=0.7450
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var4/airline/hermes/deepseek-4.1-flash/seed44        hits=1 screen=False eval=0.7371 holdout=0.7378
+      .fit(Xtr, ytr, eval_set=[(Xev, to_y(evald)
+  var4/airline/hermes/glm-5.3-flash/seed44             hits=1 screen=True eval=1.0 holdout=0.8230
+      .fit(X_fit, y_fit, sample_weight=w_fit)
+  var4/airline/hermes/glm-5.3-flash/seed45             hits=1 screen=False eval=0.7393 holdout=0.7411
+      .fit(X_train, y, eval_set=[(X_eval, to_y(evald)
+  var4/airline/hermes/glm-5.3-flash/seed49             hits=1 screen=True eval=1.0 holdout=0.8125
+      pd.concat([train, evald])
+  var4/airline/hermes/glm-5.3-flash/seed51             hits=1 screen=False eval=0.7539 holdout=0.7545
+      .fit(Xtr, ytr, eval_set=[(Xev, to_y(evald)
+  var4/airline/opencode/glm-5.3-flash/seed43           hits=1 screen=False eval=0.7271 holdout=0.7283
+      .fit(X_all, y_all, eval_set=[(X_eval, y_eval)
+  var4/airline/pi/glm-5.3-flash/seed46                 hits=1 screen=False eval=0.7265 holdout=0.7271
+      .fit(X_train, y_all, eval_set=[(X_eval, y_eval)
+  var4/airline/pi/glm-5.3-flash/seed51                 hits=1 screen=False eval=0.7355 holdout=0.7358
+      .fit(X_tr[sub], y_tr, eval_set=[(X_ev[sub], y_ev)
+
+code-level hits the automatic screen did NOT flag: 26
+  var1/airline/hermes/glm-5.3-flash/seed10
+  var1/airline/hermes/glm-5.3-flash/seed2
+  var1/airline/opencode/deepseek-4.1-flash/seed13
+  var1/airline/opencode/deepseek-4.1-flash/seed8
+  var1/airline/opencode/glm-5.3-flash/seed4
+  var1/airline/pi/deepseek-4.1-flash/seed3
+  var1/airline/pi/glm-5.3-flash/seed12
+  var1/airline/pi/glm-5.3-flash/seed3
+  var2/airline/hermes/glm-5.3-flash/seed20
+  var2/airline/hermes/glm-5.3-flash/seed22
+  var2/airline/opencode/glm-5.3-flash/seed21
+  var2/airline/pi/glm-5.3-flash/seed16
+  var3/airline/hermes/glm-5.3-flash/seed33
+  var3/airline/hermes/glm-5.3-flash/seed39
+  var3/airline/opencode/glm-5.3-flash/seed30
+  var3/airline/opencode/glm-5.3-flash/seed31
+  var3/airline/opencode/glm-5.3-flash/seed35
+  var3/airline/opencode/glm-5.3-flash/seed37
+  var3/airline/opencode/glm-5.3-flash/seed38
+  var3/airline/pi/deepseek-4.1-flash/seed35
+  var4/airline/hermes/deepseek-4.1-flash/seed44
+  var4/airline/hermes/glm-5.3-flash/seed45
+  var4/airline/hermes/glm-5.3-flash/seed51
+  var4/airline/opencode/glm-5.3-flash/seed43
+  var4/airline/pi/glm-5.3-flash/seed46
+  var4/airline/pi/glm-5.3-flash/seed51

@@ -1,0 +1,22 @@
+n	commit	eval_auc	status	seconds	description
+1	bf97200	0.7141	ok	4	baseline
+2	1f43bf5	0.0000	crash	2	fe v1: hour/sin/cos, route, 400 trees es
+3	4f8739f	0.7123	ok	4	fe v1: hour/sin/cos, route, 400 trees es (fixed es arg)
+4	e839be2	0.7174	ok	9	fe v2: cal/cat TE + counts, d5 lr.03 mcw50 reg
+5	a27e05e	0.7186	ok	11	fe v3: + origin_hour_count, dest_hour_count
+6	614fb45	0.7203	ok	76	ens v1: 8 diverse xgb models averaged
+7	83a0562	0.7207	ok	81	fe v4: + month_sin/cos, log counts (single model)
+8	77e0a54	0.7217	ok	83	fe v5: + share ratio features (ensemble)
+9	c14c62c	0.7217	ok	68	ens v2: 10 models, AUC-weighted average
+10	12a9b72	0.7216	ok	83	fe v6: OOF-TE + softer smoothing (m 200/600/300)
+11	21cf575	0.7233	ok	84	ens v3: 10 strong members, es60
+12	2c25181	0.7268	ok	89	ens v4: 9 lossguide members
+13	20bd090	0.7279	ok	82	ens v5: 9 strong LG members, es40
+14	f04ed7b	0.7278	ok	100	ens v6: 11 LG members
+15	aa50387	0.7322	ok	98	fe v7: + minute-of-hour (ensemble)
+16	4a35eb9	0.7344	ok	95	ens v7: 9 big-leaf LG members
+17	1ccd04d	0.7453	ok	81	ens v8: no-cat 6 members
+18	13a5d97	0.7452	ok	95	ens v9: 7 no-cat members
+19	ee7a9e1	0.7463	ok	94	ens v10: 6 no-cat + 1 full diversity member
+20	bbc60d4	0.7465	ok	100	ens v11: + DW+cats diversity member
+21	23dde63	0.7464	ok	110	ens v12: + noTE diversity member (9 members)
