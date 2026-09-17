@@ -42,7 +42,7 @@ code/         what the agents actually delivered, per run: train.py at every com
 analysis/     the scripts that turn data/ into the paper's tables and figures
 harness/      how the runs were produced and scored: the runner, the agent wrappers, the task
               rules given to the agent, the frozen configs, and METHODS.md
-task/         the task definition and its public train/eval split
+task/         the task definition, the train/eval split, and the 1M-row holdout
 ```
 
 ## The part worth reading even if you check nothing
@@ -69,11 +69,14 @@ was run.
 
 ## Deliberately not included
 
-- **The holdout set.** Withheld so the task stays usable for future evaluation; publishing it would contaminate it.
-  `task/airline/meta.json` gives the source DOI and the exact slice, so it can be rebuilt.
 - **The raw run trees**, 43 GB of harness logs and container state. Everything a reader needs is extracted into
   `code/`.
 - **Credentials.** Nothing here contains a key.
+
+The holdout **is** included, at `task/airline/holdout.csv`. That makes every score checkable end to end — see the
+re-scoring section of [VERIFY.md](VERIFY.md) — and it means the airline task is spent for future agent evaluation
+once this repository is public, since a model trained afterwards may have read it. Extending this work needs new
+tasks.
 
 ## Citing
 
