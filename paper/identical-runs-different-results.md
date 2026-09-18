@@ -44,8 +44,8 @@ AUC of 0.7412. Three attempts, keeping the compliant one that scores best on the
 percent of the time, with a median of 0.7493, and ten attempts reach 0.7548. Repeat runs buy a better artifact
 cheaply; they do not buy a reliable ranking of vendors.
 
-**What a real upgrade is worth.** Moving to the larger model in the same family gained 0.0091 AUC, seven standard
-errors from zero but only 0.87 times the run-to-run SD. The benchmark detects a genuine change; the agents are
+**What a real upgrade is worth.** Runs on the larger model in the same family scored 0.0091 AUC higher, seven
+standard errors from zero but only 0.87 times the run-to-run SD. The benchmark detects a genuine change; the agents are
 simply closer together than that. How much the upgrade bought also depended on the agent: 0.0152 for pi against
 0.0055 for OpenCode, 2.8 times less from the identical change.
 
@@ -254,10 +254,10 @@ diminishing returns.
 
 ## The larger model's gain is about the size of run-to-run noise
 
-A third study changed one thing and measured what it bought. GLM-5.3 is the larger model in the family whose Flash
-version Study 2 used. We ran the same three agents against it on the same 52 seeds, with the same data, prompt,
-budget, machine type and parallelism: 156 runs. The model was the planned difference; the dates and machines
-differed too, as described below.
+A third study switched the model and measured the difference. GLM-5.3 is the larger model in the family whose Flash
+version Study 2 used. We ran the same three agents against it, 52 runs each, with the same data, prompt,
+budget, machine type and parallelism: 156 runs, made the day after Study 2's GLM-5.3 Flash runs, through the same
+gateway.
 
 The larger model scored **0.0091 AUC above Flash** over the three agents' compliant runs, with a 95 percent interval
 of 0.0066 to 0.0115. That is 7.1 standard errors from zero. It is also **0.87 times the run-to-run SD of a single
@@ -304,12 +304,12 @@ standard errors from zero in the means, yet pi's runs on the two models overlap 
 **What the study held fixed.** Neither arm set a reasoning level. Both GLM models document the same default,
 thinking enabled at the top effort setting, and a probe of the endpoint confirmed it: with no setting sent, a short
 prompt spends about as much thinking as the maximum and roughly ten times what the lowest setting spends. The arms
-differ in model scale, not in how hard the model was asked to think. Runs were spread across four identical
-machines, whose estimated effect was small (F = 0.97), and scores did not drift within the arm: its first and
-second halves average the same to four decimals. The two arms were not interleaved, though. The Flash runs are
-Study 2's, made on 15 and 16 September on four machines; the GLM-5.3 runs were made on 16 and 17 September on four
-other machines of the same type, through the same gateway. A change at the endpoint between those dates would be
-confounded with the model, and checks inside one arm cannot rule that out. Of the 156 runs, four delivered code
+differ in model scale, not in how hard the model was asked to think. Scores did not drift within the arm: its
+first and second halves average the same to four decimals. What we could not hold fixed is the hosted endpoint, and
+no one using a hosted model can. The Flash runs were made on 15 and 16 September and the GLM-5.3 runs on 16 and 17
+September, so the gain includes whatever changed at the endpoint in between. Study 1, which ran both models on 13
+September with their runs overlapping in time, found a gain of similar size for the same three agents, +0.0075 from
+eight and nine runs, so a shift between days is an unlikely explanation. Of the 156 runs, four delivered code
 that failed when scored on the holdout and eight broke a task rule, three by training on evaluation labels and five
 by computing batch features; all twelve are excluded above, by the rules Study 2 uses. Two compliant runs
 delivered the starting code unchanged, and they are kept at its score.

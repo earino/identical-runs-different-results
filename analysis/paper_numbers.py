@@ -7,11 +7,13 @@
                replacement; exact, by comparing every possible triple of one pairing with every triple of the other
   run counts   16 sd^2 / gap^2 runs per arm, for the gaps the text names, and the Study 3 effects table
   compute      rank correlation between budget use and score inside pairings, with subsets by budget share
+  same day     Study 1's GLM-5.3 and GLM-5.3 Flash rows, which ran on the same day, overlapping in time: the gain for
+               Study 3's three agents with no day boundary between the arms
 
 --legacy reproduces the numbers under the exclusion rule the paper used before 18 September 2026 (the evaluator's
 refit_suspect screen or frame statistics), as a check that this script matches the original method.
 
-Usage (repo root): python experiments/run_variance/paper_numbers.py [--legacy] [S2_CELLS S3_CELLS]
+Usage (repo root): python experiments/run_variance/paper_numbers.py [--legacy] [S2_CELLS S3_CELLS [S1_CELLS]]
 """
 import csv, itertools, math, random, statistics as st, sys
 from collections import defaultdict
@@ -22,6 +24,7 @@ args = [a for a in sys.argv[1:] if not a.startswith("--")]
 LEGACY = "--legacy" in sys.argv
 S2 = args[0] if args else "results/variance/cells.csv"
 S3 = args[1] if len(args) > 1 else "results/variance_glm53/cells.csv"
+S1 = args[2] if len(args) > 2 else "results/phase2/merged/cells.csv"
 BUDGET = 18000.0
 T = lambda v: v == "True"
 ok = (lambda r: not T(r["refit_suspect"]) and not T(r["frame_stats"])) if LEGACY else (lambda r: T(r["compliant"]))
@@ -99,6 +102,15 @@ rows = [("did the agent improve on the starting code?", both - base),
 print(f"  sd {sdf:.4f}")
 for q, e in rows:
     print(f"  {q:45s} {e:+.4f}  {e / sdf:4.2f} SD  {16 * sdf ** 2 / e ** 2:6.1f} runs per arm")
+
+print("\nSAME-DAY CHECK, Study 1 (both GLM models on 13 September, overlapping in time; compliant runs of pi, Hermes, OpenCode)")
+s1 = [r for r in csv.DictReader(open(S1)) if r["model"] in ("glm-5.3", "glm-5.3-flash") and r["harness"] in ("pi", "hermes", "opencode")
+      and r["holdout_auc"] and (r["n_experiments"] or "0") not in ("0", "0.0") and r["refit_suspect"] != "True"]
+g = {m: [float(r["holdout_auc"]) for r in s1 if r["model"] == m] for m in ("glm-5.3", "glm-5.3-flash")}
+d = st.mean(g["glm-5.3"]) - st.mean(g["glm-5.3-flash"])
+se = math.sqrt(st.variance(g["glm-5.3"]) / len(g["glm-5.3"]) + st.variance(g["glm-5.3-flash"]) / len(g["glm-5.3-flash"]))
+print(f"  GLM-5.3 {st.mean(g['glm-5.3']):.4f} ({len(g['glm-5.3'])} runs)   GLM-5.3 Flash {st.mean(g['glm-5.3-flash']):.4f} "
+      f"({len(g['glm-5.3-flash'])} runs)   gain {d:+.4f}  ({d / se:.1f} SE)")
 
 print("\nCOMPUTE AGAINST SCORE, Study 2 (ranks within pairing, pooled; bootstrap 2,000; two-sided permutation within pairing 2,000)")
 

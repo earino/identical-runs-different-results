@@ -189,7 +189,8 @@ This prints the per-agent gains with bootstrap intervals, the pooled main effect
 
 That is the share of all compliant (Flash run, GLM-5.3 run) pairs in which the Flash run scores higher, per agent,
 averaged over the three. The script then prints every pairwise interaction, the detectability ladder, and the two
-checks within the GLM-5.3 arm (box effect F = 0.97, time drift −0.0000). It applies the same compliance rule **to
+checks within the GLM-5.3 arm (box effect F = 0.97, time drift −0.0000). The two arms ran on consecutive days through
+a hosted endpoint, so the gain includes any change at the endpoint between them; see the same-day check below. It applies the same compliance rule **to
 both arms** before comparing.
 
 The yield beside the gain, and the three-attempt policy, from `policy_tables.py` above:
@@ -243,15 +244,22 @@ that do not share it are the "pi minus OpenCode" lines on the stronger models.
 
 > *"the weaker pairing comes out ahead 28 to 44 percent of the time"*, *"about 20 runs of each ... about 66"*,
 > *"the standard error of an AUC on it is about 0.0005"*, the Study 3 effects table (+0.0277, +0.0091, +0.0067,
-> +0.0039 with 2, 21, 39 and 113 runs), and the compute correlations (+0.55, +0.43, +0.29, +0.12)
+> +0.0039 with 2, 21, 39 and 113 runs), the compute correlations (+0.55, +0.43, +0.29, +0.12), and the same-day check
+> for Study 3 (*"Study 1, which ran both models on 13 September with their runs overlapping in time, found a gain of
+> similar size for the same three agents, +0.0075"*)
 
 ```bash
-python analysis/paper_numbers.py data/study2/cells.csv data/study3/cells.csv
+python analysis/paper_numbers.py data/study2/cells.csv data/study3/cells.csv data/study1/cells.csv
 ```
 
 The three-run comparison is exact: every possible draw of three compliant runs from one pairing, with replacement,
 against every draw from the other. The holdout's standard error uses Hanley and McNeil's formula for an AUC near the
-observed one on 500,000 rows per class (0.00049). The compute correlations rank runs inside their own pairing, with
+observed one on 500,000 rows per class (0.00049). The same-day check compares Study 1's GLM-5.3 and GLM-5.3 Flash rows
+for pi, Hermes and OpenCode, which ran concurrently, so no day boundary separates the two models:
+
+```
+  GLM-5.3 0.7449 (8 runs)   GLM-5.3 Flash 0.7374 (9 runs)   gain +0.0075  (1.7 SE)
+``` The compute correlations rank runs inside their own pairing, with
 bootstrap intervals and two-sided permutation p-values; a few thousand resamples take a minute or two.
 
 ## The strongest check: re-score a delivered program yourself
