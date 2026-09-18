@@ -21,10 +21,13 @@ Three different questions get confused when agents are compared, and this paper 
 compliant artifact is, how often an attempt produces one, and what a policy of several attempts plus selection
 delivers.
 
-We report three studies on one task. The first is broad: six coding agents on six open-weight model endpoints,
-three runs each. The second is deep: three agents on two models, 52 runs each, 312 runs in all. The third is
-controlled: the same three agents on a larger model from the same family, 52 runs each, changing the model and
-nothing else.
+We report three studies on one task. The first is broad: six coding agents on six open-weight model endpoints, three
+runs each. The second is deep: three agents on two models, 52 runs each, 312 runs in all. The third is controlled:
+the same three agents on a larger model from the same family, 52 runs each, changing the model and nothing else. In
+every study the agents improve a model that predicts whether a flight departs late, and a holdout they never see
+scores it by AUC: the chance that the model ranks a late flight above an on-time one. A run is compliant when its
+code obeyed the task rules, training only on the training file and computing no feature from the batch it was
+scoring.
 
 **Quality of compliant runs.** In the deep study, the six pairing averages over compliant runs span 0.0095 AUC,
 while the median pairing varies by 0.0107 across its own compliant runs. The spread inside a pairing is larger than
@@ -583,25 +586,3 @@ screen misses: of the five real cases, only one had a gap large enough to trigge
 **Screens are screens.** The frame-statistics check over-flags: it raised two runs that a person cleared, one that
 grouped rows only to index them and one that fitted a label-taking encoder which never sees a scored frame. Every
 hit in both studies was read before it was counted.
-
-# Appendix E: the words we use
-
-**AUC.** The chance that the model scores a true positive above a true negative, taken across every threshold. It
-measures ranking, not the decisions you make at one cut-off.
-
-**Average precision (AP).** How clean the top of the ranked list is. It depends on how common the positive class
-is, so an AP measured on a benchmark does not transfer to a different prevalence.
-
-**Prevalence.** How common the positive class is in your data. Our holdout was built with the two classes in equal
-numbers; real departure delays are far rarer.
-
-**Operating point.** The threshold you act on, such as the number of cases your team can review in a month. Two
-models can rank the same overall and behave differently here.
-
-**Held-back data.** Rows the agent never saw, kept for scoring. Rank candidates on one set, then measure the model
-you chose on a second one you have never used.
-
-**Compliant run.** A run whose delivered code obeys the task rules: it trains only on the training file, and
-computes no feature from the batch it is scoring.
-
-**Budget share.** The fraction of a run's 18,000 CPU seconds that its Python processes actually consumed.
