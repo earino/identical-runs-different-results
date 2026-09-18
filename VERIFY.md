@@ -15,7 +15,17 @@ python analysis/figures.py data/study2/cells.csv out/study2
 ```
 
 Prints the per-pairing table and writes the spread, histogram and compute figures. `data/study2/cells.csv` has one
-row per run, 312 of them, with the holdout score, the flags and the budget accounting.
+row per run, 312 of them, with the holdout score, the flags and the budget accounting. The table is the paper's
+Study 2 table, cell for cell: compliant runs, their mean, median, SD, 95% interval, 10th and 90th percentiles, best
+run and all-run mean, and how many of the pairing's 52 runs broke a task rule. Its last line is the claim above:
+
+```
+compliant pairing means span 0.0095; median pairing SD 0.0107
+```
+
+The spread figure is the paper's first figure. It plots compliant runs only; the right-hand column gives each
+pairing's noncompliant share, 0 to 12 percent. In every figure, colour is the agent and marker shape is the model;
+the assignments are in `analysis/identity.py`.
 
 ## What the larger model buys (Study 3)
 
@@ -33,11 +43,44 @@ The script applies the two rule-breaking screens **to both arms** before compari
 analysis of ours compared screened Flash runs against unscreened GLM-5.3 runs and overstated the gain by about a
 thousandth. The docstring records it.
 
-Figure 3 in the paper:
+The figure "A whole model tier buys about as much as running the same pairing twice":
 
 ```bash
 python analysis/figure_arms.py data/study3/cells.csv data/study2/cells.csv out/study3
 ```
+
+## Which agent looks best depends on the model (Studies 2 and 3)
+
+> *"Across models, moving from GLM-5.3 Flash to DeepSeek 4.1 Flash raised pi by 0.0095, Hermes by 0.0058 and
+> OpenCode by 0.0003. pi's gain exceeds OpenCode's by 0.0092, 3.1 standard errors of that difference."*
+>
+> *"pi leads OpenCode on each stronger model, by 0.0053 on DeepSeek 4.1 Flash and 0.0058 on GLM-5.3, at 2.4 and
+> 2.6 standard errors."*
+
+```bash
+python analysis/figure_interaction.py data/study2/cells.csv data/study3/cells.csv out/interaction
+```
+
+Writes the two agent-by-model figures and prints, for each study, every number the paper quotes from them:
+
+```
+Study 2: GLM-5.3 Flash to DeepSeek 4.1 Flash, compliant runs
+  pi        0.7361 -> 0.7456   change +0.0095  (SE 0.0023, 4.2 SE)
+  Hermes    0.7383 -> 0.7441   change +0.0058  (SE 0.0023, 2.6 SE)
+  OpenCode  0.7400 -> 0.7403   change +0.0003  (SE 0.0019, 0.2 SE)
+  pi's change minus OpenCode's: +0.0092  (3.1 SE)
+  on GLM-5.3 Flash      agents spread 0.0039; pi minus OpenCode -0.0039 (-2.0 SE)
+  on DeepSeek 4.1 Flash agents spread 0.0053; pi minus OpenCode +0.0053 (+2.4 SE)
+  every mean inside every pairing's 10th-90th percentile band: yes
+```
+
+and the same block for Study 3, whose "pi's change minus OpenCode's" line (+0.0097, 3.3 SE) is the interaction
+`compare_arms.py` reports by bootstrap. The standard errors here use the normal approximation, the square root of the
+summed squared standard errors; it reproduces the paper's 3.3 exactly.
+
+Read the two studies' agreement with the caution the paper gives it. Both comparisons start from the same GLM-5.3
+Flash runs, on which pi trails OpenCode by 0.0039, so that gap counts toward pi's larger gain in both. The lines
+that do not share it are the two "pi minus OpenCode" lines on the stronger models.
 
 ## The integrity claims — check our work, do not trust it
 
@@ -129,6 +172,21 @@ figure is a slight undercount.
 Reasoning tokens are counted separately by every harness and were missing from our own ledger until we went back for
 them; `analysis/reasoning_tokens.py` is the recovery script. Neither arm set a reasoning level, and for these models
 omitting it selects the maximum effort setting.
+
+> *"The failure did repeat on one more model, DeepSeek V4 Pro ... Claude Code cached 4 and 11 percent while the other
+> five agents cached 83 to 99 percent. The quota cut off both Claude Code runs, but it also cut off both of pi's,
+> which still cached 91 and 98 percent."*
+
+```bash
+python -c "
+import csv
+for r in csv.DictReader(open('data/study1/cells.csv')):
+    if r['model'].startswith('deepseek-v4-pro'):
+        print(f\"{r['harness']:9s} seed {r['seed']}  cached {float(r['cached_share']):.0%}  {'cut off by the quota' if r['provider_error'] else ''}\")"
+```
+
+`data/study1/cells.csv` is Study 1: 116 runs, one row each. `data/study1/claude_per_request.csv` is Claude Code's
+request log, recovered for the runs that stopped before reporting their usage; the paper's Claude Code costs use it.
 
 ## What is not here, and why
 

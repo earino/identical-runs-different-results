@@ -8,10 +8,8 @@ Two panels, because the comparison has two halves and one of them is the point:
 The right panel is the argument. A reader who only sees means will read "+0.0097" as a clean win; seeing it land on
 the one-SD line says the same number means you cannot detect it in a single run.
 
-Colours: the two models are a validated categorical pair (blue #1a6fc4, green #2fa36b: CVD dE 22.6 protan / 9.2
-tritan, normal-vision 23.4). Orange and violet are deliberately NOT used -- in this paper they already mean "this
-run broke a task rule" (figures 10 and 11), and reusing them for a model would mislead. Marker shape carries the
-model too, so identity never rests on colour alone.
+Colours and shapes follow scripts/briefs/identity.py, as in every figure of the paper: colour is the agent, marker
+shape is the model (GLM-5.3 Flash a hollow circle, GLM-5.3 a square). The means are ink in the model's shape.
 
 Usage: python experiments/run_variance/figure_arms.py [PRO_CELLS] [FLASH_CELLS] [OUT_DIR]
 """
@@ -23,6 +21,9 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.lines import Line2D
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts" / "briefs"))   # in the data repository, identity.py sits beside this file
+from identity import NEUTRAL, agent_colour, marker_kw  # noqa: E402
 
 PRO = Path(sys.argv[1] if len(sys.argv) > 1 else "results/variance_glm53/cells.csv")
 FLASH = Path(sys.argv[2] if len(sys.argv) > 2 else "results/variance/cells.csv")
@@ -36,7 +37,6 @@ rcParams.update({"font.family": ["Helvetica Neue", "Helvetica", "Arial", "DejaVu
                  "xtick.color": "#465061", "ytick.color": "#465061", "text.color": "#1B2430",
                  "axes.spines.top": False, "axes.spines.right": False, "figure.dpi": 150, "savefig.dpi": 300,
                  "pdf.fonttype": 42})
-PRO_C, FLASH_C = "#1a6fc4", "#2fa36b"
 GRID, INK, MUTED = "#D6DBE1", "#1B2430", "#465061"
 AGENT = {"pi": "pi", "opencode": "OpenCode", "hermes": "Hermes"}
 
@@ -67,17 +67,17 @@ fig, (ax, ax2) = plt.subplots(1, 2, figsize=(8.4, 3.9), gridspec_kw={"width_rati
 # ---- left: the distributions, two rows per agent
 # The gain is not annotated here on purpose: the right panel is the gain, and drawing it twice collided with itself.
 for i, h in enumerate(agents):
-    for j, (vals, colour, marker) in enumerate(((B[h], FLASH_C, "o"), (A[h], PRO_C, "s"))):
+    for j, (vals, model) in enumerate(((B[h], FLASH_MODEL), (A[h], "glm-5.3"))):
         y = i * 2.2 + (0.42 if j else -0.42)
         ax.plot([min(vals), max(vals)], [y, y], color=GRID, lw=4.5, solid_capstyle="round", zorder=1)
-        ax.scatter(vals, [y] * len(vals), s=13, color=colour, alpha=0.55, edgecolor="none", zorder=2, marker=marker)
-        ax.scatter([st.mean(vals)], [y], s=44, color=INK, edgecolor="white", linewidth=1.1, zorder=4, marker=marker)
+        ax.scatter(vals, [y] * len(vals), zorder=2, **marker_kw(model, agent_colour(h), 14, alpha=0.65, edge=0.4))
+        ax.scatter([st.mean(vals)], [y], zorder=4, **marker_kw(model, INK, 44, edge=1.1))
 if base:
     ax.axvline(base, color=MUTED, lw=0.9, ls=(0, (1, 2)), zorder=0)
 ax.set_yticks([i * 2.2 for i in range(len(agents))])
 ax.set_yticklabels([AGENT.get(h, h) for h in agents], fontsize=9.5)
 ax.set_ylim(-1.15, (len(agents) - 1) * 2.2 + 1.15)
-ax.set_xlabel("holdout AUC (one mark = one valid run)", fontsize=9)
+ax.set_xlabel("holdout AUC (one mark = one compliant run, in its agent's colour)", fontsize=9)
 ax.grid(axis="x", color=GRID, lw=0.6); ax.set_axisbelow(True); ax.tick_params(labelsize=8.5)
 ax.set_title("Every run of both models", fontsize=10, color=INK, loc="left", pad=8)
 
@@ -89,8 +89,8 @@ for i, h in enumerate(agents):
     d = sorted(st.mean(random.choices(A[h], k=len(A[h]))) - st.mean(random.choices(B[h], k=len(B[h])))
                for _ in range(BOOT))
     lo_, hi_ = d[int(.025 * BOOT)], d[int(.975 * BOOT)]
-    ax2.plot([lo_, hi_], [i, i], color=PRO_C, lw=2.0, solid_capstyle="round", zorder=2)
-    ax2.scatter([g], [i], s=52, color=PRO_C, edgecolor="white", linewidth=1.1, zorder=3, marker="s")
+    ax2.plot([lo_, hi_], [i, i], color=agent_colour(h), lw=2.0, solid_capstyle="round", zorder=2)
+    ax2.scatter([g], [i], s=52, color=agent_colour(h), edgecolor="white", linewidth=1.1, zorder=3)
     ax2.text(hi_ + 0.0007, i, f"+{g:.4f}", va="center", fontsize=8.5, color=INK)
 ax2.set_yticks(range(len(agents))); ax2.set_yticklabels([AGENT.get(h, h) for h in agents], fontsize=9.5)
 ax2.set_ylim(-0.6, len(agents) - 0.4)
@@ -99,8 +99,9 @@ ax2.text(sd_noise, len(agents) - 0.45, f"  one run-to-run SD ({sd_noise:.4f})", 
 ax2.grid(axis="x", color=GRID, lw=0.6); ax2.set_axisbelow(True); ax2.tick_params(labelsize=8.5)
 ax2.set_title("The gain, with 95% interval", fontsize=10, color=INK, loc="left", pad=8)
 
-fig.legend(handles=[Line2D([], [], marker="o", ls="", color=FLASH_C, markersize=6, label="GLM-5.3 Flash"),
-                    Line2D([], [], marker="s", ls="", color=PRO_C, markersize=6, label="GLM-5.3"),
+fig.legend(handles=[Line2D([], [], marker="o", ls="", color=NEUTRAL, markerfacecolor="white", markeredgewidth=1.3,
+                           markersize=6, label="GLM-5.3 Flash"),
+                    Line2D([], [], marker="s", ls="", color=NEUTRAL, markersize=6, label="GLM-5.3"),
                     Line2D([], [], marker="s", ls="", color=INK, markersize=7, label="mean"),
                     Line2D([], [], color=MUTED, lw=0.9, ls=(0, (1, 2)),
                            label=f"the starting code ({base:.4f})" if base else "starting code")],

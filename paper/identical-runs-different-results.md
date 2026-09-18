@@ -45,9 +45,8 @@ errors from zero but only 0.93 times the run-to-run SD. The benchmark detects a 
 are simply closer together than that. How much the upgrade bought also depended on the agent: 0.0152 for pi against
 0.0055 for OpenCode, 2.8 times less from the identical change.
 
-Cost moved with the deployed pairing rather than with either half of it. On one model the same job cost \$0.08 a run
-through pi and \$1.86 through Claude Code at rate-card prices, 23 times more, because that endpoint served almost
-none of Claude Code's input from its prompt cache.
+Running cost depended on the pairing too, by up to 23 times for the same job. We report it separately, after the
+three studies.
 
 ## The task is machine learning; the lessons are about agents
 
@@ -57,12 +56,14 @@ repeat. Most work that companies automate gives no such score. The variation bet
 nobody can see it.
 
 This task exposes four risks that teams should test for in their own deployments: results vary between identical
-attempts; some attempts break the rules of the task; whether a prompt cache works depends on the agent and the
-endpoint together; and agents differ in how much effort they spend. We show that all four appear here. We have not
+attempts; some attempts break the rules of the task; agents differ in how much effort they spend; and whether a
+prompt cache works depends on the agent and the endpoint together. We show that all four appear here. We have not
 established how common or how important they are in agentic work generally.
 
 Most comparisons of AI agents ask which one is best. On a task where that question has a measurable answer, it was
 not the question that mattered.
+
+\newpage
 
 # Study 1: six agents, six model rows, three runs each
 
@@ -96,36 +97,7 @@ comparison, because there is no artifact to score, but they are a property of th
 | DeepSeek 4.1 Flash, LunaRoute | 18 | 15 | 15 | 15 |
 | DeepSeek V4 Pro, Ollama (partial) | 8 | 8 | 8 | not assessed |
 
-Table: Study 1 run flow. The V4 Pro row was stopped at 85 percent of a weekly quota, four of its runs cut off mid-run; it appears only as a supporting observation about caching. 116 delivered files in total, 103 of them scored in the quality analysis.
-
-## Cost moved with the pairing
-
-On DeepSeek V4 Flash, rate-card cost followed the prompt cache. The endpoint served 92 to 98 percent of pi's and
-Codex's input from cache, and 2 to 11 percent of Claude Code's. Two effects combined. Repricing Claude Code's own
-token volume at pi's hit rate gives \$0.20 a run, against its actual \$1.86. So the cache accounts for about nine
-times, and Claude Code's larger token volume for about two and a half.
-
-| Agent | Run 1 | Run 2 | Run 3 | Mean cost |
-|:-------------|-------------:|-------------:|-------------:|-----------:|
-| pi | 98%, \$0.08 | 98%, \$0.11 | 97%, \$0.05 | \$0.08 |
-| OpenClaw | no record | 98%, \$0.11 | 97%, \$0.07 | \$0.09 |
-| Codex | 96%, \$0.14 | 96%, \$0.19 | 92%, \$0.13 | \$0.15 |
-| OpenCode | 80%, \$0.24 | 64%, \$0.19 | 66%, \$0.49 | \$0.31 |
-| Hermes | 56%, \$1.09 | 89%, \$0.47 | 74%, \$0.24 | \$0.60 |
-| Claude Code | 11%, \$1.41 | 9%, \$2.95 | 2%, \$1.21 | \$1.86 |
-
-Table: Cached share of input and rate-card cost per run, DeepSeek V4 Flash, Ollama Cloud. No money changed hands: a flat-rate subscription paid for the runs, and every cost is a rate-card projection.
-
-The cache failure belonged to the pairing, not to either half. Claude Code cached 96 to 97 percent of its input on
-DeepSeek V4.1 Flash and 73 to 84 percent on Nemotron Super. Every agent on those two models cached 70 to 99
-percent. Claude Code's own request log shows the cache returning almost nothing from the first request, at 14,000
-tokens, and never recovering, while on V4.1 Flash the same agent reads its prompt back at up to 122,000 tokens. So
-context size does not explain it. The cause is open. A test with byte-identical prompts through both endpoints
-would separate the client from the server.
-
-Rate-card cost also moved between identical runs. Hermes cost \$0.24, \$0.47 and \$1.09 for the same work on the
-same pairing, a swing of 4.6 times. Across the 25 pairings with three complete costs, the median swing was 2.2
-times.
+Table: Study 1 run flow. The V4 Pro row was stopped at 85 percent of a weekly quota, four of its runs cut off mid-run; it appears only as a supporting observation about caching, in the cost section. 116 delivered files in total, 103 of them scored in the quality analysis.
 
 # Study 2: one pairing, fifty-two times
 
@@ -135,31 +107,28 @@ times, holding the data, prompt, budget, machine type and parallelism fixed: 312
 highest three-run averages on the LunaRoute rows of Study 1, which is how we chose them rather than a finding:
 Study 1 could not rank them reliably.
 
-## Another group found the same cost result
+## Another benchmark averages the spread away
 
-A Berkeley team published the same cost finding on different tasks while this study was running. HarnessTax (Pan and
-colleagues, September 2026, harnesstax.github.io) paired seven models with three agents — Claude Code, Codex CLI and
-pi — on SWE-bench Lite and Terminal-Bench 2.0. Agent choice barely moved task success, but it moved cost by as much
-as five times. Claude Code cost about twice what pi cost on the same model. Two studies with different tasks,
-different models and a different metric reached the same conclusion, which makes it firmer than either study alone.
-
-The designs differ where our main question lives. HarnessTax runs each pairing three times per task and averages the
-attempts, so it does not report how far repeated identical runs spread. That spread is what our second study
-measures, and it is wide enough to reorder agents. Their benchmarks also sit near their ceiling: the strongest model
-solves 97.8 percent of SWE-bench Lite attempts, which leaves a harness difference little room to show. They note the
-models may have seen those tasks in training. Our task is graded on a continuous score against a holdout the agent
-never sees, so differences have room to appear and rule-breaking stays detectable. The two results fit together. The
-cost gap is real and shows up on public coding benchmarks. The reliability problem we report is what you meet as
-soon as you try to measure any of it.
+A Berkeley team published a related study while this one was running. HarnessTax (Pan and colleagues, September
+2026, harnesstax.github.io) paired seven models with three agents — Claude Code, Codex CLI and pi — on SWE-bench
+Lite and Terminal-Bench 2.0. The designs differ where our main question lives. HarnessTax runs each pairing three
+times per task and averages the attempts, so it does not report how far repeated identical runs spread. That spread
+is what our second study measures, and it is wide enough to reorder agents. Their benchmarks also sit near their
+ceiling: the strongest model solves 97.8 percent of SWE-bench Lite attempts, which leaves a harness difference
+little room to show. They note the models may have seen those tasks in training. Our task is graded on a continuous
+score against a holdout the agent never sees, so differences have room to appear and rule-breaking stays detectable.
+HarnessTax's cost finding agrees with ours, and we return to it after the three studies. The reliability problem we
+report is what you meet as soon as you try to measure any difference between agents.
 
 ## A single run is a draw, not a result
 
 A single run does not give you an agent's average quality. It gives you one draw from its distribution. Among
 compliant runs, the six pairing averages span 0.0095 AUC while the median pairing varies by 0.0107 across its own
 runs. Two runs of the same pairing differ by 0.0147 AUC on average over all runs, and by 0.0285 at the ninth
-decile. One run delivered a model worse than the code it started from.
+decile. One run delivered a model worse than the code it started from, and it had broken a task rule. Every
+compliant run beat the starting code, though the weakest by only 0.0007.
 
-![One dot per run, one row per pairing, sorted by variation. Black dot: the average. Dotted line: the starting code. Orange diamonds and violet triangles mark runs that broke a task rule.](fig/fig10_variance_spread.png)
+![Compliant runs only: one mark per run, one row per pairing, in the order of the table below. Colour is the agent and shape the model, as in every figure here. Black dot and bar: the mean and its 95 percent interval. Red dots: the 10th and 90th percentiles, so the middle 80 percent of runs lie between them. Grey bar: the full range. Dotted line: the starting code. At right: the SD and number of compliant runs, and the share of the pairing's 52 runs that broke a task rule. Those 11 runs are left out of the plot; they scored 0.7116 to 0.8293 and are described below.](fig/fig10_variance_spread.png)
 
 | Agent and model | Compliant runs | Mean | Median | SD | 95% interval of the mean | Best | All-run mean |
 |:-----------------------------|----:|-------:|-------:|------:|:-----------------:|------:|------:|
@@ -184,6 +153,22 @@ of each. But that contrast changes both the agent and the model. The widest gap 
 model* is 0.0053, and detecting that would take about 66 runs of each. Smaller differences need more. These are
 also differences we chose after seeing the data, which flatters them; a comparison fixed in advance should be sized
 on the difference that would change your decision, not on the largest one observed.
+
+## Which agent looks best depends on the model
+
+The six pairings are three agents crossed with two models, so their means can be read both ways. Across agents, the
+three sit within 0.0039 AUC of each other on GLM-5.3 Flash, with OpenCode highest and pi lowest, and within 0.0053
+on DeepSeek 4.1 Flash, where the order reverses: pi highest, OpenCode lowest. Across models, moving from GLM-5.3
+Flash to DeepSeek 4.1 Flash raised pi by 0.0095, Hermes by 0.0058 and OpenCode by 0.0003. pi's gain exceeds
+OpenCode's by 0.0092, 3.1 standard errors of that difference.
+
+![The six Study 2 means read two ways, compliant runs. Left: agents on the axis, one line per model, labelled with how far apart the agents are on it. Right: models on the axis, one line per agent, labelled with its change. Colour is the agent and shape the model. Thick bar: the 95 percent interval of the mean. Pale band: where the middle 80 percent of single runs land. The two measure different things, and overlapping bars are not a test; the text gives the tests.](fig/fig14_interaction_study2.png)
+
+Two cautions. Neither end of the reversal is strong on its own: pi trails OpenCode by 2.0 standard errors on GLM-5.3
+Flash and leads it by 2.4 on DeepSeek 4.1 Flash. And we noticed the pattern after looking at the data, across two
+models from different families, so it is a pattern to test, not a finding. The pale bands make the section's
+larger point again: each of the six means lies inside every pairing's middle 80 percent of runs, so no single run
+could show any of this. A ranking of agents is a claim about agents on one model.
 
 ## The tails are method choices, and some of them break the rules
 
@@ -239,7 +224,7 @@ The deep study holds the agent and the model fixed: within a pairing the correla
 with a 95 percent interval of +0.47 to +0.63, and +0.56 over compliant runs alone. Every pairing points the same
 way, from +0.38 to +0.70.
 
-![Budget use against score inside each pairing, compliant runs only. Dotted line: the starting code.](fig/fig12_variance_compute.png)
+![Budget use against score inside each pairing, compliant runs only. Colour is the agent and shape the model. Dotted line: the starting code.](fig/fig12_variance_compute.png)
 
 What the meter shows is CPU seconds consumed by Python inside the container. It is not a measure of search effort.
 Every one of the 95 runs that spent under a quarter of the budget still ran all 40 of its counted experiments: they
@@ -279,13 +264,22 @@ measurement is not blunt.
 
 Table: Holdout AUC by agent for the two models, compliant runs only, with the same two screens applied to both.
 
-![Left: every compliant run of both models, three agents. Black marks are the averages; the dotted line is the starting code. Right: the gain from the larger model with its 95 percent interval, against a shaded band one run-to-run SD wide.](fig/fig13_pro_vs_flash.png)
+![Left: every compliant run of both models, three agents, coloured by agent; hollow circles are GLM-5.3 Flash and squares GLM-5.3. Black marks are the averages; the dotted line is the starting code. Right: the gain from the larger model with its 95 percent interval, against a shaded band one run-to-run SD wide.](fig/fig13_pro_vs_flash.png)
 
 **How much the upgrade buys depends on the agent it is paired with.** pi gained 0.0152 and OpenCode gained 0.0055,
 2.8 times less, and that difference clears zero at 3.3 standard errors. Hermes falls between them and separates
 from neither, so the comparison we can defend is pi against OpenCode, not a ranking of three. The same model
 upgrade, on the same task under the same budget, was worth nearly three times as much in one agent as in another.
 Buying a better model is not a decision about the model alone.
+
+![The Study 3 means read the same two ways as in Study 2, on the same scale. Left: agents on the axis, one line per model. Right: models on the axis, one line per agent, labelled with its gain. Colour is the agent and shape the model; thick bar: the 95 percent interval of the mean; pale band: the middle 80 percent of single runs.](fig/fig15_interaction_study3.png)
+
+**Study 2 showed the same ordering, but the two are less independent than they look.** There too, pi gained most
+from the stronger model and OpenCode least. Both comparisons start from the same GLM-5.3 Flash runs, on which pi
+trails OpenCode by 0.0039, and that gap counts toward pi's larger gain in both studies. What the two studies add
+separately is that pi leads OpenCode on each stronger model, by 0.0053 on DeepSeek 4.1 Flash and 0.0058 on
+GLM-5.3, at 2.4 and 2.6 standard errors. The pale bands carry this study's point as well: pi's gain is 7.1
+standard errors from zero in the means, yet pi's runs on the two models overlap across the middle of both bands.
 
 **What the study held fixed.** Neither arm set a reasoning level. Both GLM models document the same default,
 thinking enabled at the top effort setting, and a probe of the endpoint confirmed it: with no setting sent, a short
@@ -345,6 +339,49 @@ compare runs on this benchmark fairly and are not the precision you would see in
 them either: true-positive and false-positive rates carry across to a different prevalence under the assumption
 above, precision does not, so recompute it from the predictions at your own rate.
 
+# What it costs
+
+Cost is a separate outcome from quality, and it also depended on the pairing.
+
+## Cost moved with the pairing
+
+In Study 1, on DeepSeek V4 Flash, rate-card cost followed the prompt cache. The endpoint served 92 to 98 percent of
+pi's and Codex's input from cache, and 2 to 11 percent of Claude Code's. Two effects combined. Repricing Claude
+Code's own token volume at pi's hit rate gives \$0.20 a run, against its actual \$1.86. So the cache accounts for
+about nine times, and Claude Code's larger token volume for about two and a half.
+
+| Agent | Run 1 | Run 2 | Run 3 | Mean cost |
+|:-------------|-------------:|-------------:|-------------:|-----------:|
+| pi | 98%, \$0.08 | 98%, \$0.11 | 97%, \$0.05 | \$0.08 |
+| OpenClaw | no record | 98%, \$0.11 | 97%, \$0.07 | \$0.09 |
+| Codex | 96%, \$0.14 | 96%, \$0.19 | 92%, \$0.13 | \$0.15 |
+| OpenCode | 80%, \$0.24 | 64%, \$0.19 | 66%, \$0.49 | \$0.31 |
+| Hermes | 56%, \$1.09 | 89%, \$0.47 | 74%, \$0.24 | \$0.60 |
+| Claude Code | 11%, \$1.41 | 9%, \$2.95 | 2%, \$1.21 | \$1.86 |
+
+Table: Cached share of input and rate-card cost per run, DeepSeek V4 Flash, Ollama Cloud. No money changed hands: a flat-rate subscription paid for the runs, and every cost is a rate-card projection.
+
+The cache failure belonged to the pairing, not to either half. Claude Code cached 96 to 97 percent of its input on
+DeepSeek V4.1 Flash and 73 to 84 percent on Nemotron Super. Every agent on those two models cached 70 to 99 percent.
+The failure did repeat on one more model, DeepSeek V4 Pro, whose row the quota stopped after eight runs: Claude Code
+cached 4 and 11 percent while the other five agents cached 83 to 99 percent. The quota cut off both Claude Code
+runs, but it also cut off both of pi's, which still cached 91 and 98 percent. On V4 Flash, Claude Code's own request
+log shows the cache returning almost nothing from the first request, at 14,000 tokens, and never recovering, while
+on V4.1 Flash the same agent reads its prompt back at up to 122,000 tokens. So context size does not explain it. The
+cause is open. A test with byte-identical prompts through both endpoints would separate the client from the server.
+
+Rate-card cost also moved between identical runs. In Study 1, Hermes cost \$0.24, \$0.47 and \$1.09 for the same
+work on the same pairing, a swing of 4.6 times. Across the 25 pairings with three complete costs, the median swing
+was 2.2 times.
+
+## Another group found the same cost gap
+
+HarnessTax, the Berkeley study described in Study 2, reached the same cost finding on different tasks. Agent choice
+barely moved task success there, but it moved cost by as much as five times, and Claude Code cost about twice what
+pi cost on the same model. Two studies with different tasks, different models and a different metric reached the
+same conclusion, which makes it firmer than either study alone: the cost gap is real and shows up on public coding
+benchmarks.
+
 ## What the repeats cost
 
 The 312 runs of Study 2 read 1.86 billion input tokens and wrote 25.1 million, a ratio of about 74 to 1, because
@@ -372,9 +409,9 @@ Table: Hypothetical repricing of the observed token ledger, reasoning tokens inc
 
 **The pairing drives both the variation and the bill.** Hermes read 8.65 million input tokens per run and pi read
 3.93 million, for the same task, the same budget, and compliant averages within 0.006 of each other. Caching then
-matters more than the rate card, and Study 1 shows a pairing where the hit rate collapsed to 2 percent.
+matters more than the rate card, and on the Study 1 pairing above the hit rate collapsed to 2 percent.
 
-## What to do
+# What to do
 
 - **Evaluate the pairing, not the parts.** Testing an agent on one model, or a model through one agent, can badly
   mislead you about the combination you will deploy. Record whether attempts started and completed, not only how
@@ -433,12 +470,14 @@ excluded from its AUC tables: three Codex runs that never started because the ga
 one that concatenated the evaluation rows into its training data, and one whose delivered code computed count
 features on the data being scored. The three that never started still appear in the run-flow table, because
 failing to start is a property of the pairing. Study 2 asks what the distribution looks like, so every run is
-counted, compliant results are reported separately from all-run results, and the 11 noncompliant runs are marked
-rather than dropped.
+counted, compliant results are reported separately from all-run results, and the figures plot compliant runs only.
 
-**Reproduction.** A separate repository with the prompts and task rules, agent versions and configurations, model
-and endpoint identifiers, the run ledger, delivered artifacts, scoring and statistical code, audit decisions and
-pricing snapshots is in preparation, and will be linked here. The full run trees are large and stay out of it.
+**Reproduction.** The data repository,
+[github.com/earino/identical-runs-different-results](https://github.com/earino/identical-runs-different-results),
+holds the task rules and prompts, agent versions and configurations, model and endpoint identifiers, one row per run
+for all three studies, and the holdout. For Studies 2 and 3 it adds every version of the code each agent delivered,
+the audit records, and the scoring, statistics and figure code. Its VERIFY.md maps each headline claim to the
+command that reproduces it. The full run trees, 43 GB of logs and container state, stay out of it.
 
 **Built with Claude.** Claude, working in Claude Code, helped build the benchmark, operate the runs and draft this
 paper. Claude Code is also one of the six agents tested in Study 1. Every agent was scored the same way, on the
@@ -469,7 +508,7 @@ The run-to-run gap is the median, across a row's agents, of each agent's best ru
 no real difference would produce a ratio of about 0.9 by chance under a normal model. For two agents chosen in
 advance, that design separates a difference of about 0.02.
 
-![Holdout AUC, one panel per model row of Study 1. Per agent: the mean of three runs (large dot), the runs (small dots) and their range (bar).](fig/m_seed_ranges.png)
+![Holdout AUC, one panel per model row of Study 1. Per agent: the mean of three runs (large mark), the runs (small marks) and their range (bar). pi, Hermes and OpenCode, the agents Studies 2 and 3 follow, keep their colours; the other three are grey.](fig/m_seed_ranges.png)
 
 **Three-run draws, Study 2.** For each pairing we drew three compliant runs at random 20,000 times and compared
 pairing averages within a model; the weaker pairing won 28 to 43 percent of draws. Sample sizes use 16 sd² / gap²,
