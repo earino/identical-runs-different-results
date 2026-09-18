@@ -53,10 +53,11 @@ three studies.
 
 ## The task is machine learning; the lessons are about agents
 
-We used a machine-learning task because it makes an agent's work measurable. The agent improves a model, and a
-hidden holdout scores the result. Nobody grades it by hand, the score has room to rise, and each run is cheap to
-repeat. Most work that companies automate gives no such score. The variation between runs still exists there, but
-nobody can see it.
+We used a machine-learning task because it makes an agent's work measurable. The task: an XGBoost model predicts
+whether a US airline flight will leave at least 15 minutes late from eight fields such as carrier, route and
+departure time, and the agent edits its training code to make it predict better. A hidden holdout of later flights
+scores the result. Nobody grades it by hand, the score has room to rise, and each run is cheap to repeat. Most work
+that companies automate gives no such score. The variation between runs still exists there, but nobody can see it.
 
 This task exposes four risks that teams should test for in their own deployments: results vary between identical
 attempts; some attempts break the rules of the task; agents differ in how much effort they spend; and whether a
@@ -65,8 +66,6 @@ established how common or how important they are in agentic work generally.
 
 Most comparisons of AI agents ask which one is best. On a task where that question has a measurable answer, it was
 not the question that mattered.
-
-\newpage
 
 # Study 1: six agents, six model rows, three runs each
 
