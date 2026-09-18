@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bench.evaluate import provider_error as detect_provider_error  # noqa: E402
 from audit_frame_stats import audit_run  # noqa: E402  (contract rule 2: statistics on the frame being scored)
+from audit_eval_training import eval_trained, delivered  # noqa: E402  (evaluation labels in the delivered code)
 
 PULLS = sys.argv[1] if len(sys.argv) > 1 else "pulls/variance"
 OUT = sys.argv[2] if len(sys.argv) > 2 else "results/variance"
@@ -63,6 +64,10 @@ def row_for(run_dir, box, counted, source):
     #                                         a table built from train.
     if (harness, model, seed) in {("opencode", "deepseek-4.1-flash", 4), ("hermes", "deepseek-4.1-flash", 29)}:
         fs_hits = []
+    # Evaluation-set training is decided from the delivered train.py (audit_eval_training.py, hits read by a person), not
+    # from refit_suspect: that screen compares the best experiment's evaluation score with the delivered code's holdout
+    # score, so it flagged runs whose undelivered experiments trained on the evaluation rows and missed two that did.
+    et, et_hits = eval_trained(harness, model, seed, delivered(run_dir))
     return {
         "box": box, "harness": harness, "model": model, "seed": seed, "counted": counted, "source": source, "status": status,
         "holdout_auc": h, "holdout_ap": e.get("holdout_ap"), "baseline_auc": e.get("baseline_holdout_auc"),
@@ -91,6 +96,10 @@ def row_for(run_dir, box, counted, source):
         "tokens_in": u.get("tokens_in"), "tokens_out": u.get("tokens_out"),
         "started": m.get("started"), "ended": m.get("ended"), "cpuset": (m.get("container") or {}).get("cpuset"),
         "scored_on": e.get("scored_on"),
+        # the compliance record every figure and table uses: evaluation labels in the delivered code, statistics from the
+        # scored frame. refit_suspect above stays as the screen's raw flag, for the record.
+        "eval_trained": et, "eval_trained_evidence": (et_hits[0] if et and et_hits else "")[:100],
+        "compliant": status == "scored" and not et and not fs_hits,
     }
 
 
@@ -122,16 +131,17 @@ summary, boxes = [], []
 for (hn, mn) in sorted({(r["harness"], r["model"]) for r in rows}):
     R = [r for r in rows if r["harness"] == hn and r["model"] == mn and r["counted"]]
     scored = [r for r in R if r["status"] == "scored"]
-    # "clean" = played it straight: no eval-set training (refit), no hard violation, no statistics from the scored frame.
-    # Flagged runs are never dropped from `runs`/`all_*`; they are a real part of the distribution, and often its tails.
-    clean = [r for r in scored if not r["refit_suspect"] and not r["violations_hard"] and not r["frame_stats"]]
+    # "clean" = compliant: no evaluation labels in the delivered code's training, no statistics from the scored frame (the
+    # paper's two data rules). Protocol breaches that touch neither, such as committing a notes file, are listed in
+    # violations_hard and do not make a run noncompliant. Flagged runs are never dropped from `runs`/`all_*`.
+    clean = [r for r in scored if r["compliant"]]
     s = {"harness": hn, "model": mn, "runs": len(R),
          "scored": len(scored), "holdout_error": sum(r["status"] == "holdout_error" for r in R),
          "unscored": sum(r["status"] == "unscored" for r in R), "provider_error": sum(r["status"] == "provider_error" for r in R),
          "set_aside_originals": sum(1 for r in rows if r["harness"] == hn and r["model"] == mn and not r["counted"]),
          "zero_experiments": sum((r["n_experiments"] or 0) == 0 for r in scored),
          "timed_out": sum(bool(r["timed_out"]) for r in R), "stalled": sum(bool(r["stalled"]) for r in R),
-         "cpu_killed": sum(bool(r["cpu_killed"]) for r in R), "refit_suspect": sum(r["refit_suspect"] for r in scored),
+         "cpu_killed": sum(bool(r["cpu_killed"]) for r in R), "refit_suspect": sum(r["refit_suspect"] for r in scored), "eval_trained": sum(r["eval_trained"] for r in scored),
          "violations_hard": sum(bool(r["violations_hard"]) for r in scored), "violations_review": sum(bool(r["violations_review"]) for r in scored),
          "frame_stats": sum(bool(r["frame_stats"]) for r in scored), "fits_uncounted_runs": sum((r["fits_uncounted"] or 0) > 0 for r in scored)}
     for tag, sub in (("all", scored), ("clean", clean)):
@@ -166,7 +176,7 @@ print(f"{len(rows)} rows ({sum(r['counted'] for r in rows)} counted runs, {sum(n
 print(f"{'harness':9} {'model':19} {'runs':>4} {'scored':>6} {'h_err':>5} {'unsc':>4} {'mean':>7} {'sd':>7} {'p05':>7} {'median':>7} {'p95':>7} "
       f"{'range':>7} | {'clean n':>7} {'sd':>7} | flags")
 for s in summary:
-    flags = ", ".join(f"{k}={s[k]}" for k in ("provider_error", "refit_suspect", "frame_stats", "violations_hard", "violations_review", "timed_out", "stalled", "cpu_killed", "zero_experiments") if s[k])
+    flags = ", ".join(f"{k}={s[k]}" for k in ("provider_error", "eval_trained", "refit_suspect", "frame_stats", "violations_hard", "violations_review", "timed_out", "stalled", "cpu_killed", "zero_experiments") if s[k])
     print(f"{s['harness']:9} {s['model']:19} {s['runs']:4} {s['scored']:6} {s['holdout_error']:5} {s['unscored']:4} {f4(s.get('all_mean'))} {f4(s.get('all_sd'))} "
           f"{f4(s.get('all_p05'))} {f4(s.get('all_median'))} {f4(s.get('all_p95'))} {f4(s.get('all_range'))} | "
           f"{s.get('clean_n', 0):7} {f4(s.get('clean_sd'))} | {flags}")

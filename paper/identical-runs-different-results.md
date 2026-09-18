@@ -23,7 +23,7 @@ delivers.
 
 We report three studies on one task. The first is broad: six coding agents on six open-weight model endpoints, three
 runs each. The second is deep: three agents on two models, 52 runs each, 312 runs in all. The third is controlled:
-the same three agents on a larger model from the same family, 52 runs each, changing the model and nothing else. In
+the same three agents on a larger model from the same family, 52 runs each, with the model as the planned change. In
 every study the agents improve a model that predicts whether a flight departs late, and a holdout they never see
 scores it by AUC: the chance that the model ranks a late flight above an on-time one. A run is compliant when its
 code obeyed the task rules, training only on the training file and computing no feature from the batch it was
@@ -34,18 +34,19 @@ while the median pairing varies by 0.0107 across its own compliant runs. The spr
 the spread between pairings, so three-run comparisons ranked them unreliably. That is a statement about the
 reliability of small comparisons, not evidence that the agents are equivalent.
 
-**Rate of compliant runs.** 11 of 312 runs broke the task rules: six trained on data the rules put off limits, five
-computed features from the batch they were scoring. They are concentrated at the top of the score table. Removing
-them takes the best score in the study from 0.8293 to 0.7695, so the most impressive artifact was the least
-compliant one.
+**Rate of compliant runs.** 10 of 312 runs broke the task rules: five trained on the labelled evaluation file,
+five computed features from the batch they were scoring. They sit at the top of the score table: the seven highest
+scores in the study all broke a rule. Removing them takes the best score from 0.8293 to 0.7695, so the most
+impressive artifact was the least compliant one.
 
 **What a policy delivers.** One attempt returns a compliant artifact 97 percent of the time, with a median holdout
-AUC of 0.7413. Three attempts returned one every time in our resampling, with a median of 0.7493, and ten attempts
-reach 0.7548. Repeat runs buy a better artifact cheaply; they do not buy a reliable ranking of vendors.
+AUC of 0.7412. Three attempts, keeping the compliant one that scores best on the evaluation set, return one 99.98
+percent of the time, with a median of 0.7493, and ten attempts reach 0.7548. Repeat runs buy a better artifact
+cheaply; they do not buy a reliable ranking of vendors.
 
-**What a real upgrade is worth.** Moving to the larger model in the same family gained 0.0097 AUC, seven standard
-errors from zero but only 0.93 times the run-to-run SD. The benchmark detects a genuine change cleanly; the agents
-are simply closer together than that. How much the upgrade bought also depended on the agent: 0.0152 for pi against
+**What a real upgrade is worth.** Moving to the larger model in the same family gained 0.0091 AUC, seven standard
+errors from zero but only 0.87 times the run-to-run SD. The benchmark detects a genuine change; the agents are
+simply closer together than that. How much the upgrade bought also depended on the agent: 0.0152 for pi against
 0.0055 for OpenCode, 2.8 times less from the identical change.
 
 Running cost depended on the pairing too, by up to 23 times for the same job. We report it separately, after the
@@ -56,7 +57,9 @@ three studies.
 We used a machine-learning task because it makes an agent's work measurable. The task: an XGBoost model predicts
 whether a US airline flight will leave at least 15 minutes late from eight fields such as carrier, route and
 departure time, and the agent edits its training code to make it predict better. A hidden holdout of later flights
-scores the result. Nobody grades it by hand, the score has room to rise, and each run is cheap to repeat. Most work
+scores the result. The departure time is the time the flight actually left, as in the public benchmark the data
+come from, so this is a fixed optimisation problem for comparing agents, not a forecast one could make before
+departure. Nobody grades it by hand, the score has room to rise, and each run is cheap to repeat. Most work
 that companies automate gives no such score. The variation between runs still exists there, but nobody can see it.
 
 This task exposes four risks that teams should test for in their own deployments: results vary between identical
@@ -99,7 +102,7 @@ comparison, because there is no artifact to score, but they are a property of th
 | DeepSeek 4.1 Flash, LunaRoute | 18 | 15 | 15 | 15 |
 | DeepSeek V4 Pro, Ollama (partial) | 8 | 8 | 8 | not assessed |
 
-Table: Study 1 run flow. The V4 Pro row was stopped at 85 percent of a weekly quota, four of its runs cut off mid-run; it appears only as a supporting observation about caching, in the cost section. 116 delivered files in total, 103 of them scored in the quality analysis.
+Table: Study 1 run flow. The V4 Pro row was stopped at 85 percent of a weekly quota, four of its runs cut off mid-run; it appears only as a supporting observation about caching, in the cost section. 116 runs in all: 113 delivered an artifact, the three that never started left the starting code in place, and 103 were scored in the quality analysis.
 
 # Study 2: one pairing, fifty-two times
 
@@ -131,24 +134,24 @@ runs. Two runs of the same pairing differ by 0.0147 AUC on average over all runs
 decile. One run delivered a model worse than the code it started from, and it had broken a task rule. Every
 compliant run beat the starting code, though the weakest by only 0.0007.
 
-![Compliant runs only: one mark per run, one row per pairing, in the order of the table below. Colour is the agent and shape the model, as in every figure here. Black dot and bar: the mean and its 95 percent interval. Red dots: the 10th and 90th percentiles, so the middle 80 percent of runs lie between them. Grey bar: the full range. Dotted line: the starting code. At right: the SD and number of compliant runs, and the share of the pairing's 52 runs that broke a task rule. Those 11 runs are left out of the plot; they scored 0.7116 to 0.8293 and are described below.](fig/fig10_variance_spread.png)
+![Compliant runs only: one mark per run, one row per pairing, in the order of the table below. Colour is the agent and shape the model, as in every figure here. Black dot and bar: the mean and its 95 percent interval. Red dots: the 10th and 90th percentiles, so the middle 80 percent of runs lie between them. Grey bar: the full range. Dotted line: the starting code. At right: the SD and number of compliant runs, and the share of the pairing's 52 runs that broke a task rule. Those 10 runs are left out of the plot; they scored 0.7116 to 0.8293 and are described below.](fig/fig10_variance_spread.png)
 
 | Agent and model | Compliant runs | Mean | Median | SD | 95% interval of the mean | Best | All-run mean |
 |:-----------------------------|----:|-------:|-------:|------:|:-----------------:|------:|------:|
 | pi, GLM-5.3 Flash | 52 | 0.7361 | 0.7359 | 0.0104 | 0.7332 – 0.7389 | 0.7597 | 0.7361 |
-| Hermes, GLM-5.3 Flash | 46 | 0.7383 | 0.7408 | 0.0111 | 0.7351 – 0.7415 | 0.7590 | 0.7427 |
+| Hermes, GLM-5.3 Flash | 47 | 0.7379 | 0.7404 | 0.0112 | 0.7347 – 0.7411 | 0.7590 | 0.7427 |
 | OpenCode, GLM-5.3 Flash | 51 | 0.7400 | 0.7402 | 0.0097 | 0.7373 – 0.7427 | 0.7596 | 0.7417 |
 | OpenCode, DeepSeek 4.1 Flash | 52 | 0.7403 | 0.7418 | 0.0096 | 0.7377 – 0.7429 | 0.7578 | 0.7403 |
 | Hermes, DeepSeek 4.1 Flash | 49 | 0.7441 | 0.7437 | 0.0109 | 0.7411 – 0.7472 | 0.7663 | 0.7459 |
 | pi, DeepSeek 4.1 Flash | 51 | 0.7456 | 0.7462 | 0.0125 | 0.7421 – 0.7490 | 0.7695 | 0.7455 |
 
-Table: Compliant runs only, except the last column. The starting code scores 0.7148 AUC and 0.7041 average precision. Removing the 11 noncompliant runs lowers the study's best score from 0.8293 to 0.7695 and the median pairing SD from 0.0133 to 0.0107.
+Table: Compliant runs only, except the last column. The starting code scores 0.7148 AUC and 0.7041 average precision. Removing the 10 noncompliant runs lowers the study's best score from 0.8293 to 0.7695 and the median pairing SD from 0.0133 to 0.0107.
 
 ## Three runs cannot tell you which agent is better
 
-We drew three compliant runs at random from each pairing, 20,000 times, and compared pairing averages within a
-model. The weaker pairing won 28 to 43 percent of those draws, and the two closest comparisons are near a coin
-toss. A three-run report can state either order.
+Suppose each pairing contributes three compliant runs, drawn at random, and two pairings on the same model are
+compared by their averages. Counting every possible draw, the weaker pairing comes out ahead 28 to 44 percent of
+the time, and the two closest comparisons are near a coin toss. A three-run report can state either order.
 
 How many runs it would take depends on which difference you want to detect, and the answer is not portable. Under
 the conventional approximation, detecting the widest gap among these six pairings, 0.0095, would take about 20 runs
@@ -162,23 +165,25 @@ on the difference that would change your decision, not on the largest one observ
 The six pairings are three agents crossed with two models, so their means can be read both ways. Across agents, the
 three sit within 0.0039 AUC of each other on GLM-5.3 Flash, with OpenCode highest and pi lowest, and within 0.0053
 on DeepSeek 4.1 Flash, where the order reverses: pi highest, OpenCode lowest. Across models, moving from GLM-5.3
-Flash to DeepSeek 4.1 Flash raised pi by 0.0095, Hermes by 0.0058 and OpenCode by 0.0003. pi's gain exceeds
-OpenCode's by 0.0092, 3.1 standard errors of that difference.
+Flash to DeepSeek 4.1 Flash raised pi by 0.0095, Hermes by 0.0062 and OpenCode by 0.0003. pi's gain exceeds
+OpenCode's by 0.0092, 3.1 standard errors of that difference, which survives adjustment for the three agent pairs
+we could have compared.
 
 ![The six Study 2 means read two ways, compliant runs. Left: agents on the axis, one line per model, labelled with how far apart the agents are on it. Right: models on the axis, one line per agent, labelled with its change. Colour is the agent and shape the model. Thick bar: the 95 percent interval of the mean. Pale band: where the middle 80 percent of single runs land. The two measure different things, and overlapping bars are not a test; the text gives the tests.](fig/fig14_interaction_study2.png)
 
 Two cautions. Neither end of the reversal is strong on its own: pi trails OpenCode by 2.0 standard errors on GLM-5.3
 Flash and leads it by 2.4 on DeepSeek 4.1 Flash. And we noticed the pattern after looking at the data, across two
 models from different families, so it is a pattern to test, not a finding. The pale bands make the section's
-larger point again: each of the six means lies inside every pairing's middle 80 percent of runs, so no single run
-could show any of this. A ranking of agents is a claim about agents on one model.
+larger point again: each of the six means lies inside every pairing's middle 80 percent of runs, so a comparison
+of single runs is unreliable here. A ranking of agents is a claim about agents on one model.
 
 ## The tails are method choices, and some of them break the rules
 
 The agents do not merely jitter. They sometimes take a different approach, and a few of those approaches are not
-allowed by the task. Six of the 312 runs added the labelled evaluation file to their training data; five of those
-were Hermes on GLM-5.3 Flash, and the six scored 0.7215 to 0.8293. Five other runs computed features from the batch
-they were asked to score, which the task also forbids, and scored 0.7116 to 0.8036.
+allowed by the task. Five of the 312 runs added the labelled evaluation file to their training data; four of those
+were Hermes on GLM-5.3 Flash, and the five scored 0.7855 to 0.8293, all among the six highest scores in the study.
+Five other runs computed features from the batch they were asked to score, which the task also forbids, and scored
+0.7116 to 0.8036.
 
 Both are rule violations rather than contamination of the hidden test. The holdout stayed hidden in every case: no
 run read it, and every score comes from re-running the delivered code against it. A run that trained on the
@@ -200,23 +205,26 @@ catches batch-dependent features without reading any code.
 ## What several attempts buy
 
 The advice above is to attempt more than once, reject the noncompliant runs and keep the best of the rest. That
-policy can be measured. Resampling attempts from the 312 observed runs, 20,000 draws per number of attempts:
+policy can be measured on the observed runs. Draw k attempts from a pairing's 52 runs, reject the noncompliant
+ones, keep the one whose delivered code scores best on the evaluation set, and score it on the holdout, which no
+agent saw:
 
 | Attempts | At least one compliant | Median kept | 5th percentile | 95th percentile |
 |:--|--:|--:|--:|--:|
-| 1 | 96.6% | 0.7413 | 0.7220 | 0.7589 |
-| 3 | 100% | 0.7493 | 0.7357 | 0.7641 |
-| 5 | 100% | 0.7526 | 0.7411 | 0.7645 |
-| 10 | 100% | 0.7548 | 0.7463 | 0.7663 |
+| 1 | 96.8% | 0.7412 | 0.7220 | 0.7587 |
+| 3 | 99.98% | 0.7493 | 0.7355 | 0.7641 |
+| 5 | >99.99% | 0.7526 | 0.7409 | 0.7645 |
+| 10 | >99.99% | 0.7548 | 0.7460 | 0.7663 |
 
-Table: Best-of-k over compliant runs, pooled across the six pairings, with each winner chosen on holdout AUC. Chosen instead on the evaluation set, which is separate from the holdout, and then scored on the holdout, the medians and 95th percentiles are unchanged and the 5th percentiles are at most 0.0003 lower: choosing on the holdout itself flatters the kept score by 0.00005 AUC on average, because a score on one million rows has a standard error twenty times smaller than the spread between runs.
+Table: The best compliant artifact among k attempts, the six pairings weighted equally, computed exactly rather than by simulation. The percentiles describe the spread of the artifact the policy returns, not uncertainty about its median. Choosing on the holdout itself instead, an oracle no user has, would raise the mean kept score by at most 0.00005 AUC, because a score on one million rows has a standard error twenty times smaller than the spread between runs.
 
-Three attempts move the median artifact 0.0080 AUC above one attempt, and ten attempts 0.0135. Both gains hold out
-of sample: choosing the winner on the evaluation set and scoring it on the untouched holdout gives the same medians.
-The returns fall away quickly, and the floor rises faster than the ceiling: from one attempt to ten, the 5th
-percentile improves by 0.0243 and the 95th by 0.0074. Attempts mostly buy protection against a bad draw. At the
-token prices of this study that protection costs roughly \$2 for three attempts and \$8 for ten, before the audit
-work, which is the real cost.
+Three attempts move the median artifact 0.0081 AUC above one attempt, with a 95 percent interval of 0.0063 to
+0.0098 from resampling the observed runs, and ten attempts 0.0136. The returns fall away quickly, and the floor
+rises faster than the ceiling: from one attempt to ten, the 5th percentile improves by 0.0240 and the 95th by
+0.0076. Attempts mostly buy protection against a bad draw. At the token prices of this study that protection costs
+roughly \$2 for three attempts and \$8 for ten, before the audit work, which is the real cost. The analysis is
+retrospective: we specified the policy after the runs, and the holdout it is scored on was hidden from the agents
+but not from us.
 
 That is the sense in which choosing one good artifact is cheaper than ranking two vendors: three to ten attempts
 against roughly 66 runs of each pairing.
@@ -226,8 +234,8 @@ against roughly 66 runs of each pairing.
 In both studies, the runs that spent more of their measured compute scored higher. The broad study found a rank
 correlation of +0.59 across 103 runs, where it could have meant that some agents simply work harder than others.
 The deep study holds the agent and the model fixed: within a pairing the correlation is **+0.55** over 312 runs,
-with a 95 percent interval of +0.47 to +0.63, and +0.56 over compliant runs alone. Every pairing points the same
-way, from +0.38 to +0.70.
+with a 95 percent interval of +0.45 to +0.63, and the same over compliant runs alone. Every pairing points the
+same way, from +0.38 to +0.70.
 
 ![Budget use against score inside each pairing, compliant runs only. Colour is the agent and shape the model. Dotted line: the starting code.](fig/fig12_variance_compute.png)
 
@@ -238,7 +246,7 @@ agent does in context. A low reading is a fact about resource use and a reason t
 not evidence of carelessness.
 
 The association is weaker and less precisely estimated among high-budget runs: +0.43 among compliant runs above a
-quarter of the budget, +0.29 above half, and +0.11 above three quarters with an interval spanning zero. Narrowing
+quarter of the budget, +0.29 above half, and +0.12 above three quarters with an interval spanning zero. Narrowing
 the sample also narrows the predictor and shrinks the sample, so this is not by itself a demonstration of
 diminishing returns.
 
@@ -248,34 +256,41 @@ diminishing returns.
 
 A third study changed one thing and measured what it bought. GLM-5.3 is the larger model in the family whose Flash
 version Study 2 used. We ran the same three agents against it on the same 52 seeds, with the same data, prompt,
-budget, machine type and parallelism: 156 runs in which only the model differed.
+budget, machine type and parallelism: 156 runs. The model was the planned difference; the dates and machines
+differed too, as described below.
 
-The larger model scored **0.0097 AUC above Flash**, averaged over the three agents, with a 95 percent interval of
-0.0071 to 0.0124. That is 7.2 standard errors from zero, so the difference is real. It is also **0.93 times the
-run-to-run SD of a single pairing**. Run each model once, and the smaller one still comes out ahead 28 percent of
-the time: 15 percent with pi, 35 with OpenCode.
+The larger model scored **0.0091 AUC above Flash** over the three agents' compliant runs, with a 95 percent interval
+of 0.0066 to 0.0115. That is 7.1 standard errors from zero. It is also **0.87 times the run-to-run SD of a single
+pairing**. Run each model once, and the smaller one still comes out ahead 28 percent of the time: 15 percent with
+pi, 33 with Hermes, 35 with OpenCode.
 
 This answers a fair question about the first two studies. When a benchmark reports that agents do not separate, a
 reader should ask whether it can detect anything at all. It can. One genuine change moved the score by seven
 standard errors on the same design that could not rank three agents. The agents are close together; the
 measurement is not blunt.
 
+![Left: every compliant run of both models, three agents, coloured by agent; hollow circles are GLM-5.3 Flash and squares GLM-5.3. Black marks are the averages; the dotted line is the starting code. Right: the gain from the larger model with its 95 percent interval, against a shaded band one run-to-run SD wide.](fig/fig13_pro_vs_flash.png)
+
 | Agent | GLM-5.3 | Runs | GLM-5.3 Flash | Runs | Gain | 95% interval |
 |:---------|-------:|----:|-------:|----:|-------:|:---------------:|
 | pi | 0.7513 | 47 | 0.7361 | 52 | +0.0152 | +0.0110 – +0.0193 |
-| Hermes | 0.7469 | 48 | 0.7383 | 46 | +0.0086 | +0.0033 – +0.0142 |
+| Hermes | 0.7446 | 47 | 0.7379 | 47 | +0.0067 | +0.0021 – +0.0113 |
 | OpenCode | 0.7455 | 50 | 0.7400 | 51 | +0.0055 | +0.0016 – +0.0094 |
-| **All three** | **0.7480** | 145 | **0.7383** | 149 | **+0.0097** | +0.0071 – +0.0124 |
+| **All three** | **0.7471** | 144 | **0.7380** | 150 | **+0.0091** | +0.0066 – +0.0115 |
 
-Table: Holdout AUC by agent for the two models, compliant runs only, with the same two screens applied to both.
+Table: Holdout AUC by agent for the two models, compliant runs only, under the same rules for both. The last row pools the compliant runs; weighting the three agents equally gives the same means to four decimals.
 
-![Left: every compliant run of both models, three agents, coloured by agent; hollow circles are GLM-5.3 Flash and squares GLM-5.3. Black marks are the averages; the dotted line is the starting code. Right: the gain from the larger model with its 95 percent interval, against a shaded band one run-to-run SD wide.](fig/fig13_pro_vs_flash.png)
+Quality is half of what a deployment needs; the other half is how often an attempt yields a compliant artifact. The
+larger model yielded one in 144 of its 156 runs, 92.3 percent, against 150 of 156 for Flash, 96.2 percent. The
+counts are too small to say the larger model is less reliable, but they are the right thing to report beside the
+gain. Under the three-attempt policy of Study 2 both models return an artifact more than 99.9 percent of the time,
+and the larger model's median artifact is 0.0091 higher, 0.7564 against 0.7473.
 
-**How much the upgrade buys depends on the agent it is paired with.** pi gained 0.0152 and OpenCode gained 0.0055,
-2.8 times less, and that difference clears zero at 3.3 standard errors. Hermes falls between them and separates
-from neither, so the comparison we can defend is pi against OpenCode, not a ranking of three. The same model
-upgrade, on the same task under the same budget, was worth nearly three times as much in one agent as in another.
-Buying a better model is not a decision about the model alone.
+**How much the upgrade buys depends on the agent it is paired with.** pi gained 0.0152, Hermes 0.0067 and OpenCode
+0.0055. pi's gain exceeds OpenCode's by 3.3 standard errors and Hermes's by 2.7, and both differences survive
+adjustment for the three agent pairs we could have compared; Hermes and OpenCode cannot be told apart. The same
+model upgrade, on the same task under the same budget, was worth more than twice as much in one agent as in either
+of the others. Buying a better model is not a decision about the model alone.
 
 ![The Study 3 means read the same two ways as in Study 2, on the same scale. Left: agents on the axis, one line per model. Right: models on the axis, one line per agent, labelled with its gain. Colour is the agent and shape the model; thick bar: the 95 percent interval of the mean; pale band: the middle 80 percent of single runs.](fig/fig15_interaction_study3.png)
 
@@ -290,27 +305,33 @@ standard errors from zero in the means, yet pi's runs on the two models overlap 
 thinking enabled at the top effort setting, and a probe of the endpoint confirmed it: with no setting sent, a short
 prompt spends about as much thinking as the maximum and roughly ten times what the lowest setting spends. The arms
 differ in model scale, not in how hard the model was asked to think. Runs were spread across four identical
-machines, and the box effect was negligible (F = 1.27). Scores did not drift: the first and second halves of the
-arm average the same to four decimals. Eight of the 156 runs broke a task rule and are excluded above, under the
-screens Study 2 uses.
+machines, whose estimated effect was small (F = 0.97), and scores did not drift within the arm: its first and
+second halves average the same to four decimals. The two arms were not interleaved, though. The Flash runs are
+Study 2's, made on 15 and 16 September on four machines; the GLM-5.3 runs were made on 16 and 17 September on four
+other machines of the same type, through the same gateway. A change at the endpoint between those dates would be
+confounded with the model, and checks inside one arm cannot rule that out. Of the 156 runs, four delivered code
+that failed when scored on the holdout and eight broke a task rule, three by training on evaluation labels and five
+by computing batch features; all twelve are excluded above, by the rules Study 2 uses. Two compliant runs
+delivered the starting code unchanged, and they are kept at its score.
 
 **Putting the three effects on one scale** gives the resolving power of this benchmark, in units of the run-to-run
 SD and in the number of runs each effect would need:
 
 | Effect | Size | In SDs | Runs per arm |
 |:-----------------------------------------|-------:|-----:|----:|
-| starting code to what an agent delivers | +0.0281 | 2.7 | 2 |
-| GLM-5.3 Flash to GLM-5.3 | +0.0097 | 0.9 | 18 |
-| widest gap between two agents, on GLM-5.3 | +0.0058 | 0.6 | 52 |
+| starting code to what an agent delivers | +0.0277 | 2.7 | 2 |
+| GLM-5.3 Flash to GLM-5.3 | +0.0091 | 0.9 | 21 |
+| widest gap between two agents, on GLM-5.3 | +0.0067 | 0.6 | 39 |
 | widest gap between two agents, on GLM-5.3 Flash | +0.0039 | 0.4 | 113 |
 
 Table: Effect sizes against the median within-pairing SD of 0.0104, with the run count each would need under the
-approximation used above. The first row compares against a fixed number rather than a second noisy arm, so its
-count is a lower bound.
+approximation used above. These are the contrasts we observed, not general requirements. The first row compares
+against a fixed number rather than a second noisy arm, so its count is a lower bound.
 
 Three runs answer one question reliably: did the agent improve on the code it started from. The larger model's gain
-takes about 18. Telling two agents apart on a fixed model takes 52 to 113. Most published comparisons are made at
-three.
+takes about 21. Telling two agents apart on a fixed model takes 39 to 113 for the gaps observed here. Published agent
+comparisons typically repeat each task one to three times, which suits averages over many tasks but cannot resolve
+differences this small on any one of them.
 
 # What a difference is worth
 
@@ -373,8 +394,15 @@ The failure did repeat on one more model, DeepSeek V4 Pro, whose row the quota s
 cached 4 and 11 percent while the other five agents cached 83 to 99 percent. The quota cut off both Claude Code
 runs, but it also cut off both of pi's, which still cached 91 and 98 percent. On V4 Flash, Claude Code's own request
 log shows the cache returning almost nothing from the first request, at 14,000 tokens, and never recovering, while
-on V4.1 Flash the same agent reads its prompt back at up to 122,000 tokens. So context size does not explain it. The
-cause is open. A test with byte-identical prompts through both endpoints would separate the client from the server.
+on V4.1 Flash the same agent reads its prompt back at up to 122,000 tokens. So context size does not explain it.
+
+Lawrence (June 2026) saw Claude Code's cache share collapse through another gateway, OpenRouter, and traced it to the
+gateway's handling of Claude Code's Anthropic-style request format; he concluded that cache share belongs to the
+whole path from agent through gateway to provider. Claude Code reached Ollama Cloud through the same kind of
+Anthropic-style endpoint, so our case fits that conclusion. It does not fit a translation that fails everywhere:
+through that same endpoint Claude Code cached normally on V4.1 Flash and Nemotron Super. Whatever failed depends on
+the model behind the endpoint as well. A test with byte-identical prompts through both request formats would
+separate the client from the server.
 
 Rate-card cost also moved between identical runs. In Study 1, Hermes cost \$0.24, \$0.47 and \$1.09 for the same
 work on the same pairing, a swing of 4.6 times. Across the 25 pairings with three complete costs, the median swing
@@ -409,7 +437,7 @@ we recorded only the output. Check whether yours does the same before you trust 
 | Gemini 3.1 Pro | \$2.00 / \$12.00 | \$4,026 | \$1,009 |
 | Kimi K3 | \$2.65 / \$13.28 | \$5,265 | \$1,334 |
 | Claude Opus 5 | \$5.00 / \$25.00 | \$9,939 | \$2,397 |
-| GPT-5.5 Pro | \$30.00 / \$180.00 | \$60,385 | \$10,106 |
+| GPT-5.5 Pro | \$30.00 / \$180.00 | \$60,385 | N/A |
 
 Table: Hypothetical repricing of the observed token ledger, reasoning tokens included and billed at the output rate. This is what our tokens would have cost at other prices, not what those models would cost to do this task: another model would produce a different transcript length, completion rate and caching profile, in either direction. Cached-input rates for the last column are listed in appendix D. Token cost is also not the whole bill, which includes the machines and the audit work.
 
@@ -448,28 +476,38 @@ XGBoost feature engineering and hyperparameter tuning
 Each agent was given a model, a dataset, a written task and a compute budget, and asked to improve an XGBoost
 classifier by editing one file.
 
-| | Study 1 | Study 2 |
-|:----------|:-----------------------------|:-----------------------------|
-| Question | does the pairing matter? | how much does one run vary? |
-| Agents | Claude Code, Codex, pi, OpenCode, Hermes, OpenClaw | pi, OpenCode, Hermes |
-| Model rows | six, on Ollama Cloud and LunaRoute | GLM-5.3 Flash and DeepSeek 4.1 Flash, LunaRoute |
-| Runs | 3 per pairing: 108 scheduled on the six complete rows, plus an 8-run partial row; 116 delivered files; 103 scored | 52 per pairing; 312, all scored |
-| Dates | 13 to 15 September 2026 | 15 to 16 September 2026 |
-| Machines | 4 cores, 8 GB per run | four identical 16-core machines, 4 runs each |
+| | Study 1 | Study 2 | Study 3 |
+|:----------|:-------------------------|:-------------------------|:-------------------------|
+| Question | does the pairing matter? | how much does one run vary? | what does a larger model buy? |
+| Agents | Claude Code, Codex, pi, OpenCode, Hermes, OpenClaw | pi, OpenCode, Hermes | pi, OpenCode, Hermes |
+| Model rows | six, on Ollama Cloud and LunaRoute | GLM-5.3 Flash and DeepSeek 4.1 Flash, LunaRoute | GLM-5.3, LunaRoute |
+| Runs | 3 per pairing: 108 scheduled on the six complete rows, plus an 8-run partial row; 113 delivered an artifact; 103 scored | 52 per pairing; 312, all scored | 52 per pairing; 156, 152 scored |
+| Dates | 13 to 15 September 2026 | 15 to 16 September 2026 | 16 to 17 September 2026 |
+| Machines | 4 cores, 8 GB per run | four identical 16-core machines, 4 runs each | four more of the same machines, 4 runs each |
 
-Both studies share the task: airline departure delay, binary classification, scored by AUC on a hidden holdout of
+All three studies share the task: airline departure delay, binary classification, scored by AUC on a hidden holdout of
 1,000,000 rows from 2006; training 100,000 rows from 2005 and evaluation 100,000 rows from 2006. The split is fixed
 and identical for every run. Every run had the same prompt, task files, time limits, compute budget and scoring.
 Web search was off by instruction. Counted experiments were 40 per run, each a call to the provided run script; 244
 of Study 2's 312 runs used all 40, and the median run used 40.
 
-The holdout has one million rows, so the standard error of an AUC on it is about 0.0005. Differences of 0.01 to
-0.04 between runs are not measurement error. The holdout's two classes were built in equal numbers, which is not
-the rate at which flights are late, so AP figures rank runs here and do not predict production precision.
+The eight fields are month, day of month, day of week, departure time, carrier, origin, destination and distance.
+The departure time is the actual time the flight left, as in the public benchmark the data slices come from,
+although the task description given to the agents called it the scheduled time. It carries information a forecast
+made before departure would not have. Every agent had the same data and description, so comparisons between runs
+are unaffected, but the AUCs here measure improvement on a fixed benchmark, not how predictable delays are.
+
+The holdout has one million rows, half of each class, so the standard error of an AUC on it is about 0.0005, by
+Hanley and McNeil's formula with the rows treated as independent draws from 2006's flights. That is a statement
+about scoring precision, not about other years or airports. Differences of 0.01 to 0.04 between runs are not
+measurement error. The holdout's two classes were built in equal numbers, which is not the rate at which flights
+are late, so AP figures rank runs here and do not predict production precision.
 
 In Study 2 the seed number is only a label: nothing in the code reads it, and the starting code always uses the
-same random seed, so the differences come from the agent. Every machine ran all six pairings, so the machine and
-the pairing cannot be confused; the machine did not change the scores.
+same random seed, so the differences come from the deployed agent, model and endpoint together. Retraining adds
+little: re-running a compliant delivered file from scratch reproduced its recorded score to within about 0.0002 in
+the runs we checked. Every machine ran all six pairings, so the machine and the pairing cannot be confused; the
+estimated machine offsets were all within 0.002 AUC of the pairing means (F = 0.86).
 
 **Exclusions differ between the studies, on purpose.** Study 1 asks which pairing is better, so five runs are
 excluded from its AUC tables: three Codex runs that never started because the gateway rejected the request format,
@@ -516,8 +554,9 @@ advance, that design separates a difference of about 0.02.
 
 ![Holdout AUC, one panel per model row of Study 1. Per agent: the mean of three runs (large mark), the runs (small marks) and their range (bar). pi, Hermes and OpenCode, the agents Studies 2 and 3 follow, keep their colours; the other three are grey.](fig/m_seed_ranges.png)
 
-**Three-run draws, Study 2.** For each pairing we drew three compliant runs at random 20,000 times and compared
-pairing averages within a model; the weaker pairing won 28 to 43 percent of draws. Sample sizes use 16 sd² / gap²,
+**Three-run draws, Study 2.** For two pairings on the same model, every possible draw of three compliant runs from
+one, with replacement, was compared with every draw from the other; the weaker pairing won 28 to 44 percent of these
+comparisons. Sample sizes use 16 sd² / gap²,
 the usual approximation for 80 percent power at a 5 percent two-sided test, with the median compliant-run SD of
 0.0107: about 20 per pairing for the widest gap among all six pairings (0.0095, which changes agent and model
 together) and about 66 for the widest gap between two agents on one model (0.0053).
@@ -528,23 +567,31 @@ pairing-level differences cannot drive it):
 
 | Subset | Runs | Rank correlation | 95% interval | p |
 |:--|--:|--:|:--|--:|
-| All runs | 312 | +0.55 | +0.47 to +0.63 | below 0.001 |
-| Compliant runs | 301 | +0.56 | +0.47 to +0.63 | below 0.001 |
-| Compliant, above a quarter of budget | 208 | +0.43 | +0.31 to +0.54 | below 0.001 |
-| Compliant, above half | 110 | +0.29 | +0.12 to +0.45 | 0.001 |
-| Compliant, above three quarters | 70 | +0.11 | −0.15 to +0.37 | 0.402 |
+| All runs | 312 | +0.55 | +0.45 to +0.63 | below 0.001 |
+| Compliant runs | 302 | +0.55 | +0.46 to +0.63 | below 0.001 |
+| Compliant, above a quarter of budget | 209 | +0.43 | +0.29 to +0.54 | below 0.001 |
+| Compliant, above half | 110 | +0.29 | +0.10 to +0.45 | 0.001 |
+| Compliant, above three quarters | 70 | +0.12 | −0.15 to +0.41 | 0.342 |
 
-Intervals are bootstrap over runs with 2,000 resamples; p-values come from permutation, shuffling scores within
-each pairing. The subsets count compliant runs, which is why they sum against 301 rather than 312: 93 compliant
-runs used a quarter of the budget or less, and 95 of all 312 did.
+Intervals are bootstrap over runs with 2,000 resamples; p-values are two-sided and come from permutation, shuffling
+scores within each pairing. The subsets count compliant runs, which is why they sum against 302 rather than 312: 93
+compliant runs used a quarter of the budget or less, and 95 of all 312 did.
 
 **An alternative measure of effort.** Fits predict the score far more weakly than CPU seconds: +0.25 over Study 1's
 runs and +0.09 within Study 2's pairings. The number of fits says little; the compute those fits consume says more.
 
-**Best-of-k.** Each draw picks one of the six pairings at random and k attempts from its observed runs, with
-replacement, 20,000 draws per number of attempts. Noncompliant attempts are rejected first and the winner is chosen
-on holdout AUC. Choosing it instead on the evaluation-set AUC of the code the run delivered, so that the set that
-selects is not the set that scores, lowers the mean kept score by at most 0.00005.
+**Best-of-k.** The six pairings count equally. Within a pairing, k attempts are drawn from its 52 observed runs
+with replacement, noncompliant attempts are rejected, and the compliant attempt whose delivered code scores best on
+the evaluation set is kept. With replacement, the attempt ranked r-th of n by that score is kept with probability
+(r/n)^k^ − ((r−1)/n)^k^, so the distribution is computed exactly, and the chance of at least one compliant attempt
+is the pairings' average of 1 − f^k^, f being a pairing's noncompliant share. The interval for the gain resamples
+each pairing's runs 2,000 times and recomputes it; it is conditional on the fixed evaluation and holdout sets.
+Choosing on holdout AUC instead, an oracle no user has, raises the mean kept score by at most 0.00005.
+
+**Agent-by-model contrasts.** Each difference between two agents' gains is a difference in differences of four
+means, with a normal-approximation standard error; p-values are Holm-adjusted over the three agent pairs. A joint
+Wald test of no agent-by-model interaction gives χ² = 10.2 on 2 degrees of freedom (p = 0.006) in Study 2 and 12.3
+(p = 0.002) in Study 3. The two studies share the GLM-5.3 Flash runs, so their tests are not independent.
 
 **Causal reading.** The compute relationship is correlational and its direction is not established. An agent whose
 search is going well may continue, which would produce the same pattern.
@@ -561,8 +608,8 @@ Cloud's own weekly quota meter to within about two percent at two separate point
 
 **Cached-input prices** used in the last column of the repricing table, per million tokens: GLM-5.3 Flash \$0.02,
 DeepSeek 4.1 Flash \$0.003, GLM-5.3 \$0.26, Gemini 3.1 Pro \$0.20, Kimi K3 \$0.303, Claude Opus 5 \$0.50. GPT-5.5
-Pro lists no cached-input rate, so its column charges only the uncached tenth of input, which flatters it. The
-column assumes nine tenths of input served from cache and output priced in full.
+Pro lists no cached-input rate, and an unlisted price is not a zero price, so its entry is left empty. The column
+assumes nine tenths of input served from cache and output priced in full.
 
 **The 23 times figure.** It is the ratio of Claude Code's three-run mean to pi's three-run mean on DeepSeek V4
 Flash. Computed from unrounded costs it is 22.5, and 23 when rounded. Two of Claude Code's three costs come from
@@ -573,20 +620,30 @@ reproduces the cost of all 15 runs that reported one, to within ten cents. Two c
 repeated in the log whenever the conversation is saved again, so entries must be deduplicated by message id. And
 the cache-creation field reads zero on every request, so a zero there means nothing.
 
-**Audits.** Every run is scored by re-running its delivered code against the holdout, which no agent sees. Three
-checks run over the delivered files. A screen flags any run whose reported evaluation score exceeds its holdout
-score by more than 0.03. A leak audit traces whether evaluation data reaches a fit call. A third check, added for
-Study 2, traces statistics computed on the frame handed to the prediction function.
+**Audits.** Every run is scored by re-running its delivered code against the holdout, which no agent sees.
+Compliance is decided on the delivered code by two traces, and every hit was read by a person before it counted.
+The first follows the evaluation labels: does any reach a model fit, other than as the early-stopping set the rules
+permit? The second, added for Study 2, follows statistics computed on the frame handed to the prediction function.
 
-Across Study 1's 116 delivered files, one run had concatenated the evaluation rows into training and the screen had
-already caught it; the screen also caught the run whose count features were computed on the data being scored.
-Three runs used the evaluation set to stop training early, which the task rules permit. Applying Study 2's third
-check to those files in hindsight gives one real case, the run Study 1 had already excluded.
+Across Study 1's delivered files, the first trace finds one run, which had concatenated the evaluation rows into
+training, and the second finds one, whose count features were computed on the data being scored. Both were
+excluded at the time. Three runs used the evaluation set to stop training early, which the rules permit. Study 2's
+312 delivered files hold five runs that trained on evaluation labels and five that computed batch features; Study
+3's 156 hold three and five. No run did both.
 
-Study 2 ran all three checks over 312 delivered files. The leak audit found 32 code-level hits, of which 26 are the
-permitted early-stopping use, with a largest evaluation-versus-holdout gap of 0.0018. The third check is what the
-screen misses: of the five real cases, only one had a gap large enough to trigger the screen.
+**A correction.** Earlier versions of this paper decided evaluation-label training with a score screen, which
+flagged any run whose best evaluation score exceeded its holdout score by more than 0.03. The screen compares the
+run's best experiment with the code it delivered, which need not be the same program. It excluded two runs that had
+not trained on evaluation labels, one in each of Studies 2 and 3, and missed two Study 3 runs that had. Deciding on
+the delivered code instead, Study 2 has 10 rule-breaking runs rather than 11, Study 3's gain is 0.0091 rather than
+0.0097, and the run counts in its effects table moved accordingly. No conclusion reversed. One strengthened: pi's
+larger gain from GLM-5.3 now separates from Hermes's as well as from OpenCode's. The screen is still computed and
+published with the data, as a screen. In Study 1 the delivered-code trace agrees with the screen.
 
-**Screens are screens.** The frame-statistics check over-flags: it raised two runs that a person cleared, one that
-grouped rows only to index them and one that fitted a label-taking encoder which never sees a scored frame. Every
-hit in both studies was read before it was counted.
+**Screens are screens.** Both traces over-flag. The frame-statistics trace raised two runs that a person cleared,
+one that grouped rows only to index them and one that fitted a label-taking encoder which never sees a scored
+frame. The label trace raised five that a person cleared. Four were tracing errors: the flagged data were training
+rows, or the evaluation rows served only as the early-stopping set or the matrix being scored. The fifth, an OpenCode run on GLM-5.3, fitted a classifier to tell
+evaluation rows from training rows, on features alone, and used it to weight its training data. No evaluation label
+reached a fit, so it counts as compliant under the rule applied here, but it is a borderline case. It scored 38th
+of its pairing's 50 compliant runs, and excluding it moves Study 3's gain by 0.0001.

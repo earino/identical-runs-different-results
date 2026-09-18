@@ -38,7 +38,7 @@ def load(path, model=None):
             continue
         if model and r["model"] != model:
             continue
-        if r["refit_suspect"] == "True" or r["frame_stats"] == "True":
+        if r["compliant"] != "True":
             continue                      # the same two screens on both arms, or the comparison is not like for like
         out.append(r)
     return out
@@ -63,9 +63,9 @@ def main():
     agents = sorted(set(A) & set(B))
     if not agents:
         print("no shared agents between the arms"); return 1
-    print(f"arm A (pro)   {A_PATH}: {len(a_rows)} valid runs")
-    print(f"arm B (flash) {B_PATH} [{B_MODEL}]: {len(b_rows)} valid runs")
-    print(f"screens applied to both: refit_suspect and frame_stats excluded\n")
+    print(f"arm A (pro)   {A_PATH}: {len(a_rows)} compliant runs")
+    print(f"arm B (flash) {B_PATH} [{B_MODEL}]: {len(b_rows)} compliant runs")
+    print(f"compliance applied to both: eval_trained and frame_stats excluded (the compliant column)\n")
 
     print("PER-AGENT GAIN")
     print(f"{'agent':10}{'pro':>9}{'n':>4}{'flash':>9}{'n':>4}{'gain':>9}{'95% CI':>24}")

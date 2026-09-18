@@ -1,0 +1,72 @@
+audited 156 delivered files under results/variance_glm53/evals
+
+code-level hits: 23   automatic-screen flags: 7
+  var5/airline/hermes/glm-5.3/seed1                    hits=2 screen=False eval=0.7587 holdout=0.7949
+      .fit(Xtr, ytr, eval_set=[(Xev_eval, to_y(evald)
+  var5/airline/hermes/glm-5.3/seed10                   hits=4 screen=False eval=0.7527 holdout=0.7535
+      pd.concat([prepare(evald)
+  var5/airline/hermes/glm-5.3/seed2                    hits=1 screen=False eval=0.7519 holdout=0.7522
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var5/airline/hermes/glm-5.3/seed6                    hits=1 screen=False eval=0.7543 holdout=0.7537
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var5/airline/hermes/glm-5.3/seed9                    hits=1 screen=False eval=0.7287 holdout=0.7293
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var5/airline/opencode/glm-5.3/seed13                 hits=2 screen=False eval=0.7376 holdout=0.7381
+      .fit(Xd, yd)
+  var5/airline/opencode/glm-5.3/seed6                  hits=1 screen=False eval=0.75 holdout=0.7506
+      .fit(Xall[COLS], yall, eval_set=[(Xev[COLS], yev)
+  var6/airline/hermes/glm-5.3/seed24                   hits=1 screen=False eval=0.7486 holdout=0.7490
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var6/airline/hermes/glm-5.3/seed26                   hits=2 screen=True eval=1.0 holdout=0.8343
+      pd.concat([train, evald], ignore_index=True)
+  var6/airline/opencode/glm-5.3/seed15                 hits=1 screen=False eval=0.7511 holdout=0.7515
+      .fit(X_train, y_train, sample_weight=w_train, eval_set=[(X_eval_es, y_eval_es)
+  var6/airline/opencode/glm-5.3/seed18                 hits=1 screen=False eval=0.7634 holdout=0.7630
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var6/airline/pi/glm-5.3/seed23                       hits=1 screen=False eval=0.744 holdout=0.7449
+      .fit(Xtr_m, ytr, sample_weight=_sample_w,           eval_set=[(X_eval_prepared, y_eval)
+  var6/airline/pi/glm-5.3/seed24                       hits=1 screen=False eval=0.7638 holdout=0.7626
+      .fit(Xtr, ytr, eval_set=[(Xev_cache[key], yev)
+  var6/airline/pi/glm-5.3/seed26                       hits=1 screen=False eval=0.7634 holdout=0.7635
+      .fit(X_tr_full[cols], y_tr, sample_weight=_w, eval_set=[(X_ev_full[cols], y_ev)
+  var7/airline/hermes/glm-5.3/seed39                   hits=1 screen=False eval=0.8146 holdout=0.8010
+      .fit(Xfit, yfit, sample_weight=w_fit, eval_set=[(Xval, yval)
+  var7/airline/opencode/glm-5.3/seed29                 hits=1 screen=False eval=0.7446 holdout=0.7457
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+  var7/airline/opencode/glm-5.3/seed33                 hits=1 screen=False eval=0.7474 holdout=0.7475
+      .fit(X_train, y_train, eval_set=[(X_eval, y_eval)
+  var7/airline/opencode/glm-5.3/seed37                 hits=1 screen=False eval=0.7432 holdout=0.7443
+      .fit(X_tr[feats], y_tr, eval_set=[(X_ev[feats], y_ev)
+  var7/airline/pi/glm-5.3/seed30                       hits=1 screen=False eval=0.755 holdout=0.7556
+      .fit(Xtr, ytr_train, eval_set=[(Xev, yev)
+  var7/airline/pi/glm-5.3/seed34                       hits=1 screen=False eval=0.7482 holdout=0.7480
+      .fit(Xtr, ytr, eval_set=[(Xev, yev)
+  var8/airline/hermes/glm-5.3/seed47                   hits=1 screen=True eval=0.8461 holdout=0.8087
+      .fit(         X_train,         y_train,         eval_set=[(X_ev, y_ev)
+  var8/airline/hermes/glm-5.3/seed52                   hits=1 screen=False eval=0.744 holdout=0.7457
+      .fit(Xtr, ytr, eval_set=[(Xev_for_es, to_y(evald)
+  var8/airline/pi/glm-5.3/seed52                       hits=1 screen=False eval=0.7526 holdout=0.7529
+      .fit(X_tr, y_tr, eval_set=[(X_ev, y_ev)
+
+code-level hits the automatic screen did NOT flag: 21
+  var5/airline/hermes/glm-5.3/seed1
+  var5/airline/hermes/glm-5.3/seed10
+  var5/airline/hermes/glm-5.3/seed2
+  var5/airline/hermes/glm-5.3/seed6
+  var5/airline/hermes/glm-5.3/seed9
+  var5/airline/opencode/glm-5.3/seed13
+  var5/airline/opencode/glm-5.3/seed6
+  var6/airline/hermes/glm-5.3/seed24
+  var6/airline/opencode/glm-5.3/seed15
+  var6/airline/opencode/glm-5.3/seed18
+  var6/airline/pi/glm-5.3/seed23
+  var6/airline/pi/glm-5.3/seed24
+  var6/airline/pi/glm-5.3/seed26
+  var7/airline/hermes/glm-5.3/seed39
+  var7/airline/opencode/glm-5.3/seed29
+  var7/airline/opencode/glm-5.3/seed33
+  var7/airline/opencode/glm-5.3/seed37
+  var7/airline/pi/glm-5.3/seed30
+  var7/airline/pi/glm-5.3/seed34
+  var8/airline/hermes/glm-5.3/seed52
+  var8/airline/pi/glm-5.3/seed52

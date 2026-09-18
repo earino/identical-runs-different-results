@@ -48,7 +48,7 @@ def load(path):
     for r in csv.DictReader(open(path)):
         if r["counted"] != "True" or r["status"] != "scored" or not r["holdout_auc"]:
             continue
-        if r["refit_suspect"] == "True" or r["frame_stats"] == "True":
+        if r["compliant"] != "True":
             continue
         out[(r["harness"], r["model"])].append(float(r["holdout_auc"]))
         base = base or float(r["baseline_auc"])

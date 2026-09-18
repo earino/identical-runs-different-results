@@ -6,7 +6,7 @@ fig1 spread : compliant runs only, one row per (harness, model): every run as a 
               paper table's order (by mean), so neighbouring rows' overlap is readable. The 11 rule-breaking runs are
               left out: they stretched the axis to 0.83 and squeezed the compliant runs into under half of it.
 fig2 hist   : the same six distributions as small-multiple histograms (bin 0.005), shared x.
-In fig2, runs that trained on the labelled eval set (refit_suspect) are a second series, not hidden: they are part of
+In fig2, runs that trained on the labelled eval set (eval_trained) are a second series, not hidden: they are part of
 the distribution and they are what makes one pair's spread wide.
 
 Usage (from the main checkout): python <worktree>/experiments/run_variance/figures.py [CELLS_CSV] [OUT_DIR]
@@ -40,7 +40,7 @@ rows = [r for r in csv.DictReader(open(CELLS)) if r["counted"] == "True" and r["
 pairs = defaultdict(list)
 for r in rows:
     # 0 = played it straight, 1 = trained on the labelled eval set, 2 = statistics computed on the frame being scored
-    kind = 1 if r["refit_suspect"] == "True" else (2 if r.get("frame_stats") == "True" else 0)
+    kind = 1 if r["eval_trained"] == "True" else (2 if r.get("frame_stats") == "True" else 0)
     pairs[(r["harness"], r["model"])].append((float(r["holdout_auc"]), kind))
 baseline = next((float(r["baseline_auc"]) for r in rows if r["baseline_auc"]), None)
 order = sorted(pairs, key=lambda k: st.stdev([v for v, _ in pairs[k]]) if len(pairs[k]) > 1 else 0)
@@ -137,7 +137,7 @@ fig.suptitle(f"Run-to-run distribution per agent + model ({runs_txt}, airline, L
 fig.tight_layout(rect=(0, 0.05, 1, 0.95))   # room for the figure-level legend under the panels
 fig.savefig(OUT / "histograms.png", bbox_inches="tight"); fig.savefig(OUT / "histograms.pdf", bbox_inches="tight"); plt.close(fig)
 
-# ---- fig3: budget use against score, within each pairing, valid runs only
+# ---- fig3: budget use against score, within each pairing, compliant runs only
 # The relationship is the paper's bridge between the two studies, so show it on the stronger data: one panel per
 # pairing, so the reader sees it inside a fixed agent and model rather than pooled across them.
 from scipy.stats import spearmanr  # noqa: E402
@@ -145,7 +145,7 @@ from scipy.stats import spearmanr  # noqa: E402
 BUDGET = 18000.0
 raw = [r for r in csv.DictReader(open(CELLS))
        if r["counted"] == "True" and r["status"] == "scored" and r["holdout_auc"]
-       and r["refit_suspect"] != "True" and r["frame_stats"] != "True" and r["cpu_seconds_counted"]]
+       and r["compliant"] == "True" and r["cpu_seconds_counted"]]
 comp = defaultdict(list)
 for r in raw:
     comp[(r["harness"], r["model"])].append(
@@ -163,7 +163,7 @@ for ax in axes[1]:
     ax.set_xlabel("share of the CPU budget used", fontsize=9)
 for ax in axes[:, 0]:
     ax.set_ylabel("holdout AUC", fontsize=9)
-fig.suptitle("Budget use against score inside each pairing (valid runs; dotted line: the starting code)",
+fig.suptitle("Budget use against score inside each pairing (compliant runs; dotted line: the starting code)",
              fontsize=11, color=INK, x=0.02, ha="left")
 fig.tight_layout(rect=(0, 0, 1, 0.95))
 fig.savefig(OUT / "compute.png", bbox_inches="tight"); fig.savefig(OUT / "compute.pdf", bbox_inches="tight"); plt.close(fig)

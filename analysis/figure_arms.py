@@ -2,7 +2,7 @@
 """Study 3 figure: GLM-5.3 against GLM-5.3 Flash, with the gain shown against the noise it has to clear.
 
 Two panels, because the comparison has two halves and one of them is the point:
-  left   every valid run of both models, three agents, so the reader sees the distributions overlap heavily
+  left   every compliant run of both models, three agents, so the reader sees the distributions overlap heavily
   right  the per-agent gain with its 95% interval, against a marked line at one run-to-run SD
 
 The right panel is the argument. A reader who only sees means will read "+0.0097" as a clean win; seeing it land on
@@ -49,7 +49,7 @@ def load(path, model=None):
             continue
         if r["counted"] != "True" or r["status"] != "scored" or not r["holdout_auc"]:
             continue
-        if r["refit_suspect"] == "True" or r["frame_stats"] == "True":
+        if r["compliant"] != "True":
             continue
         out[r["harness"]].append(float(r["holdout_auc"]))
         base = base or (float(r["baseline_auc"]) if r.get("baseline_auc") else None)

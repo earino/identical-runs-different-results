@@ -22,21 +22,22 @@ Three results, in the order they matter:
 
 1. **Run-to-run variation exceeded the differences between agents.** The six pairing averages span 0.0095 AUC; the
    median pairing varies by 0.0107 across its own runs. Three-run comparisons ranked pairings unreliably.
-2. **The rule-breaking runs are at the top of the table.** 11 of 312 runs trained on data the rules put off limits
-   or built features from the batch they were scoring. Removing them takes the best score from 0.8293 to 0.7695.
-3. **The larger model's gain is about the size of run-to-run noise.** Moving to the larger model gained 0.0097 AUC,
-   7.2 standard errors from zero, yet run each model once and the smaller one still comes out ahead 28 percent of the
-   time. Study 3 is also the positive control: the same design that could not rank three agents detects a real change
-   cleanly, so the agents are close together and the measurement is not blunt.
+2. **The rule-breaking runs are at the top of the table.** 10 of 312 runs trained on the labelled evaluation file
+   or built features from the batch they were scoring, and they include the seven highest scores. Removing them takes
+   the best score from 0.8293 to 0.7695.
+3. **The larger model's gain is about the size of run-to-run noise.** Moving to the larger model gained 0.0091 AUC,
+   7.1 standard errors from zero, yet run each model once and the smaller one still comes out ahead 28 percent of the
+   time. Study 3 is also the positive control: the same design that could not rank three agents detects a planned
+   change, so the agents are close together and the measurement is not blunt.
 
 ## Layout
 
 ```
 paper/        the paper, as Markdown and PDF, with its figures
-data/         one row per run: score, flags, budget, tokens  <- every number in the paper comes from here
+data/         one row per run: score, compliance, budget, tokens  <- every number in the paper comes from here
   study1/     the broad grid
   study2/     52 runs x six pairings, plus the leak audit and the frame-statistics record
-  study3/     52 runs x three pairings on the larger model
+  study3/     52 runs x three pairings on the larger model, plus its leak audit and final evaluation scores
 code/         what the agents actually delivered, per run: train.py at every commit, their own
               notes, the per-experiment record and the CPU ledger      <- 468 runs, 2,489 program versions
 analysis/     the scripts that turn data/ into the paper's tables and figures
@@ -55,8 +56,8 @@ believed. For example:
 cat code/study3/var7/airline/pi/glm-5.3/seed35/FINAL.md
 ```
 
-is one agent's own account of its work. That run posted the highest score in its box and is one of the runs the
-rule screen flags.
+is one agent's own account of its work. That run posted the highest score in its box and is one of the runs that
+computed features from the batch it was scoring.
 
 ## Reproducing
 
