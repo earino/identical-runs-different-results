@@ -27,6 +27,38 @@ The spread figure is the paper's first figure. It plots compliant runs only; the
 pairing's noncompliant share, 0 to 12 percent. In every figure, colour is the agent and marker shape is the model;
 the assignments are in `analysis/identity.py`.
 
+## What several attempts buy, chosen on one set and scored on another
+
+> *"Three attempts move the median artifact 0.0080 AUC above one attempt, and ten attempts 0.0135. Both gains hold
+> out of sample: choosing the winner on the evaluation set and scoring it on the untouched holdout gives the same
+> medians."*
+
+```bash
+python analysis/best_of_k.py data/study2/cells.csv
+```
+
+Reproduces the best-of-k table exactly (fixed seed) and prints it twice on the same resampled draws: once with each
+winner chosen on holdout AUC, as the table reports, and once chosen on the evaluation set and scored on the holdout.
+
+```
+best-of-k over compliant runs, 6 pairings, 20,000 draws per k (seed 0)
+
+  k  >=1 compliant   chosen on holdout: median  p5      p95   chosen on eval: median  p5      p95    optimism   same run
+  1          96.6%                      0.7413  0.7220  0.7589                   0.7413  0.7220  0.7589   +0.00000   100%
+  3         100.0%                      0.7493  0.7357  0.7641                   0.7493  0.7356  0.7641   +0.00004   97%
+  5         100.0%                      0.7526  0.7411  0.7645                   0.7526  0.7409  0.7645   +0.00005   95%
+ 10         100.0%                      0.7548  0.7463  0.7663                   0.7548  0.7460  0.7663   +0.00005   93%
+
+median kept: three attempts +0.0080 over one, ten attempts +0.0135
+one attempt to ten: 5th percentile +0.0243, 95th percentile +0.0074
+optimism from choosing on the holdout (mean kept, holdout-chosen minus eval-chosen): at most +0.00005 AUC
+```
+
+The second version answers the obvious objection to the first. Choosing the best of k runs on the same holdout that
+scores it can flatter the winner, since the maximum of k noisy scores picks up favourable noise. Here the noise is a
+score's standard error on one million rows, about 0.0005, twenty times smaller than the spread between runs, so the
+measured optimism is at most 0.00005 AUC and the two versions agree on every median.
+
 ## What the larger model buys (Study 3)
 
 > *"The larger model scored 0.0097 AUC above Flash ... 7.2 standard errors from zero ... 0.93 times the run-to-run SD

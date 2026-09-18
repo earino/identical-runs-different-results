@@ -40,7 +40,7 @@ them takes the best score in the study from 0.8293 to 0.7695, so the most impres
 compliant one.
 
 **What a policy delivers.** One attempt returns a compliant artifact 97 percent of the time, with a median holdout
-AUC of 0.7413. Three attempts returned one every time in our resampling, with a median of 0.7495, and ten attempts
+AUC of 0.7413. Three attempts returned one every time in our resampling, with a median of 0.7493, and ten attempts
 reach 0.7548. Repeat runs buy a better artifact cheaply; they do not buy a reliable ranking of vendors.
 
 **What a real upgrade is worth.** Moving to the larger model in the same family gained 0.0097 AUC, seven standard
@@ -205,16 +205,18 @@ policy can be measured. Resampling attempts from the 312 observed runs, 20,000 d
 | Attempts | At least one compliant | Median kept | 5th percentile | 95th percentile |
 |:--|--:|--:|--:|--:|
 | 1 | 96.6% | 0.7413 | 0.7220 | 0.7589 |
-| 3 | 100% | 0.7495 | 0.7355 | 0.7641 |
-| 5 | 100% | 0.7526 | 0.7412 | 0.7645 |
+| 3 | 100% | 0.7493 | 0.7357 | 0.7641 |
+| 5 | 100% | 0.7526 | 0.7411 | 0.7645 |
 | 10 | 100% | 0.7548 | 0.7463 | 0.7663 |
 
-Table: Best-of-k over compliant runs, pooled across the six pairings. Selection here is on holdout AUC, the benchmark's own metric, so these are an upper bound on what score-based selection achieves; the procedure we recommend, selecting on a decision objective and confirming on untouched data, would give a lower number.
+Table: Best-of-k over compliant runs, pooled across the six pairings, with each winner chosen on holdout AUC. Chosen instead on the evaluation set, which is separate from the holdout, and then scored on the holdout, the medians and 95th percentiles are unchanged and the 5th percentiles are at most 0.0003 lower: choosing on the holdout itself flatters the kept score by 0.00005 AUC on average, because a score on one million rows has a standard error twenty times smaller than the spread between runs.
 
-Three attempts move the median artifact 0.0082 AUC above one attempt, and ten attempts 0.0135. The returns fall
-away quickly, and the floor rises faster than the ceiling: from one attempt to ten, the 5th percentile improves by
-0.0243 and the 95th by 0.0074. Attempts mostly buy protection against a bad draw. At the token prices of this study
-that protection costs roughly \$2 for three attempts and \$8 for ten, before the audit work, which is the real cost.
+Three attempts move the median artifact 0.0080 AUC above one attempt, and ten attempts 0.0135. Both gains hold out
+of sample: choosing the winner on the evaluation set and scoring it on the untouched holdout gives the same medians.
+The returns fall away quickly, and the floor rises faster than the ceiling: from one attempt to ten, the 5th
+percentile improves by 0.0243 and the 95th by 0.0074. Attempts mostly buy protection against a bad draw. At the
+token prices of this study that protection costs roughly \$2 for three attempts and \$8 for ten, before the audit
+work, which is the real cost.
 
 That is the sense in which choosing one good artifact is cheaper than ranking two vendors: three to ten attempts
 against roughly 66 runs of each pairing.
@@ -539,8 +541,10 @@ runs used a quarter of the budget or less, and 95 of all 312 did.
 **An alternative measure of effort.** Fits predict the score far more weakly than CPU seconds: +0.25 over Study 1's
 runs and +0.09 within Study 2's pairings. The number of fits says little; the compute those fits consume says more.
 
-**Best-of-k.** Attempts are drawn with replacement from a pairing's 52 observed runs, 20,000 draws per number of
-attempts, pooled across pairings. An attempt counts as acceptable if it is compliant; selection is on holdout AUC.
+**Best-of-k.** Each draw picks one of the six pairings at random and k attempts from its observed runs, with
+replacement, 20,000 draws per number of attempts. Noncompliant attempts are rejected first and the winner is chosen
+on holdout AUC. Choosing it on evaluation-set AUC instead, so that the set that selects is not the set that scores,
+lowers the mean kept score by at most 0.00005.
 
 **Causal reading.** The compute relationship is correlational and its direction is not established. An agent whose
 search is going well may continue, which would produce the same pattern.
