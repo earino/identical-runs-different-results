@@ -116,11 +116,12 @@ A Berkeley team published a related study while this one was running. HarnessTax
 Lite and Terminal-Bench 2.0. The designs differ where our main question lives. HarnessTax runs each pairing three
 times per task and averages the attempts, so it does not report how far repeated identical runs spread. That spread
 is what our second study measures, and it is wide enough to reorder agents. Their benchmarks also sit near their
-ceiling: the strongest model solves 97.8 percent of SWE-bench Lite attempts, which leaves a harness difference
-little room to show. They note the models may have seen those tasks in training. Our task is graded on a continuous
-score against a holdout the agent never sees, so differences have room to appear and rule-breaking stays detectable.
-HarnessTax's cost finding agrees with ours, and we return to it after the three studies. The reliability problem we
-report is what you meet as soon as you try to measure any difference between agents.
+ceiling: the best pairing solved 97.8 percent of its attempts on a 30-task sample of SWE-bench Lite, which leaves a
+harness difference little room to show. They note the models may have seen those tasks in training. Our task is
+graded on a continuous score against a holdout the agent never sees, so differences have room to appear and
+rule-breaking stays detectable. HarnessTax's cost finding agrees with ours, and we return to it after the three
+studies. The reliability problem we report is what you meet as soon as you try to measure any difference between
+agents.
 
 ## A single run is a draw, not a result
 
@@ -382,10 +383,10 @@ was 2.2 times.
 ## Another group found the same cost gap
 
 HarnessTax, the Berkeley study described in Study 2, reached the same cost finding on different tasks. Agent choice
-barely moved task success there, but it moved cost by as much as five times, and Claude Code cost about twice what
-pi cost on the same model. Two studies with different tasks, different models and a different metric reached the
-same conclusion, which makes it firmer than either study alone: the cost gap is real and shows up on public coding
-benchmarks.
+barely moved task success there, but it moved cost by as much as five times: across shared models, Claude Code cost
+about twice what pi cost on SWE-bench Lite and one and a half times as much on Terminal-Bench 2.0. Two studies with
+different tasks, different models and a different metric reached the same conclusion, which makes it firmer than
+either study alone: the cost gap is real and shows up on public coding benchmarks.
 
 ## What the repeats cost
 
@@ -542,8 +543,8 @@ runs and +0.09 within Study 2's pairings. The number of fits says little; the co
 
 **Best-of-k.** Each draw picks one of the six pairings at random and k attempts from its observed runs, with
 replacement, 20,000 draws per number of attempts. Noncompliant attempts are rejected first and the winner is chosen
-on holdout AUC. Choosing it on evaluation-set AUC instead, so that the set that selects is not the set that scores,
-lowers the mean kept score by at most 0.00005.
+on holdout AUC. Choosing it instead on the evaluation-set AUC of the code the run delivered, so that the set that
+selects is not the set that scores, lowers the mean kept score by at most 0.00005.
 
 **Causal reading.** The compute relationship is correlational and its direction is not established. An agent whose
 search is going well may continue, which would produce the same pattern.

@@ -34,20 +34,24 @@ the assignments are in `analysis/identity.py`.
 > medians."*
 
 ```bash
-python analysis/best_of_k.py data/study2/cells.csv
+python analysis/best_of_k.py data/study2/cells.csv data/study2/final_eval.csv
 ```
 
 Reproduces the best-of-k table exactly (fixed seed) and prints it twice on the same resampled draws: once with each
-winner chosen on holdout AUC, as the table reports, and once chosen on the evaluation set and scored on the holdout.
+winner chosen on holdout AUC, as the table reports, and once chosen on the evaluation-set score of the code each run
+delivered and scored on the holdout. That score is in `data/study2/final_eval.csv`, extracted from each run's record
+in `code/study2` by `python analysis/export_final_eval.py code/study2 data/study2/final_eval.csv`. It belongs to the
+run's final code; in 18 of the 312 runs that was not its best experiment, which is why the best-experiment score in
+`cells.csv` is not used here.
 
 ```
 best-of-k over compliant runs, 6 pairings, 20,000 draws per k (seed 0)
 
   k  >=1 compliant   chosen on holdout: median  p5      p95   chosen on eval: median  p5      p95    optimism   same run
   1          96.6%                      0.7413  0.7220  0.7589                   0.7413  0.7220  0.7589   +0.00000   100%
-  3         100.0%                      0.7493  0.7357  0.7641                   0.7493  0.7356  0.7641   +0.00004   97%
+  3         100.0%                      0.7493  0.7357  0.7641                   0.7493  0.7357  0.7641   +0.00003   97%
   5         100.0%                      0.7526  0.7411  0.7645                   0.7526  0.7409  0.7645   +0.00005   95%
- 10         100.0%                      0.7548  0.7463  0.7663                   0.7548  0.7460  0.7663   +0.00005   93%
+ 10         100.0%                      0.7548  0.7463  0.7663                   0.7548  0.7460  0.7663   +0.00005   94%
 
 median kept: three attempts +0.0080 over one, ten attempts +0.0135
 one attempt to ten: 5th percentile +0.0243, 95th percentile +0.0074
