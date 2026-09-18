@@ -24,10 +24,10 @@ Three results, in the order they matter:
    median pairing varies by 0.0107 across its own runs. Three-run comparisons ranked pairings unreliably.
 2. **The rule-breaking runs are at the top of the table.** 11 of 312 runs trained on data the rules put off limits
    or built features from the batch they were scoring. Removing them takes the best score from 0.8293 to 0.7695.
-3. **A whole model tier is worth about one run of noise.** Moving to the larger model gained 0.0097 AUC — 7.2
-   standard errors from zero, and 0.93 times the run-to-run SD. Study 3 is also the positive control: the same
-   design that could not rank three agents detects a real change cleanly, so the agents are close together and the
-   measurement is not blunt.
+3. **The larger model's gain is about the size of run-to-run noise.** Moving to the larger model gained 0.0097 AUC,
+   7.2 standard errors from zero, yet run each model once and the smaller one still comes out ahead 28 percent of the
+   time. Study 3 is also the positive control: the same design that could not rank three agents detects a real change
+   cleanly, so the agents are close together and the measurement is not blunt.
 
 ## Layout
 

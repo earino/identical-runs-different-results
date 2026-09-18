@@ -106,7 +106,9 @@ fig.legend(handles=[Line2D([], [], marker="o", ls="", color=NEUTRAL, markerfacec
                     Line2D([], [], color=MUTED, lw=0.9, ls=(0, (1, 2)),
                            label=f"the starting code ({base:.4f})" if base else "starting code")],
            loc="lower center", ncol=4, frameon=False, fontsize=8.5, bbox_to_anchor=(0.5, -0.03))
-fig.suptitle("A whole model tier buys about as much as running the same pairing twice",
+# one run on each model, compared: how often the smaller model comes out ahead (compare_arms.py prints the same number)
+beat = st.mean(sum(y > x for y in B[h] for x in A[h]) / (len(A[h]) * len(B[h])) for h in agents)
+fig.suptitle(f"The larger model wins on average, but one run of each still favours the smaller model {beat:.0%} of the time",
              fontsize=11.5, color=INK, x=0.015, ha="left")
 fig.tight_layout(rect=(0, 0.06, 1, 0.94))
 fig.savefig(OUT / "pro_vs_flash.png", bbox_inches="tight")

@@ -239,7 +239,7 @@ diminishing returns.
 
 # Study 3: the same agents, a larger model
 
-## A model tier is worth about one run of noise
+## The larger model's gain is about the size of run-to-run noise
 
 A third study changed one thing and measured what it bought. GLM-5.3 is the larger model in the family whose Flash
 version Study 2 used. We ran the same three agents against it on the same 52 seeds, with the same data, prompt,
@@ -247,8 +247,8 @@ budget, machine type and parallelism: 156 runs in which only the model differed.
 
 The larger model scored **0.0097 AUC above Flash**, averaged over the three agents, with a 95 percent interval of
 0.0071 to 0.0124. That is 7.2 standard errors from zero, so the difference is real. It is also **0.93 times the
-run-to-run SD of a single pairing**. A whole step up the model family buys about as much as running the same
-pairing a second time.
+run-to-run SD of a single pairing**. Run each model once, and the smaller one still comes out ahead 28 percent of
+the time: 15 percent with pi, 35 with OpenCode.
 
 This answers a fair question about the first two studies. When a benchmark reports that agents do not separate, a
 reader should ask whether it can detect anything at all. It can. One genuine change moved the score by seven
@@ -303,8 +303,9 @@ Table: Effect sizes against the median within-pairing SD of 0.0104, with the run
 approximation used above. The first row compares against a fixed number rather than a second noisy arm, so its
 count is a lower bound.
 
-Three runs answer one question reliably: did the agent improve on the code it started from. A model tier takes
-about 18. Telling two agents apart on a fixed model takes 52 to 113. Most published comparisons are made at three.
+Three runs answer one question reliably: did the agent improve on the code it started from. The larger model's gain
+takes about 18. Telling two agents apart on a fixed model takes 52 to 113. Most published comparisons are made at
+three.
 
 # What a difference is worth
 

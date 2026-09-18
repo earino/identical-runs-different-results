@@ -82,6 +82,10 @@ def main():
     print(f"\n1. MAIN EFFECT (model tier, pooled): {gain:+.4f}   95% CI {lo:+.4f} to {hi:+.4f}"
           f"   {gain/se:.1f} SE from zero")
     print(f"   within-pairing SD (flash, median across agents) {sd:.4f}  ->  the gain is {gain/sd:.2f} x the noise")
+    # the same fact in plain terms: one run on each model, compared; how often does the smaller model come out ahead?
+    beat = {h: sum(y > x for y in B[h] for x in A[h]) / (len(A[h]) * len(B[h])) for h in agents}
+    print(f"   one run of each model: the smaller model comes out ahead {st.mean(beat.values()):.0%} of the time, "
+          f"averaged over agents (" + ", ".join(f"{h} {beat[h]:.0%}" for h in agents) + ")")
 
     print("\n2. INTERACTION (does the upgrade buy more in one agent than another?)")
     for i in range(len(agents)):

@@ -29,21 +29,29 @@ the assignments are in `analysis/identity.py`.
 
 ## What the larger model buys (Study 3)
 
-> *"The larger model scored 0.0097 AUC above Flash ... 7.2 standard errors from zero ... 0.93 times the run-to-run SD"*
+> *"The larger model scored 0.0097 AUC above Flash ... 7.2 standard errors from zero ... 0.93 times the run-to-run SD
+> of a single pairing. Run each model once, and the smaller one still comes out ahead 28 percent of the time: 15
+> percent with pi, 35 with OpenCode."*
 
 ```bash
 python analysis/compare_arms.py data/study3/cells.csv data/study2/cells.csv
 ```
 
-This prints the per-agent gains with bootstrap intervals, the pooled main effect, every pairwise interaction with a
-"clears zero / does not clear zero" verdict, the detectability ladder, and the two confound checks (box effect
-F = 1.27, time drift +0.0000).
+This prints the per-agent gains with bootstrap intervals, the pooled main effect and, under it, the head-to-head line:
+
+```
+   one run of each model: the smaller model comes out ahead 28% of the time, averaged over agents (hermes 32%, opencode 35%, pi 15%)
+```
+
+That is the share of all compliant (Flash run, GLM-5.3 run) pairs in which the Flash run scores higher, per agent,
+averaged over the three. The script then prints every pairwise interaction with a "clears zero / does not clear zero"
+verdict, the detectability ladder, and the two confound checks (box effect F = 1.27, time drift +0.0000).
 
 The script applies the two rule-breaking screens **to both arms** before comparing. That matters: an earlier interim
 analysis of ours compared screened Flash runs against unscreened GLM-5.3 runs and overstated the gain by about a
 thousandth. The docstring records it.
 
-The figure "A whole model tier buys about as much as running the same pairing twice":
+The figure "The larger model wins on average, but one run of each still favours the smaller model 28% of the time":
 
 ```bash
 python analysis/figure_arms.py data/study3/cells.csv data/study2/cells.csv out/study3
