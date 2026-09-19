@@ -6,6 +6,11 @@
                    interval for the gain over one attempt is an outer bootstrap: runs resampled within each pairing,
                    2,000 times, the exact gain recomputed on each. Intervals are conditional on the fixed evaluation
                    and holdout sets.
+  SELECTION        how well the evaluation score ranks runs: the rank correlation between each compliant run's
+                   evaluation and holdout AUC inside its pairing, and the regret of choosing on it (the oracle's mean
+                   kept holdout AUC minus the policy's) at three and ten attempts.
+  YIELD            the share of attempts that return a compliant artifact, with 95% Wilson intervals, and the chance
+                   that three attempts return one, with an outer-bootstrap interval.
   STUDY 3 ARMS     each model's yield (compliant runs of all runs, unscorable ones counted as failures), compliant
                    quality, and the same policy at one and three attempts.
   CONFIGURATIONS   tokens per run, list-price cost per run, yield, compliant mean and the best-of-3 policy for each of
@@ -22,7 +27,8 @@ from collections import defaultdict
 
 import numpy as np
 
-from best_of_k import load, pooled, quantile
+from best_of_k import load, mean, pooled, quantile
+from scipy.stats import spearmanr
 
 PRICE = {"glm-5.3-flash": (0.10, 0.33), "deepseek-4.1-flash": (0.15, 0.60), "glm-5.3": (1.40, 4.40)}   # $ per M, in/out
 NAME = {"pi": "pi", "hermes": "Hermes", "opencode": "OpenCode", "glm-5.3-flash": "GLM-5.3 Flash",
@@ -48,6 +54,39 @@ for k, g in gains.items():
     lo, hi = np.percentile(g, [2.5, 97.5])
     print(f"  gain, 1 to {k} attempts: {round(point[k], 4) - round(point[1], 4):+.4f}   95% interval {lo:+.4f} to {hi:+.4f} "
           f"(outer bootstrap, 2,000)")
+
+print("\nSELECTION (compliant runs; ranks inside each pairing, pooled)")
+for name, pairs in (("Study 2", s2), ("Study 3", s3)):
+    xs, ys, per = [], [], []
+    for runs in pairs.values():
+        e = [x[1] for x in runs if x[2]]; h = [x[0] for x in runs if x[2]]
+        re, rh = spearmanr(e, h)[0], None
+        per.append(re)
+        rank = lambda v: list(np.argsort(np.argsort(v)) / (len(v) - 1))
+        xs += rank(e); ys += rank(h)
+    print(f"  {name}: rank correlation of evaluation and holdout AUC {np.corrcoef(xs, ys)[0, 1]:+.2f} "
+          f"(pairings {min(per):+.2f} to {max(per):+.2f})")
+for k in (3, 10):
+    print(f"  regret of choosing on the evaluation set, {k} attempts: {mean(pooled(s2, k, 'holdout')[1]) - mean(pooled(s2, k)[1]):.5f} AUC")
+
+print("\nYIELD (compliant and scored, of all attempts; 95% Wilson intervals)")
+
+
+def wilson(c, n, z=1.96):
+    p = c / n; d = 1 + z * z / n; m = (p + z * z / (2 * n)) / d; h = z * np.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return m - h, m + h
+
+
+for name, pairs in (("Study 2", s2), ("GLM-5.3 Flash", {k: v for k, v in s2.items() if k[1] == "glm-5.3-flash"}), ("GLM-5.3", s3)):
+    c = sum(x[2] for v in pairs.values() for x in v); n = sum(len(v) for v in pairs.values())
+    lo, hi = wilson(c, n)
+    boot = []
+    for _ in range(2000):
+        b = {key: [runs[i] for i in rng.integers(0, len(runs), len(runs))] for key, runs in pairs.items()}
+        boot.append(pooled(b, 3)[0])
+    blo = np.percentile(boot, 2.5)
+    print(f"  {name:14s} {c} of {n} ({c / n:.1%}, 95% {lo:.1%} to {hi:.1%});   three attempts return one: "
+          f"{pooled(pairs, 3)[0]:.2%}, 95% lower bound {blo:.2%}")
 
 print("\nSTUDY 3 ARMS (GLM-5.3 Flash runs come from Study 2)")
 arms = {"GLM-5.3 Flash": {k: v for k, v in s2.items() if k[1] == "glm-5.3-flash"}, "GLM-5.3": s3}

@@ -40,14 +40,18 @@ scores in the study all broke a rule. Removing them takes the best score from 0.
 impressive artifact was the least compliant one.
 
 **What a policy delivers.** One attempt returns a compliant artifact 97 percent of the time, with a median holdout
-AUC of 0.7412. Three attempts, keeping the compliant one that scores best on the evaluation set, return one 99.98
-percent of the time, with a median of 0.7493, and ten attempts reach 0.7548. Repeat runs buy a better artifact
+AUC of 0.7412. Three attempts, keeping the compliant one that scores best on the evaluation set, return one
+with an estimated probability of at least 99.88 percent, with a median of 0.7493, and ten attempts reach 0.7548. Repeat runs buy a better artifact
 cheaply; they do not buy a reliable ranking of vendors.
 
 **What a real upgrade is worth.** Runs on the larger model in the same family scored 0.0091 AUC higher, seven
 standard errors from zero but only 0.87 times the run-to-run SD. The benchmark detects a genuine change; the agents are
 simply closer together than that. How much the upgrade bought also depended on the agent: 0.0152 for pi against
 0.0055 for OpenCode, 2.8 times less from the identical change.
+
+**What carries into a later year.** Scored again on one million flights from 2007, which nothing in the study had
+used, the same artifacts kept a third of their gain over the starting code, and the larger model's advantage shrank
+to 0.0027 AUC. Every finding keeps its direction, but the sizes above belong largely to the year the agents tuned on.
 
 Running cost depended on the pairing too, by up to 23 times for the same job. We report it separately, after the
 three studies.
@@ -211,12 +215,12 @@ agent saw:
 
 | Attempts | At least one compliant | Median kept | 5th percentile | 95th percentile |
 |:--|--:|--:|--:|--:|
-| 1 | 96.8% | 0.7412 | 0.7220 | 0.7587 |
-| 3 | 99.98% | 0.7493 | 0.7355 | 0.7641 |
-| 5 | >99.99% | 0.7526 | 0.7409 | 0.7645 |
-| 10 | >99.99% | 0.7548 | 0.7460 | 0.7663 |
+| 1 | 96.8% (94.2 to 98.2) | 0.7412 | 0.7220 | 0.7587 |
+| 3 | at least 99.88% | 0.7493 | 0.7355 | 0.7641 |
+| 5 | at least 99.99% | 0.7526 | 0.7409 | 0.7645 |
+| 10 | at least 99.99% | 0.7548 | 0.7460 | 0.7663 |
 
-Table: The best compliant artifact among k attempts, the six pairings weighted equally, computed exactly rather than by simulation. The percentiles describe the spread of the artifact the policy returns, not uncertainty about its median. Choosing on the holdout itself instead, an oracle no user has, would raise the mean kept score by at most 0.00005 AUC, because a score on one million rows has a standard error twenty times smaller than the spread between runs.
+Table: The best compliant artifact among k attempts, the six pairings weighted equally, computed exactly over the observed runs rather than by simulation. The first column is the chance of at least one compliant attempt: for one attempt the observed rate with its 95 percent interval, for more the 95 percent lower bound. The percentiles describe the spread of the artifact the policy returns, not uncertainty about its median. Choosing on the holdout itself instead, an oracle no user has, would raise the mean kept score by at most 0.00005 AUC: a score on one million rows has a standard error twenty times smaller than the spread between runs, and a run's evaluation and holdout scores rank a pairing's runs almost identically (rank correlation +0.99).
 
 Three attempts move the median artifact 0.0081 AUC above one attempt, with a 95 percent interval of 0.0063 to
 0.0098 from resampling the observed runs, and ten attempts 0.0136. The returns fall away quickly, and the floor
@@ -283,8 +287,8 @@ Table: Holdout AUC by agent for the two models, compliant runs only, under the s
 Quality is half of what a deployment needs; the other half is how often an attempt yields a compliant artifact. The
 larger model yielded one in 144 of its 156 runs, 92.3 percent, against 150 of 156 for Flash, 96.2 percent. The
 counts are too small to say the larger model is less reliable, but they are the right thing to report beside the
-gain. Under the three-attempt policy of Study 2 both models return an artifact more than 99.9 percent of the time,
-and the larger model's median artifact is 0.0091 higher, 0.7564 against 0.7473.
+gain. Under the three-attempt policy of Study 2 both models return an artifact with an estimated probability of at
+least 99.6 percent, and the larger model's median artifact is 0.0091 higher, 0.7564 against 0.7473.
 
 **How much the upgrade buys depends on the agent it is paired with.** pi gained 0.0152, Hermes 0.0067 and OpenCode
 0.0055. pi's gain exceeds OpenCode's by 3.3 standard errors and Hermes's by 2.7, and both differences survive
@@ -332,6 +336,41 @@ Three runs answer one question reliably: did the agent improve on the code it st
 takes about 21. Telling two agents apart on a fixed model takes 39 to 113 for the gaps observed here. Published agent
 comparisons typically repeat each task one to three times, which suits averages over many tasks but cannot resolve
 differences this small on any one of them.
+
+# A later year
+
+## A third of the gain carries forward
+
+Every score above comes from a holdout drawn from 2006, the year of the evaluation set the agents tuned on. To see
+how much of what they delivered carries forward, we retrained all 464 scored programs of Studies 2 and 3 exactly as
+the scorer does and applied each to one million flights from 2007, prepared the same way and used by no earlier
+analysis. The same fits reproduced the recorded 2006 scores (median difference 0.0002 among compliant runs), and the
+starting code scores 0.7175 on 2007, slightly above its 0.7148 on 2006, so the later year is not harder in itself.
+
+| | 2006 holdout | 2007 flights |
+|:----------------------------------------------------|---------------:|---------------:|
+| Gain over the starting code, 446 compliant runs | +0.0280 | +0.0092 |
+| Compliant runs below the starting code | 0 | 33 |
+| Spread of the six Study 2 pairing means | 0.0095 | 0.0021 |
+| Median run-to-run SD, Study 2 | 0.0107 | 0.0060 |
+| Best of three attempts over one | +0.0081 | +0.0022 |
+| Larger model's gain | +0.0091 (7.1 SE) | +0.0027 (3.8 SE) |
+| pi's gain minus OpenCode's | +0.0097 (3.3 SE) | +0.0023 (1.3 SE) |
+| Rule-breakers among the ten highest, Studies 2 and 3 | 7 and 6 | 7 and 6 |
+
+Table: The same delivered programs on the 2006 holdout and on 2007 flights. The attempts policy is the one above, chosen on the evaluation set; its 2007 gain has a 95 percent interval of +0.0010 to +0.0032.
+
+A third of the agents' gain survives. The rest was specific to 2006, the year both the evaluation set and the holdout
+come from, and a run's two scores are only loosely related: inside a pairing their rank correlation is +0.38. Every
+finding keeps its direction but shrinks. Runs of one pairing still vary more than the pairings differ. The
+rule-breaking runs still hold the top, and those that trained on the evaluation labels stay well above the compliant
+runs, consistent with a real gain from more recent data. Three attempts still buy a better artifact, by about a
+quarter as much. The larger model's gain remains detectable but falls to 0.44 run-to-run SDs, about 82 runs per arm
+to detect, and pi's larger share of it no longer separates from the other agents'.
+
+So the sizes in this paper describe the year the agents tuned on. That is what a team measures when it validates on
+the period it selected on, and it is why confirming a chosen model on later, untouched data matters more than any
+single number here. We did not test why the gain shrinks.
 
 # What a difference is worth
 
@@ -447,6 +486,8 @@ matters more than the rate card, and on the Study 1 pairing above the hit rate c
 
 # What to do
 
+On tasks like this one, the evidence supports six practices.
+
 - **Evaluate the pairing, not the parts.** Testing an agent on one model, or a model through one agent, can badly
   mislead you about the combination you will deploy. Record whether attempts started and completed, not only how
   the finished ones scored.
@@ -455,9 +496,9 @@ matters more than the rate card, and on the Study 1 pairing above the hit rate c
 - **Reject first, then rank.** Check every attempt against your rules before you compare scores. Better, make the
   violation impossible: put evaluation labels behind a scoring interface, and test whether predictions change with
   batch composition.
-- **Rank on your objective, then confirm on untouched data.** Rank compliant candidates on a selection set using
-  the decision rule you will run, read the leader's code, then measure that one model once on data you have never
-  used. The set you select on always flatters the winner.
+- **Rank on your objective, then confirm on later, untouched data.** Rank compliant candidates on a selection set
+  using the decision rule you will run, read the leader's code, then measure that one model once on data you have
+  never used. The set you select on always flatters the winner: here a later year kept a third of the gain.
 - **Read the experiment trace of any run that used little compute.** It used cheaper methods, which may or may not
   be what you want. It is not necessarily a run that gave up.
 - **Instrument the parts nobody looks at.** Record the cached share of input and the compute used on every run. A
@@ -471,7 +512,8 @@ matters more than the rate card, and on the Study 1 pairing above the hit rate c
 
 This benchmark builds on our earlier study, published in April 2026, which showed that AI coding agents can automate
 XGBoost feature engineering and hyperparameter tuning
-([xgboost-autoresearch](https://szilard.github.io/xgboost-autoresearch/)).
+([xgboost-autoresearch](https://szilard.github.io/xgboost-autoresearch/)). The task, the data slices and the
+starting code come from that study; the repeated-run experiments, audits and analyses here are new.
 
 Each agent was given a model, a dataset, a written task and a compute budget, and asked to improve an XGBoost
 classifier by editing one file.
@@ -487,7 +529,8 @@ classifier by editing one file.
 
 All three studies share the task: airline departure delay, binary classification, scored by AUC on a hidden holdout of
 1,000,000 rows from 2006; training 100,000 rows from 2005 and evaluation 100,000 rows from 2006. The split is fixed
-and identical for every run. Every run had the same prompt, task files, time limits, compute budget and scoring.
+and identical for every run. A further 1,000,000 flights from 2007, prepared the same way, serve only the later-year
+check. Every run had the same prompt, task files, time limits, compute budget and scoring.
 Web search was off by instruction. Counted experiments were 40 per run, each a call to the provided run script; 244
 of Study 2's 312 runs used all 40, and the median run used 40.
 
@@ -499,8 +542,9 @@ are unaffected, but the AUCs here measure improvement on a fixed benchmark, not 
 
 The holdout has one million rows, half of each class, so the standard error of an AUC on it is about 0.0005, by
 Hanley and McNeil's formula with the rows treated as independent draws from 2006's flights. That is a statement
-about scoring precision, not about other years or airports. Differences of 0.01 to 0.04 between runs are not
-measurement error. The holdout's two classes were built in equal numbers, which is not the rate at which flights
+about scoring precision, not about other years or airports. Flights share carriers, airports and days, so the
+figure is a lower bound, while runs compared on the same holdout are paired, which makes their differences more
+precise. Differences of 0.01 to 0.04 between runs are not measurement error. The holdout's two classes were built in equal numbers, which is not the rate at which flights
 are late, so AP figures rank runs here and do not predict production precision.
 
 In Study 2 the seed number is only a label: nothing in the code reads it, and the starting code always uses the
@@ -521,10 +565,14 @@ counted, compliant results are reported separately from all-run results, and the
 holds the task rules and prompts, agent versions and configurations, model and endpoint identifiers, one row per run
 for all three studies, and the holdout. For Studies 2 and 3 it adds every version of the code each agent delivered,
 the audit records, and the scoring, statistics and figure code. Its VERIFY.md maps each headline claim to the
-command that reproduces it. The full run trees, 43 GB of logs and container state, stay out of it.
+command that reproduces it. The full run trees, 43 GB of logs and container state, stay out of it. The flight
+data are public; the repository holds our code, the task data and the agents' delivered outputs, and redistributes
+no agent software or model weights.
 
 **Built with Claude.** Claude, working in Claude Code, helped build the benchmark, operate the runs and draft this
-paper. Claude Code is also one of the six agents tested in Study 1. Every agent was scored the same way, on the
+paper. It also read the code the compliance traces flagged and drafted each verdict, which is published with its
+reason. The authors chose the studies and the analyses and are responsible for the verdicts and the text. Claude
+Code is also one of the six agents tested in Study 1. Every agent was scored the same way, on the
 same hidden holdout.
 
 # Appendix B: the compute budget
@@ -583,10 +631,12 @@ runs and +0.09 within Study 2's pairings. The number of fits says little; the co
 **Best-of-k.** The six pairings count equally. Within a pairing, k attempts are drawn from its 52 observed runs
 with replacement, noncompliant attempts are rejected, and the compliant attempt whose delivered code scores best on
 the evaluation set is kept. With replacement, the attempt ranked r-th of n by that score is kept with probability
-(r/n)^k^ − ((r−1)/n)^k^, so the distribution is computed exactly, and the chance of at least one compliant attempt
+(r/n)^k^ − ((r−1)/n)^k^, so the distribution over the observed runs is computed exactly, and the chance of at least one compliant attempt
 is the pairings' average of 1 − f^k^, f being a pairing's noncompliant share. The interval for the gain resamples
-each pairing's runs 2,000 times and recomputes it; it is conditional on the fixed evaluation and holdout sets.
-Choosing on holdout AUC instead, an oracle no user has, raises the mean kept score by at most 0.00005.
+each pairing's runs 2,000 times and recomputes it; it is conditional on the fixed evaluation and holdout sets. The
+same resampling gives the lower bounds on the chance of a compliant artifact, and yields carry 95 percent Wilson
+intervals: 96.8 percent (94.2 to 98.2) in Study 2, 92.3 percent (87.0 to 95.5) for GLM-5.3 and 96.2 percent (91.9
+to 98.2) for GLM-5.3 Flash. Choosing on holdout AUC instead, an oracle no user has, raises the mean kept score by at most 0.00005.
 
 **Agent-by-model contrasts.** Each difference between two agents' gains is a difference in differences of four
 means, with a normal-approximation standard error; p-values are Holm-adjusted over the three agent pairs. A joint
@@ -621,7 +671,7 @@ repeated in the log whenever the conversation is saved again, so entries must be
 the cache-creation field reads zero on every request, so a zero there means nothing.
 
 **Audits.** Every run is scored by re-running its delivered code against the holdout, which no agent sees.
-Compliance is decided on the delivered code by two traces, and every hit was read by a person before it counted.
+Compliance is decided on the delivered code by two traces, and every hit was read before it counted.
 The first follows the evaluation labels: does any reach a model fit, other than as the early-stopping set the rules
 permit? The second, added for Study 2, follows statistics computed on the frame handed to the prediction function.
 
@@ -640,9 +690,9 @@ the delivered code instead, Study 2 has 10 rule-breaking runs rather than 11, St
 larger gain from GLM-5.3 now separates from Hermes's as well as from OpenCode's. The screen is still computed and
 published with the data, as a screen. In Study 1 the delivered-code trace agrees with the screen.
 
-**Screens are screens.** Both traces over-flag. The frame-statistics trace raised two runs that a person cleared,
+**Screens are screens.** Both traces over-flag. The frame-statistics trace raised two runs that were cleared on reading,
 one that grouped rows only to index them and one that fitted a label-taking encoder which never sees a scored
-frame. The label trace raised five that a person cleared. Four were tracing errors: the flagged data were training
+frame. The label trace raised five that were cleared. Four were tracing errors: the flagged data were training
 rows, or the evaluation rows served only as the early-stopping set or the matrix being scored. The fifth, an OpenCode run on GLM-5.3, fitted a classifier to tell
 evaluation rows from training rows, on features alone, and used it to weight its training data. No evaluation label
 reached a fit, so it counts as compliant under the rule applied here, but it is a borderline case. It scored 38th

@@ -71,7 +71,7 @@ python analysis/audit_exported_code.py
 It takes the **last `train.py` of every one of the 468 runs** and runs two traces over it: whether evaluation labels
 reach a model fit (other than as the early-stopping set the rules permit), and whether statistics are computed from
 the frame handed to the prediction function. Both are screens. It prints every raw hit with the offending source,
-and beside it the verdict a person reached on reading the code, with the reason. The summary:
+and beside it the verdict reached on reading the code, with the reason. The summary:
 
 ```
 === code/study2, evaluation labels: 7 raw hits, 5 confirmed
@@ -166,6 +166,16 @@ python analysis/policy_tables.py data/study2/cells.csv data/study2/final_eval.cs
   gain, 1 to 10 attempts: +0.0136   95% interval +0.0113 to +0.0154 (outer bootstrap, 2,000)
 ```
 
+Why choosing on the evaluation set costs almost nothing, and the yields with their uncertainty, from the same run:
+
+```
+  Study 2: rank correlation of evaluation and holdout AUC +0.99 (pairings +0.99 to +1.00)
+  Study 3: rank correlation of evaluation and holdout AUC +0.98 (pairings +0.94 to +1.00)
+  regret of choosing on the evaluation set, 3 attempts: 0.00004 AUC
+  ...
+  Study 2        302 of 312 (96.8%, 95% 94.2% to 98.2%);   three attempts return one: 99.98%, 95% lower bound 99.88%
+```
+
 The same script prints Study 3's yield and policy table and the nine observed configurations (tokens, list-price
 cost, yield, quality, best of three). `analysis/best_of_k_by_pairing.py` gives the policy for each pairing.
 
@@ -240,6 +250,39 @@ Read the two studies' agreement with the caution the paper gives it. Both compar
 Flash runs, on which pi trails OpenCode by 0.0039, so that gap counts toward pi's larger gain in both. The lines
 that do not share it are the "pi minus OpenCode" lines on the stronger models.
 
+## A later year: the same programs on 2007 flights
+
+> *"Scored again on one million flights from 2007, which nothing in the study had used, the same artifacts kept a
+> third of their gain over the starting code, and the larger model's advantage shrank to 0.0027 AUC."*
+
+Every score in the paper comes from a 2006 holdout, the same year as the evaluation set the agents tuned on.
+`task/airline/flights_2007.csv` is a later test set: 1,000,000 flights from 2007, sliced and balanced by the same
+preparation, used by no analysis before this one. The scores of every one of the 464 scored programs of Studies 2
+and 3, retrained as the scorer does and applied to both years in one process, are in `data/2007/scores.csv`:
+
+```bash
+python analysis/analyze_2007.py
+```
+
+runs in seconds and prints the comparison the paper reports, starting with
+
+```
+RESCORE (retrained, applied to the 2006 holdout, against the recorded holdout AUC)
+  compliant     n 446  median |difference| 0.00018  95th percentile 0.00128  max 0.00456
+...
+  gain over the starting code: 2006 +0.0280, 2007 +0.0092  -> 33% survives
+```
+
+and, further down, the spread between pairings (0.0021 against a run-to-run SD of 0.0060 on 2007), the attempts
+policy (+0.0022, 95% +0.0010 to +0.0032), the larger model's gain (+0.0027, 3.8 SE) and where the rule-breaking runs
+land. To produce `scores.csv` yourself (about six hours on 16 cores; it resumes if stopped):
+
+```bash
+python analysis/score_2007.py
+```
+
+The starting code scores 0.7148 on the 2006 holdout and 0.7175 on 2007, so the later year is not harder in itself.
+
 ## The numbers no other script prints
 
 > *"the weaker pairing comes out ahead 28 to 44 percent of the time"*, *"about 20 runs of each ... about 66"*,
@@ -293,7 +336,8 @@ Budget a few minutes per run. Some of these programs fit 16-member ensembles.
 ## Rebuilding the table of per-run results from scratch
 
 `cells.csv` is derived, not hand-made. It is produced by `analysis/analyze.py` from the raw run trees, applying the two
-traces and the recorded verdicts. Those trees are 43 GB and are not in this repository, so this command is documented
+traces and the recorded verdicts to the committed `train.py` (the scorer runs `git archive HEAD`, so the committed
+version is the scored one, and it is the last version under `code/`). Those trees are 43 GB and are not in this repository, so this command is documented
 rather than runnable here:
 
 ```bash
@@ -352,6 +396,8 @@ The holdout **is** included, at `task/airline/holdout.csv`: 1,000,000 rows,
 sha256 `f187e71afd2eadd5121a47577d4ea95d78299009797f4943d20d42a711ab9abc`. We chose full reproducibility over
 keeping the task reusable, and that choice has a cost worth stating: once this repository is public, the airline
 task is contaminated for future agent evaluation, because a model trained afterwards may have read the answers.
-Anyone extending this work needs new tasks, not this one.
+Anyone extending this work needs new tasks, not this one. The 2007 set is included for the same reason and at the
+same cost: `task/airline/flights_2007.csv`, 1,000,000 rows, sha256
+`8d3b98cb3bea6142be6ceb3c79b038bf03056d7171f12bbc4ce24ede29cb7389`.
 
 **Credentials and machine images.** Nothing here contains a key.

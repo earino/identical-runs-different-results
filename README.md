@@ -18,7 +18,7 @@ pairing was then run many times to see how much the result varies when nothing c
 | **Study 2** | three agents x two models, 52 runs each | 312 |
 | **Study 3** | the same three agents on a larger model from the same family, 52 runs each | 156 |
 
-Three results, in the order they matter:
+Four results, in the order they matter:
 
 1. **Run-to-run variation exceeded the differences between agents.** The six pairing averages span 0.0095 AUC; the
    median pairing varies by 0.0107 across its own runs. Three-run comparisons ranked pairings unreliably.
@@ -29,6 +29,8 @@ Three results, in the order they matter:
    7.1 standard errors from zero, yet run each model once and the smaller one still comes out ahead 28 percent of the
    time. Study 3 is also the positive control: the same design that could not rank three agents detects a planned
    change, so the agents are close together and the measurement is not blunt.
+4. **Much of the gain belongs to the year the agents tuned on.** Scored on one million flights from 2007, the same
+   programs kept a third of their gain over the starting code; every finding kept its direction but shrank.
 
 ## Layout
 
@@ -38,12 +40,13 @@ data/         one row per run: score, compliance, budget, tokens  <- every numbe
   study1/     the broad grid
   study2/     52 runs x six pairings, plus the leak audit and the frame-statistics record
   study3/     52 runs x three pairings on the larger model, plus its leak audit and final evaluation scores
+  2007/       every scored program of Studies 2 and 3, rescored on 2006 and scored on 2007 flights
 code/         what the agents actually delivered, per run: train.py at every commit, their own
               notes, the per-experiment record and the CPU ledger      <- 468 runs, 2,489 program versions
 analysis/     the scripts that turn data/ into the paper's tables and figures
 harness/      how the runs were produced and scored: the runner, the agent wrappers, the task
               rules given to the agent, the frozen configs, and METHODS.md
-task/         the task definition, the train/eval split, and the 1M-row holdout
+task/         the task definition, the train/eval split, the 1M-row holdout, and 1M flights from 2007
 ```
 
 ## The part worth reading even if you check nothing

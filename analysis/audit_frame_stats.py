@@ -16,7 +16,7 @@ This is a screen, not a verdict: read every hit (same rule as scripts/phase2/aud
 Usage (from the main checkout):
   python <worktree>/experiments/run_variance/audit_frame_stats.py [PULLS] [OUT_CSV]
 """
-import ast, csv, glob, json, os, statistics as st, sys
+import ast, csv, glob, json, os, statistics as st, subprocess, sys
 from collections import Counter, deque
 
 PULLS = sys.argv[1] if len(sys.argv) > 1 else "pulls/variance"
@@ -87,7 +87,12 @@ def audit(src):
 
 def audit_run(run_dir):
     """(hits, note) for one run dir, or ([], 'no train.py'). Used by analyze.py to mark every run."""
-    tp = os.path.join(run_dir, "workdir", "train.py")
+    # the scored file is the committed HEAD (the scorer runs `git archive HEAD`), not the working copy
+    wd = os.path.join(run_dir, "workdir")
+    head = subprocess.run(["git", "-C", wd, "show", "HEAD:train.py"], capture_output=True, text=True)
+    if head.returncode == 0:
+        return audit(head.stdout)
+    tp = os.path.join(wd, "train.py")
     if not os.path.exists(tp):
         return [], "no train.py"
     return audit(open(tp, errors="replace").read())

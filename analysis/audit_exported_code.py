@@ -10,8 +10,8 @@ version (the one that was scored) and runs the two traces analyze.py used:
   scored-frame stats  does a value derived from predict_proba's argument, the frame being scored, reach
                       value_counts, nunique, rank, groupby or transform? (audit_frame_stats.py)
 
-Both traces are screens. Every hit was read by a person, and the verdict is printed beside the evidence, so you can
-judge each call rather than take it on trust.
+Both traces are screens. Every hit was read, and the verdict is printed beside the evidence with its reason, so you
+can judge each call rather than take it on trust.
 
 Usage:
     python analysis/audit_exported_code.py                 # both studies
@@ -30,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from audit_eval_training import REVIEWED, audit as audit_labels  # noqa: E402
 from audit_frame_stats import audit as audit_frame  # noqa: E402
 
-# The two scored-frame hits a person cleared (analyze.py excludes them the same way).
+# The two scored-frame hits cleared on reading (analyze.py excludes them the same way).
 FRAME_CLEARED = {
     ("opencode", "deepseek-4.1-flash", 4): "_oof_te(Xbase, y) is out-of-fold target encoding fitted on the training "
                                            "frame; it needs labels, so it never runs on a scored frame",

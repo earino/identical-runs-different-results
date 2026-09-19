@@ -64,7 +64,7 @@ def row_for(run_dir, box, counted, source):
     #                                         a table built from train.
     if (harness, model, seed) in {("opencode", "deepseek-4.1-flash", 4), ("hermes", "deepseek-4.1-flash", 29)}:
         fs_hits = []
-    # Evaluation-set training is decided from the delivered train.py (audit_eval_training.py, hits read by a person), not
+    # Evaluation-set training is decided from the delivered train.py (audit_eval_training.py, every hit read), not
     # from refit_suspect: that screen compares the best experiment's evaluation score with the delivered code's holdout
     # score, so it flagged runs whose undelivered experiments trained on the evaluation rows and missed two that did.
     et, et_hits = eval_trained(harness, model, seed, delivered(run_dir))
