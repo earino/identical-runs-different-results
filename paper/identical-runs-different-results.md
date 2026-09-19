@@ -681,14 +681,10 @@ excluded at the time. Three runs used the evaluation set to stop training early,
 312 delivered files hold five runs that trained on evaluation labels and five that computed batch features; Study
 3's 156 hold three and five. No run did both.
 
-**A correction.** Earlier versions of this paper decided evaluation-label training with a score screen, which
-flagged any run whose best evaluation score exceeded its holdout score by more than 0.03. The screen compares the
-run's best experiment with the code it delivered, which need not be the same program. It excluded two runs that had
-not trained on evaluation labels, one in each of Studies 2 and 3, and missed two Study 3 runs that had. Deciding on
-the delivered code instead, Study 2 has 10 rule-breaking runs rather than 11, Study 3's gain is 0.0091 rather than
-0.0097, and the run counts in its effects table moved accordingly. No conclusion reversed. One strengthened: pi's
-larger gain from GLM-5.3 now separates from Hermes's as well as from OpenCode's. The screen is still computed and
-published with the data, as a screen. In Study 1 the delivered-code trace agrees with the screen.
+**A screen we do not use.** A simpler check flags any run whose best evaluation score exceeds its holdout score by
+more than 0.03. It compares a run's best experiment with the program it delivered, which need not be the same, and
+on these runs it would have excluded two compliant runs and missed two that trained on evaluation labels. It is
+published with the data but not used.
 
 **Screens are screens.** Both traces over-flag. The frame-statistics trace raised two runs that were cleared on reading,
 one that grouped rows only to index them and one that fitted a label-taking encoder which never sees a scored

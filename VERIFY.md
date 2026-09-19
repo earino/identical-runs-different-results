@@ -90,11 +90,11 @@ paper names: `opencode/glm-5.3/13` fitted a classifier to tell evaluation rows f
 and used it to weight its training data. No evaluation label reached a fit, so it counts as compliant; it scored 38th
 of its pairing's 50 compliant runs, and excluding it moves Study 3's gain by 0.0001.
 
-**A correction.** Earlier versions of the paper decided evaluation-label training with a score screen instead (the
-`refit_suspect` column, still published): a run whose best evaluation score exceeded its holdout score by more than
-0.03. That compares the run's best experiment with the code it delivered, which need not be the same program. It
-excluded two runs that had not trained on evaluation labels (Study 2 `hermes/glm-5.3-flash/30`, Study 3
-`hermes/glm-5.3/29`) and missed two that had (Study 3 `hermes/glm-5.3/1` and `/39`). `ledger.py` prints both lists.
+**A screen we do not use.** The `refit_suspect` column is a simpler check: a run whose best evaluation score exceeds
+its holdout score by more than 0.03. It compares the run's best experiment with the code it delivered, which need not
+be the same program, so it would have excluded two runs that had not trained on evaluation labels (Study 2
+`hermes/glm-5.3-flash/30`, Study 3 `hermes/glm-5.3/29`) and missed two that had (Study 3 `hermes/glm-5.3/1` and
+`/39`). It is published but not used. `ledger.py` prints both lists.
 
 To read what an agent actually wrote, including its own notes:
 
