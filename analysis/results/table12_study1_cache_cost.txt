@@ -1,0 +1,28 @@
+$ python3 analysis/table12_study1_cache_cost.py
+claude    seed 1  cached 0.114  cost 1.4128  (final report)
+claude    seed 2  cached 0.086  cost 2.9472  (final report)
+claude    seed 3  cached 0.024  cost 1.2078  (transcript)
+codex     seed 1  cached 0.964  cost 0.1440  (final report)
+codex     seed 2  cached 0.964  cost 0.1858  (final report)
+codex     seed 3  cached 0.917  cost 0.1277  (final report)
+hermes    seed 1  cached 0.564  cost 1.0857  (final report)
+hermes    seed 2  cached 0.893  cost 0.4680  (final report)
+hermes    seed 3  cached 0.742  cost 0.2364  (final report)
+openclaw  seed 1  no record
+openclaw  seed 2  cached 0.978  cost 0.1070  (final report)
+openclaw  seed 3  cached 0.973  cost 0.0728  (final report)
+opencode  seed 1  cached 0.798  cost 0.2418  (final report)
+opencode  seed 2  cached 0.644  cost 0.1860  (final report)
+opencode  seed 3  cached 0.658  cost 0.4882  (final report)
+pi        seed 1  cached 0.983  cost 0.0801  (final report)
+pi        seed 2  cached 0.978  cost 0.1148  (final report)
+pi        seed 3  cached 0.967  cost 0.0524  (final report)
+
+pi        mean cost 0.0824 over 3 runs
+openclaw  mean cost 0.0899 over 2 runs
+codex     mean cost 0.1525 over 3 runs
+opencode  mean cost 0.3053 over 3 runs
+hermes    mean cost 0.5967 over 3 runs
+claude    mean cost 1.8559 over 3 runs
+
+Claude Code / pi mean cost: 22.5

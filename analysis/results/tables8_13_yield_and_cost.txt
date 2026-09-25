@@ -1,0 +1,37 @@
+$ python3 analysis/policy_tables.py data/study2/cells.csv data/study2/final_eval.csv data/study3/cells.csv data/study3/final_eval.csv
+BEST-OF-K, Study 2 (six pairings weighted equally; chosen on the delivered code's evaluation score; exact)
+  k= 1  median kept 0.7412   at least one compliant 96.79487%
+  k= 3  median kept 0.7493   at least one compliant 99.98175%
+  k= 5  median kept 0.7526   at least one compliant 99.99985%
+  k=10  median kept 0.7548   at least one compliant 100.00000%
+  gain, 1 to 3 attempts: +0.0081   95% interval +0.0063 to +0.0098 (outer bootstrap, 2,000)
+  gain, 1 to 5 attempts: +0.0114   95% interval +0.0085 to +0.0131 (outer bootstrap, 2,000)
+  gain, 1 to 10 attempts: +0.0136   95% interval +0.0113 to +0.0154 (outer bootstrap, 2,000)
+
+SELECTION (compliant runs; ranks inside each pairing, pooled)
+  Study 2: rank correlation of evaluation and holdout AUC +0.99 (pairings +0.99 to +1.00)
+  Study 3: rank correlation of evaluation and holdout AUC +0.98 (pairings +0.94 to +1.00)
+  regret of choosing on the evaluation set, 3 attempts: 0.00004 AUC
+  regret of choosing on the evaluation set, 10 attempts: 0.00005 AUC
+
+YIELD (compliant and scored, of all attempts; 95% Wilson intervals)
+  Study 2        302 of 312 (96.8%, 95% 94.2% to 98.2%);   three attempts return one: 99.98%, 95% lower bound 99.88%
+  GLM-5.3 Flash  150 of 156 (96.2%, 95% 91.9% to 98.2%);   three attempts return one: 99.97%, 95% lower bound 99.76%
+  GLM-5.3        144 of 156 (92.3%, 95% 87.0% to 95.5%);   three attempts return one: 99.94%, 95% lower bound 99.67%
+
+STUDY 3 ARMS (GLM-5.3 Flash runs come from Study 2)
+  GLM-5.3 Flash  yield 150 of 156 (96.2%)   compliant mean 0.7380   one attempt: artifact 96.2%, median 0.7385   best of three: artifact 99.97%, median 0.7473
+  GLM-5.3        yield 144 of 156 (92.3%)   compliant mean 0.7471   one attempt: artifact 92.3%, median 0.7482   best of three: artifact 99.94%, median 0.7564
+  the larger model's gain under the three-attempt policy: +0.0091; under one attempt: +0.0097
+
+CONFIGURATIONS (per run; list price, no cache discount, reasoning excluded)
+  agent / model                   input tok output tok    cost  yield    mean best of 3
+  Hermes / GLM-5.3 Flash              8.12M        68k $  0.83  90.4%  0.7379    0.7461
+  OpenCode / GLM-5.3 Flash            5.70M        32k $  0.58  98.1%  0.7400    0.7486
+  pi / GLM-5.3 Flash                  4.34M        58k $  0.45 100.0%  0.7361    0.7460
+  Hermes / DeepSeek 4.1 Flash         8.65M        69k $  1.34  94.2%  0.7441    0.7535
+  OpenCode / DeepSeek 4.1 Flash       5.07M        26k $  0.78 100.0%  0.7403    0.7488
+  pi / DeepSeek 4.1 Flash             3.93M        63k $  0.63  98.1%  0.7456    0.7567
+  Hermes / GLM-5.3                    7.43M        62k $ 10.67  90.4%  0.7446    0.7537
+  OpenCode / GLM-5.3                  6.40M        38k $  9.13  96.2%  0.7455    0.7563
+  pi / GLM-5.3                        5.87M        91k $  8.61  90.4%  0.7513    0.7594

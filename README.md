@@ -6,6 +6,36 @@ themselves wrote.
 
 **Start with [VERIFY.md](VERIFY.md).** It maps each headline claim to the one command that reproduces it.
 
+## Where each number in the paper comes from
+
+Every analysis the paper quotes has its printed output committed under
+[`analysis/results/`](analysis/results/), one file per table or claim, so a number can be found without running
+anything. `bash analysis/make_results.sh` regenerates them all from `data/` (about ten minutes on a laptop; each file
+starts with the command that wrote it).
+
+| Paper | Script | Committed output |
+|:--|:--|:--|
+| Table 3, Figure 1, Figure 5 | `analysis/figures.py` | `table3_figure1_study2_pairings.txt` |
+| Table 4, Figure 6 (Study 1) | `analysis/study1_agents_vs_noise.py` | `table4_figure6_study1.txt` |
+| Table 5 | `analysis/sensitivity_violations.py` | `table5_exclusion_rules.txt` |
+| Table 6 | `analysis/best_of_k.py` | `table6_best_of_k.txt` |
+| Table 7 | `analysis/compare_arms.py` | `table7_study3_vs_study2.txt` |
+| Tables 8, 13 | `analysis/policy_tables.py` | `tables8_13_yield_and_cost.txt` |
+| Table 9, Table 16, run counts, three-run draws, Hanley-McNeil SE | `analysis/paper_numbers.py` | `table9_and_text_numbers.txt` |
+| Table 10 | `analysis/interaction_table.py` | `table10_interactions.txt` |
+| Figures 3, 4 | `analysis/figure_interaction.py` | `figures3_4_interaction.txt` |
+| Figure 2 | `analysis/figure_arms.py` | `figure2_model_upgrade.txt` |
+| Table 11 (2007 flights) | `analysis/analyze_2007.py` on `data/2007/scores.csv` | `table11_later_year.txt` |
+| Table 14 | `analysis/table14_decisions.py` (retrains two delivered models) | `table14_decisions.txt` |
+| Table 17 | `analysis/best_of_k_by_pairing.py` | `table17_best_of_k_by_pairing.txt` |
+| Table 18 | `analysis/table18_repricing.py` | `table18_repricing.txt` |
+| Tables 1, 15, all run counts | `analysis/ledger.py` | `counts_ledger.txt` |
+| Compliance verdicts (Section 3.5) | `analysis/audit_exported_code.py` | `compliance_audit.txt` |
+| Section 4.9, cache per request | `analysis/cache_requests.py` on `data/study1/claude_requests.csv` | `section4.9_cache_requests.txt` |
+| Table 12, the 23-fold cost gap | `analysis/table12_study1_cache_cost.py` | `table12_study1_cache_cost.txt` |
+| Appendix D token totals | `analysis/token_totals.py` | `appendixD_study2_tokens.txt` |
+| Re-scoring one program end to end | `analysis/rescore.py` | `rescore_study3_pi_seed35.txt` |
+
 ## What the paper measures
 
 Six coding agents were paired with open-weight models and given the same machine-learning task: improve a model on
@@ -64,7 +94,8 @@ computed features from the batch it was scoring.
 
 ## Reproducing
 
-Python 3.10+; `matplotlib` and `scipy` only for the figures. No API key, no cloud account, no GPU. Everything
+Python 3.13.1 with the pinned versions in `requirements.txt` (`pip install -r requirements.txt`); re-training a
+delivered program reproduces its recorded score only under those versions. No API key, no cloud account, no GPU. Everything
 downstream of `data/*/cells.csv` runs on a laptop in seconds — see [VERIFY.md](VERIFY.md).
 
 Re-running the benchmark itself is a different matter: it needs containers, a model endpoint and roughly a day per

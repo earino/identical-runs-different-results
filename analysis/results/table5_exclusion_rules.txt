@@ -1,0 +1,8 @@
+$ python3 analysis/sensitivity_violations.py data/study2/cells.csv data/study2/final_eval.csv
+rule                                runs  span of means  median SD    best best-of-3 med best-of-10 med
+exclude nothing                      312         0.0098     0.0133  0.8293        0.7499         0.7565
+exclude eval-file training only      307         0.0098     0.0111  0.8036        0.7493         0.7548
+exclude batch features only          307         0.0095     0.0117  0.8293        0.7498         0.7564
+exclude both (the paper)             302         0.0095     0.0107  0.7695        0.7493         0.7548
+
+of the 10 highest-scoring runs, 7 broke a task rule

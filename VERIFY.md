@@ -1,7 +1,7 @@
 # Verify the paper
 
 Every headline number in the paper comes from a file in this repository and a command you can run. Nothing below
-needs a cloud account, an API key, or a GPU. Python 3.10+, with `matplotlib`, `numpy` and `scipy`.
+needs a cloud account, an API key, or a GPU. Python 3.13.1 with the versions in `requirements.txt` (`pip install -r requirements.txt`).
 
 Run everything from the repository root.
 

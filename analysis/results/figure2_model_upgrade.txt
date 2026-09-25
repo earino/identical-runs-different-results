@@ -1,0 +1,2 @@
+$ python3 analysis/figure_arms.py data/study3/cells.csv data/study2/cells.csv /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study3
+wrote /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study3/pro_vs_flash.png|pdf  (noise SD 0.0104; agents opencode, hermes, pi)

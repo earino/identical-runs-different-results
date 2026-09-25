@@ -1,0 +1,11 @@
+$ python3 analysis/best_of_k.py data/study2/cells.csv data/study2/final_eval.csv
+best-of-k over 6 pairings weighted equally, exact; kept attempt's holdout AUC
+
+  k  >=1 compliant   chosen on eval: median  p5      p95    oracle, chosen on holdout: median  p5      p95    optimism
+  1       96.7949%                   0.7412  0.7220  0.7587                              0.7412  0.7220  0.7587   +0.00000
+  3       99.9817%                   0.7493  0.7355  0.7641                              0.7493  0.7355  0.7641   +0.00004
+  5       99.9999%                   0.7526  0.7409  0.7645                              0.7526  0.7409  0.7645   +0.00005
+ 10      100.0000%                   0.7548  0.7460  0.7663                              0.7548  0.7463  0.7663   +0.00005
+
+median kept: three attempts +0.0081 over one, ten attempts +0.0136
+one attempt to ten: 5th percentile +0.0240, 95th percentile +0.0076

@@ -1,0 +1,9 @@
+$ python3 analysis/table14_decisions.py
+code/study2/var4/airline/pi/deepseek-4.1-flash/seed41: holdout AUC 0.7695
+code/study2/var2/airline/pi/deepseek-4.1-flash/seed16: holdout AUC 0.7470
+
+1000000 cases a month, prevalence 1%, false alarm $10, miss $100
+ reviewed  caught 0.7695  caught 0.7471  difference
+     5000            562            603       -4501
+    20000           1351           1287        7031
+   100000           3714           3462       27665

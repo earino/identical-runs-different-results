@@ -1,0 +1,29 @@
+$ python3 analysis/compare_arms.py data/study3/cells.csv data/study2/cells.csv
+arm A (pro)   data/study3/cells.csv: 144 compliant runs
+arm B (flash) data/study2/cells.csv [glm-5.3-flash]: 150 compliant runs
+compliance applied to both: eval_trained and frame_stats excluded (the compliant column)
+
+PER-AGENT GAIN
+agent           pro   n    flash   n     gain                  95% CI
+hermes       0.7446  47   0.7379  47  +0.0067   +0.0021 to +0.0113
+opencode     0.7455  50   0.7400  51  +0.0055   +0.0016 to +0.0094
+pi           0.7513  47   0.7361  52  +0.0152   +0.0110 to +0.0193
+
+1. MAIN EFFECT (model tier, pooled): +0.0091   95% CI +0.0066 to +0.0115   7.1 SE from zero
+   within-pairing SD (flash, median across agents) 0.0104  ->  the gain is 0.87 x the noise
+   one run of each model: the smaller model comes out ahead 28% of the time, averaged over agents (hermes 33%, opencode 35%, pi 15%)
+
+2. INTERACTION (does the upgrade buy more in one agent than another?)
+   hermes    vs opencode    +0.0012   95% CI -0.0049 to +0.0072   0.4 SE   DOES NOT clear zero
+   hermes    vs pi          -0.0085   95% CI -0.0147 to -0.0023   2.7 SE   clears zero
+   opencode  vs pi          -0.0097   95% CI -0.0153 to -0.0040   3.3 SE   clears zero
+
+3. DETECTABILITY LADDER (n per arm for 80% power at the 5% level, 16 sd^2 / gap^2)
+   effect                                   size   in SDs  n needed
+   model tier, pooled                    +0.0091     0.87        21
+   widest agent gap, pro model           +0.0067     0.64        39
+   widest agent gap, flash model         +0.0039     0.38       113
+
+4. CONFOUND CHECKS on arm A
+   box effect: F = 0.97 across 4 boxes (no box effect worth reporting)
+   time effect: early half 0.7471, late half 0.7471, drift -0.0000

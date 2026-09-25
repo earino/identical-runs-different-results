@@ -1,0 +1,49 @@
+$ python3 analysis/analyze_2007.py
+scored on 2007: 464 runs (446 compliant); not yet or not scorable: 0
+
+RESCORE (retrained, applied to the 2006 holdout, against the recorded holdout AUC)
+  compliant     n 446  median |difference| 0.00018  95th percentile 0.00128  max 0.00456
+  broke a rule  n  18  median |difference| 0.00035  95th percentile 0.00207  max 0.00438
+
+TRANSFER (compliant runs)
+  starting code: 2006 0.7148, 2007 0.7175
+  delivered, mean: 2006 0.7427, 2007 0.7267
+  gain over the starting code: 2006 +0.0280, 2007 +0.0092  -> 33% survives
+  compliant runs below the starting code: 2006 0, 2007 33 of 446 (and 2 that delivered it unchanged)
+  rank correlation of a run's 2006 and 2007 AUC inside its pairing: +0.38 (pairings +0.27 to +0.55)
+    study2 Hermes    deepseek-4.1-flash  n 49  2006 0.7441  2007 0.7259  SD 2007 0.0073
+    study2 Hermes    glm-5.3-flash       n 47  2006 0.7379  2007 0.7250  SD 2007 0.0050
+    study2 OpenCode  deepseek-4.1-flash  n 52  2006 0.7403  2007 0.7271  SD 2007 0.0059
+    study2 OpenCode  glm-5.3-flash       n 51  2006 0.7400  2007 0.7256  SD 2007 0.0062
+    study2 pi        deepseek-4.1-flash  n 51  2006 0.7456  2007 0.7261  SD 2007 0.0055
+    study2 pi        glm-5.3-flash       n 52  2006 0.7361  2007 0.7259  SD 2007 0.0066
+    study3 Hermes    glm-5.3             n 47  2006 0.7446  2007 0.7270  SD 2007 0.0064
+    study3 OpenCode  glm-5.3             n 50  2006 0.7455  2007 0.7276  SD 2007 0.0064
+    study3 pi        glm-5.3             n 47  2006 0.7513  2007 0.7302  SD 2007 0.0062
+
+SPREAD (Study 2, compliant runs)
+  2006: pairing means span 0.0095; median pairing SD 0.0107
+  2007: pairing means span 0.0021; median pairing SD 0.0060
+
+POLICY (Study 2; chosen on the evaluation set, scored on 2007)
+  median kept on 2007: one attempt 0.7261, three 0.7282 (+0.0022, 95% +0.0010 to +0.0032), ten 0.7305 (+0.0045, 95% +0.0023 to +0.0053)
+
+MODEL (Study 3: GLM-5.3 against Study 2's GLM-5.3 Flash, compliant runs)
+  2006: gain +0.0091 (7.1 SE, 0.87 run-to-run SD, 21 runs per arm); pi +0.0152, Hermes +0.0067, OpenCode +0.0055
+      pi minus Hermes: +0.0085 (+2.7 SE)
+      pi minus OpenCode: +0.0097 (+3.3 SE)
+      Hermes minus OpenCode: +0.0012 (+0.4 SE)
+  2007: gain +0.0027 (3.8 SE, 0.44 run-to-run SD, 82 runs per arm); pi +0.0043, Hermes +0.0020, OpenCode +0.0020
+      pi minus Hermes: +0.0023 (+1.3 SE)
+      pi minus OpenCode: +0.0023 (+1.3 SE)
+      Hermes minus OpenCode: +0.0000 (+0.0 SE)
+
+RULES (runs that broke a rule, on each year; rank among all scored runs of their study)
+  study2 2006: rule-breakers among the ten highest scores: 7
+  study2 2007: rule-breakers among the ten highest scores: 7
+  study2 evaluation-label training, mean: 2006 0.8112, 2007 0.7524  (n 5)
+  study2 batch features, mean: 2006 0.7556, 2007 0.7485  (n 5)
+  study3 2006: rule-breakers among the ten highest scores: 6
+  study3 2007: rule-breakers among the ten highest scores: 6
+  study3 evaluation-label training, mean: 2006 0.8101, 2007 0.7520  (n 3)
+  study3 batch features, mean: 2006 0.7838, 2007 0.7686  (n 5)

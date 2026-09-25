@@ -1,0 +1,9 @@
+$ python3 analysis/study1_v4pro.py
+claude    seed 1  cached 4%  cut off by the quota
+claude    seed 2  cached 11%  cut off by the quota
+codex     seed 1  cached 99%  
+hermes    seed 1  cached 83%  
+openclaw  seed 1  cached 92%  
+opencode  seed 1  cached 97%  
+pi        seed 1  cached 91%  cut off by the quota
+pi        seed 2  cached 98%  cut off by the quota

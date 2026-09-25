@@ -24,7 +24,8 @@ abstract: |
   the agents. On flights from a
   later year, the delivered models kept only a third of their gain over the starting code. At list prices,
   cost differed more than twentyfold between two agents on the same model, mostly through the prompt cache. Agents and
-  models should be evaluated as pairings, over repeated attempts, with compliance reported beside quality.
+  models should be evaluated as pairings, over repeated attempts, with compliance reported beside quality. Data, code
+  and every delivered program: https://github.com/earino/identical-runs-different-results
 ---
 
 # Introduction
@@ -646,9 +647,10 @@ The cache failure belonged to the pairing, not to either half. Claude Code cache
 DeepSeek V4.1 Flash and 73 to 84 percent on Nemotron Super, and every agent on those two models cached 70 to 99
 percent. It failed again on one more model, DeepSeek V4 Pro, whose row the quota stopped after eight runs: Claude
 Code cached 4 and 11 percent while the other five agents cached 83 to 99. The quota cut off both Claude Code runs,
-but also both of pi's, which still cached 91 and 98 percent. On V4 Flash, Claude Code's request log shows the cache
-returning almost nothing from the first request, at 14,000 tokens, while on V4.1 Flash the same agent reads its
-prompt back at up to 122,000 tokens, so context size does not explain it.
+but also both of pi's, which still cached 91 and 98 percent. Claude Code's session transcripts show the failure request
+by request. On V4 Flash none of its 338 requests read back more than half its prompt from the cache, and no request
+read back more than 17,024 tokens, as prompts grew to 164,044; on V4.1 Flash the same agent read back more than half
+its prompt on 296 of 303 requests, up to 146,304 tokens. Context size does not explain it.
 
 @lawrence2026harness observed the same agent's cache share collapse through another gateway and traced it to the
 gateway's translation of Claude Code's Anthropic-style request format. Claude Code reached Ollama Cloud through the
@@ -714,15 +716,15 @@ to negatives [@saito2015precision], and decision curve analysis evaluates a mode
 thresholds a decision-maker might use, each encoding the relative harm of false positives and false negatives
 [@vickers2006decision]. Score the candidates on held-back data, apply the decision rule you run, and count the
 outcomes at your own prevalence and costs. Table 14 does this for two of our models, the best compliant run of a
-pairing and its median run (0.7695 and 0.7471 AUC), for a team that sees one million cases a month, one in a hundred
+pairing and a run near its median (0.7695 and 0.7471 AUC; pi on DeepSeek 4.1 Flash, whose compliant median is 0.7462), for a team that sees one million cases a month, one in a hundred
 of them positive, with a false alarm costing \$10 and a miss \$100, assuming only the prevalence differs from the
 benchmark.
 
 | Cases reviewed each month | Caught by the 0.7695 model | Caught by the 0.7471 model | Difference |
 |:----------|-------:|-------:|-------:|
-| 5,000 | 562 | 580 | −\$1,920 |
-| 20,000 | 1,351 | 1,279 | \$7,955 |
-| 100,000 | 3,714 | 3,421 | \$32,156 |
+| 5,000 | 562 | 603 | −\$4,501 |
+| 20,000 | 1,351 | 1,287 | \$7,031 |
+| 100,000 | 3,714 | 3,462 | \$27,665 |
 
 Table: Illustrative, not a forecast. Both models were selected and scored on the same holdout, so these are not
 validated savings. The better model by AUC is worse at the tightest capacity.
@@ -897,9 +899,9 @@ length, completion rate and caching profile, so the table does not say what thos
 | Model | Price per M tokens, in / out | Repriced ledger | If 90 percent of input were cached |
 |:--------------------------------|:------------------|--------:|--------:|
 | GLM-5.3 Flash and DeepSeek 4.1 Flash, as run | \$0.10 / \$0.33 and \$0.15 / \$0.60 | \$244 | \$54 |
-| GLM-5.3 | \$1.40 / \$4.40 | \$2,717 | \$807 |
+| GLM-5.3 | \$1.40 / \$4.40 | \$2,718 | \$807 |
 | Gemini 3.1 Pro | \$2.00 / \$12.00 | \$4,026 | \$1,009 |
-| Kimi K3 | \$2.65 / \$13.28 | \$5,265 | \$1,334 |
+| Kimi K3 | \$2.65 / \$13.28 | \$5,268 | \$1,335 |
 | Claude Opus 5 | \$5.00 / \$25.00 | \$9,939 | \$2,397 |
 | GPT-5.5 Pro | \$30.00 / \$180.00 | \$60,385 | N/A |
 
@@ -927,7 +929,10 @@ The data repository,
 holds the task rules and prompts, agent versions and configurations, model and endpoint identifiers, one row per run
 for all three studies, and the holdout. For Studies 2 and 3 it adds every version of the code each agent delivered,
 the audit records with each verdict, and the scoring, statistics and figure code; a run ledger asserts that every
-count in the paper reconciles, and VERIFY.md maps each headline claim to the command that reproduces it. The full
+count in the paper reconciles, and VERIFY.md maps each headline claim to the command that reproduces it. The printed
+output of every analysis the paper quotes is committed under `analysis/results/`, one file per table, and the
+README maps each table and figure to its script and file; retraining a delivered program reproduces its recorded
+score under the pinned library versions in `requirements.txt`. The full
 run trees, 43 GB of logs and container state, are not included. The flight data are public [@dataexpo2009]; the
 repository holds our code, the task data and the agents' delivered outputs, and redistributes no agent software or
 model weights.

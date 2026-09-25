@@ -1,0 +1,12 @@
+$ python3 analysis/rescore.py code/study3/var7/airline/pi/glm-5.3/seed35
+Training time: 49.2s
+Eval time: 6.9s
+Eval AUC: 0.7912
+{
+  "cell": "code/study3/var7/airline/pi/glm-5.3/seed35",
+  "version": "14_5f9d0d7.py",
+  "auc": 0.80347906625,
+  "ap": 0.803519,
+  "n": 1000000,
+  "seconds": 129.0
+}

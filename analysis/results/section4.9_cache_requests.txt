@@ -1,0 +1,17 @@
+$ python3 analysis/cache_requests.py
+model                    seed requests first prompt max cache read max prompt >half cached
+deepseek-v4-flash:0731      1      107        14855          16256     164044       0 of 107
+deepseek-v4-flash:0731      2      161        14853          17024     142010       0 of 161
+deepseek-v4-flash:0731      3       70        14855           4352     142382       0 of 70
+deepseek-v4-pro:0813        1      118        14853          14592     157845       0 of 118
+deepseek-v4.1-flash         1       91        14792         123776     124341      88 of 91
+deepseek-v4.1-flash         2      115        14793         146304     146624     113 of 115
+deepseek-v4.1-flash         3       97        14790         133952     134249      95 of 97
+nemotron-3-super            1      188        15299          67584      76434     169 of 188
+nemotron-3-super            2      204        15298          76032      82318     172 of 204
+nemotron-3-super            3       91        15298          50688      58745      79 of 91
+
+deepseek-v4-flash:0731: 0 of 338 requests read back more than half their prompt; largest cache read 17024, largest prompt 164044
+deepseek-v4-pro:0813: 0 of 118 requests read back more than half their prompt; largest cache read 14592, largest prompt 157845
+deepseek-v4.1-flash: 296 of 303 requests read back more than half their prompt; largest cache read 146304, largest prompt 146624
+nemotron-3-super: 420 of 483 requests read back more than half their prompt; largest cache read 76032, largest prompt 82318

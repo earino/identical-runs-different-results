@@ -1,0 +1,10 @@
+$ python3 analysis/figures.py data/study2/cells.csv /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study2
+pairing (compliant runs)         n    mean  median      SD      95% interval     q10     q90    best all-run   noncompliant
+pi / GLM-5.3 Flash              52  0.7361  0.7359  0.0104   0.7332 - 0.7389  0.7221  0.7495  0.7597  0.7361   0 of 52 (0%)
+Hermes / GLM-5.3 Flash          47  0.7379  0.7404  0.0112   0.7347 - 0.7411  0.7214  0.7524  0.7590  0.7427   5 of 52 (10%)
+OpenCode / GLM-5.3 Flash        51  0.7400  0.7402  0.0097   0.7373 - 0.7427  0.7262  0.7525  0.7596  0.7417   1 of 52 (2%)
+OpenCode / DeepSeek 4.1 Flash   52  0.7403  0.7418  0.0096   0.7377 - 0.7429  0.7255  0.7516  0.7578  0.7403   0 of 52 (0%)
+Hermes / DeepSeek 4.1 Flash     49  0.7441  0.7437  0.0109   0.7411 - 0.7472  0.7299  0.7569  0.7663  0.7459   3 of 52 (6%)
+pi / DeepSeek 4.1 Flash         51  0.7456  0.7462  0.0125   0.7421 - 0.7490  0.7256  0.7605  0.7695  0.7455   1 of 52 (2%)
+compliant pairing means span 0.0095; median pairing SD 0.0107
+wrote /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study2/spread.png|pdf, /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study2/histograms.png|pdf and /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/study2/compute.png|pdf from 312 scored runs

@@ -1,0 +1,39 @@
+$ python3 analysis/paper_numbers.py data/study2/cells.csv data/study3/cells.csv data/study1/cells.csv
+rule: compliant column; Study 2 compliant runs 302
+
+SPREAD
+  compliant pairing means span 0.0095; median pairing SD 0.0107 (all runs 0.0133)
+  two runs of one pairing, all runs: mean gap 0.0147, ninth decile 0.0285
+  weakest compliant run beats the starting code by 0.0007
+  holdout AUC standard error (Hanley-McNeil, AUC 0.7419, 500k per class): 0.00049
+
+THREE RUNS (compliant, drawn with replacement as in best-of-k; exact)
+  deepseek-4.1-flash  opencode  (weaker) beats hermes    32.9%
+  deepseek-4.1-flash  hermes    (weaker) beats pi        43.6%
+  deepseek-4.1-flash  opencode  (weaker) beats pi        28.3%
+  glm-5.3-flash       hermes    (weaker) beats opencode  40.9%
+  glm-5.3-flash       pi        (weaker) beats hermes    41.1%
+  glm-5.3-flash       pi        (weaker) beats opencode  31.5%
+  range 28% to 44%
+
+RUN COUNTS (16 sd^2 / gap^2 per arm, sd = median compliant pairing SD)
+  widest gap among the six pairings: 0.0095 -> 20.3 runs of each
+  widest gap between two agents on one model: 0.0053 -> 66.2 runs of each
+
+STUDY 3 EFFECTS TABLE (sd = median GLM-5.3 Flash pairing SD)
+  sd 0.0104
+  did the agent improve on the starting code?   +0.0277  2.65 SD     2.3 runs per arm
+  did the larger model improve the pairing?     +0.0091  0.87 SD    21.0 runs per arm
+  are two agents different on GLM-5.3?          +0.0067  0.64 SD    39.4 runs per arm
+  are two agents different on GLM-5.3 Flash?    +0.0039  0.38 SD   113.2 runs per arm
+
+SAME-DAY CHECK, Study 1 (both GLM models on 13 September, overlapping in time; compliant runs of pi, Hermes, OpenCode)
+  GLM-5.3 0.7449 (8 runs)   GLM-5.3 Flash 0.7374 (9 runs)   gain +0.0075  (1.7 SE)
+
+COMPUTE AGAINST SCORE, Study 2 (ranks within pairing, pooled; bootstrap 2,000; two-sided permutation within pairing 2,000)
+  all runs                               n 312  rho +0.55  95% +0.45 to +0.63  p 0.000
+  compliant runs                         n 302  rho +0.55  95% +0.46 to +0.63  p 0.000
+  compliant, above a quarter of budget   n 209  rho +0.43  95% +0.29 to +0.54  p 0.000
+  compliant, above half of budget        n 110  rho +0.29  95% +0.10 to +0.45  p 0.001
+  compliant, above three quarters of budget n  70  rho +0.12  95% -0.15 to +0.41  p 0.342
+  runs at or under a quarter of the budget: all 95, compliant 93

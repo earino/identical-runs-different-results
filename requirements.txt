@@ -1,0 +1,12 @@
+# The environment the holdout scores were computed in (Python 3.13.1). Re-training a delivered program reproduces its
+# recorded holdout AUC under these versions; others differ: with xgboost 3.2.0 and numpy 2.4.6, for example, some
+# programs move by up to 0.005. The analysis scripts that only read data/ are not sensitive to versions.
+numpy==2.5.3
+pandas==2.3.3
+scikit-learn==1.9.1
+xgboost==3.4.1
+scipy==1.18.1
+matplotlib==3.11.1
+pyyaml==6.0.3
+joblib==1.6.0
+threadpoolctl==3.6.0

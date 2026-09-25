@@ -1,0 +1,19 @@
+$ python3 analysis/figure_interaction.py data/study2/cells.csv data/study3/cells.csv /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/interaction
+Study 2: GLM-5.3 Flash to DeepSeek 4.1 Flash, compliant runs
+  pi        0.7361 -> 0.7456   change +0.0095  (SE 0.0023, 4.2 SE)
+  Hermes    0.7379 -> 0.7441   change +0.0062  (SE 0.0023, 2.7 SE)
+  OpenCode  0.7400 -> 0.7403   change +0.0003  (SE 0.0019, 0.2 SE)
+  pi's change minus OpenCode's: +0.0092  (3.1 SE)
+  on GLM-5.3 Flash      agents spread 0.0039; pi minus OpenCode -0.0039 (-2.0 SE)
+  on DeepSeek 4.1 Flash agents spread 0.0053; pi minus OpenCode +0.0053 (+2.4 SE)
+  every mean inside every pairing's 10th-90th percentile band: yes
+  wrote /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/interaction/interaction_study2.png|pdf
+Study 3: GLM-5.3 Flash to GLM-5.3, compliant runs
+  pi        0.7361 -> 0.7513   change +0.0152  (SE 0.0021, 7.1 SE)
+  Hermes    0.7379 -> 0.7446   change +0.0067  (SE 0.0024, 2.8 SE)
+  OpenCode  0.7400 -> 0.7455   change +0.0055  (SE 0.0020, 2.7 SE)
+  pi's change minus OpenCode's: +0.0097  (3.3 SE)
+  on GLM-5.3 Flash      agents spread 0.0039; pi minus OpenCode -0.0039 (-2.0 SE)
+  on GLM-5.3            agents spread 0.0067; pi minus OpenCode +0.0058 (+2.6 SE)
+  every mean inside every pairing's 10th-90th percentile band: no
+  wrote /var/folders/p9/__dlw6gd29sg4m3s81v92xcw0000gn/T/tmp.zoLyV3iUeZ/interaction/interaction_study3.png|pdf

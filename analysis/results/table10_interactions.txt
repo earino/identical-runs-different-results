@@ -1,0 +1,37 @@
+$ python3 analysis/interaction_table.py data/study2/cells.csv data/study3/cells.csv
+Study 2 (exploratory: model families differ, pattern seen after the data)
+  GLM-5.3 Flash -> DeepSeek 4.1 Flash, compliant runs
+  change for pi        +0.0095  SE 0.0023    4.2 SE
+  change for Hermes    +0.0062  SE 0.0023    2.7 SE
+  change for OpenCode  +0.0003  SE 0.0019    0.2 SE
+  interaction contrasts (change for a minus change for b):
+    pi       vs Hermes    +0.0033  SE 0.0032   +1.0 SE   bootstrap 95% -0.0029 to +0.0094   does not clear zero
+    pi       vs OpenCode  +0.0092  SE 0.0030   +3.1 SE   bootstrap 95% +0.0034 to +0.0150   clears zero
+    Hermes   vs OpenCode  +0.0059  SE 0.0030   +2.0 SE   bootstrap 95% +0.0002 to +0.0116   clears zero
+    Holm-adjusted p, pi vs Hermes: raw 0.3010, adjusted 0.3010
+    Holm-adjusted p, pi vs OpenCode: raw 0.0020, adjusted 0.0059
+    Holm-adjusted p, Hermes vs OpenCode: raw 0.0476, adjusted 0.0953
+  omnibus test of no agent x model interaction: Wald chi2 10.2 on 2 df, p 0.0062
+  the parts that do not share the GLM-5.3 Flash runs (a minus b on the second model):
+    pi       minus Hermes    on DeepSeek 4.1 Flash +0.0014  (+0.6 SE)
+    pi       minus OpenCode  on DeepSeek 4.1 Flash +0.0053  (+2.4 SE)
+    Hermes   minus OpenCode  on DeepSeek 4.1 Flash +0.0038  (+1.9 SE)
+
+Study 3 (planned model change; the agent pair was not planned)
+  GLM-5.3 Flash -> GLM-5.3, compliant runs
+  change for pi        +0.0152  SE 0.0021    7.1 SE
+  change for Hermes    +0.0067  SE 0.0024    2.8 SE
+  change for OpenCode  +0.0055  SE 0.0020    2.7 SE
+  interaction contrasts (change for a minus change for b):
+    pi       vs Hermes    +0.0085  SE 0.0032   +2.7 SE   bootstrap 95% +0.0024 to +0.0148   clears zero
+    pi       vs OpenCode  +0.0097  SE 0.0029   +3.3 SE   bootstrap 95% +0.0040 to +0.0155   clears zero
+    Hermes   vs OpenCode  +0.0012  SE 0.0031   +0.4 SE   bootstrap 95% -0.0049 to +0.0072   does not clear zero
+    Holm-adjusted p, pi vs Hermes: raw 0.0074, adjusted 0.0149
+    Holm-adjusted p, pi vs OpenCode: raw 0.0010, adjusted 0.0030
+    Holm-adjusted p, Hermes vs OpenCode: raw 0.7103, adjusted 0.7103
+  omnibus test of no agent x model interaction: Wald chi2 12.3 on 2 df, p 0.0021
+  the parts that do not share the GLM-5.3 Flash runs (a minus b on the second model):
+    pi       minus Hermes    on GLM-5.3            +0.0067  (+2.9 SE)
+    pi       minus OpenCode  on GLM-5.3            +0.0058  (+2.6 SE)
+    Hermes   minus OpenCode  on GLM-5.3            -0.0009  (-0.4 SE)
+

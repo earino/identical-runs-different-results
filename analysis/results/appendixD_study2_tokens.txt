@@ -1,0 +1,2 @@
+$ python3 analysis/token_totals.py
+input 1.86B  output 16.4M  reasoning 8.7M  generated 25.1M  ratio 74 to 1

@@ -1,0 +1,37 @@
+$ python3 analysis/ledger.py data/study1/cells.csv data/study2/cells.csv data/study3/cells.csv
+STUDY 1
+  runs recorded 116 = 108 on the six complete rows + 8 on the partial V4 Pro row
+  never started 3 (codex / deepseek-4.1-flash); their files are the untouched starting code
+  delivered by an agent 113; complete-row artifacts 105, noncompliant 2, scored in the quality analysis 103
+STUDY 2
+  runs counted 312; status {'scored': 312}
+  trained on evaluation labels 5; statistics from the scored frame 5; both 0; broke a rule 10
+  compliant 302 of 312 (96.8%); excluded 10 = 0 not scored + 10 broke a rule
+  the old score screen: flagged 7, of which 2 did not train on evaluation labels (hermes seed27 (batch features), hermes seed30); missed 0 (none)
+    hermes    deepseek-4.1-flash  compliant  49 of 52   noncompliant or unscored 3 (6%)
+    hermes    glm-5.3-flash       compliant  47 of 52   noncompliant or unscored 5 (10%)
+    opencode  deepseek-4.1-flash  compliant  52 of 52   noncompliant or unscored 0 (0%)
+    opencode  glm-5.3-flash       compliant  51 of 52   noncompliant or unscored 1 (2%)
+    pi        deepseek-4.1-flash  compliant  51 of 52   noncompliant or unscored 1 (2%)
+    pi        glm-5.3-flash       compliant  52 of 52   noncompliant or unscored 0 (0%)
+  of the ten highest Study 2 scores, 7 broke a rule
+  score ranges: evaluation-label training 0.7855 to 0.8293; batch features 0.7116 to 0.8036
+STUDY 3
+  runs counted 156; status {'scored': 152, 'holdout_error': 4}
+  trained on evaluation labels 3; statistics from the scored frame 5; both 0; broke a rule 8
+  compliant 144 of 156 (92.3%); excluded 12 = 4 not scored + 8 broke a rule
+  the old score screen: flagged 3, of which 2 did not train on evaluation labels (hermes seed29, hermes seed47 (batch features)); missed 2 (hermes seed1, hermes seed39)
+    hermes    glm-5.3             compliant  47 of 52   noncompliant or unscored 5 (10%)
+    opencode  glm-5.3             compliant  50 of 52   noncompliant or unscored 2 (4%)
+    pi        glm-5.3             compliant  47 of 52   noncompliant or unscored 5 (10%)
+STUDY 3 ARMS
+  GLM-5.3 Flash (from Study 2): compliant 150 of 156 (96.2%); GLM-5.3: compliant 144 of 156 (92.3%)
+  GLM-5.3 Flash  runs 2026-09-15T15:42 to 2026-09-16T07:58 UTC on machines var1, var2, var3, var4
+  GLM-5.3        runs 2026-09-16T18:20 to 2026-09-17T14:21 UTC on machines var5, var6, var7, var8
+  means, pooled over compliant runs: Flash 0.7380, GLM-5.3 0.7471, gain +0.0091
+  means, agents weighted equally:    Flash 0.7380, GLM-5.3 0.7471, gain +0.0091
+    pi        GLM-5.3 0.7513 (47 runs)   Flash 0.7361 (52 runs)   gain +0.0152
+    hermes    GLM-5.3 0.7446 (47 runs)   Flash 0.7379 (47 runs)   gain +0.0067
+    opencode  GLM-5.3 0.7455 (50 runs)   Flash 0.7400 (51 runs)   gain +0.0055
+
+all ledger identities hold
