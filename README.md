@@ -82,6 +82,19 @@ re-scoring section of [VERIFY.md](VERIFY.md) — and it means the airline task i
 once this repository is public, since a model trained afterwards may have read it. Extending this work needs new
 tasks.
 
+## License
+
+Different parts of this repository are under different terms:
+
+| Part | License |
+|:--|:--|
+| Code: `analysis/`, `harness/` | [MIT](LICENSE) |
+| The paper, its figures (`paper/`) and the result tables (`data/`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| The agents' delivered programs and records (`code/`) | written by the AI agents in our runs; released under [MIT](LICENSE) to the extent we hold any rights in them |
+| The flight data (`task/airline/`) | derived from [Data Expo 2009: Airline on time data](https://doi.org/10.7910/DVN/HG7NV7), which is [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/); our slices are released under CC0 as well |
+
+No agent software or model weights are redistributed here.
+
 ## Citing
 
 ```bibtex

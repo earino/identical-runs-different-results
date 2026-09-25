@@ -132,9 +132,12 @@ of the 10 highest-scoring runs, 7 broke a task rule
 python analysis/best_of_k.py data/study2/cells.csv data/study2/final_eval.csv
 ```
 
-The policy: draw k attempts from a pairing's 52 runs with replacement, reject noncompliant ones, keep the one whose
-delivered code scores best on the evaluation set, and report its holdout AUC. It is computed exactly, not simulated:
-with replacement, the attempt ranked r-th of n is kept with probability (r/n)^k − ((r−1)/n)^k. The evaluation score
+The policy: draw k attempts from a pairing's 52 runs with replacement, reject noncompliant and unscorable ones, keep
+the one whose delivered code scores best on the evaluation set, and report its holdout AUC. It is computed exactly,
+not simulated. With n attempts, m of them rejected, and the compliant ones ranked r = 1, ..., n − m from lowest to
+highest evaluation score (ties share their probability equally), compliant attempt r is kept with probability
+((m+r)/n)^k − ((m+r−1)/n)^k, and no artifact is returned with probability (m/n)^k; the quality percentiles are
+conditional on an artifact being returned. The evaluation score
 is in `data/study2/final_eval.csv`, extracted from each run's record by
 `python analysis/export_final_eval.py code/study2 data/study2/final_eval.csv`; it belongs to the run's final code,
 which in 18 of the 312 runs was not its best experiment. The script also chooses on the holdout itself, an oracle no
@@ -238,7 +241,7 @@ pointwise bootstrap intervals, Holm-adjusted p-values, and a joint Wald test of 
   omnibus test of no agent x model interaction: Wald chi2 12.3 on 2 df, p 0.0021
 ```
 
-and for Study 2 the joint test is χ² 10.2, p 0.0062. The two agent-by-model figures, with the numbers the brief quotes
+and for Study 2 the joint test is χ² 10.2, p 0.0062. The two agent-by-model figures, with the numbers the paper quotes
 from them (Study 2: pi +0.0095, Hermes +0.0062, OpenCode +0.0003; pi leads OpenCode by 0.0053 on DeepSeek 4.1 Flash
 and 0.0058 on GLM-5.3, at 2.4 and 2.6 SE):
 
@@ -281,7 +284,7 @@ land. To produce `scores.csv` yourself (about six hours on 16 cores; it resumes 
 python analysis/score_2007.py
 ```
 
-The starting code scores 0.7148 on the 2006 holdout and 0.7175 on 2007, so the later year is not harder in itself.
+The starting code scores 0.7148 on the 2006 holdout and 0.7175 on 2007, so the starting code did not score worse on the later-year data.
 
 ## The numbers no other script prints
 
